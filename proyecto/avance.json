@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-10-30",
+  "tipo": "estimacion_de_planificacion_por_entregables",
+  "porcentaje_estimado": 25,
+  "rango_orientativo": [
+    20,
+    30
+  ],
+  "formula": "suma(peso * avance_estimado / 100)",
+  "nota": "Pesos y avances de fase son juicio de planificación, no medición de horas, precisión estadística ni porcentaje de funciones operativas. No se cuentan pruebas como avance jurídico.",
+  "fases": [
+    {
+      "id": 0,
+      "nombre": "Plan y organización",
+      "peso": 5,
+      "avance_estimado": 100,
+      "evidencias": [
+        "docs/PLAN_INTEGRAL.md",
+        "ROADMAP.md",
+        "docs/TAREAS.md"
+      ]
+    },
+    {
+      "id": 1,
+      "nombre": "Biblioteca normativa",
+      "peso": 20,
+      "avance_estimado": 50,
+      "evidencias": [
+        "normativa/catalogo.json",
+        "docs/normativa/RESULTADO_INDEXACION.md"
+      ],
+      "pendiente": "Cobertura, modificatorias y vigencia por disposición."
+    },
+    {
+      "id": 2,
+      "nombre": "Procedimientos y reglas",
+      "peso": 20,
+      "avance_estimado": 25,
+      "evidencias": [
+        "rules/consultores/matriz.v0.1.json"
+      ],
+      "pendiente": "Revisión jurídica, transición y demás procedimientos."
+    },
+    {
+      "id": 3,
+      "nombre": "Base técnica",
+      "peso": 25,
+      "avance_estimado": 20,
+      "evidencias": [
+        "scripts/indexar_normativa.py",
+        "scripts/ocr_windows.ps1"
+      ],
+      "pendiente": "Integración OCR, coordinador, ingreso y persistencia de expedientes."
+    },
+    {
+      "id": 4,
+      "nombre": "Piloto completo e informe Word",
+      "peso": 20,
+      "avance_estimado": 0,
+      "evidencias": [],
+      "pendiente": "Implementación y aceptación de extremo a extremo."
+    },
+    {
+      "id": 5,
+      "nombre": "Validación y expansión",
+      "peso": 10,
+      "avance_estimado": 0,
+      "evidencias": [],
+      "pendiente": "Módulos adicionales y validación funcional."
+    }
+  ]
+}

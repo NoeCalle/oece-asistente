@@ -1,5 +1,5 @@
 # Roadmap
-Actualización: 2026-10-30. Corte normativo investigado: 2026-10-29. Las fases se cierran por evidencia, no por número de archivos. [Estado general](docs/ESTADO.md).
+Actualización: 2026-10-30. Corte normativo investigado: 2026-10-29. Las fases se cierran por evidencia, no por número de archivos. [Estado general](docs/ESTADO.md). Avance global orientativo: **25 % (rango 20–30 %)**; [método](docs/MEDICION_AVANCE.md).
 
 | Fase | Estado | Entregables | Condición de salida |
 |---|---|---|---|
@@ -17,4 +17,4 @@ Actualización: 2026-10-30. Corte normativo investigado: 2026-10-29. Las fases s
 4. Revisar matriz con especialista y construir expedientes sintéticos.
 5. Integrar OCR con control de calidad y continuar ingreso/extracción; elegir runtime del coordinador antes de automatizar conclusiones.
 
-Se aprobaron 12 pruebas técnicas: 8 del indexador y 4 de metadatos OCR. Se ejecutó OCR real en 3 páginas; integración y revisión de exactitud pendientes. Las pruebas del asistente completo siguen pendientes; no se ha recuperado el MVP anterior. No hay estimación de fecha de entrega hasta dimensionar documentos, formatos y conjunto de casos.
+Se aprobaron 16 pruebas técnicas: 8 del indexador, 4 de metadatos OCR y 4 de diagnóstico de calidad. Se ejecutó OCR real en 3 páginas; diagnóstico de cuatro regiones implementado; integración y revisión completa pendientes. Las pruebas del asistente completo siguen pendientes; no se ha recuperado el MVP anterior. No hay estimación de fecha de entrega hasta dimensionar documentos, formatos y conjunto de casos.

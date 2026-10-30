@@ -1,0 +1,92 @@
+{
+  "fecha": "2026-10-30",
+  "max_cer_propuesto": 0.05,
+  "umbral_aprobado_por_especialista": false,
+  "reference_sha256": "12e0a02dce1b24335c5a040a98acefebe2b64a0d91b94caba1027ad8ad28d4ff",
+  "scope": "Regiones seleccionadas; no estima precision de documentos completos",
+  "results": [
+    {
+      "id": "Q01-numero-decreto",
+      "source_sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+      "page_pdf": 1,
+      "roi_xyxy": [
+        1250,
+        575,
+        1435,
+        620
+      ],
+      "reference_text": "006-2026-JUS",
+      "observed_text": "006-2026-J(-F",
+      "derived_sha256": "40eb4d9851af395354413a83c096aa59a16936ab8c64392b3db4c70b153fbeab",
+      "cer": 0.25,
+      "wer": 1,
+      "critical_tokens_missing": [
+        "006-2026-JUS"
+      ],
+      "status": "requiere_revision",
+      "apta_para_evaluacion": false,
+      "human_review_required": true
+    },
+    {
+      "id": "Q02-titulo-tuo",
+      "source_sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+      "page_pdf": 1,
+      "roi_xyxy": [
+        220,
+        680,
+        1340,
+        765
+      ],
+      "reference_text": "DECRETO SUPREMO QUE APRUEBA EL TEXTO ÚNICO ORDENADO DE LA LEY N.° 27444, LEY DEL PROCEDIMIENTO ADMINISTRATIVO GENERAL",
+      "observed_text": "DECRETO SUPREMO QUE APRUEBA El- TEXTO ÚNICO ORDENADO DE LA LEY N.0 27444, LEY DEL PROCEDIMIENTO ADMINISTRATIVO GENERAL",
+      "derived_sha256": "40eb4d9851af395354413a83c096aa59a16936ab8c64392b3db4c70b153fbeab",
+      "cer": 0.017094017094017096,
+      "wer": 0.1111111111111111,
+      "critical_tokens_missing": [],
+      "status": "dentro_umbral_de_muestra",
+      "apta_para_evaluacion": false,
+      "human_review_required": true
+    },
+    {
+      "id": "Q03-referencia-articulo",
+      "source_sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+      "page_pdf": 2,
+      "roi_xyxy": [
+        215,
+        305,
+        1340,
+        350
+      ],
+      "reference_text": "mediante la Ley N° 31603, Ley que modifica el Artículo 207 de la Ley 27444 Ley del",
+      "observed_text": "mediante la Ley NO 31603, Ley que modifica el Artículo 207 de la Ley 27444 Ley del",
+      "derived_sha256": "89a297247a208cebe4f8d298273e700fc536851c5757e65eb0059fa2b35f62c8",
+      "cer": 0.012195121951219513,
+      "wer": 0.058823529411764705,
+      "critical_tokens_missing": [],
+      "status": "dentro_umbral_de_muestra",
+      "apta_para_evaluacion": false,
+      "human_review_required": true
+    },
+    {
+      "id": "Q04-titulo-articulo-85",
+      "source_sha256": "a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08",
+      "page_pdf": 20,
+      "roi_xyxy": [
+        70,
+        790,
+        680,
+        855
+      ],
+      "reference_text": "Artículo 85. Cancelación del procedimiento de selección",
+      "observed_text": "Articulo 85. Cancelación del procedimiento de selección",
+      "derived_sha256": "c8d0203c8520a747cd5b5dc44cb7f612427e2a87d1007cbf529c6eea84a7d205",
+      "cer": 0.01818181818181818,
+      "wer": 0.14285714285714285,
+      "critical_tokens_missing": [],
+      "status": "dentro_umbral_de_muestra",
+      "apta_para_evaluacion": false,
+      "human_review_required": true
+    }
+  ],
+  "apta_para_evaluacion": false
+}

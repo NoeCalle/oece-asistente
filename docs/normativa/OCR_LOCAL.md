@@ -26,12 +26,12 @@ Cada salida indica hash de PDF, página PDF, hash de imagen, idioma, motor, comp
 reviewed=false y apta_para_evaluacion=false son obligatorios en esta muestra. Verificación de coordenadas y hashes no equivale a aprobación del texto. Las imágenes vinculadas deben conservarse para revisar cada palabra citada.
 
 ## Resultado y límites
-Se procesaron DS 006-2026-JUS p.1 (2172 caracteres), p.2 (3392) y DS 009-2025-EF p.20 (7099). Se compararon visualmente las tres páginas y se observaron errores en caracteres y números. No se midió tasa de error, no se corrigió texto automáticamente y no se procesaron las 200 páginas completas de los dos PDF detectados sin texto suficiente.
+Se procesaron DS 006-2026-JUS p.1 (2172 caracteres), p.2 (3392) y DS 009-2025-EF p.20 (7099). Se compararon visualmente las tres páginas y se observaron errores en caracteres y números. La muestra inicial no midió tasa de error global; después se añadió [diagnóstico de cuatro regiones](CALIDAD_OCR.md). No se corrigió texto automáticamente y no se procesaron las 200 páginas completas de los dos PDF detectados sin texto suficiente.
 El índice anterior conserva sus resultados y alertas. No se debe usar una cifra OCR sin cotejarla con la imagen.
 
 [Reporte de muestra](../../normativa/ocr-muestra-2026-10-30.json). [Estado general](../ESTADO.md).
 
 ## Siguiente trabajo
-Definir muestras con transcripción de referencia, tolerancias por campos críticos y señales de rechazo. Añadir timeout para operaciones WinRT, control de fallo por página y reanudación antes de ejecutar lotes largos. Después integrar derivados revisables a un índice nuevo conservando la versión anterior.
+Ampliar las cuatro regiones transcritas de referencia, tolerancias por campos críticos y señales de rechazo. El criterio inicial ya detecta identificadores erróneos; falta validarlo con especialista. Añadir timeout para operaciones WinRT, control de fallo por página y reanudación antes de ejecutar lotes largos. Después integrar derivados revisables a un índice nuevo conservando la versión anterior.
 
 Referencia técnica: [OCR de Windows](https://learn.microsoft.com/en-us/uwp/api/windows.media.ocr.ocrengine).

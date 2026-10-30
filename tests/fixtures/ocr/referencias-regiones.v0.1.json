@@ -1,0 +1,78 @@
+{
+  "fecha": "2026-10-30",
+  "procedencia": "Transcripcion manual de cuatro regiones en imagenes renderizadas de fuentes oficiales. Referencias diagnosticas, no validacion juridica.",
+  "max_cer_propuesto": 0.05,
+  "umbral_aprobado_por_especialista": false,
+  "regions": [
+    {
+      "id": "Q01-numero-decreto",
+      "source_sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+      "page_pdf": 1,
+      "image_sha256": "d8e5897d0c992e2857baa176bb271dcf1010c1c6c8dd6e44fdd39789e2421019",
+      "ocr_path": "normativa/ocr/de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1/page-0001.ocr.json",
+      "roi_xyxy": [
+        1250,
+        575,
+        1435,
+        620
+      ],
+      "reference_text": "006-2026-JUS",
+      "critical_tokens": [
+        "006-2026-JUS"
+      ]
+    },
+    {
+      "id": "Q02-titulo-tuo",
+      "source_sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+      "page_pdf": 1,
+      "image_sha256": "d8e5897d0c992e2857baa176bb271dcf1010c1c6c8dd6e44fdd39789e2421019",
+      "ocr_path": "normativa/ocr/de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1/page-0001.ocr.json",
+      "roi_xyxy": [
+        220,
+        680,
+        1340,
+        765
+      ],
+      "reference_text": "DECRETO SUPREMO QUE APRUEBA EL TEXTO ÚNICO ORDENADO DE LA LEY N.° 27444, LEY DEL PROCEDIMIENTO ADMINISTRATIVO GENERAL",
+      "critical_tokens": [
+        "27444"
+      ]
+    },
+    {
+      "id": "Q03-referencia-articulo",
+      "source_sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+      "page_pdf": 2,
+      "image_sha256": "dab6bd363131397a0ed270f45986d6c9212f5d5e92be3a888930db4e2f531217",
+      "ocr_path": "normativa/ocr/de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1/page-0002.ocr.json",
+      "roi_xyxy": [
+        215,
+        305,
+        1340,
+        350
+      ],
+      "reference_text": "mediante la Ley N° 31603, Ley que modifica el Artículo 207 de la Ley 27444 Ley del",
+      "critical_tokens": [
+        "31603",
+        "207",
+        "27444"
+      ]
+    },
+    {
+      "id": "Q04-titulo-articulo-85",
+      "source_sha256": "a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08",
+      "page_pdf": 20,
+      "image_sha256": "0d81c5372012c9ec0e9759dfd4400eab7cf0d4ea7d73b73d9e0856f14892a9b6",
+      "ocr_path": "normativa/ocr/a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08/page-0020.ocr.json",
+      "roi_xyxy": [
+        70,
+        790,
+        680,
+        855
+      ],
+      "reference_text": "Artículo 85. Cancelación del procedimiento de selección",
+      "critical_tokens": [
+        "85"
+      ]
+    }
+  ]
+}

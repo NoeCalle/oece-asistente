@@ -1,6 +1,9 @@
 # Estado de OECE Assistant
 Actualizado: **30 de octubre de 2026 (America/Lima)**. Corte normativo investigado: 29/10/2026. Este archivo es el resumen de continuidad; el [roadmap](../ROADMAP.md) y las [tareas](TAREAS.md) contienen el detalle.
 
+## Avance orientativo
+**Alrededor de 25 % del proyecto completo (rango 20–30 %).** Es una estimación de planificación por entregables, no porcentaje de funciones operativas. [Criterios y pesos](MEDICION_AVANCE.md).
+
 ## Resultado disponible
 Biblioteca inicial en Google Drive y herramientas locales para verificar integridad, extraer/buscar texto PDF/Word y ejecutar una muestra OCR de Windows. La aplicación conversacional y la generación de informes de expedientes aún no están implementadas.
 
@@ -14,15 +17,15 @@ Biblioteca inicial en Google Drive y herramientas locales para verificar integri
 | 5. Validación y expansión | Pendiente | Alcance modular documentado | Ejecutores, inscripciones, actualizaciones y reconsideraciones comprobadas |
 
 ## Qué se probó
-- **12 pruebas técnicas aprobadas:** 8 del indexador y 4 de metadatos OCR.
+- **16 pruebas técnicas aprobadas:** 8 del indexador, 4 de metadatos OCR y 4 del diagnóstico de calidad.
 - Búsqueda real de una referencia conocida: directiva RNP, numeral 9.3.3, página PDF 12.
 - OCR real de DS 006-2026-JUS páginas 1–2 y DS 009-2025-EF página 20. Las tres salidas conservan fuente, página, hash de imagen y coordenadas.
-- Se observaron errores de reconocimiento al comparar las imágenes. La muestra sigue pendiente de corrección/revisión; no se declara exactitud general.
+- Se observaron errores de reconocimiento al comparar las imágenes. Cuatro regiones comparadas con transcripción manual: un identificador crítico falló y quedó marcado para revisión. No se declara exactitud general. [Diagnóstico](normativa/CALIDAD_OCR.md).
 
 Los diez casos jurídicos son una especificación y **no fueron ejecutados**. El OCR de muestra no se integró al buscador; las cifras del índice siguen siendo las del recorrido anterior.
 
 ## Orden de continuación
-1. Definir y probar control de calidad e integración OCR sin reemplazar evidencia original.
+1. Ampliar las referencias de calidad OCR a campos críticos del piloto, y después integrar derivados sin reemplazar evidencia original.
 2. Completar fuentes normativas y resolver transición de categorías, vigencias condicionadas y reglas por persona.
 3. Segmentar y recuperar disposiciones con versiones y revisión identificadas.
 4. Construir ingreso y estado de expedientes sintéticos; luego coordinador y borrador Word.

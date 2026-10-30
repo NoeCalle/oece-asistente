@@ -4,7 +4,7 @@ Asistente proyectado para preparar evaluaciones documentales y borradores de inf
 
 **Estado al 30 de octubre de 2026 (America/Lima): biblioteca y piloto en preparación; indexador local de PDF/Word con búsqueda textual implementado. La aplicación conversacional sigue pendiente.** El repositorio inspeccionado contenía únicamente un README; el MVP y sus cuatro pruebas mencionados en una conversación anterior no se encontraron ni se verificaron.
 
-**[Estado actualizado del proyecto](docs/ESTADO.md)** — fases, resultados comprobados y orden de continuación.
+**Avance global orientativo: 25 % (rango 20–30 %).** [Cómo se estima](docs/MEDICION_AVANCE.md). **[Estado actualizado](docs/ESTADO.md)** — fases, evidencia y continuación.
 
 ## Objetivo
 
@@ -38,7 +38,7 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 | Descarga y archivo en Drive | 24 archivos, incluidos HTML; manifiestos con SHA-256 |
 | Consolidación por artículo y revisión jurídica | Pendiente |
 | Lectura PDF digital y cuerpo/tablas de DOCX | Implementada en herramienta de biblioteca |
-| OCR local de Windows | Prototipo probado en 3 páginas; [alcance](docs/normativa/OCR_LOCAL.md) |
+| OCR local de Windows | Prototipo probado en 3 páginas; diagnóstico en 4 regiones; [alcance](docs/normativa/OCR_LOCAL.md) |
 | OCR completo/integración, coordinador y evaluación | Pendiente |
 | Generador Word y pruebas de expedientes | Pendiente |
 | Carga documental a Drive | Realizada mediante conector; sin sincronización automática |
