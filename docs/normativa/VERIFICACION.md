@@ -34,3 +34,6 @@ Repositorio público NoeCalle/oece-asistente, rama main, commit de partida 296b9
 
 ## Continuación: descarga y Drive
 Se superaron los errores de acceso inicial usando descarga directa de las páginas oficiales. Se descargaron y archivaron 23 archivos; véase [BIBLIOTECA.md](BIBLIOTECA.md). Las observaciones anteriores describen el estado inicial, no el estado de descarga actual. Ninguna revisión humana ni regla queda aprobada.
+
+## Continuación registrada 30/10/2026
+Inicio 14/01/2026 del DS 001-2026-EF sustentado con DCF y publicación del acto habilitante. Se conserva arriba la discrepancia histórica. Se recuperó el comunicado de categorías y se elaboró matriz candidata del piloto. [Hallazgos](HALLAZGOS_PILOTO.md). No se cierra fase 1 ni se aprueban reglas.

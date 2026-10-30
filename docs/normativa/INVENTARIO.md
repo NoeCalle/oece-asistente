@@ -1,5 +1,5 @@
 # Inventario inicial de fuentes normativas
-Corte de consulta: **29/10/2026, America/Lima**. 21 registros iniciales. Catálogo no exhaustivo; ninguna regla queda habilitada con esta entrega.
+Corte de consulta: **29/10/2026, America/Lima**. 23 registros al actualizar el 30/10/2026. Catálogo no exhaustivo; ninguna regla queda habilitada con esta entrega.
 
 Se verificó existencia y determinados datos en fuentes oficiales. “Vigencia parcial verificada” significa que se encontró sustento para una fecha o relación, no que toda la norma esté consolidada y vigente sin cambios. Un resultado del buscador puede ser una captura anterior; se distingue del texto abierto en [catalogo.json](../../normativa/catalogo.json).
 
@@ -12,7 +12,7 @@ Se verificó existencia y determinados datos en fuentes oficiales. “Vigencia p
 | dl-1715 | [Decreto Legislativo 1715](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-02-04 | 2026-02-05 | vigencia_parcial_verificada |
 | ley-32732 | [Ley 32732](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-07-19 | Pendiente / no aplica | condicionada |
 | ds-009-2025-ef | [Decreto Supremo 009-2025-EF](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2025-01-22 | 2025-04-22 | vigencia_parcial_verificada |
-| ds-001-2026-ef | [Decreto Supremo 001-2026-EF](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-01-08 | 2026-01-14 | en_conflicto |
+| ds-001-2026-ef | [Decreto Supremo 001-2026-EF](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-01-08 | 2026-01-14 | vigencia_parcial_verificada |
 | ds-222-2026-ef | [Decreto Supremo 222-2026-EF](https://busquedas.elperuano.pe/dispositivo/EX/2567159-1) | 2026-10-21 | Pendiente / no aplica | texto_oficial_consultado |
 | dir-001-2025-oece-cd | [Directiva 001-2025-OECE/CD](https://busquedas.elperuano.pe/api/visor_html/2391987-1) | 2025-04-19 | 2025-04-22 | vigencia_parcial_verificada |
 | ds-086-2025-ef | [Decreto Supremo 086-2025-EF (TUPA OECE)](https://www.gob.pe/institucion/oece/informes-publicaciones/tipos/16-tupa) | 2025-05-07 | Pendiente / no aplica | identificado_oficial |
@@ -40,3 +40,7 @@ Ley 32069 y cadena de cambios; Reglamento 009-2025-EF, fe de erratas y modificat
 - Protección de datos y políticas institucionales: revisión aparte antes de tratar expedientes reales.
 
 Actualización de esta sesión: se preservaron 23 archivos y sus hashes en el [manifiesto](../../normativa/manifiesto-descargas-2026-10-29.json). Los registros aún no descargados conservan hash null. La disponibilidad de un archivo no acredita vigencia. [Bitácora](VERIFICACION.md) describe conflictos y alcance; [indexación](INDEXACION.md) define cómo completar la biblioteca.
+
+## Registros añadidos al continuar
+- [Comunicado 001-2026-OECE](https://www.gob.pe/institucion/oece/noticias/1336986-comunicado-n-001-2026-oece-asignacion-de-especialidades-y-categorias-de-consultores-de-obra-en-el-marco-de-la-ley-n-32069-y-su-reglamento): publicado 19/01/2026; captura HTML conservada.
+- [RD 0001-2026-EF/54.01](https://busquedas.elperuano.pe/dispositivo/NL/2476159-1): publicada 13/01/2026; acto habilitante del inicio del DS 001-2026-EF. [Hallazgos](HALLAZGOS_PILOTO.md).

@@ -5,7 +5,7 @@ Corte: 2026-10-29. Las fases se cierran por evidencia, no por número de archivo
 |---|---|---|---|
 | 0. Persistencia | Completada en esta entrega | Plan, arquitectura, tareas y estado real | Archivos guardados en GitHub y commit comprobado |
 | 1. Biblioteca normativa | En curso | Inventario, fuentes, fechas, relaciones y esquema | Originales con hash; modificatorias y vigencias revisadas; cobertura del piloto aprobada |
-| 2. Procedimientos | Pendiente | Fichas, requisitos, excepciones y matriz | Cada regla enlaza disposición vigente y evidencia; revisión del especialista |
+| 2. Procedimientos | Iniciada en paralelo con biblioteca | Fichas, requisitos, excepciones y matriz | Cada regla enlaza disposición vigente y evidencia; revisión del especialista |
 | 3. Base técnica | Pendiente | Ingreso local/Drive sincronizado, persistencia, lector y OCR | Caso sintético de extremo a extremo; reanudación y aislamiento comprobados |
 | 4. Piloto consultores | Pendiente | Evaluación de ampliación y borrador Word | Matriz y Word coherentes; citas verificadas y revisión humana |
 | 5. Validación y expansión | Pendiente | Ejecutores, inscripciones, actualizaciones, reconsideraciones | Aceptación por módulo y regresión temporal/documental |

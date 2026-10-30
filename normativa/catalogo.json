@@ -380,8 +380,8 @@
       "vigencia": {
         "desde": "2026-01-14",
         "hasta": null,
-        "estado": "en_conflicto",
-        "fundamento": "OECE informa 14/01/2026; Perú Compras muestra 09/01/2026. Fecha registrada provisionalmente según OECE; revisar DCF y resolución habilitante."
+        "estado": "vigencia_parcial_verificada",
+        "fundamento": "Única DCF DS p.PDF15 y publicación de RD 0001-2026-EF/54.01 el 13/01/2026. Inicio resultante 14/01/2026; revisión humana y consolidación pendientes."
       },
       "procedimientos": [
         "ampliacion_consultores",
@@ -410,11 +410,16 @@
           "url": "https://www.gob.pe/institucion/perucompras/campa%C3%B1as/107110-consulta-la-normativa-complementaria",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://busquedas.elperuano.pe/dispositivo/NL/2476159-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
-        "nivel": "en_conflicto",
-        "nota": "OECE informa 14/01/2026; Perú Compras muestra 09/01/2026. Fecha registrada provisionalmente según OECE; revisar DCF y resolución habilitante. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
+        "nivel": "vigencia_parcial_verificada",
+        "nota": "Discrepancia de fecha resuelta documentalmente; controles de evaluación siguen deshabilitados.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
@@ -424,8 +429,8 @@
         "descargado": true
       },
       "pendientes": [
-        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Revisión humana de cadena normativa y alcance por disposición.",
+        "Cotejar cambios posteriores antes de aplicación real."
       ]
     },
     {
@@ -1052,6 +1057,83 @@
       "pendientes": [
         "Obtener y cotejar original completo y anexos.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "com-001-2026",
+      "denominacion": "Comunicado 001-2026-OECE: especialidades y categorías de consultores",
+      "tipo": "comunicado",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2026-01-19",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "orientacion",
+        "fundamento": "Página HTML conservada; imagen vinculada es portada. Cotejar fronteras de Cuarta DCT."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "reinscripcion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/noticias/1336986-comunicado-n-001-2026-oece-asignacion-de-especialidades-y-categorias-de-consultores-de-obra-en-el-marco-de-la-ley-n-32069-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "orientacion",
+        "nota": "Página HTML conservada; imagen vinculada es portada. Cotejar fronteras de Cuarta DCT.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": "normativa/originales/2026-10-29/comunicado-001-2026-oece.html",
+        "sha256": "79da1b96624c73b1511760b997b0304d20f846aca6520a9f5e373137dba1ea9b",
+        "descargado": true
+      },
+      "pendientes": [
+        "Cotejo normativo y revisión humana antes de habilitar reglas."
+      ]
+    },
+    {
+      "id": "rd-0001-2026-ef-54-01",
+      "denominacion": "Resolución Directoral 0001-2026-EF/54.01",
+      "tipo": "resolucion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2026-01-13",
+      "fecha_emision": "2026-01-09",
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "texto_oficial_consultado",
+        "fundamento": "Acto habilitante del inicio de DS 001-2026-EF; no se determina aquí vigencia propia."
+      },
+      "procedimientos": [],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://busquedas.elperuano.pe/dispositivo/NL/2476159-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "texto_oficial_consultado",
+        "nota": "Acto habilitante del inicio de DS 001-2026-EF; no se determina aquí vigencia propia.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": "normativa/originales/2026-10-29/rd-001-2026-ef-54-01.pdf",
+        "sha256": "d85308b2931b73daab0a433c01a1e8712e08469c9dbdc772b12af4fdf6686525",
+        "descargado": true
+      },
+      "pendientes": [
+        "Cotejo normativo y revisión humana antes de habilitar reglas."
       ]
     }
   ]

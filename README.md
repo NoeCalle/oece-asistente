@@ -10,6 +10,8 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 
 **Avance documental:** 23 archivos oficiales o copias alojadas en portales oficiales descargados y guardados en Google Drive. [Detalle de la biblioteca](docs/normativa/BIBLIOTECA.md). La revisión jurídica sigue pendiente.
 
+**Piloto en preparación:** [ficha de ampliación de consultores](docs/procedimientos/AMPLIACION_CONSULTORES.md), 22 controles candidatos y 10 casos sintéticos especificados. [Hallazgos](docs/normativa/HALLAZGOS_PILOTO.md). Actualización: 30/10/2026; no hay evaluador ejecutable.
+
 ## Documentos del proyecto
 
 - [Plan integral y arquitectura](docs/PLAN_INTEGRAL.md)
@@ -40,3 +42,5 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 **Repositorio público:** solo código futuro, documentación del proyecto, metadatos de fuentes públicas y casos sintéticos. Expedientes, informes, credenciales y documentos de trabajo van fuera del repositorio. No subir el ZIP anterior sin inspeccionarlo y retirar datos reales.
 
 No se certifica que el inventario cubra todas las modificatorias al corte. Una fuente encontrada no habilita por sí sola una regla de evaluación. Véanse los bloqueos de vigencia y de validación humana en la bitácora.
+
+Para verificar metadatos y trazabilidad: `python scripts/verificar_biblioteca.py`. El modo `--verificar-originales` requiere las copias locales. [Resultados del piloto](docs/normativa/VALIDACION_PILOTO.md).

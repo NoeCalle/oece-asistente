@@ -25,3 +25,6 @@ Conservar expediente y evaluación anteriores; identificar acto y notificación;
 
 ## Ampliaciones posteriores
 Restitución de capacidad libre, récord de obras, suspensión y retiro están fuera del primer piloto. Incorporarlos mediante decisión de alcance, no por aparecer en la directiva.
+
+## Avance del piloto
+[Ficha de ampliación de consultores](procedimientos/AMPLIACION_CONSULTORES.md): código TUPA, 22 controles candidatos, fuentes y problemas de transición. Ninguna regla ejecutable habilitada. [Hallazgos](normativa/HALLAZGOS_PILOTO.md).

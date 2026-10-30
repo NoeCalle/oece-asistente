@@ -1,0 +1,87 @@
+{
+  "version": "0.1",
+  "tipo": "especificacion_no_ejecutada",
+  "datos": "sinteticos",
+  "casos": [
+    {
+      "id": "S01",
+      "entrada": "Solicitud fechada 19/01/2026 con categoría antigua B",
+      "esperado": "Revisión de frontera temporal; no seleccionar automáticamente régimen.",
+      "control": "AC-01",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S02",
+      "entrada": "Solicitud posterior; solo consta categoría antigua D",
+      "esperado": "Pedir historial/reevaluación; no conceder todas las categorías por una letra.",
+      "control": "AC-01",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S03",
+      "entrada": "Experiencia peruana bajo Ley acreditada por documento equivalente",
+      "esperado": "No rechazar solo porque no se titula Constancia de Prestación.",
+      "control": "AC-06",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S04",
+      "entrada": "Experiencia privada; falta uno de los sustentos aplicables",
+      "esperado": "Señalar faltante y revisar subsanación; no fabricar experiencia.",
+      "control": "AC-07",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S05",
+      "entrada": "Comprobantes 80 000 y monto final consultoría 100 000",
+      "esperado": "Detectar diferencia 20 000; no comparar con presupuesto de obra.",
+      "control": "AC-08",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S06",
+      "entrada": "Consorcio sin obligaciones identificadas",
+      "esperado": "No atribuir íntegramente la experiencia; no_determinable.",
+      "control": "AC-10",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S07",
+      "entrada": "Contrato en moneda extranjera sin tasa documentada",
+      "esperado": "No convertir con tipo de cambio actual o supuesto.",
+      "control": "AC-15",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S08",
+      "entrada": "La letra A aparece en dos formularios de regímenes diferentes",
+      "esperado": "Exigir significado y versión; no homologar las etiquetas.",
+      "control": "AC-11",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S09",
+      "entrada": "Contrato extranjero sin conformidad o viabilidad",
+      "esperado": "Mostrar evidencia faltante y ruta aplicable; no afirmar cumplimiento.",
+      "control": "AC-09",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    },
+    {
+      "id": "S10",
+      "entrada": "Mismo servicio ofrecido para dos especialidades",
+      "esperado": "Revisar objeto principal y prohibición aplicable; no duplicar por defecto.",
+      "control": "AC-13",
+      "aprobado_por_especialista": false,
+      "ejecutado": false
+    }
+  ]
+}

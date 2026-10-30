@@ -1,0 +1,17 @@
+{
+  "fecha_registro": "2026-10-30",
+  "corte_investigado": "2026-10-29",
+  "archivos": [
+    {
+      "name": "comunicado-001-2026-oece.html",
+      "source_url": "https://www.gob.pe/institucion/oece/noticias/1336986-comunicado-n-001-2026-oece-asignacion-de-especialidades-y-categorias-de-consultores-de-obra-en-el-marco-de-la-ley-n-32069-y-su-reglamento",
+      "local_path": "normativa/originales/2026-10-29/comunicado-001-2026-oece.html",
+      "sha256": "79da1b96624c73b1511760b997b0304d20f846aca6520a9f5e373137dba1ea9b",
+      "bytes": 39383,
+      "tipo": "captura_html_pagina_oficial",
+      "descargado_el": "2026-10-29",
+      "archivado_en_drive": true,
+      "nota": "Captura completa de página oficial; imagen vinculada solo portada. No es PDF firmado."
+    }
+  ]
+}
