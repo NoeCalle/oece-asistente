@@ -37,11 +37,21 @@
           "url": "https://busquedas.elperuano.pe/api/visor_html/2391987-1",
           "consultado_el": "2026-10-29",
           "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/mef/normas-legales/6994512-32069",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://cdn.www.gob.pe/uploads/document/file/8418795/6994512-ley_32069.pdf?v=1753886307",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
         "nivel": "vigencia_parcial_verificada",
-        "nota": "Inicio general; excepciones y cadena completa pendientes. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
+        "nota": "Inicio general; excepciones y cadena completa pendientes. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica. Original de publicación de 36 páginas conservado en manifiesto-ampliacion-2026-10-30.json; se mantiene la referencia anterior al consolidado.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
@@ -60,13 +70,13 @@
       "denominacion": "Ley 32103",
       "tipo": "ley",
       "jurisdiccion": "PE",
-      "fecha_publicacion": null,
+      "fecha_publicacion": "2024-07-26",
       "fecha_emision": null,
       "vigencia": {
         "desde": null,
         "hasta": null,
         "estado": "pendiente",
-        "fundamento": "Modificatoria identificada en compendio; verificar texto, publicación y alcance."
+        "fundamento": "Derogatoria del artículo 67.8 localizada en PDF p. 20 y publicación 26/07/2024 cotejada. Delimitación temporal y efectos por procedimiento pendientes."
       },
       "procedimientos": [
         "ampliacion_consultores",
@@ -79,9 +89,11 @@
       ],
       "relaciones": [
         {
-          "tipo": "modifica",
+          "tipo": "deroga",
           "destino": "ley-32069",
-          "disposiciones": [],
+          "disposiciones": [
+            "artículo 67.8; disposición complementaria derogatoria única, PDF p. 20"
+          ],
           "estado": "pendiente_delimitacion"
         }
       ],
@@ -90,22 +102,32 @@
           "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/mef/normas-legales/5820636-32103",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://cdn.www.gob.pe/uploads/document/file/6705137/5820636-ley-n-32103-credito-suplementario.pdf?v=1722373924",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
-        "nivel": "pendiente",
-        "nota": "Modificatoria identificada en compendio; verificar texto, publicación y alcance.",
+        "nivel": "texto_oficial_consultado",
+        "nota": "Original oficial descargado y publicación cotejada en cabecera del PDF; páginas relevantes en AMPLIACION_FUENTES.md. No cierra vigencia ni aplicabilidad RNP.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-30/ley-32103.pdf",
+        "sha256": "89913ea96af71a1ebc4f836c57f2a5bcaa7754598a71b936e5c77e070d6bc191",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Delimitar vigencia, excepciones y efecto por procedimiento; cotejo humano pendiente.",
+        "Completar anexos adicionales cuando resulten relevantes al alcance."
       ]
     },
     {
@@ -113,7 +135,7 @@
       "denominacion": "Ley 32187",
       "tipo": "ley",
       "jurisdiccion": "PE",
-      "fecha_publicacion": null,
+      "fecha_publicacion": "2024-12-11",
       "fecha_emision": null,
       "vigencia": {
         "desde": null,
@@ -134,7 +156,10 @@
         {
           "tipo": "modifica",
           "destino": "ley-32069",
-          "disposiciones": [],
+          "disposiciones": [
+            "DCF 13 numeral 3 y DCF 29, PDF p. 9",
+            "artículo 73.2 y DCT 3, PDF p. 11"
+          ],
           "estado": "pendiente_delimitacion"
         }
       ],
@@ -143,22 +168,32 @@
           "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/mef/normas-legales/6280777-32187",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7361100/6280777-ley_n_32187-leydeendeudamiento2025.pdf?v=1734023824",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
-        "nivel": "pendiente",
-        "nota": "Verificar modificación de disposición de entrada en vigencia y demás efectos.",
+        "nivel": "texto_oficial_consultado",
+        "nota": "Original oficial descargado y publicación cotejada en cabecera del PDF; páginas relevantes en AMPLIACION_FUENTES.md. No cierra vigencia ni aplicabilidad RNP.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-30/ley-32187.pdf",
+        "sha256": "ca03e06fd5478e7cb61b45f4191bd1569526e9c9211b2a8d98b615acb7d18205",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Delimitar vigencia, excepciones y efecto por procedimiento; cotejo humano pendiente.",
+        "Completar anexos adicionales cuando resulten relevantes al alcance."
       ]
     },
     {
@@ -166,13 +201,13 @@
       "denominacion": "Ley 32515",
       "tipo": "ley",
       "jurisdiccion": "PE",
-      "fecha_publicacion": null,
+      "fecha_publicacion": "2025-12-04",
       "fecha_emision": null,
       "vigencia": {
         "desde": null,
         "hasta": null,
-        "estado": "en_conflicto",
-        "fundamento": "Compendio presenta fechas inconsistentes con año fiscal 2026; no adoptar fechas mostradas sin original."
+        "estado": "pendiente",
+        "fundamento": "Publicación 04/12/2025 cotejada en cabecera del original. Conflicto de fecha de publicación del compendio aclarado; vigencia y efecto por disposición pendientes de revisión."
       },
       "procedimientos": [
         "ampliacion_consultores",
@@ -187,7 +222,10 @@
         {
           "tipo": "modifica",
           "destino": "ley-32069",
-          "disposiciones": [],
+          "disposiciones": [
+            "artículo 7.1 literal b, DCM sexta, PDF p. 8",
+            "artículo 7.1 literal r, DCM décimo primera, PDF p. 9"
+          ],
           "estado": "pendiente_delimitacion"
         }
       ],
@@ -196,22 +234,32 @@
           "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/mef/normas-legales/7475764-32515",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9106064/7475764-ley32515.pdf?v=1764873148",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
-        "nivel": "en_conflicto",
-        "nota": "Compendio presenta fechas inconsistentes con año fiscal 2026; no adoptar fechas mostradas sin original.",
+        "nivel": "texto_oficial_consultado",
+        "nota": "Original oficial descargado y publicación cotejada en cabecera del PDF; páginas relevantes en AMPLIACION_FUENTES.md. No cierra vigencia ni aplicabilidad RNP.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-30/ley-32515.pdf",
+        "sha256": "76ae2aceb8373d5e0c678eb4d102aee2d83bfe7ee818f0d2616ed3d9e5d8b004",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Delimitar vigencia, excepciones y efecto por procedimiento; cotejo humano pendiente.",
+        "Completar anexos adicionales cuando resulten relevantes al alcance."
       ]
     },
     {
@@ -1134,6 +1182,57 @@
       },
       "pendientes": [
         "Cotejo normativo y revisión humana antes de habilitar reglas."
+      ]
+    },
+    {
+      "id": "ley-32185",
+      "denominacion": "Ley 32185 Ley de Presupuesto del Sector Público para el Año Fiscal 2025",
+      "tipo": "ley",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2024-12-11",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "pendiente",
+        "fundamento": "Fuente histórica complementaria: artículo 14.2, márgenes de procedimientos para 2025. No se trata como modificación textual de Ley 32069 ni se trasladan montos a 2026."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/mef/normas-legales/6278077-32185",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7357350/6278077-ley_n_32185-leydeppto2025.pdf?v=1733957374",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "texto_oficial_consultado",
+        "nota": "Original oficial descargado y publicación cotejada en cabecera del PDF; páginas relevantes en AMPLIACION_FUENTES.md. No cierra vigencia ni aplicabilidad RNP.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": "normativa/originales/2026-10-30/ley-32185.pdf",
+        "sha256": "f1011c96a538f57a365f42cbf2bb500e8fc710bca30dfccd36ce0801dbdcb8ca",
+        "descargado": true
+      },
+      "pendientes": [
+        "Delimitar vigencia, excepciones y efecto por procedimiento; cotejo humano pendiente.",
+        "Completar anexos adicionales cuando resulten relevantes al alcance."
       ]
     }
   ]

@@ -34,6 +34,7 @@ class OcrMetadataTests(unittest.TestCase):
         item = {"name": pdf.name, "local_path": "normativa/fuente.pdf", "bytes": pdf.stat().st_size, "sha256": sha(pdf)}
         (folder / "manifiesto-descargas-2026-10-29.json").write_text(json.dumps({"archivos": [item]}), encoding="utf-8")
         (folder / "manifiesto-continuacion-2026-10-30.json").write_text(json.dumps({"archivos": []}), encoding="utf-8")
+        (folder / "manifiesto-ampliacion-2026-10-30.json").write_text(json.dumps({"archivos": []}), encoding="utf-8")
         self.path = folder / "ocr.json"
         self.record = {"source_name": pdf.name, "source_sha256": sha(pdf), "page_pdf": 1,
                        "image_path": str(image), "image_sha256": sha(image), "width": 100, "height": 100,

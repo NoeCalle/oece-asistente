@@ -6,6 +6,7 @@ import re
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
+from indexar_normativa import MANIFESTS
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -34,7 +35,7 @@ def validate(check_originals=False):
         for value in (n["fecha_publicacion"], n["fecha_emision"], n["vigencia"]["desde"], n["vigencia"]["hasta"]):
             if value is not None:
                 date.fromisoformat(value)
-    manifests = read("normativa/manifiesto-descargas-2026-10-29.json")["archivos"] + read("normativa/manifiesto-continuacion-2026-10-30.json")["archivos"]
+    manifests = [item for name in MANIFESTS for item in read(name)["archivos"]]
     by_name = {d["name"]: d for d in manifests}
     require(len(by_name) == len(manifests), "Archivos duplicados en manifiestos")
     for d in manifests:

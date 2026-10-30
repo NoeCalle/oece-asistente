@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFESTS = (
     "normativa/manifiesto-descargas-2026-10-29.json",
     "normativa/manifiesto-continuacion-2026-10-30.json",
+    "normativa/manifiesto-ampliacion-2026-10-30.json",
 )
 EXTRACTOR_VERSION = "0.1.0"
 

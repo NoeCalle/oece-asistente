@@ -1,0 +1,102 @@
+{
+  "fecha_registro": "2026-10-30",
+  "corte_investigado": "2026-10-29",
+  "alcance": "Cinco PDFs principales; anexos presupuestarios publicados por separado no incluidos. Descarga no equivale a validación jurídica.",
+  "archivos": [
+    {
+      "name": "ley-32069.pdf",
+      "instrument_id": "ley-32069",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/8418795/6994512-ley_32069.pdf?v=1753886307",
+      "source_page": "https://www.gob.pe/institucion/mef/normas-legales/6994512-32069",
+      "local_path": "normativa/originales/2026-10-30/ley-32069.pdf",
+      "sha256": "a73f39cc5a66fce9fb6913608b94f5d35f82945538ffcb461a8a9c848a5c65ff",
+      "bytes": 7560726,
+      "verificacion": {
+        "pages": 36,
+        "first_page_text": "SEPARATA ESPECIAL\nLUNES 24\nde junio de 2024\nNORMAS  LEGALES\n“AÑO DEL BICENTENARIO, DE LA CONSOLIDACIÓN DE NUESTRA INDEPENDENCIA, Y DE LA CONMEMORACIÓN DE LAS HEROICAS BATALLAS DE JUNÍN Y AYACUCHO”\nFUNDADO EL 22 DE OCTUBRE DE 1825 POR EL LIBERTADOR SIMÓN BOLÍVAR\nLEY GENERAL DE \nCONTRATACIONES \nPÚBLICAS\nCONGRESO DE LA REPÚBLICA\nLEY N° 32069"
+      },
+      "descargado_el": "2026-10-30",
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1daLN_WfyHbBNHynfDjQzMPtIThu8-6i8"
+    },
+    {
+      "name": "ley-32103.pdf",
+      "instrument_id": "ley-32103",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/6705137/5820636-ley-n-32103-credito-suplementario.pdf?v=1722373924",
+      "source_page": "https://www.gob.pe/institucion/mef/normas-legales/5820636-32103",
+      "local_path": "normativa/originales/2026-10-30/ley-32103.pdf",
+      "sha256": "89913ea96af71a1ebc4f836c57f2a5bcaa7754598a71b936e5c77e070d6bc191",
+      "bytes": 14219405,
+      "verificacion": {
+        "pages": 88,
+        "first_page_text": "“AÑO DEL BICENTENARIO, DE LA CONSOLIDACIÓN DE NUESTRA INDEPENDENCIA, Y DE LA CONMEMORACIÓN DE LAS HEROICAS BATALLAS DE JUNÍN Y AYACUCHO”\nFUNDADO EL 22 DE OCTUBRE DE 1825 POR EL LIBERTADOR SIMÓN BOLÍVAR\nSEPARATA ESPECIAL\nCONGRESO DE LA REPÚBLICA\nLEY N° 32103\nLEY QUE APRUEBA CRÉDITOS \nSUPLEMENTARIOS PARA EL \nFINANCIAMIENTO DE MAYORES \nGASTOS ASOCIADOS A LA \nREACTIV ACIÓN ECONÓMICA\nY DICTA OTRAS MEDIDAS\nNORMAS LEGALES\nVIERNES 26  \nde julio de 2024\nEDICIÓN  EXTRAORDINARIA"
+      },
+      "descargado_el": "2026-10-30",
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1CYo8R5MBUIbr98Fe6EHUmAqec3w1wLvv"
+    },
+    {
+      "name": "ley-32185.pdf",
+      "instrument_id": "ley-32185",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7357350/6278077-ley_n_32185-leydeppto2025.pdf?v=1733957374",
+      "source_page": "https://www.gob.pe/institucion/mef/normas-legales/6278077-32185",
+      "local_path": "normativa/originales/2026-10-30/ley-32185.pdf",
+      "sha256": "f1011c96a538f57a365f42cbf2bb500e8fc710bca30dfccd36ce0801dbdcb8ca",
+      "bytes": 20005364,
+      "verificacion": {
+        "pages": 95,
+        "first_page_text": "2 NORMAS LEGALES Miércoles 11 de diciembre de 2024\n El Peruano /\nLEY Nº 32185\nLA PRESIDENTA DE LA REPÚBLICA\nPOR CUANTO:\nEL CONGRESO DE LA REPÚBLICA;\nHa dado la Ley siguiente:\nLEY DE PRESUPUESTO DEL SECTOR PÚBLICO \nPARA EL AÑO FISCAL  2025\nCAPÍTULO I\nAPROBACIÓN DEL PRESUPUESTO DEL SECTOR PÚBLICO\n Artículo 1. Presupuesto Anual de Gastos para el Año Fiscal 2025\n1.1 Se aprueba el Presupuesto Anual de Gastos para el Año Fiscal 2025 por el monto de S/ 251 801 045 185,00 \n(DOSCIENTOS CINCUENTA Y UN MIL OCHOCIENTOS UN MILLONES CUARENTA Y CINCO MIL CIENTO OCHENTA \nY CINCO Y 00/100 SOLES), que comprende los créditos presupuestarios máximos correspondientes a los pliegos \npresupuestarios del Gobierno Nacional, los gobiernos regionales y los gobiernos locales, agrupados en Gobierno Central \ne instanci"
+      },
+      "descargado_el": "2026-10-30",
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1KSBpJweTzdeC0NVbnxBsa_IaC43XnZmj"
+    },
+    {
+      "name": "ley-32187.pdf",
+      "instrument_id": "ley-32187",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7361100/6280777-ley_n_32187-leydeendeudamiento2025.pdf?v=1734023824",
+      "source_page": "https://www.gob.pe/institucion/mef/normas-legales/6280777-32187",
+      "local_path": "normativa/originales/2026-10-30/ley-32187.pdf",
+      "sha256": "ca03e06fd5478e7cb61b45f4191bd1569526e9c9211b2a8d98b615acb7d18205",
+      "bytes": 2589545,
+      "verificacion": {
+        "pages": 12,
+        "first_page_text": "101NORMAS LEGALES   Miércoles 11 de diciembre de 2024 El Peruano / \nA LA SEÑORA PRESIDENTA DE LA REPÚBLICA\nPOR TANTO:\nMando se publique y cumpla.\nDado en la Casa de Gobierno, en Lima, a los cinco días del mes de diciembre del año dos mil veinticuatro.\nDINA ERCILIA BOLUARTE ZEGARRA\nPresidenta de la República\nGUSTAVO LINO ADRIANZÉN OLAYA\nPresidente del Consejo de Ministros\nLEY Nº 32187\nLA PRESIDENTA DE LA REPÚBLICA\nPOR CUANTO:\nEL CONGRESO DE LA REPÚBLICA;\nHa dado la Ley siguiente:\nLEY DE ENDEUDAMIENTO DEL SECTOR PÚBLICO \nPARA EL AÑO FISCAL  2025\nCAPÍTUL O I \nDISPOSICIONES DE CARÁCTER GENERAL\nArtículo 1. Objeto de la Ley\n1.1. La presente ley tiene por objeto regular las condiciones para el endeudamiento del sector público para el Año \nFiscal 2025, de conformidad con el artículo 9 del Decreto "
+      },
+      "descargado_el": "2026-10-30",
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1nsk40PQOUpKJ_4sfzgKQ6BY80sOzbZzB"
+    },
+    {
+      "name": "ley-32515.pdf",
+      "instrument_id": "ley-32515",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9106064/7475764-ley32515.pdf?v=1764873148",
+      "source_page": "https://www.gob.pe/institucion/mef/normas-legales/7475764-32515",
+      "local_path": "normativa/originales/2026-10-30/ley-32515.pdf",
+      "sha256": "76ae2aceb8373d5e0c678eb4d102aee2d83bfe7ee818f0d2616ed3d9e5d8b004",
+      "bytes": 1986753,
+      "verificacion": {
+        "pages": 10,
+        "first_page_text": "99NORMAS LEGALES   Jueves 4 de diciembre de 2025 El Peruano / \nFERNANDO MIGUEL ROSPIGLIOSI CAPURRO\nPrimer Vicepresidente encargado de la\nPresidencia del Congreso de la República\nWALDEMAR JOSÉ CERRÓN ROJAS\nSegundo Vicepresidente del Congreso de la República\nAL SEÑOR PRESIDENTE DE LA REPÚBLICA\nPOR TANTO:\nMando se publique y cumpla.\nDado en la Casa de Gobierno, en Lima, a los tres días del mes de diciembre del año dos mil veinticinco.\nJOSÉ ENRIQUE JERÍ ORÉ\nPresidente de la República\nERNESTO JULIO ÁLVAREZ MIRANDA\nPresidente del Consejo de Ministros\nLEY Nº 32515\nEL PRESIDENTE DE LA REPÚBLICA\nPOR CUANTO:\n EL CONGRESO DE LA REPÚBLICA;\nHa dado la Ley siguiente:\nLEY DE ENDEUDAMIENTO DEL SECTOR PÚBLICO\nPARA EL AÑO FISCAL 2026\nCAPÍTULO I\nDISPOSICIONES DE CARÁCTER GENERAL\nArtículo 1. Objeto de la Ley\n"
+      },
+      "descargado_el": "2026-10-30",
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1jy65NMN7pO3Ygq-ypd27zQFLVW1-4Jpl"
+    }
+  ]
+}

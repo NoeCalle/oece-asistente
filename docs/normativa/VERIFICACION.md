@@ -37,3 +37,6 @@ Se superaron los errores de acceso inicial usando descarga directa de las págin
 
 ## Continuación registrada 30/10/2026
 Inicio 14/01/2026 del DS 001-2026-EF sustentado con DCF y publicación del acto habilitante. Se conserva arriba la discrepancia histórica. Se recuperó el comunicado de categorías y se elaboró matriz candidata del piloto. [Hallazgos](HALLAZGOS_PILOTO.md). No se cierra fase 1 ni se aprueban reglas.
+
+## Ampliación posterior del 30 de octubre de 2026
+Descargados cinco originales principales oficiales: leyes 32069, 32103, 32185, 32187 y 32515; 241 páginas adicionales, huellas y archivo en Drive comprobados. [Alcance y disposiciones consultadas](AMPLIACION_FUENTES.md). Ley 32185 se registra como fuente histórica complementaria. La cabecera del PDF de Ley 32515 acredita publicación 04/12/2025, diferenciada de carga web. Vigencia por disposición y aprobación humana continúan pendientes. El índice ampliado y tres referencias conocidas están [registrados](RESULTADO_INDEXACION.md).

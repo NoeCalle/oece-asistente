@@ -1,14 +1,15 @@
 # Inventario inicial de fuentes normativas
-Corte de consulta: **29/10/2026, America/Lima**. 23 registros al actualizar el 30/10/2026. Catálogo no exhaustivo; ninguna regla queda habilitada con esta entrega.
+Corte investigado: **29/10/2026, America/Lima**. 24 registros al actualizar el 30/10/2026. Catálogo no exhaustivo; ninguna regla queda habilitada. [Cinco originales adicionales y alcance de consulta](AMPLIACION_FUENTES.md).
 
 Se verificó existencia y determinados datos en fuentes oficiales. “Vigencia parcial verificada” significa que se encontró sustento para una fecha o relación, no que toda la norma esté consolidada y vigente sin cambios. Un resultado del buscador puede ser una captura anterior; se distingue del texto abierto en [catalogo.json](../../normativa/catalogo.json).
 
 | ID | Instrumento | Publicación oficial identificada | Vigencia desde, según fuente | Estado |
 |---|---|---|---|---|
 | ley-32069 | [Ley 32069](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2024-06-24 | 2025-04-22 | vigencia_parcial_verificada |
-| ley-32103 | [Ley 32103](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | Pendiente | Pendiente / no aplica | pendiente |
-| ley-32187 | [Ley 32187](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | Pendiente | Pendiente / no aplica | pendiente |
-| ley-32515 | [Ley 32515](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | Pendiente | Pendiente / no aplica | en_conflicto |
+| ley-32103 | [Ley 32103](https://www.gob.pe/institucion/mef/normas-legales/5820636-32103) | 2024-07-26 | Pendiente | Texto consultado; vigencia pendiente |
+| ley-32185 | [Ley 32185](https://www.gob.pe/institucion/mef/normas-legales/6278077-32185) | 2024-12-11 | Pendiente | Fuente histórica complementaria; no trasladar márgenes 2025 a 2026 |
+| ley-32187 | [Ley 32187](https://www.gob.pe/institucion/mef/normas-legales/6280777-32187) | 2024-12-11 | Pendiente | Texto consultado; vigencia pendiente |
+| ley-32515 | [Ley 32515](https://www.gob.pe/institucion/mef/normas-legales/7475764-32515) | 2025-12-04 | Pendiente | Texto consultado; cierre de vigencia pendiente |
 | dl-1715 | [Decreto Legislativo 1715](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-02-04 | 2026-02-05 | vigencia_parcial_verificada |
 | ley-32732 | [Ley 32732](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-07-19 | Pendiente / no aplica | condicionada |
 | ds-009-2025-ef | [Decreto Supremo 009-2025-EF](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2025-01-22 | 2025-04-22 | vigencia_parcial_verificada |
@@ -39,7 +40,7 @@ Ley 32069 y cadena de cambios; Reglamento 009-2025-EF, fe de erratas y modificat
 - Comunicados, opiniones y criterios públicos pertinentes: separar su naturaleza de la norma obligatoria.
 - Protección de datos y políticas institucionales: revisión aparte antes de tratar expedientes reales.
 
-Actualización de esta sesión: se preservaron 23 archivos y sus hashes en el [manifiesto](../../normativa/manifiesto-descargas-2026-10-29.json). Los registros aún no descargados conservan hash null. La disponibilidad de un archivo no acredita vigencia. [Bitácora](VERIFICACION.md) describe conflictos y alcance; [indexación](INDEXACION.md) define cómo completar la biblioteca.
+La primera carga conservó 23 archivos; con el comunicado y cinco PDFs adicionales hay **29 archivos**. [Manifiesto adicional](../../normativa/manifiesto-ampliacion-2026-10-30.json). Los registros aún no descargados conservan hash null. La disponibilidad no acredita vigencia. [Bitácora](VERIFICACION.md) y [esquema de indexación](INDEXACION.md).
 
 ## Registros añadidos al continuar
 - [Comunicado 001-2026-OECE](https://www.gob.pe/institucion/oece/noticias/1336986-comunicado-n-001-2026-oece-asignacion-de-especialidades-y-categorias-de-consultores-de-obra-en-el-marco-de-la-ley-n-32069-y-su-reglamento): publicado 19/01/2026; captura HTML conservada.

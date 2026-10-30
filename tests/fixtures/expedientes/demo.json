@@ -1,0 +1,27 @@
+{
+  "expediente": {
+    "id": "DEMO-CONS-001",
+    "sintetico": true,
+    "solicitante": "Consultora Demostración Sin Datos Reales",
+    "fecha_solicitud": "2026-10-30",
+    "procedimiento": "ampliacion_consultores",
+    "documentos": [
+      {"id": "D1", "archivo": "solicitud.txt"},
+      {"id": "D2", "archivo": "contrato.txt"},
+      {"id": "D3", "archivo": "conformidad.txt"}
+    ],
+    "vinculos": {
+      "AC-01": [{"documento": "D1", "ubicacion": "linea:2"}],
+      "AC-02": [{"documento": "D1", "ubicacion": "linea:1"}],
+      "AC-03": [{"documento": "D1", "ubicacion": "linea:3"}],
+      "AC-05": [{"documento": "D3", "ubicacion": "linea:2"}],
+      "AC-07": [{"documento": "D2", "ubicacion": "linea:1"}, {"documento": "D2", "ubicacion": "linea:2"}],
+      "AC-09": [{"documento": "D3", "ubicacion": "linea:1"}]
+    }
+  },
+  "archivos": {
+    "solicitud.txt": "Solicitante ficticio Consultora Demostración Sin Datos Reales\nFecha declarada de solicitud 2026-10-30\nPetición ficticia de ampliación de categoría de consultor de obras\nEste texto no es un formulario presentado ante OECE ni acredita representación\n",
+    "contrato.txt": "Contrato DEMO-001 sin validez comercial\nServicio ficticio de supervisión de obra\nMonto declarado PEN 100000.00\nNo contiene firma ni datos de personas reales\n",
+    "conformidad.txt": "Conformidad ficticia del servicio DEMO-001\nFinalización declarada 2026-08-31\nLa autenticidad y suficiencia jurídica no están evaluadas\n"
+  }
+}

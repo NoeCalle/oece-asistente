@@ -1,6 +1,8 @@
 # Biblioteca documental: primera carga
 Fecha de trabajo: 2026-10-29, America/Lima.
 
+**Actualización 30/10/2026:** biblioteca ampliada a **29 archivos**, incluidos cinco originales adicionales y el comunicado HTML. [Ampliación, fuentes y pendientes](AMPLIACION_FUENTES.md). El detalle siguiente conserva el alcance de la primera carga.
+
 ## Organización
 GitHub conserva plan, metadatos, fuentes públicas y hashes. Google Drive conserva documentos en OECE Assistant / 01 Biblioteca normativa / Originales - recopilacion 2026-10-29. Se mantiene una copia local en normativa/originales/2026-10-29, excluida de Git. No se configuró sincronización automática ni se cargaron expedientes.
 

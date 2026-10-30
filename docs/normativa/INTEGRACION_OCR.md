@@ -1,6 +1,8 @@
 # Integración de OCR candidato al buscador
 Versión 0.1.0, ejecutada el 30/10/2026.
 
+**Actualización posterior:** las mismas tres páginas candidatas se integraron también al índice ampliado de 29 archivos: 1.522 fragmentos, **1.184 con texto**. [Resultado actualizado](RESULTADO_INDEXACION.md). Las cifras siguientes documentan la primera integración conservada.
+
 ## Resultado comprobado
 Se generó normativa/indices/biblioteca-ocr.sqlite a partir del índice digital y de las tres páginas de muestra, conservando normativa/indices/biblioteca.sqlite.
 

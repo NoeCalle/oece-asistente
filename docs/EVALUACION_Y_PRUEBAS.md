@@ -1,5 +1,5 @@
 # Matriz de evaluación y pruebas
-Diseño del contrato de salida. No se han ejecutado casos de evaluación de expedientes.
+Diseño del contrato de salida. No se han ejecutado casos jurídicos de evaluación. Ya existe una demostración documental sintética con matriz y Word, descrita al final.
 
 ## Fila de matriz
 ID de requisito; procedimiento; regla/versión; fecha y régimen; norma/versión/disposición; evidencia ID/hash/página/bloque; dato extraído y confianza; operación reproducible; resultado; justificación; observación; revisor; fecha de revisión.
@@ -34,3 +34,8 @@ Crear casos sintéticos primero; incorporar anonimizados únicamente con autoriz
 ## Umbrales propuestos
 Cero citas inventadas, cero cruces de expedientes y 100% de conclusiones materiales con evidencia recuperable en el conjunto de aceptación. Los campos críticos ilegibles siempre requieren revisión. Definir precisión de extracción y concordancia con evaluador después de obtener muestra representativa; no prometer métricas inexistentes.
 Guardar resultados reales con fecha, comando/entorno y versión. La revisión estructural del catálogo no equivale a pruebas del asistente.
+# Ejecución documental del 30 de octubre de 2026
+Ya se ejecutó un circuito técnico con tres documentos sintéticos: lectura, siete vínculos declarados, matriz y Word. Se aprobaron **34 pruebas técnicas**, 12 del expediente y 22 de biblioteca/OCR. El Word de cuatro páginas fue revisado visualmente. [Alcance, evidencia y límites](PILOTO_DOCUMENTAL.md).
+
+Los diez casos jurídicos especificados siguen sin ejecutar. Todos los controles permanecen deshabilitados; la demostración produce 22 resultados `no_determinable`. No se declara aceptación jurídica ni del asistente conversacional completo.
+

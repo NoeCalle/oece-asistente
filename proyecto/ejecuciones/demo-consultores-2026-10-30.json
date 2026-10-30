@@ -1,0 +1,83 @@
+{
+  "fecha": "2026-10-30",
+  "tipo": "demostracion_documental_sintetica",
+  "id_ejecucion": "61afe28a756ea46681fb1e2abd37d0e4f077edf10f27f88eafead9da9a70cfd1",
+  "instantanea": {
+    "config_sha256": "f1b6d12472e9edd28fdcaaf8c87653f728177a0269c0f3783ce61e40bfb652c1",
+    "dependencias": {
+      "pypdf": "6.10.0",
+      "python-docx": "1.2.0"
+    },
+    "documentos": [
+      {
+        "archivo": "solicitud.txt",
+        "id": "D1",
+        "sha256": "e626644a1664c1ac11c4b2ba478f542d9f1246f839398f22f53dcd65163cd869"
+      },
+      {
+        "archivo": "contrato.txt",
+        "id": "D2",
+        "sha256": "10ed238ab69333e43d426052611e621b054855e4033ef8f8c70779c3d6877d42"
+      },
+      {
+        "archivo": "conformidad.txt",
+        "id": "D3",
+        "sha256": "aa09870ee6f0ea82a9198d755af40e4ed2d1dea22725c93f504ff86ed4a50f4b"
+      }
+    ],
+    "implementacion_sha256": "31cc40d60e9fe07460730a5f0c798d9e004950b6569c52d4b6fab77fcd6eb1c0",
+    "lector_sha256": "3ae0dae01e5c3236f62ba0037b75c1424e5d73fe44094e62b1785c9e6c85c8c7",
+    "matriz_sha256": "059f0c5c98a48260bd11c5321124db3228f5310385e5b99db726f719b23f78ad",
+    "version": "0.1.0"
+  },
+  "documentos": 3,
+  "fragmentos": 11,
+  "controles": 22,
+  "vinculos_declarados": 7,
+  "controles_con_vinculo": 6,
+  "resultados": {
+    "no_determinable": 22
+  },
+  "entrega": {
+    "archivos": {
+      "expediente.json": "f1b6d12472e9edd28fdcaaf8c87653f728177a0269c0f3783ce61e40bfb652c1",
+      "informe.docx": "90ffdd4ccb693945ecb44752b29651b3adf42602e09747258bfa68391a230c2b",
+      "matriz.json": "15979c8821b0733205d2536ac4f22ca4cf80c89cf009a7a77277c3d055bb8ff1",
+      "originales/001.txt": "e626644a1664c1ac11c4b2ba478f542d9f1246f839398f22f53dcd65163cd869",
+      "originales/002.txt": "10ed238ab69333e43d426052611e621b054855e4033ef8f8c70779c3d6877d42",
+      "originales/003.txt": "aa09870ee6f0ea82a9198d755af40e4ed2d1dea22725c93f504ff86ed4a50f4b",
+      "reglas.json": "059f0c5c98a48260bd11c5321124db3228f5310385e5b99db726f719b23f78ad"
+    },
+    "estados": [
+      "recibido",
+      "extraido",
+      "borrador_pendiente_revision"
+    ],
+    "id_ejecucion": "61afe28a756ea46681fb1e2abd37d0e4f077edf10f27f88eafead9da9a70cfd1"
+  },
+  "repeticion_real": {
+    "reutilizada": true,
+    "huellas_sin_cambios": true
+  },
+  "pruebas_tecnicas": {
+    "total": 34,
+    "expediente": 12,
+    "anteriores": 22,
+    "resultado": "OK"
+  },
+  "revision_visual": {
+    "paginas": 4,
+    "todas_inspeccionadas": true,
+    "exportador": "Microsoft Word local",
+    "imagenes": "Poppler empaquetado",
+    "incidencia": "render_docx.py no encontró LibreOffice en Windows; exportación Word y revisión visual realizadas como alternativa"
+  },
+  "drive_word_id": "1LTpu3vLvPbSE25a2ZXd_tbIxi-QKnLAu",
+  "limitaciones": [
+    "Sin aceptación jurídica",
+    "Sin coordinador conversacional ni vigilancia automática de carpetas",
+    "Los vínculos fueron declarados, no inferidos",
+    "Los diez casos jurídicos especificados siguen sin ejecutar",
+    "Solo expedientes sintéticos"
+  ]
+}

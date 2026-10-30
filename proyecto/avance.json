@@ -1,10 +1,10 @@
 {
   "fecha": "2026-10-30",
   "tipo": "estimacion_de_planificacion_por_entregables",
-  "porcentaje_estimado": 25,
+  "porcentaje_estimado": 35,
   "rango_orientativo": [
-    20,
-    30
+    30,
+    40
   ],
   "formula": "suma(peso * avance_estimado / 100)",
   "nota": "Pesos y avances de fase son juicio de planificación, no medición de horas, precisión estadística ni porcentaje de funciones operativas. No se cuentan pruebas como avance jurídico.",
@@ -45,20 +45,25 @@
       "id": 3,
       "nombre": "Base técnica",
       "peso": 25,
-      "avance_estimado": 20,
+      "avance_estimado": 40,
       "evidencias": [
         "scripts/indexar_normativa.py",
-        "scripts/ocr_windows.ps1"
+        "scripts/ocr_windows.ps1",
+        "scripts/ejecutar_expediente.py",
+        "tests/test_expediente.py"
       ],
-      "pendiente": "Integración OCR, coordinador, ingreso y persistencia de expedientes."
+      "pendiente": "Coordinador conversacional, activación de carpetas, OCR de expedientes, otros formatos y endurecimiento."
     },
     {
       "id": 4,
       "nombre": "Piloto completo e informe Word",
       "peso": 20,
-      "avance_estimado": 0,
-      "evidencias": [],
-      "pendiente": "Implementación y aceptación de extremo a extremo."
+      "avance_estimado": 25,
+      "evidencias": [
+        "docs/PILOTO_DOCUMENTAL.md",
+        "proyecto/ejecuciones/demo-consultores-2026-10-30.json"
+      ],
+      "pendiente": "Evidencias propuestas automáticamente, aceptación jurídica y datos reales autorizados."
     },
     {
       "id": 5,

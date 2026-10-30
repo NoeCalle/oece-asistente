@@ -1,0 +1,39 @@
+{
+  "fecha": "2026-10-30",
+  "archivos_manifestados": 29,
+  "catalogo_registros": 24,
+  "corpus_id_digital": "f0702ed595b3eb28477cbf2ced2cf9e7656af475b826eab09cac6d8196fa0df7",
+  "digital_fragmentos": 1519,
+  "digital_fragmentos_con_texto": 1181,
+  "fragmentos": 1522,
+  "fragmentos_con_texto": 1184,
+  "ocr_candidato": 3,
+  "sha256_indice_digital": "3c2ee736e8e16997473831707173f9626bbf55000541bc51f1f49595dd6a5772",
+  "sha256_indice_con_ocr": "9be2c82c092591642b35d2c28eafc4c0e40ccce2a0e5651c642f9a96c215368e",
+  "consultas_comprobadas": [
+    {
+      "consulta": "67.8",
+      "archivo": "ley-32103.pdf",
+      "pagina_pdf": 20,
+      "recuperada": true,
+      "sha256": "89913ea96af71a1ebc4f836c57f2a5bcaa7754598a71b936e5c77e070d6bc191"
+    },
+    {
+      "consulta": "73.2",
+      "archivo": "ley-32187.pdf",
+      "pagina_pdf": 11,
+      "recuperada": true,
+      "sha256": "ca03e06fd5478e7cb61b45f4191bd1569526e9c9211b2a8d98b615acb7d18205"
+    },
+    {
+      "consulta": "funcionamiento gestión",
+      "archivo": "ley-32515.pdf",
+      "pagina_pdf": 8,
+      "recuperada": true,
+      "sha256": "76ae2aceb8373d5e0c678eb4d102aee2d83bfe7ee818f0d2616ed3d9e5d8b004"
+    }
+  ],
+  "apta_para_evaluacion": false,
+  "nota": "No valida vigencia ni cobertura exhaustiva. Índices anteriores conservados.",
+  "criterio_con_texto": "bool(texto.strip()); no cuenta páginas de solo saltos de línea u otros blancos"
+}
