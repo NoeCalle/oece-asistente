@@ -1,0 +1,1058 @@
+{
+  "schema_version": "0.1.0",
+  "corte": "2026-10-29",
+  "zona_horaria": "America/Lima",
+  "cobertura": "inventario_inicial_no_exhaustivo",
+  "normas": [
+    {
+      "id": "ley-32069",
+      "denominacion": "Ley 32069",
+      "tipo": "ley",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2024-06-24",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": "2025-04-22",
+        "hasta": null,
+        "estado": "vigencia_parcial_verificada",
+        "fundamento": "Inicio general; excepciones y cadena completa pendientes."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://busquedas.elperuano.pe/api/visor_html/2391987-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "vigencia_parcial_verificada",
+        "nota": "Inicio general; excepciones y cadena completa pendientes.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ley-32103",
+      "denominacion": "Ley 32103",
+      "tipo": "ley",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "pendiente",
+        "fundamento": "Modificatoria identificada en compendio; verificar texto, publicación y alcance."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "ley-32069",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "pendiente",
+        "nota": "Modificatoria identificada en compendio; verificar texto, publicación y alcance.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ley-32187",
+      "denominacion": "Ley 32187",
+      "tipo": "ley",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "pendiente",
+        "fundamento": "Verificar modificación de disposición de entrada en vigencia y demás efectos."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "ley-32069",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "pendiente",
+        "nota": "Verificar modificación de disposición de entrada en vigencia y demás efectos.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ley-32515",
+      "denominacion": "Ley 32515",
+      "tipo": "ley",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "en_conflicto",
+        "fundamento": "Compendio presenta fechas inconsistentes con año fiscal 2026; no adoptar fechas mostradas sin original."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "ley-32069",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "en_conflicto",
+        "nota": "Compendio presenta fechas inconsistentes con año fiscal 2026; no adoptar fechas mostradas sin original.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "dl-1715",
+      "denominacion": "Decreto Legislativo 1715",
+      "tipo": "decreto_legislativo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2026-02-04",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": "2026-02-05",
+        "hasta": null,
+        "estado": "vigencia_parcial_verificada",
+        "fundamento": "Compendio identifica cambio del art. 85.1 e); relevancia directa RNP pendiente."
+      },
+      "procedimientos": [],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "ley-32069",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "vigencia_parcial_verificada",
+        "nota": "Compendio identifica cambio del art. 85.1 e); relevancia directa RNP pendiente.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ley-32732",
+      "denominacion": "Ley 32732",
+      "tipo": "ley",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2026-07-19",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "condicionada",
+        "fundamento": "Modificación de Ley 32069 sujeta a publicación de modificación reglamentaria (novena DCF). No se identificó y validó el acto habilitante aplicable."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "ley-32069",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "condicionada",
+        "nota": "Modificación de Ley 32069 sujeta a publicación de modificación reglamentaria (novena DCF). No se identificó y validó el acto habilitante aplicable.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ds-009-2025-ef",
+      "denominacion": "Decreto Supremo 009-2025-EF",
+      "tipo": "decreto_supremo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2025-01-22",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": "2025-04-22",
+        "hasta": null,
+        "estado": "vigencia_parcial_verificada",
+        "fundamento": "Reglamento base; fe de erratas y texto consolidado por artículo pendientes."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "reglamenta",
+          "destino": "ley-32069",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://busquedas.elperuano.pe/api/visor_html/2391987-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "vigencia_parcial_verificada",
+        "nota": "Reglamento base; fe de erratas y texto consolidado por artículo pendientes.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ds-001-2026-ef",
+      "denominacion": "Decreto Supremo 001-2026-EF",
+      "tipo": "decreto_supremo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2026-01-08",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": "2026-01-14",
+        "hasta": null,
+        "estado": "en_conflicto",
+        "fundamento": "OECE informa 14/01/2026; Perú Compras muestra 09/01/2026. Fecha registrada provisionalmente según OECE; revisar DCF y resolución habilitante."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "ds-009-2025-ef",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/perucompras/campa%C3%B1as/107110-consulta-la-normativa-complementaria",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "en_conflicto",
+        "nota": "OECE informa 14/01/2026; Perú Compras muestra 09/01/2026. Fecha registrada provisionalmente según OECE; revisar DCF y resolución habilitante.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ds-222-2026-ef",
+      "denominacion": "Decreto Supremo 222-2026-EF",
+      "tipo": "decreto_supremo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2026-10-21",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "texto_oficial_consultado",
+        "fundamento": "Art. 3 cambia decimocuarta DCF sobre certificación de compradores. No establecer automáticamente impacto RNP ni habilitación de Ley 32732."
+      },
+      "procedimientos": [],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "ds-009-2025-ef",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://busquedas.elperuano.pe/dispositivo/EX/2567159-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "texto_oficial_consultado",
+        "nota": "Art. 3 cambia decimocuarta DCF sobre certificación de compradores. No establecer automáticamente impacto RNP ni habilitación de Ley 32732.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "dir-001-2025-oece-cd",
+      "denominacion": "Directiva 001-2025-OECE/CD",
+      "tipo": "directiva",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2025-04-19",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": "2025-04-22",
+        "hasta": null,
+        "estado": "vigencia_parcial_verificada",
+        "fundamento": "Texto HTML consultado; aprobación R. D000050-2025-OSCE-PRE, emitida 17/04/2025. Anexos y barrido de modificatorias posteriores pendientes."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://busquedas.elperuano.pe/api/visor_html/2391987-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "vigencia_parcial_verificada",
+        "nota": "Texto HTML consultado; aprobación R. D000050-2025-OSCE-PRE, emitida 17/04/2025. Anexos y barrido de modificatorias posteriores pendientes.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ds-086-2025-ef",
+      "denominacion": "Decreto Supremo 086-2025-EF (TUPA OECE)",
+      "tipo": "decreto_supremo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2025-05-07",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "identificado_oficial",
+        "fundamento": "Aprobación y publicación identificadas. Descargar TUPA íntegro, fichas, formularios y cadena completa de actualizaciones."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/informes-publicaciones/tipos/16-tupa",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://busquedas.elperuano.pe/dispositivo/NL/2503213-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "identificado_oficial",
+        "nota": "Aprobación y publicación identificadas. Descargar TUPA íntegro, fichas, formularios y cadena completa de actualizaciones.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "rgg-002-2026-oece",
+      "denominacion": "Resolución de Gerencia General 002-2026-OECE/GG",
+      "tipo": "resolucion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "identificado_oficial",
+        "fundamento": "Ficha del portal fechada 07/01/2026; no confundir con publicación en diario oficial. Alcance pendiente."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "actualiza",
+          "destino": "ds-086-2025-ef",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/informes-publicaciones/tipos/16-tupa",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "identificado_oficial",
+        "nota": "Ficha del portal fechada 07/01/2026; no confundir con publicación en diario oficial. Alcance pendiente.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "rpe-073-2026-oece",
+      "denominacion": "Resolución D000073-2026-OECE-PRE",
+      "tipo": "resolucion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2026-04-08",
+      "fecha_emision": "2026-03-31",
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "texto_oficial_consultado",
+        "fundamento": "Emitida 31/03/2026; publicada 08/04/2026. Revisar anexos y alcance específico RNP antes de actualizar requisitos."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "ds-086-2025-ef",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://busquedas.elperuano.pe/dispositivo/NL/2503213-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/oece/informes-publicaciones/tipos/16-tupa",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "texto_oficial_consultado",
+        "nota": "Emitida 31/03/2026; publicada 08/04/2026. Revisar anexos y alcance específico RNP antes de actualizar requisitos.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ds-006-2026-jus",
+      "denominacion": "Decreto Supremo 006-2026-JUS (TUO Ley 27444)",
+      "tipo": "decreto_supremo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2026-04-30",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": "2026-05-01",
+        "hasta": null,
+        "estado": "vigencia_parcial_verificada",
+        "fundamento": "Nuevo TUO identificado; fecha de ficha MINJUS 28/04 difiere de publicación. Vigencia informada por noticia oficial; artículos y numeración por revisar."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "deroga",
+          "destino": "ds-004-2019-jus",
+          "disposiciones": [],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/minjus/normas-legales/8169463-006-2026-jus",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.sunat.gob.pe/legislacion/procedim/normasadua/gja-01/ctrlCambios/index.htm",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://www.elperuano.pe/noticia/294713-tramites-mas-simples-entra-en-vigencia-el-nuevo-tuo-de-la-ley-de-procedimiento-administrativo",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "vigencia_parcial_verificada",
+        "nota": "Nuevo TUO identificado; fecha de ficha MINJUS 28/04 difiere de publicación. Vigencia informada por noticia oficial; artículos y numeración por revisar.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ds-004-2019-jus",
+      "denominacion": "Decreto Supremo 004-2019-JUS (TUO anterior)",
+      "tipo": "decreto_supremo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2019-01-25",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "historico",
+        "fundamento": "Derogado según fuentes oficiales consultadas; conservar para evaluación temporal histórica."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.sunat.gob.pe/legislacion/procedim/normasadua/gja-01/ctrlCambios/index.htm",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://www.elperuano.pe/noticia/294713-tramites-mas-simples-entra-en-vigencia-el-nuevo-tuo-de-la-ley-de-procedimiento-administrativo",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "historico",
+        "nota": "Derogado según fuentes oficiales consultadas; conservar para evaluación temporal histórica.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "dir-001-2026-oece-cd",
+      "denominacion": "Directiva 001-2026-OECE/CD (FUP)",
+      "tipo": "directiva",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": "2026-02-11",
+        "hasta": null,
+        "estado": "identificado_oficial",
+        "fundamento": "Informe oficial identifica aprobación R. D000030-2026-OECE-PRE de 05/02/2026 y vigencia; obtener original y anexo."
+      },
+      "procedimientos": [
+        "actualizacion_legal",
+        "inscripcion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.mef.gob.pe/contenidos/acerc_mins/anexos/04_IRC_CESE_OECE_2026.pdf",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "identificado_oficial",
+        "nota": "Informe oficial identifica aprobación R. D000030-2026-OECE-PRE de 05/02/2026 y vigencia; obtener original y anexo.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ds-067-2025-ef",
+      "denominacion": "Decreto Supremo 067-2025-EF (ROF, sección primera)",
+      "tipo": "decreto_supremo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "identificado_oficial",
+        "fundamento": "Identificado en base legal de directiva. Obtener texto integrado y sección segunda para competencia y funciones."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://busquedas.elperuano.pe/api/visor_html/2391987-1",
+          "consultado_el": "2026-10-29",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "identificado_oficial",
+        "nota": "Identificado en base legal de directiva. Obtener texto integrado y sección segunda para competencia y funciones.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "ds-344-2018-ef",
+      "denominacion": "Decreto Supremo 344-2018-EF (reglamento histórico)",
+      "tipo": "decreto_supremo",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "historico",
+        "fundamento": "Candidato para régimen transitorio; no aplicar a solicitudes actuales por defecto. Incorporar TUO Ley 30225 y modificatorias."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://mef.gob.pe/es/por-instrumento/decreto-supremo/18912-decreto-supremo-n-344-2018-ef/file",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "historico",
+        "nota": "Candidato para régimen transitorio; no aplicar a solicitudes actuales por defecto. Incorporar TUO Ley 30225 y modificatorias.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "guia-ampliacion",
+      "denominacion": "Ficha oficial de ampliación de categorías",
+      "tipo": "orientacion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "orientacion",
+        "fundamento": "Guía del trámite consultada por buscador; contrastar requisitos con norma y TUPA. No convertir tasas o plazos en reglas."
+      },
+      "procedimientos": [
+        "ampliacion_consultores"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/9131-solicitar-la-ampliacion-de-categorias-para-consultores-de-obras",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "orientacion",
+        "nota": "Guía del trámite consultada por buscador; contrastar requisitos con norma y TUPA. No convertir tasas o plazos en reglas.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "guia-cmc",
+      "denominacion": "Ficha oficial de aumento CMC",
+      "tipo": "orientacion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "orientacion",
+        "fundamento": "Guía con última modificación indicada 14/05/2025; no acredita por sí sola actualización al corte."
+      },
+      "procedimientos": [
+        "aumento_cmc"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/9133-solicitar-el-aumento-de-capacidad-maxima-de-contratacion-para-ejecutores-de-obras",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "orientacion",
+        "nota": "Guía con última modificación indicada 14/05/2025; no acredita por sí sola actualización al corte.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    },
+    {
+      "id": "com-011-2025",
+      "denominacion": "Comunicado 011-2025-OECE",
+      "tipo": "comunicado",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": "2025-09-03",
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "orientacion",
+        "fundamento": "Pista para transición de CMC. Contrastar tercera DCT del reglamento y disposición X de directiva."
+      },
+      "procedimientos": [
+        "aumento_cmc",
+        "reinscripcion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/noticias/1239547-comunicado-n-011-2025-oece-obligaciones-de-los-ejecutores-de-obra-sobre-la-reinscripcion-y-aumento-de-capacidad-maxima-de-contratacion",
+          "consultado_el": "2026-10-29",
+          "metodo": "resultado_buscador_oficial"
+        }
+      ],
+      "validacion": {
+        "nivel": "orientacion",
+        "nota": "Pista para transición de CMC. Contrastar tercera DCT del reglamento y disposición X de directiva.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": null,
+        "sha256": null,
+        "descargado": false
+      },
+      "pendientes": [
+        "Obtener y cotejar original completo y anexos.",
+        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+      ]
+    }
+  ]
+}

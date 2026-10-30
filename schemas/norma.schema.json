@@ -1,0 +1,288 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Catálogo inicial OECE: metadatos, no habilitación jurídica",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "corte",
+    "zona_horaria",
+    "cobertura",
+    "normas"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "corte": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "zona_horaria": {
+      "const": "America/Lima"
+    },
+    "cobertura": {
+      "const": "inventario_inicial_no_exhaustivo"
+    },
+    "normas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/norma"
+      }
+    }
+  },
+  "$defs": {
+    "norma": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "denominacion",
+        "tipo",
+        "jurisdiccion",
+        "fecha_publicacion",
+        "fecha_emision",
+        "vigencia",
+        "procedimientos",
+        "relaciones",
+        "fuentes",
+        "validacion",
+        "archivo",
+        "pendientes"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "denominacion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tipo": {
+          "enum": [
+            "ley",
+            "decreto_legislativo",
+            "decreto_supremo",
+            "directiva",
+            "resolucion",
+            "orientacion",
+            "comunicado"
+          ]
+        },
+        "jurisdiccion": {
+          "const": "PE"
+        },
+        "fecha_publicacion": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "fecha_emision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "vigencia": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "desde",
+            "hasta",
+            "estado",
+            "fundamento"
+          ],
+          "properties": {
+            "desde": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "hasta": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "estado": {
+              "enum": [
+                "vigencia_parcial_verificada",
+                "pendiente",
+                "en_conflicto",
+                "condicionada",
+                "texto_oficial_consultado",
+                "identificado_oficial",
+                "historico",
+                "orientacion"
+              ]
+            },
+            "fundamento": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "procedimientos": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "ampliacion_consultores",
+              "aumento_cmc",
+              "inscripcion",
+              "reinscripcion",
+              "actualizacion_legal",
+              "actualizacion_financiera",
+              "reconsideracion"
+            ]
+          }
+        },
+        "relaciones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "tipo",
+              "destino",
+              "disposiciones",
+              "estado"
+            ],
+            "properties": {
+              "tipo": {
+                "enum": [
+                  "modifica",
+                  "deroga",
+                  "reglamenta",
+                  "actualiza",
+                  "aprueba",
+                  "corrige"
+                ]
+              },
+              "destino": {
+                "type": "string"
+              },
+              "disposiciones": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "estado": {
+                "const": "pendiente_delimitacion"
+              }
+            }
+          }
+        },
+        "fuentes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "consultado_el",
+              "metodo"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "consultado_el": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "metodo": {
+                "enum": [
+                  "texto_web_abierto",
+                  "resultado_buscador_oficial"
+                ]
+              }
+            }
+          }
+        },
+        "validacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "nivel",
+            "nota",
+            "revision_humana",
+            "apta_para_reglas"
+          ],
+          "properties": {
+            "nivel": {
+              "enum": [
+                "vigencia_parcial_verificada",
+                "pendiente",
+                "en_conflicto",
+                "condicionada",
+                "texto_oficial_consultado",
+                "identificado_oficial",
+                "historico",
+                "orientacion"
+              ]
+            },
+            "nota": {
+              "type": "string"
+            },
+            "revision_humana": {
+              "type": "null"
+            },
+            "apta_para_reglas": {
+              "const": false
+            }
+          }
+        },
+        "archivo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ruta",
+            "sha256",
+            "descargado"
+          ],
+          "properties": {
+            "ruta": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "sha256": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "descargado": {
+              "type": "boolean"
+            }
+          }
+        },
+        "pendientes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
