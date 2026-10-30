@@ -29,13 +29,14 @@ Un documento ilegible queda en error_lectura; formatos sin lector quedan en form
 Las advertencias del lector PDF se conservan (hasta 50 mensajes distintos por documento). Los originales permanecen sin reparar ni modificar.
 
 ## Límites actuales
-- PDF digital y DOCX; OCR, DOC antiguo, XLS, XLSX y HTML pendientes.
+- PDF digital y DOCX; DOC antiguo, XLS, XLSX y HTML pendientes.
+- Existe un [prototipo OCR de muestra](OCR_LOCAL.md) separado; aún no se incorpora al índice.
 - Encabezados, pies, cuadros de texto y revisiones de Word no cubiertos.
 - El orden del texto extraído de PDF puede perder columnas y relaciones de tablas. Revisar visualmente la página antes de utilizarla como evidencia.
 - No segmenta todavía por artículo/numeral; el fragmento PDF completo es una página.
 - No consolida normas, no calcula plazos, no selecciona automáticamente el régimen aplicable y no revisa firmas.
 - No vigila carpetas ni sincroniza Drive. Este es un componente previo a esas funciones.
-- Los ocho tests técnicos no ejecutan los diez casos jurídicos especificados en la matriz del piloto.
+- La batería actual tiene ocho pruebas del indexador y cuatro de metadatos OCR. Los diez casos jurídicos de la matriz no están ejecutados.
 
 ## Referencias técnicas
 [Extracción PDF](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), [Documentos Word](https://python-docx.readthedocs.io/en/latest/api/document.html) y [SQLite en Python](https://docs.python.org/3/library/sqlite3.html). El comportamiento ejecutado corresponde a las versiones fijadas, no a una promesa sobre versiones futuras.

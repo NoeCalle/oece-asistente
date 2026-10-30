@@ -14,6 +14,7 @@ auditoria/
 normativa/originales/
 normativa/extraidos/
 normativa/indices/
+normativa/ocr/
 *.pdf
 *.doc
 *.docx

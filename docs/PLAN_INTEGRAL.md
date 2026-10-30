@@ -1,5 +1,5 @@
 # Plan integral de OECE Assistant
-Fecha de referencia: 2026-10-29, America/Lima. Estado: diseño aprobado como alcance de trabajo por el usuario; implementación pendiente.
+Fecha de referencia: 2026-10-29, America/Lima. Estado: alcance de trabajo autorizado; herramientas iniciales de biblioteca y OCR de muestra implementadas. [Estado actual por fase](ESTADO.md). Aplicación conversacional y evaluación pendientes.
 
 ## Resultado esperado
 El usuario indica “este proveedor quiere ampliar su categoría; revisa esta carpeta y prepara el informe”. El coordinador identifica el expediente y el trámite, pide solo datos faltantes, selecciona la normativa aplicable a las fechas relevantes y coordina extracción, evaluación y redacción. Entrega borrador Word editable, matriz de evidencias, observaciones y registro de versiones para revisión humana. No firma ni presenta documentos ante OECE.
