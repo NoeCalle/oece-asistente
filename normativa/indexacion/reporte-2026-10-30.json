@@ -1,0 +1,250 @@
+{
+  "fecha": "2026-10-30",
+  "corpus_id": "22f64ccec9226ee225a72696d09535125a6fc433a230a8af8bcdc876a935b80e",
+  "extractor_version": "0.1.0",
+  "motores": {
+    "pypdf": "6.10.0",
+    "python-docx": "1.2.0"
+  },
+  "archivos": 24,
+  "fragmentos": 1278,
+  "fragmentos_con_texto": 940,
+  "estados": {
+    "extraido_con_revision_pendiente": 14,
+    "formato_pendiente": 6,
+    "requiere_ocr_o_revision": 2,
+    "extraccion_parcial": 2
+  },
+  "pruebas_tecnicas": {
+    "ejecutadas": 8,
+    "resultado": "OK",
+    "comando": "python -m unittest discover -s tests -p 'test_*.py' -v"
+  },
+  "recuperacion_real": {
+    "consulta": "9.3.3",
+    "procedimiento": "ampliacion_consultores",
+    "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+    "pagina_pdf": 12,
+    "resultado": "recuperada"
+  },
+  "apta_para_evaluacion": false,
+  "casos_juridicos_ejecutados": 0,
+  "documentos": [
+    {
+      "nombre": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 34,
+      "fragmentos_con_texto": 34,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "6682380-anexo-n-1-especialidades-de-los-consultores-de-obras-segun-su-profesion.docx",
+      "sha256": "61d07d6543a548d94eb30b994c95af02a17fb6124641a424608edbaf5da01e28",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 102,
+      "fragmentos_con_texto": 44,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "6682380-anexo-n-2-categorias-de-los-consultores-de-obras.docx",
+      "sha256": "4448d4d76104a746ea783b603fd02d61edfc241b62f82a4e0e923d02d55440bd",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 34,
+      "fragmentos_con_texto": 24,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "6682380-anexo-n-3-solicitud-para-la-restitucion-de-capacidad-libre-de-contratacion.xlsx",
+      "sha256": "7c89c9d7c100e252191c40fbd9b39d9189a99596a6f04b2da7d69ebbb71a16ad",
+      "estado": "formato_pendiente",
+      "fragmentos": 0,
+      "fragmentos_con_texto": 0,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "6682380-anexo-n-4-formulario-actualizacion-de-informacion-legal.xls",
+      "sha256": "5a1582ff46de64c62883de919c52e73dbc6407ea22c34bca46b845916f3ecd1f",
+      "estado": "formato_pendiente",
+      "fragmentos": 0,
+      "fragmentos_con_texto": 0,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "6682380-anexo-n-5-supuestos-para-la-actualizacion-de-informacion-legal.docx",
+      "sha256": "4dd2416db440cf9994550a5f09d993cea87e4d9e694857e9258cfebcf8197cac",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 75,
+      "fragmentos_con_texto": 48,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "6682380-anexo-n-6-formulario-actualizacion-de-informacion-financiera.xlsx",
+      "sha256": "e0436bc441497456c456b1ffeffa44cfa452f72d20cb9afb49861f8b339f63fd",
+      "estado": "formato_pendiente",
+      "fragmentos": 0,
+      "fragmentos_con_texto": 0,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "6682380-anexo-n-7-formulario-electronico-informacion-sobre-record-de-ejecucion-de-obras-regularizacion-o-modificacion-del-record-de-ejecucion-de-obras.docx",
+      "sha256": "65e62882ee85b73ea554584cd31c91bdff927ba5e267770ffd25513c3ab80af8",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 107,
+      "fragmentos_con_texto": 64,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "6682380-anexo-n-8-solicitud-para-suspension-temporal-del-rnp.xls",
+      "sha256": "2f9399812c83cb6c997af0f02b2b3aaf93b7eb6c0804121c308c2f9ca5cb83f6",
+      "estado": "formato_pendiente",
+      "fragmentos": 0,
+      "fragmentos_con_texto": 0,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "6682380-anexo-n-9-solicitud-para-el-retiro-definitivo-del-rnp.xlsx",
+      "sha256": "f81c96ef30da04b02d17366b032211fe63319f1bcf7c688aa3b7b2bbac791b17",
+      "estado": "formato_pendiente",
+      "fragmentos": 0,
+      "fragmentos_con_texto": 0,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    },
+    {
+      "nombre": "ley-32069-consolidada-2026-07-19.pdf",
+      "sha256": "f14ffa37b824b8af03c0b97e0603839a786ed61c7ca07b1d300c9af928d133f7",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 63,
+      "fragmentos_con_texto": 63,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "reglamento-consolidado-2026-01-09.pdf",
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 249,
+      "fragmentos_con_texto": 249,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "ley-32732.pdf",
+      "sha256": "64888319bf94b380087bb787c29e4dccf30c8904274dd991def865498144f625",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 24,
+      "fragmentos_con_texto": 24,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "ds-001-2026-ef.pdf",
+      "sha256": "685453e91f35cffbe07b9da8c8754b220ce0f10f51c2551091cced53c3d76155",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 16,
+      "fragmentos_con_texto": 16,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "rd-001-2026-ef-54-01.pdf",
+      "sha256": "d85308b2931b73daab0a433c01a1e8712e08469c9dbdc772b12af4fdf6686525",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 3,
+      "fragmentos_con_texto": 3,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "ds-009-2025-ef.pdf",
+      "sha256": "a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08",
+      "estado": "requiere_ocr_o_revision",
+      "fragmentos": 196,
+      "fragmentos_con_texto": 0,
+      "fragmentos_con_alerta": 196,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "ds-009-2025-ef-fe-erratas.pdf",
+      "sha256": "bbb99d5d748abf017dfd4b2b73cb729b2a652fb2856828b14cfddb256bc65ece",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 7,
+      "fragmentos_con_texto": 7,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "ds-006-2026-jus.pdf",
+      "sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+      "estado": "requiere_ocr_o_revision",
+      "fragmentos": 4,
+      "fragmentos_con_texto": 0,
+      "fragmentos_con_alerta": 4,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "tupa-modificacion-2026-073.pdf",
+      "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+      "estado": "extraccion_parcial",
+      "fragmentos": 105,
+      "fragmentos_con_texto": 105,
+      "fragmentos_con_alerta": 4,
+      "numero_advertencias": 50
+    },
+    {
+      "nombre": "tupa-actualizado-2026-002.pdf",
+      "sha256": "6a6f96ebc81334b67a8deb89645d0014d0ddb070bcc585e429eb22a5da23fe3e",
+      "estado": "extraccion_parcial",
+      "fragmentos": 104,
+      "fragmentos_con_texto": 104,
+      "fragmentos_con_alerta": 4,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "tupa-2025.pdf",
+      "sha256": "39a086cb548ecb880186c0e28e797910a4cda7cc426c6bcf3d19da87b2f4cb01",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 106,
+      "fragmentos_con_texto": 106,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "ds-222-2026-ef.pdf",
+      "sha256": "070ecd3039f18a1947e4e60b396411f46666eaf3c9402dd4943f74ce58a5f1cb",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 1,
+      "fragmentos_con_texto": 1,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "tuo-27444-2026-separata.pdf",
+      "sha256": "2cf6fcce04b87dd5a7a6b7581e44ccccb84cb7e47d04e6ad233f056d6fba249d",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 48,
+      "fragmentos_con_texto": 48,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 0
+    },
+    {
+      "nombre": "comunicado-001-2026-oece.html",
+      "sha256": "79da1b96624c73b1511760b997b0304d20f846aca6520a9f5e373137dba1ea9b",
+      "estado": "formato_pendiente",
+      "fragmentos": 0,
+      "fragmentos_con_texto": 0,
+      "fragmentos_con_alerta": 0,
+      "numero_advertencias": 1
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 # Indexación normativa y temporal
-Estado: diseño y esquema de metadatos creado; extracción e indexador no implementados.
+Estado al 30/10/2026: esquema de metadatos y prototipo de extracción/búsqueda textual implementados. Selección temporal y segmentación por disposición pendientes. [Guía del indexador](INDEXADOR_LOCAL.md).
 
 ## Tres objetos distintos
 1. Instrumento: identidad jurídica estable (tipo + número + año + emisor + jurisdicción), título, publicación, emisión, relaciones y procedimientos.

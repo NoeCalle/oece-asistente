@@ -13,11 +13,13 @@ Actualización: 2026-10-30. Se usan tareas en Git para mantener la continuidad s
 | T08 | P0 | En curso | Anexos leídos; 22 controles candidatos y 10 casos sintéticos especificados; falta revisión del especialista |
 | T09 | P1 | Pendiente | Definir carpeta privada, permisos institucionales, modelo y retención |
 | T10 | P1 | Pendiente | Elegir stack y construir ingreso idempotente/estado conversacional |
-| T11 | P1 | Pendiente | Implementar extracción PDF/Word/OCR con ubicaciones y confianza |
+| T11 | P1 | En curso | Biblioteca: extracción PDF/Word y búsqueda con ubicaciones implementadas; OCR y lector de expedientes pendientes |
 | T12 | P1 | Pendiente | Implementar piloto consultores y borrador Word |
 | T13 | P1 | Pendiente | Ejecutar aceptación y revisar visualmente informes |
 | T14 | P2 | Pendiente | Expandir ejecutores, inscripciones, actualizaciones y reconsideraciones |
 | T15 | P2 | Pendiente | Evaluar recuperación de MVP anterior si se obtiene ZIP; auditar antes de reutilizar |
+| T16 | P1 | Hecho en alcance técnico | Indexador local PDF/DOCX, búsqueda textual, hashes y ocho pruebas técnicas |
+| T17 | P1 | Pendiente | OCR de PDFs sin texto; lectores HTML/Excel; segmentación normativa y selección temporal |
 
 ## Dependencias
 T04–T08 bloquean conclusiones normativas automatizadas del piloto. T09 bloquea documentos reales; se puede desarrollar con sintéticos. T10–T11 pueden empezar después de definir contratos de datos, sin esperar todos los módulos.

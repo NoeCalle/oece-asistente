@@ -30,3 +30,6 @@ Completar originales de Ley 32069, 32103, 32185, 32187, 32515, DL 1715, FUP, ROF
 
 ## Continuación registrada el 30/10/2026
 Captura HTML del Comunicado 001-2026-OECE añadida a Drive (23 archivos iniciales + 1 captura). Su imagen vinculada es una portada. [Manifiesto complementario](../../normativa/manifiesto-continuacion-2026-10-30.json). Revisión visual: DS 001 p.15, TUPA pp.31–32 y reglamento p.228. [Hallazgos](HALLAZGOS_PILOTO.md).
+
+## Prototipo de índice local
+Se implementó extracción de texto PDF y cuerpo/tablas DOCX, búsqueda por palabras y ubicación trazable. [Uso y límites](INDEXADOR_LOCAL.md). XLS, XLSX y HTML siguen archivados sin extracción; las páginas sin texto suficiente requieren OCR o revisión. La indexación no valida vigencia.

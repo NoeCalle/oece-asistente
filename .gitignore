@@ -13,6 +13,7 @@ informes/
 auditoria/
 normativa/originales/
 normativa/extraidos/
+normativa/indices/
 *.pdf
 *.doc
 *.docx
