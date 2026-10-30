@@ -38,8 +38,8 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 | Descarga y archivo en Drive | 24 archivos, incluidos HTML; manifiestos con SHA-256 |
 | Consolidación por artículo y revisión jurídica | Pendiente |
 | Lectura PDF digital y cuerpo/tablas de DOCX | Implementada en herramienta de biblioteca |
-| OCR local de Windows | Prototipo probado en 3 páginas; diagnóstico en 4 regiones; [alcance](docs/normativa/OCR_LOCAL.md) |
-| OCR completo/integración, coordinador y evaluación | Pendiente |
+| OCR local de Windows | 3 páginas buscables en una capa candidata separada; [integración](docs/normativa/INTEGRACION_OCR.md) |
+| OCR de lotes completos, coordinador y evaluación | Pendiente |
 | Generador Word y pruebas de expedientes | Pendiente |
 | Carga documental a Drive | Realizada mediante conector; sin sincronización automática |
 | API RNP o despliegue del asistente | No implementados |

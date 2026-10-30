@@ -1,5 +1,5 @@
 # OCR local de muestra
-Estado al 30/10/2026: prototipo probado en tres páginas; sin integración al índice ni revisión jurídica.
+Estado al 30/10/2026: prototipo probado en tres páginas; integración candidata a índice separado comprobada; revisión jurídica pendiente.
 
 ## Componentes
 - scripts/preparar_ocr.py: selecciona entre 1 y 10 páginas PDF por ejecución, valida la fuente contra manifiesto y las renderiza con pdftoppm a una escala máxima de 2200 píxeles.
@@ -27,11 +27,11 @@ reviewed=false y apta_para_evaluacion=false son obligatorios en esta muestra. Ve
 
 ## Resultado y límites
 Se procesaron DS 006-2026-JUS p.1 (2172 caracteres), p.2 (3392) y DS 009-2025-EF p.20 (7099). Se compararon visualmente las tres páginas y se observaron errores en caracteres y números. La muestra inicial no midió tasa de error global; después se añadió [diagnóstico de cuatro regiones](CALIDAD_OCR.md). No se corrigió texto automáticamente y no se procesaron las 200 páginas completas de los dos PDF detectados sin texto suficiente.
-El índice anterior conserva sus resultados y alertas. No se debe usar una cifra OCR sin cotejarla con la imagen.
+El índice digital anterior conserva sus resultados y alertas; existe una [capa OCR candidata separada](INTEGRACION_OCR.md) con las tres páginas. No se debe usar una cifra OCR sin cotejarla con la imagen.
 
 [Reporte de muestra](../../normativa/ocr-muestra-2026-10-30.json). [Estado general](../ESTADO.md).
 
 ## Siguiente trabajo
-Ampliar las cuatro regiones transcritas de referencia, tolerancias por campos críticos y señales de rechazo. El criterio inicial ya detecta identificadores erróneos; falta validarlo con especialista. Añadir timeout para operaciones WinRT, control de fallo por página y reanudación antes de ejecutar lotes largos. Después integrar derivados revisables a un índice nuevo conservando la versión anterior.
+Ampliar las cuatro regiones transcritas de referencia, tolerancias por campos críticos y señales de rechazo. El criterio inicial ya detecta identificadores erróneos; falta validarlo con especialista. Añadir timeout para operaciones WinRT, control de fallo por página y reanudación antes de ejecutar lotes largos. La integración de muestra ya conserva un índice nuevo y el anterior; falta completar el procesamiento de lotes.
 
 Referencia técnica: [OCR de Windows](https://learn.microsoft.com/en-us/uwp/api/windows.media.ocr.ocrengine).

@@ -22,7 +22,7 @@ python -m unittest discover -s tests -p "test_*.py" -v
 ```
 Requiere los derivados OCR locales y las fuentes referidas en los manifiestos. Las pruebas unitarias técnicas usan datos sintéticos; la ejecución real usa las cuatro regiones de la referencia.
 
-16 pruebas técnicas aprobadas: 8 indexador, 4 trazabilidad OCR y 4 diagnóstico de calidad. Los diez casos jurídicos siguen sin ejecutar.
-Siguiente paso: ampliar referencias con importes, porcentajes y fechas del piloto, revisar el criterio de calidad y después integrar derivados al buscador conservando el texto original y las alertas.
+22 pruebas técnicas aprobadas: 8 indexador, 4 trazabilidad OCR, 4 diagnóstico de calidad y 6 integración. Los diez casos jurídicos siguen sin ejecutar.
+Siguiente paso: ampliar referencias con importes, porcentajes y fechas del piloto, revisar el criterio de calidad y ampliar la [integración candidata](INTEGRACION_OCR.md) a más páginas conservando texto original y alertas.
 
 [Referencia de regiones](../../tests/fixtures/ocr/referencias-regiones.v0.1.json), [resultado reproducible](../../normativa/calidad-ocr-2026-10-30.json), [estado](../ESTADO.md).

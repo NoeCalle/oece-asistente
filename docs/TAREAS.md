@@ -20,7 +20,7 @@ Actualización: 2026-10-30. Se usan tareas en Git para mantener la continuidad s
 | T15 | P2 | Pendiente | Evaluar recuperación de MVP anterior si se obtiene ZIP; auditar antes de reutilizar |
 | T16 | P1 | Hecho en alcance técnico | Indexador local PDF/DOCX, búsqueda textual, hashes y ocho pruebas técnicas |
 | T17 | P1 | En curso | OCR: preparador, motor Windows y verificación de derivados; muestra de 3 páginas con errores observados |
-| T18 | P1 | En curso | Diagnóstico OCR en 4 regiones y alertas de identificadores críticos implementados; ampliar muestra, timeout/reanudación e integración pendientes |
+| T18 | P1 | En curso | Diagnóstico OCR en 4 regiones y alertas de identificadores críticos implementados; integración candidata de 3 páginas comprobada; ampliar muestra y timeout/reanudación pendientes |
 | T19 | P1 | Pendiente | Lectores HTML/Excel |
 | T20 | P1 | Pendiente | Segmentación por disposición y selección temporal |
 | T21 | P1 | Hecho | Resumen central de estado del proyecto, enlazado a roadmap y evidencias |
@@ -30,4 +30,4 @@ Actualización: 2026-10-30. Se usan tareas en Git para mantener la continuidad s
 T04–T08 bloquean conclusiones normativas automatizadas del piloto. T09 bloquea documentos reales; se puede desarrollar con sintéticos. T10–T11 pueden empezar después de definir contratos de datos, sin esperar todos los módulos.
 
 ## Próxima sesión
-Leer README, esta lista y bitácora. Continuar T18 y T04/T05. Las pruebas técnicas aprobadas son 16; los 10 casos jurídicos siguen sin ejecutar. Mantener tareas con fuente y evidencia; no marcar completo un módulo por existir su carpeta. Si se crean issues después, enlazar estos IDs para evitar duplicación.
+Leer README, esta lista y bitácora. Priorizar T04/T05 para cerrar fuentes del piloto; continuar T18 en paralelo cuando haga falta OCR. Las pruebas técnicas aprobadas son 22; los 10 casos jurídicos siguen sin ejecutar. Mantener tareas con fuente y evidencia; no marcar completo un módulo por existir su carpeta. Si se crean issues después, enlazar estos IDs para evitar duplicación.
