@@ -1,0 +1,94 @@
+{
+  "citas_exactas": true,
+  "controles_con_perfil": [
+    "AC-01",
+    "AC-02",
+    "AC-03",
+    "AC-05",
+    "AC-07",
+    "AC-09",
+    "AC-15"
+  ],
+  "controles_sin_perfil": [
+    "AC-04",
+    "AC-06",
+    "AC-08",
+    "AC-10",
+    "AC-11",
+    "AC-12",
+    "AC-13",
+    "AC-14",
+    "AC-16",
+    "AC-17",
+    "AC-18",
+    "AC-19",
+    "AC-20",
+    "AC-21",
+    "AC-22"
+  ],
+  "copias_exportadas_verificadas": true,
+  "entrada_original_sin_vinculos_conservada": true,
+  "expediente": "DEMO-CONS-001",
+  "fecha": "2026-10-30",
+  "implementacion_sha256": "4d6dcb6afac2e5b2b0e2cf1a21b0af0c70c8a68cdffdef7df8d1d2106401621b",
+  "instantanea_entrada": {
+    "config_sha256": "f269edc5d20bb07165f0086e6c62d1739cb2b74b3329d55a0a34c4db541dc5b6",
+    "dependencias": {
+      "pypdf": "6.10.0",
+      "python-docx": "1.2.0"
+    },
+    "documentos": [
+      {
+        "archivo": "solicitud.txt",
+        "id": "D1",
+        "sha256": "e626644a1664c1ac11c4b2ba478f542d9f1246f839398f22f53dcd65163cd869"
+      },
+      {
+        "archivo": "contrato.txt",
+        "id": "D2",
+        "sha256": "10ed238ab69333e43d426052611e621b054855e4033ef8f8c70779c3d6877d42"
+      },
+      {
+        "archivo": "conformidad.txt",
+        "id": "D3",
+        "sha256": "aa09870ee6f0ea82a9198d755af40e4ed2d1dea22725c93f504ff86ed4a50f4b"
+      }
+    ],
+    "implementacion_sha256": "960b658b73a3c9cc621bb7818b6c6eec0097f2125164c5b80692d6b7ee0c8d0c",
+    "lector_sha256": "3ae0dae01e5c3236f62ba0037b75c1424e5d73fe44094e62b1785c9e6c85c8c7",
+    "matriz_sha256": "059f0c5c98a48260bd11c5321124db3228f5310385e5b99db726f719b23f78ad",
+    "validador_evidencias_sha256": "80d6acdebbe8562b0aeedbc77911a17ba4e33427ef386c8256b5e8d6b935be31",
+    "version": "0.2.0"
+  },
+  "limitaciones": [
+    "Coincidencias léxicas de siete controles; no mide precisión general",
+    "Revisor declarado sin autenticación institucional",
+    "Solo entradas declaradas sintéticas",
+    "Diez casos jurídicos siguen sin ejecutar",
+    "Reglas legales continúan deshabilitadas"
+  ],
+  "lote_sha256": "dcc6aaab1433988bb1d1b8d95da3eab1fcdf5fe2979efe00ce77cd68c7583e10",
+  "perfil_sha256": "02966166fea7f05c4372611d6d3c7583ffcdea354553e2f070bf6422a701f644",
+  "pipeline_version": "0.2.0",
+  "propuestas": 9,
+  "pruebas_tecnicas": {
+    "anteriores": 34,
+    "propuesta_revision": 13,
+    "resultado": "OK",
+    "total": 47
+  },
+  "resultados_juridicos": {
+    "no_determinable": 22
+  },
+  "revision_simulada": {
+    "aceptadas": 1,
+    "pendientes": 7,
+    "rechazadas": 1
+  },
+  "simulacion_no_revision_humana": true,
+  "tipo": "cierre_tecnico_evidencias_v0.1",
+  "todas_pendientes_inicialmente": true,
+  "vinculos_con_todas_pendientes": 0,
+  "vinculos_en_matriz_revisada": 1,
+  "word_nuevo_generado_en_esta_demostracion": false
+}

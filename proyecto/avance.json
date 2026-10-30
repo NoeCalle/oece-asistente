@@ -50,7 +50,10 @@
         "scripts/indexar_normativa.py",
         "scripts/ocr_windows.ps1",
         "scripts/ejecutar_expediente.py",
-        "tests/test_expediente.py"
+        "tests/test_expediente.py",
+        "scripts/proponer_evidencias.py",
+        "scripts/revisar_evidencias.py",
+        "tests/test_evidencias.py"
       ],
       "pendiente": "Coordinador conversacional, activación de carpetas, OCR de expedientes, otros formatos y endurecimiento."
     },
@@ -61,9 +64,11 @@
       "avance_estimado": 25,
       "evidencias": [
         "docs/PILOTO_DOCUMENTAL.md",
-        "proyecto/ejecuciones/demo-consultores-2026-10-30.json"
+        "proyecto/ejecuciones/demo-consultores-2026-10-30.json",
+        "docs/EVIDENCIAS_Y_REVISION.md",
+        "proyecto/ejecuciones/evidencias-revision-2026-10-30.json"
       ],
-      "pendiente": "Evidencias propuestas automáticamente, aceptación jurídica y datos reales autorizados."
+      "pendiente": "Ampliar cobertura de perfiles; aprobación de reglas, aceptación jurídica y datos reales autorizados."
     },
     {
       "id": 5,

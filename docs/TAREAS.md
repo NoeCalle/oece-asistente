@@ -15,7 +15,7 @@ Actualización: 2026-10-30. Se usan tareas en Git para mantener la continuidad s
 | T10 | P1 | En curso | Ingreso explícito sintético, huellas, revisiones y entrega íntegra implementados; faltan runtime y estado conversacional |
 | T11 | P1 | En curso | Biblioteca PDF/Word y OCR candidato; lector de expedientes TXT/PDF/DOCX; falta OCR integrado de expedientes |
 | T12 | P1 | En curso | Demostración documental con matriz de 22 controles y Word; falta evaluación jurídica aprobada |
-| T13 | P1 | En curso | Word de 4 páginas revisado y 34 pruebas técnicas aprobadas; aceptación jurídica pendiente |
+| T13 | P1 | En curso | Word anterior de 4 páginas revisado; 47 pruebas técnicas aprobadas; aceptación jurídica pendiente |
 | T14 | P2 | Pendiente | Expandir ejecutores, inscripciones, actualizaciones y reconsideraciones |
 | T15 | P2 | Pendiente | Evaluar recuperación de MVP anterior si se obtiene ZIP; auditar antes de reutilizar |
 | T16 | P1 | Hecho en alcance técnico | Indexador local PDF/DOCX, búsqueda textual, hashes y ocho pruebas técnicas |
@@ -26,10 +26,13 @@ Actualización: 2026-10-30. Se usan tareas en Git para mantener la continuidad s
 | T21 | P1 | Hecho | Resumen central de estado del proyecto, enlazado a roadmap y evidencias |
 | T22 | P1 | Hecho, actualizado | Estimación orientativa con pesos y evidencia; global alrededor de 35 % |
 | T23 | P1 | Hecho en alcance sintético | Circuito entrada → lectura → matriz → Word, revisiones conservadas y doce pruebas; [evidencia](PILOTO_DOCUMENTAL.md) |
-| T24 | P1 | Pendiente | Proponer vínculos desde texto con citas comprobables y revisión; hoy los vínculos son declarados |
+| T24 | P1 | Hecho en alcance v0.1 | Propuesta textual para siete controles, citas/huellas exactas, pendientes por defecto y cobertura restante explícita |
+| T25 | P1 | Hecho en alcance sintético | Aceptación/rechazo explícitos, lotes vigentes, revisión en carpeta separada, revocación y comprobación de citas en matriz |
+| T26 | P1 | Pendiente | Ampliar perfiles documentales a los quince controles restantes con referencias de prueba definidas |
+| T27 | P1 | Pendiente | Integrar OCR de expedientes con trazabilidad, timeout y reanudación; coordinar con T11/T18 |
 
 ## Dependencias
 T04–T08 bloquean conclusiones normativas automatizadas del piloto. T09 bloquea documentos reales; se puede desarrollar con sintéticos. T10–T11 pueden empezar después de definir contratos de datos, sin esperar todos los módulos.
 
 ## Próxima sesión
-Leer README, esta lista y estado. Priorizar T04–T08 para cerrar el régimen del piloto; avanzar T24 y OCR de expedientes usando sintéticos. Las pruebas técnicas aprobadas son 34; los diez casos jurídicos siguen sin ejecutar. Mantener tareas con fuente y evidencia; no marcar completo un módulo por existir su carpeta. Si se crean issues después, enlazar estos IDs para evitar duplicación.
+Leer [cierres y próximos bloques](CIERRES.md). T24 y T25 están cerradas en su alcance inicial; no reabrirlas para añadir cobertura o autenticación: eso corresponde a T26/T09. Priorizar fuentes y decisiones de T04–T08, y después T27 y coordinador. Hay 47 pruebas técnicas aprobadas; los diez casos jurídicos siguen sin ejecutar. Mantener tareas con fuente y evidencia. Si se crean issues después, enlazar estos IDs para evitar duplicación.

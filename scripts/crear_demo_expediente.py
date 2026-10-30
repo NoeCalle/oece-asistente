@@ -6,8 +6,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def create(destination):
+def create(destination, without_links=False):
     fixture = json.loads((ROOT / "tests/fixtures/expedientes/demo.json").read_text(encoding="utf-8"))
+    if without_links:
+        fixture["expediente"]["vinculos"] = {}
     destination.mkdir(parents=True, exist_ok=True)
     files = {**fixture["archivos"], "expediente.json": json.dumps(fixture["expediente"], ensure_ascii=False, indent=2)}
     for name, text in files.items():
@@ -21,6 +23,7 @@ def create(destination):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--salida", type=Path, required=True)
+    parser.add_argument("--sin-vinculos", action="store_true", help="Preparar ejemplo para proponer evidencias desde cero")
     args = parser.parse_args()
-    create(args.salida)
+    create(args.salida, args.sin_vinculos)
     print(str(args.salida.resolve()))

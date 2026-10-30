@@ -1,6 +1,8 @@
 # Piloto documental con expediente sintético
 Fecha: 30/10/2026. Implementación técnica inicial; revisión jurídica pendiente.
 
+**Continuación posterior:** el lector v0.2 admite vínculos provenientes de propuestas revisadas y valida sus citas/huellas. [T24/T25 cerradas y alcance](EVIDENCIAS_Y_REVISION.md). La demostración y el Word de cuatro páginas descritos abajo conservan el estado de la entrega anterior, con vínculos declarados.
+
 Ya funciona un recorrido local explícito: carpeta de entrada → lectura → vínculos de evidencia declarados → matriz JSON → borrador Word. No hay todavía activación automática de carpetas, conversación con un coordinador ni evaluación jurídica habilitada.
 
 ## Ejecución reproducible

@@ -12,7 +12,7 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 
 **Avance documental:** 29 archivos en Google Drive y 24 registros normativos; índice ampliado con 1.184 fragmentos con texto, incluidos tres OCR candidatos. [Fuentes nuevas y pendientes](docs/normativa/AMPLIACION_FUENTES.md). La revisión jurídica sigue pendiente.
 
-**Piloto documental ejecutado:** tres documentos sintéticos, siete vínculos declarados a seis controles, matriz de 22 resultados `no_determinable` y Word de cuatro páginas revisadas visualmente. **34 pruebas técnicas aprobadas.** [Reproducir y conocer los límites](docs/PILOTO_DOCUMENTAL.md). Los diez casos jurídicos especificados siguen sin ejecutar; no hay evaluador jurídico habilitado.
+**Piloto documental ejecutado:** circuito sintético con matriz y Word anterior de cuatro páginas revisadas visualmente. Ahora propone coincidencias para siete controles y permite aceptar/rechazar con citas verificadas, en otra carpeta y sin alterar la entrada. **47 pruebas técnicas aprobadas.** [Propuesta y revisión](docs/EVIDENCIAS_Y_REVISION.md). Los diez casos jurídicos siguen sin ejecutar y los 22 resultados permanecen `no_determinable`.
 
 ## Documentos del proyecto
 
@@ -25,6 +25,8 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 - [Mapa inicial de procedimientos](docs/PROCEDIMIENTOS.md)
 - [Matriz de evaluación y plan de pruebas](docs/EVALUACION_Y_PRUEBAS.md)
 - [Circuito sintético y borrador Word](docs/PILOTO_DOCUMENTAL.md)
+- [Cierres comprobados y próximos bloques](docs/CIERRES.md)
+- [Propuesta textual y revisión de evidencias](docs/EVIDENCIAS_Y_REVISION.md)
 - [Seguridad y separación de documentos](docs/SEGURIDAD.md)
 - [Catálogo estructurado](normativa/catalogo.json) y [JSON Schema](schemas/norma.schema.json)
 
@@ -41,7 +43,8 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 | Lectura TXT, PDF digital y cuerpo/tablas de DOCX | Biblioteca y primer lector de expedientes sintéticos |
 | OCR local de Windows | 3 páginas buscables en una capa candidata separada; [integración](docs/normativa/INTEGRACION_OCR.md) |
 | OCR de lotes completos, coordinador y evaluación | Pendiente |
-| Entrada sintética, revisiones, matriz y Word | Implementados y probados; vínculos declarados y revisión jurídica pendiente |
+| Entrada sintética, revisiones, matriz y Word | Implementados y probados; revisión jurídica pendiente |
+| Propuestas y revisión de evidencias | Perfil inicial de siete controles; decisiones explícitas, huellas/citas y revocación; [alcance](docs/EVIDENCIAS_Y_REVISION.md) |
 | Carga documental a Drive | Realizada mediante conector; sin sincronización automática |
 | API RNP o despliegue del asistente | No implementados |
 

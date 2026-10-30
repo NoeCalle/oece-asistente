@@ -9,9 +9,10 @@ import shutil
 import tempfile
 
 from indexar_normativa import extract
+from trazabilidad_evidencias import validate_link
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 
 def digest(raw):
@@ -99,6 +100,8 @@ def prepare(case_dir, rules_path):
             if key not in evidence or not evidence[key]["texto"].strip():
                 raise ValueError("Evidencia inexistente o sin texto")
             source = next(d for d in documents if d["id"] == key[0])
+            if "revision_evidencia" in link:
+                validate_link(link["revision_evidencia"], source["sha256"], evidence[key]["texto"], rule["id"], key[0], key[1])
             links.append({**link, "sha256": source["sha256"],
                           "texto": evidence[key]["texto"]})
         rows.append({"id": rule["id"], "rama": rule["rama"],
@@ -108,6 +111,7 @@ def prepare(case_dir, rules_path):
                      "limite": rule["limite"]})
     snapshot = {"version": VERSION, "implementacion_sha256": digest(Path(__file__).read_bytes()),
                 "lector_sha256": digest((ROOT / "scripts/indexar_normativa.py").read_bytes()),
+                "validador_evidencias_sha256": digest((ROOT / "scripts/trazabilidad_evidencias.py").read_bytes()),
                 "dependencias": {n: importlib.metadata.version(n) for n in ("pypdf", "python-docx")},
                 "config_sha256": digest(config_raw),
                 "matriz_sha256": digest(rules_raw),

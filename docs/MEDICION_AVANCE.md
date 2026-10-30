@@ -22,4 +22,6 @@ El paso de 25 % a 35 % se apoya en [código, pruebas y ejecución documental](PI
 Cambiar una fase únicamente cuando exista evidencia nueva y verificable; enlazar commit, archivo o ejecución. Terminar una herramienta parcial no permite cerrar una fase amplia. Revisar el peso si cambia el alcance del proyecto y explicar el cambio, sin comparar porcentajes como si el alcance fuera idéntico.
 La estimación anterior era 25 % después de integrar la muestra OCR. Este incremento no cierra el flujo del agente ni equivale a 35 % de precisión o de aptitud institucional.
 
+Continuación de T24/T25: se agregó propuesta léxica para siete controles y revisión documental explícita con citas comprobadas; 47 pruebas técnicas en total. Se mantiene la estimación global alrededor de 35 % hasta cerrar los criterios de fase. El cierre técnico no añade aprobación jurídica ni aceptación institucional. [Criterios de cierre](CIERRES.md).
+
 [Estado actual](ESTADO.md). [Datos de la estimación](../proyecto/avance.json).

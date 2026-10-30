@@ -1,4 +1,5 @@
 # Matriz de evaluación y pruebas
+**Actualización posterior:** 47 pruebas técnicas aprobadas; 13 nuevas de [propuesta/revisión documental](EVIDENCIAS_Y_REVISION.md), con muestra sin vínculos y simulación de decisiones. Los diez casos jurídicos siguen pendientes. Las cifras de demostraciones anteriores se conservan debajo como antecedentes.
 Diseño del contrato de salida. No se han ejecutado casos jurídicos de evaluación. Ya existe una demostración documental sintética con matriz y Word, descrita al final.
 
 ## Fila de matriz

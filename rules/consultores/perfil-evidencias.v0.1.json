@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "tipo": "busqueda_textual_no_regla_juridica",
+  "procedimiento": "ampliacion_consultores",
+  "limite_por_control": 20,
+  "controles": [
+    {"id": "AC-01", "grupos": [["fecha"], ["solicitud"]]},
+    {"id": "AC-02", "grupos": [["solicitante"]]},
+    {"id": "AC-03", "grupos": [["petición", "solicito"], ["ampliación", "categoría"]]},
+    {"id": "AC-05", "grupos": [["finalización", "culminación", "culminado"]]},
+    {"id": "AC-07", "grupos": [["contrato", "servicio", "supervisión"]]},
+    {"id": "AC-09", "grupos": [["conformidad", "viabilidad"]]},
+    {"id": "AC-15", "grupos": [["PEN", "USD", "soles", "dólares"]]}
+  ]
+}
