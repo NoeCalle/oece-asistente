@@ -7,7 +7,7 @@ Actualización: 2026-10-29. Se usan tareas en Git para mantener la continuidad s
 | T02 | P0 | Hecho | Plan, arquitectura, roadmap y separación de datos |
 | T03 | P0 | En curso | Inventario inicial: 21 registros; completar cobertura |
 | T04 | P0 | Pendiente | Resolver vigencia DS 001-2026-EF y condición Ley 32732 con originales |
-| T05 | P0 | Pendiente | Descargar normas/anexos oficiales y registrar hash, fecha, fuente y ubicación privada |
+| T05 | P0 | En curso | 23 archivos descargados y subidos a Drive con SHA-256; completar modificatorias y control de integridad/legibilidad |
 | T06 | P0 | Pendiente | Consolidar cadena Ley 32069, reglamento, TUPA y directiva hasta corte |
 | T07 | P0 | Pendiente | Revisar TUO LPAG 2026, numeración y efecto en recursos |
 | T08 | P0 | Pendiente | Validar anexos categorías/especialidades y matriz de consultores con especialista |

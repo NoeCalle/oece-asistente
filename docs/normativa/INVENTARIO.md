@@ -39,4 +39,4 @@ Ley 32069 y cadena de cambios; Reglamento 009-2025-EF, fe de erratas y modificat
 - Comunicados, opiniones y criterios públicos pertinentes: separar su naturaleza de la norma obligatoria.
 - Protección de datos y políticas institucionales: revisión aparte antes de tratar expedientes reales.
 
-No se han descargado ni preservado originales. Los hashes son null de forma deliberada. [Bitácora](VERIFICACION.md) describe conflictos y alcance; [indexación](INDEXACION.md) define cómo completar la biblioteca.
+Actualización de esta sesión: se preservaron 23 archivos y sus hashes en el [manifiesto](../../normativa/manifiesto-descargas-2026-10-29.json). Los registros aún no descargados conservan hash null. La disponibilidad de un archivo no acredita vigencia. [Bitácora](VERIFICACION.md) describe conflictos y alcance; [indexación](INDEXACION.md) define cómo completar la biblioteca.

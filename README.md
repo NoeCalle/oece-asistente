@@ -8,6 +8,8 @@ Asistente proyectado para preparar evaluaciones documentales y borradores de inf
 
 Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar con un coordinador y obtener un borrador Word, una matriz de evaluación y referencias verificables. El primer módulo será ampliación de categorías de consultores de obras; después, aumento de capacidad máxima de contratación de ejecutores, inscripciones/reinscripciones, actualizaciones y reconsideraciones.
 
+**Avance documental:** 23 archivos oficiales o copias alojadas en portales oficiales descargados y guardados en Google Drive. [Detalle de la biblioteca](docs/normativa/BIBLIOTECA.md). La revisión jurídica sigue pendiente.
+
 ## Documentos del proyecto
 
 - [Plan integral y arquitectura](docs/PLAN_INTEGRAL.md)
@@ -28,10 +30,12 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 | Plan, roadmap, tareas y arquitectura | Documentados |
 | Inventario inicial con fuentes oficiales y fechas diferenciadas | Iniciado; cobertura parcial |
 | Esquema JSON de metadatos | Creado; no es un indexador |
-| PDFs originales descargados, hashes y consolidación por artículo | Pendiente |
+| Descarga y archivo en Drive | 23 archivos; manifiesto con SHA-256 |
+| Consolidación por artículo y revisión jurídica | Pendiente |
 | Coordinador, vigilancia de carpetas, lector/OCR y evaluación | Pendiente |
 | Generador Word y pruebas de expedientes | Pendiente |
-| Conexión directa a Drive, API RNP o despliegue | No implementados |
+| Carga documental a Drive | Realizada mediante conector; sin sincronización automática |
+| API RNP o despliegue del asistente | No implementados |
 
 **Repositorio público:** solo código futuro, documentación del proyecto, metadatos de fuentes públicas y casos sintéticos. Expedientes, informes, credenciales y documentos de trabajo van fuera del repositorio. No subir el ZIP anterior sin inspeccionarlo y retirar datos reales.
 

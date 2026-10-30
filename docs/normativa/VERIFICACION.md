@@ -31,3 +31,6 @@ Obtener originales y anexos desde fuentes oficiales; calcular SHA-256; comprobar
 
 ## Estado del repositorio observado
 Repositorio público NoeCalle/oece-asistente, rama main, commit de partida 296b948e8e1f3debaffe2cb263e0af0cb71ab63e. Único archivo inicial: README.md con título del repositorio. Sin código, pruebas, AGENTS.md ni documentación previa observados en el árbol inicial. El ZIP mencionado en el chat previo no fue recibido, recuperado ni ejecutado.
+
+## Continuación: descarga y Drive
+Se superaron los errores de acceso inicial usando descarga directa de las páginas oficiales. Se descargaron y archivaron 23 archivos; véase [BIBLIOTECA.md](BIBLIOTECA.md). Las observaciones anteriores describen el estado inicial, no el estado de descarga actual. Ninguna revisión humana ni regla queda aprobada.

@@ -1,0 +1,418 @@
+{
+  "corte": "2026-10-29",
+  "archivos": [
+    {
+      "name": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "bytes": 723183,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "original",
+      "verificacion": {
+        "name": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "bytes": 723183,
+        "pages": 34,
+        "first_page_text": " \n \n \n \n \n \n \n \n \n \n \n \n \nOrganismo Especializado \npara las Contrataciones \nPúblicas Eficientes - OECE \n \n \n \n \n \nDirectiva N° 001-2025-OECE-CD \n \nDIRECTIVA DE PROCEDIMIENTOS Y TRÁMITES \nANTE EL REGISTRO NACIONAL DE PROVEEDORES \n \n "
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-1-especialidades-de-los-consultores-de-obras-segun-su-profesion.docx",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946966/6682380-anexo-n-1-especialidades-de-los-consultores-de-obras-segun-su-profesion.docx?v=1745194209",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-1-especialidades-de-los-consultores-de-obras-segun-su-profesion.docx",
+      "sha256": "61d07d6543a548d94eb30b994c95af02a17fb6124641a424608edbaf5da01e28",
+      "bytes": 17101,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-1-especialidades-de-los-consultores-de-obras-segun-su-profesion.docx",
+        "sha256": "61d07d6543a548d94eb30b994c95af02a17fb6124641a424608edbaf5da01e28",
+        "bytes": 17101,
+        "format_check": "office_zip_valid"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-2-categorias-de-los-consultores-de-obras.docx",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946967/6682380-anexo-n-2-categorias-de-los-consultores-de-obras.docx?v=1745194209",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-2-categorias-de-los-consultores-de-obras.docx",
+      "sha256": "4448d4d76104a746ea783b603fd02d61edfc241b62f82a4e0e923d02d55440bd",
+      "bytes": 17277,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-2-categorias-de-los-consultores-de-obras.docx",
+        "sha256": "4448d4d76104a746ea783b603fd02d61edfc241b62f82a4e0e923d02d55440bd",
+        "bytes": 17277,
+        "format_check": "office_zip_valid"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-3-solicitud-para-la-restitucion-de-capacidad-libre-de-contratacion.xlsx",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946968/6682380-anexo-n-3-solicitud-para-la-restitucion-de-capacidad-libre-de-contratacion.xlsx?v=1745194210",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-3-solicitud-para-la-restitucion-de-capacidad-libre-de-contratacion.xlsx",
+      "sha256": "7c89c9d7c100e252191c40fbd9b39d9189a99596a6f04b2da7d69ebbb71a16ad",
+      "bytes": 124610,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-3-solicitud-para-la-restitucion-de-capacidad-libre-de-contratacion.xlsx",
+        "sha256": "7c89c9d7c100e252191c40fbd9b39d9189a99596a6f04b2da7d69ebbb71a16ad",
+        "bytes": 124610,
+        "format_check": "office_zip_valid"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-4-formulario-actualizacion-de-informacion-legal.xls",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946969/6682380-anexo-n-4-formulario-actualizacion-de-informacion-legal.xls?v=1745194210",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-4-formulario-actualizacion-de-informacion-legal.xls",
+      "sha256": "5a1582ff46de64c62883de919c52e73dbc6407ea22c34bca46b845916f3ecd1f",
+      "bytes": 153600,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-4-formulario-actualizacion-de-informacion-legal.xls",
+        "sha256": "5a1582ff46de64c62883de919c52e73dbc6407ea22c34bca46b845916f3ecd1f",
+        "bytes": 153600,
+        "format_check": "ole_header_only"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-5-supuestos-para-la-actualizacion-de-informacion-legal.docx",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946970/6682380-anexo-n-5-supuestos-para-la-actualizacion-de-informacion-legal.docx?v=1745194211",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-5-supuestos-para-la-actualizacion-de-informacion-legal.docx",
+      "sha256": "4dd2416db440cf9994550a5f09d993cea87e4d9e694857e9258cfebcf8197cac",
+      "bytes": 18792,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-5-supuestos-para-la-actualizacion-de-informacion-legal.docx",
+        "sha256": "4dd2416db440cf9994550a5f09d993cea87e4d9e694857e9258cfebcf8197cac",
+        "bytes": 18792,
+        "format_check": "office_zip_valid"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-6-formulario-actualizacion-de-informacion-financiera.xlsx",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946971/6682380-anexo-n-6-formulario-actualizacion-de-informacion-financiera.xlsx?v=1745194211",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-6-formulario-actualizacion-de-informacion-financiera.xlsx",
+      "sha256": "e0436bc441497456c456b1ffeffa44cfa452f72d20cb9afb49861f8b339f63fd",
+      "bytes": 229092,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-6-formulario-actualizacion-de-informacion-financiera.xlsx",
+        "sha256": "e0436bc441497456c456b1ffeffa44cfa452f72d20cb9afb49861f8b339f63fd",
+        "bytes": 229092,
+        "format_check": "office_zip_valid"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-7-formulario-electronico-informacion-sobre-record-de-ejecucion-de-obras-regularizacion-o-modificacion-del-record-de-ejecucion-de-obras.docx",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946972/6682380-anexo-n-7-formulario-electronico-informacion-sobre-record-de-ejecucion-de-obras-regularizacion-o-modificacion-del-record-de-ejecucion-de-obras.docx?v=1745194211",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-7-formulario-electronico-informacion-sobre-record-de-ejecucion-de-obras-regularizacion-o-modificacion-del-record-de-ejecucion-de-obras.docx",
+      "sha256": "65e62882ee85b73ea554584cd31c91bdff927ba5e267770ffd25513c3ab80af8",
+      "bytes": 24637,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-7-formulario-electronico-informacion-sobre-record-de-ejecucion-de-obras-regularizacion-o-modificacion-del-record-de-ejecucion-de-obras.docx",
+        "sha256": "65e62882ee85b73ea554584cd31c91bdff927ba5e267770ffd25513c3ab80af8",
+        "bytes": 24637,
+        "format_check": "office_zip_valid"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-8-solicitud-para-suspension-temporal-del-rnp.xls",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946973/6682380-anexo-n-8-solicitud-para-suspension-temporal-del-rnp.xls?v=1745194212",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-8-solicitud-para-suspension-temporal-del-rnp.xls",
+      "sha256": "2f9399812c83cb6c997af0f02b2b3aaf93b7eb6c0804121c308c2f9ca5cb83f6",
+      "bytes": 77312,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-8-solicitud-para-suspension-temporal-del-rnp.xls",
+        "sha256": "2f9399812c83cb6c997af0f02b2b3aaf93b7eb6c0804121c308c2f9ca5cb83f6",
+        "bytes": 77312,
+        "format_check": "ole_header_only"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "6682380-anexo-n-9-solicitud-para-el-retiro-definitivo-del-rnp.xlsx",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946974/6682380-anexo-n-9-solicitud-para-el-retiro-definitivo-del-rnp.xlsx?v=1745194212",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6682380-001-2025-oece-cd",
+      "local_path": "normativa\\originales\\2026-10-29\\6682380-anexo-n-9-solicitud-para-el-retiro-definitivo-del-rnp.xlsx",
+      "sha256": "f81c96ef30da04b02d17366b032211fe63319f1bcf7c688aa3b7b2bbac791b17",
+      "bytes": 20002,
+      "instrument_id": "dir-001-2025-oece-cd",
+      "kind": "anexo",
+      "verificacion": {
+        "name": "6682380-anexo-n-9-solicitud-para-el-retiro-definitivo-del-rnp.xlsx",
+        "sha256": "f81c96ef30da04b02d17366b032211fe63319f1bcf7c688aa3b7b2bbac791b17",
+        "bytes": 20002,
+        "format_check": "office_zip_valid"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "ley-32069-consolidada-2026-07-19.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-19-07-2026.pdf?v=1787002595",
+      "instrument_id": "ley-32069",
+      "kind": "consolidacion",
+      "local_path": "normativa\\originales\\2026-10-29\\ley-32069-consolidada-2026-07-19.pdf",
+      "sha256": "f14ffa37b824b8af03c0b97e0603839a786ed61c7ca07b1d300c9af928d133f7",
+      "bytes": 547209,
+      "verificacion": {
+        "name": "ley-32069-consolidada-2026-07-19.pdf",
+        "sha256": "f14ffa37b824b8af03c0b97e0603839a786ed61c7ca07b1d300c9af928d133f7",
+        "bytes": 547209,
+        "pages": 63,
+        "first_page_text": "CONGRESO DE LA REPÚBLICA \n  \nLey General de Contrataciones Públicas \n  \nLEY Nº 32069 \n  \n(SEPARATA ESPECIAL) \n  \n(*) De conformidad con la Cuarta Disposición Complementaria Final del Decreto Supremo \nN° 278-2024-EF, publicado el 21 diciembre 2024, a "
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "reglamento-consolidado-2026-01-09.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+      "instrument_id": "ds-009-2025-ef",
+      "kind": "consolidacion",
+      "local_path": "normativa\\originales\\2026-10-29\\reglamento-consolidado-2026-01-09.pdf",
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "bytes": 2822775,
+      "verificacion": {
+        "name": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "bytes": 2822775,
+        "pages": 249,
+        "first_page_text": "Reglamento de la Ley Nº 32069, Ley General de Contrataciones Públicas  \n \nPágina 1 de 249 \nECONOMÍA Y FINANZAS \n  \nDecreto Supremo que aprueba el Reglamento de la Ley N° 32069, Ley \nGeneral de Contrataciones Públicas \n  \nDECRETO SUPREMO Nº 009-2025-E"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "ley-32732.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/10340261/8403069-ley32732.pdf?v=1784489960",
+      "instrument_id": "ley-32732",
+      "kind": "original",
+      "local_path": "normativa\\originales\\2026-10-29\\ley-32732.pdf",
+      "sha256": "64888319bf94b380087bb787c29e4dccf30c8904274dd991def865498144f625",
+      "bytes": 5087122,
+      "verificacion": {
+        "name": "ley-32732.pdf",
+        "sha256": "64888319bf94b380087bb787c29e4dccf30c8904274dd991def865498144f625",
+        "bytes": 5087122,
+        "pages": 24,
+        "first_page_text": "“AÑO DE LA ESPERANZA Y EL FORTALECIMIENTO DE LA DEMOCRACIA”\nEl Peruano\nDIARIO OFICIAL DEL BICENTENARIO\nFUNDADO EL 22 DE OCTUBRE DE 1825 POR EL LIBERTADOR SIMÓN BOLÍVAR\nSEPARATA ESPECIAL\nNORMAS  LEGALES\nDOMINGO 19 \nDE JULIO DE 2026\nCONGRESO DE LA REPÚ"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "ds-001-2026-ef.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9263209/7601483-ds001_2026ef.pdf?v=1767899401",
+      "instrument_id": "ds-001-2026-ef",
+      "kind": "original",
+      "local_path": "normativa\\originales\\2026-10-29\\ds-001-2026-ef.pdf",
+      "sha256": "685453e91f35cffbe07b9da8c8754b220ce0f10f51c2551091cced53c3d76155",
+      "bytes": 3722187,
+      "verificacion": {
+        "name": "ds-001-2026-ef.pdf",
+        "sha256": "685453e91f35cffbe07b9da8c8754b220ce0f10f51c2551091cced53c3d76155",
+        "bytes": 3722187,
+        "pages": 16,
+        "first_page_text": "33NORMAS LEGALESJueves 8 de enero de 2026 El Peruano / \nECONOMÍA Y FINANZAS\nDecreto Supremo que modifica el \nReglamento de la Ley N° 32069, Ley General \nde Contrataciones Públicas, aprobado \nmediante Decreto Supremo N° 009-2025-\nEF\nDECRETO SUPREMO\nNº"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "rd-001-2026-ef-54-01.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9281715/7614342-resolucion-directoral-n-001-2026-ef-54-01.pdf?v=1768319325",
+      "instrument_id": "ds-001-2026-ef",
+      "kind": "acto_habilitante",
+      "local_path": "normativa\\originales\\2026-10-29\\rd-001-2026-ef-54-01.pdf",
+      "sha256": "d85308b2931b73daab0a433c01a1e8712e08469c9dbdc772b12af4fdf6686525",
+      "bytes": 890867,
+      "verificacion": {
+        "name": "rd-001-2026-ef-54-01.pdf",
+        "sha256": "d85308b2931b73daab0a433c01a1e8712e08469c9dbdc772b12af4fdf6686525",
+        "bytes": 890867,
+        "pages": 3,
+        "first_page_text": "10 NORMAS LEGALES Martes 13 de enero de 2026  El Peruano /\nJurídica estima viable la emisión del acto que dispone la \ndesignación en el cargo indicado;\nCon el visado de la Unidad de Recursos Humanos y la \nUnidad de Asesoría Jurídica;\nDe conformidad c"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "ds-009-2025-ef.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7530416/6401561-ds009_2025ef.pdf?v=1737643286",
+      "instrument_id": "ds-009-2025-ef",
+      "kind": "original",
+      "local_path": "normativa\\originales\\2026-10-29\\ds-009-2025-ef.pdf",
+      "sha256": "a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08",
+      "bytes": 19584058,
+      "verificacion": {
+        "name": "ds-009-2025-ef.pdf",
+        "sha256": "a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08",
+        "bytes": 19584058,
+        "pages": 196,
+        "first_page_text": ""
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "ds-009-2025-ef-fe-erratas.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7577939/6401561-fe-de-erratas-del-ds-n-009-2025-ef.pdf?v=1738688130",
+      "instrument_id": "ds-009-2025-ef",
+      "kind": "fe_erratas",
+      "local_path": "normativa\\originales\\2026-10-29\\ds-009-2025-ef-fe-erratas.pdf",
+      "sha256": "bbb99d5d748abf017dfd4b2b73cb729b2a652fb2856828b14cfddb256bc65ece",
+      "bytes": 1691218,
+      "verificacion": {
+        "name": "ds-009-2025-ef-fe-erratas.pdf",
+        "sha256": "bbb99d5d748abf017dfd4b2b73cb729b2a652fb2856828b14cfddb256bc65ece",
+        "bytes": 1691218,
+        "pages": 7,
+        "first_page_text": "8 NORMAS LEGALES Martes 4 de febrero de 2025  El Peruano /\nopinión técnica al Comandante General de Operaciones \ndel Pacifico, sobre la propuesta de modificación de las \náreas de fondeaderos del Puerto de Chancay;\nQue, mediante Oficio Nº 1901/11 de f"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "ds-006-2026-jus.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/10018255/8169463-decreto-supremo_000006-2026_jus-sg.pdf?v=1779388370",
+      "instrument_id": "ds-006-2026-jus",
+      "kind": "original",
+      "local_path": "normativa\\originales\\2026-10-29\\ds-006-2026-jus.pdf",
+      "sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+      "bytes": 1379788,
+      "verificacion": {
+        "name": "ds-006-2026-jus.pdf",
+        "sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+        "bytes": 1379788,
+        "pages": 4,
+        "first_page_text": ""
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "tupa-modificacion-2026-073.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf",
+      "instrument_id": "rpe-073-2026-oece",
+      "kind": "anexo",
+      "local_path": "normativa\\originales\\2026-10-29\\tupa-modificacion-2026-073.pdf",
+      "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+      "bytes": 2802106,
+      "verificacion": {
+        "name": "tupa-modificacion-2026-073.pdf",
+        "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+        "bytes": 2802106,
+        "pages": 105,
+        "first_page_text": "Texto Único de Procedimientos Administrativos - \"ORGANISMO ESPECIALIZADO PARA LAS CONTRATACIONES PÚBLICAS\nEFICIENTES\"\n \n \n \nTEXTO ÚNICO DE PROCEDIMIENTOS ADMINISTRATIVOS – TUPA\n DE \"ORGANISMO ESPECIALIZADO PARA LAS CONTRATACIONES PÚBLICAS EFICIENTES\""
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "tupa-actualizado-2026-002.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9325016/7647432-tupa-actualizado-del-oece.pdf",
+      "instrument_id": "rgg-002-2026-oece",
+      "kind": "consolidacion",
+      "local_path": "normativa\\originales\\2026-10-29\\tupa-actualizado-2026-002.pdf",
+      "sha256": "6a6f96ebc81334b67a8deb89645d0014d0ddb070bcc585e429eb22a5da23fe3e",
+      "bytes": 2807582,
+      "verificacion": {
+        "name": "tupa-actualizado-2026-002.pdf",
+        "sha256": "6a6f96ebc81334b67a8deb89645d0014d0ddb070bcc585e429eb22a5da23fe3e",
+        "bytes": 2807582,
+        "pages": 104,
+        "first_page_text": "Texto Único de Procedimientos Administrativos - \"ORGANISMO ESPECIALIZADO PARA LAS CONTRATACIONES PÚBLICAS\nEFICIENTES\"\n \n \n \nTEXTO ÚNICO DE PROCEDIMIENTOS ADMINISTRATIVOS – TUPA\n DE \"ORGANISMO ESPECIALIZADO PARA LAS CONTRATACIONES PÚBLICAS EFICIENTES\""
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "tupa-2025.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/8033965/6746896-tupa-del-oece.pdf",
+      "instrument_id": "ds-086-2025-ef",
+      "kind": "anexo",
+      "local_path": "normativa\\originales\\2026-10-29\\tupa-2025.pdf",
+      "sha256": "39a086cb548ecb880186c0e28e797910a4cda7cc426c6bcf3d19da87b2f4cb01",
+      "bytes": 2067140,
+      "verificacion": {
+        "name": "tupa-2025.pdf",
+        "sha256": "39a086cb548ecb880186c0e28e797910a4cda7cc426c6bcf3d19da87b2f4cb01",
+        "bytes": 2067140,
+        "pages": 106,
+        "first_page_text": "PRESIDENCIA DEL CONSEJO DE MINISTROS\nDecreto Supremo que aprueba el Texto Único de Procedimientos Administrativos (TUPA) del \nOrganismo Especializado para las Contrataciones Públicas Eficientes (OECE)\nDECRETO SUPREMO\nNº 086-2025-EF\nLA PRESIDENTA DE L"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "ds-222-2026-ef.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/10836593/8747975-decreto-supremo-n-222-2026-ef.pdf?v=1792698624",
+      "instrument_id": "ds-222-2026-ef",
+      "kind": "original",
+      "local_path": "normativa/originales/2026-10-29/ds-222-2026-ef.pdf",
+      "sha256": "070ecd3039f18a1947e4e60b396411f46666eaf3c9402dd4943f74ce58a5f1cb",
+      "bytes": 532670,
+      "verificacion": {
+        "name": "ds-222-2026-ef.pdf",
+        "sha256": "070ecd3039f18a1947e4e60b396411f46666eaf3c9402dd4943f74ce58a5f1cb",
+        "bytes": 532670,
+        "pages": 1,
+        "first_page_text": "3\nNORMAS LEGALESMiércoles 21 de octubre de 2026 El Peruano / \nECONOMÍA Y FINANZAS\nDecreto Supremo que modifica el \nReglamento de la Ley N° 32069, Ley General \nde Contrataciones Públicas, aprobado \nmediante el Decreto Supremo N° 009-2025-\nEF\nDECRETO S"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    },
+    {
+      "name": "tuo-27444-2026-separata.pdf",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9947105/8115839-decreto-supremo-006-2026-jus-lpderecho-27444.pdf?v=1778518731",
+      "instrument_id": "ds-006-2026-jus",
+      "kind": "separata_copia_alojada_gob_pe",
+      "local_path": "normativa/originales/2026-10-29/tuo-27444-2026-separata.pdf",
+      "sha256": "2cf6fcce04b87dd5a7a6b7581e44ccccb84cb7e47d04e6ad233f056d6fba249d",
+      "bytes": 10134682,
+      "verificacion": {
+        "name": "tuo-27444-2026-separata.pdf",
+        "pages": 48
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false
+    }
+  ],
+  "nota": "Copias descargadas sin modificación; validación técnica parcial. No certifica autenticidad criptográfica ni vigencia jurídica."
+}

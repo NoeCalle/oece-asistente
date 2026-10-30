@@ -41,17 +41,17 @@
       ],
       "validacion": {
         "nivel": "vigencia_parcial_verificada",
-        "nota": "Inicio general; excepciones y cadena completa pendientes.",
+        "nota": "Inicio general; excepciones y cadena completa pendientes. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/ley-32069-consolidada-2026-07-19.pdf",
+        "sha256": "f14ffa37b824b8af03c0b97e0603839a786ed61c7ca07b1d300c9af928d133f7",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -298,17 +298,17 @@
       ],
       "validacion": {
         "nivel": "condicionada",
-        "nota": "Modificación de Ley 32069 sujeta a publicación de modificación reglamentaria (novena DCF). No se identificó y validó el acto habilitante aplicable.",
+        "nota": "Modificación de Ley 32069 sujeta a publicación de modificación reglamentaria (novena DCF). No se identificó y validó el acto habilitante aplicable. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/ley-32732.pdf",
+        "sha256": "64888319bf94b380087bb787c29e4dccf30c8904274dd991def865498144f625",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -356,17 +356,17 @@
       ],
       "validacion": {
         "nivel": "vigencia_parcial_verificada",
-        "nota": "Reglamento base; fe de erratas y texto consolidado por artículo pendientes.",
+        "nota": "Reglamento base; fe de erratas y texto consolidado por artículo pendientes. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/ds-009-2025-ef.pdf",
+        "sha256": "a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -414,17 +414,17 @@
       ],
       "validacion": {
         "nivel": "en_conflicto",
-        "nota": "OECE informa 14/01/2026; Perú Compras muestra 09/01/2026. Fecha registrada provisionalmente según OECE; revisar DCF y resolución habilitante.",
+        "nota": "OECE informa 14/01/2026; Perú Compras muestra 09/01/2026. Fecha registrada provisionalmente según OECE; revisar DCF y resolución habilitante. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/ds-001-2026-ef.pdf",
+        "sha256": "685453e91f35cffbe07b9da8c8754b220ce0f10f51c2551091cced53c3d76155",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -459,17 +459,17 @@
       ],
       "validacion": {
         "nivel": "texto_oficial_consultado",
-        "nota": "Art. 3 cambia decimocuarta DCF sobre certificación de compradores. No establecer automáticamente impacto RNP ni habilitación de Ley 32732.",
+        "nota": "Art. 3 cambia decimocuarta DCF sobre certificación de compradores. No establecer automáticamente impacto RNP ni habilitación de Ley 32732. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/ds-222-2026-ef.pdf",
+        "sha256": "070ecd3039f18a1947e4e60b396411f46666eaf3c9402dd4943f74ce58a5f1cb",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -510,17 +510,17 @@
       ],
       "validacion": {
         "nivel": "vigencia_parcial_verificada",
-        "nota": "Texto HTML consultado; aprobación R. D000050-2025-OSCE-PRE, emitida 17/04/2025. Anexos y barrido de modificatorias posteriores pendientes.",
+        "nota": "Texto HTML consultado; aprobación R. D000050-2025-OSCE-PRE, emitida 17/04/2025. Anexos y barrido de modificatorias posteriores pendientes. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -561,17 +561,17 @@
       ],
       "validacion": {
         "nivel": "identificado_oficial",
-        "nota": "Aprobación y publicación identificadas. Descargar TUPA íntegro, fichas, formularios y cadena completa de actualizaciones.",
+        "nota": "Aprobación y publicación identificadas. Descargar TUPA íntegro, fichas, formularios y cadena completa de actualizaciones. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/tupa-2025.pdf",
+        "sha256": "39a086cb548ecb880186c0e28e797910a4cda7cc426c6bcf3d19da87b2f4cb01",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -614,17 +614,17 @@
       ],
       "validacion": {
         "nivel": "identificado_oficial",
-        "nota": "Ficha del portal fechada 07/01/2026; no confundir con publicación en diario oficial. Alcance pendiente.",
+        "nota": "Ficha del portal fechada 07/01/2026; no confundir con publicación en diario oficial. Alcance pendiente. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/tupa-actualizado-2026-002.pdf",
+        "sha256": "6a6f96ebc81334b67a8deb89645d0014d0ddb070bcc585e429eb22a5da23fe3e",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -672,17 +672,17 @@
       ],
       "validacion": {
         "nivel": "texto_oficial_consultado",
-        "nota": "Emitida 31/03/2026; publicada 08/04/2026. Revisar anexos y alcance específico RNP antes de actualizar requisitos.",
+        "nota": "Emitida 31/03/2026; publicada 08/04/2026. Revisar anexos y alcance específico RNP antes de actualizar requisitos. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/tupa-modificacion-2026-073.pdf",
+        "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
@@ -735,17 +735,17 @@
       ],
       "validacion": {
         "nivel": "vigencia_parcial_verificada",
-        "nota": "Nuevo TUO identificado; fecha de ficha MINJUS 28/04 difiere de publicación. Vigencia informada por noticia oficial; artículos y numeración por revisar.",
+        "nota": "Nuevo TUO identificado; fecha de ficha MINJUS 28/04 difiere de publicación. Vigencia informada por noticia oficial; artículos y numeración por revisar. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/2026-10-29/ds-006-2026-jus.pdf",
+        "sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
+        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
         "Cerrar cadena temporal y revisión humana antes de activar reglas."
       ]
     },
