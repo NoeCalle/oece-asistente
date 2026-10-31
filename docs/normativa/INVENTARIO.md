@@ -11,7 +11,7 @@ Se verificó existencia y determinados datos en fuentes oficiales. “Vigencia p
 | ley-32187 | [Ley 32187](https://www.gob.pe/institucion/mef/normas-legales/6280777-32187) | 2024-12-11 | Pendiente | Texto consultado; vigencia pendiente |
 | ley-32515 | [Ley 32515](https://www.gob.pe/institucion/mef/normas-legales/7475764-32515) | 2025-12-04 | Pendiente | Texto consultado; cierre de vigencia pendiente |
 | dl-1715 | [Decreto Legislativo 1715](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-02-04 | 2026-02-05 | vigencia_parcial_verificada |
-| ley-32732 | [Ley 32732](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-07-19 | Pendiente / no aplica | condicionada |
+| ley-32732 | [Ley 32732](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-07-19 | Quinta DCM pendiente de acto habilitante | condición delimitada; ver J02 en criterios adoptados |
 | ds-009-2025-ef | [Decreto Supremo 009-2025-EF](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2025-01-22 | 2025-04-22 | vigencia_parcial_verificada |
 | ds-001-2026-ef | [Decreto Supremo 001-2026-EF](https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento) | 2026-01-08 | 2026-01-14 | vigencia_parcial_verificada |
 | ds-222-2026-ef | [Decreto Supremo 222-2026-EF](https://busquedas.elperuano.pe/dispositivo/EX/2567159-1) | 2026-10-21 | Pendiente / no aplica | texto_oficial_consultado |

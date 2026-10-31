@@ -43,3 +43,7 @@ Descargados cinco originales principales oficiales: leyes 32069, 32103, 32185, 3
 
 ## Cierre documental 31 de octubre de 2026
 Diecisiete archivos recuperados el 30/10, incluidos DL 1715, FUP, actos del TUPA y cadena conocida del ROF. T28 comprueba 36 requeridos sin faltantes, con vigencias y reglas todavía abiertas. El ROF integrado anterior queda histórico por derogación expresa en RPE 090. [Fuentes y páginas cotejadas](COBERTURA_MINIMA_PILOTO.md). Las búsquedas anteriores se conservan como historia; no describen todas las descargas actuales.
+
+
+## 31/10/2026 — criterios adoptados, sin habilitación automática
+Se resolvieron J01–J05 en alcance de diseño por autorización del usuario. [Fundamentos, fuentes, fechas y excepciones](CRITERIOS_ADOPTADOS_PILOTO.md); [registro v0.2](../../normativa/decisiones-piloto.v0.2.json). V0.1 es el antecedente, no el estado vigente. Ley 32732: condición circunscrita a quinta DCM completa (PDF pp. 12 y 24), no a toda la ley. RPE 090: emisión 16/12/2025 y publicación 19/12/2025 verificadas en El Peruano; portal de transparencia lista actualizado y anterior no vigente. Cotejo visual adicional de Ley 32732 pp. 12/24, reglamento p. 228 y directiva RNP p. 7. No se comprobó el acto habilitante de quinta DCM, el calendario de 120 días, la totalidad de rubros FUP ni el TUPA completo por rama. No se infiere inexistencia de fuentes no localizadas ni se ejecutaron reglas nuevas.

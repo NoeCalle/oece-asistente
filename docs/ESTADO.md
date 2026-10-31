@@ -1,5 +1,5 @@
 # Estado de OECE Assistant
-Actualizado: **31 de octubre de 2026 (America/Lima)**. Corte normativo investigado: 29/10/2026. Este archivo es el resumen de continuidad; el [roadmap](../ROADMAP.md) y las [tareas](TAREAS.md) contienen el detalle.
+Actualizado: **31 de octubre de 2026 (America/Lima)**. Inventario con corte inicial 29/10/2026; cotejos focalizados de las cinco decisiones al 31/10/2026. Este archivo es el resumen de continuidad; el [roadmap](../ROADMAP.md) y las [tareas](TAREAS.md) contienen el detalle.
 
 ## Avance orientativo
 **Alrededor de 35 % del proyecto completo (rango 30–40 %).** Es una estimación de planificación por entregables, no porcentaje de funciones operativas. [Criterios y pesos](MEDICION_AVANCE.md). El aumento corresponde al circuito documental sintético y su Word; la biblioteca sigue sin cierre jurídico.
@@ -16,6 +16,9 @@ Biblioteca inicial en Google Drive y herramientas para integridad, lectura/búsq
 | 4. Piloto consultores | Demostración documental y revisión de evidencias ejecutadas | Matriz de 22 controles; Word anterior revisado; propuesta inicial para siete controles | Ampliar cobertura, aprobar reglas y aceptación jurídica |
 | 5. Validación y expansión | Pendiente | Alcance modular documentado | Ejecutores, inscripciones, actualizaciones y reconsideraciones comprobadas |
 
+## Decisiones adoptadas
+Los cinco criterios del piloto fueron adoptados con fundamento por el asistente IA, autorizado por el usuario: régimen actual de primera ampliación, condición de la quinta DCM de Ley 32732, alcance FUP, ROF actualizado y ramas por proveedor/experiencia. Se corrige el bloqueo atribuido a toda Ley 32732. Excepciones y fuentes en [criterios adoptados](normativa/CRITERIOS_ADOPTADOS_PILOTO.md) y [registro vigente](../normativa/decisiones-piloto.v0.2.json). No hay aprobación humana ficticia ni reglas nuevas ejecutadas.
+
 ## Qué se probó
 - **53 pruebas técnicas aprobadas:** 23 de biblioteca/OCR, 12 del circuito de expediente, 13 de propuesta/revisión y cinco de cobertura.
 - T28 cerrado: 36 archivos requeridos de siete grupos, sin faltantes y con huellas locales verificadas. Diecisiete archivos nuevos conservados en Drive; ROF histórico separado del actualizado. [Alcance del cierre](normativa/COBERTURA_MINIMA_PILOTO.md).
@@ -31,11 +34,11 @@ Biblioteca inicial en Google Drive y herramientas para integridad, lectura/búsq
 Los diez casos jurídicos son una especificación y **no fueron ejecutados**. El índice anterior conserva 1.184 fragmentos con texto; el complemento separado de las fuentes nuevas añade 212 y mantiene DL escaneado/HTML/XLSX pendientes de lectura automática. No se unificaron índices en este bloque. [Resultado actualizado](normativa/RESULTADO_INDEXACION.md). Las pruebas técnicas y el borrador no acreditan aceptación jurídica ni precisión general de extracción.
 
 ## Orden de continuación
-1. Resolver las [cinco decisiones trazables](../normativa/decisiones-pendientes-piloto.v0.1.json) y cotejo primario TUO: transición, condición Ley 32732, FUP, ROF temporal y ramas por persona/experiencia. La adquisición mínima v0.1 ya está comprobada.
+1. Traducir los [cinco criterios adoptados](normativa/CRITERIOS_ADOPTADOS_PILOTO.md) a selección de régimen y ramas, con pruebas de sus excepciones. Consolidar TUPA por rama y cotejo primario TUO. La adquisición mínima v0.1 ya está comprobada.
 2. Ampliar referencias críticas y completar timeout/reanudación antes de procesar lotes OCR; la integración candidata de tres páginas ya está comprobada.
 3. Segmentar y recuperar disposiciones con versiones y revisión identificadas.
 4. Ampliar la cobertura de propuestas, hoy de siete controles; incorporar activación de carpeta y coordinador sobre el circuito documental probado.
-5. Validar con especialista antes de habilitar conclusiones sobre expedientes reales.
+5. Comprobar reglas y casos antes de habilitar conclusiones; documentar la revisión y aceptación del piloto para uso institucional. La autorización para tomar criterios de diseño ya está dada.
 
 ## Referencias de continuidad
 - [Plan integral](PLAN_INTEGRAL.md)

@@ -14,6 +14,8 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 
 **Piloto documental ejecutado:** circuito sintético con matriz y Word anterior de cuatro páginas revisadas visualmente. Propone coincidencias para siete controles y permite aceptar/rechazar con citas verificadas, en otra carpeta y sin alterar la entrada. **53 pruebas técnicas aprobadas.** [Propuesta y revisión](docs/EVIDENCIAS_Y_REVISION.md). Los diez casos jurídicos siguen sin ejecutar y los 22 resultados permanecen `no_determinable`.
 
+**Decisiones del piloto:** los cinco criterios tienen fundamento y alcance registrados por el asistente IA; quedan excepciones temporales y cotejos por rama. Todavía no están traducidos a reglas ejecutables. [Decisiones y fuentes](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md).
+
 ## Documentos del proyecto
 
 - [Plan integral y arquitectura](docs/PLAN_INTEGRAL.md)
@@ -26,7 +28,8 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 - [Matriz de evaluación y plan de pruebas](docs/EVALUACION_Y_PRUEBAS.md)
 - [Circuito sintético y borrador Word](docs/PILOTO_DOCUMENTAL.md)
 - [Cierres comprobados y próximos bloques](docs/CIERRES.md)
-- [Cobertura mínima documental y cinco decisiones pendientes](docs/normativa/COBERTURA_MINIMA_PILOTO.md)
+- [Cobertura mínima documental](docs/normativa/COBERTURA_MINIMA_PILOTO.md)
+- [Cinco criterios adoptados con fundamento y excepciones](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md)
 - [Propuesta textual y revisión de evidencias](docs/EVIDENCIAS_Y_REVISION.md)
 - [Seguridad y separación de documentos](docs/SEGURIDAD.md)
 - [Catálogo estructurado](normativa/catalogo.json) y [JSON Schema](schemas/norma.schema.json)

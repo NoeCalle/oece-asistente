@@ -6,7 +6,7 @@ Actualización: 2026-10-31. Se usan tareas en Git para mantener la continuidad s
 | T01 | P0 | Hecho | Inspeccionar repositorio y conservar estado real en README/bitácora |
 | T02 | P0 | Hecho | Plan, arquitectura, roadmap y separación de datos |
 | T03 | P0 | En curso | 29 registros; mínimo de adquisición v0.1 comprobado. Cobertura normativa exhaustiva y vigencias siguen abiertas |
-| T04 | P0 | En curso | DS 001-2026-EF: inicio 14/01 documentado; condición Ley 32732 y fronteras de transición pendientes |
+| T04 | P0 | En curso | DS 001: inicio 14/01 documentado; J01/J02 adoptados con límites. Quinta DCM condicionada, sin bloqueo de toda Ley 32732; fronteras concretas pendientes |
 | T05 | P0 | En curso general | 46 archivos con hash y copias en Drive; adquisición mínima de 36 cerrada en T28. Nuevas fuentes solo con necesidad/versiones identificadas |
 | T06 | P0 | Pendiente | Consolidar cadena Ley 32069, reglamento, TUPA y directiva hasta corte |
 | T07 | P0 | Pendiente | Revisar TUO LPAG 2026, numeración y efecto en recursos |
@@ -32,8 +32,10 @@ Actualización: 2026-10-31. Se usan tareas en Git para mantener la continuidad s
 | T27 | P1 | Pendiente | Integrar OCR de expedientes con trazabilidad, timeout y reanudación; coordinar con T11/T18 |
 | T28 | P0 | Hecho en alcance v0.1 | Adquisición de 36 documentos en siete grupos verificada; 17 archivos nuevos y 240 páginas; [cierre y pendientes](normativa/COBERTURA_MINIMA_PILOTO.md) |
 
+| T29 | P0 | Hecho en alcance de decisión | Cinco criterios adoptados por asistente IA con fuentes y excepciones; [fundamento](normativa/CRITERIOS_ADOPTADOS_PILOTO.md). No implementa ni habilita los 22 controles |
+
 ## Dependencias
 T04–T08 bloquean conclusiones normativas automatizadas del piloto. T09 bloquea documentos reales; se puede desarrollar con sintéticos. T10–T11 pueden empezar después de definir contratos de datos, sin esperar todos los módulos.
 
 ## Próxima sesión
-Leer [cierres y próximos bloques](CIERRES.md). T24, T25 y T28 están cerradas en su alcance explícito. Priorizar las cinco decisiones normativas trazables y cotejo TUO; después T27/coordinador con sintéticos. Hay 53 pruebas técnicas aprobadas; los diez casos jurídicos siguen sin ejecutar. Mantener tareas con fuente y evidencia. Si se crean issues después, enlazar estos IDs para evitar duplicación.
+Leer [cierres y próximos bloques](CIERRES.md). T24, T25 y T28 están cerradas en su alcance explícito. T29 fija los cinco criterios; priorizar su traducción a reglas y pruebas, TUPA por rama y cotejo TUO; después T27/coordinador con sintéticos. Hay 53 pruebas técnicas aprobadas; los diez casos jurídicos siguen sin ejecutar. Mantener tareas con fuente y evidencia. Si se crean issues después, enlazar estos IDs para evitar duplicación.

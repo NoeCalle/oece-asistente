@@ -1,0 +1,24 @@
+{
+  "fecha": "2026-10-31",
+  "tarea": "T29",
+  "alcance": "Cinco criterios del piloto adoptados por asistente IA con autorización del usuario; no conclusiones de expedientes",
+  "registro": "normativa/decisiones-piloto.v0.2.json",
+  "criterios_adoptados": 5,
+  "reglas_habilitadas": 0,
+  "casos_juridicos_ejecutados": 0,
+  "verificaciones": {
+    "catalogo_json_schema": true,
+    "biblioteca_originales": {"registros": 29, "archivos": 46, "integridad": true},
+    "cobertura_minima": {"archivos": 36, "faltantes": 0},
+    "referencias_decisiones": "Huellas cotejadas contra originales locales; autoría IA y ausencia de habilitación verificadas",
+    "cotejo_visual": ["Ley 32732 PDF 12 y 24", "Reglamento consolidado PDF 228", "Directiva RNP PDF 7"],
+    "pruebas_tecnicas": {"comando": "python -m unittest discover -s tests -p test_*.py", "aprobadas": 53}
+  },
+  "pendientes": [
+    "Implementar selección de régimen y ramas y probar excepciones",
+    "Consolidar requisitos TUPA por rama y excepciones de directiva",
+    "Acto habilitante de quinta DCM Ley 32732 para aplicar ese texto",
+    "Cotejo TUO y recursos"
+  ],
+  "avance_global": "35 %, estimación de planificación conservada; no porcentaje de precisión funcional"
+}

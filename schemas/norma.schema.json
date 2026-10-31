@@ -209,6 +209,7 @@
               "metodo": {
                 "enum": [
                   "texto_web_abierto",
+                  "texto_pdf_y_cotejo_visual",
                   "resultado_buscador_oficial"
                 ]
               }

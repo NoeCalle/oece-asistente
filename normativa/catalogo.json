@@ -329,8 +329,8 @@
       "vigencia": {
         "desde": null,
         "hasta": null,
-        "estado": "condicionada",
-        "fundamento": "Modificación de Ley 32069 sujeta a publicación de modificación reglamentaria (novena DCF). No se identificó y validó el acto habilitante aplicable."
+        "estado": "vigencia_parcial_verificada",
+        "fundamento": "Novena DCF condiciona la quinta DCM completa, que modifica primera DCF numeral 1 de Ley 32069 sobre prevalencia normativa. No extender a toda la ley. PDF pp. 12 y 24 cotejadas 31/10/2026; acto habilitante aún no verificado. Criterio J02 en decisiones-piloto.v0.2.json."
       },
       "procedimientos": [
         "ampliacion_consultores",
@@ -345,7 +345,9 @@
         {
           "tipo": "modifica",
           "destino": "ley-32069",
-          "disposiciones": [],
+          "disposiciones": [
+            "Quinta DCM: numeral 1 de primera DCF de Ley 32069; eficacia sujeta a novena DCF"
+          ],
           "estado": "pendiente_delimitacion"
         }
       ],
@@ -354,11 +356,16 @@
           "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://cdn.www.gob.pe/uploads/document/file/10340261/8403069-ley32732.pdf?v=1784489960",
+          "consultado_el": "2026-10-31",
+          "metodo": "texto_pdf_y_cotejo_visual"
         }
       ],
       "validacion": {
-        "nivel": "condicionada",
-        "nota": "Modificación de Ley 32069 sujeta a publicación de modificación reglamentaria (novena DCF). No se identificó y validó el acto habilitante aplicable. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
+        "nivel": "texto_oficial_consultado",
+        "nota": "Novena DCF condiciona la quinta DCM completa, que modifica primera DCF numeral 1 de Ley 32069 sobre prevalencia normativa. No extender a toda la ley. PDF pp. 12 y 24 cotejadas 31/10/2026; acto habilitante aún no verificado. Criterio J02 en decisiones-piloto.v0.2.json. No se habilitan reglas ni se registra revisión humana.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
@@ -368,8 +375,8 @@
         "descargado": true
       },
       "pendientes": [
-        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Verificar acto habilitante y publicación antes de aplicar quinta DCM.",
+        "Completar vigencia por disposición del resto de la ley sin extender esta condición."
       ]
     },
     {
@@ -1469,13 +1476,13 @@
       "denominacion": "Resolución 090-2025-OECE/PRE ROF integrado actualizado",
       "tipo": "resolucion",
       "jurisdiccion": "PE",
-      "fecha_publicacion": null,
-      "fecha_emision": null,
+      "fecha_publicacion": "2025-12-19",
+      "fecha_emision": "2025-12-16",
       "vigencia": {
         "desde": null,
         "hasta": null,
-        "estado": "pendiente",
-        "fundamento": "Texto oficial recuperado; fecha de eficacia, excepciones y cadena posterior pendientes de cotejo."
+        "estado": "texto_oficial_consultado",
+        "fundamento": "Referencia organizacional actual adoptada para piloto J04. Publicación cotejada en El Peruano 19/12/2025; no confundir con emisión 16/12. No inferir fecha de nacimiento de cada competencia del integrado."
       },
       "procedimientos": [
         "ampliacion_consultores",
@@ -1501,11 +1508,16 @@
           "url": "https://www.gob.pe/institucion/oece/normas-legales/7532575-090-2025-oece-pre",
           "consultado_el": "2026-10-30",
           "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://busquedas.elperuano.pe/dispositivo/NL/2469181-1",
+          "consultado_el": "2026-10-31",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
         "nivel": "texto_oficial_consultado",
-        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
+        "nota": "Artículos 1 y 3 cotejados; fechas verificadas en El Peruano. PTE consultado lista integrado actualizado y anterior no vigente. Criterio J04 adoptado por asistente IA; no es aprobación humana.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
@@ -1515,8 +1527,8 @@
         "descargado": true
       },
       "pendientes": [
-        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
-        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
+        "Para casos históricos cotejar cadena de secciones, modificaciones y fecha del acto.",
+        "Implementar y comprobar selección de versión; no se habilitan reglas por actualizar metadatos."
       ]
     }
   ]

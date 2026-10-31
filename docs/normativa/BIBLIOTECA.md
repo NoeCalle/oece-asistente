@@ -26,7 +26,7 @@ Los 23 documentos se comprobaron por listado de Drive, IDs y tamaño frente al m
 ## Hallazgos y pendientes
 La descarga directa recuperó fuentes que antes devolvían 403/418. El compendio también enlaza Ley 32185: incorporarla a la investigación antes de considerar cerrada la cadena.
 Se obtuvo el original de la resolución de bases estándar de enero de 2026. Falta documentar el cotejo de su publicación y la disposición de vigencia del DS 001-2026-EF.
-La condición de Ley 32732 aún requiere análisis del acto habilitante. Mantener deshabilitadas las reglas.
+La condición de Ley 32732 se delimita a su quinta DCM completa; el acto habilitante sigue pendiente de comprobación para aplicar esa modificación. [Criterio J02 adoptado el 31/10/2026](CRITERIOS_ADOPTADOS_PILOTO.md). Las reglas aún requieren implementación y pruebas.
 Completar originales de Ley 32069, 32103, 32185, 32187, 32515, DL 1715, FUP, ROF y actos aprobatorios del TUPA; comprobar si existen cambios posteriores. El manifiesto distingue consolidaciones, anexos, originales y copias.
 
 ## Evidencia persistente
