@@ -779,7 +779,7 @@
         "desde": "2026-05-01",
         "hasta": null,
         "estado": "vigencia_parcial_verificada",
-        "fundamento": "Nuevo TUO identificado; fecha de ficha MINJUS 28/04 difiere de publicación. Vigencia informada por noticia oficial; artículos y numeración por revisar."
+        "fundamento": "TUO 2026 identificado; distinguir fecha de ficha y publicación. Numeración de recursos cotejada en edición oficial MINJUSDH (arts. 207–208); cómputo del caso y cadena posterior requieren análisis específico."
       },
       "procedimientos": [
         "ampliacion_consultores",
@@ -813,11 +813,16 @@
           "url": "https://www.elperuano.pe/noticia/294713-tramites-mas-simples-entra-en-vigencia-el-nuevo-tuo-de-la-ley-de-procedimiento-administrativo",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/minjus/informes-publicaciones/8441836-primera-edicion-oficial-del-texto-unico-ordenado-de-la-ley-n-27444-ley-del-procedimiento-administrativo-general-aprobado-por-el-decreto-supremo-n-006-2026-jus-actualizada-al-8-07-2026",
+          "consultado_el": "2026-10-31",
+          "metodo": "texto_pdf_y_cotejo_visual"
         }
       ],
       "validacion": {
         "nivel": "vigencia_parcial_verificada",
-        "nota": "Nuevo TUO identificado; fecha de ficha MINJUS 28/04 difiere de publicación. Vigencia informada por noticia oficial; artículos y numeración por revisar. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
+        "nota": "Edición oficial MINJUSDH de 243 páginas, actualizada al 08/07/2026, obtenida el 31/10. Artículos 207 y 208, PDF pp. 193–194: recursos y reconsideración; no usar automáticamente numeración 219 de TUO anterior. Cotejo focalizado; no aprobación humana ni exhaustividad de modificatorias.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
@@ -827,8 +832,8 @@
         "descargado": true
       },
       "pendientes": [
-        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Verificar reglas especiales del procedimiento, notificación, calendario y cómputo del plazo concreto.",
+        "Cotejar modificatorias posteriores al corte editorial 08/07/2026 antes de aplicar al caso."
       ]
     },
     {

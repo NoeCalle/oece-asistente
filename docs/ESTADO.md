@@ -1,56 +1,43 @@
 # Estado de OECE Assistant
-Actualizado: **31 de octubre de 2026 (America/Lima)**. Inventario con corte inicial 29/10/2026; cotejos focalizados de las cinco decisiones al 31/10/2026. Este archivo es el resumen de continuidad; el [roadmap](../ROADMAP.md) y las [tareas](TAREAS.md) contienen el detalle.
 
-## Avance orientativo
-**Alrededor de 35 % del proyecto completo (rango 30–40 %).** Es una estimación de planificación por entregables, no porcentaje de funciones operativas. [Criterios y pesos](MEDICION_AVANCE.md). El aumento corresponde al circuito documental sintético y su Word; la biblioteca sigue sin cierre jurídico.
+Actualización: **31/10/2026, America/Lima**. Versión operativa asistida **v1.0.0**. [Uso diario](USO_DIARIO.md), [verificación](VERIFICACION_V1.md) y [plan integral](PLAN_INTEGRAL.md).
 
 ## Resultado disponible
-Biblioteca inicial en Google Drive y herramientas para integridad, lectura/búsqueda PDF/Word y OCR de muestra. Funciona el circuito sintético con matriz y Word. Ahora también propone coincidencias textuales para siete controles y permite importar decisiones explícitas a otra carpeta, comprobando citas y huellas. T24/T25 quedan cerradas en ese alcance. La activación automática de carpetas y el coordinador conversacional siguen pendientes.
 
-| Fase del plan | Estado real | Evidencia disponible | Falta para cerrar |
-|---|---|---|---|
-| 0. Plan persistente | Completada | Plan, roadmap, documentación y commits en GitHub | Mantenerlos actualizados |
-| 1. Biblioteca normativa | Adquisición mínima cerrada; fase jurídica abierta | T28: 36 requeridos comprobados. Total 29 registros y 46 archivos; índice anterior más complemento de 212 fragmentos con texto | Suficiencia/exhaustividad, consolidación y vigencia por disposición |
-| 2. Procedimientos RNP | En curso | Piloto consultores con 22 controles candidatos y 10 casos sintéticos especificados | Revisión jurídica y resolución de excepciones/transición |
-| 3. Base técnica | En curso, parcial | Lectura, búsqueda, OCR candidato, ingreso, revisiones y propuestas con revisión separada | Coordinador, activación de carpetas, OCR completo, otros formatos y endurecimiento |
-| 4. Piloto consultores | Demostración documental y revisión de evidencias ejecutadas | Matriz de 22 controles; Word anterior revisado; propuesta inicial para siete controles | Ampliar cobertura, aprobar reglas y aceptación jurídica |
-| 5. Validación y expansión | Pendiente | Alcance modular documentado | Ejecutores, inscripciones, actualizaciones y reconsideraciones comprobadas |
+Se puede crear un expediente en el panel, cargar documentos, preparar lectura, matriz y Word, y continuar el análisis conversando en Codex. Hay originales y revisiones conservados, hechos con citas y autor identificado, cotejos OCR declarados y memoria SQLite. El formato provisional puede adaptarse después a modelos laborales reales.
 
-## Decisiones adoptadas
-Los cinco criterios del piloto fueron adoptados con fundamento por el asistente IA, autorizado por el usuario: régimen actual de primera ampliación, condición de la quinta DCM de Ley 32732, alcance FUP, ROF actualizado y ramas por proveedor/experiencia. Se corrige el bloqueo atribuido a toda Ley 32732. Excepciones y fuentes en [criterios adoptados](normativa/CRITERIOS_ADOPTADOS_PILOTO.md) y [registro vigente](../normativa/decisiones-piloto.v0.2.json). No hay aprobación humana ficticia ni reglas nuevas ejecutadas.
+El panel no incorpora un modelo autónomo. La interpretación abierta se hace en Codex; la vigilancia LISTO prepara un borrador documental, sin iniciar por sí sola un análisis libre de IA. No se añadió una API nueva ni se verificó un servicio institucional.
 
-## Qué se probó
-- **53 pruebas técnicas aprobadas:** 23 de biblioteca/OCR, 12 del circuito de expediente, 13 de propuesta/revisión y cinco de cobertura.
-- T28 cerrado: 36 archivos requeridos de siete grupos, sin faltantes y con huellas locales verificadas. Diecisiete archivos nuevos conservados en Drive; ROF histórico separado del actualizado. [Alcance del cierre](normativa/COBERTURA_MINIMA_PILOTO.md).
-- Muestra nueva sin vínculos: nueve propuestas, todas pendientes; cero incorporaciones automáticas. Simulación técnica separada: una aceptada, una rechazada y siete pendientes. La matriz incorporó solo la aceptada; los 22 resultados siguieron `no_determinable`. No fue revisión humana real.
-- Tres documentos sintéticos, 11 fragmentos y siete vínculos declarados a seis controles. Los 22 resultados jurídicos permanecen `no_determinable`.
-- Repetición sin duplicar entregas; cambios conservan la revisión anterior y originales. Se rechazan entradas declaradas como reales, rutas externas, evidencias inexistentes y matriz habilitada; un fallo de redacción no publica una entrega parcial.
-- Word de cuatro páginas exportado con Word instalado e inspeccionado página por página. [Alcance y reproducción](PILOTO_DOCUMENTAL.md).
-- Cinco originales adicionales descargados y archivados en Drive; referencias recuperadas de Ley 32103 PDF p. 20, Ley 32187 p. 11 y Ley 32515 p. 8. [Registro](../normativa/indexacion/validacion-ampliacion-2026-10-30.json).
-- Búsqueda real de una referencia conocida: directiva RNP, numeral 9.3.3, página PDF 12.
-- OCR real de DS 006-2026-JUS páginas 1–2 y DS 009-2025-EF página 20. Las tres salidas conservan fuente, página, hash de imagen y coordenadas.
-- Se observaron errores de reconocimiento al comparar las imágenes. Cuatro regiones comparadas con transcripción manual: un identificador crítico falló y quedó marcado para revisión. No se declara exactitud general. [Diagnóstico](normativa/CALIDAD_OCR.md).
+## Evidencia de la entrega
 
-Los diez casos jurídicos son una especificación y **no fueron ejecutados**. El índice anterior conserva 1.184 fragmentos con texto; el complemento separado de las fuentes nuevas añade 212 y mantiene DL escaneado/HTML/XLSX pendientes de lectura automática. No se unificaron índices en este bloque. [Resultado actualizado](normativa/RESULTADO_INDEXACION.md). Las pruebas técnicas y el borrador no acreditan aceptación jurídica ni precisión general de extracción.
+- **87 pruebas aprobadas:** 53 anteriores y 34 de operación v1. Incluyen S01–S10 con hechos sintéticos, citas alteradas, fronteras, comprobantes, consorcios, RUC extranjero, OCR y conservación.
+- Navegador real: creación, ficha, carga, procesamiento y descarga Word; cero errores de JavaScript observados. Token, origen y rutas también probados por HTTP.
+- OCR real Windows de una página pública: 3.392 caracteres, sin confianza inventada, pendiente de cotejo visual. Timeout, reanudación y transcripción declarada con imagen/autor se prueban por separado.
+- **47 archivos y 29 registros**, con edición oficial MINJUSDH del TUO actualizada al 08/07/2026. Artículos 207–208, PDF pp. 193–194, cotejados visualmente.
+- Ejemplo sintético: cuatro originales, doce hechos citados, diferencia de PEN 20.000 en honorarios y obligaciones de consorcio faltantes. Word y matriz quedan conservados por revisión.
+- Word generado y abierto mediante automatización. Exportación PDF bloqueada en este equipo: QA visual de todas las páginas pendiente; no se declara verificado el diseño final.
 
-## Orden de continuación
-1. Traducir los [cinco criterios adoptados](normativa/CRITERIOS_ADOPTADOS_PILOTO.md) a selección de régimen y ramas, con pruebas de sus excepciones. Consolidar TUPA por rama y cotejo primario TUO. La adquisición mínima v0.1 ya está comprobada.
-2. Ampliar referencias críticas y completar timeout/reanudación antes de procesar lotes OCR; la integración candidata de tres páginas ya está comprobada.
-3. Segmentar y recuperar disposiciones con versiones y revisión identificadas.
-4. Ampliar la cobertura de propuestas, hoy de siete controles; incorporar activación de carpeta y coordinador sobre el circuito documental probado.
-5. Comprobar reglas y casos antes de habilitar conclusiones; documentar la revisión y aceptación del piloto para uso institucional. La autorización para tomar criterios de diseño ya está dada.
+## Estado por fase
 
-## Referencias de continuidad
-- [Plan integral](PLAN_INTEGRAL.md)
-- [Cierres comprobados y siguiente bloque](CIERRES.md)
-- [Cobertura mínima y límites jurídicos](normativa/COBERTURA_MINIMA_PILOTO.md)
-- [Propuesta y revisión de evidencias](EVIDENCIAS_Y_REVISION.md)
-- [Piloto documental](PILOTO_DOCUMENTAL.md) y [ejecución registrada](../proyecto/ejecuciones/demo-consultores-2026-10-30.json)
-- [Fuentes nuevas y pendientes](normativa/AMPLIACION_FUENTES.md)
-- [Word sintético en Drive](https://drive.google.com/file/d/1LTpu3vLvPbSE25a2ZXd_tbIxi-QKnLAu/view)
-- [Ficha del primer procedimiento](procedimientos/AMPLIACION_CONSULTORES.md)
-- [Hallazgos normativos](normativa/HALLAZGOS_PILOTO.md)
-- [Resultado de indexación](normativa/RESULTADO_INDEXACION.md)
-- [OCR: alcance y prueba](normativa/OCR_LOCAL.md)
+| Fase | Disponible | Pendiente real |
+|---|---|---|
+| Plan | Persistente y actualizado | Mantenimiento |
+| Biblioteca | Mínimo adquirido, fuentes ampliadas e índice unificado | Cadena por disposición, cambios posteriores, escaneados y formatos antiguos |
+| Procedimientos | J01–J05 adoptados; motor documental de consultores y diez situaciones ejecutadas | Excepciones temporales, TUPA por rama y evaluadores sustantivos de otros módulos |
+| Base técnica | Panel, memoria, LISTO, revisiones, lectura y OCR acotado | Modelo autónomo integrado si se elige ese despliegue; autenticación para servicio institucional compartido |
+| Piloto | Flujo asistido carpeta a Word/CSV/JSON ejecutado | Modelos reales, aceptación funcional y validación con casos autorizados |
+| Expansión | Cuatro módulos adicionales en modo documental asistido | Reglas y cálculos automáticos completos de cada procedimiento |
 
-Las dudas jurídicas siguen registradas; una herramienta técnica terminada no cierra la fase normativa. El almacenamiento de expedientes y la elección de modelo/runtime siguen pendientes.
+## Funcionamiento adoptado
+
+Codex es el coordinador de este proyecto; [AGENTS.md](../AGENTS.md) dirige el trabajo. Python ejecuta operaciones locales y genera Word. La carpeta predeterminada es `data/operacion`, excluida de Git, dentro de esta ubicación OneDrive; se admite otra raíz autorizada o Drive sincronizado con archivos descargados. El motor local no transmite documentos a un servicio nuevo.
+
+Los [criterios documentales v1](../rules/consultores/criterios-documentales.v1.json) están separados de la matriz candidata histórica v0.1. Cumple/no cumple se limita al control documental y a los hechos citados; no concede categoría ni prueba autenticidad. La autoría IA no se registra como humana. Los otros módulos no heredan reglas de consultores.
+
+## Continuación
+
+1. Usar el piloto asistido con un expediente autorizado y ajustar las observaciones a la necesidad funcional.
+2. Incorporar los modelos de informes que el usuario reciba al empezar su trabajo y adaptar la plantilla.
+3. Continuar el alcance amplio: excepciones normativas y evaluadores de ejecutores, inscripciones, actualizaciones y reconsideraciones. Esta expansión es distinta del ajuste de formato.
+
+**Avance global orientativo: alrededor de 60 % (55–65 %)**. Hay versión asistida disponible; no se afirma que solo falte un formato para completar toda la automatización. [Criterios de estimación](MEDICION_AVANCE.md).

@@ -47,3 +47,7 @@ Diecisiete archivos recuperados el 30/10, incluidos DL 1715, FUP, actos del TUPA
 
 ## 31/10/2026 — criterios adoptados, sin habilitación automática
 Se resolvieron J01–J05 en alcance de diseño por autorización del usuario. [Fundamentos, fuentes, fechas y excepciones](CRITERIOS_ADOPTADOS_PILOTO.md); [registro v0.2](../../normativa/decisiones-piloto.v0.2.json). V0.1 es el antecedente, no el estado vigente. Ley 32732: condición circunscrita a quinta DCM completa (PDF pp. 12 y 24), no a toda la ley. RPE 090: emisión 16/12/2025 y publicación 19/12/2025 verificadas en El Peruano; portal de transparencia lista actualizado y anterior no vigente. Cotejo visual adicional de Ley 32732 pp. 12/24, reglamento p. 228 y directiva RNP p. 7. No se comprobó el acto habilitante de quinta DCM, el calendario de 120 días, la totalidad de rubros FUP ni el TUPA completo por rama. No se infiere inexistencia de fuentes no localizadas ni se ejecutaron reglas nuevas.
+
+
+## Operación v1 y TUO oficial
+Edición MINJUSDH actualizada al 08/07/2026 incorporada como fuente primaria institucional, 243 páginas y copia Drive. Recursos y reconsideración cotejados visualmente en pp. 193–194, artículos 207–208. No se importan referencias del TUO anterior ni se calcula el plazo sin expediente/calendario. [Fuente y límites](OPERACION_V1.md). El índice unificado sustituye para nuevas consultas las instantáneas separadas, sin borrarlas.

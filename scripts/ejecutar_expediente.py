@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import shutil
 import tempfile
+import time
 
 from indexar_normativa import extract
 from trazabilidad_evidencias import validate_link
@@ -288,7 +289,14 @@ def execute(case_dir, output_dir, rules_path=ROOT / "rules/consultores/matriz.v0
                     "archivos": {p.relative_to(temp).as_posix(): digest(p.read_bytes())
                                  for p in sorted(temp.rglob("*")) if p.is_file()}}
         (temp / "entrega.json").write_bytes(encoded(manifest))
-        os.rename(temp, final)
+        for attempt in range(5):
+            try:
+                os.rename(temp, final)
+                break
+            except PermissionError:
+                if final.exists() or attempt == 4:
+                    raise
+                time.sleep(.15 * (2 ** attempt))
     finally:
         if temp.exists():
             if temp.resolve().parent != output_dir:

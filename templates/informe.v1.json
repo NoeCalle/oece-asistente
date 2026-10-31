@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "estado": "formato_provisional_sustituible",
+  "subtitulo": "Evaluación documental y propuesta para revisión",
+  "secciones": {
+    "objeto": "Objeto y alcance",
+    "antecedentes": "Antecedentes",
+    "documentos": "Documentos examinados",
+    "base": "Base normativa y régimen aplicable",
+    "analisis": "Análisis de la documentación",
+    "observaciones": "Observaciones y datos por completar",
+    "conclusion": "Conclusión propuesta",
+    "anexos": "Anexos y trazabilidad"
+  }
+}

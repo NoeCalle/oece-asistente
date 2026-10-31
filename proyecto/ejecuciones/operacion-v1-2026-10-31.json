@@ -1,0 +1,70 @@
+{
+  "fecha": "2026-10-31",
+  "version": "1.0.0",
+  "alcance": "version_local_asistida_no_automatizacion_integral",
+  "pruebas_aprobadas": 87,
+  "situaciones_sinteticas_ejecutadas": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10"
+  ],
+  "aprobacion_humana": null,
+  "biblioteca": {
+    "documentos": 47,
+    "fragmentos": 2280,
+    "con_texto": 2045,
+    "pendientes": [
+      "6682380-anexo-n-4-formulario-actualizacion-de-informacion-legal.xls",
+      "6682380-anexo-n-6-formulario-actualizacion-de-informacion-financiera.xlsx",
+      "6682380-anexo-n-8-solicitud-para-suspension-temporal-del-rnp.xls",
+      "ds-009-2025-ef.pdf",
+      "ds-006-2026-jus.pdf",
+      "tupa-modificacion-2026-073.pdf",
+      "tupa-actualizado-2026-002.pdf",
+      "dl-1715.pdf",
+      "tuo-27444-minjus-julio-2026.pdf"
+    ]
+  },
+  "ocr_real": {
+    "imagen_caracteres": 3392,
+    "pdf_escaneado_caracteres": 3394,
+    "confianza": null,
+    "alerta": "ocr_sin_cotejo_visual"
+  },
+  "navegador": {
+    "creacion_ficha_carga_procesamiento_descarga": true,
+    "errores_javascript": 0
+  },
+  "demo": {
+    "id_ejecucion": "5aa8221f31b1a33c6f21aed0c0ae3d163887a72347a262159d5f8abea4af4102",
+    "originales": 4,
+    "hechos_citados": 12,
+    "conteo": {
+      "cumple": 5,
+      "no_aplica": 3,
+      "no_cumple": 1,
+      "no_determinable": 13
+    },
+    "diferencia_honorarios_pen": "20000.00"
+  },
+  "qa_word": {
+    "docx_generado": true,
+    "abierto_en_word": true,
+    "exportacion_pdf": "bloqueada_en_entorno",
+    "paginas_inspeccionadas": 0,
+    "apto_diseno_final": false
+  },
+  "pendientes": [
+    "QA visual completa Word v1",
+    "Modelos reales para adaptar formato",
+    "Aceptación del piloto y validación con casos laborales autorizados",
+    "Cadena normativa por disposición y evaluadores automáticos completos de otros módulos"
+  ]
+}

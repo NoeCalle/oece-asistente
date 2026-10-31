@@ -40,3 +40,7 @@ Ya se ejecutó un circuito técnico con tres documentos sintéticos: lectura, si
 
 Los diez casos jurídicos especificados siguen sin ejecutar. Todos los controles permanecen deshabilitados; la demostración produce 22 resultados `no_determinable`. No se declara aceptación jurídica ni del asistente conversacional completo.
 
+
+
+## Operación v1 comprobada
+87 pruebas aprobadas: 53 anteriores y 34 nuevas. tests/test_operacion_v1.py ejecuta diez situaciones S01–S10 sobre hechos citados sintéticos, cálculos Decimal, fronteras, citas obsoletas, ramas, OCR, persistencia, integridad, vigilancia y API local. Los flags del archivo v0.1 quedan como historia de su especificación, no estado del nuevo motor. No hubo revisión humana ni evaluación jurídica de casos laborales. [Verificación y limitaciones](VERIFICACION_V1.md).

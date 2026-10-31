@@ -14,3 +14,9 @@ El repositorio es público. Mantener fuera de Git expedientes, DNI/RUC asociados
 - Registrar incidente, suspender procesamiento, retirar accesos y rotar secretos si hay exposición. Borrar un archivo del último commit no borra su historial.
 
 Pendiente revisión de obligaciones de datos personales, políticas institucionales y permisos para usar documentos de trabajo; este documento no certifica cumplimiento legal.
+
+
+## Operación local v1
+El servidor escucha únicamente en 127.0.0.1. Verifica Host, origen y token de sesión en escrituras. No ejecuta instrucciones dentro de documentos, macros, fórmulas ni conexiones externas. Las cargas tienen límites y nombres/rutas controlados, se rechazan symlinks/junctions y se conservan revisiones. Las citas y cotejos OCR identifican fuente, hash, localizador y autor declarado; no hay autenticación institucional del revisor. El panel no transmite a un modelo nuevo.
+
+La raíz predeterminada data/operacion está bajo OneDrive en esta máquina y puede sincronizarse con esa cuenta. Usar una raíz laboral autorizada al cargar expedientes reales. No se suben esos expedientes ni transcripciones a GitHub. El panel local no constituye un servicio multiusuario endurecido. El análisis en Codex se rige por la cuenta y entorno que el usuario utiliza para ese chat; no se declara funcionamiento de IA sin conexión.

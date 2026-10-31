@@ -1,59 +1,53 @@
 # OECE Assistant
 
-Asistente proyectado para preparar evaluaciones documentales y borradores de informes OECE/RNP, con revisión del especialista.
+Herramientas locales y coordinador en Codex para preparar evaluaciones documentales OECE/RNP con citas, matriz y borrador Word editable.
 
-**Estado al 31 de octubre de 2026 (America/Lima): adquisición documental mínima v0.1 comprobada, biblioteca buscable y circuito sintético con matriz y Word. El coordinador conversacional y la evaluación jurídica siguen pendientes.** El MVP mencionado en una conversación anterior no se encontró ni se verificó al inspeccionar el repositorio.
+**Versión operativa asistida v1 — 31/10/2026.** Hay panel de expedientes, carga, lectura PDF/Word/HTML/XLSX, OCR con reanudación, selección de régimen de consultores, hechos citados y entregas versionadas. La conversación abierta y la interpretación se realizan en Codex siguiendo [AGENTS.md](AGENTS.md). El panel y la vigilancia son herramientas deterministas, sin modelo autónomo incorporado.
 
-**Avance global orientativo: 35 % (rango 30–40 %).** [Cómo se estima](docs/MEDICION_AVANCE.md). **[Estado actualizado](docs/ESTADO.md)** — fases, evidencia y continuación.
+## Empezar
 
-## Objetivo
+1. Abrir **INICIAR_OECE.cmd** en este equipo.
+2. Crear expediente, elegir trámite e incorporar documentos.
+3. Preparar el borrador y continuar su análisis en el chat de este proyecto con la ruta de la carpeta.
+4. Descargar Word y matriz; cada revisión conserva originales y citas.
 
-Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar con un coordinador y obtener un borrador Word, una matriz de evaluación y referencias verificables. El primer módulo será ampliación de categorías de consultores de obras; después, aumento de capacidad máxima de contratación de ejecutores, inscripciones/reinscripciones, actualizaciones y reconsideraciones.
+También puedes escribir en Codex: **«Revisa esta carpeta, el proveedor solicita ampliar su categoría y necesito el informe»**. El coordinador usa las herramientas y pide solo información que no encuentre. [Uso diario](docs/USO_DIARIO.md).
 
-**Cierre documental T28:** 36 archivos requeridos en siete grupos, verificados dentro de un alcance explícito. Biblioteca total: **46 archivos en Drive y 29 registros**. Índice anterior con 1.184 fragmentos con texto, más un complemento separado de 212. [Qué se cerró y qué falta](docs/normativa/COBERTURA_MINIMA_PILOTO.md). No se certifica exhaustividad ni vigencia jurídica.
+Los modelos reales de informes pueden incorporarse después. El [formato provisional](templates/informe.v1.json) está separado del circuito de evidencias.
 
-**Piloto documental ejecutado:** circuito sintético con matriz y Word anterior de cuatro páginas revisadas visualmente. Propone coincidencias para siete controles y permite aceptar/rechazar con citas verificadas, en otra carpeta y sin alterar la entrada. **53 pruebas técnicas aprobadas.** [Propuesta y revisión](docs/EVIDENCIAS_Y_REVISION.md). Los diez casos jurídicos siguen sin ejecutar y los 22 resultados permanecen `no_determinable`.
+## Alcance comprobado
 
-**Decisiones del piloto:** los cinco criterios tienen fundamento y alcance registrados por el asistente IA; quedan excepciones temporales y cotejos por rama. Todavía no están traducidos a reglas ejecutables. [Decisiones y fuentes](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md).
-
-## Documentos del proyecto
-
-- [Plan integral y arquitectura](docs/PLAN_INTEGRAL.md)
-- [Roadmap y criterios de cierre](ROADMAP.md)
-- [Tareas persistentes](docs/TAREAS.md)
-- [Inventario normativo y alcance de verificación](docs/normativa/INVENTARIO.md)
-- [Bitácora de fuentes, hallazgos y pendientes](docs/normativa/VERIFICACION.md)
-- [Esquema de indexación temporal y trazabilidad](docs/normativa/INDEXACION.md)
-- [Mapa inicial de procedimientos](docs/PROCEDIMIENTOS.md)
-- [Matriz de evaluación y plan de pruebas](docs/EVALUACION_Y_PRUEBAS.md)
-- [Circuito sintético y borrador Word](docs/PILOTO_DOCUMENTAL.md)
-- [Cierres comprobados y próximos bloques](docs/CIERRES.md)
-- [Cobertura mínima documental](docs/normativa/COBERTURA_MINIMA_PILOTO.md)
-- [Cinco criterios adoptados con fundamento y excepciones](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md)
-- [Propuesta textual y revisión de evidencias](docs/EVIDENCIAS_Y_REVISION.md)
-- [Seguridad y separación de documentos](docs/SEGURIDAD.md)
-- [Catálogo estructurado](normativa/catalogo.json) y [JSON Schema](schemas/norma.schema.json)
-
-## Qué existe y qué falta
-
-| Entregable | Estado |
+| Componente | Estado |
 |---|---|
-| Plan, roadmap, tareas y arquitectura | Documentados |
-| Inventario inicial con fuentes oficiales y fechas diferenciadas | Iniciado; cobertura parcial |
-| Metadatos y esquema JSON | Creados |
-| Indexación PDF/Word y búsqueda textual local | Prototipo implementado; [guía](docs/normativa/INDEXADOR_LOCAL.md) |
-| Descarga y archivo en Drive | 46 archivos; mínimo v0.1 de 36 comprobado; cuatro manifiestos con SHA-256 |
-| Consolidación por artículo y revisión jurídica | Pendiente |
-| Lectura TXT, PDF digital y cuerpo/tablas de DOCX | Biblioteca y primer lector de expedientes sintéticos |
-| OCR local de Windows | 3 páginas buscables en una capa candidata separada; [integración](docs/normativa/INTEGRACION_OCR.md) |
-| OCR de lotes completos, coordinador y evaluación | Pendiente |
-| Entrada sintética, revisiones, matriz y Word | Implementados y probados; revisión jurídica pendiente |
-| Propuestas y revisión de evidencias | Perfil inicial de siete controles; decisiones explícitas, huellas/citas y revocación; [alcance](docs/EVIDENCIAS_Y_REVISION.md) |
-| Carga documental a Drive | Realizada mediante conector; sin sincronización automática |
-| API RNP o despliegue del asistente | No implementados |
+| Ampliación de consultores | Selección temporal y por proveedor/experiencia; 22 verificaciones documentales sobre hechos citados; no concesión automática de categoría |
+| CMC, inscripción/reinscripción, actualización y reconsideración | Recepción, lectura, evidencias, análisis asistido y Word; evaluadores sustantivos automáticos completos pendientes |
+| Carpetas locales o Drive sincronizado | LISTO, estabilidad, bloqueo, revisiones y reintentos; archivos descargados |
+| Panel local | Creación, ficha, carga, procesamiento y descarga Word comprobados en navegador |
+| Conversación | Codex como coordinador; comandos guiados locales y memoria SQLite; sin integración automática nueva con un modelo |
+| Lectura | PDF digital, DOCX con tablas/encabezados/pies, TXT/HTML y valores almacenados XLSX |
+| OCR | Windows real, límites, caché y reanudación; cotejo declarado antes de apoyar hechos favorables |
+| Entregas | Word provisional, CSV seguro, JSON trazable y revisiones; QA visual completa del Word v1 pendiente por bloqueo de exportación |
+| Biblioteca | 29 registros y 47 archivos; cinco manifiestos; índice unificado local; cierre jurídico exhaustivo pendiente |
+| Pruebas | 87 aprobadas, incluidas diez situaciones del piloto con hechos sintéticos; no precisión jurídica general |
 
-**Repositorio público:** solo código, documentación del proyecto, metadatos de fuentes públicas y casos sintéticos. Expedientes, informes, credenciales y documentos de trabajo van fuera del repositorio. No subir el ZIP anterior sin inspeccionarlo y retirar datos reales.
+El plan global sigue abierto. La versión asistida prepara borradores; no se declaran terminadas la evaluación autónoma de todos los módulos ni la aceptación institucional. [Estado y evidencia](docs/ESTADO.md). Estimación orientativa del plan completo: alrededor de **60 %**, no porcentaje de precisión.
 
-No se certifica que el inventario cubra todas las modificatorias al corte. Una fuente encontrada no habilita por sí sola una regla de evaluación. Véanse los bloqueos de vigencia y de validación humana en la bitácora.
+## Documentación
 
-Para verificar metadatos y trazabilidad: `python scripts/verificar_biblioteca.py`. El modo `--verificar-originales` requiere las copias locales. [Resultados del piloto](docs/normativa/VALIDACION_PILOTO.md).
+- [Uso diario](docs/USO_DIARIO.md), [contrato de expediente](docs/CONTRATO_EXPEDIENTE.md) y [verificación v1](docs/VERIFICACION_V1.md).
+- [Plan integral](docs/PLAN_INTEGRAL.md), [roadmap](ROADMAP.md), [tareas](docs/TAREAS.md), [cierres](docs/CIERRES.md) y [medición](docs/MEDICION_AVANCE.md).
+- [Cinco criterios adoptados](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md) y [criterios documentales ejecutados](rules/consultores/criterios-documentales.v1.json).
+- [Biblioteca y TUO oficial](docs/normativa/OPERACION_V1.md), [catálogo](normativa/catalogo.json), [JSON Schema](schemas/norma.schema.json) y [seguridad](docs/SEGURIDAD.md).
+
+## Datos y reproducción
+
+Repositorio público: solo código, documentación, metadatos públicos y ejemplos sintéticos. Expedientes, informes, transcripciones e índices de trabajo van en `data/` o raíz privada, excluidos de Git. Esta copia está bajo OneDrive y puede sincronizarse con esa cuenta; usar una ubicación autorizada para documentos laborales. El programa no publica expedientes ni presenta trámites.
+
+Dependencias y comandos en uso diario. La biblioteca binaria está fuera de Git; su reconstrucción requiere los originales conservados. Las pruebas crean documentos sintéticos locales.
+
+```text
+python -m unittest discover -s tests -p "test_*.py"
+python scripts/verificar_biblioteca.py --verificar-originales
+python -m oece biblioteca --reconstruir
+python -m oece panel
+```

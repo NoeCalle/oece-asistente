@@ -1,0 +1,321 @@
+{
+  "version": "1.0.0",
+  "naturaleza": "verificaciones_documentales_condicionadas_a_hechos_citados",
+  "procedimiento_id": "ampliacion_consultores",
+  "autor_criterios": "asistente_ia",
+  "fecha": "2026-10-31",
+  "antecedente": "rules/consultores/matriz.v0.1.json",
+  "implementacion": "oece/evaluacion.py",
+  "criterios": "normativa/decisiones-piloto.v0.2.json",
+  "no_constituye_decision_institucional": true,
+  "reglas": [
+    {
+      "id": "AC-01",
+      "rama": "régimen",
+      "control": "Determinar fecha de solicitud, registro previo, recategorización y primera ampliación/reinscripción.",
+      "evidencia_esperada": "Constancia RNP, solicitud, actos previos.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "Cuarta DCT 3.1–3.5",
+        "pagina_pdf": 228
+      },
+      "limite": "No aplicar umbrales A/B/C/D sin justificar régimen; revisión humana de fechas de transición."
+    },
+    {
+      "id": "AC-02",
+      "rama": "identificación",
+      "control": "Vincular solicitante, tipo de persona y representación con formulario.",
+      "evidencia_esperada": "Solicitud e identificación/representación.",
+      "fuente": {
+        "archivo": "tupa-modificacion-2026-073.pdf",
+        "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf",
+        "disposicion": "PA42003A92; formulario",
+        "pagina_pdf": 88
+      },
+      "limite": "Datos incompatibles o ilegibles: no_determinable."
+    },
+    {
+      "id": "AC-03",
+      "rama": "solicitud",
+      "control": "Verificar presentación de solicitud mediante formulario.",
+      "evidencia_esperada": "Formulario presentado.",
+      "fuente": {
+        "archivo": "tupa-modificacion-2026-073.pdf",
+        "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf",
+        "disposicion": "PA42003A92 requisito 1",
+        "pagina_pdf": 31
+      },
+      "limite": "No exigir un formato distinto sin revisar equivalencias admitidas."
+    },
+    {
+      "id": "AC-04",
+      "rama": "pago",
+      "control": "Comprobar número de recibo y fecha de pago.",
+      "evidencia_esperada": "Datos de pago y verificación disponible.",
+      "fuente": {
+        "archivo": "tupa-modificacion-2026-073.pdf",
+        "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf",
+        "disposicion": "PA42003A92 requisito 2",
+        "pagina_pdf": 31
+      },
+      "limite": "No confundir ausencia de comprobante adjunto con ausencia de pago."
+    },
+    {
+      "id": "AC-05",
+      "rama": "experiencia",
+      "control": "Clasificar cada experiencia: Perú bajo Ley, Perú fuera de Ley o extranjero; verificar culminación.",
+      "evidencia_esperada": "Contrato y constancia/documento del contratante.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "381.4.3",
+        "pagina_pdf": 210
+      },
+      "limite": "Selecciona rama documental; no sustituye juicio de pertinencia."
+    },
+    {
+      "id": "AC-06",
+      "rama": "peru_ley",
+      "control": "Verificar constancia o documento equivalente emitido por la entidad y datos exigidos.",
+      "evidencia_esperada": "Constancia o equivalente; viabilidad cuando corresponda.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "381.4.3.1.i.a",
+        "pagina_pdf": 210
+      },
+      "limite": "Aceptar alternativa prevista; no exigir solo documento con un título exacto."
+    },
+    {
+      "id": "AC-07",
+      "rama": "peru_fuera_ley",
+      "control": "Verificar contrato, sustento del contratante, aprobación/viabilidad/conformidad y descripción de actividades.",
+      "evidencia_esperada": "Documentos según naturaleza de la consultoría.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "381.4.3.1.ii.a–d",
+        "pagina_pdf": 210
+      },
+      "limite": "No exigir simultáneamente alternativas que dependen del objeto."
+    },
+    {
+      "id": "AC-08",
+      "rama": "peru_fuera_ley",
+      "control": "Contrastar suma de comprobantes con monto final de consultoría.",
+      "evidencia_esperada": "Comprobantes y monto final documentado.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "381.4.3.1.ii.e",
+        "pagina_pdf": 210
+      },
+      "limite": "No usar presupuesto de obra como monto de honorarios; moneda y base deben coincidir."
+    },
+    {
+      "id": "AC-09",
+      "rama": "extranjero",
+      "control": "Verificar contrato y documentos de conformidad o viabilidad con datos exigidos.",
+      "evidencia_esperada": "Contrato, conformidad/viabilidad y obligaciones de consorcio.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "381.4.3.2",
+        "pagina_pdf": 210
+      },
+      "limite": "Traducción/legalización deben completarse con norma específica antes de automatizar."
+    },
+    {
+      "id": "AC-10",
+      "rama": "consorcio",
+      "control": "Identificar obligaciones asumidas por integrante y evitar atribuir toda la experiencia al solicitante.",
+      "evidencia_esperada": "Contrato de consorcio y sustento del contratante.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "381.4.3.1 y 3.2",
+        "pagina_pdf": 210
+      },
+      "limite": "No sustituir obligación documentada por porcentaje supuesto."
+    },
+    {
+      "id": "AC-11",
+      "rama": "categoría",
+      "control": "Distinguir cuatro tipos de consultoría y condición con/sin experiencia.",
+      "evidencia_esperada": "Objeto, culminación y soporte técnico.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "27.1–27.5",
+        "pagina_pdf": 16
+      },
+      "limite": "El umbral monetario del Anexo 2 no se traslada automáticamente a artículo 27."
+    },
+    {
+      "id": "AC-12",
+      "rama": "experiencia_personal",
+      "control": "Contrastar fecha de colegiación o constitución/inscripción según persona.",
+      "evidencia_esperada": "Colegiación o registro de persona jurídica y contrato.",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+        "disposicion": "9.2.8.a",
+        "pagina_pdf": 11
+      },
+      "limite": "Aplicabilidad temporal y excepciones pendientes de revisión."
+    },
+    {
+      "id": "AC-13",
+      "rama": "no_duplicación",
+      "control": "No duplicar una misma consultoría en especialidades incompatibles; identificar objeto principal.",
+      "evidencia_esperada": "Contrato y desglose de prestaciones.",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+        "disposicion": "9.2.8.c",
+        "pagina_pdf": 11
+      },
+      "limite": "No clasificar por palabras aisladas; justificar objeto principal."
+    },
+    {
+      "id": "AC-14",
+      "rama": "exclusiones",
+      "control": "Revisar supuestos de experiencia no computable, sin rechazo automático.",
+      "evidencia_esperada": "Contratos, registro e información de ejecución.",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+        "disposicion": "9.2.9",
+        "pagina_pdf": 11
+      },
+      "limite": "Completar lectura de continuación en p.12 y ámbito antes de emitir resultado."
+    },
+    {
+      "id": "AC-15",
+      "rama": "moneda",
+      "control": "Registrar moneda, fecha del contrato y fuente del tipo de cambio.",
+      "evidencia_esperada": "Contrato y fuente de cambio documentada.",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+        "disposicion": "9.2.2",
+        "pagina_pdf": 6
+      },
+      "limite": "No inventar tasa; validar fuente y redondeo antes de calcular."
+    },
+    {
+      "id": "AC-16",
+      "rama": "condiciones",
+      "control": "Revisar inscripción y condiciones del artículo 25 sin imponer requisitos financieros universales.",
+      "evidencia_esperada": "Constancia RNP y documentos legal/financieros aplicables.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "381.4 remisión al artículo 25",
+        "pagina_pdf": 210
+      },
+      "limite": "Completar submatriz por tipo de persona; revisar directiva 9.2.4 para natural también ejecutor."
+    },
+    {
+      "id": "AC-17",
+      "rama": "sunat",
+      "control": "Comprobar RUC activo/habido y concordancia de nombres/domicilio cuando corresponda.",
+      "evidencia_esperada": "Consulta SUNAT fechada.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "25.1.a",
+        "pagina_pdf": 13
+      },
+      "limite": "Excepción para extranjero no domiciliado; no convertirla en incumplimiento."
+    },
+    {
+      "id": "AC-18",
+      "rama": "sanciones",
+      "control": "Verificar sanción vigente de inhabilitación impuesta por TCP.",
+      "evidencia_esperada": "Consulta oficial fechada e identidad coincidente.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "25.1.b",
+        "pagina_pdf": 13
+      },
+      "limite": "Consulta no disponible o identidad ambigua requiere revisión."
+    },
+    {
+      "id": "AC-19",
+      "rama": "registro",
+      "control": "Comprobar inscripción como consultor e información legal/financiera actualizada.",
+      "evidencia_esperada": "Constancia e historial RNP y variaciones documentadas.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "25.1.c",
+        "pagina_pdf": 13
+      },
+      "limite": "El expediente aislado no acredita estado actual en registros externos."
+    },
+    {
+      "id": "AC-20",
+      "rama": "representacion",
+      "control": "Comprobar facultad de representación y registro aplicable.",
+      "evidencia_esperada": "Poder y registro competente.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "25.4",
+        "pagina_pdf": 13
+      },
+      "limite": "Revisar alternativa ante autoridad de origen para extranjero no domiciliado."
+    },
+    {
+      "id": "AC-21",
+      "rama": "capacidad_legal",
+      "control": "Seleccionar condiciones por persona natural, jurídica nacional o extranjera.",
+      "evidencia_esperada": "Colegiación, constitución, objeto y datos registrales según persona.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "25.5.2.a",
+        "pagina_pdf": 14
+      },
+      "limite": "No trasladar requisitos de bienes/servicios a consultores."
+    },
+    {
+      "id": "AC-22",
+      "rama": "solvencia",
+      "control": "Delimitar condiciones de solvencia y documentos conforme a reglamento y directiva.",
+      "evidencia_esperada": "Datos financieros y reportes según persona.",
+      "fuente": {
+        "archivo": "reglamento-consolidado-2026-01-09.pdf",
+        "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+        "disposicion": "25.5.2.b",
+        "pagina_pdf": 14
+      },
+      "limite": "Completar cotejo pp.14–15; revisar 9.2.4 para consultor natural también ejecutor; no exigir estados a todos."
+    }
+  ]
+}

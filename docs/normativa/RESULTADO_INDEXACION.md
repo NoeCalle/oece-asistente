@@ -1,3 +1,5 @@
+**Actualización v1 31/10:** las cifras siguientes conservan instantáneas anteriores. El nuevo índice unificado dispone de 47 fuentes, 2.280 fragmentos y 2.045 con texto; [alcance vigente](OPERACION_V1.md).
+
 # Resultado del indexador local
 **Continuación 31/10/2026:** [índice complementario del cierre documental](COBERTURA_MINIMA_PILOTO.md), sobre 17 archivos nuevos: 240 fragmentos y 212 con texto; 14 PDF con extracción, un PDF escaneado, HTML y XLSX pendientes de lectura automática. Se comprobó recuperación del ROF actualizado p. 36, Resolución 090 p. 4 y FUP p. 12. Los resultados anteriores descritos debajo permanecen como instantáneas; no se unificaron las bases.
 

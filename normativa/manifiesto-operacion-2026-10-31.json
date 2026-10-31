@@ -1,0 +1,27 @@
+{
+  "fecha_registro": "2026-10-31",
+  "corte_investigado": "2026-10-31",
+  "alcance": "Edición oficial MINJUSDH actualizada al 08/07/2026. Cotejo focalizado de recursos; no exhaustividad al 31/10 ni autenticación de firmas.",
+  "archivos": [
+    {
+      "name": "tuo-27444-minjus-julio-2026.pdf",
+      "instrument_id": "ds-006-2026-jus",
+      "kind": "edicion_oficial",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517",
+      "source_page": "https://www.gob.pe/institucion/minjus/informes-publicaciones/8441836-primera-edicion-oficial-del-texto-unico-ordenado-de-la-ley-n-27444-ley-del-procedimiento-administrativo-general-aprobado-por-el-decreto-supremo-n-006-2026-jus-actualizada-al-8-07-2026",
+      "local_path": "normativa/originales/operacion-2026-10-31/tuo-27444-minjus-julio-2026.pdf",
+      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
+      "bytes": 6745398,
+      "descargado_el": "2026-10-31",
+      "verificacion": {
+        "pages": 243,
+        "first_page_text": "PRIMERA EDICIÓN OFICIAL\nDirección General de Desarrollo Normativo y Calidad Regulatoria\nDirección de Sistematización Jurídica y Difusión\nScipión Llona 350 Miraﬂores, Lima 18\nTeléfono: (511) 204-8020\nh",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1pXomCiWa5KOGsJ4-z_9o26U2ie2iEiOA"
+    }
+  ]
+}

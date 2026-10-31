@@ -21,6 +21,16 @@ function In-Root([string]$Path) {
     }
     return $absolute
 }
+function Hash-File([string]$Path) {
+    $stream = [IO.File]::OpenRead($Path)
+    $algorithm = [Security.Cryptography.SHA256]::Create()
+    try {
+        return ([BitConverter]::ToString($algorithm.ComputeHash($stream))).Replace('-', '').ToLowerInvariant()
+    } finally {
+        $algorithm.Dispose()
+        $stream.Dispose()
+    }
+}
 function Await-WinRT($Operation, [Type]$ResultType) {
     $method = [System.WindowsRuntimeSystemExtensions].GetMethods() | Where-Object {
         $_.Name -eq 'AsTask' -and $_.IsGenericMethodDefinition -and
@@ -39,7 +49,7 @@ $records = @()
 foreach ($page in $request.pages) {
     $imagePath = In-Root $page.image_path
     $outputPath = In-Root $page.output_path
-    $imageHash = (Get-FileHash -LiteralPath $imagePath -Algorithm SHA256).Hash.ToLower()
+    $imageHash = Hash-File $imagePath
     if ($imageHash -ne $page.image_sha256) { throw 'Image hash mismatch before OCR' }
     $file = Await-WinRT ([Windows.Storage.StorageFile]::GetFileFromPathAsync($imagePath)) ([Windows.Storage.StorageFile])
     $stream = $null
@@ -61,7 +71,7 @@ foreach ($page in $request.pages) {
             }
             $lines += [ordered]@{ text=$line.Text; words=$words }
         }
-        if ((Get-FileHash -LiteralPath $imagePath -Algorithm SHA256).Hash.ToLower() -ne $imageHash) {
+        if ((Hash-File $imagePath) -ne $imageHash) {
             throw 'Image changed during OCR'
         }
         $record = [ordered]@{

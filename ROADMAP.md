@@ -18,3 +18,9 @@ Actualización: 2026-10-31. Corte normativo investigado: 2026-10-29. Las fases s
 5. Integrar OCR con control de calidad y continuar ingreso/extracción; elegir runtime del coordinador antes de automatizar conclusiones.
 
 Se aprobaron **53 pruebas técnicas**. [T24, T25 y T28 cerradas en su alcance](docs/CIERRES.md): propuestas, revisión documental y adquisición de 36 archivos requeridos. Biblioteca total de 46 archivos y 29 registros; nuevo complemento buscable. La demostración anterior con Word se conserva. Reglas, diez casos jurídicos, coordinador y aceptación completa siguen pendientes. No hay fecha de entrega hasta dimensionar documentos, formatos y casos.
+
+
+## Estado operativo del 31/10/2026
+Ya existe una versión asistida con panel, carpeta LISTO, lectura, OCR acotado, memoria, verificaciones documentales de consultores y Word/CSV/JSON. La interpretación abierta funciona en el chat de Codex mediante AGENTS.md, sin modelo autónomo nuevo integrado al panel. Los diez supuestos S01–S10 se implementaron con hechos sintéticos; 87 pruebas aprobadas. Biblioteca unificada de 47 archivos y TUO oficial. [Estado vigente](docs/ESTADO.md).
+
+Siguiente cierre acotado: QA visual del Word v1 (exportación bloqueada en este equipo), aceptación del flujo asistido y adaptación posterior a modelos laborales reales. El roadmap completo conserva automatización sustantiva de otros módulos y validación institucional pendientes. No equiparar un módulo de borradores con la implementación total de sus cálculos y decisiones.
