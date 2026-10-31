@@ -2,7 +2,7 @@
 
 Asistente proyectado para preparar evaluaciones documentales y borradores de informes OECE/RNP, con revisión del especialista.
 
-**Estado al 30 de octubre de 2026 (America/Lima): biblioteca buscable y primer circuito de expediente sintético con matriz y Word implementados. El coordinador conversacional y la evaluación jurídica siguen pendientes.** El MVP mencionado en una conversación anterior no se encontró ni se verificó al inspeccionar el repositorio.
+**Estado al 31 de octubre de 2026 (America/Lima): adquisición documental mínima v0.1 comprobada, biblioteca buscable y circuito sintético con matriz y Word. El coordinador conversacional y la evaluación jurídica siguen pendientes.** El MVP mencionado en una conversación anterior no se encontró ni se verificó al inspeccionar el repositorio.
 
 **Avance global orientativo: 35 % (rango 30–40 %).** [Cómo se estima](docs/MEDICION_AVANCE.md). **[Estado actualizado](docs/ESTADO.md)** — fases, evidencia y continuación.
 
@@ -10,9 +10,9 @@ Asistente proyectado para preparar evaluaciones documentales y borradores de inf
 
 Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar con un coordinador y obtener un borrador Word, una matriz de evaluación y referencias verificables. El primer módulo será ampliación de categorías de consultores de obras; después, aumento de capacidad máxima de contratación de ejecutores, inscripciones/reinscripciones, actualizaciones y reconsideraciones.
 
-**Avance documental:** 29 archivos en Google Drive y 24 registros normativos; índice ampliado con 1.184 fragmentos con texto, incluidos tres OCR candidatos. [Fuentes nuevas y pendientes](docs/normativa/AMPLIACION_FUENTES.md). La revisión jurídica sigue pendiente.
+**Cierre documental T28:** 36 archivos requeridos en siete grupos, verificados dentro de un alcance explícito. Biblioteca total: **46 archivos en Drive y 29 registros**. Índice anterior con 1.184 fragmentos con texto, más un complemento separado de 212. [Qué se cerró y qué falta](docs/normativa/COBERTURA_MINIMA_PILOTO.md). No se certifica exhaustividad ni vigencia jurídica.
 
-**Piloto documental ejecutado:** circuito sintético con matriz y Word anterior de cuatro páginas revisadas visualmente. Ahora propone coincidencias para siete controles y permite aceptar/rechazar con citas verificadas, en otra carpeta y sin alterar la entrada. **47 pruebas técnicas aprobadas.** [Propuesta y revisión](docs/EVIDENCIAS_Y_REVISION.md). Los diez casos jurídicos siguen sin ejecutar y los 22 resultados permanecen `no_determinable`.
+**Piloto documental ejecutado:** circuito sintético con matriz y Word anterior de cuatro páginas revisadas visualmente. Propone coincidencias para siete controles y permite aceptar/rechazar con citas verificadas, en otra carpeta y sin alterar la entrada. **53 pruebas técnicas aprobadas.** [Propuesta y revisión](docs/EVIDENCIAS_Y_REVISION.md). Los diez casos jurídicos siguen sin ejecutar y los 22 resultados permanecen `no_determinable`.
 
 ## Documentos del proyecto
 
@@ -26,6 +26,7 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 - [Matriz de evaluación y plan de pruebas](docs/EVALUACION_Y_PRUEBAS.md)
 - [Circuito sintético y borrador Word](docs/PILOTO_DOCUMENTAL.md)
 - [Cierres comprobados y próximos bloques](docs/CIERRES.md)
+- [Cobertura mínima documental y cinco decisiones pendientes](docs/normativa/COBERTURA_MINIMA_PILOTO.md)
 - [Propuesta textual y revisión de evidencias](docs/EVIDENCIAS_Y_REVISION.md)
 - [Seguridad y separación de documentos](docs/SEGURIDAD.md)
 - [Catálogo estructurado](normativa/catalogo.json) y [JSON Schema](schemas/norma.schema.json)
@@ -38,7 +39,7 @@ Cargar un expediente en una carpeta local o Google Drive sincronizado, conversar
 | Inventario inicial con fuentes oficiales y fechas diferenciadas | Iniciado; cobertura parcial |
 | Metadatos y esquema JSON | Creados |
 | Indexación PDF/Word y búsqueda textual local | Prototipo implementado; [guía](docs/normativa/INDEXADOR_LOCAL.md) |
-| Descarga y archivo en Drive | 29 archivos, incluido HTML; manifiestos con SHA-256 |
+| Descarga y archivo en Drive | 46 archivos; mínimo v0.1 de 36 comprobado; cuatro manifiestos con SHA-256 |
 | Consolidación por artículo y revisión jurídica | Pendiente |
 | Lectura TXT, PDF digital y cuerpo/tablas de DOCX | Biblioteca y primer lector de expedientes sintéticos |
 | OCR local de Windows | 3 páginas buscables en una capa candidata separada; [integración](docs/normativa/INTEGRACION_OCR.md) |

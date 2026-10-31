@@ -1,5 +1,5 @@
 # Hallazgos de revisión del piloto
-Actualizado el 2026-10-30; corte investigado 2026-10-29. Se mantienen pendientes revisión humana y cobertura exhaustiva.
+Actualizado el 2026-10-31; corte investigado 2026-10-29. Se mantienen pendientes revisión humana y cobertura exhaustiva. La adquisición mínima quedó comprobada en [T28](COBERTURA_MINIMA_PILOTO.md).
 
 ## H01 — DS 001-2026-EF: discrepancia de fecha resuelta documentalmente
 Se leyó la única DCF del original, página PDF 15 (impresa 47), y se revisó visualmente: entra en vigor al día siguiente de publicarse la resolución modificatoria de bases estándar. La [RD 0001-2026-EF/54.01](https://busquedas.elperuano.pe/dispositivo/NL/2476159-1), emitida 09/01/2026, aparece publicada el 13/01/2026 y modifica esa directiva. Resultado documentado: inicio 14/01/2026. Se conserva el antecedente de discrepancia 09/01 en portales secundarios de orientación; no se usa como fecha efectiva. Esto no acredita toda la consolidación del reglamento.
@@ -17,10 +17,16 @@ El original p.12 contiene octava DCF (adecuación del procedimiento sancionador)
 - Lectura de tablas DOCX de anexos 1 y 2. Anexo 1 distingue profesiones/especialidades y notas de obras rurales; no se ha activado su aplicación actual.
 - Lectura y renderizado de DS 001 p.15; TUPA pp.31–32; reglamento consolidado p.228.
 - Referencias del JSON enlazadas por hash a archivos preservados; todos los controles deshabilitados.
-- No se ejecutó evaluación de un expediente, cómputo de plazos ni generación de informe Word.
+- En esa revisión normativa inicial no se ejecutó evaluación jurídica ni cómputo de plazos. Las demostraciones técnicas posteriores con Word y propuestas se documentan en el estado general; no constituyen aceptación jurídica.
 
 ## Próximas evidencias
-Texto primario y cambios de Cuarta/Quinta DCT; criterios oficiales para frontera de enero y trámites en curso; artículo 25 y condiciones por persona; TUO 2026 para recursos; original de Ley 32185 y demás cambios pendientes.
+Consolidar Cuarta/Quinta DCT, frontera de enero y trámites en curso; artículo 25 y condiciones por persona; TUO para recursos. Ley 32185 y los instrumentos del cierre T28 ya están archivados. [Cinco decisiones concretas](../../normativa/decisiones-pendientes-piloto.v0.1.json).
 
 ## H05 — Condiciones diferenciadas por proveedor
 Se leyó artículo 25 del reglamento consolidado pp.13–15 y numeral 9.2.4 de la directiva. Se añadieron seis controles candidatos. La excepción del extranjero no domiciliado respecto del RUC y la alternativa de representación requieren ramas explícitas. No se trasladan disposiciones 9.6.2–9.6.4 de actualización legal/financiera a documentos de experiencia sin acreditar su ámbito.
+
+## H06 — ROF actualizado recuperado y antecedente histórico separado
+La Resolución 090-2025, art. 3, PDF p. 4, deroga expresamente la 002-2025. Se conservaron resolución y anexo actualizado, además de 088 y su modificación de sección segunda. Funciones de Operaciones Registrales en art. 74 del integrado actualizado, PDF p. 36. Páginas cotejadas visualmente; fechas de eficacia y cambios posteriores permanecen abiertos.
+
+## H07 — FUP y DL 1715 delimitados documentalmente
+FUP: objeto/ámbito p. 2 y despliegue del numeral 11.3 p. 12 revisados visualmente. No se crea una dispensa automática de documentación RNP. DL 1715: expediente oficial escaneado de 28 páginas, con publicación en pp. 27–28 contrastada con HTML de El Peruano; modifica artículo 85.1 e sobre cautelares. No introduce por ese hecho un requisito de categoría. [Fuentes y límites](COBERTURA_MINIMA_PILOTO.md).

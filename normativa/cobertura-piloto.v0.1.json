@@ -1,0 +1,101 @@
+{
+  "version": "0.1.0",
+  "fecha": "2026-10-30",
+  "corte_investigado": "2026-10-29",
+  "procedimiento": "ampliacion_consultores",
+  "alcance": "Adquisición de documentos principales y complementarios expresamente enumerados; no inventario exhaustivo ni certificación de vigencia.",
+  "habilita_reglas": false,
+  "grupos": [
+    {
+      "id": "ley_y_cambios_conocidos",
+      "prioridad": "principal",
+      "archivos_obligatorios": [
+        "ley-32069.pdf",
+        "ley-32069-consolidada-2026-07-19.pdf",
+        "ley-32103.pdf",
+        "ley-32187.pdf",
+        "ley-32515.pdf",
+        "ley-32732.pdf",
+        "dl-1715.pdf",
+        "dl-1715-elperuano.html"
+      ],
+      "pendiente_juridico": "Consolidación por disposición; condición Ley 32732; DL 1715 es contexto general, no requisito de ampliación."
+    },
+    {
+      "id": "reglamento_y_transicion",
+      "prioridad": "principal",
+      "archivos_obligatorios": [
+        "ds-009-2025-ef.pdf",
+        "ds-009-2025-ef-fe-erratas.pdf",
+        "reglamento-consolidado-2026-01-09.pdf",
+        "ds-001-2026-ef.pdf",
+        "rd-001-2026-ef-54-01.pdf",
+        "ds-222-2026-ef.pdf",
+        "comunicado-001-2026-oece.html"
+      ],
+      "pendiente_juridico": "Fronteras temporales de categorías, trámites en curso y modificaciones posteriores al consolidado."
+    },
+    {
+      "id": "directiva_rnp",
+      "prioridad": "principal",
+      "archivos_obligatorios": [
+        "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "6682380-anexo-n-1-especialidades-de-los-consultores-de-obras-segun-su-profesion.docx",
+        "6682380-anexo-n-2-categorias-de-los-consultores-de-obras.docx"
+      ],
+      "pendiente_juridico": "Aplicabilidad temporal de anexos y ramas por persona/origen de experiencia."
+    },
+    {
+      "id": "tupa_y_actos",
+      "prioridad": "principal",
+      "archivos_obligatorios": [
+        "tupa-2025.pdf",
+        "tupa-actualizado-2026-002.pdf",
+        "tupa-modificacion-2026-073.pdf",
+        "rgg-002-2026-oece.pdf",
+        "rpe-073-2026-oece.pdf"
+      ],
+      "pendiente_juridico": "Publicación/eficacia de actos, ficha PA42003A92 y cotejo con reglamento/directiva. El DS 086 está dentro del PDF base."
+    },
+    {
+      "id": "competencia_rof_cadena_conocida",
+      "prioridad": "principal",
+      "archivos_obligatorios": [
+        "ds-067-2025-ef.pdf",
+        "rof-seccion-primera.pdf",
+        "rpe-049-2025-osce.pdf",
+        "rof-seccion-segunda.pdf",
+        "rpe-088-2025-oece.pdf",
+        "rof-seccion-segunda-modificada-2025.pdf",
+        "rpe-090-2025-oece.pdf",
+        "rof-texto-integrado-actualizado-2025.pdf"
+      ],
+      "pendiente_juridico": "Fechas de eficacia, cambios posteriores y correspondencia con órgano/funcionario del caso. RPE 002 y ROF previo son históricos, no sustituyen texto actualizado."
+    },
+    {
+      "id": "fup_complementaria",
+      "prioridad": "complementaria",
+      "archivos_obligatorios": [
+        "rpe-030-2026-oece.pdf",
+        "directiva-fup-001-2026.pdf",
+        "anexo-fup-001-2026.xlsx"
+      ],
+      "pendiente_juridico": "Gestión/corrección de FUP y despliegue de rubros; no extrapolar dispensas de selección a trámite RNP."
+    },
+    {
+      "id": "lpag_para_control_administrativo",
+      "prioridad": "complementaria",
+      "archivos_obligatorios": [
+        "ds-006-2026-jus.pdf",
+        "tuo-27444-2026-separata.pdf"
+      ],
+      "pendiente_juridico": "Cotejo de separata con publicación primaria; numeración y recursos quedan abiertos. No se incluye aquí todo el módulo de reconsideraciones."
+    }
+  ],
+  "historicos_conservados_fuera_de_obligatorios": [
+    "rpe-002-2025-oece.pdf",
+    "rof-texto-integrado-2025.pdf",
+    "ley-32185.pdf"
+  ],
+  "nota": "Los anexos RNP 3–9 siguen archivados como apoyo para otros trámites; no se convierten por ello en requisitos de ampliación."
+}

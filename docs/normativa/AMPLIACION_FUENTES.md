@@ -1,4 +1,6 @@
 # Ampliación de originales oficiales
+**Continuación 31/10/2026:** DL 1715, FUP, ROF y actos TUPA ya fueron recuperados. [T28 y límites del cierre documental](COBERTURA_MINIMA_PILOTO.md). El texto siguiente conserva el alcance de la ampliación anterior.
+
 Descarga y consulta: 30/10/2026. Se mantiene el corte investigado 29/10/2026; no se certifica cobertura exhaustiva.
 
 Se conservaron cinco PDFs oficiales adicionales, **241 páginas**, con tamaño y SHA256. La biblioteca pasa a **29 archivos y 24 registros normativos**. Se agrega Ley 32185 como fuente complementaria histórica de márgenes para 2025, sin tratarla como modificación textual de la Ley 32069. El PDF original de la Ley 32069 se conserva junto al consolidado anterior; no lo reemplaza.

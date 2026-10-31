@@ -3,7 +3,7 @@ Versión técnica 0.1.0, 30/10/2026. Esta herramienta implementa extracción y b
 
 ## Uso
 Requiere Python 3.12 o superior, SQLite con FTS5 y las dependencias fijadas en requirements-indexacion.txt. Se comprobó con pypdf 6.10.0 y python-docx 1.2.0 del entorno local.
-Los originales deben estar en las rutas declaradas por los tres manifiestos incluidos en `MANIFESTS` del script. GitHub conserva metadatos; las copias se mantienen fuera de Git.
+Los originales deben estar en las rutas declaradas por los cuatro manifiestos incluidos en `MANIFESTS` del script. GitHub conserva metadatos; las copias se mantienen fuera de Git. `build --manifest RUTA_RELATIVA.json` permite elegir un lote explícito y es repetible; se rechazan manifiestos fuera de la raíz.
 
 ```text
 python -m pip install -r requirements-indexacion.txt
@@ -36,7 +36,7 @@ Las advertencias del lector PDF se conservan (hasta 50 mensajes distintos por do
 - No segmenta todavía por artículo/numeral; el fragmento PDF completo es una página.
 - No consolida normas, no calcula plazos, no selecciona automáticamente el régimen aplicable y no revisa firmas.
 - No vigila carpetas ni sincroniza Drive. Este es un componente previo a esas funciones.
-- Biblioteca/OCR mantienen 22 pruebas técnicas; la batería completa tiene 34 al añadir el [circuito documental sintético](../PILOTO_DOCUMENTAL.md). Los diez casos jurídicos no están ejecutados.
+- Biblioteca/OCR mantienen 23 pruebas técnicas; la batería completa tiene 53 con circuito, propuestas/revisión y cobertura. Los diez casos jurídicos no están ejecutados. [Nuevo complemento](COBERTURA_MINIMA_PILOTO.md).
 
 ## Referencias técnicas
 [Extracción PDF](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), [Documentos Word](https://python-docx.readthedocs.io/en/latest/api/document.html) y [SQLite en Python](https://docs.python.org/3/library/sqlite3.html). El comportamiento ejecutado corresponde a las versiones fijadas, no a una promesa sobre versiones futuras.

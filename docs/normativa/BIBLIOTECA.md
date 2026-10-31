@@ -1,4 +1,6 @@
 # Biblioteca documental: primera carga
+**Actualización 31/10/2026:** 46 archivos totales, 29 registros; adquisición mínima v0.1 de 36 documentos comprobada. [T28, fuentes y límites](COBERTURA_MINIMA_PILOTO.md). El contenido siguiente documenta las cargas anteriores.
+
 Fecha de trabajo: 2026-10-29, America/Lima.
 
 **Actualización 30/10/2026:** biblioteca ampliada a **29 archivos**, incluidos cinco originales adicionales y el comunicado HTML. [Ampliación, fuentes y pendientes](AMPLIACION_FUENTES.md). El detalle siguiente conserva el alcance de la primera carga.

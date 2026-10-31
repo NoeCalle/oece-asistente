@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "tipo": "estimacion_de_planificacion_por_entregables",
   "porcentaje_estimado": 35,
   "rango_orientativo": [
@@ -27,9 +27,12 @@
       "avance_estimado": 50,
       "evidencias": [
         "normativa/catalogo.json",
-        "docs/normativa/RESULTADO_INDEXACION.md"
+        "docs/normativa/RESULTADO_INDEXACION.md",
+        "normativa/cobertura-piloto.v0.1.json",
+        "normativa/cobertura-piloto-reporte-2026-10-30.json",
+        "docs/normativa/COBERTURA_MINIMA_PILOTO.md"
       ],
-      "pendiente": "Cobertura, modificatorias y vigencia por disposición."
+      "pendiente": "Suficiencia/exhaustividad normativa, consolidación y vigencia por disposición. Adquisición del mínimo v0.1 de 36 archivos ya comprobada."
     },
     {
       "id": 2,

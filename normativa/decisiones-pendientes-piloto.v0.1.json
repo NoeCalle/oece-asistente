@@ -1,0 +1,123 @@
+{
+  "version": "0.1.0",
+  "corte": "2026-10-29",
+  "apta_para_evaluacion": false,
+  "decisiones": [
+    {
+      "id": "J01",
+      "pregunta": "Qué régimen de categorías corresponde a cada fecha de solicitud, recategorización y trámite en curso",
+      "referencias": [
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+          "pagina_pdf": 228,
+          "disposicion": "Cuarta DCT 3.1–3.5"
+        }
+      ],
+      "pendiente": "Resolver fronteras señaladas en la ficha y cotejar comunicado 001-2026; no aplicar umbrales universales.",
+      "estado": "pendiente",
+      "decision": null,
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false
+    },
+    {
+      "id": "J02",
+      "pregunta": "Qué evidencia acredita el cumplimiento de la condición de eficacia de Ley 32732",
+      "referencias": [
+        {
+          "archivo": "ley-32732.pdf",
+          "sha256": "64888319bf94b380087bb787c29e4dccf30c8904274dd991def865498144f625",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/10340261/8403069-ley32732.pdf?v=1784489960",
+          "pagina_pdf": 12,
+          "disposicion": "Octava y novena DCF"
+        }
+      ],
+      "pendiente": "Localizar y cotejar el acto habilitante; no inferir ausencia ni eficacia a partir de búsqueda sin resultados.",
+      "estado": "pendiente",
+      "decision": null,
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false
+    },
+    {
+      "id": "J03",
+      "pregunta": "Qué rubros FUP se han implementado y qué efecto tienen en el trámite RNP concreto",
+      "referencias": [
+        {
+          "archivo": "directiva-fup-001-2026.pdf",
+          "sha256": "3388c09b0d5f76a788cd88386c6b8860a9d0e547d3ada735e72f24909597337f",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9421616/7719040-directiva-n-001-2026-oece-cd-directiva-sobre-la-ficha-unica-del-proveedor-fup.pdf?v=1770735141",
+          "pagina_pdf": 2,
+          "disposicion": "Objeto y ámbito"
+        },
+        {
+          "archivo": "directiva-fup-001-2026.pdf",
+          "sha256": "3388c09b0d5f76a788cd88386c6b8860a9d0e547d3ada735e72f24909597337f",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9421616/7719040-directiva-n-001-2026-oece-cd-directiva-sobre-la-ficha-unica-del-proveedor-fup.pdf?v=1770735141",
+          "pagina_pdf": 12,
+          "disposicion": "Numeral 11.3"
+        }
+      ],
+      "pendiente": "Cotejar comunicaciones de implementación; no trasladar una dispensa de selección a ampliación RNP sin sustento.",
+      "estado": "pendiente",
+      "decision": null,
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false
+    },
+    {
+      "id": "J04",
+      "pregunta": "Qué versión del ROF y qué fechas de eficacia corresponden al expediente",
+      "referencias": [
+        {
+          "archivo": "rpe-090-2025-oece.pdf",
+          "sha256": "1f69f23c1ac65741659415bcc90d7810fca5644bde21b336e662a76f696cb2b8",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9174433/7532575-resolucion-n-090-2025-oece-pre.pdf?v=1766151895",
+          "pagina_pdf": 4,
+          "disposicion": "Artículos 1 y 3"
+        },
+        {
+          "archivo": "rof-texto-integrado-actualizado-2025.pdf",
+          "sha256": "34bd69fed1ae4b546346c4c9256fe64dd97afd8614e193fd4722886aa6203ea5",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9174434/7532575-texto-integrado-actualizado-del-reglamento-de-organizacion-y-funciones-del-oece.pdf?v=1766151896",
+          "pagina_pdf": 36,
+          "disposicion": "Artículo 74 a y c"
+        }
+      ],
+      "pendiente": "ROF integrado anterior derogado expresamente; cotejar fechas y cambios posteriores, y correspondencia de órgano.",
+      "estado": "pendiente",
+      "decision": null,
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false
+    },
+    {
+      "id": "J05",
+      "pregunta": "Qué condiciones documentales corresponden a la persona y procedencia de experiencia",
+      "referencias": [
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+          "pagina_pdf": 13,
+          "disposicion": "Artículo 25"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+          "pagina_pdf": 210,
+          "disposicion": "Artículo 381.4"
+        }
+      ],
+      "pendiente": "Definir ramas y excepciones, validar contra directiva y TUPA; no imponer requisitos financieros universales.",
+      "estado": "pendiente",
+      "decision": null,
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false
+    }
+  ]
+}

@@ -268,19 +268,21 @@
       "tipo": "decreto_legislativo",
       "jurisdiccion": "PE",
       "fecha_publicacion": "2026-02-04",
-      "fecha_emision": null,
+      "fecha_emision": "2026-02-03",
       "vigencia": {
         "desde": "2026-02-05",
         "hasta": null,
         "estado": "vigencia_parcial_verificada",
-        "fundamento": "Compendio identifica cambio del art. 85.1 e); relevancia directa RNP pendiente."
+        "fundamento": "Publicación 04/02/2026 y emisión 03/02/2026 cotejadas visualmente. El original trata medidas cautelares; no se incorpora un requisito de ampliación. Inicio general declarado previamente en compendio; revisión jurídica pendiente."
       },
       "procedimientos": [],
       "relaciones": [
         {
           "tipo": "modifica",
           "destino": "ley-32069",
-          "disposiciones": [],
+          "disposiciones": [
+            "Artículo 3: modificación del artículo 85.1 literal e de Ley 32069; PDF pp. 4 y 27–28; HTML oficial 2483559-7."
+          ],
           "estado": "pendiente_delimitacion"
         }
       ],
@@ -289,22 +291,32 @@
           "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www3.congreso.gob.pe/comisiones2025/constitucion/laborcontrolpolitico/decretos-legislativos/",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://busquedas.elperuano.pe/dispositivo/NL/2483559-7",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
         "nivel": "vigencia_parcial_verificada",
-        "nota": "Compendio identifica cambio del art. 85.1 e); relevancia directa RNP pendiente.",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/dl-1715.pdf",
+        "sha256": "8ba89457a879a4cecd034f7a86f35ad9a26b367b2626737599fcc4b8e837adff",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
       ]
     },
     {
@@ -663,22 +675,27 @@
           "url": "https://www.gob.pe/institucion/oece/informes-publicaciones/tipos/16-tupa",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/oece/informes-publicaciones/7647432-tupa-actualizado-del-oece-r-g-g-n-002-2026-oece-gg",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
         "nivel": "identificado_oficial",
-        "nota": "Ficha del portal fechada 07/01/2026; no confundir con publicación en diario oficial. Alcance pendiente. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": "normativa/originales/2026-10-29/tupa-actualizado-2026-002.pdf",
-        "sha256": "6a6f96ebc81334b67a8deb89645d0014d0ddb070bcc585e429eb22a5da23fe3e",
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/rgg-002-2026-oece.pdf",
+        "sha256": "8dc5c8e084eade510d3e8237e9d7b64c6a9d25d731166a2a12610a9d3aa2bb31",
         "descargado": true
       },
       "pendientes": [
-        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
       ]
     },
     {
@@ -721,22 +738,27 @@
           "url": "https://www.gob.pe/institucion/oece/informes-publicaciones/tipos/16-tupa",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/oece/normas-legales/7983806-073-2026-oece-pre",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
         "nivel": "texto_oficial_consultado",
-        "nota": "Emitida 31/03/2026; publicada 08/04/2026. Revisar anexos y alcance específico RNP antes de actualizar requisitos. Archivo conservado; alcance y archivos complementarios en manifiesto-descargas-2026-10-29.json. Descarga no equivale a revisión jurídica.",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": "normativa/originales/2026-10-29/tupa-modificacion-2026-073.pdf",
-        "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/rpe-073-2026-oece.pdf",
+        "sha256": "f8a0230b28f92cb7ca2ce2683944d2f7f1df605e97195b7c9ace06b7b865e0fd",
         "descargado": true
       },
       "pendientes": [
-        "Cotejar texto y anexos descargados; completar instrumentos faltantes.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
       ]
     },
     {
@@ -858,13 +880,13 @@
       "denominacion": "Directiva 001-2026-OECE/CD (FUP)",
       "tipo": "directiva",
       "jurisdiccion": "PE",
-      "fecha_publicacion": null,
-      "fecha_emision": null,
+      "fecha_publicacion": "2026-02-10",
+      "fecha_emision": "2026-02-05",
       "vigencia": {
         "desde": "2026-02-11",
         "hasta": null,
         "estado": "identificado_oficial",
-        "fundamento": "Informe oficial identifica aprobación R. D000030-2026-OECE-PRE de 05/02/2026 y vigencia; obtener original y anexo."
+        "fundamento": "Portal OECE declara publicación 10/02/2026 e inicio 11/02/2026. Rubros de implementación progresiva en numeral 11.3, PDF p. 12; no equivale a dispensa general de documentos RNP."
       },
       "procedimientos": [
         "actualizacion_legal",
@@ -876,22 +898,27 @@
           "url": "https://www.mef.gob.pe/contenidos/acerc_mins/anexos/04_IRC_CESE_OECE_2026.pdf",
           "consultado_el": "2026-10-29",
           "metodo": "resultado_buscador_oficial"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/oece/normas-legales/7719040-001-2026-oece-cd",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
-        "nivel": "identificado_oficial",
-        "nota": "Informe oficial identifica aprobación R. D000030-2026-OECE-PRE de 05/02/2026 y vigencia; obtener original y anexo.",
+        "nivel": "texto_oficial_consultado",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/directiva-fup-001-2026.pdf",
+        "sha256": "3388c09b0d5f76a788cd88386c6b8860a9d0e547d3ada735e72f24909597337f",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
       ]
     },
     {
@@ -899,13 +926,13 @@
       "denominacion": "Decreto Supremo 067-2025-EF (ROF, sección primera)",
       "tipo": "decreto_supremo",
       "jurisdiccion": "PE",
-      "fecha_publicacion": null,
-      "fecha_emision": null,
+      "fecha_publicacion": "2025-04-12",
+      "fecha_emision": "2025-04-11",
       "vigencia": {
         "desde": null,
         "hasta": null,
         "estado": "identificado_oficial",
-        "fundamento": "Identificado en base legal de directiva. Obtener texto integrado y sección segunda para competencia y funciones."
+        "fundamento": "DCF primera del DS (PDF p. 2) condiciona vigencia al acto de sección segunda y Ley/Reglamento; exceptúa DCF segunda. No usar DCF del DS precedente que aparece en PDF p. 1."
       },
       "procedimientos": [
         "ampliacion_consultores",
@@ -922,22 +949,27 @@
           "url": "https://busquedas.elperuano.pe/api/visor_html/2391987-1",
           "consultado_el": "2026-10-29",
           "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://www.gob.pe/institucion/mef/normas-legales/6667223-067-2025-ef",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
-        "nivel": "identificado_oficial",
-        "nota": "Identificado en base legal de directiva. Obtener texto integrado y sección segunda para competencia y funciones.",
+        "nivel": "texto_oficial_consultado",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
         "revision_humana": null,
         "apta_para_reglas": false
       },
       "archivo": {
-        "ruta": null,
-        "sha256": null,
-        "descargado": false
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/ds-067-2025-ef.pdf",
+        "sha256": "fceb3eb2ce64337e7f5f7b68d7c4bfce6e931b209287bf05079e004ca6c7ac46",
+        "descargado": true
       },
       "pendientes": [
-        "Obtener y cotejar original completo y anexos.",
-        "Cerrar cadena temporal y revisión humana antes de activar reglas."
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
       ]
     },
     {
@@ -1233,6 +1265,258 @@
       "pendientes": [
         "Delimitar vigencia, excepciones y efecto por procedimiento; cotejo humano pendiente.",
         "Completar anexos adicionales cuando resulten relevantes al alcance."
+      ]
+    },
+    {
+      "id": "rpe-049-2025-osce",
+      "denominacion": "Resolución 049-2025-OSCE/PRE ROF sección segunda",
+      "tipo": "resolucion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "pendiente",
+        "fundamento": "Texto oficial recuperado; fecha de eficacia, excepciones y cadena posterior pendientes de cotejo."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/normas-legales/6674724-049-2025-osce-pre",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "texto_oficial_consultado",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/rpe-049-2025-osce.pdf",
+        "sha256": "ba435f6dbf8ca6075866b20aa33a713704ec2a0ac70d34aeca506455a87d3ef8",
+        "descargado": true
+      },
+      "pendientes": [
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
+      ]
+    },
+    {
+      "id": "rpe-002-2025-oece",
+      "denominacion": "Resolución 002-2025-OECE/PRE ROF integrado histórico",
+      "tipo": "resolucion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "historico",
+        "fundamento": "Resolución derogada expresamente por artículo 3 de RPE 090-2025-OECE/PRE, PDF p. 4; conservar texto anterior como histórico. Fecha de efecto pendiente de cotejo."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/normas-legales/6699379-002-2025-oece-pre",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "historico",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/rpe-002-2025-oece.pdf",
+        "sha256": "d08133c8601608de39f0b585511024a5391c280eced99a782a9235c18e4c2696",
+        "descargado": true
+      },
+      "pendientes": [
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
+      ]
+    },
+    {
+      "id": "rpe-030-2026-oece",
+      "denominacion": "Resolución 030-2026-OECE/PRE aprobación FUP",
+      "tipo": "resolucion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "pendiente",
+        "fundamento": "Texto oficial recuperado; fecha de eficacia, excepciones y cadena posterior pendientes de cotejo."
+      },
+      "procedimientos": [
+        "actualizacion_legal",
+        "inscripcion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "aprueba",
+          "destino": "dir-001-2026-oece-cd",
+          "disposiciones": [
+            "Artículo 1, PDF p. 4"
+          ],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/normas-legales/7718747-030-2026-oece-pre",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "texto_oficial_consultado",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/rpe-030-2026-oece.pdf",
+        "sha256": "58fed721ad52c21525ca2be06da6e5137a0dd47045454f7df84eb51d9e9bf5bc",
+        "descargado": true
+      },
+      "pendientes": [
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
+      ]
+    },
+    {
+      "id": "rpe-088-2025-oece",
+      "denominacion": "Resolución 088-2025-OECE/PRE modificación ROF",
+      "tipo": "resolucion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "pendiente",
+        "fundamento": "Texto oficial recuperado; fecha de eficacia, excepciones y cadena posterior pendientes de cotejo."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "modifica",
+          "destino": "rpe-049-2025-osce",
+          "disposiciones": [
+            "Artículo 1, PDF p. 4; sección segunda y anexos"
+          ],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/normas-legales/7502026-088-2025-oece-pre",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "texto_oficial_consultado",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/rpe-088-2025-oece.pdf",
+        "sha256": "73d223833e765355870e8e07be584e068f4f5ad00fa74b813fbad937a2e9720f",
+        "descargado": true
+      },
+      "pendientes": [
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
+      ]
+    },
+    {
+      "id": "rpe-090-2025-oece",
+      "denominacion": "Resolución 090-2025-OECE/PRE ROF integrado actualizado",
+      "tipo": "resolucion",
+      "jurisdiccion": "PE",
+      "fecha_publicacion": null,
+      "fecha_emision": null,
+      "vigencia": {
+        "desde": null,
+        "hasta": null,
+        "estado": "pendiente",
+        "fundamento": "Texto oficial recuperado; fecha de eficacia, excepciones y cadena posterior pendientes de cotejo."
+      },
+      "procedimientos": [
+        "ampliacion_consultores",
+        "aumento_cmc",
+        "inscripcion",
+        "reinscripcion",
+        "actualizacion_legal",
+        "actualizacion_financiera",
+        "reconsideracion"
+      ],
+      "relaciones": [
+        {
+          "tipo": "deroga",
+          "destino": "rpe-002-2025-oece",
+          "disposiciones": [
+            "Artículo 3, PDF p. 4"
+          ],
+          "estado": "pendiente_delimitacion"
+        }
+      ],
+      "fuentes": [
+        {
+          "url": "https://www.gob.pe/institucion/oece/normas-legales/7532575-090-2025-oece-pre",
+          "consultado_el": "2026-10-30",
+          "metodo": "texto_web_abierto"
+        }
+      ],
+      "validacion": {
+        "nivel": "texto_oficial_consultado",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
+        "revision_humana": null,
+        "apta_para_reglas": false
+      },
+      "archivo": {
+        "ruta": "normativa/originales/cierre-piloto-2026-10-30/rpe-090-2025-oece.pdf",
+        "sha256": "1f69f23c1ac65741659415bcc90d7810fca5644bde21b336e662a76f696cb2b8",
+        "descargado": true
+      },
+      "pendientes": [
+        "Cotejar vigencia por disposición, excepciones y cambios posteriores.",
+        "Revisión humana antes de habilitar reglas; la descarga no cierra la fase jurídica."
       ]
     }
   ]

@@ -1,0 +1,314 @@
+{
+  "procedimiento": "ampliacion_consultores",
+  "plan_sha256": "52d08eaf089c91e744192141929c810b7fa0803c1fcf2fbf51e60d2195668272",
+  "estado_adquisicion": "completa_en_alcance_versionado",
+  "originales_verificados": true,
+  "archivos_obligatorios_distintos": 36,
+  "faltantes": [],
+  "grupos": [
+    {
+      "id": "ley_y_cambios_conocidos",
+      "prioridad": "principal",
+      "archivos": [
+        {
+          "archivo": "ley-32069.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "a73f39cc5a66fce9fb6913608b94f5d35f82945538ffcb461a8a9c848a5c65ff",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/8418795/6994512-ley_32069.pdf?v=1753886307",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "ley-32069-consolidada-2026-07-19.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "f14ffa37b824b8af03c0b97e0603839a786ed61c7ca07b1d300c9af928d133f7",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-19-07-2026.pdf?v=1787002595",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "ley-32103.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "89913ea96af71a1ebc4f836c57f2a5bcaa7754598a71b936e5c77e070d6bc191",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/6705137/5820636-ley-n-32103-credito-suplementario.pdf?v=1722373924",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "ley-32187.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "ca03e06fd5478e7cb61b45f4191bd1569526e9c9211b2a8d98b615acb7d18205",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7361100/6280777-ley_n_32187-leydeendeudamiento2025.pdf?v=1734023824",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "ley-32515.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "76ae2aceb8373d5e0c678eb4d102aee2d83bfe7ee818f0d2616ed3d9e5d8b004",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9106064/7475764-ley32515.pdf?v=1764873148",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "ley-32732.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "64888319bf94b380087bb787c29e4dccf30c8904274dd991def865498144f625",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/10340261/8403069-ley32732.pdf?v=1784489960",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "dl-1715.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "8ba89457a879a4cecd034f7a86f35ad9a26b367b2626737599fcc4b8e837adff",
+          "source_url": "https://www3.congreso.gob.pe/Docs/comisiones2025/constitucion/files/dl-1715-2026-of_(1).pdf",
+          "requiere_ocr": true
+        },
+        {
+          "archivo": "dl-1715-elperuano.html",
+          "estado": "original_local_verificado",
+          "sha256": "ba4a726e2278d30f0906c9cc2559e074e52fe3c7247fa29db74848062fc404eb",
+          "source_url": "https://busquedas.elperuano.pe/api/visor_html/2483559-7",
+          "requiere_ocr": false
+        }
+      ],
+      "pendiente_juridico": "Consolidación por disposición; condición Ley 32732; DL 1715 es contexto general, no requisito de ampliación."
+    },
+    {
+      "id": "reglamento_y_transicion",
+      "prioridad": "principal",
+      "archivos": [
+        {
+          "archivo": "ds-009-2025-ef.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7530416/6401561-ds009_2025ef.pdf?v=1737643286",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "ds-009-2025-ef-fe-erratas.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "bbb99d5d748abf017dfd4b2b73cb729b2a652fb2856828b14cfddb256bc65ece",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7577939/6401561-fe-de-erratas-del-ds-n-009-2025-ef.pdf?v=1738688130",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "ds-001-2026-ef.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "685453e91f35cffbe07b9da8c8754b220ce0f10f51c2551091cced53c3d76155",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9263209/7601483-ds001_2026ef.pdf?v=1767899401",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rd-001-2026-ef-54-01.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "d85308b2931b73daab0a433c01a1e8712e08469c9dbdc772b12af4fdf6686525",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9281715/7614342-resolucion-directoral-n-001-2026-ef-54-01.pdf?v=1768319325",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "ds-222-2026-ef.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "070ecd3039f18a1947e4e60b396411f46666eaf3c9402dd4943f74ce58a5f1cb",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/10836593/8747975-decreto-supremo-n-222-2026-ef.pdf?v=1792698624",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "comunicado-001-2026-oece.html",
+          "estado": "original_local_verificado",
+          "sha256": "79da1b96624c73b1511760b997b0304d20f846aca6520a9f5e373137dba1ea9b",
+          "source_url": "https://www.gob.pe/institucion/oece/noticias/1336986-comunicado-n-001-2026-oece-asignacion-de-especialidades-y-categorias-de-consultores-de-obra-en-el-marco-de-la-ley-n-32069-y-su-reglamento",
+          "requiere_ocr": false
+        }
+      ],
+      "pendiente_juridico": "Fronteras temporales de categorías, trámites en curso y modificaciones posteriores al consolidado."
+    },
+    {
+      "id": "directiva_rnp",
+      "prioridad": "principal",
+      "archivos": [
+        {
+          "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "6682380-anexo-n-1-especialidades-de-los-consultores-de-obras-segun-su-profesion.docx",
+          "estado": "original_local_verificado",
+          "sha256": "61d07d6543a548d94eb30b994c95af02a17fb6124641a424608edbaf5da01e28",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946966/6682380-anexo-n-1-especialidades-de-los-consultores-de-obras-segun-su-profesion.docx?v=1745194209",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "6682380-anexo-n-2-categorias-de-los-consultores-de-obras.docx",
+          "estado": "original_local_verificado",
+          "sha256": "4448d4d76104a746ea783b603fd02d61edfc241b62f82a4e0e923d02d55440bd",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7946967/6682380-anexo-n-2-categorias-de-los-consultores-de-obras.docx?v=1745194209",
+          "requiere_ocr": false
+        }
+      ],
+      "pendiente_juridico": "Aplicabilidad temporal de anexos y ramas por persona/origen de experiencia."
+    },
+    {
+      "id": "tupa_y_actos",
+      "prioridad": "principal",
+      "archivos": [
+        {
+          "archivo": "tupa-2025.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "39a086cb548ecb880186c0e28e797910a4cda7cc426c6bcf3d19da87b2f4cb01",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/8033965/6746896-tupa-del-oece.pdf",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "tupa-actualizado-2026-002.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "6a6f96ebc81334b67a8deb89645d0014d0ddb070bcc585e429eb22a5da23fe3e",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9325016/7647432-tupa-actualizado-del-oece.pdf",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rgg-002-2026-oece.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "8dc5c8e084eade510d3e8237e9d7b64c6a9d25d731166a2a12610a9d3aa2bb31",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9325028/7647432-resolucion-n-002-2026-oece-gg.pdf?v=1769029391",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rpe-073-2026-oece.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "f8a0230b28f92cb7ca2ce2683944d2f7f1df605e97195b7c9ace06b7b865e0fd",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9763314/7983806-resolucion-n-073-2026-oece-pre.pdf?v=1775658463",
+          "requiere_ocr": false
+        }
+      ],
+      "pendiente_juridico": "Publicación/eficacia de actos, ficha PA42003A92 y cotejo con reglamento/directiva. El DS 086 está dentro del PDF base."
+    },
+    {
+      "id": "competencia_rof_cadena_conocida",
+      "prioridad": "principal",
+      "archivos": [
+        {
+          "archivo": "ds-067-2025-ef.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "fceb3eb2ce64337e7f5f7b68d7c4bfce6e931b209287bf05079e004ca6c7ac46",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7921545/6667223-ds067_2025ef.pdf?v=1744647213",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rof-seccion-primera.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "0ad06fb67412d9121190ca0d49f4198d82a835945dc8f2084af69a093d5956e4",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7922414/6667223-rof_oece_ds067_2025ef.pdf?v=1744651701",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rpe-049-2025-osce.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "ba435f6dbf8ca6075866b20aa33a713704ec2a0ac70d34aeca506455a87d3ef8",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7933235/6674724-resolucion-n-049-2025-osce-pre.pdf?v=1744769810",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rof-seccion-segunda.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "5af7c176c7af2271f1fb0b27d996c9b090f0e3b6bf6b92e6dab386eb572d75c9",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/7933236/6674724-seccion-segunda-del-reglamento-de-organizacion-y-funciones-del-oece.pdf?v=1744769811",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rpe-088-2025-oece.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "73d223833e765355870e8e07be584e068f4f5ad00fa74b813fbad937a2e9720f",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9145588/7502068-resolucion-n-d000088-2025-oece-pre.pdf?v=1765814921",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rof-seccion-segunda-modificada-2025.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "ac5d99b0890be4061e269fc673f7c2e14933254dce049171f0132cd888fca966",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9144133/7502068-modificacion-de-la-seccion-segunda-del-reglamento-de-organizacion-y-funciones-del-organismo-especializado-para-las-contrataciones-publicas-eficientes-oece.pdf?v=1765814921",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rpe-090-2025-oece.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "1f69f23c1ac65741659415bcc90d7810fca5644bde21b336e662a76f696cb2b8",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9174433/7532575-resolucion-n-090-2025-oece-pre.pdf?v=1766151895",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "rof-texto-integrado-actualizado-2025.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "34bd69fed1ae4b546346c4c9256fe64dd97afd8614e193fd4722886aa6203ea5",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9174434/7532575-texto-integrado-actualizado-del-reglamento-de-organizacion-y-funciones-del-oece.pdf?v=1766151896",
+          "requiere_ocr": false
+        }
+      ],
+      "pendiente_juridico": "Fechas de eficacia, cambios posteriores y correspondencia con órgano/funcionario del caso. RPE 002 y ROF previo son históricos, no sustituyen texto actualizado."
+    },
+    {
+      "id": "fup_complementaria",
+      "prioridad": "complementaria",
+      "archivos": [
+        {
+          "archivo": "rpe-030-2026-oece.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "58fed721ad52c21525ca2be06da6e5137a0dd47045454f7df84eb51d9e9bf5bc",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9421209/7718747-resolucion-n-030-2026-oece-pre.pdf?v=1770733266",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "directiva-fup-001-2026.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "3388c09b0d5f76a788cd88386c6b8860a9d0e547d3ada735e72f24909597337f",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9421616/7719040-directiva-n-001-2026-oece-cd-directiva-sobre-la-ficha-unica-del-proveedor-fup.pdf?v=1770735141",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "anexo-fup-001-2026.xlsx",
+          "estado": "original_local_verificado",
+          "sha256": "d014454f5581d3e86f1eb1e1d70f609e8f29ce9b7ca1169297f782469892eca6",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9421994/7719040-anexo-solicitud-de-correccion-modificacion-exclusion-o-inclusion-de-informacion-en-la-fup.xlsx?v=1770736430",
+          "requiere_ocr": false
+        }
+      ],
+      "pendiente_juridico": "Gestión/corrección de FUP y despliegue de rubros; no extrapolar dispensas de selección a trámite RNP."
+    },
+    {
+      "id": "lpag_para_control_administrativo",
+      "prioridad": "complementaria",
+      "archivos": [
+        {
+          "archivo": "ds-006-2026-jus.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "de7dc7df0f764b3ff031a27e37b68b8c549f9cfaa22343c0f804cc25d3596dd1",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/10018255/8169463-decreto-supremo_000006-2026_jus-sg.pdf?v=1779388370",
+          "requiere_ocr": false
+        },
+        {
+          "archivo": "tuo-27444-2026-separata.pdf",
+          "estado": "original_local_verificado",
+          "sha256": "2cf6fcce04b87dd5a7a6b7581e44ccccb84cb7e47d04e6ad233f056d6fba249d",
+          "source_url": "https://cdn.www.gob.pe/uploads/document/file/9947105/8115839-decreto-supremo-006-2026-jus-lpderecho-27444.pdf?v=1778518731",
+          "requiere_ocr": false
+        }
+      ],
+      "pendiente_juridico": "Cotejo de separata con publicación primaria; numeración y recursos quedan abiertos. No se incluye aquí todo el módulo de reconsideraciones."
+    }
+  ],
+  "cierre_juridico": false,
+  "apta_para_evaluacion": false,
+  "nota": "Presencia e integridad dentro del alcance declarado; no exhaustividad, vigencia ni suficiencia jurídica."
+}

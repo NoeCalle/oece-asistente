@@ -1,4 +1,6 @@
 # Resultado del indexador local
+**Continuación 31/10/2026:** [índice complementario del cierre documental](COBERTURA_MINIMA_PILOTO.md), sobre 17 archivos nuevos: 240 fragmentos y 212 con texto; 14 PDF con extracción, un PDF escaneado, HTML y XLSX pendientes de lectura automática. Se comprobó recuperación del ROF actualizado p. 36, Resolución 090 p. 4 y FUP p. 12. Los resultados anteriores descritos debajo permanecen como instantáneas; no se unificaron las bases.
+
 **Actualización posterior del 30/10/2026:** 29 archivos, 1.519 fragmentos digitales y **1.181 con texto**; con las tres páginas OCR candidatas, **1.522 fragmentos y 1.184 con texto**. Los índices anteriores descritos abajo se conservan como instantáneas históricas.
 
 Índice digital ampliado: `normativa/indices/biblioteca-ampliada-actual.sqlite`. Corpus `f0702ed595b3eb28477cbf2ced2cf9e7656af475b826eab09cac6d8196fa0df7`. Su extracción se conserva íntegra después de conciliar los metadatos con el catálogo actualizado; la huella de todos los fragmentos antes/después quedó registrada. Índice con OCR: `normativa/indices/biblioteca-ampliada-ocr.sqlite`.

@@ -1,0 +1,170 @@
+{
+  "extractor_version": "0.1.0",
+  "documentos": [
+    {
+      "nombre": "dl-1715.pdf",
+      "sha256": "8ba89457a879a4cecd034f7a86f35ad9a26b367b2626737599fcc4b8e837adff",
+      "estado": "requiere_ocr_o_revision",
+      "fragmentos": 28,
+      "fragmentos_con_alerta": 28,
+      "fragmentos_con_texto": 0,
+      "advertencias": []
+    },
+    {
+      "nombre": "ds-067-2025-ef.pdf",
+      "sha256": "fceb3eb2ce64337e7f5f7b68d7c4bfce6e931b209287bf05079e004ca6c7ac46",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 3,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 3,
+      "advertencias": []
+    },
+    {
+      "nombre": "rof-seccion-primera.pdf",
+      "sha256": "0ad06fb67412d9121190ca0d49f4198d82a835945dc8f2084af69a093d5956e4",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 21,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 21,
+      "advertencias": []
+    },
+    {
+      "nombre": "rpe-049-2025-osce.pdf",
+      "sha256": "ba435f6dbf8ca6075866b20aa33a713704ec2a0ac70d34aeca506455a87d3ef8",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 4,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 4,
+      "advertencias": []
+    },
+    {
+      "nombre": "rof-seccion-segunda.pdf",
+      "sha256": "5af7c176c7af2271f1fb0b27d996c9b090f0e3b6bf6b92e6dab386eb572d75c9",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 23,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 23,
+      "advertencias": []
+    },
+    {
+      "nombre": "rpe-002-2025-oece.pdf",
+      "sha256": "d08133c8601608de39f0b585511024a5391c280eced99a782a9235c18e4c2696",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 4,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 4,
+      "advertencias": []
+    },
+    {
+      "nombre": "rof-texto-integrado-2025.pdf",
+      "sha256": "305a936504ffb4404c50514bebf07e81881945d31c1ff0fbb151b2e1e2aaec1a",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 50,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 50,
+      "advertencias": []
+    },
+    {
+      "nombre": "rpe-030-2026-oece.pdf",
+      "sha256": "58fed721ad52c21525ca2be06da6e5137a0dd47045454f7df84eb51d9e9bf5bc",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 4,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 4,
+      "advertencias": []
+    },
+    {
+      "nombre": "directiva-fup-001-2026.pdf",
+      "sha256": "3388c09b0d5f76a788cd88386c6b8860a9d0e547d3ada735e72f24909597337f",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 13,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 13,
+      "advertencias": []
+    },
+    {
+      "nombre": "anexo-fup-001-2026.xlsx",
+      "sha256": "d014454f5581d3e86f1eb1e1d70f609e8f29ce9b7ca1169297f782469892eca6",
+      "estado": "formato_pendiente",
+      "fragmentos": 0,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 0,
+      "advertencias": [
+        "formato_pendiente: .xlsx"
+      ]
+    },
+    {
+      "nombre": "rgg-002-2026-oece.pdf",
+      "sha256": "8dc5c8e084eade510d3e8237e9d7b64c6a9d25d731166a2a12610a9d3aa2bb31",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 4,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 4,
+      "advertencias": []
+    },
+    {
+      "nombre": "rpe-073-2026-oece.pdf",
+      "sha256": "f8a0230b28f92cb7ca2ce2683944d2f7f1df605e97195b7c9ace06b7b865e0fd",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 5,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 5,
+      "advertencias": []
+    },
+    {
+      "nombre": "rpe-088-2025-oece.pdf",
+      "sha256": "73d223833e765355870e8e07be584e068f4f5ad00fa74b813fbad937a2e9720f",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 4,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 4,
+      "advertencias": []
+    },
+    {
+      "nombre": "rof-seccion-segunda-modificada-2025.pdf",
+      "sha256": "ac5d99b0890be4061e269fc673f7c2e14933254dce049171f0132cd888fca966",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 23,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 23,
+      "advertencias": []
+    },
+    {
+      "nombre": "rpe-090-2025-oece.pdf",
+      "sha256": "1f69f23c1ac65741659415bcc90d7810fca5644bde21b336e662a76f696cb2b8",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 4,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 4,
+      "advertencias": []
+    },
+    {
+      "nombre": "rof-texto-integrado-actualizado-2025.pdf",
+      "sha256": "34bd69fed1ae4b546346c4c9256fe64dd97afd8614e193fd4722886aa6203ea5",
+      "estado": "extraido_con_revision_pendiente",
+      "fragmentos": 50,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 50,
+      "advertencias": []
+    },
+    {
+      "nombre": "dl-1715-elperuano.html",
+      "sha256": "ba4a726e2278d30f0906c9cc2559e074e52fe3c7247fa29db74848062fc404eb",
+      "estado": "formato_pendiente",
+      "fragmentos": 0,
+      "fragmentos_con_alerta": 0,
+      "fragmentos_con_texto": 0,
+      "advertencias": [
+        "formato_pendiente: .html"
+      ]
+    }
+  ],
+  "fragmentos": 240,
+  "apta_para_evaluacion": false,
+  "alcance": "extraccion textual; vigencia y OCR pendientes",
+  "motores": {
+    "pypdf": "6.10.0",
+    "python-docx": "1.2.0"
+  },
+  "corpus_id": "4a416ca1850cf43eeb2dbd0ade28bd3c52359c6b5ddce8af27b99652604c79b5"
+}

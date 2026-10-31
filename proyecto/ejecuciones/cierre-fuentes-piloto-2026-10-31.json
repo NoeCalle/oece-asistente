@@ -1,0 +1,106 @@
+{
+  "fecha_cierre_documental": "2026-10-31",
+  "corte_investigado": "2026-10-29",
+  "lote_recuperado_el": "2026-10-30",
+  "archivos_nuevos": 17,
+  "archivos_biblioteca": 46,
+  "registros_catalogo": 29,
+  "paginas_pdf_nuevas": 240,
+  "archivos_drive_listados": 17,
+  "drive_folder": "1WStqSLHYFrFwQUPMTRZ611DwBeubZw2m",
+  "hash_cloud_recalculado": false,
+  "cobertura": {
+    "archivos_obligatorios": 36,
+    "grupos": 7,
+    "faltantes": [],
+    "estado": "completa_en_alcance_versionado",
+    "plan_sha256": "52d08eaf089c91e744192141929c810b7fa0803c1fcf2fbf51e60d2195668272"
+  },
+  "indice_complementario": {
+    "corpus_id": "4a416ca1850cf43eeb2dbd0ade28bd3c52359c6b5ddce8af27b99652604c79b5",
+    "sha256": "d7a4ce0e0d796493ff72f676887a37ed0b493954cfe561bb55e740c445fe8cec",
+    "documentos": 17,
+    "fragmentos": 240,
+    "fragmentos_con_texto": 212,
+    "formato_pendiente": [
+      "anexo-fup-001-2026.xlsx",
+      "dl-1715-elperuano.html"
+    ],
+    "requiere_ocr": [
+      "dl-1715.pdf"
+    ],
+    "consultas_comprobadas": [
+      {
+        "consulta": "ampliación categoría",
+        "archivo": "rof-texto-integrado-actualizado-2025.pdf",
+        "pagina_pdf": 36,
+        "recuperada": true
+      },
+      {
+        "consulta": "Derogar",
+        "archivo": "rpe-090-2025-oece.pdf",
+        "pagina_pdf": 4,
+        "recuperada": true
+      },
+      {
+        "consulta": "11.3",
+        "archivo": "directiva-fup-001-2026.pdf",
+        "pagina_pdf": 12,
+        "recuperada": true
+      }
+    ]
+  },
+  "paginas_inspeccionadas_visualmente": [
+    {
+      "archivo": "dl-1715.pdf",
+      "paginas_pdf": [
+        4,
+        5,
+        27,
+        28
+      ]
+    },
+    {
+      "archivo": "ds-067-2025-ef.pdf",
+      "paginas_pdf": [
+        2
+      ]
+    },
+    {
+      "archivo": "directiva-fup-001-2026.pdf",
+      "paginas_pdf": [
+        2,
+        12
+      ]
+    },
+    {
+      "archivo": "rpe-090-2025-oece.pdf",
+      "paginas_pdf": [
+        4
+      ]
+    },
+    {
+      "archivo": "rof-texto-integrado-actualizado-2025.pdf",
+      "paginas_pdf": [
+        36
+      ]
+    }
+  ],
+  "pruebas_tecnicas": {
+    "total": 53,
+    "anteriores": 47,
+    "cobertura": 5,
+    "limite_manifiestos": 1,
+    "resultado": "OK"
+  },
+  "cierre_juridico": false,
+  "decisiones_juridicas_pendientes": [
+    "J01",
+    "J02",
+    "J03",
+    "J04",
+    "J05"
+  ],
+  "apta_para_evaluacion": false,
+  "nota": "Adquisición e integridad de un alcance expresamente definido; no exhaustividad normativa ni aprobación institucional. Índices anteriores conservados sin unificación en este bloque."
+}

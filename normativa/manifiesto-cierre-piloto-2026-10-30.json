@@ -1,0 +1,345 @@
+{
+  "fecha_registro": "2026-10-30",
+  "corte_investigado": "2026-10-29",
+  "alcance": "Fuentes pendientes delimitadas del piloto. Descarga no implica validación jurídica, firma ni extracción íntegra.",
+  "archivos": [
+    {
+      "name": "dl-1715.pdf",
+      "instrument_id": "dl-1715",
+      "kind": "original",
+      "source_url": "https://www3.congreso.gob.pe/Docs/comisiones2025/constitucion/files/dl-1715-2026-of_(1).pdf",
+      "source_page": "https://www3.congreso.gob.pe/comisiones2025/constitucion/laborcontrolpolitico/decretos-legislativos/",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/dl-1715.pdf",
+      "sha256": "8ba89457a879a4cecd034f7a86f35ad9a26b367b2626737599fcc4b8e837adff",
+      "bytes": 2496026,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 28,
+        "first_page_text": "",
+        "requiere_ocr": true
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1ZTQZXKvDorBrzV8XTBmHW5ugJjovOfpV"
+    },
+    {
+      "name": "ds-067-2025-ef.pdf",
+      "instrument_id": "ds-067-2025-ef",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7921545/6667223-ds067_2025ef.pdf?v=1744647213",
+      "source_page": "https://www.gob.pe/institucion/mef/normas-legales/6667223-067-2025-ef",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/ds-067-2025-ef.pdf",
+      "sha256": "fceb3eb2ce64337e7f5f7b68d7c4bfce6e931b209287bf05079e004ca6c7ac46",
+      "bytes": 843040,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 3,
+        "first_page_text": "15NORMAS LEGALESSábado 12 de abril de 2025 El Peruano / \nPúblicas – Perú Compras, que consta de tres (3) títulos, \ntreinta y tres (33) artículos y dos (02) anexos, que \ncontienen la estructura orgánica y el organigrama d",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1ywgyIzSaic2OUloWYyfrU0GPJpnnCbal"
+    },
+    {
+      "name": "rof-seccion-primera.pdf",
+      "instrument_id": "ds-067-2025-ef",
+      "kind": "anexo",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7922414/6667223-rof_oece_ds067_2025ef.pdf?v=1744651701",
+      "source_page": "https://www.gob.pe/institucion/mef/normas-legales/6667223-067-2025-ef",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rof-seccion-primera.pdf",
+      "sha256": "0ad06fb67412d9121190ca0d49f4198d82a835945dc8f2084af69a093d5956e4",
+      "bytes": 765712,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 21,
+        "first_page_text": " \n \n \n1 \n \n REGLAMENTO DE ORGANIZACIÓN Y FUNCIONES DEL ORGANISMO ESPECIALIZADO PARA LAS \nCONTRATACIONES PÚBLICAS EFICIENTES  \nSECCIÓN PRIMERA \nTÍTULO I. DISPOSICIONES GENERALES \nArtículo 1.- Naturaleza jurídica \nEl Organ",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1phleRlcQNzMSvZSlXLLJNsntgzbW9RFc"
+    },
+    {
+      "name": "rpe-049-2025-osce.pdf",
+      "instrument_id": "rpe-049-2025-osce",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7933235/6674724-resolucion-n-049-2025-osce-pre.pdf?v=1744769810",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6674724-049-2025-osce-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rpe-049-2025-osce.pdf",
+      "sha256": "ba435f6dbf8ca6075866b20aa33a713704ec2a0ac70d34aeca506455a87d3ef8",
+      "bytes": 422674,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 4,
+        "first_page_text": " \nPág. 1 de 4 \nEsta es una copia auténtica imprimible de un documento electrónico archivado en el Organismo Supervisor de las Contrataciones del \nEstado aplicando lo dispuesto por el Art. 25 de D.S. 070-2013-PCM y la Ter",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1L8Xc4VRzZtcuRri_5C-HOCj9CfJFE6YZ"
+    },
+    {
+      "name": "rof-seccion-segunda.pdf",
+      "instrument_id": "rpe-049-2025-osce",
+      "kind": "anexo",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7933236/6674724-seccion-segunda-del-reglamento-de-organizacion-y-funciones-del-oece.pdf?v=1744769811",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6674724-049-2025-osce-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rof-seccion-segunda.pdf",
+      "sha256": "5af7c176c7af2271f1fb0b27d996c9b090f0e3b6bf6b92e6dab386eb572d75c9",
+      "bytes": 618858,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 23,
+        "first_page_text": " \nREGLAMENTO DE ORGANIZACIÓN Y FUNCIONES DEL ORGANISMO ESPECIALIZADO PARA LAS \nCONTRATACIONES PÚBLICAS EFICIENTES  \nSECCIÓN SEGUNDA \nTITULO I. TERCER NIVEL ORGANIZACIONAL \nUNIDADES ORGÁNICAS DEL ÓRGANO RESOLUTIVO \nArtícu",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "100MLpvR-c1-i_aO3hB6jiMUnSxGqlRR8"
+    },
+    {
+      "name": "rpe-002-2025-oece.pdf",
+      "instrument_id": "rpe-002-2025-oece",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7966038/6699379-resolucion-n-002-2025-oece-pre.pdf?v=1745359449",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6699379-002-2025-oece-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rpe-002-2025-oece.pdf",
+      "sha256": "d08133c8601608de39f0b585511024a5391c280eced99a782a9235c18e4c2696",
+      "bytes": 553812,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 4,
+        "first_page_text": " \nPág. 1 de 4 \nEsta es una copia auténtica imprimible de un documento electrónico archivado en el Organismo Especializado para las Contrataciones \nPúblicas Eficientes aplicando lo dispuesto por el Art. 25 de D.S. 070-201",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1Dt7D_slQIUeJfqOEDv7mvt5Y9gMEuHYM"
+    },
+    {
+      "name": "rof-texto-integrado-2025.pdf",
+      "instrument_id": "rpe-002-2025-oece",
+      "kind": "anexo",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/7966127/6699379-anexo-resolucion-n-002-2025-oece-pre.pdf?v=1745415016",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/6699379-002-2025-oece-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rof-texto-integrado-2025.pdf",
+      "sha256": "305a936504ffb4404c50514bebf07e81881945d31c1ff0fbb151b2e1e2aaec1a",
+      "bytes": 870136,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 50,
+        "first_page_text": " \n \n \n1 \n \nTEXTO INTEGRADO DEL REGLAMENTO DE ORGANIZACIÓN Y FUNCIONES DEL ORGANISMO \nESPECIALIZADO PARA LAS CONTRATACIONES PÚBLICAS EFICIENTES (OECE) \n \nÍNDICE  \nTÍTULO I              : DISPOSICIONES GENERALES \nTÍTULO II",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1rXIMG7iMrR1xbSioHB7kKpKgLdZVgLsR"
+    },
+    {
+      "name": "rpe-030-2026-oece.pdf",
+      "instrument_id": "rpe-030-2026-oece",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9421209/7718747-resolucion-n-030-2026-oece-pre.pdf?v=1770733266",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/7718747-030-2026-oece-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rpe-030-2026-oece.pdf",
+      "sha256": "58fed721ad52c21525ca2be06da6e5137a0dd47045454f7df84eb51d9e9bf5bc",
+      "bytes": 583844,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 4,
+        "first_page_text": " \nPág. 1 de 4 \nEsta es una copia auténtica imprimible de un documento electrónico archivado en el Organismo Especializado para las Contrataciones \nPúblicas Eficientes aplicando lo dispuesto por el Art. 25 de D.S. 070-201",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1cdmtEnuUxNIvFpEi27X5Kmun02irCKLG"
+    },
+    {
+      "name": "directiva-fup-001-2026.pdf",
+      "instrument_id": "dir-001-2026-oece-cd",
+      "kind": "anexo",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9421616/7719040-directiva-n-001-2026-oece-cd-directiva-sobre-la-ficha-unica-del-proveedor-fup.pdf?v=1770735141",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/7719040-001-2026-oece-cd",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/directiva-fup-001-2026.pdf",
+      "sha256": "3388c09b0d5f76a788cd88386c6b8860a9d0e547d3ada735e72f24909597337f",
+      "bytes": 462106,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 13,
+        "first_page_text": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nDirectiva N° 001-2026-OECE-CD \n \nDIRECTIVA SOBRE LA FICHA ÚNICA DEL \nPROVEEDOR – FUP \n",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1qSOY7RTmRilUH-jPim23M0pNrbNRB0vn"
+    },
+    {
+      "name": "anexo-fup-001-2026.xlsx",
+      "instrument_id": "dir-001-2026-oece-cd",
+      "kind": "anexo",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9421994/7719040-anexo-solicitud-de-correccion-modificacion-exclusion-o-inclusion-de-informacion-en-la-fup.xlsx?v=1770736430",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/7719040-001-2026-oece-cd",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/anexo-fup-001-2026.xlsx",
+      "sha256": "d014454f5581d3e86f1eb1e1d70f609e8f29ce9b7ca1169297f782469892eca6",
+      "bytes": 134531,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "format_check": "office_zip_valid",
+        "contenido_celdas_revisado": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1OeoGIo-g6HcJOqGg5wRHU3r9VEhKztoh"
+    },
+    {
+      "name": "rgg-002-2026-oece.pdf",
+      "instrument_id": "rgg-002-2026-oece",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9325028/7647432-resolucion-n-002-2026-oece-gg.pdf?v=1769029391",
+      "source_page": "https://www.gob.pe/institucion/oece/informes-publicaciones/7647432-tupa-actualizado-del-oece-r-g-g-n-002-2026-oece-gg",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rgg-002-2026-oece.pdf",
+      "sha256": "8dc5c8e084eade510d3e8237e9d7b64c6a9d25d731166a2a12610a9d3aa2bb31",
+      "bytes": 498227,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 4,
+        "first_page_text": " \nPág. 1 de 4 \nEsta es una copia auténtica imprimible de un documento electrónico archivado en el Organismo Especializado para las Contrataciones \nPúblicas Eficientes aplicando lo dispuesto por el Art. 25 de D.S. 070-201",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "13a4d5Jmap8s0jjKgsNFFQyICQqsLizoU"
+    },
+    {
+      "name": "rpe-073-2026-oece.pdf",
+      "instrument_id": "rpe-073-2026-oece",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9763314/7983806-resolucion-n-073-2026-oece-pre.pdf?v=1775658463",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/7983806-073-2026-oece-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rpe-073-2026-oece.pdf",
+      "sha256": "f8a0230b28f92cb7ca2ce2683944d2f7f1df605e97195b7c9ace06b7b865e0fd",
+      "bytes": 538969,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 5,
+        "first_page_text": " \nPág. 1 de 5 \nEsta es una copia auténtica imprimible de un documento electrónico archivado en el Organismo Especializado para las Contrataciones \nPúblicas Eficientes aplicando lo dispuesto por el Art. 25 de D.S. 070-201",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1sdLjs72HMaiHOr0zKflypS8aznh-lHPP"
+    },
+    {
+      "name": "rpe-088-2025-oece.pdf",
+      "instrument_id": "rpe-088-2025-oece",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9145588/7502068-resolucion-n-d000088-2025-oece-pre.pdf?v=1765814921",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/7502026-088-2025-oece-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rpe-088-2025-oece.pdf",
+      "sha256": "73d223833e765355870e8e07be584e068f4f5ad00fa74b813fbad937a2e9720f",
+      "bytes": 494944,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 4,
+        "first_page_text": " \nPág. 1 de 4 \nEsta es una copia auténtica imprimible de un documento electrónico archivado en el Organismo Especializado para las Contrataciones \nPúblicas Eficientes aplicando lo dispuesto por el Art. 25 de D.S. 070-201",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1kNXQXhxRBcJwmB_M2J0rYVdG0ljAo7kv"
+    },
+    {
+      "name": "rof-seccion-segunda-modificada-2025.pdf",
+      "instrument_id": "rpe-088-2025-oece",
+      "kind": "anexo",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9144133/7502068-modificacion-de-la-seccion-segunda-del-reglamento-de-organizacion-y-funciones-del-organismo-especializado-para-las-contrataciones-publicas-eficientes-oece.pdf?v=1765814921",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/7502026-088-2025-oece-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rof-seccion-segunda-modificada-2025.pdf",
+      "sha256": "ac5d99b0890be4061e269fc673f7c2e14933254dce049171f0132cd888fca966",
+      "bytes": 667106,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 23,
+        "first_page_text": " \nREGLAMENTO DE ORGANIZACIÓN Y FUNCIONES DEL ORGANISMO ESPECIALIZADO PARA LAS \nCONTRATACIONES PÚBLICAS EFICIENTES  \nSECCIÓN SEGUNDA \nTITULO I. TERCER NIVEL ORGANIZACIONAL \nUNIDADES ORGÁNICAS DEL ÓRGANO RESOLUTIVO \nArtícu",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1wXOEg_51Eu0mGB_N_9KwfdNvB2FQ_aG6"
+    },
+    {
+      "name": "rpe-090-2025-oece.pdf",
+      "instrument_id": "rpe-090-2025-oece",
+      "kind": "original",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9174433/7532575-resolucion-n-090-2025-oece-pre.pdf?v=1766151895",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/7532575-090-2025-oece-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rpe-090-2025-oece.pdf",
+      "sha256": "1f69f23c1ac65741659415bcc90d7810fca5644bde21b336e662a76f696cb2b8",
+      "bytes": 481866,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 4,
+        "first_page_text": " \nPág. 1 de 4 \nEsta es una copia auténtica imprimible de un documento electrónico archivado en el Organismo Especializado para las Contrataciones \nPúblicas Eficientes aplicando lo dispuesto por el Art. 25 de D.S. 070-201",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1_kC_hPohbs1Wg7sCx-17rr3NVqxpcQjo"
+    },
+    {
+      "name": "rof-texto-integrado-actualizado-2025.pdf",
+      "instrument_id": "rpe-090-2025-oece",
+      "kind": "anexo",
+      "source_url": "https://cdn.www.gob.pe/uploads/document/file/9174434/7532575-texto-integrado-actualizado-del-reglamento-de-organizacion-y-funciones-del-oece.pdf?v=1766151896",
+      "source_page": "https://www.gob.pe/institucion/oece/normas-legales/7532575-090-2025-oece-pre",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/rof-texto-integrado-actualizado-2025.pdf",
+      "sha256": "34bd69fed1ae4b546346c4c9256fe64dd97afd8614e193fd4722886aa6203ea5",
+      "bytes": 906631,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "pages": 50,
+        "first_page_text": " \n \n \n1 \n \nTEXTO INTEGRADO DEL REGLAMENTO DE ORGANIZACIÓN Y FUNCIONES DEL ORGANISMO \nESPECIALIZADO PARA LAS CONTRATACIONES PÚBLICAS EFICIENTES (OECE) \n \nÍNDICE  \nTÍTULO I              : DISPOSICIONES GENERALES \nTÍTULO II",
+        "requiere_ocr": false
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1kt2oBveVUysjR2nCuI_rMtRD-Ix3grsp"
+    },
+    {
+      "name": "dl-1715-elperuano.html",
+      "instrument_id": "dl-1715",
+      "kind": "original",
+      "source_url": "https://busquedas.elperuano.pe/api/visor_html/2483559-7",
+      "source_page": "https://busquedas.elperuano.pe/dispositivo/NL/2483559-7",
+      "local_path": "normativa/originales/cierre-piloto-2026-10-30/dl-1715-elperuano.html",
+      "sha256": "ba4a726e2278d30f0906c9cc2559e074e52fe3c7247fa29db74848062fc404eb",
+      "bytes": 12738,
+      "descargado_el": "2026-10-30",
+      "verificacion": {
+        "format_check": "html_oficial_con_identificador_y_articulo",
+        "lector_indexacion": "pendiente"
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "171pcHwXsdjBGQTJ-_WOKRwvB5DanobHr"
+    }
+  ]
+}

@@ -52,6 +52,13 @@ class IndexTests(unittest.TestCase):
     def build(self):
         return indexer.build_index(self.root, self.output, ("manifest.json",))
 
+    def test_external_manifest_rejected_without_replacing_index(self):
+        self.build()
+        original = self.output.read_bytes()
+        with self.assertRaisesRegex(ValueError, "Manifiesto fuera"):
+            indexer.build_index(self.root, self.output, ("../fuera.json",))
+        self.assertEqual(original, self.output.read_bytes())
+
     def test_search_preserves_nested_locator_hash_and_accent_insensitive_terms(self):
         self.build()
         results = indexer.search_index(self.output, "documento extranjero", "ampliacion_consultores")

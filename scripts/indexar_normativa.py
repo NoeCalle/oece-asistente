@@ -15,6 +15,7 @@ MANIFESTS = (
     "normativa/manifiesto-descargas-2026-10-29.json",
     "normativa/manifiesto-continuacion-2026-10-30.json",
     "normativa/manifiesto-ampliacion-2026-10-30.json",
+    "normativa/manifiesto-cierre-piloto-2026-10-30.json",
 )
 EXTRACTOR_VERSION = "0.1.0"
 
@@ -97,7 +98,10 @@ def build_index(root, output, manifests=MANIFESTS):
     root, output = Path(root).resolve(), Path(output).resolve()
     if root not in output.parents or output.suffix != ".sqlite":
         raise ValueError("Guardar el indice .sqlite dentro de la raiz del proyecto")
-    items = [item for name in manifests for item in read_json(root / name)["archivos"]]
+    manifest_paths = [(root / name).resolve() for name in manifests]
+    if any(root not in path.parents for path in manifest_paths):
+        raise ValueError("Manifiesto fuera de la raíz del proyecto")
+    items = [item for path in manifest_paths for item in read_json(path)["archivos"]]
     catalog = read_json(root / "normativa/catalogo.json")["normas"]
     prepared = [(item, safe_source(root, item)) for item in items]
     if len({p for _, p in prepared}) != len(prepared):
@@ -217,13 +221,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("build", "search"))
     parser.add_argument("--database", type=Path, default=ROOT / "normativa/indices/biblioteca.sqlite")
+    parser.add_argument("--manifest", action="append", help="Manifiesto relativo a la raíz; repetible para un índice complementario")
     parser.add_argument("--query")
     parser.add_argument("--procedure")
     parser.add_argument("--limit", type=int, default=5)
     args = parser.parse_args()
     if args.action == "build":
-        result = build_index(ROOT, args.database)
+        result = build_index(ROOT, args.database, tuple(args.manifest) if args.manifest else MANIFESTS)
     else:
+        if args.manifest:
+            parser.error("--manifest solo se admite con build")
         if args.query is None:
             parser.error("search requiere --query")
         result = search_index(args.database, args.query, args.procedure, args.limit)

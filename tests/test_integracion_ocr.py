@@ -38,6 +38,7 @@ class IntegrationTests(unittest.TestCase):
         self.manifest.write_text(json.dumps({"archivos": [self.item]}), encoding="utf-8")
         (self.folder / "manifiesto-continuacion-2026-10-30.json").write_text('{"archivos": []}', encoding="utf-8")
         (self.folder / "manifiesto-ampliacion-2026-10-30.json").write_text('{"archivos": []}', encoding="utf-8")
+        (self.folder / "manifiesto-cierre-piloto-2026-10-30.json").write_text('{"archivos": []}', encoding="utf-8")
         (self.folder / "catalogo.json").write_text(json.dumps({"normas": [{"id": "prueba", "archivo": {"sha256": self.item["sha256"]},
              "vigencia": {"desde": None}, "validacion": {"nivel": "pendiente"}, "procedimientos": ["ampliacion_consultores"]}]}), encoding="utf-8")
         self.base = self.folder / "indices/base.sqlite"

@@ -25,3 +25,5 @@ La estimación anterior era 25 % después de integrar la muestra OCR. Este incre
 Continuación de T24/T25: se agregó propuesta léxica para siete controles y revisión documental explícita con citas comprobadas; 47 pruebas técnicas en total. Se mantiene la estimación global alrededor de 35 % hasta cerrar los criterios de fase. El cierre técnico no añade aprobación jurídica ni aceptación institucional. [Criterios de cierre](CIERRES.md).
 
 [Estado actual](ESTADO.md). [Datos de la estimación](../proyecto/avance.json).
+
+Continuación 31/10/2026: T28 cierra adquisición de 36 archivos del alcance v0.1; biblioteca total de 46 y 53 pruebas técnicas. Se mantiene la valoración de fase 1 hasta revisar suficiencia, vigencias y consolidación; no se asigna avance jurídico por descargar originales. [Cierre documental](normativa/COBERTURA_MINIMA_PILOTO.md).

@@ -1,5 +1,5 @@
 # Inventario inicial de fuentes normativas
-Corte investigado: **29/10/2026, America/Lima**. 24 registros al actualizar el 30/10/2026. Catálogo no exhaustivo; ninguna regla queda habilitada. [Cinco originales adicionales y alcance de consulta](AMPLIACION_FUENTES.md).
+Corte investigado: **29/10/2026, America/Lima**. 29 registros al actualizar el 31/10/2026. Catálogo no exhaustivo; ninguna regla queda habilitada. [Cierre de adquisición mínima y nuevos originales](COBERTURA_MINIMA_PILOTO.md).
 
 Se verificó existencia y determinados datos en fuentes oficiales. “Vigencia parcial verificada” significa que se encontró sustento para una fecha o relación, no que toda la norma esté consolidada y vigente sin cambios. Un resultado del buscador puede ser una captura anterior; se distingue del texto abierto en [catalogo.json](../../normativa/catalogo.json).
 
@@ -29,6 +29,8 @@ Se verificó existencia y determinados datos en fuentes oficiales. “Vigencia p
 | com-011-2025 | [Comunicado 011-2025-OECE](https://www.gob.pe/institucion/oece/noticias/1239547-comunicado-n-011-2025-oece-obligaciones-de-los-ejecutores-de-obra-sobre-la-reinscripcion-y-aumento-de-capacidad-maxima-de-contratacion) | 2025-09-03 | Pendiente / no aplica | orientacion |
 
 ## Prioridad del piloto
+Los registros adicionales del ROF y aprobación FUP están en el catálogo estructurado: RPE 049-2025, 002-2025, 030-2026, 088-2025 y 090-2025. Se conserva el integrado aprobado por 002 como histórico, junto al actualizado de 090. El DL 1715, FUP y actos de actualización/modificación TUPA ya fueron recuperados; sus vigencias/aplicabilidad siguen separadas de la descarga. La tabla anterior conserva antecedentes de identificación, que deben leerse con esta actualización y el catálogo.
+
 Ley 32069 y cadena de cambios; Reglamento 009-2025-EF, fe de erratas y modificatorias; Directiva 001-2025-OECE/CD y anexos 1 y 2; TUPA y formularios aplicables. Para reconsideraciones: nuevo TUO de Ley 27444, acto impugnado, notificación y régimen temporal.
 
 ## Fuentes complementarias por incorporar
