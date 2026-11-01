@@ -11,8 +11,8 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 | T06 | P0 | Pendiente | Consolidar cadena Ley 32069, reglamento, TUPA y directiva hasta corte |
 | T07 | P0 | Parcial comprobada | TUO oficial 2026: artículos 133–135/207–208/211 cotejados; recurso con calendario citado implementado, excepciones y eficacia del caso pendientes |
 | T08 | P0 | En curso | Anexos leídos; 22 controles candidatos y 10 casos sintéticos especificados; falta revisión del especialista |
-| T09 | P1 | Pendiente en entorno laboral | Definir ubicación privada, condiciones de uso de Codex, permisos y retención de documentos autorizados |
-| T10 | P1 | Hecho en alcance acordado | Ingreso por panel/carpeta LISTO, memoria SQLite y coordinador en Codex. El usuario confirma interpretación en Codex; un modelo autónomo en el panel queda fuera del alcance requerido |
+| T09 | P1 | Pendiente en entorno laboral | Definir ubicación privada, condiciones de uso del asistente elegido, permisos y retención de documentos autorizados |
+| T10 | P1 | Hecho en alcance acordado | Ingreso por panel/carpeta LISTO, memoria SQLite y coordinador en Codex. El usuario confirma interpretación en el asistente elegido; Codex actual, herramientas portables por CLI/MCP. Un modelo autónomo en el panel queda fuera del alcance requerido |
 | T11 | P1 | En curso | v1: lector PDF/DOCX/TXT/HTML/XLSX y OCR de expedientes acotado; DOC/XLS e imágenes incrustadas requieren conversión o cotejo |
 | T12 | P1 | En curso | Motor documental v1 de 22 controles con citas y Word; no decisión administrativa ni precisión jurídica certificada |
 | T13 | P1 | Hecho en alcance sintético | 109 pruebas; cinco Word, 19 páginas revisadas. Aceptación funcional y modelos reales pendientes |
@@ -43,6 +43,9 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 | T38 | P1 | Pendiente de casos autorizados | Aceptación funcional y validación por módulo; documentar resultados discrepantes y corregir reglas |
 
 | T39 | P1 | Hecho en alcance documental/aritmético | Contraste R2/R3/R8 y riesgos citados, indicadores sin dictamen, contradicciones y 22 pruebas nuevas; dos Word/diez páginas revisadas. Ver [verificación 1.2](VERIFICACION_V12.md) |
+
+| T40 | P1 | Hecho en alcance técnico | Instrucciones comunes, importación Claude, once herramientas MCP locales, recursos y configuración Python independiente; 23 pruebas nuevas. [Verificación](VERIFICACION_PORTABILIDAD.md) |
+| T41 | P1 | Pendiente al conectar otro cliente | Probar sesión real del cliente elegido con sus permisos GitHub/Drive y herramientas OECE. No bloquea el uso actual en Codex ni supone credenciales compartidas |
 
 ## Continuación vigente
 

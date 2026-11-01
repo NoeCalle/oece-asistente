@@ -1,16 +1,16 @@
 # Estado de OECE Assistant
 
-Actualización: **01/11/2026, America/Lima**. Versión asistida **1.2.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_V12.md) y [plan integral](PLAN_INTEGRAL.md).
+Actualización: **01/11/2026, America/Lima**. Versión asistida **1.3.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_PORTABILIDAD.md) y [plan integral](PLAN_INTEGRAL.md).
 
 ## Resultado disponible
 
-Los cinco módulos producen lectura, matriz y Word con hechos citados, autores identificados y originales/revisiones conservados. Consultores tiene 22 controles; los otros cuatro módulos ya tienen controles específicos y propuestas aritméticas. La interpretación de documentos la realiza el coordinador en Codex; el panel no incorpora un modelo autónomo ni un servicio institucional.
+Los cinco módulos producen lectura, matriz y Word con hechos citados, autores identificados y originales/revisiones conservados. Consultores tiene 22 controles; los otros cuatro módulos ya tienen controles específicos y propuestas aritméticas. La interpretación de documentos la realiza el asistente elegido; Codex es el cliente probado actualmente y se incorpora un puente para otros clientes; el panel no incorpora un modelo autónomo ni un servicio institucional.
 
 La versión 1.1 añade CMC con factores y consorcios, selección de inscripción/reinscripción, límites calendario de actualizaciones y reconsideración con nueva prueba/calendario explícito. Sus resultados dependen de datos acreditados; no equivalen a decisión administrativa. [Campos y límites](CONTRATO_PROCEDIMIENTOS.md).
 
 ## Evidencia
 
-- 131 pruebas: 109 anteriores y 22 nuevas de ratios, bases financieras, riesgos documentados, contradicciones, OCR, ventana temporal y entrega financiera completa.
+- 154 pruebas: las 131 anteriores y 23 de portabilidad/MCP, límites de rutas, versiones previas, citas, recursos Word y protocolo stdio. Dos autores IA de prueba no equivalen a dos modelos reales evaluados.
 - Navegador real: creación, inscripción, campos booleanos, carga, procesamiento, descarga Word y actualización financiera anual; cero errores JavaScript observados.
 - Cinco Word 1.1 con 19 páginas y dos Word financieros 1.2 con diez páginas revisadas. Las instantáneas anteriores se conservan. La exportación bloqueada se resolvió con LibreOffice 26.8.2 extraído localmente, sin sustituir Word ni instalar un servicio.
 - Biblioteca: **48 archivos, 29 registros, seis manifiestos**; índice de 2.281 fragmentos, 2.046 con texto. Nueve archivos conservan alertas o lectura parcial.
@@ -47,4 +47,8 @@ El siguiente paso funcional es procesar un expediente autorizado, contrastar cad
 
 ## Alcance de la coordinación confirmado
 
-El usuario confirma el 01/11/2026 que desea realizar la interpretación en Codex. El flujo acordado es indicar la carpeta, analizarla en este chat y producir el Word y la matriz con las herramientas locales. El panel ayuda a organizar, cargar y descargar. No se exige que el panel interprete expedientes sin intervención del chat para dar por completado este proyecto.
+El usuario confirma el 01/11/2026 la interpretación desde un asistente conversacional y pide que la herramienta no dependa de una marca de IA. Codex sigue disponible; Claude u otro cliente pueden usar el mismo código, reglas y contratos con acceso autorizado a documentos y al motor. GitHub/Drive aportan archivos; la CLI o el MCP local ejecutan las herramientas. No se exige incorporar un modelo autónomo al panel. No se ha probado una sesión real de Claude. [Guía](PORTABILIDAD_IA.md).
+
+## Portabilidad 1.3
+
+Once herramientas MCP locales y recursos de entrega, con protocolo actual y compatibilidad initialize. No se abren puertos públicos ni se añaden APIs de modelo. Instrucciones comunes AGENTS.md, importación CLAUDE.md, configuración revisable generada localmente y lanzador Python configurable. Deben prepararse originales/índice y conectores en cada cliente. La independencia de IA no elimina la dependencia de Windows para el OCR actual. Se mantiene la estimación global 75 % y el corte normativo.

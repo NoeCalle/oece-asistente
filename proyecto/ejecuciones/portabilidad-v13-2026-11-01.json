@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-11-01",
+  "version": "1.3.0",
+  "corte_normativo_conservado": "2026-10-31",
+  "pruebas_aprobadas": 154,
+  "pruebas_nuevas": 23,
+  "herramientas_mcp": 11,
+  "protocolos_declarados": [
+    "2026-07-28",
+    "2025-11-25",
+    "2025-06-18",
+    "2024-11-05"
+  ],
+  "probe_proceso_real": [
+    "2026-07-28",
+    "2025-11-25"
+  ],
+  "api_modelo_usada": false,
+  "cliente_real_claude_validado": false,
+  "configuracion_cliente_editada": false,
+  "credenciales_compartidas": false,
+  "origenes_normativos": 48,
+  "autores_ia_de_prueba": 2,
+  "alcance": "Compatibilidad de herramientas y protocolo, no equivalencia semántica de modelos ni certificación universal MCP.",
+  "avance_estimado_conservado": 75,
+  "pendiente": [
+    "Conectores y sesión real del cliente alternativo elegido",
+    "Prueba de acceso a originales y presentación/descarga de entregas en ese cliente",
+    "OCR actual Windows; no se implementa OCR para otro sistema operativo",
+    "Normativa por disposición, casos laborales y modelos de informe"
+  ],
+  "navegador_tras_reiniciar_version": {
+    "creacion": true,
+    "clasificacion_inscripcion": true,
+    "booleanos_persistidos": true,
+    "carga": true,
+    "procesamiento": true,
+    "descarga_word": true,
+    "actualizacion_financiera_anual": true,
+    "errores_javascript": [],
+    "boton_asistente_neutral": true
+  }
+}

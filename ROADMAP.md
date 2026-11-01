@@ -17,10 +17,14 @@ Actualización: **01/11/2026**. Corte normativo: **31/10/2026**. Las fases se ci
 2. Completar el desglose de requisitos y excepciones de cada rama, sin transformar un hecho agregado en verificación automática de todos sus documentos.
 3. Procesar expedientes autorizados con el coordinador y contrastar las propuestas con la práctica del área.
 4. Incorporar modelos reales cuando estén disponibles y validar presentación/redacción.
-5. Mantener Codex como coordinador e intérprete, según decisión del usuario. Una aplicación con modelo autónomo o un servicio compartido solo se evalúan ante una nueva petición.
+5. Mantener el asistente conversacional elegido como coordinador e intérprete; Codex es el cliente actual. Una aplicación con modelo autónomo o un servicio compartido solo se evalúan ante una nueva petición.
 
 La conversación abierta funciona en Codex; el panel no contiene un modelo propio. El cierre de QA Word 1.1 sustituye el bloqueo técnico de 1.0, pero no acredita aceptación institucional. [Estado](docs/ESTADO.md), [verificación](docs/VERIFICACION_V11.md) y [tareas](docs/TAREAS.md).
 
 ## Incremento 1.2
 
 Contraste financiero con importes citados y contradicciones, 131 pruebas, dos ejemplos nuevos revisados en sus diez páginas. Se conserva el corte normativo 31/10 y la estimación global 75 %. [Verificación 1.2](docs/VERIFICACION_V12.md).
+
+## Portabilidad 1.3
+
+El coordinador de IA es sustituible por decisión del usuario. Se implementó un puente MCP local y se verificaron 154 pruebas; no se ha evaluado un modelo Claude real. Los conectores de cada cliente y su recuperación/visualización de entregas se validan al conectarlo. [Guía](docs/PORTABILIDAD_IA.md). El modelo autónomo en el panel sigue fuera del alcance requerido.

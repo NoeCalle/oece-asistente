@@ -34,3 +34,7 @@ __pycache__/
 node_modules/
 .DS_Store
 Thumbs.db
+claude_desktop_config.json
+CLAUDE.local.md
+.claude/settings.local.json
+.mcp.local.json

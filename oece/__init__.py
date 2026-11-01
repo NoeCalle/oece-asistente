@@ -1,2 +1,2 @@
-"""Herramientas locales de OECE Assistant para el coordinador en Codex."""
-__version__ = "1.2.0"
+"""Herramientas locales de OECE Assistant independientes del proveedor de IA."""
+__version__ = "1.3.0"

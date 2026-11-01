@@ -23,3 +23,7 @@ Siguen abiertas la cadena normativa completa, las excepciones, el desglose de ca
 ## T39 Contraste financiero 1.2
 
 Cerrado en alcance documental y aritmético: R2/R3/R8 exactos, bases homogéneas, reporte SBS citado, R9/RC informativos, contradicciones y conservación de dependencias. Veintidós pruebas nuevas, 131 totales; dos Word ficticios y diez páginas revisadas. [Contrato](CONTRASTE_FINANCIERO.md), [verificación](VERIFICACION_V12.md). La consulta de fuentes del 01/11 no habilita ampliar el corte. T37 y validación real permanecen abiertas.
+
+## T40 Portabilidad técnica
+
+Mismo motor por CLI/MCP, once herramientas, recursos Word/CSV/JSON, fuente común de instrucciones, importación Claude y lanzador Python configurable. Veintitrés pruebas nuevas, 154 totales. Compatibilidad de protocolo y contratos comprobada localmente; no se declara sesión real de Claude ni conectores de su cuenta comprobados. [Verificación](VERIFICACION_PORTABILIDAD.md).

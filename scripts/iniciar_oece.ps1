@@ -1,12 +1,8 @@
-param([int]$Puerto=8765)
+param([int]$Puerto=8765,[string]$Python='')
 $ErrorActionPreference='Stop'
 $projectRootOECE=Split-Path -Parent $PSScriptRoot
-$pythonOECE=Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-if (-not (Test-Path -LiteralPath $pythonOECE)) {
-    Write-Host 'No se encontró Python del entorno. Revisa docs/USO_DIARIO.md para la instalación.'
-    Read-Host 'Pulsa Entrar para cerrar'
-    exit 1
-}
+. (Join-Path $PSScriptRoot 'resolver_python.ps1')
+$pythonOECE=Resolve-OECEPython -ExplicitPython $Python
 $addressOECE="http://127.0.0.1:$Puerto"
 $runningOECE=$false
 try {

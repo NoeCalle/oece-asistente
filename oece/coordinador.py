@@ -1,6 +1,6 @@
 """Comandos locales, vigilancia estable y conversación guiada persistente.
 
-El análisis abierto con IA se realiza en Codex con AGENTS.md. Este componente
+El análisis abierto con IA lo realiza el cliente elegido con AGENTS.md. Este componente
 ejecuta herramientas deterministas; no simula respuestas de un modelo.
 """
 import json
@@ -64,6 +64,6 @@ def responder(case_dir,memoria,mensaje):
         result,_=preparar(case_dir,memoria)
         answer=result['resumen']+'\n'+'\n'.join(result['preguntas'])
     else:
-        answer='Puedo mostrar el estado, listar los datos faltantes o preparar el informe. Para analizar el contenido, conversa en Codex usando la ruta de este expediente; AGENTS.md conserva el procedimiento de trabajo.'
+        answer='Puedo mostrar el estado, listar los datos faltantes o preparar el informe. Para analizar el contenido, usa tu asistente con acceso autorizado a este expediente y las herramientas OECE; AGENTS.md conserva el procedimiento de trabajo.'
     memoria.mensaje(key,'coordinador',answer)
     return answer
