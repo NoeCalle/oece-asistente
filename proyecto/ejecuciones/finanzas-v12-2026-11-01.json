@@ -1,0 +1,125 @@
+{
+  "version": "1.2.0",
+  "fecha": "2026-11-01",
+  "corte_normativo": "2026-10-31",
+  "pruebas_aprobadas": 131,
+  "pruebas_nuevas": 22,
+  "qa_word": {
+    "ejemplos": 2,
+    "paginas_inspeccionadas": 10,
+    "motor": "LibreOffice 26.8.2 local",
+    "resultado": "Todas las páginas finales inspeccionadas; sin recortes, solapamientos ni tablas fuera de página observados."
+  },
+  "fuentes": {
+    "archivos": 48,
+    "registros": 29,
+    "referencias_motores_actuales_verificadas": 47,
+    "cotejo_visual_directiva_paginas": [
+      6,
+      7
+    ],
+    "adquisiciones_nuevas": 0
+  },
+  "demos": {
+    "contradictorio": {
+      "revision": "394393f3891f0c0d239cdd06e5b38840ffca93a7682b4782e5b5349adf512383",
+      "sha256_word": "766e63f17a757865315e4649f45104e9dc47c1e3bb543aa313ad0b58e8f88b32",
+      "paginas_inspeccionadas": 5,
+      "conteo": {
+        "cumple": 7,
+        "no_aplica": 2,
+        "no_cumple": 2,
+        "no_determinable": 2
+      },
+      "ejemplo_sintetico": true,
+      "ratios": {
+        "R2": {
+          "alcance": "comparacion_aritmetica_no_solvencia_integral",
+          "denominador": "100000",
+          "numerador": "1000",
+          "ratio": "R2",
+          "satisface_umbral_aritmetico": false,
+          "umbral": "0.05",
+          "valor_aproximado": "0.010000000000"
+        },
+        "R3": {
+          "alcance": "comparacion_aritmetica_no_solvencia_integral",
+          "denominador": "100000",
+          "numerador": "100000",
+          "ratio": "R3",
+          "satisface_umbral_aritmetico": true,
+          "umbral": "1",
+          "valor_aproximado": "1.000000000000"
+        },
+        "R8": {
+          "alcance": "comparacion_aritmetica_no_solvencia_integral",
+          "denominador": "300000",
+          "numerador": "1000",
+          "ratio": "R8",
+          "satisface_umbral_aritmetico": false,
+          "umbral": "1/3",
+          "valor_aproximado": "0.003333333333"
+        }
+      }
+    },
+    "umbrales": {
+      "revision": "d093e5f175c06d2858f678e3582ce06c8c313e482bea33e7f431a08619cdb942",
+      "sha256_word": "b8fb7c6ed8ef39ff0dcae65f441a3fc5a4649f2d6f3784480681de038700a6ff",
+      "paginas_inspeccionadas": 5,
+      "conteo": {
+        "cumple": 10,
+        "no_aplica": 2,
+        "no_determinable": 1
+      },
+      "ejemplo_sintetico": true,
+      "ratios": {
+        "R2": {
+          "alcance": "comparacion_aritmetica_no_solvencia_integral",
+          "denominador": "100000",
+          "numerador": "100000",
+          "ratio": "R2",
+          "satisface_umbral_aritmetico": true,
+          "umbral": "0.05",
+          "valor_aproximado": "1.000000000000"
+        },
+        "R3": {
+          "alcance": "comparacion_aritmetica_no_solvencia_integral",
+          "denominador": "100000",
+          "numerador": "100000",
+          "ratio": "R3",
+          "satisface_umbral_aritmetico": true,
+          "umbral": "1",
+          "valor_aproximado": "1.000000000000"
+        },
+        "R8": {
+          "alcance": "comparacion_aritmetica_no_solvencia_integral",
+          "denominador": "300000",
+          "numerador": "100000",
+          "ratio": "R8",
+          "satisface_umbral_aritmetico": true,
+          "umbral": "1/3",
+          "valor_aproximado": "0.333333333333"
+        }
+      }
+    }
+  },
+  "aceptacion_institucional": false,
+  "aprobacion_humana": null,
+  "avance_estimado_conservado": 75,
+  "pendientes": [
+    "Cadena normativa y TUPA por rama",
+    "Cotejo para fechas posteriores al corte",
+    "Interpretación y cobertura de pérdidas, análisis patrimonial integral y estados exigibles del caso",
+    "Casos reales autorizados y modelos de informes del trabajo"
+  ],
+  "navegador_tras_reiniciar_version": {
+    "creacion": true,
+    "clasificacion_inscripcion": true,
+    "booleanos_persistidos": true,
+    "carga": true,
+    "procesamiento": true,
+    "descarga_word": true,
+    "actualizacion_financiera_anual": true,
+    "errores_javascript": []
+  }
+}

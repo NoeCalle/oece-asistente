@@ -104,7 +104,7 @@ def validar_hechos(facts, documents):
         result[key]={**fact,'bloqueado_por_lectura':blocked}
     return result
 
-def evaluar(config, documents, facts):
+def _evaluar_documentos(config, documents, facts):
     route=seleccionar(config)
     facts=validar_hechos(facts,documents)
     controls=leer(ROOT/'rules/consultores/criterios-documentales.v1.json')['reglas']
@@ -224,3 +224,8 @@ def evaluar(config, documents, facts):
             row['resultado']='no_determinable'
             row['motivo']='Régimen temporal sin seleccionar. Verificación parcial conservada: '+row['motivo']
     return {'seleccion':route,'matriz':rows,'hechos':facts,'alcance':'verificacion_documental_condicionada_a_hechos_citados'}
+
+
+def evaluar(config, documents, facts):
+    from .finanzas import incorporar
+    return incorporar(_evaluar_documentos(config, documents, facts), config)

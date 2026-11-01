@@ -99,5 +99,9 @@
       "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas."
     }
   ],
-  "suma_ponderada_sin_redondear": 75.25
+  "suma_ponderada_sin_redondear": 75.25,
+  "evidencia_incremental_sin_reestimar": [
+    "docs/VERIFICACION_V12.md",
+    "proyecto/ejecuciones/finanzas-v12-2026-11-01.json"
+  ]
 }

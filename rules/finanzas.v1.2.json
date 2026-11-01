@@ -1,0 +1,64 @@
+{
+  "version": "1.2.0",
+  "fecha": "2026-11-01",
+  "corte_normativo": "2026-10-31",
+  "ventana_automatica": [
+    "2026-05-01",
+    "2026-10-31"
+  ],
+  "autor": "asistente_ia",
+  "aprobacion_humana": null,
+  "fuentes": {
+    "dir923": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+      "pagina_pdf": 6,
+      "disposicion": "Directiva RNP 9.2.3, PDF pp. 6–7: ratios R2/R3/R8; R9 referencial y pérdidas con cobertura patrimonial por revisar"
+    },
+    "reg2552": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+      "pagina_pdf": 14,
+      "disposicion": "Reglamento 25.5.2.b.1.1–b.1.3, PDF pp. 14–15: reporte SBS, ratios y análisis integral/patrimonio"
+    },
+    "dir933": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+      "pagina_pdf": 12,
+      "disposicion": "9.3.3: remisión expresa a 9.2.4 para ampliación"
+    },
+    "dir924": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+      "pagina_pdf": 7,
+      "disposicion": "9.2.4; remisión 9.3.3 en p. 12"
+    },
+    "dir923_p7": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+      "pagina_pdf": 7,
+      "disposicion": "Directiva RNP 9.2.3: R3, R8, R9 referencial y pérdidas acumuladas; continuación de p. 6"
+    }
+  },
+  "umbrales": {
+    "R2": ">= 0.05",
+    "R3": ">= 1",
+    "R8": ">= 1/3"
+  },
+  "indicadores_sin_dictamen": [
+    "R9",
+    "RC"
+  ],
+  "limites": [
+    "Comparación exacta, valor mostrado aproximado a doce decimales.",
+    "Denominador no positivo: no determinable. Sin infinito ni extrapolar PC cero de CMC.",
+    "R9 referencial. RC no decide cumplimiento: el símbolo >= 0.5 y la cobertura de pérdidas requieren análisis motivado.",
+    "Importes homogéneos, fecha y moneda citadas; sin conversión automática ni consulta SBS en vivo.",
+    "El cotejo de bases y el análisis integral son interpretaciones documentadas, no documentos adicionales exigidos por ley."
+  ]
+}

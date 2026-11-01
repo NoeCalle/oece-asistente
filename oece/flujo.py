@@ -141,7 +141,7 @@ def preparar(case_dir,memoria,usar_ocr=True):
             raise ValueError('Cada párrafo analítico requiere texto, autor y referencias')
         if any(ref not in known for ref in para['referencias']): raise ValueError('Referencia de análisis inexistente')
     dependencies={p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for p in sorted((ROOT/'oece').glob('*.py'))}
-    for rel in ('rules/consultores/criterios-documentales.v1.json','rules/procedimientos.v1.1.json','normativa/decisiones-piloto.v0.3.json','normativa/catalogo.json','templates/informe.v1.json','scripts/ocr_windows.ps1'):
+    for rel in ('rules/consultores/criterios-documentales.v1.json','rules/procedimientos.v1.1.json','rules/finanzas.v1.2.json','normativa/decisiones-piloto.v0.3.json','normativa/catalogo.json','templates/informe.v1.json','scripts/ocr_windows.ps1'):
         dependencies[rel]=sha((ROOT/rel).read_bytes())
     snapshot={'version':__version__,'config_sha256':sha(config_raw),'hechos_sha256':sha(facts_raw),'cotejos_sha256':sha(checks_raw),
               'analisis_sha256':sha(analysis_raw),'normas_sha256':sha(norms_raw),'archivos':originals,'dependencias':dependencies,

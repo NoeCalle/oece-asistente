@@ -129,6 +129,23 @@ def redactar(result, path):
     if calculation:
         doc.add_heading('Cómputo propuesto del recurso',2)
         doc.add_paragraph(f'Con el calendario documentado se cuentan {calculation["dias_base"]} días hábiles y {calculation["dias_distancia_declarados"]} días de término de distancia declarado. El vencimiento calculado es {calculation["vencimiento"]}. El cómputo no acredita la eficacia de la notificación ni resuelve excepciones de horario, canal o régimen especial.')
+    financial=result.get('calculos',{}).get('finanzas')
+    if financial:
+        doc.add_heading('Contraste financiero documentado',2)
+        if not financial.get('ventana_verificada'):
+            doc.add_paragraph('La rama o la fecha del expediente no están dentro del alcance temporal verificado. Se conservan estos cálculos para revisión; no habilitan una conclusión sobre el trámite.')
+        doc.add_paragraph('Los ratios se contrastan con los importes citados del mismo período, moneda y ámbito. Los valores mostrados son aproximados; el umbral se compara sin redondear. La comparación no equivale a un dictamen de solvencia ni a una consulta SBS en línea.')
+        records=[]
+        for code,calc in financial['ratios'].items():
+            ok=calc.get('satisface_umbral_aritmetico')
+            records.append((code,calc.get('valor_aproximado','Por completar'),calc.get('umbral','Por completar'),
+                            'Satisface umbral' if ok is True else 'No satisface umbral' if ok is False else 'No determinable'))
+        table(['Ratio','Valor aproximado','Umbral mínimo','Contraste aritmético'],records,[.6,2.1,1.4,2.8])
+        for code,calc in financial['indicadores'].items():
+            if 'valor_aproximado' in calc:
+                doc.add_paragraph(f'Indicador {code}: {calc["valor_aproximado"]}. '+('Es referencial y no tiene un umbral de aprobación automático.' if code=='R9' else 'Se requiere interpretar pérdidas, capital base y cuentas disponibles para cobertura; no genera por sí solo aprobación o rechazo.'))
+            else:
+                doc.add_paragraph('Indicador '+code+' por completar: '+texto_legible(calc['motivo'])+'.')
     # Las explicaciones se mantienen en prosa; matriz compacta sin párrafos extensos.
     for row in result['matriz']:
         if row['resultado']=='no_aplica': continue

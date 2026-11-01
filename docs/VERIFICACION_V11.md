@@ -1,5 +1,7 @@
 # Verificación de la versión 1.1
 
+**Antecedente conservado.** La versión 1.2 añade contraste financiero: [verificación actual](VERIFICACION_V12.md). Las cifras siguientes corresponden a 1.1.
+
 Cierre: **01/11/2026, America/Lima**. Corte normativo usado: **31/10/2026**. Versión local asistida; no certificación jurídica ni aceptación institucional. [Registro estructurado con huellas](../proyecto/ejecuciones/operacion-v11-2026-11-01.json).
 
 ## Comportamiento comprobado

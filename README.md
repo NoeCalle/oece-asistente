@@ -2,7 +2,7 @@
 
 Coordinador en Codex y herramientas locales para preparar evaluaciones documentales OECE/RNP con fuentes, matriz y borrador Word editable.
 
-**Versión asistida 1.1.0 — cierre 01/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación abierta se realiza en Codex siguiendo [AGENTS.md](AGENTS.md). El panel ejecuta herramientas deterministas, sin modelo autónomo incorporado.
+**Versión asistida 1.2.0 — cierre 01/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación abierta se realiza en Codex siguiendo [AGENTS.md](AGENTS.md). El panel ejecuta herramientas deterministas, sin modelo autónomo incorporado.
 
 ## Empezar
 
@@ -26,9 +26,10 @@ Los modelos reales de informes se incorporarán cuando estén disponibles. El [f
 | Reconsideración | Requisitos, nueva prueba/única instancia y propuesta de 15 días hábiles con calendario documentado |
 | Operación local | Panel, carga, LISTO, estabilidad, memoria, bloqueo, reintentos y revisiones |
 | Lectura/OCR | PDF digital, DOCX, TXT/HTML, valores XLSX; OCR Windows con límites, caché y cotejos declarados |
-| Entregas | Word, CSV y JSON trazables; cinco informes sintéticos y sus 19 páginas inspeccionados |
+| Entregas | Word/CSV/JSON; cinco ejemplos y 19 páginas de 1.1, dos ejemplos financieros y diez páginas de 1.2 inspeccionados |
+| Contraste financiero | R2/R3/R8, SBS documentada, indicadores y detección de contradicciones; sin dictamen de solvencia |
 | Biblioteca | 29 registros, 48 archivos, seis manifiestos, 2.281 fragmentos y 2.046 con texto |
-| Pruebas | 109; navegador con carga, campos, procesamiento y descarga Word comprobados |
+| Pruebas | 131; navegador con carga, campos, procesamiento y descarga Word comprobados |
 
 Los cuatro módulos adicionales tienen una ventana automática deliberadamente acotada al **01/05–31/10/2026**. Fuera de ella, los resultados favorables/desfavorables pasan a no determinable hasta revisar fuentes. Los cálculos son propuestas documentales: no prueban autenticidad, consulta registral en vivo ni decisión administrativa. [Contrato de procedimientos](docs/CONTRATO_PROCEDIMIENTOS.md).
 
@@ -36,7 +37,7 @@ Avance orientativo del plan amplio: **75 % (70–80 %)**. Es una estimación de 
 
 ## Documentación
 
-- [Uso diario](docs/USO_DIARIO.md), [datos del expediente](docs/CONTRATO_EXPEDIENTE.md), [procedimientos](docs/CONTRATO_PROCEDIMIENTOS.md) y [verificación 1.1](docs/VERIFICACION_V11.md).
+- [Uso diario](docs/USO_DIARIO.md), [datos del expediente](docs/CONTRATO_EXPEDIENTE.md), [procedimientos](docs/CONTRATO_PROCEDIMIENTOS.md) y [verificación 1.2](docs/VERIFICACION_V12.md) y [contraste financiero](docs/CONTRASTE_FINANCIERO.md).
 - [Plan integral](docs/PLAN_INTEGRAL.md), [roadmap](ROADMAP.md), [tareas](docs/TAREAS.md) y [cierres](docs/CIERRES.md).
 - [Criterios adoptados](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md), [consultores](rules/consultores/criterios-documentales.v1.json) y [fuentes de procedimientos](rules/procedimientos.v1.1.json).
 - [Biblioteca](docs/normativa/OPERACION_V1.md), [catálogo](normativa/catalogo.json), [esquema normativo](schemas/norma.schema.json) y [seguridad](docs/SEGURIDAD.md).

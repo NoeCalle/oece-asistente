@@ -42,6 +42,8 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 | T37 | P0 | Pendiente por fecha del caso | Verificar cambios posteriores al 31/10/2026 antes de ampliar ventana automática |
 | T38 | P1 | Pendiente de casos autorizados | Aceptación funcional y validación por módulo; documentar resultados discrepantes y corregir reglas |
 
+| T39 | P1 | Hecho en alcance documental/aritmético | Contraste R2/R3/R8 y riesgos citados, indicadores sin dictamen, contradicciones y 22 pruebas nuevas; dos Word/diez páginas revisadas. Ver [verificación 1.2](VERIFICACION_V12.md) |
+
 ## Continuación vigente
 
 Las versiones previas y sus pruebas se conservan como antecedentes. T30/T31/T32/T34/T35 cierran operación, índice digital, motor documental, QA sintética Word y expansión acotada. El panel no integra un modelo autónomo; el coordinador abierto es Codex.

@@ -50,3 +50,7 @@ Cerrar el navegador no detiene el proceso local. Para detenerlo, cerrar el proce
 ## Presentación de Word verificada
 
 Se revisaron visualmente cinco ejemplos sintéticos de la versión 1.1 (19 páginas), usando LibreOffice local para convertirlos y examinar todas sus páginas. Esta verificación no reemplaza la revisión de cada informe nuevo, especialmente tablas largas o documentos reales. El bloqueo de exportación de la versión anterior queda superado para este circuito; el formato continúa provisional. [Evidencia](VERIFICACION_V11.md).
+
+## Contraste financiero desde 1.2
+
+El coordinador prepara importes con citas y bases homogéneas. El informe incorpora R2/R3/R8, indicadores referenciales y reporte SBS documentado, con detección de contradicciones respecto de una declaración de solvencia. No convierte ratios en un dictamen ni aplica la excepción PC cero de CMC a solvencia. [Contrato financiero](CONTRASTE_FINANCIERO.md) y [verificación](VERIFICACION_V12.md). El corte no se amplía.

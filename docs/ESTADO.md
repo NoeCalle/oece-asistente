@@ -1,6 +1,6 @@
 # Estado de OECE Assistant
 
-Actualización: **01/11/2026, America/Lima**. Versión asistida **1.1.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_V11.md) y [plan integral](PLAN_INTEGRAL.md).
+Actualización: **01/11/2026, America/Lima**. Versión asistida **1.2.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_V12.md) y [plan integral](PLAN_INTEGRAL.md).
 
 ## Resultado disponible
 
@@ -10,14 +10,21 @@ La versión 1.1 añade CMC con factores y consorcios, selección de inscripción
 
 ## Evidencia
 
-- 109 pruebas: 87 anteriores y 22 nuevas de cálculos, ramas, fechas, datos faltantes e integración de los cuatro módulos.
+- 131 pruebas: 109 anteriores y 22 nuevas de ratios, bases financieras, riesgos documentados, contradicciones, OCR, ventana temporal y entrega financiera completa.
 - Navegador real: creación, inscripción, campos booleanos, carga, procesamiento, descarga Word y actualización financiera anual; cero errores JavaScript observados.
-- Cinco Word sintéticos, **19 páginas revisadas**. La exportación bloqueada se resolvió con LibreOffice 26.8.2 extraído localmente, sin sustituir Word ni instalar un servicio.
+- Cinco Word 1.1 con 19 páginas y dos Word financieros 1.2 con diez páginas revisadas. Las instantáneas anteriores se conservan. La exportación bloqueada se resolvió con LibreOffice 26.8.2 extraído localmente, sin sustituir Word ni instalar un servicio.
 - Biblioteca: **48 archivos, 29 registros, seis manifiestos**; índice de 2.281 fragmentos, 2.046 con texto. Nueve archivos conservan alertas o lectura parcial.
 - Fórmula gráfica oficial del artículo 28 adquirida de SPIJ, con hash y copia Drive. Directiva RNP 9.3.3 cotejada: remite expresamente a 9.2.4; registro de decisiones actualizado a v0.3.
 - CMC ficticia propuesta PEN 825.000; actualización con fecha a aclarar; reconsideración con calendario sintético, no calendario oficial general; consultor con diferencia de honorarios PEN 20.000.
 
-[Registro estructurado](../proyecto/ejecuciones/operacion-v11-2026-11-01.json). Las pruebas y ejemplos no certifican precisión jurídica general.
+[Registro 1.1](../proyecto/ejecuciones/operacion-v11-2026-11-01.json) y [registro financiero 1.2](../proyecto/ejecuciones/finanzas-v12-2026-11-01.json). Las pruebas y ejemplos no certifican precisión jurídica general.
+
+
+## Contraste financiero incorporado
+
+Se calculan R2/R3/R8 con comparación exacta de umbrales; R9 y pérdidas se mantienen como indicadores que requieren interpretación. Se cotejan bases homogéneas y reporte SBS documentado. Una declaración de solvencia contradictoria con ratios/reporte pasa a no determinable conservando su resultado previo. No se incorpora una consulta SBS en vivo ni se presume una solvencia integral por tres números. [Datos y límites](CONTRASTE_FINANCIERO.md).
+
+La revisión acotada de fuentes del 01/11 no permite ampliar el corte: se mantuvo el 31/10 y se documentaron fallos de acceso a índices oficiales. No se añadieron originales nuevos ni se declara ausencia de modificatorias. El avance amplio se conserva en 75 %.
 
 ## Estado por fase
 

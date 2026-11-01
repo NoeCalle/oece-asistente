@@ -63,6 +63,16 @@ def validate(check_originals=False):
         require(isinstance(source["pagina_pdf"], int) and source["pagina_pdf"] >= 1, "Pagina invalida")
         if pages:
             require(source["pagina_pdf"] <= pages, "Pagina fuera del documento")
+    current_sources = [r['fuente'] for r in read('rules/consultores/criterios-documentales.v1.json')['reglas']]
+    for registry in ('rules/procedimientos.v1.1.json', 'rules/finanzas.v1.2.json'):
+        current_sources.extend(read(registry)['fuentes'].values())
+    for source in current_sources:
+        require(source.get('archivo') in by_name, 'Fuente de motor no manifestada')
+        document = by_name[source['archivo']]
+        require(source.get('sha256') == document['sha256'], 'Hash de fuente de motor distinto')
+        require(source.get('url') == document['source_url'], 'URL de fuente de motor distinta')
+        page = source.get('pagina_pdf')
+        require(type(page) is int and 1 <= page <= document['verificacion']['pages'], 'Pagina de fuente de motor fuera de rango')
     cases = read("tests/fixtures/consultores/casos-especificacion.json")
     require(cases["tipo"] == "especificacion_no_ejecutada", "Estado de casos incorrecto")
     for case in cases["casos"]:
@@ -77,7 +87,7 @@ def validate(check_originals=False):
                 resolved = (path.parent / target.split("#")[0]).resolve()
                 require(resolved.exists(), "Enlace interno roto: " + str(path.relative_to(ROOT)) + " -> " + target)
                 links += 1
-    return {"catalogo": len(records), "archivos_manifestados": len(manifests), "controles": len(controls), "casos_especificados": len(cases["casos"]), "enlaces_locales": links, "originales_verificados": check_originals, "alcance": "integridad y referencias; no validacion juridica ni pruebas del asistente"}
+    return {"catalogo": len(records), "archivos_manifestados": len(manifests), "controles": len(controls), "referencias_motores_actuales": len(current_sources), "casos_especificados": len(cases["casos"]), "enlaces_locales": links, "originales_verificados": check_originals, "alcance": "integridad y referencias; no validacion juridica ni pruebas del asistente"}
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

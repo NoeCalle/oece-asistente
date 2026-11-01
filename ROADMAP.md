@@ -20,3 +20,7 @@ Actualización: **01/11/2026**. Corte normativo: **31/10/2026**. Las fases se ci
 5. Decidir despliegue institucional y automatización del modelo solo si aporta valor al uso real.
 
 La conversación abierta funciona en Codex; el panel no contiene un modelo propio. El cierre de QA Word 1.1 sustituye el bloqueo técnico de 1.0, pero no acredita aceptación institucional. [Estado](docs/ESTADO.md), [verificación](docs/VERIFICACION_V11.md) y [tareas](docs/TAREAS.md).
+
+## Incremento 1.2
+
+Contraste financiero con importes citados y contradicciones, 131 pruebas, dos ejemplos nuevos revisados en sus diez páginas. Se conserva el corte normativo 31/10 y la estimación global 75 %. [Verificación 1.2](docs/VERIFICACION_V12.md).

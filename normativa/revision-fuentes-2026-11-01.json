@@ -1,0 +1,40 @@
+{
+  "fecha_consulta": "2026-11-01",
+  "corte_operativo_conservado": "2026-10-31",
+  "alcance": "Comprobación acotada de fuentes oficiales, sin certificación de ausencia de cambios.",
+  "consultas": [
+    "site:gob.pe/institucion/oece/normas-legales 2026 octubre RNP",
+    "site:gob.pe OECE noviembre 2026 Directiva",
+    "site:elperuano.pe 2026 noviembre 32069",
+    "site:gob.pe 2026 octubre Decreto Supremo contrataciones públicas",
+    "222-2026-EF site:gob.pe",
+    "222-2026-EF site:mef.gob.pe",
+    "2026 octubre RNP Directiva site:gob.pe/institucion/oece",
+    "2026 octubre 27444 site:busquedas.elperuano.pe"
+  ],
+  "fuentes": [
+    {
+      "url": "https://busquedas.elperuano.pe/dispositivo/EX/2567159-1",
+      "estado": "texto_oficial_recuperado",
+      "instrumento": "DS 222-2026-EF",
+      "publicacion": "2026-10-21",
+      "hallazgo": "Artículo 3 modifica decimocuarta DCF sobre inicio progresivo del modelo de certificación de compradores; ya inventariado. No se identificó en este decreto modificación de los artículos RNP usados."
+    },
+    {
+      "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas-y-su-reglamento",
+      "estado": "error_418_en_acceso_directo"
+    },
+    {
+      "url": "https://www.gob.pe/institucion/oece/informes-publicaciones/tipos/16-tupa",
+      "estado": "error_418_en_acceso_directo"
+    },
+    {
+      "url": "https://www.mef.gob.pe/es/buscar?searchphrase=all&searchword=32069",
+      "estado": "resultado_indexado_disponible_acceso_directo_timeout",
+      "hallazgo": "El resultado del buscador mostró DS 222 ya registrado; no sustituye barrido completo."
+    }
+  ],
+  "decision": "No ampliar ventana automática por evidencia insuficiente de revisión completa. No declarar que no existen cambios posteriores.",
+  "nuevos_originales_adquiridos": 0,
+  "aprobacion_humana": null
+}

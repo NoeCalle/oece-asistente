@@ -59,3 +59,7 @@ El cómputo requiere `fecha_notificacion`, `calendario_recurso`, `calendario_ent
 ## Fuentes y conservación
 
 [Registro de fuentes por control](../rules/procedimientos.v1.1.json) con original, URL, hash y página. Los cálculos y factores quedan en `matriz.json`; Word resume la propuesta y sus límites. La revisión conserva hechos, normas, análisis, originales y dependencias. Los [ejemplos reproducibles](../scripts/crear_demos_procedimientos.py) son ficticios; su calendario de reconsideración es sintético y no acredita el calendario oficial de una entidad.
+
+## Contraste financiero desde 1.2
+
+El coordinador prepara importes con citas y bases homogéneas. El informe incorpora R2/R3/R8, indicadores referenciales y reporte SBS documentado, con detección de contradicciones respecto de una declaración de solvencia. No convierte ratios en un dictamen ni aplica la excepción PC cero de CMC a solvencia. [Contrato financiero](CONTRASTE_FINANCIERO.md) y [verificación](VERIFICACION_V12.md). El corte no se amplía.

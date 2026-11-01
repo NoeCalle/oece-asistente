@@ -22,3 +22,7 @@ La conversación abierta se realiza en Codex. El panel local y la vigilancia eje
 ## Desarrollo y mantenimiento
 
 Conservar la base Python existente y ejecutar pruebas apropiadas. No declarar completado el plan global por terminar una interfaz. Mantener estado y tareas con evidencia. No usar subagentes salvo instrucción explícita del usuario. Datos privados y artefactos en `data/` o carpeta externa, excluidos de Git; al publicar seleccionar archivos públicos explícitamente. Los ejemplos de informes reales se incorporarán después, preferiblemente anonimizados, reemplazando el formato provisional sin rehacer la lectura y trazabilidad.
+
+## Contraste financiero 1.2
+
+Consultar docs/CONTRASTE_FINANCIERO.md y rules/finanzas.v1.2.json. Registrar período, moneda, unidad y ámbito homogéneos antes de ratios. No usar CMC como dictamen de solvencia, no presumir infinito con denominador cero y no deducir aprobación por el símbolo de pérdidas acumuladas. Si una declaración contradice ratios o riesgos documentados, señalar el conflicto conservando las citas. La revisión de fuentes del 01/11 no extendió la ventana 31/10. Mantener sus límites hasta comprobar nuevas fuentes.
