@@ -1,3 +1,5 @@
+**Antecedente de la versión 1.0.** El bloqueo de QA Word se resolvió en 1.1; ver [verificación vigente](VERIFICACION_V11.md). Las cifras y pendientes siguientes describen el cierre histórico de 1.0.
+
 # Verificación de la versión asistida v1
 
 Fecha: 31/10/2026. Historias verificadas: expediente local → lectura → hechos citados → selección y matriz → borrador Word; panel → API → carpeta/memoria → descarga. Solo datos sintéticos y fuentes normativas públicas.

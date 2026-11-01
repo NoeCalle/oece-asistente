@@ -1,29 +1,21 @@
-# Cierres comprobados y próximos bloques
-Actualización: 31/10/2026. Un cierre se refiere al alcance indicado y exige código, prueba y ejecución registrada. No se cierra una fase jurídica por terminar una herramienta técnica.
+# Cierres comprobados y continuación
 
-| Bloque | Estado | Criterio satisfecho | Evidencia |
-|---|---|---|---|
-| T23 Circuito documental sintético | Cerrado en entrega anterior | Entrada, copias originales, revisiones, matriz y Word de cuatro páginas revisadas | [Piloto](PILOTO_DOCUMENTAL.md) |
-| T24 Propuesta textual v0.1 | Cerrado en alcance inicial | Siete controles con perfil; citas/huellas exactas; pendientes por defecto; cobertura restante explícita | [Propuesta y revisión](EVIDENCIAS_Y_REVISION.md) |
-| T25 Importación de revisión documental v0.1 | Cerrado en alcance sintético | Aceptación/rechazo explícitos; rechazo de lotes obsoletos; copia separada; matriz verifica citas; revocación comprobada | [Registro](../proyecto/ejecuciones/evidencias-revision-2026-10-30.json) |
-| T28 Adquisición documental mínima v0.1 | Cerrado en alcance explícito | 36 archivos requeridos verificados, siete grupos; biblioteca de 46 archivos; 17 nuevos archivados en Drive | [Cobertura y límites](normativa/COBERTURA_MINIMA_PILOTO.md) |
-| T29 Decisiones del piloto | Cerrado en alcance de criterio | Cinco decisiones del asistente IA con fundamento y excepciones; ejecución de reglas pendiente | [Criterios](normativa/CRITERIOS_ADOPTADOS_PILOTO.md) |
-| Fase 1 Biblioteca jurídica | Abierta | Faltan fuentes y vigencias por disposición, además de revisión del especialista | [Fuentes pendientes](normativa/AMPLIACION_FUENTES.md) |
-| Piloto con conclusiones legales | Abierto | Matriz jurídica aprobada, régimen temporal y casos aceptados | [Hallazgos pendientes](normativa/HALLAZGOS_PILOTO.md) |
-| Coordinador y activación | Disponible en alcance asistido v1 | LISTO y memoria local; interpretación en Codex. Modelo autónomo dentro del panel pendiente | [Uso](USO_DIARIO.md) |
+Actualización: **01/11/2026**; corte normativo 31/10/2026. Cada cierre se limita al alcance comprobado.
 
-## Siguiente bloque prioritario
-La adquisición mínima está comprobada y las cinco decisiones tienen criterio adoptado en T29. Implementar selección de régimen y ramas con las excepciones de [J01–J05](normativa/CRITERIOS_ADOPTADOS_PILOTO.md), consolidar TUPA por rama y cotejar el TUO. Mantener pendiente el acto habilitante de la quinta DCM de Ley 32732 solo donde se invoque ese texto; no bloquear todo el piloto.
+| Bloque | Cierre | Evidencia |
+|---|---|---|
+| T23–T25 Circuito y revisión v0.1 | Ejemplos sintéticos, propuestas y revisión con citas conservados | [Piloto](PILOTO_DOCUMENTAL.md), [evidencias](EVIDENCIAS_Y_REVISION.md) |
+| T28 Adquisición mínima | 36 archivos requeridos en siete grupos | [Cobertura](normativa/COBERTURA_MINIMA_PILOTO.md) |
+| T29 Criterios de consultores | J01–J05 adoptados por IA; versión 0.3 incorpora remisión expresa 9.3.3 | [Criterios](normativa/CRITERIOS_ADOPTADOS_PILOTO.md) |
+| T30 Operación asistida | Panel, memoria, LISTO y coordinación en Codex | [Uso](USO_DIARIO.md) |
+| T31 Índice unificado | Actualizado a 48 archivos, 2.281 fragmentos y 2.046 con texto | [Biblioteca](normativa/OPERACION_V1.md) |
+| T32 Consultores | Motor documental, diez situaciones S01–S10 ejecutadas | [Verificación 1.0 histórica](VERIFICACION_V1.md) |
+| T34 QA Word | Cerrado para los cinco ejemplos 1.1; 19 páginas inspeccionadas con conversor local | [Verificación 1.1](VERIFICACION_V11.md) |
+| T35 Cuatro procedimientos | Controles propios y propuestas CMC/plazos; 22 pruebas nuevas | [Contrato](CONTRATO_PROCEDIMIENTOS.md) |
+| T36 Fuentes de cálculo | Fórmula gráfica SPIJ archivada; directiva y TUO cotejados en las disposiciones utilizadas | [Manifiesto](../normativa/manifiesto-procedimientos-2026-10-31.json) |
 
-El registro v0.2 distingue decisión del asistente IA, hechos pendientes e implementación. No hace falta volver a pedir permiso para tomar criterios de diseño. La matriz sigue deshabilitada porque falta implementar y probar sus controles. Las 53 pruebas existentes son técnicas y los diez casos jurídicos siguen sin ejecutar.
+La exportación Word 1.0 estuvo bloqueada. Se resolvió con una imagen administrativa local de LibreOffice; no se afirma haber reparado la automatización COM de Word. El bloqueo histórico queda documentado en la verificación 1.0. La matriz candidata histórica conserva sus estados de aprobación originales; los motores documentales son distintos y no reciben aprobación humana ficticia.
 
-## Pendientes técnicos acotados
-T26 amplía los perfiles a los controles restantes solo cuando exista un criterio documental definido. T27 integra OCR de expedientes y límites de tiempo/reanudación. T10 mantiene coordinador y activación de carpetas como un bloque distinto. Autenticación de revisores, permisos, retención y tratamiento de documentos reales siguen en T09.
+Siguen abiertas la cadena normativa completa, las excepciones, el desglose de cada rama, la aceptación funcional/institucional y la validación con casos reales. T33 espera los modelos laborales que aporte el usuario. La ventana de los cuatro nuevos módulos termina el 31/10/2026; antes de aplicar conclusiones a solicitudes posteriores se debe revisar su normativa.
 
-Estimación histórica de este bloque: 35 %. La continuación v1 se sitúa alrededor de 60 %, sin cerrar la fase jurídica amplia ni la aceptación institucional.
-
-
-## Continuación operativa v1
-T30/T31/T32 cierran operación asistida, índice digital unificado y motor documental con diez situaciones ejecutadas. Sustituyen la indicación anterior de que los criterios aún no se habían traducido a código. Hay 87 pruebas aprobadas. El coordinador abierto es Codex; el panel/vigilancia no contienen un modelo autónomo. [Verificación](VERIFICACION_V1.md).
-
-La presentación Word v1 no se cierra: el DOCX se genera y abre, pero la conversión PDF se bloqueó y no se inspeccionaron todas sus páginas. T34 lo registra. Los modelos reales de informes pueden incorporarse después en T33, sin detener el uso asistido de las herramientas. No se cierra la fase jurídica amplia ni los evaluadores automáticos de los otros módulos.
+**Avance del plan amplio: alrededor de 75 % (70–80 %)**. [Cálculo](MEDICION_AVANCE.md). Los cierres no equivalen a precisión jurídica certificada.

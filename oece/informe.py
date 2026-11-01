@@ -1,6 +1,25 @@
 """Formato provisional sustituible cuando se aporten informes institucionales."""
 from .comun import ROOT, leer
 
+def texto_legible(text):
+    import re
+    labels={'representacion_acreditada':'acreditación de la representación',
+            'fundamentacion_vinculada_al_acto':'fundamentación vinculada al acto',
+            'informacion_financiera_completa':'información financiera de la rama',
+            'solvencia_acreditada':'acreditación de solvencia',
+            'identificacion_coincide':'concordancia de la identidad',
+            'documentacion_registro_completa':'documentos completos de la rama de inscripción',
+            'profesion_colegiacion_acreditada':'profesión y colegiación acreditadas',
+            'condiciones_articulo25_revisadas':'condiciones del artículo 25 revisadas',
+            'obligaciones_consorcio_identificadas':'obligaciones de cada integrante del consorcio',
+            'datos_contratante':'datos completos del contratante',
+            'rnp_vigente':'vigencia del RNP', 'informacion_actualizada':'información registral actualizada',
+            'capacidad_legal_acreditada':'acreditación de la capacidad legal',
+            'asistente_ia':'asistente de IA'}
+    for key,value in sorted(labels.items(),key=lambda x:-len(x[0])):text=text.replace(key,value)
+    text=re.sub(r'experiencia\.([A-Za-z0-9]+)\.',r'experiencia \1: ',text)
+    return text.replace('_',' ')
+
 def redactar(result, path):
     from docx import Document
     from docx.shared import Inches, Pt, RGBColor
@@ -74,40 +93,61 @@ def redactar(result, path):
     doc.add_heading(template['secciones']['documentos'],1)
     table(['ID','Documento','Lectura'],[(d['id'],d['archivo'],str(len(d['fragmentos']))+' fragmentos'+(' con alertas' if any(b['alertas'] for b in d['fragmentos']) else '')) for d in result['documentos']], [1.25,4.2,1.45])
     doc.add_heading(template['secciones']['base'],1)
-    doc.add_paragraph('Selección de régimen: '+result['seleccion']['regimen']+'. Los datos que definen la rama están declarados en la ficha del expediente. J01 a J05 contienen criterios adoptados por el asistente IA y sus excepciones.')
+    regimes={'analisis_documental_por_procedimiento':'Evaluación documental del procedimiento seleccionado',
+             'articulo_27_primera_ampliacion':'Artículo 27 para la primera ampliación posterior a la recategorización',
+             'articulo_27_con_historial':'Artículo 27 con historial registral identificado','no_determinable':'Régimen pendiente de precisar'}
+    doc.add_paragraph(regimes.get(result['seleccion']['regimen'],texto_legible(result['seleccion']['regimen']))+'. Los datos que definen la rama están declarados en la ficha del expediente. Las disposiciones seleccionadas se indican a continuación.')
+    names={n['archivo']['sha256']:n['denominacion'] for n in leer(ROOT/'normativa/catalogo.json')['normas'] if n.get('archivo')}
     sources={}
     for row in result['matriz']:
-        src=row.get('fuente_normativa')
-        if src:
+        for src in [row.get('fuente_normativa'),*row.get('fuentes_complementarias',[])]:
+            if not src: continue
             key=(src['archivo'],src['disposicion'],src['pagina_pdf'])
             if key not in sources: sources[key]=('N'+str(len(sources)+1),src)
     for source in result.get('normas_adicionales',[]):
         sources[(source['archivo'],source['disposicion'],source['pagina_pdf'])]=(source['codigo'],source)
     for code,src in sources.values():
-        p=doc.add_paragraph(f'{code}. {src["disposicion"]}; {src["archivo"]}, página PDF {src["pagina_pdf"]}. ')
+        name=names.get(src['sha256'],src['archivo'])
+        if src['archivo']=='tuo-27444-minjus-julio-2026.pdf':name='TUO de la Ley 27444, edición oficial MINJUSDH 2026'
+        elif src['archivo']=='formula-cmc-spij.pdf':name='Folio oficial del Reglamento con la fórmula de CMC'
+        p=doc.add_paragraph(f'{code}. {src["disposicion"]}; {name}, página PDF {src["pagina_pdf"]}. ')
         url_link(p,src['url'],'Fuente oficial')
     if not sources:
         doc.add_paragraph('Este módulo entrega un borrador documental asistido. Incorporar las disposiciones específicas verificadas en el análisis; no se reutilizan automáticamente las reglas de consultores.')
     doc.add_heading(template['secciones']['analisis'],1)
     counts=result['conteo']
     doc.add_paragraph(f'La matriz registra {counts.get("cumple",0)} verificaciones documentales satisfechas, {counts.get("no_cumple",0)} diferencias, {counts.get("no_determinable",0)} puntos no determinables y {counts.get("no_aplica",0)} puntos de otras ramas. Estos resultados se limitan a los hechos y documentos citados.')
+    calculation=result.get('calculos',{}).get('cmc')
+    if calculation:
+        doc.add_heading('Cálculo propuesto de capacidad',2)
+        if calculation['rama']=='con_experiencia':
+            doc.add_paragraph(f'El monto neto atribuido de las obras es PEN {calculation["sumatoria_neta"]}. El coeficiente de gestión {calculation["coeficiente_gestion"]} resulta de sumar el factor de actividad {calculation["factor_actividad"]}, el financiero {calculation["factor_financiero"]} y el de ejecución {calculation["factor_ejecucion"]}. Al multiplicar el monto neto por ese coeficiente, la CMC propuesta es PEN {calculation["cmc_propuesta"]}.')
+            doc.add_paragraph(f'El factor de ejecución utiliza la relación entre la suma neta atribuida y los montos contratados documentados, cuya suma es PEN {calculation["sumatoria_contratos"]}. Se deben revisar especialmente la base de cada importe y las obligaciones de consorcio antes de adoptar el cálculo.')
+        else:
+            doc.add_paragraph(f'La rama sin experiencia da una propuesta de PEN {calculation["cmc_propuesta"]}, según la información financiera disponible y la tabla aplicable. Esta cifra no constituye una capacidad otorgada ni acredita por sí sola el aumento solicitado.')
+    calculation=result.get('calculos',{}).get('reconsideracion')
+    if calculation:
+        doc.add_heading('Cómputo propuesto del recurso',2)
+        doc.add_paragraph(f'Con el calendario documentado se cuentan {calculation["dias_base"]} días hábiles y {calculation["dias_distancia_declarados"]} días de término de distancia declarado. El vencimiento calculado es {calculation["vencimiento"]}. El cómputo no acredita la eficacia de la notificación ni resuelve excepciones de horario, canal o régimen especial.')
     # Las explicaciones se mantienen en prosa; matriz compacta sin párrafos extensos.
     for row in result['matriz']:
         if row['resultado']=='no_aplica': continue
         doc.add_paragraph(row['id']+'  '+row['control'],'Heading 2')
-        doc.add_paragraph(row['resultado'].replace('_',' ').capitalize()+'. '+row['motivo'])
+        doc.add_paragraph(row['resultado'].replace('_',' ').capitalize()+'. '+texto_legible(row['motivo']))
         refs=row['evidencias']
         if refs:
-            doc.add_paragraph('Sustento: '+'; '.join(dict.fromkeys(e['documento']+' '+e['ubicacion'] for e in refs))+'.')
+            p=doc.add_paragraph('Sustento: '+'; '.join(dict.fromkeys(e['documento']+' '+e['ubicacion'] for e in refs))+'.')
+            p.paragraph_format.keep_with_next=True
             quote=refs[0]['cita']
-            doc.add_paragraph('Extracto: '+quote[:600]+('…' if len(quote)>600 else ''))
-        if row['autores']: doc.add_paragraph('Interpretación registrada por '+', '.join(row['autores'])+'.')
+            p=doc.add_paragraph('Extracto: '+quote[:600]+('…' if len(quote)>600 else ''))
+            p.paragraph_format.keep_with_next=bool(row['autores'])
+        if row['autores']: doc.add_paragraph('Interpretación registrada por '+texto_legible(', '.join(row['autores']))+'.')
     for para in result.get('analisis',[]):
         doc.add_paragraph(para['texto'])
         doc.add_paragraph('Referencias: '+', '.join(para['referencias'])+'. Autor: '+para['autor']+'.')
     doc.add_heading(template['secciones']['observaciones'],1)
     if result['preguntas']:
-        for q in result['preguntas']: doc.add_paragraph(q,'List Bullet')
+        for q in result['preguntas']: doc.add_paragraph(texto_legible(q),'List Bullet')
     else: doc.add_paragraph('No se detectaron faltantes dentro de los controles ejecutados; verificar alcance y fuentes antes de adoptar una decisión administrativa.')
     doc.add_heading(template['secciones']['conclusion'],1)
     doc.add_paragraph(result['conclusion'])

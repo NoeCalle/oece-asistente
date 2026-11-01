@@ -24,7 +24,7 @@ La carpeta predeterminada es `data/operacion` dentro de este proyecto. **Esta co
 
 Cada revisión conserva informe Word editable, matriz CSV, matriz JSON con citas, manifiesto de integridad y originales. La incorporación de información produce otra revisión sin sobrescribir la anterior. Los duplicados de contenido se identifican; una entrega alterada se rechaza para que se revise su integridad. El estado y las conversaciones guiadas se guardan localmente en SQLite.
 
-Para ampliación de consultores hay selección de régimen y verificaciones documentales de los 22 controles. Inscripción/reinscripción, aumento de capacidad, actualización y reconsideración disponen de recepción y redacción asistida, con espacio para su análisis específico. **No tienen todavía evaluadores automáticos completos de sus decisiones sustantivas**. El informe debe mostrar esa diferencia.
+Los cinco trámites tienen controles documentales propios. La versión 1.1 añade propuestas de capacidad de ejecutores y plazos de actualización/reconsideración; para inscripción selecciona registro y modalidad, y para actualización clase y motivo. Las conclusiones dependen de hechos con citas que interpreta el coordinador, no de marcar una casilla en el panel. Los cuatro módulos adicionales se limitan automáticamente a solicitudes del 01/05–31/10/2026; fechas posteriores requieren verificar y actualizar fuentes. [Datos y límites por procedimiento](CONTRATO_PROCEDIMIENTOS.md).
 
 ## Lectura y OCR
 
@@ -46,3 +46,7 @@ python -m unittest discover -s tests -p "test_*.py"
 ```
 
 Cerrar el navegador no detiene el proceso local. Para detenerlo, cerrar el proceso de Python del panel desde el administrador de tareas o detener la terminal si se inició allí. No se instala como servicio de inicio automático. El panel escucha únicamente en 127.0.0.1 y aplica controles de origen y token a las escrituras; no es un portal multiusuario ni un sistema institucional de autenticación.
+
+## Presentación de Word verificada
+
+Se revisaron visualmente cinco ejemplos sintéticos de la versión 1.1 (19 páginas), usando LibreOffice local para convertirlos y examinar todas sus páginas. Esta verificación no reemplaza la revisión de cada informe nuevo, especialmente tablas largas o documentos reales. El bloqueo de exportación de la versión anterior queda superado para este circuito; el formato continúa provisional. [Evidencia](VERIFICACION_V11.md).

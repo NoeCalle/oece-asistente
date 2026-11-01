@@ -1,3 +1,11 @@
+# Resultado de indexación
+
+**Vigente 01/11/2026:** índice unificado de **48 archivos, 2.281 fragmentos y 2.046 con texto**, a partir de seis manifiestos. Nueve archivos conservan alertas/lectura parcial. Corte de fuentes 31/10/2026. [Alcance](OPERACION_V1.md) y [reporte reproducido](../../normativa/indexacion/reporte-operacion-v11-2026-11-01.json).
+
+Todo el contenido siguiente conserva instantáneas históricas; sus cifras y pendientes se refieren a esas versiones. La operación actual lee HTML/XLSX y ejecuta OCR acotado de expedientes, diez casos de consultores y controles específicos de otros procedimientos. Los índices antiguos no se modifican.
+
+## Instantáneas anteriores
+
 **Actualización v1 31/10:** las cifras siguientes conservan instantáneas anteriores. El nuevo índice unificado dispone de 47 fuentes, 2.280 fragmentos y 2.045 con texto; [alcance vigente](OPERACION_V1.md).
 
 # Resultado del indexador local

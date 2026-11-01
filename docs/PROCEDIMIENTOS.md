@@ -1,4 +1,7 @@
 # Mapa inicial de procedimientos
+
+**Estado 01/11/2026:** este documento conserva el mapa inicial. La versión 1.1 implementa controles propios y propuestas de cálculo para los cinco módulos: [contrato vigente](CONTRATO_PROCEDIMIENTOS.md), [verificación](VERIFICACION_V11.md). Reinscripción se selecciona dentro de `inscripcion`; las dos clases de actualización, dentro de `actualizacion`. Corte normativo 31/10/2026; no equivale a evaluación sustantiva exhaustiva.
+
 Hipótesis de trabajo para extracción de reglas; códigos oficiales TUPA, requisitos completos y plazos todavía pendientes.
 
 | ID interno | Módulo | Fuentes iniciales | Resultado previsto |

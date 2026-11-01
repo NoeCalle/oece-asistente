@@ -1,0 +1,27 @@
+{
+  "fecha_registro": "2026-10-31",
+  "corte_investigado": "2026-10-31",
+  "alcance": "Folio gráfico oficial enlazado desde reglamento consolidado; solo fórmula del artículo 28 cotejada, no usar texto antiguo 25.7 del mismo folio como actual.",
+  "archivos": [
+    {
+      "name": "formula-cmc-spij.pdf",
+      "instrument_id": "ds-009-2025-ef",
+      "kind": "folio_original_con_formula",
+      "source_url": "https://spij.minjus.gob.pe/Graficos/Peru/2025/Enero/22/DS-009-2025-EF_01.pdf",
+      "source_page": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+      "local_path": "normativa/originales/operacion-2026-10-31/formula-cmc-spij.pdf",
+      "sha256": "b1296af49a7a2bc12eb41bbcac558510dbe40d38d20a646e85f6a75ba666896e",
+      "bytes": 773495,
+      "descargado_el": "2026-10-31",
+      "verificacion": {
+        "pages": 1,
+        "requiere_ocr": false,
+        "first_page_text": "Artículo 28. Fórmula CMC = sumatoria de obras * G; G = a + f + e."
+      },
+      "vigencia_revisada": false,
+      "firma_digital_verificada": false,
+      "archivado_en_drive": true,
+      "drive_id": "1Pbh3rMC34Yv6P75E6EDn7tIRC50QXkaT"
+    }
+  ]
+}

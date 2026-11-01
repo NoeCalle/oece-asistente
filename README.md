@@ -1,49 +1,51 @@
 # OECE Assistant
 
-Herramientas locales y coordinador en Codex para preparar evaluaciones documentales OECE/RNP con citas, matriz y borrador Word editable.
+Coordinador en Codex y herramientas locales para preparar evaluaciones documentales OECE/RNP con fuentes, matriz y borrador Word editable.
 
-**Versión operativa asistida v1 — 31/10/2026.** Hay panel de expedientes, carga, lectura PDF/Word/HTML/XLSX, OCR con reanudación, selección de régimen de consultores, hechos citados y entregas versionadas. La conversación abierta y la interpretación se realizan en Codex siguiendo [AGENTS.md](AGENTS.md). El panel y la vigilancia son herramientas deterministas, sin modelo autónomo incorporado.
+**Versión asistida 1.1.0 — cierre 01/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación abierta se realiza en Codex siguiendo [AGENTS.md](AGENTS.md). El panel ejecuta herramientas deterministas, sin modelo autónomo incorporado.
 
 ## Empezar
 
 1. Abrir **INICIAR_OECE.cmd** en este equipo.
-2. Crear expediente, elegir trámite e incorporar documentos.
-3. Preparar el borrador y continuar su análisis en el chat de este proyecto con la ruta de la carpeta.
-4. Descargar Word y matriz; cada revisión conserva originales y citas.
+2. Crear expediente, elegir trámite, completar los datos conocidos e incorporar documentos.
+3. Preparar borrador y continuar el análisis en el chat de este proyecto indicando la carpeta.
+4. Revisar Word y matriz; cada revisión conserva originales y citas.
 
-También puedes escribir en Codex: **«Revisa esta carpeta, el proveedor solicita ampliar su categoría y necesito el informe»**. El coordinador usa las herramientas y pide solo información que no encuentre. [Uso diario](docs/USO_DIARIO.md).
+También puedes escribir: **«Este proveedor solicita ampliar su categoría; revisa esta carpeta y prepara el informe»**. El coordinador debe buscar los datos antes de preguntar. [Uso diario](docs/USO_DIARIO.md).
 
-Los modelos reales de informes pueden incorporarse después. El [formato provisional](templates/informe.v1.json) está separado del circuito de evidencias.
+Los modelos reales de informes se incorporarán cuando estén disponibles. El [formato provisional](templates/informe.v1.json) está separado de la lectura y las evidencias.
 
 ## Alcance comprobado
 
-| Componente | Estado |
+| Componente | Disponible |
 |---|---|
-| Ampliación de consultores | Selección temporal y por proveedor/experiencia; 22 verificaciones documentales sobre hechos citados; no concesión automática de categoría |
-| CMC, inscripción/reinscripción, actualización y reconsideración | Recepción, lectura, evidencias, análisis asistido y Word; evaluadores sustantivos automáticos completos pendientes |
-| Carpetas locales o Drive sincronizado | LISTO, estabilidad, bloqueo, revisiones y reintentos; archivos descargados |
-| Panel local | Creación, ficha, carga, procesamiento y descarga Word comprobados en navegador |
-| Conversación | Codex como coordinador; comandos guiados locales y memoria SQLite; sin integración automática nueva con un modelo |
-| Lectura | PDF digital, DOCX con tablas/encabezados/pies, TXT/HTML y valores almacenados XLSX |
-| OCR | Windows real, límites, caché y reanudación; cotejo declarado antes de apoyar hechos favorables |
-| Entregas | Word provisional, CSV seguro, JSON trazable y revisiones; QA visual completa del Word v1 pendiente por bloqueo de exportación |
-| Biblioteca | 29 registros y 47 archivos; cinco manifiestos; índice unificado local; cierre jurídico exhaustivo pendiente |
-| Pruebas | 87 aprobadas, incluidas diez situaciones del piloto con hechos sintéticos; no precisión jurídica general |
+| Ampliación de consultores | Selección temporal y 22 verificaciones documentales; no concesión automática de categoría |
+| Aumento de CMC | Controles propios, obras/consorcios, propuesta decimal de capacidad y contraste con capacidad vigente citada |
+| Inscripción/reinscripción | Ramas bienes, servicios, consultor y ejecutor; documentos/solvencia según datos de selección |
+| Actualización | Legal o financiera; límites calendario del mes siguiente y del ejercicio anual |
+| Reconsideración | Requisitos, nueva prueba/única instancia y propuesta de 15 días hábiles con calendario documentado |
+| Operación local | Panel, carga, LISTO, estabilidad, memoria, bloqueo, reintentos y revisiones |
+| Lectura/OCR | PDF digital, DOCX, TXT/HTML, valores XLSX; OCR Windows con límites, caché y cotejos declarados |
+| Entregas | Word, CSV y JSON trazables; cinco informes sintéticos y sus 19 páginas inspeccionados |
+| Biblioteca | 29 registros, 48 archivos, seis manifiestos, 2.281 fragmentos y 2.046 con texto |
+| Pruebas | 109; navegador con carga, campos, procesamiento y descarga Word comprobados |
 
-El plan global sigue abierto. La versión asistida prepara borradores; no se declaran terminadas la evaluación autónoma de todos los módulos ni la aceptación institucional. [Estado y evidencia](docs/ESTADO.md). Estimación orientativa del plan completo: alrededor de **60 %**, no porcentaje de precisión.
+Los cuatro módulos adicionales tienen una ventana automática deliberadamente acotada al **01/05–31/10/2026**. Fuera de ella, los resultados favorables/desfavorables pasan a no determinable hasta revisar fuentes. Los cálculos son propuestas documentales: no prueban autenticidad, consulta registral en vivo ni decisión administrativa. [Contrato de procedimientos](docs/CONTRATO_PROCEDIMIENTOS.md).
+
+Avance orientativo del plan amplio: **75 % (70–80 %)**. Es una estimación de entregables, no precisión jurídica ni aceptación institucional. [Estado](docs/ESTADO.md) y [medición](docs/MEDICION_AVANCE.md).
 
 ## Documentación
 
-- [Uso diario](docs/USO_DIARIO.md), [contrato de expediente](docs/CONTRATO_EXPEDIENTE.md) y [verificación v1](docs/VERIFICACION_V1.md).
-- [Plan integral](docs/PLAN_INTEGRAL.md), [roadmap](ROADMAP.md), [tareas](docs/TAREAS.md), [cierres](docs/CIERRES.md) y [medición](docs/MEDICION_AVANCE.md).
-- [Cinco criterios adoptados](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md) y [criterios documentales ejecutados](rules/consultores/criterios-documentales.v1.json).
-- [Biblioteca y TUO oficial](docs/normativa/OPERACION_V1.md), [catálogo](normativa/catalogo.json), [JSON Schema](schemas/norma.schema.json) y [seguridad](docs/SEGURIDAD.md).
+- [Uso diario](docs/USO_DIARIO.md), [datos del expediente](docs/CONTRATO_EXPEDIENTE.md), [procedimientos](docs/CONTRATO_PROCEDIMIENTOS.md) y [verificación 1.1](docs/VERIFICACION_V11.md).
+- [Plan integral](docs/PLAN_INTEGRAL.md), [roadmap](ROADMAP.md), [tareas](docs/TAREAS.md) y [cierres](docs/CIERRES.md).
+- [Criterios adoptados](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md), [consultores](rules/consultores/criterios-documentales.v1.json) y [fuentes de procedimientos](rules/procedimientos.v1.1.json).
+- [Biblioteca](docs/normativa/OPERACION_V1.md), [catálogo](normativa/catalogo.json), [esquema normativo](schemas/norma.schema.json) y [seguridad](docs/SEGURIDAD.md).
 
 ## Datos y reproducción
 
-Repositorio público: solo código, documentación, metadatos públicos y ejemplos sintéticos. Expedientes, informes, transcripciones e índices de trabajo van en `data/` o raíz privada, excluidos de Git. Esta copia está bajo OneDrive y puede sincronizarse con esa cuenta; usar una ubicación autorizada para documentos laborales. El programa no publica expedientes ni presenta trámites.
+Repositorio público: código, documentación y metadatos públicos. Expedientes, Word, transcripciones, originales e índices van en `data/` o raíz privada, excluidos de Git. Esta copia está bajo OneDrive; para documentos laborales se debe usar una ubicación autorizada. El programa no publica expedientes, comparte permisos ni presenta trámites.
 
-Dependencias y comandos en uso diario. La biblioteca binaria está fuera de Git; su reconstrucción requiere los originales conservados. Las pruebas crean documentos sintéticos locales.
+Dependencias en [uso diario](docs/USO_DIARIO.md). La reconstrucción de biblioteca requiere los originales conservados fuera de Git; las pruebas usan documentos ficticios.
 
 ```text
 python -m unittest discover -s tests -p "test_*.py"

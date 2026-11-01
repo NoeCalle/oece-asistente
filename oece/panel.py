@@ -94,7 +94,7 @@ def crear_servidor(root,memory,port=8765):
                     self.send(200,{'caso':cid,'ficha':config})
                 elif self.path=='/api/ficha':
                     folder=case(data['caso']);previous=leer(folder/'expediente.json');updates=data['ficha']
-                    allowed_keys=set(previous)-{'id','sintetico'}
+                    allowed_keys=(set(previous)|{'tipo_registro','tipo_tramite','clase_actualizacion','motivo_actualizacion','documentos_extranjeros','documentos_en_espanol','actua_por_representante'})-{'id','sintetico'}
                     if set(updates)-allowed_keys: raise ValueError('Campo no permitido')
                     previous.update(updates)
                     from .evaluacion import seleccionar

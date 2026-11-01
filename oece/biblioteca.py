@@ -10,7 +10,7 @@ from .lectura import leer_documento
 
 MANIFIESTOS=['normativa/manifiesto-descargas-2026-10-29.json','normativa/manifiesto-continuacion-2026-10-30.json',
              'normativa/manifiesto-ampliacion-2026-10-30.json','normativa/manifiesto-cierre-piloto-2026-10-30.json',
-             'normativa/manifiesto-operacion-2026-10-31.json']
+             'normativa/manifiesto-operacion-2026-10-31.json','normativa/manifiesto-procedimientos-2026-10-31.json']
 
 def fuentes():
     return [f for m in MANIFIESTOS for f in leer(ROOT/m)['archivos']]

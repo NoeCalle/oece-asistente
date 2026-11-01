@@ -97,7 +97,9 @@ def iniciar(case_dir,procedure='ampliacion_consultores',solicitante='Por identif
     config={'id':case_dir.name,'procedimiento':procedure,'solicitante':solicitante,'sintetico':sintetico,
             'fecha_solicitud':None,'tipo_persona':None,'origen_proveedor':None,'domicilio':None,
             'historial_rnp_disponible':None,'primera_ampliacion_tras_recategorizacion':None,
-            'tramite_en_curso_transicion':None,'categoria_solicitada':None,'experiencias':[]}
+            'tramite_en_curso_transicion':None,'categoria_solicitada':None,'experiencias':[],
+            'tipo_registro':None,'tipo_tramite':None,'clase_actualizacion':None,'motivo_actualizacion':None,
+            'documentos_extranjeros':None,'documentos_en_espanol':None,'actua_por_representante':None}
     guardar(path,config); guardar(case_dir/'hechos.json',[])
     return config
 
@@ -139,7 +141,7 @@ def preparar(case_dir,memoria,usar_ocr=True):
             raise ValueError('Cada párrafo analítico requiere texto, autor y referencias')
         if any(ref not in known for ref in para['referencias']): raise ValueError('Referencia de análisis inexistente')
     dependencies={p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for p in sorted((ROOT/'oece').glob('*.py'))}
-    for rel in ('rules/consultores/criterios-documentales.v1.json','normativa/decisiones-piloto.v0.2.json','normativa/catalogo.json','templates/informe.v1.json','scripts/ocr_windows.ps1'):
+    for rel in ('rules/consultores/criterios-documentales.v1.json','rules/procedimientos.v1.1.json','normativa/decisiones-piloto.v0.3.json','normativa/catalogo.json','templates/informe.v1.json','scripts/ocr_windows.ps1'):
         dependencies[rel]=sha((ROOT/rel).read_bytes())
     snapshot={'version':__version__,'config_sha256':sha(config_raw),'hechos_sha256':sha(facts_raw),'cotejos_sha256':sha(checks_raw),
               'analisis_sha256':sha(analysis_raw),'normas_sha256':sha(norms_raw),'archivos':originals,'dependencias':dependencies,
@@ -157,7 +159,7 @@ def preparar(case_dir,memoria,usar_ocr=True):
                   procedimiento=config['procedimiento'],titulo=MODULOS[config['procedimiento']],sintetico=config.get('sintetico') is True,
                   fecha_solicitud=config.get('fecha_solicitud'),instantanea=snapshot,documentos=docs,duplicados=duplicates,
                   conteo=counts,preguntas=list(dict.fromkeys(questions)),conclusion=conclusion,analisis=analysis,normas_adicionales=norms,
-                  resumen=f'Borrador documental de {MODULOS[config["procedimiento"]].lower()}. Se examinaron {len(docs)} documentos distintos. La conclusión se limita al alcance y a las evidencias indicadas.',
+                  resumen=f'Borrador documental de {MODULOS[config["procedimiento"]].lower()}. '+('Se examinó un documento.' if len(docs)==1 else f'Se examinaron {len(docs)} documentos distintos.')+' La conclusión se limita al alcance y a las evidencias indicadas.',
                   antecedentes=[f'Se recibió la documentación de {config["solicitante"]} para {MODULOS[config["procedimiento"]].lower()}.',
                                 'Fecha de solicitud declarada: '+str(config.get('fecha_solicitud') or 'por precisar')+'.'])
     return result, {'expediente.json':config_raw,'hechos.json':facts_raw,'analisis.json':analysis_raw,'normas.json':norms_raw,'cotejos.json':checks_raw}

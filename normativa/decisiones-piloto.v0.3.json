@@ -1,0 +1,171 @@
+{
+  "version": "0.3.0",
+  "corte": "2026-10-31",
+  "apta_para_evaluacion": false,
+  "decisiones": [
+    {
+      "id": "J01",
+      "pregunta": "Qué régimen de categorías corresponde a cada fecha de solicitud, recategorización y trámite en curso",
+      "referencias": [
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+          "pagina_pdf": 228,
+          "disposicion": "Cuarta DCT 3.1–3.5"
+        }
+      ],
+      "pendiente": "Fecha 19/01/2026, casos en curso afectados por discrepancia de 3.5 y comunicado, o historial incompleto: incidencia temporal específica. No calcular 120 días hábiles sin calendario y antecedentes.",
+      "estado": "adoptada_con_excepciones",
+      "decision": "Primera reinscripción o ampliación posterior a recategorización: artículo 27, cuarta DCT 3.3. Caso ordinario nuevo posterior al 19/01/2026 con historial comprobado; no aplicar umbrales A/B/C/D universales.",
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false,
+      "autor_decision": "asistente_ia",
+      "fecha_decision": "2026-10-31",
+      "implementacion": "criterios_reflejados_en_motor_documental_v1_con_excepciones_no_evaluacion_sustantiva_integral"
+    },
+    {
+      "id": "J02",
+      "pregunta": "Qué evidencia acredita el cumplimiento de la condición de eficacia de Ley 32732",
+      "referencias": [
+        {
+          "archivo": "ley-32732.pdf",
+          "sha256": "64888319bf94b380087bb787c29e4dccf30c8904274dd991def865498144f625",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/10340261/8403069-ley32732.pdf?v=1784489960",
+          "pagina_pdf": 12,
+          "disposicion": "Octava y novena DCF"
+        },
+        {
+          "archivo": "ley-32732.pdf",
+          "sha256": "64888319bf94b380087bb787c29e4dccf30c8904274dd991def865498144f625",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/10340261/8403069-ley32732.pdf?v=1784489960",
+          "pagina_pdf": 24,
+          "disposicion": "Quinta DCM completa: primera DCF numeral 1 de Ley 32069"
+        }
+      ],
+      "pendiente": "Acto habilitante y publicación pendientes para aplicar esa quinta DCM, incluidos argumentos de prevalencia y sanciones; no afirmar inexistencia del acto.",
+      "estado": "adoptada",
+      "decision": "La novena DCF condiciona únicamente la quinta DCM completa de Ley 32732 (prevalencia normativa), no toda la ley. No usar el texto modificado de primera DCF de Ley 32069 como vigente sin verificar el acto habilitante. No es un bloqueo general de artículos 27 y 381.4.",
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false,
+      "autor_decision": "asistente_ia",
+      "fecha_decision": "2026-10-31",
+      "implementacion": "criterios_reflejados_en_motor_documental_v1_con_excepciones_no_evaluacion_sustantiva_integral"
+    },
+    {
+      "id": "J03",
+      "pregunta": "Qué rubros FUP se han implementado y qué efecto tienen en el trámite RNP concreto",
+      "referencias": [
+        {
+          "archivo": "directiva-fup-001-2026.pdf",
+          "sha256": "3388c09b0d5f76a788cd88386c6b8860a9d0e547d3ada735e72f24909597337f",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9421616/7719040-directiva-n-001-2026-oece-cd-directiva-sobre-la-ficha-unica-del-proveedor-fup.pdf?v=1770735141",
+          "pagina_pdf": 2,
+          "disposicion": "Objeto y ámbito"
+        },
+        {
+          "archivo": "directiva-fup-001-2026.pdf",
+          "sha256": "3388c09b0d5f76a788cd88386c6b8860a9d0e547d3ada735e72f24909597337f",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9421616/7719040-directiva-n-001-2026-oece-cd-directiva-sobre-la-ficha-unica-del-proveedor-fup.pdf?v=1770735141",
+          "pagina_pdf": 12,
+          "disposicion": "Numeral 11.3"
+        }
+      ],
+      "pendiente": "Comunicado, rubro y fecha concretos cuando se invoque dispensa o se implemente selección; no se declara un catálogo de rubros activos.",
+      "estado": "adoptada",
+      "decision": "FUP sirve para contraste con fuente y fecha. Numeral 11.3 se refiere a selección; no deriva una dispensa general de requisitos de ampliación RNP ni permite agregar requisitos.",
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false,
+      "autor_decision": "asistente_ia",
+      "fecha_decision": "2026-10-31",
+      "implementacion": "criterios_reflejados_en_motor_documental_v1_con_excepciones_no_evaluacion_sustantiva_integral"
+    },
+    {
+      "id": "J04",
+      "pregunta": "Qué versión del ROF y qué fechas de eficacia corresponden al expediente",
+      "referencias": [
+        {
+          "archivo": "rpe-090-2025-oece.pdf",
+          "sha256": "1f69f23c1ac65741659415bcc90d7810fca5644bde21b336e662a76f696cb2b8",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9174433/7532575-resolucion-n-090-2025-oece-pre.pdf?v=1766151895",
+          "pagina_pdf": 4,
+          "disposicion": "Artículos 1 y 3"
+        },
+        {
+          "archivo": "rof-texto-integrado-actualizado-2025.pdf",
+          "sha256": "34bd69fed1ae4b546346c4c9256fe64dd97afd8614e193fd4722886aa6203ea5",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9174434/7532575-texto-integrado-actualizado-del-reglamento-de-organizacion-y-funciones-del-oece.pdf?v=1766151896",
+          "pagina_pdf": 36,
+          "disposicion": "Artículo 74 a y c"
+        },
+        {
+          "url": "https://busquedas.elperuano.pe/dispositivo/NL/2469181-1",
+          "consultado_el": "2026-10-31",
+          "disposicion": "Publicación 19/12/2025; emisión 16/12/2025; artículos 1 y 3"
+        }
+      ],
+      "pendiente": "Actos históricos necesitan cadena de secciones y fecha del acto; publicación del integrado no prueba nacimiento de todas las competencias ni ausencia de cambios posteriores.",
+      "estado": "adoptada",
+      "decision": "ROF integrado de RPE 090-2025 es referencia actual del piloto; RPE 002-2025 queda histórica. Artículo 74 a/c identifica competencia de Operaciones Registrales. Publicación verificada 19/12/2025, emisión 16/12/2025.",
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false,
+      "autor_decision": "asistente_ia",
+      "fecha_decision": "2026-10-31",
+      "implementacion": "criterios_reflejados_en_motor_documental_v1_con_excepciones_no_evaluacion_sustantiva_integral"
+    },
+    {
+      "id": "J05",
+      "pregunta": "Qué condiciones documentales corresponden a la persona y procedencia de experiencia",
+      "referencias": [
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+          "pagina_pdf": 13,
+          "disposicion": "Artículo 25"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
+          "pagina_pdf": 210,
+          "disposicion": "Artículo 381.4"
+        },
+        {
+          "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+          "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+          "pagina_pdf": 7,
+          "disposicion": "Directiva RNP 9.2.4, alcance inscripción/reinscripción"
+        },
+        {
+          "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+          "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
+          "pagina_pdf": 12,
+          "disposicion": "9.3.3: remisión expresa a 9.2.4 para ampliación de categorías"
+        }
+      ],
+      "pendiente": "Aplicar condición financiera de PN también ejecutor con la remisión 9.3.3 comprobada; cotejar solvencia y requisitos específicos de cada rama, sin imponer una lista universal.",
+      "estado": "adoptada_con_excepciones",
+      "decision": "Seleccionar persona, nacionalidad, domicilio y origen de cada experiencia antes de exigir documentos; ramas de artículo 381.4 alternativas. Consultor natural con registro vigente de ejecutor: revisar directiva 9.2.4 en su alcance. No rechazar reorganización por el texto de 25.7 ya modificado. La remisión expresa 9.3.3 a 9.2.4 (directiva p. 12) confirma su aplicación en ampliación, eliminando la duda de extrapolar desde inscripción/reinscripción.",
+      "revisor": null,
+      "fecha_revision": null,
+      "habilita_reglas": false,
+      "autor_decision": "asistente_ia",
+      "fecha_decision": "2026-10-31",
+      "implementacion": "criterios_reflejados_en_motor_documental_v1_con_excepciones_no_evaluacion_sustantiva_integral"
+    }
+  ],
+  "naturaleza": "criterios_del_proyecto_no_pronunciamiento_institucional",
+  "autor": {
+    "tipo": "asistente_ia",
+    "encargo": "Usuario autoriza tomar decisiones fundamentadas el 31/10/2026"
+  },
+  "documento": "docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md",
+  "antecedente": "normativa/decisiones-piloto.v0.2.json"
+}

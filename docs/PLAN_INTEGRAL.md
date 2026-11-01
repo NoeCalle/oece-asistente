@@ -1,5 +1,5 @@
 # Plan integral de OECE Assistant
-Fecha de referencia: 2026-10-29, America/Lima. Estado actualizado 31/10/2026: versión asistida v1 disponible en Codex con panel y herramientas locales. El plan amplio de automatización conserva pendientes explícitos. [Estado actual por fase](ESTADO.md).
+Fecha de referencia: 2026-10-29, America/Lima. Estado actualizado 01/11/2026: versión asistida 1.1 disponible en Codex con panel, controles de cinco módulos y cálculos propuestos. Corte normativo 31/10/2026. El plan amplio de automatización conserva pendientes explícitos. [Estado actual por fase](ESTADO.md).
 
 ## Resultado esperado
 El usuario indica “este proveedor quiere ampliar su categoría; revisa esta carpeta y prepara el informe”. El coordinador identifica el expediente y el trámite, pide solo datos faltantes, selecciona la normativa aplicable a las fechas relevantes y coordina extracción, evaluación y redacción. Entrega borrador Word editable, matriz de evidencias, observaciones y registro de versiones para revisión humana. No firma ni presenta documentos ante OECE.

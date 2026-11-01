@@ -1,0 +1,20 @@
+{
+  "fecha_ejecucion": "2026-11-01",
+  "corte_fuentes": "2026-10-31",
+  "manifiestos": 6,
+  "con_texto": 2046,
+  "documentos": 48,
+  "fragmentos": 2281,
+  "pendientes": [
+    "6682380-anexo-n-4-formulario-actualizacion-de-informacion-legal.xls",
+    "6682380-anexo-n-6-formulario-actualizacion-de-informacion-financiera.xlsx",
+    "6682380-anexo-n-8-solicitud-para-suspension-temporal-del-rnp.xls",
+    "ds-009-2025-ef.pdf",
+    "ds-006-2026-jus.pdf",
+    "tupa-modificacion-2026-073.pdf",
+    "tupa-actualizado-2026-002.pdf",
+    "dl-1715.pdf",
+    "tuo-27444-minjus-julio-2026.pdf"
+  ],
+  "alcance": "Extracción digital con alertas; no certifica vigencia ni suficiencia jurídica."
+}

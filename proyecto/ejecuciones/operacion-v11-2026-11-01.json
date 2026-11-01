@@ -1,0 +1,106 @@
+{
+  "fecha_cierre": "2026-11-01",
+  "version": "1.1.0",
+  "corte_normativo": "2026-10-31",
+  "pruebas_aprobadas": 109,
+  "navegador": {
+    "creacion": true,
+    "clasificacion_inscripcion": true,
+    "booleanos_persistidos": true,
+    "carga": true,
+    "procesamiento": true,
+    "descarga_word": true,
+    "actualizacion_financiera_anual": true,
+    "errores_javascript": []
+  },
+  "biblioteca": {
+    "con_texto": 2046,
+    "documentos": 48,
+    "fragmentos": 2281,
+    "pendientes": [
+      "6682380-anexo-n-4-formulario-actualizacion-de-informacion-legal.xls",
+      "6682380-anexo-n-6-formulario-actualizacion-de-informacion-financiera.xlsx",
+      "6682380-anexo-n-8-solicitud-para-suspension-temporal-del-rnp.xls",
+      "ds-009-2025-ef.pdf",
+      "ds-006-2026-jus.pdf",
+      "tupa-modificacion-2026-073.pdf",
+      "tupa-actualizado-2026-002.pdf",
+      "dl-1715.pdf",
+      "tuo-27444-minjus-julio-2026.pdf"
+    ]
+  },
+  "registros_catalogo": 29,
+  "manifiestos": 6,
+  "qa_word": {
+    "motor": "LibreOffice 26.8.2 x64, imagen administrativa local",
+    "sha256_paquete": "ff4b911403b67ee9e6249f820f9782c44bb32c94fdaa45b0da53a8e419e5307a",
+    "paginas_inspeccionadas": 19,
+    "ejemplos": 5,
+    "inspeccion_visual": "Sin texto cortado, superposiciones ni tablas fuera de página observados; formato provisional revisado en estos ejemplos.",
+    "firma_o_aceptacion_institucional": false
+  },
+  "demos": {
+    "actualizacion": {
+      "revision": "f2528a28ad76afc9d21899bc6fbb1810feb39b15b252ab1678f8276d1a3cff4e",
+      "paginas_revisadas": 3,
+      "sha256_docx": "9aab1705c8067ef827106a968ce6cbc3f2b6172816879026f52c5492f775c95a",
+      "conteo": {
+        "cumple": 2,
+        "no_aplica": 2,
+        "no_determinable": 2
+      },
+      "ejemplo_sintetico": true
+    },
+    "aumento_cmc": {
+      "revision": "dc743371a302a787b10227bcf95410d42595c99624cf0310b54048664cd57bce",
+      "paginas_revisadas": 4,
+      "sha256_docx": "1d95f888e09bcdab23dc3bbffa9f0489c7559e4f6ebfa5d9008992021ab66424",
+      "conteo": {
+        "cumple": 2,
+        "no_aplica": 2,
+        "no_determinable": 10
+      },
+      "ejemplo_sintetico": true
+    },
+    "inscripcion": {
+      "revision": "3fdf0f6762a0948b45363e48ae4501db36800693e501b208cfd5e5a5e985bfd6",
+      "paginas_revisadas": 3,
+      "sha256_docx": "0683af97f5b3d07df535e02933a63cc479d2c9a4997b8928aea617c806f44c78",
+      "conteo": {
+        "cumple": 7,
+        "no_aplica": 5
+      },
+      "ejemplo_sintetico": true
+    },
+    "reconsideracion": {
+      "revision": "31f855787df35bf01e40c0562971d481c23ecfb2dfa42d6144daa455de6dd477",
+      "paginas_revisadas": 3,
+      "sha256_docx": "24f6c3c75fe088b3182dc631df4e1652622bba173858e2401236c5a8986a8674",
+      "conteo": {
+        "cumple": 3,
+        "no_cumple": 2,
+        "no_determinable": 1
+      },
+      "ejemplo_sintetico": true
+    },
+    "ampliacion_consultores": {
+      "revision": "9531876e82b7b0095d9d3db7c9636420aafb245ec27d07afca5ac6a0c103ea73",
+      "paginas_revisadas": 6,
+      "sha256_docx": "213eb3e75d8311a1419f27ac771be50bde99e281b799ddf4896f36e015d5534e",
+      "conteo": {
+        "cumple": 5,
+        "no_aplica": 3,
+        "no_cumple": 1,
+        "no_determinable": 13
+      },
+      "ejemplo_sintetico": true
+    }
+  },
+  "aprobacion_humana": null,
+  "limites": [
+    "Ventana automática de los cuatro módulos adicionales: 01/05–31/10/2026. Fechas posteriores requieren actualizar fuentes.",
+    "Sin modelo autónomo incorporado al panel.",
+    "Sin validación de expedientes reales ni plantilla institucional.",
+    "Cadena normativa y excepciones no exhaustivas; verificaciones documentales y aritmética condicionadas a hechos citados."
+  ]
+}

@@ -3,6 +3,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,7 +25,13 @@ def guardar(path, value):
             stream.write(bytes_json(value))
             stream.flush()
             os.fsync(stream.fileno())
-        os.replace(name, path)
+        for attempt in range(5):
+            try:
+                os.replace(name, path)
+                break
+            except PermissionError:
+                if attempt==4:raise
+                time.sleep(.1*(2**attempt))
     finally:
         if Path(name).exists():
             Path(name).unlink()

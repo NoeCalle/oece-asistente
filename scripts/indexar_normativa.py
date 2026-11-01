@@ -17,6 +17,7 @@ MANIFESTS = (
     "normativa/manifiesto-ampliacion-2026-10-30.json",
     "normativa/manifiesto-cierre-piloto-2026-10-30.json",
     "normativa/manifiesto-operacion-2026-10-31.json",
+    "normativa/manifiesto-procedimientos-2026-10-31.json",
 )
 EXTRACTOR_VERSION = "0.1.0"
 

@@ -1,43 +1,39 @@
 # Estado de OECE Assistant
 
-Actualización: **31/10/2026, America/Lima**. Versión operativa asistida **v1.0.0**. [Uso diario](USO_DIARIO.md), [verificación](VERIFICACION_V1.md) y [plan integral](PLAN_INTEGRAL.md).
+Actualización: **01/11/2026, America/Lima**. Versión asistida **1.1.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_V11.md) y [plan integral](PLAN_INTEGRAL.md).
 
 ## Resultado disponible
 
-Se puede crear un expediente en el panel, cargar documentos, preparar lectura, matriz y Word, y continuar el análisis conversando en Codex. Hay originales y revisiones conservados, hechos con citas y autor identificado, cotejos OCR declarados y memoria SQLite. El formato provisional puede adaptarse después a modelos laborales reales.
+Los cinco módulos producen lectura, matriz y Word con hechos citados, autores identificados y originales/revisiones conservados. Consultores tiene 22 controles; los otros cuatro módulos ya tienen controles específicos y propuestas aritméticas. La interpretación de documentos la realiza el coordinador en Codex; el panel no incorpora un modelo autónomo ni un servicio institucional.
 
-El panel no incorpora un modelo autónomo. La interpretación abierta se hace en Codex; la vigilancia LISTO prepara un borrador documental, sin iniciar por sí sola un análisis libre de IA. No se añadió una API nueva ni se verificó un servicio institucional.
+La versión 1.1 añade CMC con factores y consorcios, selección de inscripción/reinscripción, límites calendario de actualizaciones y reconsideración con nueva prueba/calendario explícito. Sus resultados dependen de datos acreditados; no equivalen a decisión administrativa. [Campos y límites](CONTRATO_PROCEDIMIENTOS.md).
 
-## Evidencia de la entrega
+## Evidencia
 
-- **87 pruebas aprobadas:** 53 anteriores y 34 de operación v1. Incluyen S01–S10 con hechos sintéticos, citas alteradas, fronteras, comprobantes, consorcios, RUC extranjero, OCR y conservación.
-- Navegador real: creación, ficha, carga, procesamiento y descarga Word; cero errores de JavaScript observados. Token, origen y rutas también probados por HTTP.
-- OCR real Windows de una página pública: 3.392 caracteres, sin confianza inventada, pendiente de cotejo visual. Timeout, reanudación y transcripción declarada con imagen/autor se prueban por separado.
-- **47 archivos y 29 registros**, con edición oficial MINJUSDH del TUO actualizada al 08/07/2026. Artículos 207–208, PDF pp. 193–194, cotejados visualmente.
-- Ejemplo sintético: cuatro originales, doce hechos citados, diferencia de PEN 20.000 en honorarios y obligaciones de consorcio faltantes. Word y matriz quedan conservados por revisión.
-- Word generado y abierto mediante automatización. Exportación PDF bloqueada en este equipo: QA visual de todas las páginas pendiente; no se declara verificado el diseño final.
+- 109 pruebas: 87 anteriores y 22 nuevas de cálculos, ramas, fechas, datos faltantes e integración de los cuatro módulos.
+- Navegador real: creación, inscripción, campos booleanos, carga, procesamiento, descarga Word y actualización financiera anual; cero errores JavaScript observados.
+- Cinco Word sintéticos, **19 páginas revisadas**. La exportación bloqueada se resolvió con LibreOffice 26.8.2 extraído localmente, sin sustituir Word ni instalar un servicio.
+- Biblioteca: **48 archivos, 29 registros, seis manifiestos**; índice de 2.281 fragmentos, 2.046 con texto. Nueve archivos conservan alertas o lectura parcial.
+- Fórmula gráfica oficial del artículo 28 adquirida de SPIJ, con hash y copia Drive. Directiva RNP 9.3.3 cotejada: remite expresamente a 9.2.4; registro de decisiones actualizado a v0.3.
+- CMC ficticia propuesta PEN 825.000; actualización con fecha a aclarar; reconsideración con calendario sintético, no calendario oficial general; consultor con diferencia de honorarios PEN 20.000.
+
+[Registro estructurado](../proyecto/ejecuciones/operacion-v11-2026-11-01.json). Las pruebas y ejemplos no certifican precisión jurídica general.
 
 ## Estado por fase
 
-| Fase | Disponible | Pendiente real |
+| Fase | Disponible | Pendiente |
 |---|---|---|
-| Plan | Persistente y actualizado | Mantenimiento |
-| Biblioteca | Mínimo adquirido, fuentes ampliadas e índice unificado | Cadena por disposición, cambios posteriores, escaneados y formatos antiguos |
-| Procedimientos | J01–J05 adoptados; motor documental de consultores y diez situaciones ejecutadas | Excepciones temporales, TUPA por rama y evaluadores sustantivos de otros módulos |
-| Base técnica | Panel, memoria, LISTO, revisiones, lectura y OCR acotado | Modelo autónomo integrado si se elige ese despliegue; autenticación para servicio institucional compartido |
-| Piloto | Flujo asistido carpeta a Word/CSV/JSON ejecutado | Modelos reales, aceptación funcional y validación con casos autorizados |
-| Expansión | Cuatro módulos adicionales en modo documental asistido | Reglas y cálculos automáticos completos de cada procedimiento |
+| Plan | Persistente, contratos y tareas actualizados | Mantenimiento |
+| Biblioteca | Adquisición mínima y ampliaciones; índice unificado | Cadena por disposición, cambios posteriores al corte, escaneados y formatos antiguos |
+| Procedimientos | Cinco módulos con controles documentales; cálculos acotados | Desglose exhaustivo TUPA por rama, excepciones, solvencia integral y casos históricos |
+| Base técnica | Panel, memoria, LISTO, lectura/OCR, trazabilidad | Modelo autónomo en panel si se decide ese despliegue; servicio compartido/autenticación institucional |
+| Piloto | Cinco informes sintéticos y QA visual; flujo de navegador ejecutado | Aceptación funcional, expedientes laborales autorizados y modelos reales |
+| Expansión | Cuatro módulos adicionales implementados en alcance documental/aritmético | Validación sustantiva e institucional por procedimiento |
 
-## Funcionamiento adoptado
+## Corte temporal y siguiente uso
 
-Codex es el coordinador de este proyecto; [AGENTS.md](../AGENTS.md) dirige el trabajo. Python ejecuta operaciones locales y genera Word. La carpeta predeterminada es `data/operacion`, excluida de Git, dentro de esta ubicación OneDrive; se admite otra raíz autorizada o Drive sincronizado con archivos descargados. El motor local no transmite documentos a un servicio nuevo.
+Los cuatro módulos nuevos se limitan automáticamente a solicitudes del **01/05 al 31/10/2026**. Una fecha posterior produce resultado no determinable en los controles que darían cumple/no cumple. No se amplía la vigencia por cambiar la fecha del equipo. El coordinador puede seguir leyendo y preparando el análisis, pero debe verificar fuentes y actualizar pruebas antes de ampliar esa ventana. Consultores conserva sus condiciones específicas J01–J05.
 
-Los [criterios documentales v1](../rules/consultores/criterios-documentales.v1.json) están separados de la matriz candidata histórica v0.1. Cumple/no cumple se limita al control documental y a los hechos citados; no concede categoría ni prueba autenticidad. La autoría IA no se registra como humana. Los otros módulos no heredan reglas de consultores.
+El siguiente paso funcional es procesar un expediente autorizado, contrastar cada interpretación con los originales y ajustar las observaciones a la práctica. Cuando el usuario disponga de modelos laborales, se adaptará la plantilla sin rehacer el circuito de evidencias. La autorización de ubicación, acceso y retención de documentos laborales depende del entorno de trabajo.
 
-## Continuación
-
-1. Usar el piloto asistido con un expediente autorizado y ajustar las observaciones a la necesidad funcional.
-2. Incorporar los modelos de informes que el usuario reciba al empezar su trabajo y adaptar la plantilla.
-3. Continuar el alcance amplio: excepciones normativas y evaluadores de ejecutores, inscripciones, actualizaciones y reconsideraciones. Esta expansión es distinta del ajuste de formato.
-
-**Avance global orientativo: alrededor de 60 % (55–65 %)**. Hay versión asistida disponible; no se afirma que solo falte un formato para completar toda la automatización. [Criterios de estimación](MEDICION_AVANCE.md).
+**Avance orientativo del plan amplio: 75 % (70–80 %)**. No se afirma que solo falte el formato para automatizar íntegramente todos los casos. [Fundamento](MEDICION_AVANCE.md).

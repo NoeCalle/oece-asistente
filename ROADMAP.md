@@ -1,26 +1,22 @@
 # Roadmap
-Actualización: 2026-10-31. Corte normativo investigado: 2026-10-29. Las fases se cierran por evidencia, no por número de archivos. [Estado general](docs/ESTADO.md). Avance global orientativo: **35 % (rango 30–40 %)**; [método](docs/MEDICION_AVANCE.md).
 
-| Fase | Estado | Entregables | Condición de salida |
-|---|---|---|---|
-| 0. Persistencia | Completada en esta entrega | Plan, arquitectura, tareas y estado real | Archivos guardados en GitHub y commit comprobado |
-| 1. Biblioteca normativa | Adquisición mínima v0.1 cerrada; revisión jurídica en curso | 36 requeridos comprobados; 46 archivos totales; fechas, relaciones y búsqueda | Suficiencia, vigencias y consolidación revisadas por disposición |
-| 2. Procedimientos | Iniciada en paralelo con biblioteca | Fichas, requisitos, excepciones y matriz | Cada regla enlaza disposición vigente y evidencia; revisión del especialista |
-| 3. Base técnica | Lector, búsqueda, OCR candidato y circuito sintético | Ingreso local/Drive sincronizado, persistencia, lector y OCR | Coordinador, reanudación y aislamiento comprobados |
-| 4. Piloto consultores | Demostración documental con Word ejecutada | Evaluación de ampliación y borrador Word | Evidencias, matriz y Word aceptados; citas y revisión jurídica |
-| 5. Validación y expansión | Pendiente | Ejecutores, inscripciones, actualizaciones, reconsideraciones | Aceptación por módulo y regresión temporal/documental |
+Actualización: **01/11/2026**. Corte normativo: **31/10/2026**. Las fases se cierran por evidencia. Avance global orientativo **75 % (70–80 %)**; [método](docs/MEDICION_AVANCE.md).
 
-## Orden inmediato
-1. Resolver discrepancias y vigencias condicionadas del inventario.
-2. Descargar originales oficiales y anexos, verificar integridad y registrar hash.
-3. Consolidar disposiciones del piloto y fichas del TUPA vigente.
-4. Revisar matriz con especialista y construir expedientes sintéticos.
-5. Integrar OCR con control de calidad y continuar ingreso/extracción; elegir runtime del coordinador antes de automatizar conclusiones.
+| Fase | Estado actual | Salida aún pendiente |
+|---|---|---|
+| 0. Persistencia | Plan, contratos, tareas y estado guardados | Mantenimiento |
+| 1. Biblioteca | Mínimo adquirido y ampliaciones: 48 archivos; índice unificado | Suficiencia, vigencia y modificatorias por disposición; lectura pendiente |
+| 2. Procedimientos | Consultores y cuatro módulos adicionales con controles propios | Ramas TUPA exhaustivas, excepciones y validación especializada |
+| 3. Base técnica | Panel, memoria, LISTO, revisión inmutable, lector/OCR | Despliegue institucional o modelo autónomo en panel, si se adopta |
+| 4. Piloto | Cinco informes sintéticos, 19 páginas revisadas y flujo de navegador | Aceptación del usuario con caso autorizado y ajuste a modelos reales |
+| 5. Validación/expansión | CMC y plazos propuestos; 109 pruebas | Casos reales, validación por módulo y mantenimiento temporal |
 
-Se aprobaron **53 pruebas técnicas**. [T24, T25 y T28 cerradas en su alcance](docs/CIERRES.md): propuestas, revisión documental y adquisición de 36 archivos requeridos. Biblioteca total de 46 archivos y 29 registros; nuevo complemento buscable. La demostración anterior con Word se conserva. Reglas, diez casos jurídicos, coordinador y aceptación completa siguen pendientes. No hay fecha de entrega hasta dimensionar documentos, formatos y casos.
+## Orden de continuación
 
+1. Actualizar fuentes cuando el expediente sea posterior al corte; ampliar ventana únicamente con evidencia y pruebas.
+2. Completar el desglose de requisitos y excepciones de cada rama, sin transformar un hecho agregado en verificación automática de todos sus documentos.
+3. Procesar expedientes autorizados con el coordinador y contrastar las propuestas con la práctica del área.
+4. Incorporar modelos reales cuando estén disponibles y validar presentación/redacción.
+5. Decidir despliegue institucional y automatización del modelo solo si aporta valor al uso real.
 
-## Estado operativo del 31/10/2026
-Ya existe una versión asistida con panel, carpeta LISTO, lectura, OCR acotado, memoria, verificaciones documentales de consultores y Word/CSV/JSON. La interpretación abierta funciona en el chat de Codex mediante AGENTS.md, sin modelo autónomo nuevo integrado al panel. Los diez supuestos S01–S10 se implementaron con hechos sintéticos; 87 pruebas aprobadas. Biblioteca unificada de 47 archivos y TUO oficial. [Estado vigente](docs/ESTADO.md).
-
-Siguiente cierre acotado: QA visual del Word v1 (exportación bloqueada en este equipo), aceptación del flujo asistido y adaptación posterior a modelos laborales reales. El roadmap completo conserva automatización sustantiva de otros módulos y validación institucional pendientes. No equiparar un módulo de borradores con la implementación total de sus cálculos y decisiones.
+La conversación abierta funciona en Codex; el panel no contiene un modelo propio. El cierre de QA Word 1.1 sustituye el bloqueo técnico de 1.0, pero no acredita aceptación institucional. [Estado](docs/ESTADO.md), [verificación](docs/VERIFICACION_V11.md) y [tareas](docs/TAREAS.md).

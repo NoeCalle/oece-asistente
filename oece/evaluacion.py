@@ -67,7 +67,7 @@ def seleccionar(config):
     return {'regimen': regime, 'preguntas': questions, 'advertencias': warnings,
             'ruc_aplicable': None if person not in ('natural','juridica') or origin not in ('nacional','extranjero') or home not in ('domiciliado','no_domiciliado') else not (origin=='extranjero' and home=='no_domiciliado'),
             'experiencias': experiences, 'corte_normativo': CORTE.isoformat(),
-            'criterios': 'normativa/decisiones-piloto.v0.2.json'}
+            'criterios': 'normativa/decisiones-piloto.v0.3.json'}
 
 def validar_hechos(facts, documents):
     if not isinstance(facts, list) or len(facts)>2000:
@@ -135,27 +135,8 @@ def evaluar(config, documents, facts):
                      'autores':sorted({f['tipo_autor']+': '+f['autor'] for f in used}),
                      'fuente_normativa':control['fuente'], 'alcance':'documental_no_constituye_decision_del_OECE'})
     if config['procedimiento']!='ampliacion_consultores':
-        # Los otros módulos comparten recepción, evidencias y redacción; sus decisiones
-        # sustantivas se motivan en análisis firmado por autor, no en reglas prestadas.
-        common=[('G-01','Identificación y objeto del procedimiento','identificacion_coincide'),
-                ('G-02','Solicitud o escrito y pretensión','solicitud_presentada'),
-                ('G-03','Documentos de sustento localizados','sustento_completo')]
-        if config['procedimiento']=='reconsideracion':
-            common += [('G-04','Acto impugnado y notificación','acto_notificado'),
-                       ('G-05','Nueva prueba y supuesto aplicable','nueva_prueba_evaluada')]
-        elif config['procedimiento']=='aumento_cmc':
-            common += [('G-04','Experiencia en ejecución culminada','experiencia_ejecucion_acreditada'),
-                       ('G-05','Capital solvencia y factores aplicables','calculo_cmc_revisado')]
-        elif config['procedimiento']=='actualizacion':
-            common += [('G-04','Información modificada y fecha del cambio','cambio_acreditado')]
-        for rid,title,key in common:
-            f=facts.get(key)
-            rows.append({'id':rid,'control':title,'resultado':'no_determinable',
-                         'motivo':'Evaluación sustantiva asistida; no hay reglas jurídicas automatizadas validadas para este módulo',
-                         'hechos':[key] if f else [],'evidencias':f['evidencias'] if f else [],
-                         'autores':[f['tipo_autor']+': '+f['autor']] if f else [],'fuente_normativa':None,
-                         'alcance':'borrador_documental'})
-        return {'seleccion':route,'matriz':rows,'hechos':facts,'alcance':'borrador_documental_otros_modulos'}
+        from .procedimientos import evaluar_procedimiento
+        return evaluar_procedimiento(config,route,facts)
     for c in controls:
         rid=c['id']
         if rid=='AC-01':
@@ -170,9 +151,9 @@ def evaluar(config, documents, facts):
                     emit(c,[prefix+s for s in suffixes],exp=eid,**kwargs)
                 origin=exp.get('origen')
                 if rid=='AC-05': e(['culminada'], applicable=True if origin in ('peru_ley','peru_fuera_ley','extranjero') else None)
-                elif rid=='AC-06': e(['documento_entidad','datos_constancia_completos'],applicable=origin=='peru_ley' if origin else None)
-                elif rid=='AC-07': e(['contrato','datos_contratante','aprobacion_viabilidad_conformidad','descripcion_actividades'],applicable=origin=='peru_fuera_ley' if origin else None)
-                elif rid=='AC-09': e(['contrato','conformidad_viabilidad','datos_extranjero_completos'],applicable=origin=='extranjero' if origin else None)
+                elif rid=='AC-06': e(['documento_entidad','datos_constancia_completos'],applicable=origin=='peru_ley' if origin in ('peru_ley','peru_fuera_ley','extranjero') else None)
+                elif rid=='AC-07': e(['contrato','datos_contratante','aprobacion_viabilidad_conformidad','descripcion_actividades'],applicable=origin=='peru_fuera_ley' if origin in ('peru_ley','peru_fuera_ley','extranjero') else None)
+                elif rid=='AC-09': e(['contrato','conformidad_viabilidad','datos_extranjero_completos'],applicable=origin=='extranjero' if origin in ('peru_ley','peru_fuera_ley','extranjero') else None)
                 elif rid=='AC-10': e(['obligaciones_consorcio_identificadas'],applicable=exp.get('consorcio'))
                 elif rid=='AC-11':
                     ok=config.get('categoria_solicitada') in ('a','b','c','d') and route['regimen'].startswith('articulo_27')

@@ -1,6 +1,6 @@
 # Decisiones fundamentadas del piloto consultores
 
-Adoptadas el **31/10/2026**, por el asistente IA, por encargo del titular del proyecto. Son criterios de diseño y análisis para el piloto; no son un pronunciamiento del OECE ni una aprobación humana registrada. Sustituyen la lista general de cinco preguntas pendientes por decisiones con un alcance y excepciones identificados. [Registro estructurado vigente](../../normativa/decisiones-piloto.v0.2.json). La versión v0.1 se conserva como antecedente.
+Adoptadas el **31/10/2026**, por el asistente IA, por encargo del titular del proyecto. Son criterios de diseño y análisis para el piloto; no son un pronunciamiento del OECE ni una aprobación humana registrada. Sustituyen la lista general de cinco preguntas pendientes por decisiones con un alcance y excepciones identificados. [Registro estructurado vigente](../../normativa/decisiones-piloto.v0.3.json). La versión v0.1 se conserva como antecedente.
 
 ## J01. Régimen de categorías: artículo 27 para la primera ampliación actual
 
@@ -40,7 +40,7 @@ Adoptadas el **31/10/2026**, por el asistente IA, por encargo del titular del pr
 
 **Fundamento:** reglamento, artículo 25, PDF pp. 13–15, y artículo 381.4, p. 210. Para ampliación se verifican inscripción vigente e información actualizada (25.1.c). RUC activo/habido tiene la excepción de extranjeros no domiciliados (25.1.a); representación, constitución, colegiatura y documentos extranjeros se tratan según 25.2–25.5 y 25.9. Se examinan contrato, conformidad y demás acreditaciones exigidas en la rama concreta del 381.4, sin sustituir documentos por coincidencias de palabras.
 
-**Solvencia:** no dar una dispensa ni una exigencia financiera universal a toda persona natural. La directiva RNP, numeral 9.2.4, PDF p. 7, exige información financiera cuando el consultor persona natural cuenta con inscripción vigente como ejecutor; obtener ese dato antes de seleccionar la rama. El numeral está ubicado en inscripción/reinscripción: no extrapolarlo por sí solo a toda ampliación sin cotejar el artículo 25.1.c y el TUPA de esa rama. Los ratios del 9.2.3 no se ejecutan aún como reglas de ampliación. [Original y huella de la directiva en el manifiesto](../../normativa/manifiesto-descargas-2026-10-29.json).
+**Solvencia:** no dar una dispensa ni una exigencia financiera universal a toda persona natural. La directiva RNP, numeral 9.2.4, PDF p. 7, exige información financiera cuando el consultor persona natural cuenta con inscripción vigente como ejecutor; obtener ese dato antes de seleccionar la rama. El numeral 9.3.3, PDF p. 12, remite expresamente al 9.2.4 para ampliación de categorías; esta remisión fue cotejada el 31/10 y se incorpora a v0.3. No se trata de extrapolar por ubicación del numeral. Los ratios del 9.2.3 no se ejecutan como reglas generales de ampliación. [Original y huella de la directiva en el manifiesto](../../normativa/manifiesto-descargas-2026-10-29.json).
 
 **Reorganización:** no rechazar automáticamente experiencia por reorganización societaria con el texto anterior de 25.7. El DS 001-2026-EF permite acreditarla y remite las excepciones a directiva; el inicio 14/01/2026 está documentado en [verificación](VERIFICACION.md). Antes de una conclusión favorable comprobar la excepción aplicable y la cadena documental; permiso normativo no equivale a acreditación del caso.
 
@@ -48,6 +48,6 @@ Adoptadas el **31/10/2026**, por el asistente IA, por encargo del titular del pr
 
 ## Efecto sobre el desarrollo
 
-Las cinco decisiones tienen criterio adoptado; J01 y J05 conservan excepciones materiales, y J02/J03 dependencias de hechos de otros alcances. No se registra aprobación humana ficticia. La matriz de 22 controles permanece técnicamente deshabilitada porque estos criterios todavía deben traducirse a reglas y pruebas, no porque haga falta volver a pedir al usuario permiso para decidir. Los diez casos jurídicos especificados aún no se ejecutaron. El porcentaje global se mantiene en 35 %: resolver criterios no demuestra funciones implementadas.
+J01–J05 se tradujeron al motor documental de consultores y a las diez situaciones S01–S10. La matriz candidata histórica v0.1 permanece deshabilitada y conserva su aprobación humana nula; no es el registro de ejecución de la versión 1.1. La v0.3 mantiene las excepciones temporales/materiales y la autoría IA. Los controles de otros procedimientos se documentan por separado en [su contrato](../CONTRATO_PROCEDIMIENTOS.md).
 
-Siguiente entrega: implementar selección de régimen y ramas con referencias, cubrir las excepciones anteriores mediante pruebas y habilitar únicamente los controles cuya cadena normativa y comportamiento se comprueben. El cotejo primario del TUO y los recursos conserva su tarea propia.
+Persisten el TUPA completo por rama, las excepciones, la cadena de modificatorias y la validación con casos reales. Los datos faltantes producen resultados no determinables. [Estado vigente](../ESTADO.md), [pruebas y alcance](../VERIFICACION_V11.md).
