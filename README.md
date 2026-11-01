@@ -2,7 +2,7 @@
 
 Coordinador en Codex y herramientas locales para preparar evaluaciones documentales OECE/RNP con fuentes, matriz y borrador Word editable.
 
-**Versión asistida 1.2.0 — cierre 01/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación abierta se realiza en Codex siguiendo [AGENTS.md](AGENTS.md). El panel ejecuta herramientas deterministas, sin modelo autónomo incorporado.
+**Versión asistida 1.2.0 — cierre 01/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación abierta se realiza en Codex siguiendo [AGENTS.md](AGENTS.md). El panel ejecuta herramientas deterministas, sin modelo autónomo incorporado. El usuario confirmó que la interpretación y coordinación en Codex es el funcionamiento deseado; no se requiere añadir un modelo al panel para completar este alcance.
 
 ## Empezar
 

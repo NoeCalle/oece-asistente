@@ -11,8 +11,8 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 | T06 | P0 | Pendiente | Consolidar cadena Ley 32069, reglamento, TUPA y directiva hasta corte |
 | T07 | P0 | Parcial comprobada | TUO oficial 2026: artículos 133–135/207–208/211 cotejados; recurso con calendario citado implementado, excepciones y eficacia del caso pendientes |
 | T08 | P0 | En curso | Anexos leídos; 22 controles candidatos y 10 casos sintéticos especificados; falta revisión del especialista |
-| T09 | P1 | Pendiente | Definir carpeta privada, permisos institucionales, modelo y retención |
-| T10 | P1 | En curso | v1: ingreso por panel/carpeta LISTO, memoria SQLite y coordinador en Codex; modelo autónomo integrado al panel pendiente |
+| T09 | P1 | Pendiente en entorno laboral | Definir ubicación privada, condiciones de uso de Codex, permisos y retención de documentos autorizados |
+| T10 | P1 | Hecho en alcance acordado | Ingreso por panel/carpeta LISTO, memoria SQLite y coordinador en Codex. El usuario confirma interpretación en Codex; un modelo autónomo en el panel queda fuera del alcance requerido |
 | T11 | P1 | En curso | v1: lector PDF/DOCX/TXT/HTML/XLSX y OCR de expedientes acotado; DOC/XLS e imágenes incrustadas requieren conversión o cotejo |
 | T12 | P1 | En curso | Motor documental v1 de 22 controles con citas y Word; no decisión administrativa ni precisión jurídica certificada |
 | T13 | P1 | Hecho en alcance sintético | 109 pruebas; cinco Word, 19 páginas revisadas. Aceptación funcional y modelos reales pendientes |

@@ -7,7 +7,7 @@ Actualización: **01/11/2026**. Corte normativo: **31/10/2026**. Las fases se ci
 | 0. Persistencia | Plan, contratos, tareas y estado guardados | Mantenimiento |
 | 1. Biblioteca | Mínimo adquirido y ampliaciones: 48 archivos; índice unificado | Suficiencia, vigencia y modificatorias por disposición; lectura pendiente |
 | 2. Procedimientos | Consultores y cuatro módulos adicionales con controles propios | Ramas TUPA exhaustivas, excepciones y validación especializada |
-| 3. Base técnica | Panel, memoria, LISTO, revisión inmutable, lector/OCR | Despliegue institucional o modelo autónomo en panel, si se adopta |
+| 3. Base técnica | Panel, memoria, LISTO, revisión inmutable, lector/OCR | Validación del funcionamiento en el entorno autorizado; modelo autónomo y servicio compartido fuera del alcance requerido |
 | 4. Piloto | Cinco informes sintéticos, 19 páginas revisadas y flujo de navegador | Aceptación del usuario con caso autorizado y ajuste a modelos reales |
 | 5. Validación/expansión | CMC y plazos propuestos; 109 pruebas | Casos reales, validación por módulo y mantenimiento temporal |
 
@@ -17,7 +17,7 @@ Actualización: **01/11/2026**. Corte normativo: **31/10/2026**. Las fases se ci
 2. Completar el desglose de requisitos y excepciones de cada rama, sin transformar un hecho agregado en verificación automática de todos sus documentos.
 3. Procesar expedientes autorizados con el coordinador y contrastar las propuestas con la práctica del área.
 4. Incorporar modelos reales cuando estén disponibles y validar presentación/redacción.
-5. Decidir despliegue institucional y automatización del modelo solo si aporta valor al uso real.
+5. Mantener Codex como coordinador e intérprete, según decisión del usuario. Una aplicación con modelo autónomo o un servicio compartido solo se evalúan ante una nueva petición.
 
 La conversación abierta funciona en Codex; el panel no contiene un modelo propio. El cierre de QA Word 1.1 sustituye el bloqueo técnico de 1.0, pero no acredita aceptación institucional. [Estado](docs/ESTADO.md), [verificación](docs/VERIFICACION_V11.md) y [tareas](docs/TAREAS.md).
 

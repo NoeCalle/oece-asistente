@@ -10,7 +10,7 @@ El formato de Word es provisional. Cuando dispongas de informes reales autorizad
 
 Abre **INICIAR_OECE.cmd** desde esta carpeta. El panel se abre en el navegador de tu equipo. Crea el expediente, selecciona el trámite e incorpora sus documentos. **Preparar borrador** ejecuta lectura, selección, matriz y Word. **Continuar análisis en Codex** copia un pedido con la ruta del expediente para pegarlo en el chat del proyecto.
 
-El panel no contiene un modelo propio: la conversación abierta y la interpretación se realizan en Codex. Sus instrucciones guiadas y generación local funcionan sin configurar una API nueva. No se declara una integración automática con un modelo en segundo plano.
+La conversación abierta y la interpretación se realizan en Codex, tal como confirmó el usuario para este proyecto el 01/11/2026. Este es el flujo deseado; no es necesario añadir un modelo propio al panel. Sus instrucciones guiadas y generación local funcionan sin configurar una API nueva. No se declara una integración automática con un modelo en segundo plano.
 
 ## Carpetas locales o Drive sincronizado
 

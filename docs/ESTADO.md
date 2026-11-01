@@ -33,7 +33,7 @@ La revisión acotada de fuentes del 01/11 no permite ampliar el corte: se mantuv
 | Plan | Persistente, contratos y tareas actualizados | Mantenimiento |
 | Biblioteca | Adquisición mínima y ampliaciones; índice unificado | Cadena por disposición, cambios posteriores al corte, escaneados y formatos antiguos |
 | Procedimientos | Cinco módulos con controles documentales; cálculos acotados | Desglose exhaustivo TUPA por rama, excepciones, solvencia integral y casos históricos |
-| Base técnica | Panel, memoria, LISTO, lectura/OCR, trazabilidad | Modelo autónomo en panel si se decide ese despliegue; servicio compartido/autenticación institucional |
+| Base técnica | Panel, memoria, LISTO, lectura/OCR, trazabilidad | Validación de uso, recuperación y ubicación autorizada; no se requiere modelo autónomo ni servicio compartido para el alcance acordado |
 | Piloto | Cinco informes sintéticos y QA visual; flujo de navegador ejecutado | Aceptación funcional, expedientes laborales autorizados y modelos reales |
 | Expansión | Cuatro módulos adicionales implementados en alcance documental/aritmético | Validación sustantiva e institucional por procedimiento |
 
@@ -44,3 +44,7 @@ Los cuatro módulos nuevos se limitan automáticamente a solicitudes del **01/05
 El siguiente paso funcional es procesar un expediente autorizado, contrastar cada interpretación con los originales y ajustar las observaciones a la práctica. Cuando el usuario disponga de modelos laborales, se adaptará la plantilla sin rehacer el circuito de evidencias. La autorización de ubicación, acceso y retención de documentos laborales depende del entorno de trabajo.
 
 **Avance orientativo del plan amplio: 75 % (70–80 %)**. No se afirma que solo falte el formato para automatizar íntegramente todos los casos. [Fundamento](MEDICION_AVANCE.md).
+
+## Alcance de la coordinación confirmado
+
+El usuario confirma el 01/11/2026 que desea realizar la interpretación en Codex. El flujo acordado es indicar la carpeta, analizarla en este chat y producir el Word y la matriz con las herramientas locales. El panel ayuda a organizar, cargar y descargar. No se exige que el panel interprete expedientes sin intervención del chat para dar por completado este proyecto.

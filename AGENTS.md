@@ -6,7 +6,7 @@ Este proyecto contiene herramientas Python y una biblioteca normativa pública. 
 
 Primero leer `docs/ESTADO.md`, `docs/USO_DIARIO.md` y `docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md`. La matriz v0.1 es un antecedente candidato. La versión 1.1 ejecuta verificaciones documentales de los cinco procedimientos y propuestas aritméticas de CMC y plazos, sin atribuir aprobación humana al autor IA. Consultar docs/CONTRATO_PROCEDIMIENTOS.md y rules/procedimientos.v1.1.json. Los cuatro módulos adicionales tienen ventana automática 01/05–31/10/2026: fuera de ella actualizar fuentes y pruebas antes de ampliar conclusiones. No presentar estas verificaciones como evaluación jurídica sustantiva completa ni como otorgamiento administrativo.
 
-La conversación abierta se realiza en Codex. El panel local y la vigilancia ejecutan herramientas deterministas: no son un modelo ni envían archivos a una API. No simular integración con IA o ejecución autónoma en segundo plano. No usar modelos, servicios ni credenciales nuevos sin una necesidad autorizada.
+El usuario confirmó el 01/11/2026 que la interpretación se realice en Codex. Este es el funcionamiento acordado para completar el proyecto; un modelo autónomo dentro del panel no es un requisito ni un pendiente obligatorio. No añadir esa integración salvo nueva instrucción. La conversación abierta se realiza en Codex. El panel local y la vigilancia ejecutan herramientas deterministas: no son un modelo ni envían archivos a una API. No simular integración con IA o ejecución autónoma en segundo plano. No usar modelos, servicios ni credenciales nuevos sin una necesidad autorizada.
 
 ## Operación del expediente
 

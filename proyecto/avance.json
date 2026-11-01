@@ -103,5 +103,12 @@
   "evidencia_incremental_sin_reestimar": [
     "docs/VERIFICACION_V12.md",
     "proyecto/ejecuciones/finanzas-v12-2026-11-01.json"
-  ]
+  ],
+  "alcance_coordinacion_confirmado": {
+    "fecha": "2026-11-01",
+    "decision_usuario": "Interpretación y coordinación en Codex",
+    "modelo_autonomo_en_panel_requerido": false,
+    "criterio_cierre": "Expediente indicado en Codex, análisis con fuentes y entrega Word/matriz; automatización independiente del chat excluida salvo nueva petición",
+    "porcentaje": "Se conserva estimación orientativa 75%; no se infiere precisión ni se recalcula automáticamente por esta aclaración."
+  }
 }

@@ -14,6 +14,6 @@ Actualización 01/11/2026: **75 % del plan amplio** (rango orientativo 70–80 %
 
 El aumento desde 60 % se fundamenta en controles propios para cuatro procedimientos, propuestas CMC/plazos con fuentes, flujo de navegador actualizado y cierre de QA visual de cinco Word sintéticos (19 páginas). Las 109 pruebas dan evidencia de comportamiento de software; contarlas no demuestra validez jurídica general. [Verificación](VERIFICACION_V11.md).
 
-No se cierran excepciones y cadena normativa, automatización sustantiva completa, aceptación funcional/institucional, modelos reales ni casos laborales autorizados. Tampoco hay un modelo autónomo integrado al panel. La ventana normativa de los cuatro módulos nuevos se conserva al 31/10/2026. [Datos](../proyecto/avance.json) y [estado](ESTADO.md).
+No se cierran excepciones y cadena normativa, automatización sustantiva completa, aceptación funcional/institucional, modelos reales ni casos laborales autorizados. La interpretación en Codex es el alcance confirmado por el usuario; integrar un modelo autónomo al panel no es un pendiente de este alcance. La ventana normativa de los cuatro módulos nuevos se conserva al 31/10/2026. [Datos](../proyecto/avance.json) y [estado](ESTADO.md).
 
 La versión 1.2 añade contraste financiero y 22 pruebas; el total es 131. Se conserva la estimación en 75 %: no hay nueva aceptación funcional/institucional ni cierre de cadena normativa. [Evidencia financiera](VERIFICACION_V12.md).
