@@ -9,7 +9,7 @@ Actualización: **01/11/2026**. Corte normativo: **31/10/2026**. Las fases se ci
 | 2. Procedimientos | Consultores y cuatro módulos adicionales con controles propios | Ramas TUPA exhaustivas, excepciones y validación especializada |
 | 3. Base técnica | Panel, memoria, LISTO, revisión inmutable, lector/OCR | Validación del funcionamiento en el entorno autorizado; modelo autónomo y servicio compartido fuera del alcance requerido |
 | 4. Piloto | Cinco informes sintéticos, 19 páginas revisadas y flujo de navegador | Aceptación del usuario con caso autorizado y ajuste a modelos reales |
-| 5. Validación/expansión | CMC y plazos propuestos; 109 pruebas | Casos reales, validación por módulo y mantenimiento temporal |
+| 5. Validación/expansión | CMC, plazos y fichas TUPA candidatas; 169 pruebas | Casos reales, validación por módulo y mantenimiento temporal |
 
 ## Orden de continuación
 
@@ -28,3 +28,7 @@ Contraste financiero con importes citados y contradicciones, 131 pruebas, dos ej
 ## Portabilidad 1.3
 
 El coordinador de IA es sustituible por decisión del usuario. Se implementó un puente MCP local y se verificaron 154 pruebas; no se ha evaluado un modelo Claude real. Los conectores de cada cliente y su recuperación/visualización de entregas se validan al conectarlo. [Guía](docs/PORTABILIDAD_IA.md). El modelo autónomo en el panel sigue fuera del alcance requerido.
+
+## Recuperación TUPA y estabilidad 1.4
+
+Quince fichas/cuarenta páginas consultables por rama desde CLI/MCP; códigos y huellas comprobados, temporalidad aún no determinable. Se corrige el listado de entregas temporales y pasan 169 pruebas. [Verificación](docs/VERIFICACION_V14.md). La segmentación completa por disposición y los requisitos/excepciones conservan su pendiente.

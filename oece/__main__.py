@@ -19,6 +19,7 @@ def main():
     watch=sub.add_parser('observar');watch.add_argument('raiz',type=Path);watch.add_argument('--una-vez',action='store_true');watch.add_argument('--intervalo',type=int,default=10)
     server=sub.add_parser('panel');server.add_argument('--raiz',type=Path,default=ROOT/'data/operacion');server.add_argument('--puerto',type=int,default=8765)
     library=sub.add_parser('biblioteca');library.add_argument('--reconstruir',action='store_true');library.add_argument('--buscar');library.add_argument('--indice',type=Path,default=ROOT/'normativa/indices/biblioteca-v1.sqlite')
+    tupa=sub.add_parser('tupa');tupa.add_argument('carpeta',type=Path);tupa.add_argument('--codigo');tupa.add_argument('--pagina',type=int)
     args=p.parse_args();memory=Memoria(args.memoria)
     if args.accion=='nuevo': result=iniciar(args.carpeta,args.procedimiento,args.solicitante,args.sintetico)
     elif args.accion in ('leer','estado'):
@@ -38,6 +39,10 @@ def main():
     elif args.accion=='biblioteca':
         from .biblioteca import construir,buscar
         result=construir(args.indice,memory.root/'biblioteca-lecturas') if args.reconstruir else buscar(args.indice,args.buscar or '')
+    elif args.accion=='tupa':
+        from .comun import leer
+        from .tupa import consultar
+        result=consultar(leer(args.carpeta/'expediente.json'),args.codigo,args.pagina)
     else:
         from .panel import servir
         servir(args.raiz,memory,args.puerto);return

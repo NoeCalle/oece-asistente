@@ -1,0 +1,524 @@
+{
+  "alcance": "Índice de fichas y páginas completas; candidatas según datos declarados. No consolidación jurídica ni evaluación exhaustiva de cada requisito.",
+  "corte_documental": "2026-10-31",
+  "eficacia": {
+    "desde": null,
+    "estado": "cadena_por_disposicion_pendiente",
+    "hasta": null
+  },
+  "fecha": "2026-11-01",
+  "fichas": [
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42009D33",
+      "condiciones": {},
+      "denominacion": "Aumento de Capacidad Máxima de Contratación para Ejecutores de Obras.",
+      "paginas": [
+        {
+          "pagina_pdf": 28,
+          "sha256_texto": "13040226a3832b160ee417888faed88e2dec392d782c3f95f98675ef84f515a8"
+        },
+        {
+          "pagina_pdf": 29,
+          "sha256_texto": "c0251cf4ef50e88bf9a69cb460c316bc37100aa54c51f66a869912a2bbeb8e39"
+        },
+        {
+          "pagina_pdf": 30,
+          "sha256_texto": "ffc097be3b0ced333c2a20bb9d9df31b976b573311006302f8893f9aa7cc630e"
+        }
+      ],
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación.",
+        "La descripción menciona categorías A/B/C/D: no resuelve el régimen del artículo 27 ni la transición J01. No usarla como umbral automático."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42003A92",
+      "condiciones": {},
+      "denominacion": "Ampliación de Categorías para Consultores de Obras",
+      "paginas": [
+        {
+          "pagina_pdf": 31,
+          "sha256_texto": "15a3b4f27f5b8e62aa44dade5257e5106580146d0b819e65cb9639fc93ef819e"
+        },
+        {
+          "pagina_pdf": 32,
+          "sha256_texto": "42347e8d4aaefa7667d1071f38767c9674b1369d1df2f862450b85e4c2c5daee"
+        },
+        {
+          "pagina_pdf": 33,
+          "sha256_texto": "1fc752ccf35ebbcec233d2c520ad4085788e7dcf53d5bf708522e56ea819bea2"
+        }
+      ],
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación.",
+        "Cotejar representación en Perú o país de origen; el campo genérico actua_por_representante no delimita por sí solo la rama especial."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA4200F589",
+      "condiciones": {
+        "domicilio": [
+          "no_domiciliado"
+        ],
+        "origen_proveedor": [
+          "extranjero"
+        ],
+        "tipo_persona": [
+          "natural"
+        ],
+        "tipo_registro": [
+          "bienes",
+          "servicios"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de proveedores de bienes y servicios, persona natural extranjera no domiciliada con representante legal o apoderado en el Perú o en su país de origen.",
+      "paginas": [
+        {
+          "pagina_pdf": 34,
+          "sha256_texto": "c1f427a3c431ed4c1b9a738c381fcf7539ccd43be0f34c0e8fb042402af55f77"
+        },
+        {
+          "pagina_pdf": 35,
+          "sha256_texto": "18700a36b1ad0470e1afd11e9aa95522074845afe6cb2968f599ca146e9d07d8"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación.",
+        "Cotejar representación en Perú o país de origen; el campo genérico actua_por_representante no delimita por sí solo la rama especial."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA4200067C",
+      "condiciones": {
+        "domicilio": [
+          "no_domiciliado"
+        ],
+        "origen_proveedor": [
+          "extranjero"
+        ],
+        "tipo_persona": [
+          "juridica"
+        ],
+        "tipo_registro": [
+          "bienes",
+          "servicios"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de proveedores de bienes y servicios, persona jurídica extranjera no domiciliada con representante legal o apoderado en el Perú o en su país de origen.",
+      "paginas": [
+        {
+          "pagina_pdf": 36,
+          "sha256_texto": "8fb37a6a1f46b5901cdc9d41453e2ae4e8d3905e3afe540decd82a1d05d475e8"
+        },
+        {
+          "pagina_pdf": 37,
+          "sha256_texto": "bdcab09a19443ecd6ae59d766cbb60f7f905a1a507570f2cb3816e666684b722"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42007D51",
+      "condiciones": {
+        "origen_proveedor": [
+          "nacional"
+        ],
+        "tipo_persona": [
+          "natural"
+        ],
+        "tipo_registro": [
+          "consultor"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de consultores de obras, persona natural nacional.",
+      "paginas": [
+        {
+          "pagina_pdf": 38,
+          "sha256_texto": "9ba6f2e784a011cc52a52bc09897ea407828fe89dbc1b86e3e62d8d5580e1bc0"
+        },
+        {
+          "pagina_pdf": 39,
+          "sha256_texto": "ee36f1f8633f35df9b587bd3049ccbbd617acad46d1fceb2caeeea7fc7d16d84"
+        },
+        {
+          "pagina_pdf": 40,
+          "sha256_texto": "5c84a547ea6ab75295f854e7911763e17266d12b29bc1d596e65b95bce5ba981"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42009762",
+      "condiciones": {
+        "origen_proveedor": [
+          "extranjero"
+        ],
+        "tipo_persona": [
+          "natural"
+        ],
+        "tipo_registro": [
+          "consultor"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de consultores de obras, persona natural extranjera.",
+      "paginas": [
+        {
+          "pagina_pdf": 41,
+          "sha256_texto": "b246f6fabf90a494fb088c536ae879e29256aaf155bd5a3d03f25f32bdf4d400"
+        },
+        {
+          "pagina_pdf": 42,
+          "sha256_texto": "02420109f2e00fc181f9419ce214e0e30b18ce5ab5f76fbb432064e1716b9cd2"
+        },
+        {
+          "pagina_pdf": 43,
+          "sha256_texto": "50caed900b27b6541ca7641b77186ebd0388f402feea37da64953267120527ee"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42001C78",
+      "condiciones": {
+        "origen_proveedor": [
+          "nacional"
+        ],
+        "tipo_persona": [
+          "juridica"
+        ],
+        "tipo_registro": [
+          "consultor"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de consultores de obras, persona jurídica nacional.",
+      "paginas": [
+        {
+          "pagina_pdf": 44,
+          "sha256_texto": "33efff5cfbab1fdd40a129ee93a753b34d219ad314fc8186c22c7a4ba73213b6"
+        },
+        {
+          "pagina_pdf": 45,
+          "sha256_texto": "8325ad2b9fe5f67f8e886a7c0533987ac0fb120ec793166ea6b3a206a0bb1680"
+        },
+        {
+          "pagina_pdf": 46,
+          "sha256_texto": "4684f0a46d106ea54efff8c8609a86a7924b282800cbd86c3d74e62510fd03a3"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA4200ED2E",
+      "condiciones": {
+        "origen_proveedor": [
+          "extranjero"
+        ],
+        "tipo_persona": [
+          "juridica"
+        ],
+        "tipo_registro": [
+          "consultor"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de consultores de obras, persona jurídica extranjera.",
+      "paginas": [
+        {
+          "pagina_pdf": 47,
+          "sha256_texto": "3526963278a92a33e80346bf7abccd89075e978018c0922745cf9d04a7eb8223"
+        },
+        {
+          "pagina_pdf": 48,
+          "sha256_texto": "f67ff7b058ffe99aa976a104dd33345a83237a4588016935e81223b76fc46c38"
+        },
+        {
+          "pagina_pdf": 49,
+          "sha256_texto": "d05308776cab8496f8a38148c158e17a20b8f1f31331aad3388c81c2ca8d0b6b"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42003A4F",
+      "condiciones": {
+        "origen_proveedor": [
+          "nacional"
+        ],
+        "tipo_persona": [
+          "natural"
+        ],
+        "tipo_registro": [
+          "ejecutor"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de ejecutores de obras, persona natural nacional.",
+      "paginas": [
+        {
+          "pagina_pdf": 50,
+          "sha256_texto": "462179fcfd9ba32ce657aea41b3555902fec4ef6260f2c547e492b3b2fa9b12b"
+        },
+        {
+          "pagina_pdf": 51,
+          "sha256_texto": "29d2ef6180691c6e966189a0322ef6e7d03f0d399be9fafe49a403d0ba525ff0"
+        },
+        {
+          "pagina_pdf": 52,
+          "sha256_texto": "5dd7160d58f72f68fd8d9eab0a9090d82d8e5df0058afd385e0c367ad31e8f04"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA4200C4F5",
+      "condiciones": {
+        "origen_proveedor": [
+          "extranjero"
+        ],
+        "tipo_persona": [
+          "natural"
+        ],
+        "tipo_registro": [
+          "ejecutor"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de ejecutores de obras, persona natural extranjera.",
+      "paginas": [
+        {
+          "pagina_pdf": 53,
+          "sha256_texto": "c1002e065ddcd14c888d5c5df619c16571ac9d53c3745bb532a8cacb6c3e8de6"
+        },
+        {
+          "pagina_pdf": 54,
+          "sha256_texto": "5a77e238bcf2dbf32607710cbe2da1890a71073e92c6a89bdbf76a4cf904c9a5"
+        },
+        {
+          "pagina_pdf": 55,
+          "sha256_texto": "0e12ab654de38c046f40d5914a80905a7a1b25aad3b8671c914404bff6641146"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42000DF5",
+      "condiciones": {
+        "origen_proveedor": [
+          "nacional"
+        ],
+        "tipo_persona": [
+          "juridica"
+        ],
+        "tipo_registro": [
+          "ejecutor"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de ejecutores de obras, persona jurídica nacional.",
+      "paginas": [
+        {
+          "pagina_pdf": 56,
+          "sha256_texto": "8296b0c12d2b3bd9a79fc7d1da1f68abe870dfb7fa3efa32e7c276c9adf74184"
+        },
+        {
+          "pagina_pdf": 57,
+          "sha256_texto": "f554849762e7e232f2fbfc3f4ef60da69d8a5acf6cd340a140f450d81e56acd3"
+        },
+        {
+          "pagina_pdf": 58,
+          "sha256_texto": "c4e6f0ac40d3832bd7357822497711d2d3e96db06b2a012b99797c7732669b1f"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42009BA2",
+      "condiciones": {
+        "origen_proveedor": [
+          "extranjero"
+        ],
+        "tipo_persona": [
+          "juridica"
+        ],
+        "tipo_registro": [
+          "ejecutor"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de ejecutores de obras, persona jurídica extranjera.",
+      "paginas": [
+        {
+          "pagina_pdf": 59,
+          "sha256_texto": "fd74a6934c2767d708a4a0380edc35ba8eebe2b1223f2a52bb8289bbc9ceb72f"
+        },
+        {
+          "pagina_pdf": 60,
+          "sha256_texto": "e4c6759ebaef93c2f3d487f81332411be1adc42b46b8d217946289b4b15dcf55"
+        },
+        {
+          "pagina_pdf": 61,
+          "sha256_texto": "8d63ae386a36dde11796acc4b0fb4ae33fcfdc03223b23344b5599e038c24ebb"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA4200EF4C",
+      "condiciones": {
+        "domicilio": [
+          "domiciliado"
+        ],
+        "tipo_persona": [
+          "juridica"
+        ],
+        "tipo_registro": [
+          "bienes",
+          "servicios"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de proveedores de bienes y servicios, personas jurídicas, nacionales o extranjeras domiciliadas en el Perú.",
+      "paginas": [
+        {
+          "pagina_pdf": 62,
+          "sha256_texto": "b86f28ede2ddcdf927cd1f70970d45057c401becfa1809b4d4c1e513a788634e"
+        },
+        {
+          "pagina_pdf": 63,
+          "sha256_texto": "28f6cc317018df8c246dc434f1b84140f2385b6a5db5b708f56edc899a17c7ae"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42004846",
+      "condiciones": {
+        "domicilio": [
+          "domiciliado"
+        ],
+        "tipo_persona": [
+          "natural"
+        ],
+        "tipo_registro": [
+          "bienes",
+          "servicios"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de proveedores de bienes y servicios, personas naturales, nacionales o extranjeras domiciliadas en el Perú.",
+      "paginas": [
+        {
+          "pagina_pdf": 64,
+          "sha256_texto": "6146b14270257ab1b5350c46c758c3f2f3639e0dc5bbe6d74ca5218ecd8e7dc2"
+        },
+        {
+          "pagina_pdf": 65,
+          "sha256_texto": "92767dfa85a8fe6c615daab2066ed8c864baf801d41702caa210a4fcda17410a"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    },
+    {
+      "alertas": [
+        "Leer requisitos, notas y base legal de todas las páginas. El orden de extracción no reproduce siempre la maquetación.",
+        "Rama especial de bienes sofisticados/servicios especializados sin representante en Perú. No presumirla por actua_por_representante=false; comprobar condiciones y responsable designado por la entidad."
+      ],
+      "apta_para_reglas": false,
+      "codigo": "PA42007484",
+      "condiciones": {
+        "domicilio": [
+          "no_domiciliado"
+        ],
+        "origen_proveedor": [
+          "extranjero"
+        ],
+        "tipo_registro": [
+          "bienes",
+          "servicios"
+        ]
+      },
+      "denominacion": "Inscripción o reinscripción de persona natural y jurídica extranjera no domiciliada sin representante legal o apoderado en el Perú para la provisión de bienes sofisticados y/o servicios especializados.",
+      "paginas": [
+        {
+          "pagina_pdf": 66,
+          "sha256_texto": "33a70dae95576604637a6aa425f2d0dbc0bb359ddeeb8c40501900d021ece8c8"
+        },
+        {
+          "pagina_pdf": 67,
+          "sha256_texto": "139f91d421c6b06be6678d8b03df6578ee7fb8b96a2bc58b24a6fb69d410863a"
+        }
+      ],
+      "procedimiento": "inscripcion",
+      "revision_humana": null
+    }
+  ],
+  "fuente": {
+    "instrument_id": "rpe-073-2026-oece",
+    "local_path": "normativa\\originales\\2026-10-29\\tupa-modificacion-2026-073.pdf",
+    "name": "tupa-modificacion-2026-073.pdf",
+    "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+    "source_url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+  },
+  "publicacion_acto": {
+    "fecha": "2026-04-08",
+    "url": "https://busquedas.elperuano.pe/dispositivo/NL/2503213-1"
+  },
+  "version": "0.1.0"
+}

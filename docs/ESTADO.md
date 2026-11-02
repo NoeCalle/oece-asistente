@@ -1,6 +1,6 @@
 # Estado de OECE Assistant
 
-Actualización: **01/11/2026, America/Lima**. Versión asistida **1.3.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_PORTABILIDAD.md) y [plan integral](PLAN_INTEGRAL.md).
+Actualización: **01/11/2026, America/Lima**. Versión asistida **1.4.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_V14.md) y [plan integral](PLAN_INTEGRAL.md).
 
 ## Resultado disponible
 
@@ -10,7 +10,7 @@ La versión 1.1 añade CMC con factores y consorcios, selección de inscripción
 
 ## Evidencia
 
-- 154 pruebas: las 131 anteriores y 23 de portabilidad/MCP, límites de rutas, versiones previas, citas, recursos Word y protocolo stdio. Dos autores IA de prueba no equivalen a dos modelos reales evaluados.
+- 169 pruebas: las 154 anteriores, catorce de selección/recuperación TUPA y una regresión de entrega temporal. Se conservan las pruebas de portabilidad, citas, recursos Word y protocolo stdio. Dos autores IA de prueba no equivalen a dos modelos reales evaluados.
 - Navegador real: creación, inscripción, campos booleanos, carga, procesamiento, descarga Word y actualización financiera anual; cero errores JavaScript observados.
 - Cinco Word 1.1 con 19 páginas y dos Word financieros 1.2 con diez páginas revisadas. Las instantáneas anteriores se conservan. La exportación bloqueada se resolvió con LibreOffice 26.8.2 extraído localmente, sin sustituir Word ni instalar un servicio.
 - Biblioteca: **48 archivos, 29 registros, seis manifiestos**; índice de 2.281 fragmentos, 2.046 con texto. Nueve archivos conservan alertas o lectura parcial.
@@ -52,3 +52,9 @@ El usuario confirma el 01/11/2026 la interpretación desde un asistente conversa
 ## Portabilidad 1.3
 
 Once herramientas MCP locales y recursos de entrega, con protocolo actual y compatibilidad initialize. No se abren puertos públicos ni se añaden APIs de modelo. Instrucciones comunes AGENTS.md, importación CLAUDE.md, configuración revisable generada localmente y lanzador Python configurable. Deben prepararse originales/índice y conectores en cada cliente. La independencia de IA no elimina la dependencia de Windows para el OCR actual. Se mantiene la estimación global 75 % y el corte normativo.
+
+## Recuperación TUPA 1.4
+
+Quince fichas y cuarenta páginas del anexo RPE 073-2026, con candidatos según rama, códigos oficiales, huellas y lectura paginada. Una solicitud anterior a la publicación o posterior al corte requiere revisión específica; dentro del corte tampoco se declara vigencia por defecto. Se conserva alerta sobre la descripción A/B/C/D y sobre la rama especial del extranjero no domiciliado. Doce herramientas MCP actuales. [Fuente y alcance](normativa/FICHAS_TUPA.md).
+
+Se corrigió un fallo intermitente que anunciaba una entrega temporal antes de su publicación. Suite de 169 pruebas y recorrido de navegador completo comprobados en 1.4. El corte, los 48 originales y la estimación global 75 % se conservan. Cadena por disposición, requisitos exhaustivos, cliente alternativo real y casos laborales siguen pendientes.

@@ -8,7 +8,7 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 | T03 | P0 | En curso | 29 registros; mínimo de adquisición v0.1 comprobado. Cobertura normativa exhaustiva y vigencias siguen abiertas |
 | T04 | P0 | En curso | DS 001: inicio 14/01 documentado; J01/J02 adoptados con límites. Quinta DCM condicionada, sin bloqueo de toda Ley 32732; fronteras concretas pendientes |
 | T05 | P0 | En curso general | 48 archivos con hash y copias Drive; adquisición mínima de 36 cerrada. Cadena normativa exhaustiva pendiente |
-| T06 | P0 | Pendiente | Consolidar cadena Ley 32069, reglamento, TUPA y directiva hasta corte |
+| T06 | P0 | En curso | Consolidar cadena Ley 32069, reglamento, TUPA y directiva hasta corte. Relación DS 086 → RGG 002 → RPE 073 documentada; índice de quince fichas disponible. Falta cadena completa por disposición |
 | T07 | P0 | Parcial comprobada | TUO oficial 2026: artículos 133–135/207–208/211 cotejados; recurso con calendario citado implementado, excepciones y eficacia del caso pendientes |
 | T08 | P0 | En curso | Anexos leídos; 22 controles candidatos y 10 casos sintéticos especificados; falta revisión del especialista |
 | T09 | P1 | Pendiente en entorno laboral | Definir ubicación privada, condiciones de uso del asistente elegido, permisos y retención de documentos autorizados |
@@ -22,7 +22,7 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 | T17 | P1 | En curso | OCR: preparador, motor Windows y verificación de derivados; muestra de 3 páginas con errores observados |
 | T18 | P1 | Parcial comprobada | Diagnóstico OCR, alertas, timeout/reanudación y cotejos declarados implementados; ampliar muestra y validar con documentos reales autorizados |
 | T19 | P1 | Parcial | HTML y valores XLSX implementados; XLS antiguo y fórmulas sin recalcular conservan límites |
-| T20 | P1 | Pendiente | Segmentación por disposición y selección temporal |
+| T20 | P1 | Parcial técnica | Quince fichas TUPA/cuarenta páginas indexadas y recuperación por rama; fronteras de fecha sin dictamen de vigencia. Artículos/numerales, intervalos y condiciones por disposición siguen pendientes |
 | T21 | P1 | Hecho | Resumen central de estado del proyecto, enlazado a roadmap y evidencias |
 | T22 | P1 | Hecho, actualizado | Estimación orientativa por entregables: 75 % (70–80 %), sin equivaler a precisión jurídica |
 | T23 | P1 | Hecho en alcance sintético | Circuito entrada → lectura → matriz → Word, revisiones conservadas y doce pruebas; [evidencia](PILOTO_DOCUMENTAL.md) |
@@ -46,6 +46,9 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 
 | T40 | P1 | Hecho en alcance técnico | Instrucciones comunes, importación Claude, once herramientas MCP locales, recursos y configuración Python independiente; 23 pruebas nuevas. [Verificación](VERIFICACION_PORTABILIDAD.md) |
 | T41 | P1 | Pendiente al conectar otro cliente | Probar sesión real del cliente elegido con sus permisos GitHub/Drive y herramientas OECE. No bloquea el uso actual en Codex ni supone credenciales compartidas |
+
+| T42 | P1 | Hecho en alcance de recuperación | Quince fichas TUPA, doce herramientas MCP, lectura con hash y catorce pruebas nuevas. No sustituye el desglose jurídico de requisitos; ver [guía](normativa/FICHAS_TUPA.md) |
+| T43 | P1 | Hecho | Listado excluye entregas temporales antes de renombrado; regresión determinista y descarga en navegador comprobadas. [Verificación 1.4](VERIFICACION_V14.md) |
 
 ## Continuación vigente
 

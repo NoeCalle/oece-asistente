@@ -1,5 +1,5 @@
 # Indexación normativa y temporal
-Estado al 30/10/2026: esquema de metadatos y prototipo de extracción/búsqueda textual implementados. Selección temporal y segmentación por disposición pendientes. [Guía del indexador](INDEXADOR_LOCAL.md).
+Estado al 01/11/2026: metadatos, extracción/búsqueda textual e índice de quince fichas TUPA/cuarenta páginas implementados. La recuperación por rama y las fronteras de fecha no resuelven vigencia. Segmentación por artículo/numeral/literal y selección temporal jurídica por disposición pendientes. [Índice TUPA](FICHAS_TUPA.md). [Guía del indexador](INDEXADOR_LOCAL.md).
 
 ## Tres objetos distintos
 1. Instrumento: identidad jurídica estable (tipo + número + año + emisor + jurisdicción), título, publicación, emisión, relaciones y procedimientos.

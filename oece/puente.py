@@ -38,6 +38,7 @@ def herramientas():
       ('oece_generar','Valida hechos y produce Word/matriz versionados; no firma, no presenta ni sube a Drive/GitHub. OCR es opcional.',esquema({'caso':CASE,'usar_ocr':{'type':'boolean'}},['caso']),False),
       ('oece_buscar_normativa','Busca en el índice local con fuente/ubicación; búsqueda no prueba vigencia.',esquema({'consulta':{'type':'string','minLength':1,'maxLength':200},'limite':{'type':'integer','minimum':1,'maximum':20}},['consulta']),True),
       ('oece_norma','Lee una página de un original PDF manifestado, comprobando su hash. No acredita por sí sola vigencia ni cotejo de imágenes.',esquema({'archivo':{'type':'string','minLength':1,'maxLength':250},'pagina':{'type':'integer','minimum':1,'maximum':5000}},['archivo','pagina']),True),
+      ('oece_tupa','Consulta fichas TUPA candidatas por datos del caso. Con código, lee una página manifestada de esa ficha; no resuelve vigencia ni acredita requisitos.',esquema({'caso':CASE,'codigo':{'type':'string','minLength':10,'maxLength':10},'pagina':{'type':'integer','minimum':1,'maximum':5000}},['caso']),True),
     ]
     return [{'name':name,'description':description,'inputSchema':schema,
              'annotations':{'readOnlyHint':read_only,'destructiveHint':False,'openWorldHint':False}}
@@ -126,6 +127,9 @@ class Puente:
                 except (ValueError,OSError,KeyError):continue
             return {'casos':cases,'limite':1000}
         folder=self.caso(arguments['caso'],exists=name!='oece_nuevo')
+        if name=='oece_tupa':
+            from .tupa import consultar
+            return consultar(leer(dentro(folder,'expediente.json')),arguments.get('codigo'),arguments.get('pagina'))
         if name=='oece_nuevo':
             with bloqueo(self.memory.root/'bloqueos'/sha(str(folder).encode())):
                 if folder.exists():raise ValueError('La carpeta ya existe; no se sobrescribe')

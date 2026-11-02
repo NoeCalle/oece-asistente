@@ -1,0 +1,53 @@
+{
+  "api_modelo_usada": false,
+  "avance_estimado_conservado": 75,
+  "cliente_real_claude_validado": false,
+  "corte_normativo": "2026-10-31",
+  "defecto_corregido": "Listado exponía temporal con manifiesto antes de publicación atómica; ahora solo identificadores definitivos.",
+  "fecha": "2026-11-01",
+  "fichas_tupa": 15,
+  "herramientas_mcp": 12,
+  "mcp_y_cli_tupa_mismo_resultado": true,
+  "navegador_actualizado": {
+    "actualizacion_financiera_anual": true,
+    "booleanos_persistidos": true,
+    "carga": true,
+    "clasificacion_inscripcion": true,
+    "creacion": true,
+    "descarga_word": true,
+    "errores_javascript": [],
+    "procesamiento": true
+  },
+  "originales_nuevos": 0,
+  "originales_verificados": 48,
+  "paginas_cotejadas_visualmente": [
+    31,
+    50,
+    51,
+    66
+  ],
+  "paginas_tupa": 40,
+  "pendientes": [
+    "Cadena jurídica temporal y segmentación por disposición",
+    "Desglose completo de requisitos y excepciones",
+    "Sesión real del cliente alternativo",
+    "Casos autorizados y modelos laborales"
+  ],
+  "pruebas_aprobadas": 169,
+  "pruebas_nuevas_panel": 1,
+  "pruebas_nuevas_tupa": 14,
+  "referencias_motores_verificadas": 47,
+  "registros_catalogo": 29,
+  "revision_humana": null,
+  "stdout_mcp_solo_json": true,
+  "suite_final": {
+    "fallos": 0,
+    "pruebas": 169
+  },
+  "suite_inicial": {
+    "fallos": 1,
+    "motivo": "HTTP 400 al descargar entrega temporal",
+    "pruebas": 168
+  },
+  "version": "1.4.0"
+}

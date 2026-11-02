@@ -57,7 +57,9 @@ La independencia de proveedor de IA no significa independencia de sistema operat
 6. `oece_entrada` / `oece_guardar`: leer y registrar ficha/hechos/análisis/normas/cotejos. La edición exige el hash actual y conserva la versión previa.
 7. `oece_generar`: valida y conserva la entrega; devuelve recursos Word, CSV, JSON y manifiesto.
 
-Las once herramientas se complementan con `resources/read` para recuperar una entrega por URI `oece://casos/...`. El Word se devuelve como recurso binario; la presentación o descarga depende del cliente. Leer/generar no sube nada a Drive. El conector del cliente debe efectuar una subida solo cuando esté autorizada.
+Desde 1.4 se añade `oece_tupa`: consulta fichas candidatas por expediente y recupera páginas de la ficha con sus huellas. Son doce herramientas actuales. [Guía TUPA](normativa/FICHAS_TUPA.md).
+
+Las herramientas se complementan con `resources/read` para recuperar una entrega por URI `oece://casos/...`. El Word se devuelve como recurso binario; la presentación o descarga depende del cliente. Leer/generar no sube nada a Drive. El conector del cliente debe efectuar una subida solo cuando esté autorizada.
 
 Los JSON guardados son declaraciones, **no resultados ya aprobados**. La generación verifica citas, localizadores, huellas y cálculos antes de conservar una entrega. El puente no atribuye hechos ni cotejos nuevos a un revisor humano. Los originales del caso se colocan en `documentos/`; una carpeta existente no se inicializa silenciosamente.
 

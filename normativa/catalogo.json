@@ -750,11 +750,16 @@
           "url": "https://www.gob.pe/institucion/oece/normas-legales/7983806-073-2026-oece-pre",
           "consultado_el": "2026-10-30",
           "metodo": "texto_web_abierto"
+        },
+        {
+          "url": "https://transparencia.gob.pe/enlaces/pte_transparencia_enlaces.aspx?id_entidad=10&id_tema=5&ver=",
+          "consultado_el": "2026-11-01",
+          "metodo": "texto_web_abierto"
         }
       ],
       "validacion": {
         "nivel": "texto_oficial_consultado",
-        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica.",
+        "nota": "Originales conservados en manifiesto-cierre-piloto-2026-10-30.json; alcance, lectura y vigencias separadas en COBERTURA_MINIMA_PILOTO.md. Sin aprobación jurídica. Índice de quince fichas/cuarenta páginas cotejado en v1.4; no habilita reglas ni cierra vigencia por disposición. Ver normativa/indice-tupa.v0.1.json y docs/normativa/FICHAS_TUPA.md.",
         "revision_humana": null,
         "apta_para_reglas": false
       },

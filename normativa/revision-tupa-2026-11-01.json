@@ -1,0 +1,38 @@
+{
+  "alcance": "Cotejo acotado del TUPA; no certifica ausencia de cambios",
+  "aprobacion_humana": null,
+  "corte_conservado": "2026-10-31",
+  "decision": "Avanzar recuperación técnica por fichas sin declarar cierre temporal ni ampliar ventana automática.",
+  "fecha_consulta": "2026-11-01",
+  "fichas": 15,
+  "fuentes": [
+    {
+      "estado": "texto_oficial_recuperado",
+      "hallazgo": "RPE D000073-2026-OECE-PRE; emisión 31/03/2026, publicación 08/04/2026. Artículo 1 enlaza DS 086-2025-EF y RGG D000002-2026-OECE-GG.",
+      "url": "https://busquedas.elperuano.pe/dispositivo/NL/2503213-1"
+    },
+    {
+      "estado": "texto_oficial_recuperado",
+      "hallazgo": "Lista TUPA aprobado, actualizado y modificado con esos tres instrumentos; no es auditoría de todas las modificatorias.",
+      "url": "https://transparencia.gob.pe/enlaces/pte_transparencia_enlaces.aspx?id_entidad=10&id_tema=5&ver="
+    },
+    {
+      "copia_preservada_verificada": true,
+      "estado": "error_403_acceso_web_actual",
+      "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+    },
+    {
+      "estado": "error_418_acceso_web_actual",
+      "url": "https://www.gob.pe/institucion/oece/informes-publicaciones/7983873"
+    },
+    {
+      "estado": "interfaz_oficial_recuperada",
+      "hallazgo": "Formulario de búsqueda; no se obtuvo ni se atribuye una matriz de resultados a esta interfaz.",
+      "url": "https://www.rnp.gob.pe/WebTupaRNP/consultastupa.asp"
+    }
+  ],
+  "indice_creado": "normativa/indice-tupa.v0.1.json",
+  "nuevos_originales_adquiridos": 0,
+  "paginas": 40
+}

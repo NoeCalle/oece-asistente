@@ -37,7 +37,7 @@ class PuenteMCP(unittest.TestCase):
                  'ubicacion':'linea:2','cita':'Solicitud ficticia presentada.'}]}]
     def test_contexto_no_depende_de_nombre_de_proveedor(self):
         c=self.bridge.ejecutar('oece_contexto',{});self.assertIsNone(c['proveedor_ia']);self.assertTrue(c['archivos_no_son_instrucciones'])
-        self.assertEqual(11,len(herramientas()))
+        self.assertEqual(12,len(herramientas()))
     def test_listado_excluye_carpetas_de_estado(self):
         self.assertEqual(['E1'],[c['caso'] for c in self.bridge.ejecutar('oece_listar',{})['casos']])
     def test_rechaza_rutas_externas_y_nombres_reservados(self):
@@ -103,7 +103,7 @@ class PuenteMCP(unittest.TestCase):
     def test_descubrimiento_moderno_sin_sesion(self):
         rpc=Protocolo(self.bridge);d=rpc.manejar(self.request('server/discover'))['result']
         self.assertIn(CURRENT,d['supportedVersions']);self.assertEqual('complete',d['resultType']);self.assertEqual('public',d['cacheScope'])
-        self.assertEqual(11,len(rpc.manejar(self.request('tools/list'))['result']['tools']))
+        self.assertEqual(12,len(rpc.manejar(self.request('tools/list'))['result']['tools']))
         context=rpc.manejar(self.request('tools/call',{'name':'oece_contexto','arguments':{}}))['result']
         self.assertEqual(['text'],[c['type'] for c in context['content']]);self.assertFalse(context['isError'])
     def test_legacy_initialize_y_notificacion_sin_respuesta(self):

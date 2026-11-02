@@ -227,6 +227,14 @@ class PanelV1(unittest.TestCase):
         self.assertEqual(403,e.exception.code)
         with self.assertRaises(HTTPError) as e:self.request('/api/nuevo',{},origin='https://ajeno.example')
         self.assertEqual(403,e.exception.code)
+    def test_entrega_temporal_con_manifiesto_no_se_anuncia_descargable(self):
+        cid=self.request('/api/nuevo',{'solicitante':'Prueba de publicación'})['caso']
+        for name in ('.preparando-prueba','nombre-invalido'):
+            pending=Path(self.temp.name)/cid/'salida'/name
+            guardar(pending/'entrega.json',{'archivos':{}})
+            guardar(pending/'matriz.json',{'conteo':{},'preguntas':[]})
+        cases=self.request('/api/casos')['casos']
+        self.assertEqual(1,len(cases));self.assertEqual([],cases[0]['revisiones'])
     def test_ruta_y_nombre_peligroso_rechazados(self):
         c=self.request('/api/nuevo',{})['caso']
         for name in ('../fuera.txt','C:\\fuera.txt','a.txt:flujo','CON.txt'):

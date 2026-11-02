@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
+import re
 import secrets
 import threading
 from urllib.parse import parse_qs, urlsplit
@@ -57,8 +58,13 @@ def crear_servidor(root,memory,port=8765):
                         if not folder.is_dir() or not (folder/'expediente.json').is_file() or folder.name.startswith('.'): continue
                         try:
                             folder=case(folder.name);config=leer(folder/'expediente.json')
-                            outputs=folder/'salida'
-                            revisions=sorted((d for d in outputs.iterdir() if (d/'entrega.json').is_file()),key=lambda p:p.stat().st_mtime,reverse=True) if outputs.is_dir() else []
+                            outputs=dentro(folder,'salida')
+                            # El manifiesto aparece en .preparando antes del renombrado atómico.
+                            # Solo nombres definitivos pueden anunciarse como descargables.
+                            revisions=sorted((dentro(outputs,d.name) for d in outputs.iterdir()
+                                              if re.fullmatch('[a-f0-9]{64}',d.name) and d.is_dir()
+                                              and dentro(outputs,d.name+'/entrega.json').is_file()),
+                                             key=lambda p:p.stat().st_mtime,reverse=True) if outputs.is_dir() else []
                             item={'carpeta':folder.name,'ficha':config,'revisiones':[d.name for d in revisions], 'trabajo':jobs.get(folder.name,{})}
                             if revisions:
                                 r=leer(revisions[0]/'matriz.json');item.update(conteo=r['conteo'],preguntas=r['preguntas'])

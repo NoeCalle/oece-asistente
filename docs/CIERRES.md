@@ -27,3 +27,7 @@ Cerrado en alcance documental y aritmético: R2/R3/R8 exactos, bases homogéneas
 ## T40 Portabilidad técnica
 
 Mismo motor por CLI/MCP, once herramientas, recursos Word/CSV/JSON, fuente común de instrucciones, importación Claude y lanzador Python configurable. Veintitrés pruebas nuevas, 154 totales. Compatibilidad de protocolo y contratos comprobada localmente; no se declara sesión real de Claude ni conectores de su cuenta comprobados. [Verificación](VERIFICACION_PORTABILIDAD.md).
+
+## T42–T43 Recuperación de fichas y descarga 1.4
+
+Quince fichas TUPA/cuarenta páginas con códigos, ramas y huellas, disponibles por CLI y MCP. Catorce pruebas nuevas; una regresión adicional corrige el listado prematuro de entregas temporales. Total 169 pruebas y recorrido de descarga de navegador comprobados. [Verificación](VERIFICACION_V14.md), [fuentes y límites](normativa/FICHAS_TUPA.md). Se cierra recuperación técnica; T06/T08/T20 no se cierran como consolidación jurídica.
