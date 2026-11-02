@@ -1,6 +1,6 @@
 # Estado de OECE Assistant
 
-Actualización: **01/11/2026, America/Lima**. Versión asistida **1.4.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_V14.md) y [plan integral](PLAN_INTEGRAL.md).
+Actualización: **01/11/2026, America/Lima**. Versión asistida **1.5.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_V15.md) y [plan integral](PLAN_INTEGRAL.md).
 
 ## Resultado disponible
 
@@ -10,7 +10,7 @@ La versión 1.1 añade CMC con factores y consorcios, selección de inscripción
 
 ## Evidencia
 
-- 169 pruebas: las 154 anteriores, catorce de selección/recuperación TUPA y una regresión de entrega temporal. Se conservan las pruebas de portabilidad, citas, recursos Word y protocolo stdio. Dos autores IA de prueba no equivalen a dos modelos reales evaluados.
+- 188 pruebas: las 169 anteriores y diecinueve de segmentación, plan documental, trazabilidad y corrección CMC. Se conservan las pruebas de portabilidad, citas, recursos Word y protocolo stdio. Dos autores IA de prueba no equivalen a dos modelos reales evaluados.
 - Navegador real: creación, inscripción, campos booleanos, carga, procesamiento, descarga Word y actualización financiera anual; cero errores JavaScript observados.
 - Cinco Word 1.1 con 19 páginas y dos Word financieros 1.2 con diez páginas revisadas. Las instantáneas anteriores se conservan. La exportación bloqueada se resolvió con LibreOffice 26.8.2 extraído localmente, sin sustituir Word ni instalar un servicio.
 - Biblioteca: **48 archivos, 29 registros, seis manifiestos**; índice de 2.281 fragmentos, 2.046 con texto. Nueve archivos conservan alertas o lectura parcial.
@@ -58,3 +58,11 @@ Once herramientas MCP locales y recursos de entrega, con protocolo actual y comp
 Quince fichas y cuarenta páginas del anexo RPE 073-2026, con candidatos según rama, códigos oficiales, huellas y lectura paginada. Una solicitud anterior a la publicación o posterior al corte requiere revisión específica; dentro del corte tampoco se declara vigencia por defecto. Se conserva alerta sobre la descripción A/B/C/D y sobre la rama especial del extranjero no domiciliado. Doce herramientas MCP actuales. [Fuente y alcance](normativa/FICHAS_TUPA.md).
 
 Se corrigió un fallo intermitente que anunciaba una entrega temporal antes de su publicación. Suite de 169 pruebas y recorrido de navegador completo comprobados en 1.4. El corte, los 48 originales y la estimación global 75 % se conservan. Cadena por disposición, requisitos exhaustivos, cliente alternativo real y casos laborales siguen pendientes.
+
+## Plan documental y corrección CMC 1.5
+
+Veinticuatro requisitos expresos de ampliación/aumento y diez alertas, seleccionados por experiencia sin acumular ramas. El plan se conserva en matriz JSON con sus citas y dependencias; no se marca evaluado ni sustituye los controles de cumplimiento. Trece herramientas MCP actuales. [Guía](normativa/REQUISITOS_AMPLIACIONES.md).
+
+Se corrigió una restricción anterior del cálculo CMC con experiencia: la directiva 9.2.6.d también regula activo corriente positivo/pasivo corriente cero. Se cotejó visualmente su tabla, se añadieron fronteras de prueba y un ejemplo ficticio con seis páginas Word revisadas. Solvencia conserva su análisis separado. La biblioteca quedó con los 48 originales verificados tras recuperar uno desde su respaldo Drive con la misma huella. [Verificación 1.5](VERIFICACION_V15.md).
+
+No se amplían el corte ni la estimación 75 %. Las otras ramas, cadena temporal completa, cliente alternativo real y validación laboral permanecen pendientes.

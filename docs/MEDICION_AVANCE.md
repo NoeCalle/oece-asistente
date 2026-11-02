@@ -21,3 +21,5 @@ La versión 1.2 añade contraste financiero y 22 pruebas; el total es 131. Se co
 La versión 1.3 añade portabilidad del cliente de IA y 23 pruebas (154 totales). Se mantiene 75 %: el protocolo local no equivale a una validación con otro modelo, casos laborales o cierre normativo. [Evidencia](VERIFICACION_PORTABILIDAD.md).
 
 La versión 1.4 agrega recuperación de quince fichas TUPA y corrige una carrera de publicación de entregas; 169 pruebas. Se mantiene la estimación 75 %: el índice por fichas es avance parcial de T20 y no una consolidación jurídica por disposición. [Evidencia](VERIFICACION_V14.md).
+
+La versión 1.5 segmenta 24 requisitos de dos fichas, conserva diez alertas y corrige el cálculo CMC con experiencia/PC cero. Total 188 pruebas. Se conserva 75 %: el plan de lectura no equivale a cumplimiento acreditado ni a cerrar las otras ramas o la cadena temporal. [Evidencia](VERIFICACION_V15.md).

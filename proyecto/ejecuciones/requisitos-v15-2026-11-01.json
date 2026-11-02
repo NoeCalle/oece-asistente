@@ -1,0 +1,52 @@
+{
+  "alertas_exclusion": 10,
+  "api_modelo_usada": false,
+  "avance_estimado_conservado": 75,
+  "citas_literales_registro": 34,
+  "cliente_real_claude_validado": false,
+  "correccion_cmc": "9.2.6.d permite factor con experiencia/AC positivo/PC cero; anterior restricción corregida. No equivale a solvencia.",
+  "corte_normativo": "2026-10-31",
+  "ejemplo_sintetico": {
+    "cmc_propuesta": "1100000.00",
+    "paginas_word_revisadas": 6,
+    "qa_visual_completa": true,
+    "revision": "15e05efa92a792b15f73c8b30a6ac3ca1545cb99dbdfb8599e0f1ecc28b1f849"
+  },
+  "fecha": "2026-11-01",
+  "herramientas_mcp": 13,
+  "navegador": {
+    "actualizacion_financiera_anual": true,
+    "booleanos_persistidos": true,
+    "carga": true,
+    "clasificacion_inscripcion": true,
+    "creacion": true,
+    "descarga_word": true,
+    "errores_javascript": [],
+    "procesamiento": true
+  },
+  "originales_biblioteca_verificados": 48,
+  "originales_del_registro": 3,
+  "pendientes": [
+    "Cadena temporal completa",
+    "Segmentar requisitos de otras ramas",
+    "Evaluación sustantiva de cada requisito",
+    "Cliente alternativo real",
+    "Casos laborales y modelos autorizados"
+  ],
+  "plan_evaluado_automaticamente": false,
+  "pruebas_aprobadas": 188,
+  "pruebas_nuevas": 19,
+  "recuperacion_respaldo": {
+    "archivo": "ds-009-2025-ef.pdf",
+    "bytes": 19584058,
+    "causa": "no_determinada",
+    "faltante_local_observado": true,
+    "nuevo_original_normativo": false,
+    "recuperado_desde": "respaldo_Drive_preexistente",
+    "sha256": "a3d39c7de4541866c20efa68623827bb7cc1e18410f099a5bfc8b1866788da08"
+  },
+  "referencias_motores_actuales": 48,
+  "referencias_registro": 59,
+  "requisitos_segmentados": 24,
+  "version": "1.5.0"
+}

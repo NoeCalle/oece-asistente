@@ -1,18 +1,21 @@
 {
-  "fecha": "2026-11-01",
-  "tipo": "estimacion_de_planificacion_por_entregables",
-  "porcentaje_estimado": 75,
-  "rango_orientativo": [
-    70,
-    80
+  "alcance_coordinacion_confirmado": {
+    "criterio_cierre": "Expediente indicado en Codex, análisis con fuentes y entrega Word/matriz; automatización independiente del chat excluida salvo nueva petición",
+    "decision_usuario": "Asistente conversacional sustituible: Codex actual; Claude u otro cliente con documentos y herramientas autorizados",
+    "fecha": "2026-11-01",
+    "modelo_autonomo_en_panel_requerido": false,
+    "porcentaje": "Se conserva estimación orientativa 75%; no se infiere precisión ni se recalcula automáticamente por esta aclaración.",
+    "portabilidad": "CLI y MCP local comprobados; cliente Claude real pendiente"
+  },
+  "evidencia_incremental_sin_reestimar": [
+    "docs/VERIFICACION_V12.md",
+    "proyecto/ejecuciones/finanzas-v12-2026-11-01.json",
+    "docs/VERIFICACION_PORTABILIDAD.md",
+    "docs/VERIFICACION_V14.md",
+    "docs/VERIFICACION_V15.md"
   ],
-  "formula": "suma(peso * avance_estimado / 100)",
-  "nota": "Pesos y avances de fase son juicio de planificación, no medición de horas, precisión estadística ni porcentaje de funciones operativas. No se cuentan pruebas como avance jurídico.",
   "fases": [
     {
-      "id": 0,
-      "nombre": "Plan y organización",
-      "peso": 5,
       "avance_estimado": 100,
       "evidencias": [
         "docs/PLAN_INTEGRAL.md",
@@ -21,12 +24,12 @@
         "docs/ESTADO.md",
         "docs/VERIFICACION_V11.md"
       ],
-      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas."
+      "id": 0,
+      "nombre": "Plan y organización",
+      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas.",
+      "peso": 5
     },
     {
-      "id": 1,
-      "nombre": "Biblioteca normativa",
-      "peso": 20,
       "avance_estimado": 70,
       "evidencias": [
         "normativa/catalogo.json",
@@ -37,12 +40,12 @@
         "docs/normativa/OPERACION_V1.md",
         "docs/VERIFICACION_V11.md"
       ],
-      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas."
+      "id": 1,
+      "nombre": "Biblioteca normativa",
+      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas.",
+      "peso": 20
     },
     {
-      "id": 2,
-      "nombre": "Procedimientos y reglas",
-      "peso": 20,
       "avance_estimado": 70,
       "evidencias": [
         "rules/consultores/matriz.v0.1.json",
@@ -52,12 +55,12 @@
         "oece/calculos.py",
         "rules/procedimientos.v1.1.json"
       ],
-      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas."
+      "id": 2,
+      "nombre": "Procedimientos y reglas",
+      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas.",
+      "peso": 20
     },
     {
-      "id": 3,
-      "nombre": "Base técnica",
-      "peso": 25,
       "avance_estimado": 85,
       "evidencias": [
         "scripts/indexar_normativa.py",
@@ -70,12 +73,12 @@
         "oece/flujo.py",
         "docs/VERIFICACION_V11.md"
       ],
-      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas."
+      "id": 3,
+      "nombre": "Base técnica",
+      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas.",
+      "peso": 25
     },
     {
-      "id": 4,
-      "nombre": "Piloto completo e informe Word",
-      "peso": 20,
       "avance_estimado": 85,
       "evidencias": [
         "docs/PILOTO_DOCUMENTAL.md",
@@ -85,33 +88,31 @@
         "docs/VERIFICACION_V1.md",
         "docs/VERIFICACION_V11.md"
       ],
-      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas."
+      "id": 4,
+      "nombre": "Piloto completo e informe Word",
+      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas.",
+      "peso": 20
     },
     {
-      "id": 5,
-      "nombre": "Validación y expansión",
-      "peso": 10,
       "avance_estimado": 40,
       "evidencias": [
         "docs/USO_DIARIO.md",
         "docs/VERIFICACION_V11.md"
       ],
-      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas."
+      "id": 5,
+      "nombre": "Validación y expansión",
+      "pendiente": "Alcance y pendientes vigentes en docs/ESTADO.md; ventana normativa, excepciones y aceptación institucional no cerradas.",
+      "peso": 10
     }
   ],
-  "suma_ponderada_sin_redondear": 75.25,
-  "evidencia_incremental_sin_reestimar": [
-    "docs/VERIFICACION_V12.md",
-    "proyecto/ejecuciones/finanzas-v12-2026-11-01.json",
-    "docs/VERIFICACION_PORTABILIDAD.md",
-    "docs/VERIFICACION_V14.md"
+  "fecha": "2026-11-01",
+  "formula": "suma(peso * avance_estimado / 100)",
+  "nota": "Pesos y avances de fase son juicio de planificación, no medición de horas, precisión estadística ni porcentaje de funciones operativas. No se cuentan pruebas como avance jurídico.",
+  "porcentaje_estimado": 75,
+  "rango_orientativo": [
+    70,
+    80
   ],
-  "alcance_coordinacion_confirmado": {
-    "fecha": "2026-11-01",
-    "decision_usuario": "Asistente conversacional sustituible: Codex actual; Claude u otro cliente con documentos y herramientas autorizados",
-    "modelo_autonomo_en_panel_requerido": false,
-    "criterio_cierre": "Expediente indicado en Codex, análisis con fuentes y entrega Word/matriz; automatización independiente del chat excluida salvo nueva petición",
-    "porcentaje": "Se conserva estimación orientativa 75%; no se infiere precisión ni se recalcula automáticamente por esta aclaración.",
-    "portabilidad": "CLI y MCP local comprobados; cliente Claude real pendiente"
-  }
+  "suma_ponderada_sin_redondear": 75.25,
+  "tipo": "estimacion_de_planificacion_por_entregables"
 }

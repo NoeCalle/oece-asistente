@@ -15,9 +15,11 @@ class CalculosV11(unittest.TestCase):
     def test_cmc_bordes_tabla_y_limite_500mil(self):
         for ac,pc,expected in [('40000','20000','150000.00'),('40001','20000','250000.00'),('60000','20000','300000.00'),('400000','50000','500000.00')]:
             self.assertEqual(expected,cmc(True,True,ac,pc)['cmc_propuesta'])
-    def test_pc_cero_solo_rama_sin_experiencia(self):
+    def test_pc_cero_cmc_con_y_sin_experiencia(self):
         self.assertEqual('200000.00',cmc(True,True,'20000','0')['cmc_propuesta'])
-        with self.assertRaises(ValueError):cmc(False,True,'20000','0',5,[self.obra()],'2026-10-30')
+        result=cmc(False,True,'20000','0',5,[self.obra()],'2026-10-30')
+        self.assertEqual('0.20',result['factor_financiero']);self.assertEqual('1100000.00',result['cmc_propuesta'])
+        self.assertIn('9.2.6.d',result['tratamiento_pc_cero'])
     def test_cmc_con_experiencia_factores_y_consorcio(self):
         work=self.obra();work['porcentaje_obligaciones']='50'
         r=cmc(False,True,'300000','100000',6,[work],'2026-10-30')

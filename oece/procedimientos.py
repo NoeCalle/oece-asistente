@@ -83,7 +83,7 @@ class Evaluador:
             result=cmc(data['sin_experiencia'],data['informacion_financiera_disponible'],data.get('activo_corriente'),data.get('pasivo_corriente'),data.get('anios_activos'),data.get('obras_calculo_cmc'),self.config['fecha_solicitud'])
             self.calculations['cmc']=result
             return 'cumple','Propuesta aritmética de CMC: PEN '+result['cmc_propuesta']+'. No acredita el otorgamiento, aumento ni solvencia general del proveedor.'
-        self.row(rid,'Cálculo propuesto de capacidad máxima de contratación','reg28',keys,operation=calculate,extras=('formula_cmc','dir925','dir926','dir932'))
+        self.row(rid,'Cálculo propuesto de capacidad máxima de contratación','reg28',keys,operation=calculate,extras=('formula_cmc','dir925','dir926','dir926d','dir932'))
     def capacity_increase(self):
         self.common('CMC-','reg381_aumento')
         self.row('CMC-07','RNP de ejecutor e información actualizada','reg25',['rnp_vigente','informacion_actualizada'])

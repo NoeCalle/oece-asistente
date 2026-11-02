@@ -1,159 +1,167 @@
 {
-  "version": "1.1.0",
-  "fecha": "2026-10-31",
-  "autor_criterios": "asistente_ia",
-  "ventana_automatica": [
-    "2026-05-01",
-    "2026-10-31"
-  ],
+  "aclaracion_1_5": "Se corrige restricción indebida del cálculo CMC con experiencia: 9.2.6.d también regula AC positivo y PC cero. No equivale a solvencia ni cambia el corte.",
   "alcance": "Verificaciones documentales y propuestas aritméticas; interpretación de hechos citada, no autenticidad ni decisión administrativa.",
+  "autor_criterios": "asistente_ia",
+  "fecha": "2026-10-31",
+  "fuentes": {
+    "dir924": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "disposicion": "9.2.4; remisión 9.3.3 en p. 12",
+      "pagina_pdf": 7,
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+    },
+    "dir925": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "disposicion": "9.2.5, factores financieros/ejecución; actividad p. 7 y sin experiencia p. 9",
+      "pagina_pdf": 8,
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+    },
+    "dir926": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "disposicion": "9.2.6, consideraciones de experiencia",
+      "pagina_pdf": 9,
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+    },
+    "dir926d": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "disposicion": "9.2.6.d: AC positivo y PC cero, tabla de factor financiero de CMC; remisión 9.3.2",
+      "pagina_pdf": 10,
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+    },
+    "dir932": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "disposicion": "9.3.2, remisión para aumento de CMC",
+      "pagina_pdf": 12,
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+    },
+    "dir96": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "disposicion": "9.6.1–9.6.6, actualización legal",
+      "pagina_pdf": 13,
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+    },
+    "dir967": {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "disposicion": "9.6.7, actualización financiera",
+      "pagina_pdf": 14,
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+    },
+    "formula_cmc": {
+      "archivo": "formula-cmc-spij.pdf",
+      "disposicion": "Artículo 28.1; fórmula original, publicación impresa p. 8",
+      "pagina_pdf": 1,
+      "sha256": "b1296af49a7a2bc12eb41bbcac558510dbe40d38d20a646e85f6a75ba666896e",
+      "url": "https://spij.minjus.gob.pe/Graficos/Peru/2025/Enero/22/DS-009-2025-EF_01.pdf"
+    },
+    "reg25": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "disposicion": "Artículo 25; capacidad y solvencia según 25.5, PDF pp. 14–15",
+      "pagina_pdf": 13,
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+    },
+    "reg26": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "disposicion": "Artículo 26.2–26.3",
+      "pagina_pdf": 15,
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+    },
+    "reg28": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "disposicion": "Artículo 28.1–28.4",
+      "pagina_pdf": 16,
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+    },
+    "reg381_aumento": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "disposicion": "Artículo 381.5, inicio p. 210 y continuación p. 212",
+      "pagina_pdf": 211,
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+    },
+    "reg381_bienes": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "disposicion": "Artículo 381.1; continuación p. 197",
+      "pagina_pdf": 196,
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+    },
+    "reg381_consultores": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "disposicion": "Artículo 381.2, ramas a–d; PDF pp. 197–202",
+      "pagina_pdf": 197,
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+    },
+    "reg381_ejecutores": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "disposicion": "Artículo 381.3, ramas a–d; PDF pp. 203–209",
+      "pagina_pdf": 203,
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+    },
+    "reg381_general": {
+      "archivo": "reglamento-consolidado-2026-01-09.pdf",
+      "disposicion": "Artículo 381.1",
+      "pagina_pdf": 195,
+      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+    },
+    "tuo133": {
+      "archivo": "tuo-27444-minjus-julio-2026.pdf",
+      "disposicion": "Artículos 133–134",
+      "pagina_pdf": 153,
+      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517"
+    },
+    "tuo135": {
+      "archivo": "tuo-27444-minjus-julio-2026.pdf",
+      "disposicion": "Artículo 135",
+      "pagina_pdf": 154,
+      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517"
+    },
+    "tuo207": {
+      "archivo": "tuo-27444-minjus-julio-2026.pdf",
+      "disposicion": "Artículo 207.1–207.2",
+      "pagina_pdf": 193,
+      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517"
+    },
+    "tuo208": {
+      "archivo": "tuo-27444-minjus-julio-2026.pdf",
+      "disposicion": "Artículo 208",
+      "pagina_pdf": 194,
+      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517"
+    },
+    "tuo211": {
+      "archivo": "tuo-27444-minjus-julio-2026.pdf",
+      "disposicion": "Artículo 211",
+      "pagina_pdf": 194,
+      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517"
+    }
+  },
+  "implementacion": "oece/procedimientos.py",
   "procedimientos": [
     "inscripcion",
     "aumento_cmc",
     "actualizacion",
     "reconsideracion"
   ],
-  "implementacion": "oece/procedimientos.py",
-  "fuentes": {
-    "reg25": {
-      "archivo": "reglamento-consolidado-2026-01-09.pdf",
-      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
-      "pagina_pdf": 13,
-      "disposicion": "Artículo 25; capacidad y solvencia según 25.5, PDF pp. 14–15"
-    },
-    "reg26": {
-      "archivo": "reglamento-consolidado-2026-01-09.pdf",
-      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
-      "pagina_pdf": 15,
-      "disposicion": "Artículo 26.2–26.3"
-    },
-    "reg28": {
-      "archivo": "reglamento-consolidado-2026-01-09.pdf",
-      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
-      "pagina_pdf": 16,
-      "disposicion": "Artículo 28.1–28.4"
-    },
-    "reg381_general": {
-      "archivo": "reglamento-consolidado-2026-01-09.pdf",
-      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
-      "pagina_pdf": 195,
-      "disposicion": "Artículo 381.1"
-    },
-    "reg381_bienes": {
-      "archivo": "reglamento-consolidado-2026-01-09.pdf",
-      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
-      "pagina_pdf": 196,
-      "disposicion": "Artículo 381.1; continuación p. 197"
-    },
-    "reg381_consultores": {
-      "archivo": "reglamento-consolidado-2026-01-09.pdf",
-      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
-      "pagina_pdf": 197,
-      "disposicion": "Artículo 381.2, ramas a–d; PDF pp. 197–202"
-    },
-    "reg381_ejecutores": {
-      "archivo": "reglamento-consolidado-2026-01-09.pdf",
-      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
-      "pagina_pdf": 203,
-      "disposicion": "Artículo 381.3, ramas a–d; PDF pp. 203–209"
-    },
-    "reg381_aumento": {
-      "archivo": "reglamento-consolidado-2026-01-09.pdf",
-      "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595",
-      "pagina_pdf": 211,
-      "disposicion": "Artículo 381.5, inicio p. 210 y continuación p. 212"
-    },
-    "dir924": {
-      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
-      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
-      "pagina_pdf": 7,
-      "disposicion": "9.2.4; remisión 9.3.3 en p. 12"
-    },
-    "dir925": {
-      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
-      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
-      "pagina_pdf": 8,
-      "disposicion": "9.2.5, factores financieros/ejecución; actividad p. 7 y sin experiencia p. 9"
-    },
-    "dir926": {
-      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
-      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
-      "pagina_pdf": 9,
-      "disposicion": "9.2.6, consideraciones de experiencia"
-    },
-    "dir932": {
-      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
-      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
-      "pagina_pdf": 12,
-      "disposicion": "9.3.2, remisión para aumento de CMC"
-    },
-    "dir96": {
-      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
-      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
-      "pagina_pdf": 13,
-      "disposicion": "9.6.1–9.6.6, actualización legal"
-    },
-    "dir967": {
-      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
-      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527",
-      "pagina_pdf": 14,
-      "disposicion": "9.6.7, actualización financiera"
-    },
-    "tuo207": {
-      "archivo": "tuo-27444-minjus-julio-2026.pdf",
-      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517",
-      "pagina_pdf": 193,
-      "disposicion": "Artículo 207.1–207.2"
-    },
-    "tuo208": {
-      "archivo": "tuo-27444-minjus-julio-2026.pdf",
-      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517",
-      "pagina_pdf": 194,
-      "disposicion": "Artículo 208"
-    },
-    "tuo211": {
-      "archivo": "tuo-27444-minjus-julio-2026.pdf",
-      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517",
-      "pagina_pdf": 194,
-      "disposicion": "Artículo 211"
-    },
-    "tuo133": {
-      "archivo": "tuo-27444-minjus-julio-2026.pdf",
-      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517",
-      "pagina_pdf": 153,
-      "disposicion": "Artículos 133–134"
-    },
-    "tuo135": {
-      "archivo": "tuo-27444-minjus-julio-2026.pdf",
-      "sha256": "e29b8018d5d5c51bc02b4d59cb3f8802d72e3ac0c103abc6d63c3c2614e92195",
-      "url": "https://cdn.www.gob.pe/uploads/document/file/10399631/8441836-tuo-ley-27444-ley-procedimiento-administrativo-general-julio-2026-ok.pdf?v=1785866517",
-      "pagina_pdf": 154,
-      "disposicion": "Artículo 135"
-    },
-    "formula_cmc": {
-      "archivo": "formula-cmc-spij.pdf",
-      "sha256": "b1296af49a7a2bc12eb41bbcac558510dbe40d38d20a646e85f6a75ba666896e",
-      "url": "https://spij.minjus.gob.pe/Graficos/Peru/2025/Enero/22/DS-009-2025-EF_01.pdf",
-      "pagina_pdf": 1,
-      "disposicion": "Artículo 28.1; fórmula original, publicación impresa p. 8"
-    }
-  }
+  "ventana_automatica": [
+    "2026-05-01",
+    "2026-10-31"
+  ],
+  "version": "1.1.0"
 }

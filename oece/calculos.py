@@ -54,8 +54,8 @@ def cmc(sin_experiencia,informacion_financiera,activo=None,pasivo=None,anios_act
     if informacion_financiera:
         ac,pc=numero(activo),numero(pasivo);working=ac-pc
         if pc==0:
-            if not sin_experiencia or ac<=0:
-                raise ValueError('La regla explícita PC cero se limita a ejecutor sin experiencia y AC positivo')
+            if ac<=0:
+                raise ValueError('La regla PC cero de CMC requiere AC positivo')
             band=2;liquidity=None
         else:
             liquidity=ac/pc
@@ -97,5 +97,6 @@ def cmc(sin_experiencia,informacion_financiera,activo=None,pasivo=None,anios_act
     return {'cmc_propuesta':str(value),'rama':'con_experiencia','sumatoria_neta':str(net),'sumatoria_contratos':str(contracts),
             'factor_actividad':str(activity),'factor_financiero':str(financial),'ratio_ejecucion':str(ratio),
             'factor_ejecucion':str(execution),'coeficiente_gestion':str(management),'detalle_obras':details,
+            'tratamiento_pc_cero':'Directiva 9.2.6.d: AC positivo, PC cero; columna 3 <= L sin dividir por cero' if informacion_financiera and pc==0 else None,
             'operacion':'sumatoria_neta * (actividad + financiero + ejecucion)',
             'alcance':'propuesta_aritmetica_condicionada_al_universo_y_datos_documentados_no_CMC_oficial'}

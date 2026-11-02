@@ -2,7 +2,7 @@
 
 Asistente conversacional elegido y herramientas locales para preparar evaluaciones documentales OECE/RNP con fuentes, matriz y borrador Word editable.
 
-**Versión asistida 1.4.0 — cierre 01/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación la realiza el asistente elegido siguiendo [AGENTS.md](AGENTS.md). Codex es el cliente probado actualmente; se incluye un puente MCP local y [CLAUDE.md](CLAUDE.md) para clientes alternativos. No se incorpora una API de modelo al panel. La conexión real de Claude con Drive, GitHub y este puente todavía requiere comprobación. [Portabilidad y configuración](docs/PORTABILIDAD_IA.md).
+**Versión asistida 1.5.0 — cierre 01/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación la realiza el asistente elegido siguiendo [AGENTS.md](AGENTS.md). Codex es el cliente probado actualmente; se incluye un puente MCP local y [CLAUDE.md](CLAUDE.md) para clientes alternativos. No se incorpora una API de modelo al panel. La conexión real de Claude con Drive, GitHub y este puente todavía requiere comprobación. [Portabilidad y configuración](docs/PORTABILIDAD_IA.md).
 
 ## Empezar
 
@@ -25,19 +25,20 @@ Los modelos reales de informes se incorporarán cuando estén disponibles. El [f
 | Actualización | Legal o financiera; límites calendario del mes siguiente y del ejercicio anual |
 | Reconsideración | Requisitos, nueva prueba/única instancia y propuesta de 15 días hábiles con calendario documentado |
 | Operación local | Panel, carga, LISTO, estabilidad, memoria, bloqueo, reintentos y revisiones |
-| Portabilidad IA | CLI independiente y doce herramientas MCP locales; protocolo probado sin API de modelo, validación con Claude real pendiente |
+| Portabilidad IA | CLI independiente y trece herramientas MCP locales; protocolo probado sin API de modelo, validación con Claude real pendiente |
 | Lectura/OCR | PDF digital, DOCX, TXT/HTML, valores XLSX; OCR Windows con límites, caché y cotejos declarados |
 | Entregas | Word/CSV/JSON; cinco ejemplos y 19 páginas de 1.1, dos ejemplos financieros y diez páginas de 1.2 inspeccionados |
 | Contraste financiero | R2/R3/R8, SBS documentada, indicadores y detección de contradicciones; sin dictamen de solvencia |
+| Plan documental | 24 requisitos de ampliación/aumento por experiencia y diez alertas, con citas; preparación, sin acreditar cumplimiento |
 | Fichas TUPA | Quince fichas/cuarenta páginas por rama, con códigos y huellas; recuperación de candidatas, sin dictamen de vigencia |
 | Biblioteca | 29 registros, 48 archivos, seis manifiestos, 2.281 fragmentos y 2.046 con texto |
-| Pruebas | 169; navegador con carga, campos, procesamiento y descarga Word comprobados |
+| Pruebas | 188; navegador con carga, campos, procesamiento y descarga Word comprobados |
 
 Los cuatro módulos adicionales tienen una ventana automática deliberadamente acotada al **01/05–31/10/2026**. Fuera de ella, los resultados favorables/desfavorables pasan a no determinable hasta revisar fuentes. Los cálculos son propuestas documentales: no prueban autenticidad, consulta registral en vivo ni decisión administrativa. [Contrato de procedimientos](docs/CONTRATO_PROCEDIMIENTOS.md).
 
 Avance orientativo del plan amplio: **75 % (70–80 %)**. Es una estimación de entregables, no precisión jurídica ni aceptación institucional. [Estado](docs/ESTADO.md) y [medición](docs/MEDICION_AVANCE.md).
 
-[Consulta TUPA y límites](docs/normativa/FICHAS_TUPA.md) · [Verificación 1.4](docs/VERIFICACION_V14.md). Se corrigió también la aparición intermitente de entregas temporales en el listado de descargas.
+[Consulta TUPA y límites](docs/normativa/FICHAS_TUPA.md) · [Verificación 1.5](docs/VERIFICACION_V15.md). Se corrigió también la aparición intermitente de entregas temporales en el listado de descargas.
 
 ## Documentación
 

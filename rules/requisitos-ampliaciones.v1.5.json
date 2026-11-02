@@ -1,0 +1,928 @@
+{
+  "alcance": "Plan documental de 24 requisitos expresos y diez alertas; no acredita cumplimiento ni vigencia y no sustituye condiciones del artículo 25, régimen ni excepciones.",
+  "alertas_exclusion": [
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "a) Los contratos suscritos con Entidades sin haber tramitado su respectiva \nconstancia de capacidad libre de contratación (CLC) o de no estar \ninhabilitado para contratar con el Estado.",
+        "disposicion": "9.2.9.a",
+        "pagina_pdf": 11,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-a"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "b) Los contratos dentro del marco de la Ley, que hayan sido suscritos sin \ncontar con inscripción vigente en el RNP o sin contar con la capacidad \nlibre de contratación suficiente o sin contar con la categoría y \nespecialidad, según corresponda.",
+        "disposicion": "9.2.9.b",
+        "pagina_pdf": 11,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-b"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "c) Los contratos de ejecución de obra o consultoría de obra que hayan sido \nconvocados como servicios en general o consultoría en general por la \nEntidad.",
+        "disposicion": "9.2.9.c",
+        "pagina_pdf": 12,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-c"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "d) Contratos de inspector o supervisor temporal.",
+        "disposicion": "9.2.9.d",
+        "pagina_pdf": 12,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-d"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "e) Los subcontratos para la ejecución de obras públicas en el extranjero que \nno se encuentren debidamente autorizados por la entidad pública \ncompetente en su país de origen.",
+        "disposicion": "9.2.9.e",
+        "pagina_pdf": 12,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-e"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "f) Los subcontratos de obras privadas, tanto nacionales como extranjeras.",
+        "disposicion": "9.2.9.f",
+        "pagina_pdf": 12,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-f"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "g) Los contratos marco privados que se encuentran en ejecución.",
+        "disposicion": "9.2.9.g",
+        "pagina_pdf": 12,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-g"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "h) Los contratos suscritos cuyo objeto solo es la ejecución de algunas \npartidas de obra, ya que este trabajo es considerado como servicio; \nasimismo, la ejecución de componentes de una obra, toda vez que solo \nse considera la experiencia en la ejecución de obras culminadas.",
+        "disposicion": "9.2.9.h",
+        "pagina_pdf": 12,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-h"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "i) Los trabajos en los que no se haya ejercido el rol integral de supervisor \nde obra, es decir, en los cuales no se tuvo la facultad del control de la \nobra ni de suscribir el cuaderno de obra.",
+        "disposicion": "9.2.9.i",
+        "pagina_pdf": 12,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-i"
+    },
+    {
+      "caracter": "alerta_de_analisis_no_documento_adicional",
+      "fuente": {
+        "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+        "cita": "j) Los trabajos realizados con la modalidad de autoconstrucción.",
+        "disposicion": "9.2.9.j",
+        "pagina_pdf": 12,
+        "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+        "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+      },
+      "id": "EX-j"
+    }
+  ],
+  "autor": "asistente_ia",
+  "corte_normativo": "2026-10-31",
+  "fecha": "2026-11-01",
+  "pendientes": [
+    "Cadena temporal y eficacia por disposición",
+    "Delimitar categoría (a), objeto y autoridad competente del caso",
+    "Reorganización societaria: cotejar excepciones del artículo 25.7 modificado, sin rechazo automático",
+    "Ramas de inscripción, actualización y reconsideración no segmentadas aquí"
+  ],
+  "remisiones": [
+    {
+      "archivo": "6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf",
+      "disposicion": "9.3.1–9.3.3",
+      "pagina_pdf": 12,
+      "sha256": "a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847",
+      "url": "https://cdn.www.gob.pe/uploads/document/file/7946960/6682380-directiva-de-procedimientos-y-tramites-ante-el-registro-nacional-de-proveedores.pdf?v=1745192527"
+    }
+  ],
+  "requisitos": [
+    {
+      "alternativas_documentales": [],
+      "ambito": "expediente",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "1.- Solicitud presentada mediante formulario.",
+          "disposicion": "PA42003A92 requisito 1",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.1",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "solicitud_presentada"
+      ],
+      "id": "AC-R01",
+      "origen": null,
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Solicitud presentada mediante formulario"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "expediente",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "2.- Indicar el número de recibo y fecha del pago (por derecho de tramitación).",
+          "disposicion": "PA42003A92 requisito 2",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.2",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "recibo_numero",
+        "pago_fecha"
+      ],
+      "id": "AC-R02",
+      "origen": null,
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Número de recibo y fecha de pago"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "a) Copia de la Constancia de Prestación u otro documento, emitido por la entidad contratante, el mismo que, entre otros datos, contiene\nla siguiente información: entidad contratante, procedimiento de selección, nombre del contratista; el nombre y RUC de cada consorciado\ncon las obligaciones asumidas de cada consorciado; ubicación de la obra proyectada o supervisada según corresponda;\nobjeto de la consultoría, fecha de suscripción del contrato, monto del contrato, fecha de culminación de la consultoría de obra, y\nadicionalmente para el caso de la categoría (a), debe presentar documento que declara viable la ficha técnica de inversión o estudios de\npreinversión.",
+          "disposicion": "PA42003A92 requisito 3.1.i.a",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.3.1.i.a",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "documento_entidad",
+        "datos_constancia_completos"
+      ],
+      "id": "AC-L-a",
+      "origen": "peru_ley",
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Constancia u otro documento de la entidad con los datos exigidos"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "a) Copia del contrato de consultoría de obra.",
+          "disposicion": "PA42003A92 requisito 3.1.ii.a",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.3.1.ii.a",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "contrato"
+      ],
+      "id": "AC-P-a",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Contrato"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "b) Copia del (o los) documento(s) emitido(s) por el contratante, donde indique el nombre del contratista y RUC, en caso de consorcio\ndebe hacer dicha precisión respecto a cada uno de los consorciados y la responsabilidad de cada uno de ellos; ubicación de la\nobra, fecha de culminación de la consultoría; y monto final de la consultoría.",
+          "disposicion": "PA42003A92 requisito 3.1.ii.b",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.3.1.ii.b",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "datos_contratante"
+      ],
+      "id": "AC-P-b",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Documento del contratante con los datos exigidos"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "c) Copia del documento de aprobación del expediente técnico o documento que declara viable la ficha técnica de inversión o estudios de\npreinversión y/o conformidad de obra para el caso de supervisión de obra emitido por la autoridad competente y en caso de que, por la\nnaturaleza de la obra, no exista autoridad competente, la aprobación debe ser emitida por el órgano técnico de la contratante.",
+          "disposicion": "PA42003A92 requisito 3.1.ii.c",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.3.1.ii.c",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "aprobacion_viabilidad_conformidad"
+      ],
+      "id": "AC-P-c",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Aprobación/viabilidad/conformidad según el objeto y autoridad competente"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "d) Documento emitido por la contratante donde se detalle la descripción de la obra y las actividades desarrolladas por el consultor.",
+          "disposicion": "PA42003A92 requisito 3.1.ii.d",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.3.1.ii.d",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "descripcion_actividades"
+      ],
+      "id": "AC-P-d",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Descripción de obra y actividades del consultor"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "e) Copia de los comprobantes de pago emitidos por el Proveedor, cuya sumatoria debe ser equivalente al monto final de la consultoría\nrealizada.",
+          "disposicion": "PA42003A92 requisito 3.1.ii.e",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.3.1.ii.e",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "comprobantes_equivalentes"
+      ],
+      "id": "AC-P-e",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Comprobantes de pago cuya suma equivalga al monto final"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "a) Copia del contrato de consultoría de obras.",
+          "disposicion": "PA42003A92 requisito 3.2.a",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.3.2.a",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "contrato"
+      ],
+      "id": "AC-E-a",
+      "origen": "extranjero",
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Contrato de la experiencia extranjera"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42003A92",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "b) Copia del (o los) documento(s) de conformidad o viabilidad según corresponda emitido(s) por el contratante, donde indique nombre del\ncontratista o consorcio (de ser consorcio debe indicar además las obligaciones asumidas por cada integrante), objeto del contrato, el\nmonto del contrato la fecha de culminación de la consultoría, descripción de los trabajos o metas de la consultoría.",
+          "disposicion": "PA42003A92 requisito 3.2.b",
+          "pagina_pdf": 31,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.4.3.2.b",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "datos_extranjero_completos",
+        "conformidad_viabilidad"
+      ],
+      "id": "AC-E-b",
+      "origen": "extranjero",
+      "procedimiento": "ampliacion_consultores",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Documento extranjero del contratante con los datos exigidos"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "expediente",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "1.- Solicitud presentada mediante formulario.",
+          "disposicion": "PA42009D33 requisito 1",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.1",
+          "pagina_pdf": 210,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "solicitud_presentada"
+      ],
+      "id": "CMC-R01",
+      "origen": null,
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Solicitud presentada mediante formulario"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "expediente",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "2.- Indicar el número de recibo y fecha del pago (por derecho de tramitación).",
+          "disposicion": "PA42009D33 requisito 2",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.2",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "recibo_numero",
+        "pago_fecha"
+      ],
+      "id": "CMC-R02",
+      "origen": null,
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Número de recibo y fecha de pago"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "a) Copia de la Constancia de Prestación u otro documento, emitido por la entidad contratante, el mismo que, entre otros datos, contiene\nla siguiente información: entidad contratante, procedimiento de selección, nombre y RUC del contratista, nombre y RUC de cada\nconsorciado con su respectivo porcentaje de consorcio y descripción de obligaciones de ser el caso; nombre del supervisor de obra,\nlugar de ubicación de la obra, objeto del contrato de obra, fecha de suscripción del contrato, monto del contrato, plazo de ejecución de\nobra, fecha de recepción de obra, fecha de liquidación de obra; monto de los adicionales de obra, monto de los deductivos de obra y\nmonto de reajustes si los hubieran; y monto total de la obra (solo el componente obra).",
+          "disposicion": "PA42009D33 requisito 3.1.i.a",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.1.i.a",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "documento_entidad",
+        "datos_constancia_completos"
+      ],
+      "id": "CMC-L-a",
+      "origen": "peru_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": false,
+      "titulo": "Constancia u otro documento de la entidad con los datos exigidos"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "a) Copia del contrato de ejecución de obras.",
+          "disposicion": "PA42009D33 requisito 3.1.ii.a",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.1.ii.a",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "contrato"
+      ],
+      "id": "CMC-P-a",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Contrato"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "b) Copia del (o los) documento(s) emitido(s) por el contratante, que contenga la siguiente información: el nombre del contratista o\nconsorcio, el nombre y RUC de cada uno de los consorciados con su respectivo porcentaje de participación (y la responsabilidad de cada\nuno de ellos de ser el caso); ubicación de la obra, descripción de los trabajos efectuados en la obra, fecha de suscripción del contrato,\nmonto del contrato, plazo de ejecución de la obra, fecha de recepción de obra, monto total de obra (solo el componente obra).",
+          "disposicion": "PA42009D33 requisito 3.1.ii.b",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.1.ii.b",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "datos_contratante"
+      ],
+      "id": "CMC-P-b",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Documento del contratante con los datos exigidos"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "c) Copia del documento de conformidad de obra emitido por la autoridad competente y en el caso que por la naturaleza de la obra no\nexista autoridad competente, la conformidad debe ser emitida por el órgano técnico de la contratante.",
+          "disposicion": "PA42009D33 requisito 3.1.ii.c",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.1.ii.c",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "conformidad_obra"
+      ],
+      "id": "CMC-P-c",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Conformidad de obra por autoridad competente u órgano técnico cuando corresponda"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "d) Copia de las facturas o boletas de ventas emitidas, cuya sumatoria debe ser equivalente al monto final de la obra ejecutada.",
+          "disposicion": "PA42009D33 requisito 3.1.ii.d",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.1.ii.d",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "comprobantes_equivalentes"
+      ],
+      "id": "CMC-P-d",
+      "origen": "peru_fuera_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Facturas o boletas cuya suma equivalga al monto final"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "a) Copia del contrato de obra.",
+          "disposicion": "PA42009D33 requisito 3.2.a",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.2.a",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "contrato"
+      ],
+      "id": "CMC-E-a",
+      "origen": "extranjero",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Contrato de la experiencia extranjera"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "b) Copia del (o los) documento(s) emitido(s) por el contratante, donde indique el nombre del contratista o consorcio; porcentaje y\nresponsabilidad de cada consorciado, monto del contrato; descripción de los trabajos efectuados en la obra, fecha de suscripción del\ncontrato, fecha de recepción y/o culminación de obra, monto total de obra (solo el componente obra).",
+          "disposicion": "PA42009D33 requisito 3.2.b",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.2.b",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "datos_extranjero_completos"
+      ],
+      "id": "CMC-E-b",
+      "origen": "extranjero",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": null,
+      "titulo": "Documento extranjero del contratante con los datos exigidos"
+    },
+    {
+      "alternativas_documentales": [
+        {
+          "verificar": "Copia del contrato de ejecución de obra",
+          "via": "copia_contrato_principal"
+        },
+        {
+          "verificar": "Registro efectivo del contrato; número, nomenclatura del procedimiento y entidad en la solicitud",
+          "via": "referencia_registro_plataforma"
+        }
+      ],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "a) Copia del contrato de ejecución de obra. En caso dicho documento se encuentre registrado en la plataforma electrónica para la\ngestión de las contrataciones públicas, basta precisar en la solicitud el número de contrato, nomenclatura del procedimiento de selección\ny el nombre de la entidad contratante.",
+          "disposicion": "PA42009D33 requisito 3.3.a",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.3.a",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "documentacion_subcontrato_completa"
+      ],
+      "id": "CMC-S-a",
+      "origen": "peru_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": true,
+      "titulo": "Contrato principal o referencias admitidas cuando está registrado en la plataforma"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "b) Copia de la autorización de la entidad contratante para la celebración del subcontrato.",
+          "disposicion": "PA42009D33 requisito 3.3.b",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.3.b",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "subcontrato_autorizado"
+      ],
+      "id": "CMC-S-b",
+      "origen": "peru_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": true,
+      "titulo": "Autorización de la entidad para celebrar el subcontrato"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "c) Copia del subcontrato.",
+          "disposicion": "PA42009D33 requisito 3.3.c",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.3.c",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "documentacion_subcontrato_completa"
+      ],
+      "id": "CMC-S-c",
+      "origen": "peru_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": true,
+      "titulo": "Subcontrato"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "d) Copia del (o los) documento(s) emitido(s) por el contratista principal, el cual indique: entidad contratante, procedimiento de selección,\nsubcontratista; supervisor de obra, ubicación de la obra, objeto del subcontrato de obra, fecha de suscripción del subcontrato, monto del\nsubcontrato, plazo de ejecución del subcontrato de obra, días de ampliación de plazo otorgado, fecha de recepción del subcontrato de\nobra, fecha de liquidación del subcontrato de obra; monto de los adicionales del subcontrato de obra, monto de los deductivos del\nsubcontrato de obra, y monto total del subcontrato de obra.",
+          "disposicion": "PA42009D33 requisito 3.3.d",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.3.d",
+          "pagina_pdf": 211,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "documentacion_subcontrato_completa"
+      ],
+      "id": "CMC-S-d",
+      "origen": "peru_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": true,
+      "titulo": "Documento del contratista principal con los datos exigidos"
+    },
+    {
+      "alternativas_documentales": [],
+      "ambito": "experiencia",
+      "apta_para_reglas": false,
+      "codigo_tupa": "PA42009D33",
+      "fuentes": [
+        {
+          "archivo": "tupa-modificacion-2026-073.pdf",
+          "cita": "e) Copia de las facturas emitidas, cuya sumatoria debe ser equivalente al monto final de la obra ejecutada.",
+          "disposicion": "PA42009D33 requisito 3.3.e",
+          "pagina_pdf": 28,
+          "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
+        },
+        {
+          "archivo": "reglamento-consolidado-2026-01-09.pdf",
+          "disposicion": "381.5.3.3.e",
+          "pagina_pdf": 212,
+          "sha256": "0ebe95b3e05661b80f73c060d6e6ce8dd17621ce34af9277c688dd67e5d99830",
+          "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-reglamento-de-la-ley-general-de-contrataciones-publicas-con-modificaciones-posteriores-hasta-el-09-01-2026.pdf?v=1787002595"
+        }
+      ],
+      "hechos_orientativos": [
+        "documentacion_subcontrato_completa"
+      ],
+      "id": "CMC-S-e",
+      "origen": "peru_ley",
+      "procedimiento": "aumento_cmc",
+      "revision_humana": null,
+      "subcontrato": true,
+      "titulo": "Facturas cuya suma equivalga al monto final"
+    }
+  ],
+  "version": "1.5.0"
+}

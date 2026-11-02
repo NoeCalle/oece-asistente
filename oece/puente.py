@@ -39,6 +39,7 @@ def herramientas():
       ('oece_buscar_normativa','Busca en el índice local con fuente/ubicación; búsqueda no prueba vigencia.',esquema({'consulta':{'type':'string','minLength':1,'maxLength':200},'limite':{'type':'integer','minimum':1,'maximum':20}},['consulta']),True),
       ('oece_norma','Lee una página de un original PDF manifestado, comprobando su hash. No acredita por sí sola vigencia ni cotejo de imágenes.',esquema({'archivo':{'type':'string','minLength':1,'maxLength':250},'pagina':{'type':'integer','minimum':1,'maximum':5000}},['archivo','pagina']),True),
       ('oece_tupa','Consulta fichas TUPA candidatas por datos del caso. Con código, lee una página manifestada de esa ficha; no resuelve vigencia ni acredita requisitos.',esquema({'caso':CASE,'codigo':{'type':'string','minLength':10,'maxLength':10},'pagina':{'type':'integer','minimum':1,'maximum':5000}},['caso']),True),
+      ('oece_requisitos','Planifica la revisión documental de ampliación/aumento por experiencia, con citas, ramas alternativas y alertas. No acredita documentos ni cumplimiento. Verifica originales antes de devolver el plan.',esquema({'caso':CASE},['caso']),True),
     ]
     return [{'name':name,'description':description,'inputSchema':schema,
              'annotations':{'readOnlyHint':read_only,'destructiveHint':False,'openWorldHint':False}}
@@ -127,6 +128,9 @@ class Puente:
                 except (ValueError,OSError,KeyError):continue
             return {'casos':cases,'limite':1000}
         folder=self.caso(arguments['caso'],exists=name!='oece_nuevo')
+        if name=='oece_requisitos':
+            from .requisitos import planificar,verificar
+            check=verificar();return {**planificar(leer(dentro(folder,'expediente.json'))),'integridad_fuentes':check}
         if name=='oece_tupa':
             from .tupa import consultar
             return consultar(leer(dentro(folder,'expediente.json')),arguments.get('codigo'),arguments.get('pagina'))

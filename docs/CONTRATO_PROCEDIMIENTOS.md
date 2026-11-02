@@ -39,7 +39,7 @@ La propuesta usa `sin_experiencia`, `informacion_financiera_disponible`, `moneda
 Cada obra de cálculo contiene `id`, `monto_neto_obra`, `monto_contratado`, `porcentaje_obligaciones` y `fecha_culminacion`. El universo debe estar documentado, sin duplicados, con obras culminadas al corte y no mayores de veinte años. Se atribuye el neto según obligaciones de consorcio; el denominador del factor de ejecución usa los montos contratados explícitos. Se permite que el monto final sea mayor que el contratado: no se inventa la restricción contraria. No se convierten monedas automáticamente.
 
 - Con experiencia: sumatoria neta atribuida × (actividad + financiero + ejecución), según artículo 28 y directiva 9.2.5–9.2.6.
-- Sin experiencia: tabla específica hasta PEN 500.000; sin información financiera, PEN 100.000. La regla expresa PC = 0 y AC positivo se aplica solo a esa rama; en otras no se extrapola.
+- Sin experiencia: tabla específica hasta PEN 500.000; sin información financiera, PEN 100.000. Con AC positivo y PC = 0 hay reglas expresas distintas: sin experiencia en 9.2.5, p. 9; con experiencia en 9.2.6.d, p. 10, aplicable al aumento por 9.3.2. En ambos casos se usa la columna de liquidez igual o mayor a tres; no se divide por cero ni se traslada esto al análisis de solvencia. La restricción anterior a 1.5 para ejecutores con experiencia fue corregida.
 - El aumento contrasta la propuesta con `cmc_vigente` citada y revisa `rnp_vigente`, `informacion_actualizada`, solvencia y documentación de cada obra. Una propuesta superior no basta para concederlo.
 
 Por experiencia se examinan culminación, componente de obra, exclusiones, documentos de entidad o contrato/conformidad/comprobantes según procedencia; obligaciones de consorcio y autorización/documentos de subcontrato cuando corresponda. Los IDs exactos de hechos y controles están en [el evaluador](../oece/procedimientos.py). El universo financiero y de obras requiere revisión sustantiva; los controles no implementan toda solvencia contable ni todas las exclusiones posibles.
@@ -63,3 +63,7 @@ El cómputo requiere `fecha_notificacion`, `calendario_recurso`, `calendario_ent
 ## Contraste financiero desde 1.2
 
 El coordinador prepara importes con citas y bases homogéneas. El informe incorpora R2/R3/R8, indicadores referenciales y reporte SBS documentado, con detección de contradicciones respecto de una declaración de solvencia. No convierte ratios en un dictamen ni aplica la excepción PC cero de CMC a solvencia. [Contrato financiero](CONTRASTE_FINANCIERO.md) y [verificación](VERIFICACION_V12.md). El corte no se amplía.
+
+## Plan documental desde 1.5
+
+Ampliación y aumento tienen un plan de lectura por experiencia con los requisitos expresos de sus fichas, citas y alertas. Se conserva en matriz JSON y se consulta por CLI/MCP; no evalúa automáticamente esas tareas ni sustituye los hechos citados de la matriz de controles. [Guía y límites](normativa/REQUISITOS_AMPLIACIONES.md). Reprocesar en 1.5 los supuestos CMC con experiencia/AC positivo/PC cero antes bloqueados, conservando las revisiones anteriores.

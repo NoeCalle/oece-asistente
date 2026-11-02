@@ -42,7 +42,7 @@ python -m oece tupa RUTA_EXPEDIENTE --codigo PA42003A92 --pagina 31
 python scripts/construir_indice_tupa.py
 ```
 
-El último comando reconstruye el índice desde el original identificado; rechaza un cambio de archivo sin revisar el mapa. Las instrucciones son comunes para cualquier cliente con acceso al motor. En MCP hay ahora doce herramientas; no se añade una API de modelo.
+El último comando reconstruye el índice desde el original identificado; rechaza un cambio de archivo sin revisar el mapa. Las instrucciones son comunes para cualquier cliente con acceso al motor. En MCP hay ahora trece herramientas, incluida la consulta de requisitos incorporada en 1.5; no se añade una API de modelo.
 
 ## Límites que evita la selección
 

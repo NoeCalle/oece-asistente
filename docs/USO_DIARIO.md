@@ -62,3 +62,7 @@ Leer [portabilidad](PORTABILIDAD_IA.md). GitHub guarda instrucciones y reglas; D
 ## Consultar la ficha TUPA
 
 El coordinador puede consultar `oece_tupa` por MCP o `python -m oece tupa RUTA_EXPEDIENTE`. Recibe fichas candidatas según los datos conocidos y puede leer cada página por su código oficial. No debe sumar los requisitos de todas las candidatas ni confundir una fecha dentro del corte con vigencia confirmada. [Cobertura de quince fichas y límites](normativa/FICHAS_TUPA.md).
+
+## Plan de revisión de documentos
+
+Para ampliación de consultores y aumento CMC, el coordinador puede consultar oece_requisitos por MCP o `python -m oece requisitos RUTA_EXPEDIENTE`. El plan separa las listas por experiencia, devuelve citas y queda conservado en la matriz JSON. Sus tareas permanecen pendientes de interpretación; no sustituyen el análisis ni son documentos ya acreditados. [Guía](normativa/REQUISITOS_AMPLIACIONES.md).

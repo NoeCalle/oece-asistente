@@ -123,6 +123,8 @@ def redactar(result, path):
         if calculation['rama']=='con_experiencia':
             doc.add_paragraph(f'El monto neto atribuido de las obras es PEN {calculation["sumatoria_neta"]}. El coeficiente de gestión {calculation["coeficiente_gestion"]} resulta de sumar el factor de actividad {calculation["factor_actividad"]}, el financiero {calculation["factor_financiero"]} y el de ejecución {calculation["factor_ejecucion"]}. Al multiplicar el monto neto por ese coeficiente, la CMC propuesta es PEN {calculation["cmc_propuesta"]}.')
             doc.add_paragraph(f'El factor de ejecución utiliza la relación entre la suma neta atribuida y los montos contratados documentados, cuya suma es PEN {calculation["sumatoria_contratos"]}. Se deben revisar especialmente la base de cada importe y las obligaciones de consorcio antes de adoptar el cálculo.')
+            if calculation.get('tratamiento_pc_cero'):
+                doc.add_paragraph('Con activo corriente positivo y pasivo corriente cero se utiliza la columna de liquidez igual o mayor a tres de la tabla del numeral 9.2.6.d de la directiva. Es una regla del factor de CMC; no representa una división por cero ni acredita solvencia económica.')
         else:
             doc.add_paragraph(f'La rama sin experiencia da una propuesta de PEN {calculation["cmc_propuesta"]}, según la información financiera disponible y la tabla aplicable. Esta cifra no constituye una capacidad otorgada ni acredita por sí sola el aumento solicitado.')
     calculation=result.get('calculos',{}).get('reconsideracion')

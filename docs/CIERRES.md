@@ -31,3 +31,7 @@ Mismo motor por CLI/MCP, once herramientas, recursos Word/CSV/JSON, fuente comú
 ## T42–T43 Recuperación de fichas y descarga 1.4
 
 Quince fichas TUPA/cuarenta páginas con códigos, ramas y huellas, disponibles por CLI y MCP. Catorce pruebas nuevas; una regresión adicional corrige el listado prematuro de entregas temporales. Total 169 pruebas y recorrido de descarga de navegador comprobados. [Verificación](VERIFICACION_V14.md), [fuentes y límites](normativa/FICHAS_TUPA.md). Se cierra recuperación técnica; T06/T08/T20 no se cierran como consolidación jurídica.
+
+## T44–T45 Segmentación y corrección CMC 1.5
+
+Cerrado plan de lectura de 24 requisitos de dos fichas y diez alertas, con citas/ramas y conservación en matriz JSON. Corregida restricción indebida de PC cero para CMC con experiencia según 9.2.6.d; no aprobación de solvencia. Diecinueve pruebas nuevas, 188 totales; un ejemplo sintético, seis páginas Word revisadas y navegador actualizado comprobado. [Verificación](VERIFICACION_V15.md). La evaluación exhaustiva y la cadena temporal no se cierran.

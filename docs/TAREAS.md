@@ -50,6 +50,9 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 | T42 | P1 | Hecho en alcance de recuperación | Quince fichas TUPA, doce herramientas MCP, lectura con hash y catorce pruebas nuevas. No sustituye el desglose jurídico de requisitos; ver [guía](normativa/FICHAS_TUPA.md) |
 | T43 | P1 | Hecho | Listado excluye entregas temporales antes de renombrado; regresión determinista y descarga en navegador comprobadas. [Verificación 1.4](VERIFICACION_V14.md) |
 
+| T44 | P1 | Hecho en alcance de planificación | 24 requisitos expresos de ampliación/aumento y diez alertas; tres originales, 59 referencias, 34 citas; selección por experiencia y plan conservado en matriz JSON. No equivale a verificación de cumplimiento. [Guía](normativa/REQUISITOS_AMPLIACIONES.md) |
+| T45 | P0 | Hecho en alcance aritmético | Corregir restricción CMC con experiencia y PC cero según 9.2.6.d; conservar separación de solvencia, probar bandas y revisar seis páginas Word. [Verificación](VERIFICACION_V15.md) |
+
 ## Continuación vigente
 
 Las versiones previas y sus pruebas se conservan como antecedentes. T30/T31/T32/T34/T35 cierran operación, índice digital, motor documental, QA sintética Word y expansión acotada. El panel no integra un modelo autónomo; el coordinador abierto es Codex.
