@@ -1,68 +1,38 @@
 # Estado de OECE Assistant
 
-Actualización: **01/11/2026, America/Lima**. Versión asistida **1.5.0**; corte normativo **31/10/2026**. [Uso](USO_DIARIO.md), [verificación](VERIFICACION_V15.md) y [plan integral](PLAN_INTEGRAL.md).
+Actualización: **02/11/2026, America/Lima**. Versión **1.6.0**. Preparación técnica comprobada para elaborar borradores con el asistente conversacional. [Primer uso](PRIMER_USO.md), [verificación](VERIFICACION_V16.md), [plan](PLAN_INTEGRAL.md).
 
 ## Resultado disponible
 
-Los cinco módulos producen lectura, matriz y Word con hechos citados, autores identificados y originales/revisiones conservados. Consultores tiene 22 controles; los otros cuatro módulos ya tienen controles específicos y propuestas aritméticas. La interpretación de documentos la realiza el asistente elegido; Codex es el cliente probado actualmente y se incorpora un puente para otros clientes; el panel no incorpora un modelo autónomo ni un servicio institucional.
+Los cinco trámites producen lectura, matriz y Word con hechos citados, autoría y revisiones conservadas: ampliación de consultores, aumento CMC, inscripción/reinscripción, actualización y reconsideración. El asistente interpreta documentos y fuentes; las herramientas ejecutan lectura/OCR, controles, cálculos y generación. El panel no incorpora un modelo autónomo ni requiere una API propia.
 
-La versión 1.1 añade CMC con factores y consorcios, selección de inscripción/reinscripción, límites calendario de actualizaciones y reconsideración con nueva prueba/calendario explícito. Sus resultados dependen de datos acreditados; no equivalen a decisión administrativa. [Campos y límites](CONTRATO_PROCEDIMIENTOS.md).
+La preparación documental cubre 124 unidades, con 153 citas en cinco originales: trece fichas de inscripción, supuestos de actualización y requisitos del recurso, además de ampliación/aumento. Cada unidad conserva condiciones y alternativas. El plan no acredita por sí solo cumplimiento. [Registro](../rules/requisitos.v1.6.json).
 
-## Evidencia
+Disponibles: panel, carpeta LISTO, memoria, diagnóstico, respaldos y recuperación en carpeta nueva. El puente MCP ofrece catorce herramientas. Codex es el cliente actual; la sesión real de otro cliente se comprueba al configurarlo con sus permisos. [Portabilidad](PORTABILIDAD_IA.md).
 
-- 188 pruebas: las 169 anteriores y diecinueve de segmentación, plan documental, trazabilidad y corrección CMC. Se conservan las pruebas de portabilidad, citas, recursos Word y protocolo stdio. Dos autores IA de prueba no equivalen a dos modelos reales evaluados.
-- Navegador real: creación, inscripción, campos booleanos, carga, procesamiento, descarga Word y actualización financiera anual; cero errores JavaScript observados.
-- Cinco Word 1.1 con 19 páginas y dos Word financieros 1.2 con diez páginas revisadas. Las instantáneas anteriores se conservan. La exportación bloqueada se resolvió con LibreOffice 26.8.2 extraído localmente, sin sustituir Word ni instalar un servicio.
-- Biblioteca: **48 archivos, 29 registros, seis manifiestos**; índice de 2.281 fragmentos, 2.046 con texto. Nueve archivos conservan alertas o lectura parcial.
-- Fórmula gráfica oficial del artículo 28 adquirida de SPIJ, con hash y copia Drive. Directiva RNP 9.3.3 cotejada: remite expresamente a 9.2.4; registro de decisiones actualizado a v0.3.
-- CMC ficticia propuesta PEN 825.000; actualización con fecha a aclarar; reconsideración con calendario sintético, no calendario oficial general; consultor con diferencia de honorarios PEN 20.000.
+## Evidencia de preparación
 
-[Registro 1.1](../proyecto/ejecuciones/operacion-v11-2026-11-01.json) y [registro financiero 1.2](../proyecto/ejecuciones/finanzas-v12-2026-11-01.json). Las pruebas y ejemplos no certifican precisión jurídica general.
+- **220 pruebas aprobadas**, incluidas ramas, citas/recortes, datos desconocidos, diagnóstico y recuperación.
+- Cinco expedientes ficticios nuevos con Word, matriz y plan; recuperación de consultores y de inscripción con informe íntegro.
+- Navegador Edge con creación, carga, ficha, procesamiento, descarga y diagnóstico visible; cero errores JavaScript observados.
+- Ocho comprobaciones técnicas satisfactorias y OCR Windows disponible. El diagnóstico distingue esto de la revisión normativa por fecha.
+- Biblioteca activa: **48 originales, 29 registros, seis manifiestos**. Índice de 2.281 fragmentos, 2.046 con texto; nueve archivos con alertas/lectura parcial.
+- QA visual histórica: cinco Word 1.1/19 páginas, dos Word financieros 1.2/diez páginas y un Word CMC 1.5/seis páginas inspeccionados. Los cinco nuevos Word 1.6 se comprobaron estructuralmente; el de actualización con cita del Anexo 5 se renderizó e inspeccionó en tres páginas. Los otros cuatro no reciben esa QA visual por herencia.
 
+La corrección CMC con experiencia/AC positivo/PC cero de 9.2.6.d está incorporada. La solvencia conserva un análisis separado: ratios, SBS documentada, riesgos y contradicciones. [Contrato financiero](CONTRASTE_FINANCIERO.md).
 
-## Contraste financiero incorporado
+## Inicio laboral y límites
 
-Se calculan R2/R3/R8 con comparación exacta de umbrales; R9 y pérdidas se mantienen como indicadores que requieren interpretación. Se cotejan bases homogéneas y reporte SBS documentado. Una declaración de solvencia contradictoria con ratios/reporte pasa a no determinable conservando su resultado previo. No se incorpora una consulta SBS en vivo ni se presume una solvencia integral por tres números. [Datos y límites](CONTRASTE_FINANCIERO.md).
+**Personalización:** recibir el formato autorizado y ajustar presentación/redacción. La plantilla provisional permite empezar.
 
-La revisión acotada de fuentes del 01/11 no permite ampliar el corte: se mantuvo el 31/10 y se documentaron fallos de acceso a índices oficiales. No se añadieron originales nuevos ni se declara ausencia de modificatorias. El avance amplio se conserva en 75 %.
+**Primer uso real:** confirmar ubicación/permisos, procesar un expediente autorizado y contrastar interpretaciones con originales y práctica del área. No se afirma aceptación institucional por haber pasado casos ficticios.
 
-## Estado por fase
+**Normativa:** corte **31/10/2026**. Las cuatro ramas adicionales conservan ventana 01/05–31/10/2026; consultores conserva J01–J05. Una fecha posterior exige revisar fuentes, modificatorias y reglas antes de ampliar conclusiones. El nuevo intento de lectura del compendio de El Peruano produjo errores y no amplió el corte.
 
-| Fase | Disponible | Pendiente |
-|---|---|---|
-| Plan | Persistente, contratos y tareas actualizados | Mantenimiento |
-| Biblioteca | Adquisición mínima y ampliaciones; índice unificado | Cadena por disposición, cambios posteriores al corte, escaneados y formatos antiguos |
-| Procedimientos | Cinco módulos con controles documentales; cálculos acotados | Desglose exhaustivo TUPA por rama, excepciones, solvencia integral y casos históricos |
-| Base técnica | Panel, memoria, LISTO, lectura/OCR, trazabilidad | Validación de uso, recuperación y ubicación autorizada; no se requiere modelo autónomo ni servicio compartido para el alcance acordado |
-| Piloto | Cinco informes sintéticos y QA visual; flujo de navegador ejecutado | Aceptación funcional, expedientes laborales autorizados y modelos reales |
-| Expansión | Cuatro módulos adicionales implementados en alcance documental/aritmético | Validación sustantiva e institucional por procedimiento |
+La cadena completa por disposición, excepciones y casos históricos del plan amplio sigue abierta. El coordinador puede completar análisis específicos con citas; no se declara evaluación jurídica exhaustiva. DOC/XLS antiguos, imágenes incrustadas y algunas fuentes escaneadas mantienen sus límites. [Uso diario](USO_DIARIO.md).
 
-## Corte temporal y siguiente uso
+## Medición y continuidad
 
-Los cuatro módulos nuevos se limitan automáticamente a solicitudes del **01/05 al 31/10/2026**. Una fecha posterior produce resultado no determinable en los controles que darían cumple/no cumple. No se amplía la vigencia por cambiar la fecha del equipo. El coordinador puede seguir leyendo y preparando el análisis, pero debe verificar fuentes y actualizar pruebas antes de ampliar esa ventana. Consultores conserva sus condiciones específicas J01–J05.
+La preparación técnica es distinta de completar el plan amplio de automatización. Se conserva su estimación orientativa **75 % (70–80 %)**; no es precisión jurídica. [Método](MEDICION_AVANCE.md).
 
-El siguiente paso funcional es procesar un expediente autorizado, contrastar cada interpretación con los originales y ajustar las observaciones a la práctica. Cuando el usuario disponga de modelos laborales, se adaptará la plantilla sin rehacer el circuito de evidencias. La autorización de ubicación, acceso y retención de documentos laborales depende del entorno de trabajo.
-
-**Avance orientativo del plan amplio: 75 % (70–80 %)**. No se afirma que solo falte el formato para automatizar íntegramente todos los casos. [Fundamento](MEDICION_AVANCE.md).
-
-## Alcance de la coordinación confirmado
-
-El usuario confirma el 01/11/2026 la interpretación desde un asistente conversacional y pide que la herramienta no dependa de una marca de IA. Codex sigue disponible; Claude u otro cliente pueden usar el mismo código, reglas y contratos con acceso autorizado a documentos y al motor. GitHub/Drive aportan archivos; la CLI o el MCP local ejecutan las herramientas. No se exige incorporar un modelo autónomo al panel. No se ha probado una sesión real de Claude. [Guía](PORTABILIDAD_IA.md).
-
-## Portabilidad 1.3
-
-Once herramientas MCP locales y recursos de entrega, con protocolo actual y compatibilidad initialize. No se abren puertos públicos ni se añaden APIs de modelo. Instrucciones comunes AGENTS.md, importación CLAUDE.md, configuración revisable generada localmente y lanzador Python configurable. Deben prepararse originales/índice y conectores en cada cliente. La independencia de IA no elimina la dependencia de Windows para el OCR actual. Se mantiene la estimación global 75 % y el corte normativo.
-
-## Recuperación TUPA 1.4
-
-Quince fichas y cuarenta páginas del anexo RPE 073-2026, con candidatos según rama, códigos oficiales, huellas y lectura paginada. Una solicitud anterior a la publicación o posterior al corte requiere revisión específica; dentro del corte tampoco se declara vigencia por defecto. Se conserva alerta sobre la descripción A/B/C/D y sobre la rama especial del extranjero no domiciliado. Doce herramientas MCP actuales. [Fuente y alcance](normativa/FICHAS_TUPA.md).
-
-Se corrigió un fallo intermitente que anunciaba una entrega temporal antes de su publicación. Suite de 169 pruebas y recorrido de navegador completo comprobados en 1.4. El corte, los 48 originales y la estimación global 75 % se conservan. Cadena por disposición, requisitos exhaustivos, cliente alternativo real y casos laborales siguen pendientes.
-
-## Plan documental y corrección CMC 1.5
-
-Veinticuatro requisitos expresos de ampliación/aumento y diez alertas, seleccionados por experiencia sin acumular ramas. El plan se conserva en matriz JSON con sus citas y dependencias; no se marca evaluado ni sustituye los controles de cumplimiento. Trece herramientas MCP actuales. [Guía](normativa/REQUISITOS_AMPLIACIONES.md).
-
-Se corrigió una restricción anterior del cálculo CMC con experiencia: la directiva 9.2.6.d también regula activo corriente positivo/pasivo corriente cero. Se cotejó visualmente su tabla, se añadieron fronteras de prueba y un ejemplo ficticio con seis páginas Word revisadas. Solvencia conserva su análisis separado. La biblioteca quedó con los 48 originales verificados tras recuperar uno desde su respaldo Drive con la misma huella. [Verificación 1.5](VERIFICACION_V15.md).
-
-No se amplían el corte ni la estimación 75 %. Las otras ramas, cadena temporal completa, cliente alternativo real y validación laboral permanecen pendientes.
+Continuidad guardada en [tareas](TAREAS.md), [cierres](CIERRES.md) y [ejecución 1.6](../proyecto/ejecuciones/preparacion-v16-2026-11-01.json). La siguiente aportación del usuario es el modelo laboral y el primer expediente autorizado cuando corresponda. Las fuentes se mantienen según sus fechas.

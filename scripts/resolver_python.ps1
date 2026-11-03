@@ -15,7 +15,7 @@ function Resolve-OECEPython {
     }
     foreach ($candidateOECE in ($candidatesOECE | Select-Object -Unique)) {
         if (-not (Test-Path -LiteralPath $candidateOECE -PathType Leaf)) {continue}
-        & $candidateOECE -c "import sys,pypdf,docx,PIL; sys.exit(0 if sys.version_info >= (3,12) else 1)" 2>$null
+        & $candidateOECE -c "import sys,pypdf,docx,PIL,pdfplumber; sys.exit(0 if sys.version_info >= (3,12) else 1)" 2>$null
         if ($LASTEXITCODE -eq 0) {return (Resolve-Path -LiteralPath $candidateOECE).Path}
     }
     throw 'Se requiere Python 3.12 o posterior con las dependencias de requirements-indexacion.txt. Define OECE_PYTHON o usa -Python con la ruta del intérprete.'

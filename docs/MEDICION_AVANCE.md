@@ -1,6 +1,6 @@
 # Cómo se estima el avance
 
-Actualización 01/11/2026: **75 % del plan amplio** (rango orientativo 70–80 %). Es juicio de planificación por entregables, no horas, precisión jurídica ni aptitud institucional.
+Actualización 02/11/2026: **75 % del plan amplio** (rango orientativo 70–80 %). Es juicio de planificación por entregables, no horas, precisión jurídica ni aptitud institucional.
 
 | Fase | Peso | Avance estimado de fase | Aporte |
 |---|---:|---:|---:|
@@ -23,3 +23,5 @@ La versión 1.3 añade portabilidad del cliente de IA y 23 pruebas (154 totales)
 La versión 1.4 agrega recuperación de quince fichas TUPA y corrige una carrera de publicación de entregas; 169 pruebas. Se mantiene la estimación 75 %: el índice por fichas es avance parcial de T20 y no una consolidación jurídica por disposición. [Evidencia](VERIFICACION_V14.md).
 
 La versión 1.5 segmenta 24 requisitos de dos fichas, conserva diez alertas y corrige el cálculo CMC con experiencia/PC cero. Total 188 pruebas. Se conserva 75 %: el plan de lectura no equivale a cumplimiento acreditado ni a cerrar las otras ramas o la cadena temporal. [Evidencia](VERIFICACION_V15.md).
+
+La versión 1.6 cierra la preparación técnica para uso asistido con 220 pruebas, cinco trámites, diagnóstico y recuperación. Se conserva la estimación del plan amplio en 75 % hasta reestimar con aceptación y cobertura sustantiva: la preparación técnica y la certificación jurídica no se equiparan. [Alcance del cierre](VERIFICACION_V16.md).

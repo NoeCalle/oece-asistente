@@ -21,6 +21,9 @@ def main():
     library=sub.add_parser('biblioteca');library.add_argument('--reconstruir',action='store_true');library.add_argument('--buscar');library.add_argument('--indice',type=Path,default=ROOT/'normativa/indices/biblioteca-v1.sqlite')
     tupa=sub.add_parser('tupa');tupa.add_argument('carpeta',type=Path);tupa.add_argument('--codigo');tupa.add_argument('--pagina',type=int)
     req=sub.add_parser('requisitos');req.add_argument('carpeta',type=Path)
+    diag=sub.add_parser('diagnostico');diag.add_argument('--fecha')
+    backup=sub.add_parser('respaldar');backup.add_argument('carpeta',type=Path);backup.add_argument('archivo',type=Path)
+    restore=sub.add_parser('restaurar');restore.add_argument('archivo',type=Path);restore.add_argument('destino',type=Path)
     args=p.parse_args();memory=Memoria(args.memoria)
     if args.accion=='nuevo': result=iniciar(args.carpeta,args.procedimiento,args.solicitante,args.sintetico)
     elif args.accion in ('leer','estado'):
@@ -46,8 +49,17 @@ def main():
         result=consultar(leer(args.carpeta/'expediente.json'),args.codigo,args.pagina)
     elif args.accion=='requisitos':
         from .comun import leer
-        from .requisitos import planificar,verificar
+        from .preparacion import planificar,verificar
         result={**planificar(leer(args.carpeta/'expediente.json')),'integridad_fuentes':verificar()}
+    elif args.accion=='diagnostico':
+        from .diagnostico import comprobar
+        result=comprobar(args.fecha)
+    elif args.accion=='respaldar':
+        from .respaldo import crear
+        result=crear(args.carpeta,args.archivo)
+    elif args.accion=='restaurar':
+        from .respaldo import restaurar
+        result=restaurar(args.archivo,args.destino)
     else:
         from .panel import servir
         servir(args.raiz,memory,args.puerto);return

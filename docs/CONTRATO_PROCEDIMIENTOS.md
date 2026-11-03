@@ -67,3 +67,7 @@ El coordinador prepara importes con citas y bases homogéneas. El informe incorp
 ## Plan documental desde 1.5
 
 Ampliación y aumento tienen un plan de lectura por experiencia con los requisitos expresos de sus fichas, citas y alertas. Se conserva en matriz JSON y se consulta por CLI/MCP; no evalúa automáticamente esas tareas ni sustituye los hechos citados de la matriz de controles. [Guía y límites](normativa/REQUISITOS_AMPLIACIONES.md). Reprocesar en 1.5 los supuestos CMC con experiencia/AC positivo/PC cero antes bloqueados, conservando las revisiones anteriores.
+
+## Preparación de los cinco trámites desde 1.6
+
+El registro rules/requisitos.v1.6.json amplía los planes a trece fichas de inscripción, actualización legal/financiera y reconsideración. Son 124 unidades de revisión en total, con 153 citas; no se marca su cumplimiento por generar el plan. Para actualización legal, datos_actualizados permite seleccionar supuestos: condicion_sunat, nombres, domicilio_fiscal, profesion, representacion, denominacion_social, estructura_societaria, domiciliada_a_no_domiciliada y no_domiciliada_a_domiciliada. Se completan a partir del cambio documentado, sin acumular toda la tabla. [Primer uso](PRIMER_USO.md), [verificación](VERIFICACION_V16.md).

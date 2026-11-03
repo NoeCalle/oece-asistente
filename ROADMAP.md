@@ -1,6 +1,6 @@
 # Roadmap
 
-Actualización: **01/11/2026**. Corte normativo: **31/10/2026**. Las fases se cierran por evidencia. Avance global orientativo **75 % (70–80 %)**; [método](docs/MEDICION_AVANCE.md).
+Actualización: **02/11/2026**. Corte normativo: **31/10/2026**. Las fases se cierran por evidencia. Avance global orientativo **75 % (70–80 %)**; [método](docs/MEDICION_AVANCE.md).
 
 | Fase | Estado actual | Salida aún pendiente |
 |---|---|---|
@@ -9,7 +9,7 @@ Actualización: **01/11/2026**. Corte normativo: **31/10/2026**. Las fases se ci
 | 2. Procedimientos | Consultores y cuatro módulos adicionales con controles propios | Ramas TUPA exhaustivas, excepciones y validación especializada |
 | 3. Base técnica | Panel, memoria, LISTO, revisión inmutable, lector/OCR | Validación del funcionamiento en el entorno autorizado; modelo autónomo y servicio compartido fuera del alcance requerido |
 | 4. Piloto | Cinco informes sintéticos, 19 páginas revisadas y flujo de navegador | Aceptación del usuario con caso autorizado y ajuste a modelos reales |
-| 5. Validación/expansión | CMC, plazos y fichas TUPA candidatas; 188 pruebas | Casos reales, validación por módulo y mantenimiento temporal |
+| 5. Validación/expansión | CMC, plazos y preparación de cinco trámites; 220 pruebas | Casos reales, validación por módulo y mantenimiento temporal |
 
 ## Orden de continuación
 
@@ -36,3 +36,7 @@ Quince fichas/cuarenta páginas consultables por rama desde CLI/MCP; códigos y 
 ## Segmentación y corrección 1.5
 
 Dos fichas desglosadas en 24 requisitos y diez alertas, con plan de revisión por experiencia conservado en la matriz JSON. Corrección fundada de CMC con experiencia y PC cero; ejemplo Word de seis páginas revisado. [Verificación](docs/VERIFICACION_V15.md). Otras ramas y cadena temporal completa permanecen abiertas.
+
+## Preparación de primer uso 1.6
+
+Catálogo de revisión de cinco trámites, diagnóstico y recuperación; 220 pruebas y cinco expedientes ficticios comprobados. Preparado el uso asistido con plantilla provisional. [Inicio](docs/PRIMER_USO.md), [evidencia](docs/VERIFICACION_V16.md). Personalización del formato al recibirlo; fechas, entorno y aceptación se confirman con el primer caso laboral. Se conservan los pendientes jurídicos del plan amplio.

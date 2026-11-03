@@ -37,9 +37,10 @@ def herramientas():
       ('oece_guardar','Guarda entrada JSON en carpeta privada, conserva versión previa y exige hash actual. No aprueba sus hechos: citas y cálculos se validan al generar.',esquema({'caso':CASE,'tipo':TYPE,'contenido':{'type':['object','array']},'sha_esperado':{'type':['string','null'],'maxLength':64}},['caso','tipo','contenido','sha_esperado']),False),
       ('oece_generar','Valida hechos y produce Word/matriz versionados; no firma, no presenta ni sube a Drive/GitHub. OCR es opcional.',esquema({'caso':CASE,'usar_ocr':{'type':'boolean'}},['caso']),False),
       ('oece_buscar_normativa','Busca en el índice local con fuente/ubicación; búsqueda no prueba vigencia.',esquema({'consulta':{'type':'string','minLength':1,'maxLength':200},'limite':{'type':'integer','minimum':1,'maximum':20}},['consulta']),True),
-      ('oece_norma','Lee una página de un original PDF manifestado, comprobando su hash. No acredita por sí sola vigencia ni cotejo de imágenes.',esquema({'archivo':{'type':'string','minLength':1,'maxLength':250},'pagina':{'type':'integer','minimum':1,'maximum':5000}},['archivo','pagina']),True),
+      ('oece_norma','Lee fuente manifestada con hash: PDF por pagina, o Word DOCX por ubicacion de bloque/celda. No acredita vigencia ni cotejo visual.',esquema({'archivo':{'type':'string','minLength':1,'maxLength':250},'pagina':{'type':'integer','minimum':1,'maximum':5000},'ubicacion':{'type':'string','minLength':1,'maxLength':500}},['archivo']),True),
       ('oece_tupa','Consulta fichas TUPA candidatas por datos del caso. Con código, lee una página manifestada de esa ficha; no resuelve vigencia ni acredita requisitos.',esquema({'caso':CASE,'codigo':{'type':'string','minLength':10,'maxLength':10},'pagina':{'type':'integer','minimum':1,'maximum':5000}},['caso']),True),
-      ('oece_requisitos','Planifica la revisión documental de ampliación/aumento por experiencia, con citas, ramas alternativas y alertas. No acredita documentos ni cumplimiento. Verifica originales antes de devolver el plan.',esquema({'caso':CASE},['caso']),True),
+      ('oece_requisitos','Planifica la revisión de los cinco trámites con citas, ramas y alertas. No acredita documentos ni cumplimiento. Verifica originales antes de devolver el plan.',esquema({'caso':CASE},['caso']),True),
+      ('oece_diagnostico','Comprueba dependencias, integridad de fuentes, índice y cobertura de preparación, sin instalar ni conectar cuentas. No acredita vigencia.',esquema({'fecha':{'type':'string','minLength':10,'maxLength':10}}),True),
     ]
     return [{'name':name,'description':description,'inputSchema':schema,
              'annotations':{'readOnlyHint':read_only,'destructiveHint':False,'openWorldHint':False}}
@@ -91,6 +92,9 @@ class Puente:
         tool=next((t for t in herramientas() if t['name']==name),None)
         if tool is None:raise ValueError('Herramienta desconocida')
         validar(arguments,tool['inputSchema'])
+        if name=='oece_diagnostico':
+            from .diagnostico import comprobar
+            return comprobar(arguments.get('fecha'))
         if name=='oece_contexto':
             from .biblioteca import fuentes
             sources=fuentes()
@@ -106,18 +110,8 @@ class Puente:
             if not index.is_file():raise ValueError('Preparar originales e índice local con python -m oece biblioteca --reconstruir')
             return {'coincidencias':buscar(index,arguments['consulta'],arguments.get('limite',5))}
         if name=='oece_norma':
-            from .biblioteca import fuentes
-            from pypdf import PdfReader
-            source=next((s for s in fuentes() if s['name']==arguments['archivo']),None)
-            if source is None:raise ValueError('Fuente no manifestada')
-            path=dentro(ROOT,source['local_path'])
-            if path.suffix.lower()!='.pdf' or sha(path.read_bytes())!=source['sha256']:raise ValueError('Fuente PDF alterada o no disponible')
-            pdf=PdfReader(path);page=arguments['pagina']
-            if page>len(pdf.pages):raise ValueError('Página fuera del original')
-            text=pdf.pages[page-1].extract_text() or ''
-            if len(text)>200_000:raise ValueError('Página demasiado extensa para este puente')
-            return {'fuente':source,'ubicacion':'pagina:'+str(page),'texto':text,
-                    'alcance':'Lectura digital sin validar vigencia; revisar original visual si hay fórmulas, tablas o escaso texto.'}
+            from .biblioteca import leer_fuente
+            return leer_fuente(arguments['archivo'],arguments.get('pagina'),arguments.get('ubicacion'))
         if name=='oece_listar':
             cases=[]
             for folder in sorted(self.root.iterdir()):
@@ -129,7 +123,7 @@ class Puente:
             return {'casos':cases,'limite':1000}
         folder=self.caso(arguments['caso'],exists=name!='oece_nuevo')
         if name=='oece_requisitos':
-            from .requisitos import planificar,verificar
+            from .preparacion import planificar,verificar
             check=verificar();return {**planificar(leer(dentro(folder,'expediente.json'))),'integridad_fuentes':check}
         if name=='oece_tupa':
             from .tupa import consultar

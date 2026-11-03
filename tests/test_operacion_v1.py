@@ -223,10 +223,11 @@ class PanelV1(unittest.TestCase):
         with urlopen(self.base+'/descargar?caso='+c+'&revision='+result['revisiones'][0]+'&archivo=informe.docx') as response:
             self.assertTrue(response.read().startswith(b'PK'))
     def test_sin_token_y_origen_externo_rechazados(self):
-        with self.assertRaises(HTTPError) as e:self.request('/api/nuevo',{},token=False)
-        self.assertEqual(403,e.exception.code)
-        with self.assertRaises(HTTPError) as e:self.request('/api/nuevo',{},origin='https://ajeno.example')
-        self.assertEqual(403,e.exception.code)
+        for _ in range(5):
+            with self.assertRaises(HTTPError) as e:self.request('/api/nuevo',{},token=False)
+            self.assertEqual(403,e.exception.code)
+            with self.assertRaises(HTTPError) as e:self.request('/api/nuevo',{},origin='https://ajeno.example')
+            self.assertEqual(403,e.exception.code)
     def test_entrega_temporal_con_manifiesto_no_se_anuncia_descargable(self):
         cid=self.request('/api/nuevo',{'solicitante':'Prueba de publicación'})['caso']
         for name in ('.preparando-prueba','nombre-invalido'):

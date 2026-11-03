@@ -91,7 +91,7 @@ class RequisitosV15(unittest.TestCase):
             output,_=procesar(case,Memoria(root/'.oece'),False);result=leer(output/'matriz.json')
             self.assertIn('plan_documental',result);self.assertFalse(result['plan_documental']['es_evaluacion_de_cumplimiento'])
             self.assertEqual(sha(REGISTRO.read_bytes()),result['instantanea']['dependencias']['rules/requisitos-ampliaciones.v1.5.json'])
-            self.assertEqual(result['plan_documental']['sha256_registro'],result['instantanea']['dependencias']['rules/requisitos-ampliaciones.v1.5.json'])
+            self.assertEqual(result['plan_documental']['sha256_registro'],result['instantanea']['dependencias']['rules/requisitos.v1.6.json'])
     def test_mcp_stdio_y_cli_mismo_plan_sin_modelo(self):
         with tempfile.TemporaryDirectory(dir=ROOT/'data') as area:
             root=Path(area);case=root/'E1';iniciar(case,sintetico=True);guardar(case/'expediente.json',self.config())

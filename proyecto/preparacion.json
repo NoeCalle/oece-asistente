@@ -1,0 +1,12 @@
+{
+  "api_modelo_requerida": false,
+  "corte_documental": "2026-10-31",
+  "estado": "lista_para_borradores_asistidos_con_limites",
+  "evidencia": "proyecto/ejecuciones/preparacion-v16-2026-11-01.json",
+  "fecha": "2026-11-02",
+  "guia": "docs/PRIMER_USO.md",
+  "personalizacion_pendiente": "Formato institucional",
+  "primer_uso_real_pendiente": true,
+  "version": "1.6.0",
+  "vigencia_juridica_certificada": false
+}

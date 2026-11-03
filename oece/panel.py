@@ -74,6 +74,9 @@ def crear_servidor(root,memory,port=8765):
                 elif url.path=='/api/pedido':
                     folder=case(query['caso'][0])
                     self.send(200,{'texto':f'Revisa el expediente en {folder}. Sigue AGENTS.md: lee los documentos, completa los hechos con citas verificables, analiza el procedimiento y genera una nueva revisión del informe Word y la matriz. No inventes datos ni registres aprobación humana.'})
+                elif url.path=='/api/preparacion':
+                    from .diagnostico import comprobar
+                    self.send(200,comprobar(query.get('fecha',[None])[0]))
                 elif url.path=='/descargar':
                     folder=case(query['caso'][0]);revision=query['revision'][0];name=query['archivo'][0]
                     if len(revision)!=64 or any(c not in '0123456789abcdef' for c in revision): raise ValueError('Revisión inválida')
@@ -88,6 +91,14 @@ def crear_servidor(root,memory,port=8765):
             origin=self.headers.get('Origin')
             allowed={f'http://127.0.0.1:{self.server.server_port}',f'http://localhost:{self.server.server_port}'}
             if not self.valid_host() or self.headers.get('X-OECE-Token')!=token or (origin and origin not in allowed):
+                # Una respuesta temprana con bytes de POST sin consumir puede cerrar
+                # la conexión con RST en Windows antes de que el cliente lea el 403.
+                try:
+                    rejected_length=int(self.headers.get('Content-Length','0'))
+                    if 0<rejected_length<=4096:
+                        self.connection.settimeout(2);self.rfile.read(rejected_length)
+                except (ValueError,OSError):pass
+                self.close_connection=True
                 self.send(403,{'error':'Solicitud no autorizada'});return
             try:
                 length=int(self.headers.get('Content-Length','0'))

@@ -40,3 +40,5 @@ Las consolidaciones internas deben declararse como tales y enlazar todos los act
 Validación JSON Schema, IDs únicos, referencias existentes, fechas calendario válidas, dominio oficial, hash/archivo coherentes. Luego pruebas de intervalos, derogación parcial, vigencia condicionada, fe de erratas, fuente reemplazada y cambio de numeración. Validar estructura no valida contenido jurídico.
 
 Desde 1.5 se segmentan 24 requisitos de dos fichas y diez literales de exclusión, con citas exactas y plan por experiencia. Es un avance parcial de segmentación; faltan las restantes ramas, intervalos y condiciones jurídicas. [Guía](REQUISITOS_AMPLIACIONES.md).
+
+Desde 1.6 se conservan 124 unidades de revisión de cinco trámites, 153 citas y recortes físicos del bloque Requisitos. Las celdas del Anexo 5 Word conservan sus localizadores y columnas. Es preparación de lectura; los intervalos jurídicos completos siguen pendientes. [Verificación](../VERIFICACION_V16.md).

@@ -1,5 +1,5 @@
 # Plan integral de OECE Assistant
-Fecha de referencia: 2026-10-29, America/Lima. Estado actualizado 01/11/2026: versión asistida 1.3 con cliente de IA sustituible con panel, controles de cinco módulos y cálculos propuestos. Corte normativo 31/10/2026. El plan amplio de automatización conserva pendientes explícitos. [Estado actual por fase](ESTADO.md).
+Fecha de referencia: 2026-10-29, America/Lima. Estado actualizado 02/11/2026: versión asistida 1.6 con preparación técnica comprobada y cliente de IA sustituible con panel, controles de cinco módulos y cálculos propuestos. Corte normativo 31/10/2026. El plan amplio de automatización conserva pendientes explícitos. [Estado actual por fase](ESTADO.md).
 
 ## Resultado esperado
 El usuario indica “este proveedor quiere ampliar su categoría; revisa esta carpeta y prepara el informe”. El coordinador identifica el expediente y el trámite, pide solo datos faltantes, selecciona la normativa aplicable a las fechas relevantes y coordina extracción, evaluación y redacción. Entrega borrador Word editable, matriz de evidencias, observaciones y registro de versiones para revisión humana. No firma ni presenta documentos ante OECE.
@@ -70,3 +70,7 @@ No inferir facultades institucionales desde la convocatoria laboral. Obtener des
 ## Portabilidad confirmada por el usuario
 
 La decisión inicial de usar Codex como coordinador no exige exclusividad de proveedor. El usuario amplía el alcance el 01/11/2026: mismas instrucciones, reglas, fuentes, contratos y herramientas para Codex, Claude u otro asistente capaz. AGENTS.md es canónico; CLAUDE.md importa esas instrucciones. GitHub/Drive se autorizan por cliente y el motor se invoca por CLI o MCP local. No se añade una API de modelo al panel. [Implementación y límites](PORTABILIDAD_IA.md). No se promete interpretación idéntica entre modelos ni validación con Claude sin ejecución real.
+
+## Cierre de preparación antes del inicio laboral
+
+La versión 1.6 completa preparación técnica de cinco trámites, diagnóstico y recuperación con 220 pruebas. [Guía](PRIMER_USO.md). El usuario aportará el formato al empezar su trabajo; ubicación, permisos, fechas y aceptación se comprueban con el primer expediente autorizado. No se transforman los pendientes jurídicos amplios en funciones certificadas ni se registra revisión humana ficticia.

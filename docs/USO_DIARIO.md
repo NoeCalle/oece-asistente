@@ -66,3 +66,9 @@ El coordinador puede consultar `oece_tupa` por MCP o `python -m oece tupa RUTA_E
 ## Plan de revisión de documentos
 
 Para ampliación de consultores y aumento CMC, el coordinador puede consultar oece_requisitos por MCP o `python -m oece requisitos RUTA_EXPEDIENTE`. El plan separa las listas por experiencia, devuelve citas y queda conservado en la matriz JSON. Sus tareas permanecen pendientes de interpretación; no sustituyen el análisis ni son documentos ya acreditados. [Guía](normativa/REQUISITOS_AMPLIACIONES.md).
+
+## Inicio preparado y respaldo
+
+[Guía breve para comenzar](PRIMER_USO.md). El botón **Comprobar equipo** revisa herramientas, biblioteca e índice; distingue el resultado técnico de la fecha normativa. La preparación documental ya cubre los cinco trámites con 124 unidades y 153 citas.
+
+El asistente puede crear un respaldo local con `python -m oece respaldar CARPETA ARCHIVO.zip` y recuperarlo con `python -m oece restaurar ARCHIVO.zip CARPETA_NUEVA`. La restauración exige destino nuevo y conserva originales/revisiones. La plantilla laboral se adaptará cuando sea facilitada. [Verificación](VERIFICACION_V16.md).

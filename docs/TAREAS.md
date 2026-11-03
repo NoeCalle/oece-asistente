@@ -1,5 +1,5 @@
 # Tareas persistentes
-Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git para mantener la continuidad sin depender de issues ni del chat. [Estado general](ESTADO.md).
+Actualización: 2026-11-02; corte normativo 2026-10-31. Se usan tareas en Git para mantener la continuidad sin depender de issues ni del chat. [Estado general](ESTADO.md).
 
 | ID | Prioridad | Estado | Trabajo y evidencia de cierre |
 |---|---|---|---|
@@ -17,12 +17,12 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 | T12 | P1 | En curso | Motor documental v1 de 22 controles con citas y Word; no decisión administrativa ni precisión jurídica certificada |
 | T13 | P1 | Hecho en alcance sintético | 109 pruebas; cinco Word, 19 páginas revisadas. Aceptación funcional y modelos reales pendientes |
 | T14 | P2 | Parcial implementada | Controles específicos y propuestas de CMC/plazos de cuatro módulos, ver T35; validación sustantiva exhaustiva pendiente |
-| T15 | P2 | Pendiente | Evaluar recuperación de MVP anterior si se obtiene ZIP; auditar antes de reutilizar |
+| T15 | P2 | Descartada como dependencia | El circuito actual funciona y está probado sin el ZIP anterior. Solo se revisará ese antecedente si aparece una necesidad concreta; no se afirma recuperado |
 | T16 | P1 | Hecho en alcance técnico | Indexador local PDF/DOCX, búsqueda textual, hashes y ocho pruebas técnicas |
 | T17 | P1 | En curso | OCR: preparador, motor Windows y verificación de derivados; muestra de 3 páginas con errores observados |
 | T18 | P1 | Parcial comprobada | Diagnóstico OCR, alertas, timeout/reanudación y cotejos declarados implementados; ampliar muestra y validar con documentos reales autorizados |
 | T19 | P1 | Parcial | HTML y valores XLSX implementados; XLS antiguo y fórmulas sin recalcular conservan límites |
-| T20 | P1 | Parcial técnica | Quince fichas TUPA/cuarenta páginas indexadas y recuperación por rama; fronteras de fecha sin dictamen de vigencia. Artículos/numerales, intervalos y condiciones por disposición siguen pendientes |
+| T20 | P1 | Parcial técnica | Quince fichas TUPA/cuarenta páginas y 124 unidades de revisión de cinco trámites, con recortes/celdas y citas. Segmentación jurídica exhaustiva e intervalos por disposición siguen pendientes |
 | T21 | P1 | Hecho | Resumen central de estado del proyecto, enlazado a roadmap y evidencias |
 | T22 | P1 | Hecho, actualizado | Estimación orientativa por entregables: 75 % (70–80 %), sin equivaler a precisión jurídica |
 | T23 | P1 | Hecho en alcance sintético | Circuito entrada → lectura → matriz → Word, revisiones conservadas y doce pruebas; [evidencia](PILOTO_DOCUMENTAL.md) |
@@ -52,6 +52,10 @@ Actualización: 2026-11-01; corte normativo 2026-10-31. Se usan tareas en Git pa
 
 | T44 | P1 | Hecho en alcance de planificación | 24 requisitos expresos de ampliación/aumento y diez alertas; tres originales, 59 referencias, 34 citas; selección por experiencia y plan conservado en matriz JSON. No equivale a verificación de cumplimiento. [Guía](normativa/REQUISITOS_AMPLIACIONES.md) |
 | T45 | P0 | Hecho en alcance aritmético | Corregir restricción CMC con experiencia y PC cero según 9.2.6.d; conservar separación de solvencia, probar bandas y revisar seis páginas Word. [Verificación](VERIFICACION_V15.md) |
+
+| T46 | P1 | Hecho en alcance de preparación | Catálogo de cinco trámites: 124 unidades, 178 referencias, 153 citas y 13 fichas de inscripción. Continuaciones, columnas y alternativas conservadas; 16 pruebas nuevas |
+| T47 | P1 | Hecho en alcance local | Diagnóstico visible, respaldo y restauración sin reemplazo; 13 pruebas de recuperación, límites e integridad. [Primer uso](PRIMER_USO.md) |
+| T48 | P1 | Hecho para preparación técnica | 220 pruebas, cinco expedientes ficticios con entrega y plan, respaldo recuperado y navegador con diagnóstico. Formato institucional y primer caso laboral quedan para su contexto real; [evidencia](VERIFICACION_V16.md) |
 
 ## Continuación vigente
 

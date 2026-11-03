@@ -27,8 +27,8 @@ def verificar(registry=None):
     return {'originales':len(pdfs),'referencias':len(refs),'citas_literales':count,'alcance':'integridad_y_procedencia_no_aplicabilidad_juridica'}
 
 
-def planificar(config):
-    registry=leer(REGISTRO);route=seleccionar(config);procedure=config['procedimiento']
+def planificar(config,registry=None):
+    registry=leer(REGISTRO) if registry is None else registry;route=seleccionar(config);procedure=config['procedimiento']
     catalog=[r for r in registry['requisitos'] if r['procedimiento']==procedure]
     result={'version':registry['version'],'sha256_registro':sha(REGISTRO.read_bytes()),'procedimiento':procedure,
             'alcance':registry['alcance'],'es_evaluacion_de_cumplimiento':False,

@@ -15,10 +15,33 @@ MANIFIESTOS=['normativa/manifiesto-descargas-2026-10-29.json','normativa/manifie
 def fuentes():
     return [f for m in MANIFIESTOS for f in leer(ROOT/m)['archivos']]
 
+def leer_fuente(archivo,pagina=None,ubicacion=None):
+    from io import BytesIO
+    source=next((s for s in fuentes() if s['name']==archivo),None)
+    if source is None:raise ValueError('Fuente no manifestada')
+    path=dentro(ROOT,source['local_path']);raw=path.read_bytes()
+    if sha(raw)!=source['sha256']:raise ValueError('Original normativo alterado')
+    if path.suffix.lower()=='.pdf':
+        from pypdf import PdfReader
+        pdf=PdfReader(BytesIO(raw))
+        if ubicacion is not None or type(pagina) is not int or not 1<=pagina<=len(pdf.pages):raise ValueError('Página normativa fuera del original o ubicación ambigua')
+        text=pdf.pages[pagina-1].extract_text() or '';loc='pagina:'+str(pagina)
+    elif path.suffix.lower()=='.docx':
+        if pagina is not None or not isinstance(ubicacion,str) or not ubicacion:raise ValueError('Anexo Word requiere ubicación de bloque/celda, sin página PDF')
+        result=leer_documento(path,ROOT/'data/catalogo-lecturas',False)
+        if result['sha256']!=source['sha256']:raise ValueError('Anexo normativo cambió durante lectura')
+        block=next((b for b in result['fragmentos'] if b['ubicacion']==ubicacion),None)
+        if block is None:raise ValueError('Ubicación no contenida en el anexo Word')
+        text=block['texto'];loc=ubicacion
+    else:raise ValueError('Fuente adicional requiere PDF digital o DOCX con localizador')
+    if len(text)>200_000:raise ValueError('Fragmento normativo demasiado extenso')
+    return {'fuente':source,'ubicacion':loc,'texto':text,'alcance':'Lectura digital; no acredita vigencia ni revisión visual de tablas o imágenes.'}
+
 def validar_normas(normas):
     if not isinstance(normas,list) or len(normas)>100: raise ValueError('Lista de normas inválida')
     by_name={f['name']:f for f in fuentes()};codes=set()
     for n in normas:
+        if not isinstance(n,dict):raise ValueError('Cada cita normativa debe ser un objeto')
         code=n.get('codigo','')
         if not isinstance(code,str) or not code.startswith('N-') or not code[2:].isalnum() or code in codes:
             raise ValueError('Código normativo único requerido: N-identificador')
@@ -26,15 +49,9 @@ def validar_normas(normas):
         item=by_name.get(n.get('archivo'))
         if not item or n.get('sha256')!=item['sha256'] or n.get('url')!=item['source_url']:
             raise ValueError('Fuente normativa fuera de los originales manifestados')
-        path=dentro(ROOT,item['local_path'])
-        if sha(path.read_bytes())!=item['sha256']: raise ValueError('Original normativo alterado')
-        from pypdf import PdfReader
-        if path.suffix.lower()!='.pdf': raise ValueError('Cita normativa adicional: usar original PDF con página')
-        pdf=PdfReader(path);page=n.get('pagina_pdf')
-        if type(page) is not int or not 1<=page<=len(pdf.pages): raise ValueError('Página normativa fuera del original')
-        text=pdf.pages[page-1].extract_text() or ''
+        text=leer_fuente(item['name'],n.get('pagina_pdf'),n.get('ubicacion'))['texto']
         quote=n.get('cita')
-        if not isinstance(quote,str) or not quote.strip() or quote not in text: raise ValueError('Cita normativa no contenida literalmente en la página')
+        if not isinstance(quote,str) or not quote.strip() or quote not in text: raise ValueError('Cita normativa no contenida literalmente en la ubicación')
         if not n.get('disposicion') or not n.get('autor') or not n.get('criterio'):
             raise ValueError('La cita normativa necesita disposición, autor y criterio de aplicabilidad')
     return normas

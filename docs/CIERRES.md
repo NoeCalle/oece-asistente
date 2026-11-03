@@ -1,6 +1,6 @@
 # Cierres comprobados y continuación
 
-Actualización: **01/11/2026**; corte normativo 31/10/2026. Cada cierre se limita al alcance comprobado.
+Actualización: **02/11/2026**; corte normativo 31/10/2026. Cada cierre se limita al alcance comprobado.
 
 | Bloque | Cierre | Evidencia |
 |---|---|---|
@@ -35,3 +35,9 @@ Quince fichas TUPA/cuarenta páginas con códigos, ramas y huellas, disponibles 
 ## T44–T45 Segmentación y corrección CMC 1.5
 
 Cerrado plan de lectura de 24 requisitos de dos fichas y diez alertas, con citas/ramas y conservación en matriz JSON. Corregida restricción indebida de PC cero para CMC con experiencia según 9.2.6.d; no aprobación de solvencia. Diecinueve pruebas nuevas, 188 totales; un ejemplo sintético, seis páginas Word revisadas y navegador actualizado comprobado. [Verificación](VERIFICACION_V15.md). La evaluación exhaustiva y la cadena temporal no se cierran.
+
+## T46–T48 Preparación para primer uso 1.6
+
+Cerrado el catálogo de preparación de los cinco trámites: 124 unidades y 153 citas cotejadas. Diagnóstico, respaldo y recuperación locales implementados. Total 220 pruebas, cinco casos ficticios con Word/matriz/plan y recorrido de navegador con diagnóstico. [Primer uso](PRIMER_USO.md), [verificación](VERIFICACION_V16.md).
+
+El formato se personalizará al recibirlo. Entorno autorizado, vigencia y aceptación del primer expediente real dependen de ese uso. T06/T08/T20 no se marcan cerradas como consolidación o validación jurídica exhaustiva. La sesión real de un cliente alternativo se comprueba al configurarlo.

@@ -53,11 +53,11 @@ La independencia de proveedor de IA no significa independencia de sistema operat
 2. `oece_listar` / `oece_nuevo`: expedientes de la raíz autorizada.
 3. `oece_incorporar`: copia un original desde la misma raíz al expediente sin moverlo ni sobrescribirlo.
 4. `oece_archivos` / `oece_leer`: inventario con huellas y lectura paginada, con OCR opcional.
-5. `oece_buscar_normativa` / `oece_norma`: recuperación local y lectura de una página PDF manifestada, comprobando su hash.
+5. `oece_buscar_normativa` / `oece_norma`: recuperación local y lectura de una página PDF o un bloque/celda DOCX manifestados, comprobando su hash. `oece_norma` recibe `archivo` y `pagina` para PDF o `ubicacion` para Word.
 6. `oece_entrada` / `oece_guardar`: leer y registrar ficha/hechos/análisis/normas/cotejos. La edición exige el hash actual y conserva la versión previa.
 7. `oece_generar`: valida y conserva la entrega; devuelve recursos Word, CSV, JSON y manifiesto.
 
-Desde 1.4 se añade `oece_tupa`: consulta fichas candidatas por expediente y recupera páginas de la ficha con sus huellas. Desde 1.5 se añade también `oece_requisitos`, con 24 requisitos de ampliación/aumento y diez alertas. Son trece herramientas actuales. El plan conserva tareas pendientes de interpretación y no acredita cumplimiento. [Guía TUPA](normativa/FICHAS_TUPA.md).
+Desde 1.4 se añade `oece_tupa`: consulta fichas candidatas por expediente y recupera páginas de la ficha con sus huellas. Desde 1.5 se añade también `oece_requisitos`, con 24 requisitos de ampliación/aumento y diez alertas. Desde 1.6 se añade `oece_diagnostico` y el plan abarca cinco trámites. Son catorce herramientas actuales. El plan conserva tareas pendientes de interpretación y no acredita cumplimiento. [Guía TUPA](normativa/FICHAS_TUPA.md).
 
 Las herramientas se complementan con `resources/read` para recuperar una entrega por URI `oece://casos/...`. El Word se devuelve como recurso binario; la presentación o descarga depende del cliente. Leer/generar no sube nada a Drive. El conector del cliente debe efectuar una subida solo cuando esté autorizada.
 
@@ -72,3 +72,7 @@ Máximo ocho millones de bytes por mensaje y cuatro millones por entrada JSON. L
 ## Estado de comprobación
 
 El puente se prueba con cliente de protocolo local, proceso stdio real, dos autores IA de prueba y los mismos contratos. **No se ha iniciado sesión ni ejecutado una evaluación con Claude real.** Sus conectores GitHub/Drive y la recuperación/visualización del Word siguen por comprobar en ese cliente. No se necesita una API propia de modelo para esta arquitectura; la cuenta y funciones del asistente elegido tienen sus propias condiciones de acceso.
+
+## Preparación y recuperación
+
+`oece_diagnostico` comprueba dependencias, originales, índice y plan; separa preparación técnica y revisión normativa por fecha. Por terminal, `python -m oece respaldar CARPETA ARCHIVO.zip` y `python -m oece restaurar ARCHIVO.zip CARPETA_NUEVA` conservan el expediente sin sustituir datos existentes. Estos comandos no se presentan como herramientas MCP de respaldo ni como una subida automática a Drive. [Primer uso](PRIMER_USO.md).

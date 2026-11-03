@@ -1,0 +1,151 @@
+{
+  "anexo5_original_render_cotejado_paginas": 3,
+  "api_modelo_usada": false,
+  "avance_amplio_conservado": 75,
+  "citas_literales": 153,
+  "cliente_real_claude_validado": false,
+  "confirmaciones_primer_uso": [
+    "Ubicación y permisos del entorno laboral",
+    "Normativa y fechas del expediente",
+    "Aceptación funcional con caso autorizado"
+  ],
+  "correcciones_comprobadas": [
+    "Reintento de publicación de restauración ante PermissionError de Windows, sin sobrescribir",
+    "Respuesta HTTP de acceso denegado preservada al consumir cuerpos pequeños",
+    "Extracción única por página/recorte durante cotejo de citas con bytes verificados en cada llamada",
+    "Citas normativas DOCX recuperadas por bloque/celda y conservadas en Word"
+  ],
+  "corte_normativo": "2026-10-31",
+  "diagnostico": {
+    "comprobaciones_satisfactorias": 8,
+    "estado": "preparado_para_borradores_asistidos",
+    "fecha_considerada": "2026-11-02",
+    "ocr_windows_disponible": true,
+    "revision_normativa_por_fecha": true
+  },
+  "duracion_pruebas_segundos": 51.826,
+  "ensayo_cinco_tramites": {
+    "actualizacion": {
+      "es_evaluacion_plan": false,
+      "matriz": true,
+      "plan": true,
+      "revision": "63c100e702728b1b3784fa11c29e3414580051292ea2d92fba3bad6de353da91",
+      "sintetico": true,
+      "tareas": 3,
+      "word": true
+    },
+    "ampliacion_consultores": {
+      "es_evaluacion_plan": false,
+      "matriz": true,
+      "plan": true,
+      "revision": "fc616fb4ebb570d577782dbbfa4bdf18ee0be55c410a05b98f1dc52c0e91cdb4",
+      "sintetico": true,
+      "tareas": 7,
+      "word": true
+    },
+    "aumento_cmc": {
+      "es_evaluacion_plan": false,
+      "matriz": true,
+      "plan": true,
+      "revision": "0c24f70274ba7ee95c9b1308199323fe5319ccad9aed80139ea02aa64514d983",
+      "sintetico": true,
+      "tareas": 6,
+      "word": true
+    },
+    "inscripcion": {
+      "es_evaluacion_plan": false,
+      "matriz": true,
+      "plan": true,
+      "revision": "bc6c966fa5984073f8d2b286232abdf56ea3915eac16dab506e5cac6146291e3",
+      "sintetico": true,
+      "tareas": 2,
+      "word": true
+    },
+    "reconsideracion": {
+      "es_evaluacion_plan": false,
+      "matriz": true,
+      "plan": true,
+      "revision": "1399c9305a13bed6e421d53167c57ded1a18dd8faaa52b0a9f48823617fcc14c",
+      "sintetico": true,
+      "tareas": 10,
+      "word": true
+    }
+  },
+  "estado": "preparacion_tecnica_comprobada_para_uso_asistido",
+  "fecha": "2026-11-02",
+  "fecha_inicio": "2026-11-01",
+  "fuente_candidata_no_promovida": {
+    "amplia_corte": false,
+    "bytes": 6186402,
+    "paginas_declaradas": 294,
+    "paginas_examinadas": [
+      1,
+      2,
+      294
+    ],
+    "resultado": "errores de descompresión; sin texto útil en páginas examinadas",
+    "sha256": "cf7c1ff65674553e2bf75b999f9497061e0b5ad18ed25219f00764df0ea74bd3",
+    "url": "https://diariooficial.elperuano.pe/Normas/obtenerDocumento?idNorma=25"
+  },
+  "herramientas_mcp": 14,
+  "mcp": {
+    "api_modelo_usada": false,
+    "cliente_real_claude_validado": false,
+    "compatibilidad_initialize": true,
+    "fuentes_locales": {
+      "esperadas": 48,
+      "presentes": 48
+    },
+    "herramientas": 14,
+    "protocolo_actual": true,
+    "stdout_solo_json": true,
+    "version_oece": "1.6.0"
+  },
+  "navegador": {
+    "actualizacion_financiera_anual": true,
+    "booleanos_persistidos": true,
+    "carga": true,
+    "clasificacion_inscripcion": true,
+    "creacion": true,
+    "descarga_word": true,
+    "diagnostico_visible": true,
+    "errores_javascript": [],
+    "procesamiento": true
+  },
+  "nueva_qa_visual_de_los_cinco_word": false,
+  "originales_del_catalogo": 5,
+  "pendientes_plan_amplio": [
+    "Cadena jurídica completa y excepciones",
+    "Validación sustantiva e institucional",
+    "Sesión real de cliente alternativo al configurarlo"
+  ],
+  "personalizacion_pendiente": "Formato laboral autorizado al recibirlo",
+  "plan_evaluado_automaticamente": false,
+  "pruebas_aprobadas": 220,
+  "pruebas_nuevas_citas_word": 3,
+  "pruebas_nuevas_preparacion": 16,
+  "pruebas_nuevas_respaldo": 13,
+  "qa_visual_actualizacion": {
+    "cita_normativa_word": true,
+    "paginas": 3,
+    "revisadas": 3,
+    "revision": "63c100e702728b1b3784fa11c29e3414580051292ea2d92fba3bad6de353da91"
+  },
+  "recuperacion": {
+    "archivos": 53,
+    "original_conservado": true,
+    "recuperado": true,
+    "sha256": "371351519a1a2420f24782bff430459ebf651a3ee3362afd0a85d56cb56a596e",
+    "word_recuperado": true
+  },
+  "referencias": 178,
+  "unidades_por_tramite": {
+    "actualizacion": 27,
+    "ampliacion_consultores": 10,
+    "aumento_cmc": 14,
+    "inscripcion": 63,
+    "reconsideracion": 10
+  },
+  "unidades_revision": 124,
+  "version": "1.6.0"
+}

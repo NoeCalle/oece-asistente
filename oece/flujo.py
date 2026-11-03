@@ -127,7 +127,7 @@ def preparar(case_dir,memoria,usar_ocr=True):
     checks_raw=checks_path.read_bytes() if checks_path.exists() else b'[]'
     aplicar_cotejos(docs,json.loads(checks_raw))
     result=evaluar(config,docs,json.loads(facts_raw))
-    from .requisitos import planificar,verificar
+    from .preparacion import planificar,verificar
     plan=planificar(config)
     if plan['estado']=='plan_de_revision':
         plan['integridad_fuentes']=verificar()
@@ -146,9 +146,9 @@ def preparar(case_dir,memoria,usar_ocr=True):
             raise ValueError('Cada párrafo analítico requiere texto, autor y referencias')
         if any(ref not in known for ref in para['referencias']): raise ValueError('Referencia de análisis inexistente')
     dependencies={p.relative_to(ROOT).as_posix():sha(p.read_bytes()) for p in sorted((ROOT/'oece').glob('*.py'))}
-    for rel in ('rules/consultores/criterios-documentales.v1.json','rules/procedimientos.v1.1.json','rules/finanzas.v1.2.json','rules/requisitos-ampliaciones.v1.5.json','normativa/indice-tupa.v0.1.json','normativa/decisiones-piloto.v0.3.json','normativa/catalogo.json','templates/informe.v1.json','scripts/ocr_windows.ps1'):
+    for rel in ('rules/consultores/criterios-documentales.v1.json','rules/procedimientos.v1.1.json','rules/finanzas.v1.2.json','rules/requisitos-ampliaciones.v1.5.json','rules/requisitos.v1.6.json','normativa/indice-tupa.v0.1.json','normativa/decisiones-piloto.v0.3.json','normativa/catalogo.json','templates/informe.v1.json','scripts/ocr_windows.ps1'):
         dependencies[rel]=sha((ROOT/rel).read_bytes())
-    if plan['sha256_registro']!=dependencies['rules/requisitos-ampliaciones.v1.5.json']:
+    if plan['sha256_registro']!=dependencies['rules/requisitos.v1.6.json']:
         raise ValueError('El registro de requisitos cambió durante la preparación; reintentar')
     snapshot={'version':__version__,'config_sha256':sha(config_raw),'hechos_sha256':sha(facts_raw),'cotejos_sha256':sha(checks_raw),
               'analisis_sha256':sha(analysis_raw),'normas_sha256':sha(norms_raw),'archivos':originals,'dependencias':dependencies,

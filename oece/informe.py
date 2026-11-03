@@ -105,12 +105,13 @@ def redactar(result, path):
             key=(src['archivo'],src['disposicion'],src['pagina_pdf'])
             if key not in sources: sources[key]=('N'+str(len(sources)+1),src)
     for source in result.get('normas_adicionales',[]):
-        sources[(source['archivo'],source['disposicion'],source['pagina_pdf'])]=(source['codigo'],source)
+        sources[(source['archivo'],source['disposicion'],source.get('pagina_pdf') or source.get('ubicacion'))]=(source['codigo'],source)
     for code,src in sources.values():
         name=names.get(src['sha256'],src['archivo'])
         if src['archivo']=='tuo-27444-minjus-julio-2026.pdf':name='TUO de la Ley 27444, edición oficial MINJUSDH 2026'
         elif src['archivo']=='formula-cmc-spij.pdf':name='Folio oficial del Reglamento con la fórmula de CMC'
-        p=doc.add_paragraph(f'{code}. {src["disposicion"]}; {name}, página PDF {src["pagina_pdf"]}. ')
+        locator='página PDF '+str(src['pagina_pdf']) if src.get('pagina_pdf') is not None else 'localizador '+src['ubicacion']
+        p=doc.add_paragraph(f'{code}. {src["disposicion"]}; {name}, {locator}. ')
         url_link(p,src['url'],'Fuente oficial')
     if not sources:
         doc.add_paragraph('Este módulo entrega un borrador documental asistido. Incorporar las disposiciones específicas verificadas en el análisis; no se reutilizan automáticamente las reglas de consultores.')

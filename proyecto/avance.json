@@ -12,7 +12,8 @@
     "proyecto/ejecuciones/finanzas-v12-2026-11-01.json",
     "docs/VERIFICACION_PORTABILIDAD.md",
     "docs/VERIFICACION_V14.md",
-    "docs/VERIFICACION_V15.md"
+    "docs/VERIFICACION_V15.md",
+    "docs/VERIFICACION_V16.md"
   ],
   "fases": [
     {
@@ -105,10 +106,16 @@
       "peso": 10
     }
   ],
-  "fecha": "2026-11-01",
+  "fecha": "2026-11-02",
   "formula": "suma(peso * avance_estimado / 100)",
   "nota": "Pesos y avances de fase son juicio de planificación, no medición de horas, precisión estadística ni porcentaje de funciones operativas. No se cuentan pruebas como avance jurídico.",
   "porcentaje_estimado": 75,
+  "preparacion_tecnica": {
+    "estado": "comprobada_para_borradores_asistidos",
+    "guia": "docs/PRIMER_USO.md",
+    "no_equivale_a_validacion_juridica_exhaustiva": true,
+    "version": "1.6.0"
+  },
   "rango_orientativo": [
     70,
     80
