@@ -43,11 +43,42 @@ Los cinco trámites tienen controles documentales propios. La versión 1.1 añad
 
 ## Lectura y OCR
 
-Se leen PDF digital, Word DOCX con tablas/encabezados/pies, TXT, HTML y valores almacenados de XLSX. Las imágenes y páginas PDF con lectura insuficiente pasan a OCR de Windows. El OCR tiene límite por lote y por página; conserva caché y puede reanudar. Los errores y textos pendientes se muestran. No se inventa un porcentaje de confianza. Fórmulas de Excel, imágenes incrustadas en Word, cuadros de texto, revisiones y formatos DOC/XLS antiguos requieren conversión o inspección específica.
+Se leen PDF digital, Word DOCX con tablas/encabezados/pies, TXT, HTML y valores almacenados de XLSX. Las imágenes y páginas PDF con lectura insuficiente pasan al OCR nativo de Windows, o a Tesseract (spa) cuando el primero no está disponible. El OCR mantiene límites por lote y página, caché, huellas y reanudación en ambas plataformas. Los errores y textos pendientes se muestran. No se inventa un porcentaje de confianza. Fórmulas de Excel, imágenes incrustadas en Word, cuadros de texto, revisiones y formatos DOC/XLS antiguos requieren conversión o inspección específica.
+
+## Linux (Ubuntu)
+
+El motor Python, el panel HTTP, los expedientes y la lectura digital pueden ejecutarse en Ubuntu con Python **3.12 o posterior**. El script [`INICIAR_OECE.sh`](../INICIAR_OECE.sh) cumple la función del lanzador Windows `INICIAR_OECE.cmd` sin requerir PowerShell ni escritorio.
+
+```bash
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip tesseract-ocr tesseract-ocr-spa poppler-utils
+
+# Desde la raíz del repositorio (usar un Python 3.12 o posterior)
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-linux.txt
+
+export OECE_DATA_DIR=/srv/oece-data  # o ./data por defecto
+bash INICIAR_OECE.sh
+```
+
+El OCR elige automáticamente **Windows.Media.Ocr** cuando está disponible en Windows; en Ubuntu (o Windows sin ese motor) usa **Tesseract** mediante `pytesseract` con idioma **`spa`**. Los PDF escaneados se renderizan con `pdftoppm` de Poppler. Se respetan los límites existentes: **45 segundos por página, 120 por lote y 10 intentos nuevos por lote**, caché de archivos y hashes SHA-256, alertas `ocr_pendiente` y `ocr_sin_cotejo_visual`. El OCR nunca acredita un hecho sin cotejo. Puede comprobarse la instalación con `tesseract --list-langs` (debe figurar `spa`), `pdftoppm -h` y `python -m oece diagnostico`.
+
+Para ejecutarlo **sin escritorio en un servidor Ubuntu**:
+
+```bash
+export OECE_DATA_DIR=/srv/oece-data
+export OECE_PANEL_PASSWORD='una-clave-larga-generada-por-ti'
+python -m oece panel --host 0.0.0.0 --port 8000
+```
+
+En `--host 0.0.0.0` el panel exige autenticación básica (`usuario: oece` y la contraseña `OECE_PANEL_PASSWORD`); si no se define, genera una contraseña temporal y la muestra en la terminal. El token de escritura, comprobación de `Host` y `Origin`, protección contra traversal y las revisiones versionadas continúan activos. **El panel sirve HTTP y no incorpora TLS**: para acceder desde otra máquina, usar VPN, túnel SSH o proxy inverso HTTPS con controles de acceso, y **no exponer directamente el puerto 8000 a Internet**. Ejemplo de túnel desde el equipo cliente: `ssh -L 8000:127.0.0.1:8000 usuario@servidor`, cuando el servidor escucha en loopback.
+
+La ruta `OECE_DATA_DIR` sigue siendo configurable en cualquier sistema y los expedientes nunca se agregan al repositorio Git. El lanzador Linux también admite `OECE_HOST=0.0.0.0` y `OECE_PORT=8000`, así como las opciones CLI `--host`/`--port`.
 
 ## Instalación y comandos de mantenimiento
 
-Instala Python 3.12 o posterior y `pip install -r requirements-indexacion.txt` en cualquier equipo autorizado. La lectura digital PDF/DOCX/XLSX puede funcionar en Linux; **el OCR implementado sigue siendo específico de Windows**, por lo que en Linux requiere un adaptador OCR o revisión manual de documentos escaneados. El lanzador Windows acepta `-Python` u `OECE_PYTHON` y busca `.venv`/PATH. No hay dependencia de rutas de OneDrive ni de unidades de Windows.
+Instala Python 3.12 o posterior y `pip install -r requirements-indexacion.txt` en cualquier equipo autorizado. La lectura digital PDF/DOCX/XLSX puede funcionar en Linux; en Ubuntu se utiliza Tesseract con `pytesseract` y `tesseract-ocr-spa`, sin PowerShell. El lanzador Windows acepta `-Python` u `OECE_PYTHON` y busca `.venv`/PATH. No hay dependencia de rutas de OneDrive ni de unidades de Windows.
 
 ```text
 python -m oece panel --puerto 8765  # usa OECE_DATA_DIR/operacion por defecto
@@ -60,7 +91,7 @@ python -m oece biblioteca --buscar "ampliación categorías"
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-Cerrar el navegador no detiene el servidor. Para detenerlo, terminar el proceso Python o el servicio que lo administra en el equipo correspondiente. No se instala como servicio de inicio automático. El panel escucha únicamente en 127.0.0.1 y aplica controles de origen y token a las escrituras; no es un portal multiusuario ni un sistema institucional de autenticación.
+Cerrar el navegador no detiene el servidor. Para detenerlo, terminar el proceso Python o el servicio que lo administra en el equipo correspondiente. No se instala como servicio de inicio automático. El panel escucha en 127.0.0.1 de forma predeterminada. Con `--host 0.0.0.0` escucha en red y exige contraseña, además de controles de origen y token; no es un portal multiusuario ni sustituye autenticación institucional o HTTPS.
 
 ## Presentación de Word verificada
 
