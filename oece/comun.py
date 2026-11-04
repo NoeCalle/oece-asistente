@@ -1,7 +1,7 @@
 import hashlib
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import tempfile
 import time
 
@@ -14,13 +14,35 @@ def data_dir():
         raise ValueError('OECE_DATA_DIR no puede estar vacía')
     return Path(value).expanduser().resolve()
 
-def ruta_original(local_path):
-    """Busca originales en los datos privados; permite la ruta relativa heredada.
+def normalizar_ruta_relativa(value):
+    """Ruta relativa portátil con /; rechaza escapes, UNC y unidades Windows."""
+    if not isinstance(value, (str, Path)) or not str(value) or '\\x00' in str(value):
+        raise ValueError('Ruta relativa inválida')
+    raw = str(value).replace('\\\\', '/')
+    portable = PurePosixPath(raw)
+    if (portable.is_absolute() or PureWindowsPath(raw).drive
+            or '..' in portable.parts or str(portable) == '.'):
+        raise ValueError('Se requiere una ruta relativa interior')
+    return portable.as_posix()
 
-    Los manifiestos públicos pueden tener separadores de Windows. No se permite
-    salir de ninguna raíz ni atravesar enlaces simbólicos.
-    """
-    relative = str(local_path).replace('\\', '/')
+
+def normalizar_registro_rutas(value):
+    """Normaliza solo claves de rutas relativas, sin alterar citas ni hashes."""
+    keys = {'local_path', 'derivado_local', 'ruta_relativa', 'relative_path',
+            'source_relative_path', 'output_relative_path'}
+    if isinstance(value, dict):
+        return {key: (normalizar_ruta_relativa(item)
+                      if key in keys and isinstance(item, str)
+                      else normalizar_registro_rutas(item))
+                for key, item in value.items()}
+    if isinstance(value, list):
+        return [normalizar_registro_rutas(item) for item in value]
+    return value
+
+
+def ruta_original(local_path):
+    """Busca originales privados y en la estructura histórica del repositorio."""
+    relative = normalizar_ruta_relativa(local_path)
     primary = dentro(data_dir(), relative)
     if primary.is_file():
         return primary
@@ -58,9 +80,7 @@ def guardar(path, value):
 
 def dentro(root, relative):
     root = Path(root).resolve()
-    candidate = Path(relative)
-    if candidate.is_absolute() or '..' in candidate.parts:
-        raise ValueError('Se requiere una ruta relativa interior')
+    candidate = Path(normalizar_ruta_relativa(relative))
     path = root / candidate
     # Rechazar symlinks/junctions, incluso si apuntan a otro lugar del caso.
     for part in [path, *path.parents]:
