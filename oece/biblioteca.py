@@ -5,7 +5,7 @@ import os
 import sqlite3
 import tempfile
 
-from .comun import ROOT, bytes_json, data_dir, leer, ruta_original, sha
+from .comun import ROOT, bytes_json, data_dir, leer, normalizar_registro_rutas, ruta_original, sha
 from .lectura import leer_documento
 
 MANIFIESTOS=['normativa/manifiesto-descargas-2026-10-29.json','normativa/manifiesto-continuacion-2026-10-30.json',
@@ -13,7 +13,7 @@ MANIFIESTOS=['normativa/manifiesto-descargas-2026-10-29.json','normativa/manifie
              'normativa/manifiesto-operacion-2026-10-31.json','normativa/manifiesto-procedimientos-2026-10-31.json']
 
 def fuentes():
-    return [f for m in MANIFIESTOS for f in leer(ROOT/m)['archivos']]
+    return [f for m in MANIFIESTOS for f in normalizar_registro_rutas(leer(ROOT/m))['archivos']]
 
 def leer_fuente(archivo,pagina=None,ubicacion=None):
     from io import BytesIO
