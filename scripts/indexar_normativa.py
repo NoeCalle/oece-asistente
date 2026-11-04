@@ -20,17 +20,17 @@ MANIFESTS = (
     "normativa/manifiesto-procedimientos-2026-10-31.json",
 )
 sys.path.insert(0,str(ROOT))
-from oece.comun import data_dir, ruta_original
+from oece.comun import data_dir, dentro, normalizar_registro_rutas, ruta_original
 
 EXTRACTOR_VERSION = "0.1.0"
 
 
 def read_json(path):
-    return json.loads(Path(path).read_text(encoding="utf-8-sig"))
+    return normalizar_registro_rutas(json.loads(Path(path).read_text(encoding="utf-8-sig")))
 
 
 def safe_source(root, item):
-    path = ruta_original(item['local_path']) if Path(root).resolve() == ROOT else (root / str(item['local_path']).replace('\\', '/')).resolve()
+    path = ruta_original(item['local_path']) if Path(root).resolve() == ROOT else dentro(root, item['local_path'])
     if Path(root).resolve() not in path.parents and data_dir() not in path.parents:
         raise ValueError("Ruta de fuente fuera de la biblioteca: " + item["name"])
     raw = path.read_bytes()
@@ -101,7 +101,7 @@ def extract(path):
 
 def build_index(root, output, manifests=MANIFESTS):
     root, output = Path(root).resolve(), Path(output).resolve()
-    if root not in output.parents or output.suffix != ".sqlite":
+    if not (root in output.parents or (root == ROOT and data_dir() in output.parents)) or output.suffix != ".sqlite":
         raise ValueError("Guardar el indice .sqlite dentro de la raiz del proyecto")
     manifest_paths = [(root / name).resolve() for name in manifests]
     if any(root not in path.parents for path in manifest_paths):
