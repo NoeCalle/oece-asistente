@@ -7,7 +7,7 @@ import sqlite3
 import sys
 
 from . import __version__
-from .comun import ROOT,dentro,sha
+from .comun import data_dir,ruta_original,sha
 
 
 def comprobar(fecha_caso=None):
@@ -22,11 +22,11 @@ def comprobar(fecha_caso=None):
         except (ImportError,importlib.metadata.PackageNotFoundError):add(distribution,False,'Instalar dependencias de requirements-indexacion.txt')
     originals=fuentes();missing=[];changed=[]
     for item in originals:
-        p=dentro(ROOT,item['local_path'])
+        p=ruta_original(item['local_path'])
         if not p.is_file():missing.append(item['name'])
         elif sha(p.read_bytes())!=item['sha256']:changed.append(item['name'])
     add('Biblioteca original',not missing and not changed,{'esperados':len(originals),'faltantes':missing,'alterados':changed})
-    index=ROOT/'normativa/indices/biblioteca-v1.sqlite'
+    index=data_dir()/'normativa/indices/biblioteca-v1.sqlite'
     try:
         with sqlite3.connect(index.resolve().as_uri()+'?mode=ro',uri=True) as c:
             count=c.execute('SELECT count(*) FROM fragmentos').fetchone()[0]
