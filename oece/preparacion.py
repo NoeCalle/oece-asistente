@@ -3,7 +3,7 @@ from functools import lru_cache
 from io import BytesIO
 import json
 
-from .comun import ROOT,dentro,leer,sha,bytes_json
+from .comun import ROOT,data_dir,leer,ruta_original,sha,bytes_json
 from .evaluacion import seleccionar
 from . import requisitos as anterior
 
@@ -24,8 +24,8 @@ def _citas(serialized,contents):
         if name.endswith('.docx'):
             if name not in words:
                 from .biblioteca import fuentes
-                path=dentro(ROOT,next(s['local_path'] for s in fuentes() if s['name']==name))
-                words[name]={b['ubicacion']:b['texto'] for b in leer_documento(path,ROOT/'data/catalogo-lecturas',False)['fragmentos']}
+                path=ruta_original(next(s['local_path'] for s in fuentes() if s['name']==name))
+                words[name]={b['ubicacion']:b['texto'] for b in leer_documento(path,data_dir()/'catalogo-lecturas',False)['fragmentos']}
                 if sha(path.read_bytes())!=ref['sha256']:raise ValueError('Anexo cambió durante la lectura')
             text=words[name].get(ref.get('ubicacion'),'')
         else:
@@ -62,7 +62,7 @@ def verificar(registry=None):
         name=ref.get('archivo');s=manifest.get(name)
         if s is None or ref.get('sha256')!=s['sha256'] or ref.get('url')!=s['source_url']:raise ValueError('Fuente fuera del manifiesto')
         if name not in originals:
-            raw=dentro(ROOT,s['local_path']).read_bytes()
+            raw=ruta_original(s['local_path']).read_bytes()
             if sha(raw)!=s['sha256']:raise ValueError('Original del plan alterado')
             originals[name]=raw
     # Se cotejan los bytes en cada llamada. Solo se reutiliza el cotejo textual de contenido idéntico.
