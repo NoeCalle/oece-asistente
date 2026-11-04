@@ -3,22 +3,22 @@ import json
 from pathlib import Path
 import time
 
-from .comun import ROOT, guardar
+from .comun import data_dir, guardar
 from .coordinador import observar_una_vez, responder
 from .flujo import Memoria, iniciar, preparar, procesar
 from .evaluacion import MODULOS
 
 def main():
     p=argparse.ArgumentParser(description='OECE Assistant local')
-    p.add_argument('--memoria',type=Path,default=ROOT/'data/operacion/.oece')
+    p.add_argument('--memoria',type=Path,default=data_dir()/'operacion/.oece')
     sub=p.add_subparsers(dest='accion',required=True)
     new=sub.add_parser('nuevo');new.add_argument('carpeta',type=Path);new.add_argument('--procedimiento',choices=MODULOS,default='ampliacion_consultores');new.add_argument('--solicitante',default='Por identificar');new.add_argument('--sintetico',action='store_true')
     for name in ('leer','procesar','estado'):
         cmd=sub.add_parser(name);cmd.add_argument('carpeta',type=Path);cmd.add_argument('--sin-ocr',action='store_true')
     chat=sub.add_parser('conversar');chat.add_argument('carpeta',type=Path);chat.add_argument('mensaje')
-    watch=sub.add_parser('observar');watch.add_argument('raiz',type=Path);watch.add_argument('--una-vez',action='store_true');watch.add_argument('--intervalo',type=int,default=10)
-    server=sub.add_parser('panel');server.add_argument('--raiz',type=Path,default=ROOT/'data/operacion');server.add_argument('--puerto',type=int,default=8765)
-    library=sub.add_parser('biblioteca');library.add_argument('--reconstruir',action='store_true');library.add_argument('--buscar');library.add_argument('--indice',type=Path,default=ROOT/'normativa/indices/biblioteca-v1.sqlite')
+    watch=sub.add_parser('observar');watch.add_argument('raiz',type=Path,nargs='?',default=data_dir()/'operacion');watch.add_argument('--una-vez',action='store_true');watch.add_argument('--intervalo',type=int,default=10)
+    server=sub.add_parser('panel');server.add_argument('--raiz',type=Path,default=data_dir()/'operacion');server.add_argument('--puerto',type=int,default=8765)
+    library=sub.add_parser('biblioteca');library.add_argument('--reconstruir',action='store_true');library.add_argument('--buscar');library.add_argument('--indice',type=Path,default=data_dir()/'normativa/indices/biblioteca-v1.sqlite')
     tupa=sub.add_parser('tupa');tupa.add_argument('carpeta',type=Path);tupa.add_argument('--codigo');tupa.add_argument('--pagina',type=int)
     req=sub.add_parser('requisitos');req.add_argument('carpeta',type=Path)
     diag=sub.add_parser('diagnostico');diag.add_argument('--fecha')
