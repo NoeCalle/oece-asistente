@@ -59,8 +59,11 @@ def migrar_json(path, preview=False):
         return {'archivo': str(path), 'tipo': 'json', 'cambios': 0}
     new_text = json.dumps(new, ensure_ascii=False, indent=2) + '\n'
     backup = _atomic_text(path, new_text, preview)
-    return {'archivo': str(path), 'tipo': 'json', 'cambios': 1,
-            'respaldo': backup, 'simulacion': bool(preview)}
+    result = {'archivo': str(path), 'tipo': 'json', 'cambios': 1,
+              'simulacion': bool(preview)}
+    if backup is not None:
+        result['respaldo'] = backup
+    return result
 
 
 def _table_rows(conn):
