@@ -6,7 +6,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from oece.biblioteca import fuentes
-from oece.comun import dentro,guardar,sha
+from oece.comun import guardar,ruta_original,sha
 
 
 def entre(text,inicio,fin):
@@ -24,7 +24,7 @@ def construir():
               'a1f62195f04cf69640b64b1f3478a27fa7f994852490a42913c40ff666890847']
     pdfs={}
     for name,digest in zip(names,expected):
-        source=sources[name];path=dentro(ROOT,source['local_path'])
+        source=sources[name];path=ruta_original(source['local_path'])
         if source['sha256']!=digest or sha(path.read_bytes())!=digest:raise ValueError('Revisar mapa: original distinto '+name)
         pdfs[name]=PdfReader(path)
     def ref(name,page,disposition,quote=None):
