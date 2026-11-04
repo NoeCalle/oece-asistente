@@ -90,4 +90,4 @@ def buscar(database,query,limit=10):
     import json
     with closing(sqlite3.connect(Path(database).resolve().as_uri()+'?mode=ro',uri=True)) as c:
         rows=c.execute('SELECT f.ubicacion,f.texto,f.alertas,n.metadata FROM buscar b JOIN fragmentos f ON f.id=b.id JOIN fuentes n ON n.id=f.fuente WHERE buscar MATCH ? ORDER BY rank LIMIT ?',(expression,limit))
-        return [{'ubicacion':r[0],'texto':r[1],'alertas':json.loads(r[2]),'fuente':json.loads(r[3]),'alcance':'recuperacion_no_acredita_vigencia'} for r in rows]
+        return [{'ubicacion':r[0],'texto':r[1],'alertas':json.loads(r[2]),'fuente':normalizar_registro_rutas(json.loads(r[3])),'alcance':'recuperacion_no_acredita_vigencia'} for r in rows]
