@@ -65,14 +65,14 @@ T03/T04/T06/T08/T20 mantienen cadena normativa, excepciones y consolidación por
 
 El siguiente cierre funcional exige un expediente autorizado y contraste de cada interpretación con sus fuentes. [Estado](ESTADO.md), [cierres](CIERRES.md) y [evidencia 1.1](VERIFICACION_V11.md). Si se crean issues después, conservar estos IDs para evitar duplicación.
 
-## Nuevo insumo laboral — 04/11/2026
+## Tres entregables secuenciales — confirmación 04/11/2026
 
-El usuario confirmó que las **tres fotografías son los tres entregables laborales distintos**; no son tres hojas de un solo entregable. Se recibirán en formato nativo posteriormente. El modelo visual es referencia funcional, no plantilla editable validada.
+El usuario corrigió expresamente el orden: **primero se ingresan montos en la relación de obras (fotografía 3), luego se marcan años y calculan factores (fotografía 2), por último se llena el resumen institucional CMC (fotografía 1)**. Cada formato constituye un entregable independiente. Los originales nativos están pendientes.
 
 | ID | Prioridad | Estado | Trabajo y evidencia de cierre |
 |---|---|---|---|
-| T49 | P1 | Fotografía recibida; adaptación pendiente | **Entregable 1/3: formato institucional CMC**, con fórmula, factores, obras y resultado. [Especificación](ENTREGABLE_01_CMC.md); [issue #1](https://github.com/NoeCalle/oece-asistente/issues/1). |
-| T50 | P1 | Fotografía recibida; adaptación pendiente | **Entregable 2/3: hoja de cálculo de experiencia y factores** a/f/e y período de obras. [Especificación](ENTREGABLE_02_FACTORES_EXPERIENCIA.md). |
-| T51 | P1 | Fotografía recibida; adaptación pendiente | **Entregable 3/3: relación analítica de obras** con montos, fechas, participación, descuentos y exclusiones. [Especificación](ENTREGABLE_03_RELACION_OBRAS.md). |
+| T49 | P1 | Foto recibida, nativo pendiente | **Paso/entregable 1:** relación analítica de obras, montos, fechas, participaciones, liquidación, descuentos y exclusiones. [Especificación](ENTREGABLE_01_RELACION_OBRAS.md) · [issue #1](https://github.com/NoeCalle/oece-asistente/issues/1). |
+| T50 | P1 | Foto recibida, nativo pendiente | **Paso/entregable 2:** matriz anual de obras, experiencia y factores a/f/e y G. [Especificación](ENTREGABLE_02_FACTORES_EXPERIENCIA.md) · [issue #2](https://github.com/NoeCalle/oece-asistente/issues/2). |
+| T51 | P1 | Foto recibida, nativo pendiente | **Paso/entregable 3:** resumen oficial de CMC con totales de los pasos 1 y 2. [Especificación](ENTREGABLE_03_RESUMEN_CMC.md) · [issue #3](https://github.com/NoeCalle/oece-asistente/issues/3). |
 
-Los tres productos deben exportarse por separado y validarse de forma cruzada. T33 sigue abierto para adaptar los archivos nativos pendientes. No confundir cifras de muestras distintas ni publicar expedientes/fotos en GitHub público.
+**Cadena exigida:** obra documentada → monto de experiencia validado → año/período y factores → CMC calculada → resumen. La etapa 3 no debe tratarse como evaluación autónoma. Los datos y fotos no van al repositorio público. T33 sigue abierto hasta recibir y adaptar formatos nativos y contrastar con expediente autorizado.
