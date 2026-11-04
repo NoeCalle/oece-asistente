@@ -1,0 +1,6 @@
+# Dependencias para Ubuntu (Python >= 3.12).
+-r requirements-indexacion.txt
+pytesseract==0.3.13
+
+# Paquetes del sistema (no son paquetes pip):
+# sudo apt install tesseract-ocr tesseract-ocr-spa poppler-utils
