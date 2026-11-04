@@ -67,8 +67,12 @@ El siguiente cierre funcional exige un expediente autorizado y contraste de cada
 
 ## Nuevo insumo laboral — 04/11/2026
 
+El usuario confirmó que las **tres fotografías son los tres entregables laborales distintos**; no son tres hojas de un solo entregable. Se recibirán en formato nativo posteriormente. El modelo visual es referencia funcional, no plantilla editable validada.
+
 | ID | Prioridad | Estado | Trabajo y evidencia de cierre |
 |---|---|---|---|
-| T49 | P1 | Modelo recibido; adaptación pendiente | **Entregable 1 de 3: formato CMC.** Tres fotografías corresponden al formulario principal, auxiliar de factores/experiencia y relación detallada de obras. Especificación en [ENTREGABLE_01_CMC.md](ENTREGABLE_01_CMC.md) y [issue #undefined](https://github.com/NoeCalle/oece-asistente/issues/undefined). Mantener T33 parcialmente abierto, dado que aún faltan otros modelos y aceptación. |
+| T49 | P1 | Fotografía recibida; adaptación pendiente | **Entregable 1/3: formato institucional CMC**, con fórmula, factores, obras y resultado. [Especificación](ENTREGABLE_01_CMC.md); [issue #1](https://github.com/NoeCalle/oece-asistente/issues/1). |
+| T50 | P1 | Fotografía recibida; adaptación pendiente | **Entregable 2/3: hoja de cálculo de experiencia y factores** a/f/e y período de obras. [Especificación](ENTREGABLE_02_FACTORES_EXPERIENCIA.md). |
+| T51 | P1 | Fotografía recibida; adaptación pendiente | **Entregable 3/3: relación analítica de obras** con montos, fechas, participación, descuentos y exclusiones. [Especificación](ENTREGABLE_03_RELACION_OBRAS.md). |
 
-No confundir las tres hojas del entregable CMC con los tres entregables laborales. Las fotografías contienen muestras distintas y son privadas; no subirlas al repositorio público.
+Los tres productos deben exportarse por separado y validarse de forma cruzada. T33 sigue abierto para adaptar los archivos nativos pendientes. No confundir cifras de muestras distintas ni publicar expedientes/fotos en GitHub público.
