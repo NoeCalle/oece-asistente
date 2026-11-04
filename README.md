@@ -72,6 +72,17 @@ python -m oece panel --host 0.0.0.0 --port 8000
 
 El modo servidor solicita usuario `oece` y contraseña; sin `OECE_PANEL_PASSWORD` genera una clave temporal en consola. **No publicar directamente el panel HTTP**: usar SSH/VPN o un proxy inverso HTTPS. El OCR utiliza Windows.Media.Ocr cuando existe y Tesseract (`spa`) en Ubuntu o cuando falta el motor Windows. Los mismos cotejos y límites se aplican a ambos. [Guía Ubuntu y Windows](docs/USO_DIARIO.md).
 
+### Migración de índices antiguos
+
+Los `local_path` de los manifiestos y del índice TUPA están normalizados a separadores POSIX (`/`). Se aceptan rutas heredadas `\\` mediante `pathlib`, incluidos los equipos Linux. Para actualizar índices privados existentes sin perder metadatos ni hashes:
+
+```bash
+python -m oece migrar-rutas --simular
+python -m oece migrar-rutas
+```
+
+El comando migra JSON/SQLite en `OECE_DATA_DIR/normativa`, conserva respaldo por archivo e impide escapes fuera de las raíces. Ejecutarlo con el panel detenido. [Guía de uso diario](docs/USO_DIARIO.md).
+
 ## Datos y reproducción
 
 Repositorio público: solo código, documentación y metadatos públicos. **Los datos pueden procesarse en cualquier equipo autorizado por el titular**, incluidos servidores Linux de confianza. Expedientes, Word, transcripciones, originales, índices y credenciales no se suben a Git. `data/` y `expedientes/` siguen excluidos mediante `.gitignore` (revisar los cambios antes de publicar).
