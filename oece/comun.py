@@ -1,7 +1,7 @@
 import hashlib
 import json
 import os
-from pathlib import Path, PurePosixPath, PureWindowsPath
+from pathlib import Path, PurePath, PurePosixPath, PureWindowsPath
 import tempfile
 import time
 
@@ -16,7 +16,7 @@ def data_dir():
 
 def normalizar_ruta_relativa(value):
     """Ruta relativa portátil con /; rechaza escapes, UNC y unidades Windows."""
-    if not isinstance(value, (str, Path)) or not str(value) or '\x00' in str(value):
+    if not isinstance(value, (str, PurePath)) or not str(value) or '\x00' in str(value):
         raise ValueError('Ruta relativa inválida')
     raw = str(value).replace('\\', '/')
     portable = PurePosixPath(raw)
