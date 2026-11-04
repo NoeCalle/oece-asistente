@@ -3,6 +3,8 @@ import base64
 from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
+import hmac
+import os
 from pathlib import Path
 import re
 import secrets
@@ -14,9 +16,11 @@ from .comun import ROOT, dentro, guardar, leer, sha
 from .coordinador import observar_una_vez
 from .flujo import iniciar, procesar, verificar_entrega
 
-def crear_servidor(root,memory,port=8765):
+def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
     root=Path(root).resolve();root.mkdir(parents=True,exist_ok=True)
     token=secrets.token_hex(32);pool=ThreadPoolExecutor(max_workers=1)
+    remoto = host not in ('127.0.0.1', 'localhost', '::1')
+    password = (os.environ.get('OECE_PANEL_PASSWORD') or secrets.token_urlsafe(24)) if remoto else None
     jobs={};lock=threading.Lock()
     def case(case_id):
         if len(case_id)>80 or not case_id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in case_id):
@@ -37,16 +41,37 @@ def crear_servidor(root,memory,port=8765):
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args): pass
         def valid_host(self):
-            return self.headers.get('Host') in (f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}')
-        def send(self,status,payload,mime='application/json; charset=utf-8'):
+            name = self.headers.get('Host', '')
+            port = self.server.server_port
+            if name in (f'127.0.0.1:{port}',f'localhost:{port}'):
+                return True
+            # En modo servidor, el hostname puede ser una IP/DNS del equipo o proxy.
+            return bool(remoto and len(name)<=255 and re.fullmatch(
+                r'[A-Za-z0-9][A-Za-z0-9.-]*:' + str(port), name))
+        def auth_ok(self):
+            if not remoto:
+                return True
+            header = self.headers.get('Authorization', '')
+            if not header.startswith('Basic '):
+                return False
+            try:
+                raw = base64.b64decode(header[6:], validate=True).decode('utf-8')
+            except (ValueError,UnicodeError):
+                return False
+            return hmac.compare_digest(raw, 'oece:' + password)
+        def send(self,status,payload,mime='application/json; charset=utf-8',extra_headers=None):
             raw=payload if isinstance(payload,bytes) else json.dumps(payload,ensure_ascii=True).encode()
             self.send_response(status);self.send_header('Content-Type',mime);self.send_header('Content-Length',str(len(raw)))
+            for key, value in (extra_headers or {}).items(): self.send_header(key, value)
             self.send_header('X-Content-Type-Options','nosniff');self.send_header('Cache-Control','no-store')
             self.send_header('X-Frame-Options','DENY')
             self.send_header('Content-Security-Policy',"default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'")
             self.end_headers();self.wfile.write(raw)
         def do_GET(self):
             if not self.valid_host(): self.send(403,{'error':'Host no permitido'});return
+            if not self.auth_ok():
+                self.send(401,{'error':'Acceso restringido'},extra_headers={'WWW-Authenticate':'Basic realm="OECE Assistant", charset="UTF-8"'})
+                return
             url=urlsplit(self.path);query=parse_qs(url.query)
             try:
                 if url.path=='/':
@@ -90,7 +115,11 @@ def crear_servidor(root,memory,port=8765):
         def do_POST(self):
             origin=self.headers.get('Origin')
             allowed={f'http://127.0.0.1:{self.server.server_port}',f'http://localhost:{self.server.server_port}'}
-            if not self.valid_host() or self.headers.get('X-OECE-Token')!=token or (origin and origin not in allowed):
+            if remoto:
+                hostname = self.headers.get('Host','')
+                allowed.update({f'http://{hostname}', f'https://{hostname}'})
+            if (not self.valid_host() or not self.auth_ok()
+                    or self.headers.get('X-OECE-Token')!=token or (origin and origin not in allowed)):
                 # Una respuesta temprana con bytes de POST sin consumir puede cerrar
                 # la conexión con RST en Windows antes de que el cliente lea el 403.
                 try:
@@ -136,12 +165,13 @@ def crear_servidor(root,memory,port=8765):
                     threading.Thread(target=self.server.shutdown,daemon=True).start()
                 else: self.send(404,{'error':'No encontrado'})
             except (KeyError,ValueError,OSError,TypeError,json.JSONDecodeError) as e: self.send(400,{'error':str(e)})
-    server=ThreadingHTTPServer(('127.0.0.1',port),Handler)
+    server=ThreadingHTTPServer((host,port),Handler)
     server.oece_token=token;server.oece_pool=pool;server.oece_jobs=jobs
+    server.oece_password=password;server.oece_host=host
     return server
 
-def servir(root,memory,port=8765):
-    server=crear_servidor(root,memory,port)
+def servir(root,memory,port=8765,host='127.0.0.1'):
+    server=crear_servidor(root,memory,port,host=host)
     stop=threading.Event()
     def watch():
         # Preparación automática local; no llama a un modelo ni transmite documentos.
@@ -149,7 +179,10 @@ def servir(root,memory,port=8765):
             try: observar_una_vez(root,memory)
             except Exception as e: memory.evento('vigilancia','error_recuperable',type(e).__name__)
     worker=threading.Thread(target=watch,daemon=True);worker.start()
-    print(f'OECE Assistant http://127.0.0.1:{server.server_port}',flush=True)
+    print(f'OECE Assistant http://{host}:{server.server_port}',flush=True)
+    if server.oece_password:
+        print('Usuario: oece | Contraseña del panel: '+server.oece_password,flush=True)
+        print('Acceso remoto: usar VPN/túnel HTTPS, no exponer HTTP a Internet.',flush=True)
     try: server.serve_forever()
     finally:
         stop.set();server.server_close();server.oece_pool.shutdown(wait=True)
