@@ -5,9 +5,10 @@ import sys
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from oece.mcp_local import servir
+from oece.comun import data_dir
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description='Herramientas OECE por MCP local; no usa API de modelo')
-    parser.add_argument('--raiz',type=Path,required=True,help='Única raíz local autorizada para expedientes')
+    parser.add_argument('--raiz',type=Path,default=None,help='Raíz de expedientes; por defecto OECE_DATA_DIR/operacion')
     args=parser.parse_args()
-    servir(args.raiz)
+    servir(args.raiz if args.raiz is not None else data_dir()/'operacion')
