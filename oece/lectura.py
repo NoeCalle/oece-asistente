@@ -10,7 +10,7 @@ import zipfile
 
 from .comun import ROOT, guardar, leer, sha
 
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 IMPLEMENTACION = sha(Path(__file__).read_bytes())
 
 def aplicar_cotejos(documents, records):
@@ -56,38 +56,113 @@ class TextoHTML(HTMLParser):
             self.parts.append(data)
 
 def binario(nombre):
-    variable = 'OECE_' + nombre.upper().replace('.', '_')
-    configured = os.environ.get(variable)
-    if configured and Path(configured).is_file():
-        return configured
-    found = shutil.which(nombre)
-    if found:
-        return found
-    base = Path(sys.executable).resolve().parent.parent / 'native/poppler/Library/bin'
-    if (base / nombre).is_file():
-        return str(base / nombre)
-    raise ValueError(f'No se encontró {nombre}; configurar {variable}')
+    """Localiza herramientas nativas sin presuponer extensiones de Windows."""
+    names = [nombre]
+    if sys.platform != 'win32' and nombre.lower().endswith('.exe'):
+        names.append(nombre[:-4])
+    for candidate in names:
+        variable = 'OECE_' + candidate.upper().replace('.', '_')
+        configured = os.environ.get(variable)
+        if configured and Path(configured).is_file():
+            return configured
+        found = shutil.which(candidate)
+        if found:
+            return found
+    if sys.platform == 'win32':
+        base = Path(sys.executable).resolve().parent.parent / 'native/poppler/Library/bin'
+        if (base / nombre).is_file():
+            return str(base / nombre)
+    raise ValueError(f'No se encontró {nombre}; instalar Poppler o configurar OECE_PDFTOPPM_EXE')
+
+
+def motor_ocr():
+    """Prioriza el motor original de Windows y usa Tesseract en otros sistemas."""
+    if sys.platform == 'win32' and shutil.which('powershell.exe') and (ROOT/'scripts/ocr_windows.ps1').is_file():
+        return 'Windows.Media.Ocr'
+    if shutil.which('tesseract') or os.environ.get('OECE_TESSERACT_EXE'):
+        return 'Tesseract'
+    return None
+
+
+def _ocr_tesseract(image, source_sha, image_sha, page, timeout):
+    """OCR con cajas de palabras, sin acreditar automáticamente su lectura."""
+    try:
+        import pytesseract
+        from PIL import Image
+        from pytesseract import Output
+    except ImportError as error:
+        raise ValueError('Instalar pytesseract para OCR Tesseract') from error
+    configured = os.environ.get('OECE_TESSERACT_EXE')
+    if configured:
+        pytesseract.pytesseract.tesseract_cmd = configured
+    try:
+        with Image.open(image) as source:
+            width, height = source.size
+            words = pytesseract.image_to_data(
+                source, lang='spa', output_type=Output.DICT, timeout=timeout
+            )
+    except (RuntimeError, OSError) as error:
+        raise ValueError('Tesseract no disponible, idioma spa ausente o tiempo agotado') from error
+    if sha(image.read_bytes()) != image_sha:
+        raise ValueError('La imagen cambió durante el OCR')
+    grouped = {}
+    for i, value in enumerate(words['text']):
+        word = str(value).strip()
+        if not word:
+            continue
+        key = (words['block_num'][i], words['par_num'][i], words['line_num'][i])
+        grouped.setdefault(key, []).append({
+            'text': word, 'x': int(words['left'][i]), 'y': int(words['top'][i]),
+            'width': int(words['width'][i]), 'height': int(words['height'][i])
+        })
+    lines = [{'text': ' '.join(w['text'] for w in items), 'words': items}
+             for items in grouped.values()]
+    return {
+        'schema_version': '0.1', 'source_sha256': source_sha, 'source_name': image.name,
+        'page_pdf': page, 'image_sha256': image_sha, 'image_path': str(image.resolve()),
+        'engine': 'Tesseract', 'engine_version': None, 'language': 'spa',
+        'width': width, 'height': height, 'text': '\n'.join(line['text'] for line in lines),
+        'lines': lines, 'confidence': None, 'reviewed': False, 'apta_para_evaluacion': False,
+        'warnings': ['OCR requiere cotejo visual; no se atribuye aprobación ni confianza']
+    }
+
 
 def ocr_imagen(image, cache, source_sha, page, timeout=45):
+    image, cache = Path(image), Path(cache)
     image_sha = sha(image.read_bytes())
     output = cache / f'ocr-{page}.json'
+    engine = motor_ocr()
     if output.exists():
         previous = leer(output)
-        if previous.get('source_sha256') == source_sha and previous.get('image_sha256') == image_sha:
+        if (previous.get('source_sha256') == source_sha
+                and previous.get('image_sha256') == image_sha
+                and previous.get('engine') == engine):
             return previous
-    job = cache / f'trabajo-{page}.json'
-    guardar(job, {'source_sha256': source_sha, 'source_name': image.name,
-                 'pages': [{'image_path': str(image.resolve()), 'image_sha256': image_sha,
-                            'page_pdf': page, 'output_path': str(output.resolve())}]})
-    powershell = shutil.which('powershell.exe')
-    if not powershell:
-        raise ValueError('OCR Windows no disponible en este equipo')
-    result = subprocess.run([powershell, '-NoProfile', '-File', str(ROOT / 'scripts/ocr_windows.ps1'),
-                            '-Root', str(cache.resolve()), '-Job', str(job.resolve())],
-                           capture_output=True, timeout=timeout, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
-    if result.returncode or not output.exists():
-        raise ValueError('Motor OCR no completó esta página')
-    data = leer(output)
+    if not engine:
+        raise ValueError('No hay motor OCR disponible; instalar Tesseract y spa')
+    if engine == 'Tesseract':
+        data = _ocr_tesseract(image, source_sha, image_sha, page, timeout)
+        guardar(output, data)
+    else:
+        job = cache / f'trabajo-{page}.json'
+        guardar(job, {'source_sha256': source_sha, 'source_name': image.name,
+                     'pages': [{'image_path': str(image.resolve()), 'image_sha256': image_sha,
+                                'page_pdf': page, 'output_path': str(output.resolve())}]})
+        powershell = shutil.which('powershell.exe')
+        if not powershell:
+            raise ValueError('OCR Windows no disponible en este equipo')
+        try:
+            result = subprocess.run(
+                [powershell, '-NoProfile', '-File', str(ROOT / 'scripts/ocr_windows.ps1'),
+                 '-Root', str(cache.resolve()), '-Job', str(job.resolve())],
+                capture_output=True, timeout=timeout,
+                creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)
+            )
+        except subprocess.TimeoutExpired:
+            raise
+        if result.returncode or not output.exists():
+            raise ValueError('Motor OCR no completó esta página')
+        data = leer(output)
     if data.get('source_sha256') != source_sha or data.get('image_sha256') != image_sha:
         raise ValueError('Procedencia OCR incoherente')
     return data
@@ -120,7 +195,7 @@ def leer_documento(path, cache, usar_ocr=True, timeout=45):
                 pending_attempts+=1
             data = ocr_imagen(image, cache, source_sha, number, max(1,min(timeout,int(deadline-time.monotonic()))))
             add(f'pagina:{number}', data['text'], ['ocr_sin_cotejo_visual'],
-                motor='Windows.Media.Ocr', imagen_sha256=data['image_sha256'], confianza=None)
+                motor=data.get('engine', motor_ocr() or 'OCR'), imagen_sha256=data['image_sha256'], confianza=None)
         except (ValueError, subprocess.TimeoutExpired) as error:
             add(f'pagina:{number}', '', ['ocr_pendiente'], motor='OCR', confianza=None)
             warnings.append(f'Página {number}: {type(error).__name__}; puede reintentarse')
