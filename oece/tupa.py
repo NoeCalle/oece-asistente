@@ -2,7 +2,7 @@
 from datetime import date
 import re
 
-from .comun import ROOT,dentro,leer,sha
+from .comun import ROOT,leer,normalizar_registro_rutas,ruta_original,sha
 
 REGISTRO=ROOT/'normativa/indice-tupa.v0.1.json'
 VALORES={'procedimiento':('ampliacion_consultores','aumento_cmc','inscripcion','actualizacion','reconsideracion'),
@@ -18,7 +18,7 @@ def consultar(ficha,codigo=None,pagina=None):
     if not ficha.get('procedimiento'):raise ValueError('Procedimiento requerido')
     if codigo is not None and (not isinstance(codigo,str) or not re.fullmatch('PA[0-9A-Z]{8}',codigo)):raise ValueError('Código TUPA inválido')
     if pagina is not None and (type(pagina) is not int or not codigo):raise ValueError('Página entera requiere código TUPA')
-    registry=leer(REGISTRO)
+    registry=normalizar_registro_rutas(leer(REGISTRO))
     candidates=[f for f in registry['fichas'] if f['procedimiento']==ficha['procedimiento'] and
                 all(ficha.get(key) is None or ficha[key] in values for key,values in f['condiciones'].items())]
     missing=sorted({key for f in candidates for key in f['condiciones'] if ficha.get(key) is None})
@@ -45,7 +45,7 @@ def consultar(ficha,codigo=None,pagina=None):
         from .biblioteca import fuentes
         official=next((s for s in fuentes() if s['name']==source['name']),None)
         if not official or any(source[k]!=official[k] for k in ('sha256','source_url','local_path','instrument_id')):raise ValueError('Fuente fuera del manifiesto')
-        path=dentro(ROOT,source['local_path'])
+        path=ruta_original(source['local_path'])
         if sha(path.read_bytes())!=source['sha256']:raise ValueError('Original TUPA alterado')
         page=pagina if pagina is not None else item['paginas'][0]['pagina_pdf']
         expected=next((p for p in item['paginas'] if p['pagina_pdf']==page),None)
