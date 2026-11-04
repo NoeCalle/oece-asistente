@@ -70,7 +70,7 @@ class TupaTests(unittest.TestCase):
     def test_fuente_alterada_es_rechazada_antes_de_extraer(self):
         with tempfile.TemporaryDirectory(dir=ROOT/'data') as area:
             altered=Path(area)/'alterado.pdf';altered.write_bytes(b'Alterado')
-            with patch('oece.tupa.dentro',return_value=altered),self.assertRaisesRegex(ValueError,'alterado'):
+            with patch('oece.tupa.ruta_original',return_value=altered),self.assertRaisesRegex(ValueError,'alterado'):
                 consultar(self.ficha(),'PA42004846')
     def test_indice_reconstruido_coincide_y_cubre_cuarenta_paginas(self):
         import logging
