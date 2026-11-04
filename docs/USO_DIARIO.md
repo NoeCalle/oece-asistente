@@ -45,6 +45,25 @@ Los cinco trámites tienen controles documentales propios. La versión 1.1 añad
 
 Se leen PDF digital, Word DOCX con tablas/encabezados/pies, TXT, HTML y valores almacenados de XLSX. Las imágenes y páginas PDF con lectura insuficiente pasan al OCR nativo de Windows, o a Tesseract (spa) cuando el primero no está disponible. El OCR mantiene límites por lote y página, caché, huellas y reanudación en ambas plataformas. Los errores y textos pendientes se muestran. No se inventa un porcentaje de confianza. Fórmulas de Excel, imágenes incrustadas en Word, cuadros de texto, revisiones y formatos DOC/XLS antiguos requieren conversión o inspección específica.
 
+## Rutas POSIX e índices normativos existentes
+
+Los manifiestos y registros de OECE guardan rutas relativas con **`/`**, independientemente del sistema operativo. El motor también interpreta rutas heredadas con barras invertidas, como `normativa\\originales\\2026-10-29\\tupa-modificacion-2026-073.pdf`, mediante `pathlib`, sin suponer que `\\` sea un separador en Linux. No se admiten rutas que salgan de la raíz privada (`..`), unidades Windows ni rutas UNC como referencias relativas.
+
+Los JSON normativos publicados en Git se han migrado a POSIX. Para migrar **índices locales anteriores** en tu equipo o servidor (SQLite y JSON), detén el panel y cualquier proceso que utilice esos archivos y ejecuta:
+
+```bash
+# Simular la migración (no cambia los archivos)
+python -m oece migrar-rutas --simular
+
+# Migrar índices en OECE_DATA_DIR/normativa
+python -m oece migrar-rutas
+
+# También puedes indicar otro directorio o un índice concreto
+python -m oece migrar-rutas --ruta /srv/oece-data/normativa/indices/biblioteca.sqlite
+```
+
+Solo se reescriben campos de **rutas relativas** en registros JSON y columnas de índices SQLite. Se preservan los SHA-256 de documentos, citas y textos no relacionados con rutas. Antes de cada cambio se guarda un respaldo `.pre-rutas-AAAAmmddTHHMMSSZ.bak` junto al archivo. La migración es idempotente y no modifica los originales normativos ni expedientes. Los archivos privados deben migrarse en el equipo donde se almacenan; no pueden modificarse desde GitHub. Si un índice necesita reconstruirse, conservar siempre los originales identificados por sus hashes.
+
 ## Linux (Ubuntu)
 
 El motor Python, el panel HTTP, los expedientes y la lectura digital pueden ejecutarse en Ubuntu con Python **3.12 o posterior**. El script [`INICIAR_OECE.sh`](../INICIAR_OECE.sh) cumple la función del lanzador Windows `INICIAR_OECE.cmd` sin requerir PowerShell ni escritorio.
