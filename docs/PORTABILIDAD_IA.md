@@ -37,7 +37,7 @@ python scripts/probar_mcp.py --raiz RUTA_DOCUMENTAL_AUTORIZADA
 
 El primer comando genera un bloque `mcpServers` con rutas absolutas del Python y lanzador de ese equipo. Se importa o combina en el cliente que admita MCP local; **no reemplazar su configuración completa**. No guardar ese archivo local en Git, ya que contiene rutas del usuario. No contiene una clave API de IA.
 
-En clientes solo web, un conector remoto no obtiene acceso a procesos de este equipo por estar conectado a Drive. Debe usarse un cliente con herramientas locales o un despliegue remoto autorizado, que no forma parte de esta entrega. Anthropic distingue [conectores remotos y mecanismos locales](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp); su disponibilidad depende del producto y configuración elegidos. No se presupone una compatibilidad igual entre Claude web, Desktop, Code y Cowork.
+En clientes solo web, un conector remoto no obtiene acceso a procesos de este equipo por estar conectado a Drive. Debe usarse un cliente con herramientas locales o un despliegue remoto autorizado. El panel puede escuchar en red con `--host 0.0.0.0`; la exposición remota requiere VPN/túnel HTTPS y controles de acceso separados. Anthropic distingue [conectores remotos y mecanismos locales](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp); su disponibilidad depende del producto y configuración elegidos. No se presupone una compatibilidad igual entre Claude web, Desktop, Code y Cowork.
 
 ## Preparación del equipo
 
@@ -45,7 +45,7 @@ Python 3.12 o posterior y las dependencias de `requirements-indexacion.txt`. Par
 
 Para buscar/cotejar normas, conservar los originales de Drive en sus rutas manifestadas y reconstruir el índice con `python -m oece biblioteca --reconstruir`. GitHub no contiene esos binarios. `oece_contexto` informa cuántos originales hay presentes; presencia no es comprobación de vigencia.
 
-La independencia de proveedor de IA no significa independencia de sistema operativo: **el OCR implementado usa Windows** y Poppler. En otro sistema, se puede usar lectura digital o conectar las herramientas de este equipo; no se declara implementado otro motor OCR. Para Poppler, configurar `OECE_PDFTOPPM_EXE` o PATH según el entorno.
+**Windows y Linux:** el motor principal es Python y el panel/MCP usan rutas `pathlib`. El OCR prioriza Windows.Media.Ocr si existe en Windows y utiliza **Tesseract (`pytesseract`, idioma `spa`)** si no. Los PDF escaneados requieren Poppler (`pdftoppm`); en Ubuntu instalar `tesseract-ocr`, `tesseract-ocr-spa`, `poppler-utils` y `pip install -r requirements-linux.txt`. Para Poppler se admite `OECE_PDFTOPPM_EXE` o PATH. El panel acepta `--host` y `--port` y necesita protección de red/HTTPS para uso remoto; ver [uso diario](USO_DIARIO.md).
 
 ## Herramientas del puente
 

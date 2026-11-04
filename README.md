@@ -50,6 +50,28 @@ Avance orientativo del plan amplio: **75 % (70–80 %)**. Es una estimación de 
 - [Criterios adoptados](docs/normativa/CRITERIOS_ADOPTADOS_PILOTO.md), [consultores](rules/consultores/criterios-documentales.v1.json) y [fuentes de procedimientos](rules/procedimientos.v1.1.json).
 - [Biblioteca](docs/normativa/OPERACION_V1.md), [catálogo](normativa/catalogo.json), [esquema normativo](schemas/norma.schema.json) y [seguridad](docs/SEGURIDAD.md).
 
+## Linux y servidor sin escritorio
+
+Compatible con Ubuntu (Python 3.12+) y con Windows. En Ubuntu instala Tesseract en español y Poppler:
+
+```bash
+sudo apt install -y tesseract-ocr tesseract-ocr-spa poppler-utils python3-venv
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-linux.txt
+bash INICIAR_OECE.sh
+```
+
+Para escuchar en la red desde un servidor sin escritorio:
+
+```bash
+export OECE_DATA_DIR=/srv/oece-data
+export OECE_PANEL_PASSWORD='contraseña-larga-y-privada'
+python -m oece panel --host 0.0.0.0 --port 8000
+```
+
+El modo servidor solicita usuario `oece` y contraseña; sin `OECE_PANEL_PASSWORD` genera una clave temporal en consola. **No publicar directamente el panel HTTP**: usar SSH/VPN o un proxy inverso HTTPS. El OCR utiliza Windows.Media.Ocr cuando existe y Tesseract (`spa`) en Ubuntu o cuando falta el motor Windows. Los mismos cotejos y límites se aplican a ambos. [Guía Ubuntu y Windows](docs/USO_DIARIO.md).
+
 ## Datos y reproducción
 
 Repositorio público: solo código, documentación y metadatos públicos. **Los datos pueden procesarse en cualquier equipo autorizado por el titular**, incluidos servidores Linux de confianza. Expedientes, Word, transcripciones, originales, índices y credenciales no se suben a Git. `data/` y `expedientes/` siguen excluidos mediante `.gitignore` (revisar los cambios antes de publicar).

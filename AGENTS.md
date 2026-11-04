@@ -12,6 +12,10 @@ El usuario confirmó el 01/11/2026 la interpretación desde un asistente convers
 
 **Los datos pueden procesarse en cualquier equipo autorizado por el titular**, incluido un servidor Linux de confianza. La variable `OECE_DATA_DIR` selecciona la raíz de datos privados (por defecto `./data`, relativa al directorio de trabajo). Usar `OECE_DATA_DIR/operacion` para los expedientes y memoria del panel/MCP y `OECE_DATA_DIR/normativa/indices` para el índice; `--raiz` sigue permitiendo una raíz explícita. No exigir OneDrive, Windows ni la computadora del titular. **Solo permanecen en Git código, reglas y documentación pública**: nunca originales, carpetas de expedientes, transcripciones, índices, Word, credenciales o datos laborales. La ejecución en servidor autorizado no implica exponer el panel públicamente ni conceder acceso a terceros. Ver `docs/SEGURIDAD.md`.
 
+## Compatibilidad Ubuntu/Windows
+
+En Ubuntu usar `bash INICIAR_OECE.sh`, `requirements-linux.txt` y el OCR Tesseract (`spa`) con Poppler; en Windows conservar `INICIAR_OECE.cmd` y Windows.Media.Ocr. El lector selecciona automáticamente el motor disponible sin eludir límites, caché y cotejos. Para servidor headless, `python -m oece panel --host 0.0.0.0 --port 8000`: exige autenticación básica y túnel/VPN/HTTPS para acceso remoto seguro. No asumir que escuchar en red constituye acceso seguro ni subir datos a Git.
+
 ## Operación del expediente
 
 1. Usar la ruta explícita del usuario. Crear allí una carpeta por expediente con `python -m oece nuevo CARPETA --procedimiento ... --solicitante ...` si no existe. Los módulos son `ampliacion_consultores`, `aumento_cmc`, `inscripcion`, `actualizacion`, `reconsideracion`. Los originales van en `documentos/`; nunca a Git ni se sobrescriben.
