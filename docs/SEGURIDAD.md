@@ -24,3 +24,7 @@ La raíz por defecto es `./data/operacion`, derivada de `OECE_DATA_DIR=./data` (
 ## OCR portátil
 
 El OCR en Windows conserva el motor nativo existente. Fuera de Windows, o sin ese motor, se selecciona Tesseract (`pytesseract`, idioma `spa`), sin modificar originales. Las transcripciones conservan SHA-256 de fuente/imagen, cajas de texto, límites y caché; cualquier hecho obtenido queda sujeto a cotejo humano/IA declarado. En Ubuntu instalar `tesseract-ocr`, `tesseract-ocr-spa` y `poppler-utils`. La disponibilidad OCR no es requisito para procesar documentos digitales.
+
+## Migración de rutas almacenadas
+
+Las rutas relativas se persisten con `/` (POSIX) y se resuelven con `pathlib`. El lector admite por compatibilidad registros antiguos con `\\`, pero rechaza componentes `..`, rutas UNC y rutas con unidad de Windows cuando se espera una ruta relativa. El comando `python -m oece migrar-rutas` migra índices JSON/SQLite privados con respaldo; no altera hashes de documentos originales y requiere detener escritores para evitar cambios concurrentes. Los índices y respaldos siguen fuera de Git.
