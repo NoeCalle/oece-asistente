@@ -7,7 +7,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from oece.biblioteca import fuentes
-from oece.comun import dentro,guardar,leer,sha
+from oece.comun import data_dir,guardar,leer,ruta_original,sha
 from oece.lectura import leer_documento
 
 
@@ -22,7 +22,7 @@ def construir():
     def source(name):
         s=by_name[name]
         if name not in verified:
-            path=dentro(ROOT,s['local_path'])
+            path=ruta_original(s['local_path'])
             if sha(path.read_bytes())!=s['sha256']:raise ValueError('Original alterado: '+name)
             verified[name]=path
         return s
@@ -98,7 +98,7 @@ def construir():
             subsupuestos='Delimitar motivo, declaración, auditoría, capital, SBS y consultor natural inscrito como ejecutor. No acumular todos los incisos.')
     # Anexo Word: conservar localizadores y celdas combinadas, sin inventar contenido de celdas vacías.
     annex=next(n for n in by_name if 'anexo-n-5-' in n);source(annex)
-    reading=leer_documento(verified[annex],ROOT/'data/catalogo-lecturas',False)
+    reading=leer_documento(verified[annex],data_dir()/'catalogo-lecturas',False)
     document=Document(verified[annex]);fragments=reading['fragmentos']
     for block,table in enumerate(document.iter_inner_content(),1):
         if not isinstance(table,Table):continue
