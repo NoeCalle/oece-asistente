@@ -41,6 +41,12 @@ Consultar docs/PRIMER_USO.md. El catálogo de preparación de cinco trámites es
 
 Usar oece_diagnostico o python -m oece diagnostico para comprobar herramientas/fuentes; no equiparar estado técnico con vigencia. Respaldo/restauración locales por CLI requieren archivo y carpeta destino nuevos; no compartirlos ni subir expedientes sin autorización. El usuario aportará el formato al iniciar trabajo. Entorno autorizado, fechas y primer caso real se comprueban al usarlo; no registrar aceptación laboral con ejemplos ficticios.
 
-## Modelo laboral recibido — CMC, entregable 1 de 3 (04/11/2026)
+## Tres entregables laborales identificados (04/11/2026)
 
-Consultar [docs/ENTREGABLE_01_CMC.md](docs/ENTREGABLE_01_CMC.md) antes de generar una salida de `aumento_cmc`. El usuario recibió el modelo de formulario OECE-DRNP-SDOR versión 01 (29/12/2025), hoja auxiliar de factores y relación de obras: son **tres vistas de un mismo primer entregable laboral**, no los tres entregables. El motor de CMC ya calcula propuestas; la adaptación de la presentación y la verificación contra estos formatos quedan abiertas (T49). No rellenar columnas vacías por inferencia ni confundir los montos de experiencia ya ponderados con bases a ponderar otra vez. No subir fotos, empresas ni expedientes a GitHub público. Los entregables 2 y 3 siguen pendientes de definición.
+El usuario confirmó expresamente que **cada una de las tres fotografías representa un entregable diferente**; no son tres vistas de uno solo. Consultar:
+
+1. **Entregable 1:** [docs/ENTREGABLE_01_CMC.md](docs/ENTREGABLE_01_CMC.md) — formulario institucional OECE-DRNP-SDOR de determinación CMC.
+2. **Entregable 2:** [docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md](docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md) — hoja de trabajo por años/obras, experiencia y factores a/f/e.
+3. **Entregable 3:** [docs/ENTREGABLE_03_RELACION_OBRAS.md](docs/ENTREGABLE_03_RELACION_OBRAS.md) — cuadro de obras, participaciones, fechas, montos y descuentos.
+
+Estos tres productos se generan **por separado**, aun cuando comparten datos para la evaluación de aumento CMC. El usuario entregará después los tres originales en formato nativo; hasta entonces las fotos son referencias funcionales, no plantillas digitales verificadas. Ninguna fotografía por sí sola acredita los montos. Mantener trazabilidad y revisión humana; no subir fotografías ni datos laborales al repositorio público.
