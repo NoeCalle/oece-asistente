@@ -8,7 +8,7 @@ Asistente conversacional elegido y herramientas locales para preparar evaluacion
 
 ## Empezar
 
-1. Abrir **INICIAR_OECE.cmd** en este equipo y pulsar **Comprobar equipo**.
+1. Iniciar el panel con `python -m oece panel` desde el directorio del proyecto (en Windows también está `INICIAR_OECE.cmd`) y pulsar **Comprobar equipo**.
 2. Crear expediente, elegir trámite, completar los datos conocidos e incorporar documentos.
 3. Preparar borrador y continuar el análisis en el chat de este proyecto indicando la carpeta.
 4. Revisar Word y matriz; cada revisión conserva originales y citas.
@@ -52,7 +52,25 @@ Avance orientativo del plan amplio: **75 % (70–80 %)**. Es una estimación de 
 
 ## Datos y reproducción
 
-Repositorio público: código, documentación y metadatos públicos. Expedientes, Word, transcripciones, originales e índices van en `data/` o raíz privada, excluidos de Git. Esta copia está bajo OneDrive; para documentos laborales se debe usar una ubicación autorizada. El programa no publica expedientes, comparte permisos ni presenta trámites.
+Repositorio público: solo código, documentación y metadatos públicos. **Los datos pueden procesarse en cualquier equipo autorizado por el titular**, incluidos servidores Linux de confianza. Expedientes, Word, transcripciones, originales, índices y credenciales no se suben a Git. `data/` y `expedientes/` siguen excluidos mediante `.gitignore` (revisar los cambios antes de publicar).
+
+La raíz privada se configura con **`OECE_DATA_DIR`**; sin variable, se usa **`./data` relativa al directorio de trabajo**. El panel, la memoria y los expedientes usan `$OECE_DATA_DIR/operacion`; los índices de biblioteca se guardan en `$OECE_DATA_DIR/normativa/indices`. Puede seguir indicándose `--raiz` para el panel/MCP. Si se usan originales normativos del manifiesto, colócalos bajo `$OECE_DATA_DIR/normativa/originales` conservando su estructura relativa; por compatibilidad también se buscan en el árbol privado heredado del repositorio.
+
+Ejemplo en Linux/macOS:
+
+```bash
+export OECE_DATA_DIR=/srv/oece-data
+python -m oece panel
+```
+
+Ejemplo en PowerShell:
+
+```powershell
+$env:OECE_DATA_DIR = 'D:\\OECE-Datos'
+python -m oece panel
+```
+
+El panel permanece vinculado a `127.0.0.1`; ejecutar en otro servidor no lo convierte en servicio multiusuario ni lo expone automáticamente por red. El programa no publica expedientes, comparte permisos ni presenta trámites.
 
 Dependencias en [uso diario](docs/USO_DIARIO.md). La reconstrucción de biblioteca requiere los originales conservados fuera de Git; las pruebas usan documentos ficticios.
 
