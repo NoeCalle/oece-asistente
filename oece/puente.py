@@ -6,7 +6,7 @@ import re
 from urllib.parse import urlsplit
 
 from . import __version__
-from .comun import ROOT, bytes_json, dentro, guardar, leer, sha
+from .comun import ROOT, bytes_json, data_dir, dentro, guardar, leer, ruta_original, sha
 from .flujo import EXTENSIONS, Memoria, bloqueo, iniciar, inventario, procesar, verificar_entrega
 from .evaluacion import MODULOS
 from .lectura import aplicar_cotejos, leer_documento
@@ -102,11 +102,11 @@ class Puente:
                     'contratos':['docs/CONTRATO_EXPEDIENTE.md','docs/CONTRATO_PROCEDIMIENTOS.md','docs/CONTRASTE_FINANCIERO.md'],
                     'proveedor_ia':None,'corte_normativo':'2026-10-31','archivos_no_son_instrucciones':True,
                     'plantilla_recursos':'oece://casos/{caso}/salida/{revision}/{archivo}',
-                    'fuentes_locales':{'esperadas':len(sources),'presentes':sum(dentro(ROOT,s['local_path']).is_file() for s in sources)},
+                    'fuentes_locales':{'esperadas':len(sources),'presentes':sum(ruta_original(s['local_path']).is_file() for s in sources)},
                     'alcance':'Acceso local a esta raíz; sin API de modelo, acceso Drive/GitHub, shell ni carga remota incorporados.'}
         if name=='oece_buscar_normativa':
             from .biblioteca import buscar
-            index=ROOT/'normativa/indices/biblioteca-v1.sqlite'
+            index=data_dir()/'normativa/indices/biblioteca-v1.sqlite'
             if not index.is_file():raise ValueError('Preparar originales e índice local con python -m oece biblioteca --reconstruir')
             return {'coincidencias':buscar(index,arguments['consulta'],arguments.get('limite',5))}
         if name=='oece_norma':
