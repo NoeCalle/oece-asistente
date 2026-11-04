@@ -7,7 +7,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from oece.biblioteca import fuentes
-from oece.comun import dentro,guardar,sha
+from oece.comun import guardar,ruta_original,sha
 
 # Identificación cotejada con los encabezados; no inferir ramas desde texto libre.
 MAPA=[
@@ -30,7 +30,7 @@ def construir():
  from pypdf import PdfReader
  source=next(s for s in fuentes() if s['name']=='tupa-modificacion-2026-073.pdf')
  if source['sha256']!='d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e':raise ValueError('Revisar mapa antes de cambiar de original')
- path=dentro(ROOT,source['local_path'])
+ path=ruta_original(source['local_path'])
  if sha(path.read_bytes())!=source['sha256']:raise ValueError('Original alterado')
  pdf=PdfReader(path);items=[]
  for code,start,end,procedure,conditions in MAPA:
