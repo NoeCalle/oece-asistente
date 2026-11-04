@@ -19,6 +19,9 @@ MANIFESTS = (
     "normativa/manifiesto-operacion-2026-10-31.json",
     "normativa/manifiesto-procedimientos-2026-10-31.json",
 )
+sys.path.insert(0,str(ROOT))
+from oece.comun import data_dir, ruta_original
+
 EXTRACTOR_VERSION = "0.1.0"
 
 
@@ -27,8 +30,8 @@ def read_json(path):
 
 
 def safe_source(root, item):
-    path = (root / item["local_path"]).resolve()
-    if root not in path.parents:
+    path = ruta_original(item['local_path']) if Path(root).resolve() == ROOT else (root / str(item['local_path']).replace('\\', '/')).resolve()
+    if Path(root).resolve() not in path.parents and data_dir() not in path.parents:
         raise ValueError("Ruta de fuente fuera de la biblioteca: " + item["name"])
     raw = path.read_bytes()
     if len(raw) != item["bytes"] or hashlib.sha256(raw).hexdigest() != item["sha256"]:
@@ -222,7 +225,7 @@ def search_index(database, query, procedure=None, limit=10):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("build", "search"))
-    parser.add_argument("--database", type=Path, default=ROOT / "normativa/indices/biblioteca.sqlite")
+    parser.add_argument("--database", type=Path, default=data_dir() / "normativa/indices/biblioteca.sqlite")
     parser.add_argument("--manifest", action="append", help="Manifiesto relativo a la raíz; repetible para un índice complementario")
     parser.add_argument("--query")
     parser.add_argument("--procedure")
