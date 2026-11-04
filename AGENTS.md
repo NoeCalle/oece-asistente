@@ -41,12 +41,12 @@ Consultar docs/PRIMER_USO.md. El catálogo de preparación de cinco trámites es
 
 Usar oece_diagnostico o python -m oece diagnostico para comprobar herramientas/fuentes; no equiparar estado técnico con vigencia. Respaldo/restauración locales por CLI requieren archivo y carpeta destino nuevos; no compartirlos ni subir expedientes sin autorización. El usuario aportará el formato al iniciar trabajo. Entorno autorizado, fechas y primer caso real se comprueban al usarlo; no registrar aceptación laboral con ejemplos ficticios.
 
-## Tres entregables laborales identificados (04/11/2026)
+## Tres entregables laborales en secuencia obligatoria (04/11/2026)
 
-El usuario confirmó expresamente que **cada una de las tres fotografías representa un entregable diferente**; no son tres vistas de uno solo. Consultar:
+El usuario precisó que cada una de las tres fotografías corresponde a un **entregable distinto y encadenado**, y que deben trabajarse **en este orden**, que no coincide con el orden en que se adjuntaron las imágenes:
 
-1. **Entregable 1:** [docs/ENTREGABLE_01_CMC.md](docs/ENTREGABLE_01_CMC.md) — formulario institucional OECE-DRNP-SDOR de determinación CMC.
-2. **Entregable 2:** [docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md](docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md) — hoja de trabajo por años/obras, experiencia y factores a/f/e.
-3. **Entregable 3:** [docs/ENTREGABLE_03_RELACION_OBRAS.md](docs/ENTREGABLE_03_RELACION_OBRAS.md) — cuadro de obras, participaciones, fechas, montos y descuentos.
+1. **Primero — relación de obras y montos:** [docs/ENTREGABLE_01_RELACION_OBRAS.md](docs/ENTREGABLE_01_RELACION_OBRAS.md). Se basa en la **tercera fotografía recibida**: identificar obras, fechas, participación, montos, liquidaciones, deducciones, exclusiones y experiencia sustentada. No usar montos de contrato como experiencia sin verificación.
+2. **Segundo — marcación de años y factores:** [docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md](docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md). Se basa en la **segunda fotografía recibida**: ubicar obras en la matriz por años, computar sumatoria de experiencia y los factores a/f/e con fuentes comprobadas, y calcular G.
+3. **Tercero — resumen final institucional de CMC:** [docs/ENTREGABLE_03_RESUMEN_CMC.md](docs/ENTREGABLE_03_RESUMEN_CMC.md). Se basa en la **primera fotografía recibida**: trasladar resultados verificados al formato OECE–DRNP–SDOR y presentar CMC = Σ Obras × G para revisión.
 
-Estos tres productos se generan **por separado**, aun cuando comparten datos para la evaluación de aumento CMC. El usuario entregará después los tres originales en formato nativo; hasta entonces las fotos son referencias funcionales, no plantillas digitales verificadas. Ninguna fotografía por sí sola acredita los montos. Mantener trazabilidad y revisión humana; no subir fotografías ni datos laborales al repositorio público.
+Los tres archivos son entregables separados pero comparten una cadena única de datos y evidencia. **Dependencia:** no concluir la fase 2 sin la 1 ni emitir el resumen de fase 3 sin cotejar con las dos anteriores. Marcar cálculos incompletos como pendientes. El usuario aportará posteriormente los **tres archivos nativos editables**; las fotos son referencias visuales y no acreditación o emisión institucional. Mantener datos laborales fuera del repositorio público.
