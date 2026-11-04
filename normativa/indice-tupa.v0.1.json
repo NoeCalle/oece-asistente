@@ -511,7 +511,7 @@
   ],
   "fuente": {
     "instrument_id": "rpe-073-2026-oece",
-    "local_path": "normativa\\originales\\2026-10-29\\tupa-modificacion-2026-073.pdf",
+    "local_path": "normativa/originales/2026-10-29/tupa-modificacion-2026-073.pdf",
     "name": "tupa-modificacion-2026-073.pdf",
     "sha256": "d3ab3f6b87f7b5706177c8a7f6df8bd202a0f3878c686f23a5047d5264834b7e",
     "source_url": "https://cdn.www.gob.pe/uploads/document/file/9763405/7983873-modificacion-del-tupa-del-oece.pdf"
