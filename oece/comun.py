@@ -7,6 +7,26 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 
+def data_dir():
+    """Raíz de datos privados, independiente del sistema operativo y del checkout."""
+    value = os.environ.get('OECE_DATA_DIR', './data')
+    if not value.strip():
+        raise ValueError('OECE_DATA_DIR no puede estar vacía')
+    return Path(value).expanduser().resolve()
+
+def ruta_original(local_path):
+    """Busca originales en los datos privados; permite la ruta relativa heredada.
+
+    Los manifiestos públicos pueden tener separadores de Windows. No se permite
+    salir de ninguna raíz ni atravesar enlaces simbólicos.
+    """
+    relative = str(local_path).replace('\\', '/')
+    primary = dentro(data_dir(), relative)
+    if primary.is_file():
+        return primary
+    legacy = dentro(ROOT, relative)
+    return legacy if legacy.is_file() else primary
+
 def sha(raw):
     return hashlib.sha256(raw).hexdigest()
 
