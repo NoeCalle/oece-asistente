@@ -5,7 +5,7 @@ import os
 import sqlite3
 import tempfile
 
-from .comun import ROOT, bytes_json, dentro, leer, sha
+from .comun import ROOT, bytes_json, data_dir, leer, ruta_original, sha
 from .lectura import leer_documento
 
 MANIFIESTOS=['normativa/manifiesto-descargas-2026-10-29.json','normativa/manifiesto-continuacion-2026-10-30.json',
@@ -19,7 +19,7 @@ def leer_fuente(archivo,pagina=None,ubicacion=None):
     from io import BytesIO
     source=next((s for s in fuentes() if s['name']==archivo),None)
     if source is None:raise ValueError('Fuente no manifestada')
-    path=dentro(ROOT,source['local_path']);raw=path.read_bytes()
+    path=ruta_original(source['local_path']);raw=path.read_bytes()
     if sha(raw)!=source['sha256']:raise ValueError('Original normativo alterado')
     if path.suffix.lower()=='.pdf':
         from pypdf import PdfReader
@@ -28,7 +28,7 @@ def leer_fuente(archivo,pagina=None,ubicacion=None):
         text=pdf.pages[pagina-1].extract_text() or '';loc='pagina:'+str(pagina)
     elif path.suffix.lower()=='.docx':
         if pagina is not None or not isinstance(ubicacion,str) or not ubicacion:raise ValueError('Anexo Word requiere ubicación de bloque/celda, sin página PDF')
-        result=leer_documento(path,ROOT/'data/catalogo-lecturas',False)
+        result=leer_documento(path,data_dir()/'catalogo-lecturas',False)
         if result['sha256']!=source['sha256']:raise ValueError('Anexo normativo cambió durante lectura')
         block=next((b for b in result['fragmentos'] if b['ubicacion']==ubicacion),None)
         if block is None:raise ValueError('Ubicación no contenida en el anexo Word')
@@ -64,7 +64,7 @@ def construir(output,cache):
         with closing(sqlite3.connect(name)) as c, c:
             c.executescript("CREATE TABLE fuentes(id TEXT PRIMARY KEY,metadata TEXT); CREATE TABLE fragmentos(id INTEGER PRIMARY KEY,fuente TEXT,ubicacion TEXT,texto TEXT,alertas TEXT); CREATE VIRTUAL TABLE buscar USING fts5(id UNINDEXED,texto,tokenize='unicode61 remove_diacritics 2');")
             for f in fuentes():
-                p=dentro(ROOT,f['local_path'])
+                p=ruta_original(f['local_path'])
                 if sha(p.read_bytes())!=f['sha256']: raise ValueError('Fuente alterada: '+f['name'])
                 if c.execute('SELECT 1 FROM fuentes WHERE id=?',(f['sha256'],)).fetchone(): continue
                 c.execute('INSERT INTO fuentes VALUES(?,?)',(f['sha256'],bytes_json(f).decode()))
