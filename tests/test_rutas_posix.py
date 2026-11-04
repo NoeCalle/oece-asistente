@@ -1,5 +1,6 @@
 """Regresión portable para rutas heredadas con barras invertidas, índices y SQLite."""
 import json
+from contextlib import closing
 import os
 from pathlib import Path
 import sqlite3
@@ -92,7 +93,7 @@ class MigrarIndices(unittest.TestCase):
     def test_migracion_sqlite_conserva_sha_y_metadata(self):
         with tempfile.TemporaryDirectory() as temp:
             path=Path(temp)/'biblioteca.sqlite'
-            with sqlite3.connect(path) as db:
+            with closing(sqlite3.connect(path)) as db, db:
                 db.execute('CREATE TABLE documents (id TEXT PRIMARY KEY, metadata TEXT NOT NULL)')
                 db.execute('CREATE TABLE fuentes (id TEXT, local_path TEXT)')
                 metadata={'local_path':LEGACY, 'sha256':'b'*64, 'cita':r'9\.\d+'}
@@ -100,14 +101,14 @@ class MigrarIndices(unittest.TestCase):
                 db.execute('INSERT INTO fuentes VALUES (?,?)',('a',LEGACY))
             result=migrar_sqlite(path)
             self.assertEqual(2,result['cambios'])
-            with sqlite3.connect(path) as db:
+            with closing(sqlite3.connect(path)) as db, db:
                 row=json.loads(db.execute("SELECT metadata FROM documents WHERE id='a'").fetchone()[0])
                 self.assertEqual(POSIX,row['local_path'])
                 self.assertEqual('b'*64,row['sha256'])
                 self.assertEqual(r'9\.\d+',row['cita'])
                 self.assertEqual(POSIX,db.execute('SELECT local_path FROM fuentes').fetchone()[0])
                 self.assertEqual('ok',db.execute('PRAGMA integrity_check').fetchone()[0])
-            with sqlite3.connect(result['respaldo']) as db:
+            with closing(sqlite3.connect(result['respaldo'])) as db:
                 self.assertEqual(LEGACY,db.execute('SELECT local_path FROM fuentes').fetchone()[0])
             self.assertEqual(0,migrar_sqlite(path)['cambios'])
 
@@ -134,7 +135,7 @@ class MigrarIndices(unittest.TestCase):
     def test_error_de_escape_no_altera_original(self):
         with tempfile.TemporaryDirectory() as temp:
             path=Path(temp)/'biblioteca.sqlite'
-            with sqlite3.connect(path) as db:
+            with closing(sqlite3.connect(path)) as db, db:
                 db.execute('CREATE TABLE documents (id TEXT PRIMARY KEY, metadata TEXT)')
                 db.execute('INSERT INTO documents VALUES (?,?)',('1',json.dumps({'local_path':r'..\privado.txt'})))
             original=path.read_bytes()
