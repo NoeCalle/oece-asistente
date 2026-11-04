@@ -16,9 +16,9 @@ def data_dir():
 
 def normalizar_ruta_relativa(value):
     """Ruta relativa portátil con /; rechaza escapes, UNC y unidades Windows."""
-    if not isinstance(value, (str, Path)) or not str(value) or '\\x00' in str(value):
+    if not isinstance(value, (str, Path)) or not str(value) or '\x00' in str(value):
         raise ValueError('Ruta relativa inválida')
-    raw = str(value).replace('\\\\', '/')
+    raw = str(value).replace('\\', '/')
     portable = PurePosixPath(raw)
     if (portable.is_absolute() or PureWindowsPath(raw).drive
             or '..' in portable.parts or str(portable) == '.'):
