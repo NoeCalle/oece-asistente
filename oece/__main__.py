@@ -22,9 +22,15 @@ def main():
     tupa=sub.add_parser('tupa');tupa.add_argument('carpeta',type=Path);tupa.add_argument('--codigo');tupa.add_argument('--pagina',type=int)
     req=sub.add_parser('requisitos');req.add_argument('carpeta',type=Path)
     diag=sub.add_parser('diagnostico');diag.add_argument('--fecha')
+    migration=sub.add_parser('migrar-rutas');migration.add_argument('--ruta',type=Path);migration.add_argument('--simular',action='store_true')
     backup=sub.add_parser('respaldar');backup.add_argument('carpeta',type=Path);backup.add_argument('archivo',type=Path)
     restore=sub.add_parser('restaurar');restore.add_argument('archivo',type=Path);restore.add_argument('destino',type=Path)
-    args=p.parse_args();memory=Memoria(args.memoria)
+    args=p.parse_args()
+    if args.accion=='migrar-rutas':
+        from .migracion_rutas import migrar
+        print(json.dumps(migrar(args.ruta,preview=args.simular),ensure_ascii=False,indent=2))
+        return
+    memory=Memoria(args.memoria)
     if args.accion=='nuevo': result=iniciar(args.carpeta,args.procedimiento,args.solicitante,args.sintetico)
     elif args.accion in ('leer','estado'):
         result,_=preparar(args.carpeta,memory,not args.sin_ocr)
