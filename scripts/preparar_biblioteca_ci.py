@@ -14,7 +14,7 @@ import time
 from urllib.request import Request, urlopen
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from oece.comun import ROOT, data_dir, dentro
+from oece.comun import ROOT, data_dir, dentro, normalizar_ruta_relativa
 
 MANIFESTS = [
     'normativa/manifiesto-descargas-2026-10-29.json',
@@ -28,7 +28,7 @@ USER_AGENT = 'Mozilla/5.0 OECE-Assistant-CI/1.0'
 
 
 def descargar(item):
-    relative = str(item['local_path']).replace('\\', '/')
+    relative = normalizar_ruta_relativa(item['local_path'])
     target = dentro(data_dir(), relative)
     if target.is_file() and target.stat().st_size == item['bytes'] and sha256(target.read_bytes()).hexdigest() == item['sha256']:
         return item['name'], 'presente'
