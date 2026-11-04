@@ -9,10 +9,12 @@ from pathlib import Path
 import json
 import os
 import tempfile
+import sys
 import time
 from urllib.request import Request, urlopen
 
-from oece.comun import ROOT, data_dir, dentro, ruta_original
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from oece.comun import ROOT, data_dir, dentro
 
 MANIFESTS = [
     'normativa/manifiesto-descargas-2026-10-29.json',
