@@ -38,8 +38,6 @@ def comprobar(fecha_caso=None):
     except ValueError:poppler=False
     motor=motor_ocr()
     ocr=bool(poppler and motor)
-    add('Poppler',poppler,'pdftoppm disponible' if poppler else 'Instalar poppler-utils/Poppler')
-    add('OCR',ocr,motor if ocr else 'OCR no disponible o falta Poppler')
     cutoff=date(2026,10,31);requested=date.fromisoformat(fecha_caso) if fecha_caso else date.today()
     return {'version':__version__,'estado':'preparado_para_borradores_asistidos' if all(c['ok'] for c in checks) else 'requiere_preparacion',
             'comprobaciones':checks,'ocr_windows_disponible':bool(ocr and motor=='Windows.Media.Ocr'),
