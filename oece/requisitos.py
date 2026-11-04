@@ -1,5 +1,5 @@
 """Plan de lectura documental por experiencia; no evalúa presencia ni cumplimiento."""
-from .comun import ROOT,dentro,leer,sha
+from .comun import ROOT,leer,ruta_original,sha
 from .evaluacion import seleccionar
 
 REGISTRO=ROOT/'rules/requisitos-ampliaciones.v1.5.json'
@@ -16,7 +16,7 @@ def verificar(registry=None):
         source=manifest.get(ref['archivo'])
         if source is None or source['sha256']!=ref['sha256'] or source['source_url']!=ref['url']:raise ValueError('Fuente del requisito fuera del manifiesto')
         if ref['archivo'] not in pdfs:
-            path=dentro(ROOT,source['local_path'])
+            path=ruta_original(source['local_path'])
             if sha(path.read_bytes())!=source['sha256']:raise ValueError('Original de requisitos alterado')
             pdfs[ref['archivo']]=PdfReader(path)
         pdf=pdfs[ref['archivo']];page=ref['pagina_pdf']
