@@ -2,7 +2,7 @@
 import json
 from contextlib import closing
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import sqlite3
 import sys
 import tempfile
@@ -27,6 +27,7 @@ class RutasPosix(unittest.TestCase):
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(b'PDF ficticio para probar solo ruta')
             self.assertEqual(POSIX, normalizar_ruta_relativa(LEGACY))
+            self.assertEqual(POSIX, normalizar_ruta_relativa(PurePosixPath(POSIX)))
             self.assertEqual(target.resolve(), ruta_original(LEGACY))
             self.assertEqual(target.resolve(), dentro(temp, LEGACY))
             # El archivo no se guarda con un nombre que contenga el carácter \ en Linux.
