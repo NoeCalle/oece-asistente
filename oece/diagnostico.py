@@ -13,7 +13,7 @@ from .comun import data_dir,ruta_original,sha
 def comprobar(fecha_caso=None):
     from .biblioteca import fuentes
     from .preparacion import verificar
-    from .lectura import binario
+    from .lectura import binario, motor_ocr
     checks=[]
     def add(name,ok,detail):checks.append({'nombre':name,'ok':bool(ok),'detalle':detail})
     add('Python',sys.version_info>=(3,12),sys.version.split()[0])
@@ -36,10 +36,14 @@ def comprobar(fecha_caso=None):
     except (ValueError,OSError,ImportError,KeyError) as error:add('Plan de cinco trámites',False,str(error))
     try:binario('pdftoppm.exe');poppler=True
     except ValueError:poppler=False
-    ocr=bool(poppler and shutil.which('powershell.exe'))
+    motor=motor_ocr()
+    ocr=bool(poppler and motor)
+    add('Poppler',poppler,'pdftoppm disponible' if poppler else 'Instalar poppler-utils/Poppler')
+    add('OCR',ocr,motor if ocr else 'OCR no disponible o falta Poppler')
     cutoff=date(2026,10,31);requested=date.fromisoformat(fecha_caso) if fecha_caso else date.today()
     return {'version':__version__,'estado':'preparado_para_borradores_asistidos' if all(c['ok'] for c in checks) else 'requiere_preparacion',
-            'comprobaciones':checks,'ocr_windows_disponible':ocr,'corte_documental':cutoff.isoformat(),
+            'comprobaciones':checks,'ocr_windows_disponible':bool(ocr and motor=='Windows.Media.Ocr'),
+            'ocr_disponible':ocr,'motor_ocr':motor,'corte_documental':cutoff.isoformat(),
             'fecha_considerada':requested.isoformat(),'requiere_revision_normativa_por_fecha':requested>cutoff,
             'mensaje_normativo':'Verificar fuentes y reglas de las fechas del expediente; la comprobación técnica no acredita vigencia.',
             'api_de_modelo_requerida':False,'cliente_ia':'El asistente conversacional elegido aporta la interpretación; no se conecta automáticamente a otro cliente.'}
