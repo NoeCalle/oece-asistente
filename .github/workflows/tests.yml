@@ -1,4 +1,4 @@
-name: Pruebas portabilidad OECE
+name: OECE Assistant — Ubuntu y Windows
 
 on:
   push:
@@ -7,38 +7,42 @@ on:
       - "oece/**"
       - "scripts/**"
       - "tests/**"
-      - "requirements-indexacion.txt"
+      - "INICIAR_OECE.sh"
+      - "INICIAR_OECE.cmd"
+      - "requirements*.txt"
       - ".github/workflows/tests.yml"
   pull_request:
-    paths:
-      - "oece/**"
-      - "scripts/**"
-      - "tests/**"
-      - "requirements-indexacion.txt"
-      - ".github/workflows/tests.yml"
   workflow_dispatch:
 
 jobs:
-  portabilidad-y-regresion:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+  unittest:
+    name: unittest — ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    env:
+      PYTHONIOENCODING: utf-8
+      OECE_DATA_DIR: ./data
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Dependencias
-        run: python -m pip install -r requirements-indexacion.txt
-      - name: Preparar directorios de pruebas ignorados por Git
-        run: mkdir -p data normativa/indices/pruebas
-      - name: Compilar módulos Python
+          cache: pip
+          cache-dependency-path: requirements-linux.txt
+      - name: Instalar Tesseract (spa) y Poppler en Ubuntu
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-spa poppler-utils
+      - name: Instalar dependencias Python
+        run: python -m pip install -r requirements-linux.txt
+      - name: Preparar carpetas excluidas de Git
+        run: python -c "from pathlib import Path; [Path(p).mkdir(parents=True,exist_ok=True) for p in ('data','normativa/indices/pruebas','normativa/ocr/pruebas')]"
+      - name: Validar sintaxis y codificación
         run: python -m compileall -q oece scripts tests
-      - name: Probar ruta configurable y permisos Git
-        run: python -m unittest discover -s tests -p "test_data_dir.py" -v
-      - name: Regresión de respaldos
-        run: python -m unittest discover -s tests -p "test_respaldo.py" -v
-      - name: Regresión de expedientes sintéticos
-        run: python -m unittest discover -s tests -p "test_expediente.py" -v
-
-# El resto de la suite depende de originales normativos que no están en Git.
-# No se descargan ni publican originales privados en runners compartidos.
+      - name: Descargar biblioteca normativa pública y verificar hashes
+        run: python scripts/preparar_biblioteca_ci.py
+      - name: Suite unittest completa
+        run: python -m unittest discover -s tests -p "test_*.py"
