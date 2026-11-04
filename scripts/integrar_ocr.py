@@ -9,6 +9,7 @@ import sys
 import tempfile
 
 from indexar_normativa import ROOT, read_json
+from oece.comun import data_dir
 from verificar_ocr import validate_record
 from evaluar_calidad_ocr import evaluate
 
@@ -17,7 +18,7 @@ VERSION = "0.1.0"
 
 def integrate(root, base, output, records, quality_reference=None):
     root, base, output = Path(root).resolve(), Path(base).resolve(), Path(output).resolve()
-    if root not in base.parents or root not in output.parents or output == base or output.suffix != ".sqlite":
+    if not all(any(home in p.parents for home in (root, data_dir())) for p in (base, output)) or output == base or output.suffix != ".sqlite":
         raise ValueError("Usar indices distintos dentro de la raiz")
     if not base.is_file() or not records:
         raise ValueError("Falta indice base o muestra OCR")
@@ -126,8 +127,8 @@ def integrate(root, base, output, records, quality_reference=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("records", nargs="+", type=Path)
-    parser.add_argument("--base", type=Path, default=ROOT / "normativa/indices/biblioteca.sqlite")
-    parser.add_argument("--output", type=Path, default=ROOT / "normativa/indices/biblioteca-ocr.sqlite")
+    parser.add_argument("--base", type=Path, default=data_dir() / "normativa/indices/biblioteca.sqlite")
+    parser.add_argument("--output", type=Path, default=data_dir() / "normativa/indices/biblioteca-ocr.sqlite")
     parser.add_argument("--quality-reference", type=Path)
     args = parser.parse_args()
     if hasattr(sys.stdout, "reconfigure"):
