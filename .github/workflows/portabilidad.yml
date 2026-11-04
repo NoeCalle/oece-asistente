@@ -39,6 +39,8 @@ jobs:
         run: python -m unittest discover -s tests -p "test_data_dir.py" -v
       - name: OCR y panel Linux/Windows
         run: python -m unittest discover -s tests -p "test_linux_compat.py" -v
+      - name: Rutas POSIX e índices heredados
+        run: python -m unittest discover -s tests -p "test_rutas_posix.py" -v
       - name: Respaldos
         run: python -m unittest discover -s tests -p "test_respaldo.py" -v
       - name: Expedientes sintéticos
