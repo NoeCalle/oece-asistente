@@ -189,7 +189,16 @@ def leer_documento(path, cache, usar_ocr=True, timeout=45):
         nonlocal pending_attempts
         try:
             cached=cache/f'ocr-{number}.json'
-            if not cached.exists():
+            valid_cached=False
+            if cached.exists():
+                try:
+                    record=leer(cached)
+                    valid_cached=(record.get('source_sha256')==source_sha
+                                  and record.get('image_sha256')==sha(image.read_bytes())
+                                  and record.get('engine')==motor_ocr())
+                except (OSError,ValueError,KeyError):
+                    valid_cached=False
+            if not valid_cached:
                 if pending_attempts>=10 or time.monotonic()>=deadline:
                     raise ValueError('Límite de OCR por lote; reanudar en siguiente ejecución')
                 pending_attempts+=1

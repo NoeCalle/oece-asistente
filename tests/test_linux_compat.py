@@ -19,6 +19,24 @@ from oece.panel import crear_servidor
 
 
 class OCRPortatil(unittest.TestCase):
+    @unittest.skipUnless(sys.platform.startswith('linux'), 'OCR Linux se comprueba en Ubuntu')
+    def test_tesseract_real_espanol_en_ubuntu(self):
+        from PIL import Image, ImageDraw, ImageFont
+        from oece.lectura import _ocr_tesseract
+        with tempfile.TemporaryDirectory() as temp:
+            image=Path(temp)/'documento.png'
+            canvas=Image.new('RGB',(1000,170),'white')
+            drawer=ImageDraw.Draw(canvas)
+            font=ImageFont.load_default(size=50)
+            drawer.text((20,35),'EXPEDIENTE 123456',fill='black',font=font)
+            canvas.save(image)
+            from oece.comun import sha
+            rec=_ocr_tesseract(image,'f'*64,sha(image.read_bytes()),1,20)
+            self.assertIn('EXPEDIENTE',rec['text'].upper())
+            self.assertIn('123456',rec['text'])
+            self.assertEqual('spa',rec['language'])
+            self.assertFalse(rec['apta_para_evaluacion'])
+
     def test_binario_poppler_admite_linux_sin_exe(self):
         with patch('oece.lectura.sys.platform', 'linux'), patch('oece.lectura.shutil.which', side_effect=lambda n: '/usr/bin/pdftoppm' if n == 'pdftoppm' else None):
             self.assertEqual('/usr/bin/pdftoppm', binario('pdftoppm.exe'))

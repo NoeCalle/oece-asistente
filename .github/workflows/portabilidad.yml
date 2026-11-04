@@ -26,6 +26,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Tesseract spa y Poppler nativos en Ubuntu
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-spa poppler-utils
       - name: Dependencias Python
         run: python -m pip install -r requirements-linux.txt
       - name: Preparar carpetas privadas de prueba
