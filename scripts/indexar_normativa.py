@@ -209,10 +209,10 @@ def search_index(database, query, procedure=None, limit=10):
         """, (expression,))
         results = []
         for fragment_id, locator, text, flags, raw_metadata in cursor:
-            metadata = json.loads(raw_metadata)
+            metadata = normalizar_registro_rutas(json.loads(raw_metadata))
             if procedure and procedure not in metadata["procedimientos"]:
                 continue
-            results.append({"fragment_id": fragment_id, "ubicacion": json.loads(locator),
+            results.append({"fragment_id": fragment_id, "ubicacion": normalizar_registro_rutas(json.loads(locator)),
                             "texto": text, "alertas": json.loads(flags), "documento": metadata,
                             "apta_para_evaluacion": False})
             if len(results) >= limit:
