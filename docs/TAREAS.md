@@ -64,3 +64,11 @@ Las versiones previas y sus pruebas se conservan como antecedentes. T30/T31/T32/
 T03/T04/T06/T08/T20 mantienen cadena normativa, excepciones y consolidación por disposición abiertas. T09 debe resolverse en el entorno laboral antes de usar documentos reales; se puede seguir con sintéticos. T33 espera los modelos que el usuario reciba al empezar su trabajo. T37 se aplica según fecha: no transformar el cambio de día del equipo en verificación normativa.
 
 El siguiente cierre funcional exige un expediente autorizado y contraste de cada interpretación con sus fuentes. [Estado](ESTADO.md), [cierres](CIERRES.md) y [evidencia 1.1](VERIFICACION_V11.md). Si se crean issues después, conservar estos IDs para evitar duplicación.
+
+## Nuevo insumo laboral — 04/11/2026
+
+| ID | Prioridad | Estado | Trabajo y evidencia de cierre |
+|---|---|---|---|
+| T49 | P1 | Modelo recibido; adaptación pendiente | **Entregable 1 de 3: formato CMC.** Tres fotografías corresponden al formulario principal, auxiliar de factores/experiencia y relación detallada de obras. Especificación en [ENTREGABLE_01_CMC.md](ENTREGABLE_01_CMC.md) y [issue #undefined](https://github.com/NoeCalle/oece-asistente/issues/undefined). Mantener T33 parcialmente abierto, dado que aún faltan otros modelos y aceptación. |
+
+No confundir las tres hojas del entregable CMC con los tres entregables laborales. Las fotografías contienen muestras distintas y son privadas; no subirlas al repositorio público.
