@@ -11,7 +11,8 @@ from indexar_normativa import MANIFESTS, ROOT, read_json, safe_source
 
 def validate_record(path, root=ROOT):
     root, path = Path(root).resolve(), Path(path).resolve()
-    if root not in path.parents:
+    from oece.comun import data_dir
+    if not any(home in path.parents for home in (root, data_dir())):
         raise ValueError("Derivado OCR fuera de raiz")
     record = read_json(path)
     items = [d for m in MANIFESTS for d in read_json(root / m)["archivos"]]
@@ -23,11 +24,13 @@ def validate_record(path, root=ROOT):
     if type(page) is not int or not 1 <= page <= len(PdfReader(source).pages):
         raise ValueError("Pagina OCR fuera de fuente")
     image = Path(record["image_path"]).resolve()
-    if root not in image.parents or hashlib.sha256(image.read_bytes()).hexdigest() != record["image_sha256"]:
+    if not any(home in image.parents for home in (root, data_dir())) or hashlib.sha256(image.read_bytes()).hexdigest() != record["image_sha256"]:
         raise ValueError("Imagen OCR fuera de raiz o modificada")
     if record["confidence"] is not None or record["reviewed"] is not False or record["apta_para_evaluacion"] is not False:
         raise ValueError("Muestra OCR no puede declararse aprobada ni tener confianza inventada")
-    if record["engine"] != "Windows.Media.Ocr" or not isinstance(record["text"], str) or not record["text"].strip():
+    if (record.get("engine") not in ("Windows.Media.Ocr", "Tesseract")
+            or not isinstance(record.get("text"), str) or not record["text"].strip()
+            or (record["engine"] == "Tesseract" and record.get("language") != "spa")):
         raise ValueError("Motor o texto OCR no valido")
     width, height = record["width"], record["height"]
     if width <= 0 or height <= 0:
@@ -47,7 +50,7 @@ def validate_record(path, root=ROOT):
     return {"source_name": record["source_name"], "source_sha256": record["source_sha256"],
             "page_pdf": page, "image_sha256": record["image_sha256"],
             "derived_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-            "engine": record["engine"], "windows_build": record["windows_build"],
+            "engine": record["engine"], "windows_build": record.get("windows_build"),
             "language": record["language"], "characters": len(record["text"]), "words": count,
             "visual_review_required": True, "apta_para_evaluacion": False}
 
