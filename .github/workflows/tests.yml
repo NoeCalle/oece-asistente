@@ -55,4 +55,5 @@ jobs:
         run: python -m unittest discover -s tests -p "test_*.py"
       - name: Aviso de cobertura documental pendiente
         if: steps.biblioteca.outcome != 'success'
-        run: python -c "print('Suite completa no ejecutada: faltan fuentes normativas históricas con SHA-256 válido; ver logs de biblioteca. La regresión independiente Linux/Windows se ejecuta en portabilidad.yml.')"
+        run: |
+          python -c "print('Suite completa no ejecutada: faltan fuentes normativas históricas con SHA-256 válido; ver logs de biblioteca. La regresión independiente Linux/Windows se ejecuta en portabilidad.yml.')"
