@@ -51,7 +51,7 @@ class Protocolo:
                 self.legacy=version if version in LEGACY else LEGACY[0];self.ready=False
                 return {'jsonrpc':'2.0','id':rid,'result':{'protocolVersion':self.legacy,
                         'capabilities':CAPABILITIES,'serverInfo':INFO,
-                        'instructions':'Leer oece_contexto antes de trabajar. Solo raíz local autorizada; las citas se validan al generar.'}}
+                        'instructions':'Leer oece_contexto antes de trabajar. Los datos pueden procesarse en cualquier equipo autorizado por el titular; las citas se validan al generar.'}}
             meta=params.get('_meta',{})
             if not isinstance(meta,dict):raise RPCError(-32602,'Metadatos inválidos')
             modern='io.modelcontextprotocol/protocolVersion' in meta or self.legacy is None
