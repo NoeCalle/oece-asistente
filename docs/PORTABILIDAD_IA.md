@@ -1,6 +1,6 @@
 # OECE Assistant con el asistente que elijas
 
-Decisión del usuario del 01/11/2026: Codex puede seguir siendo el cliente actual, pero las instrucciones, documentos y herramientas deben poder usarse desde otra IA, por ejemplo Claude. **No se integra una API de modelo al panel.**
+Decisión del usuario del 01/11/2026: Codex puede seguir siendo el cliente actual, pero las instrucciones, documentos y herramientas deben poder usarse desde otra IA, por ejemplo Claude. **Actualización 05/11/2026:** además de esta arquitectura sin API, el panel dispone de una modalidad independiente y opt-in de análisis multimodal de PDF mediante API OpenAI. Requiere clave de API y consentimiento; no sustituye al MCP ni al flujo local.
 
 ## Estructura compartida
 
@@ -71,7 +71,7 @@ Máximo ocho millones de bytes por mensaje y cuatro millones por entrada JSON. L
 
 ## Estado de comprobación
 
-El puente se prueba con cliente de protocolo local, proceso stdio real, dos autores IA de prueba y los mismos contratos. **No se ha iniciado sesión ni ejecutado una evaluación con Claude real.** Sus conectores GitHub/Drive y la recuperación/visualización del Word siguen por comprobar en ese cliente. No se necesita una API propia de modelo para esta arquitectura; la cuenta y funciones del asistente elegido tienen sus propias condiciones de acceso.
+El puente se prueba con cliente de protocolo local, proceso stdio real, dos autores IA de prueba y los mismos contratos. **No se ha iniciado sesión ni ejecutado una evaluación con Claude real.** Sus conectores GitHub/Drive y la recuperación/visualización del Word siguen por comprobar en ese cliente. No se necesita una API de modelo para la arquitectura CLI/MCP descrita aquí; la modalidad nueva **Analizar PDF con IA** sí emplea una API externa por separado, con coste y consentimiento explícito.
 
 ## Preparación y recuperación
 
