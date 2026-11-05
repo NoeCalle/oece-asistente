@@ -33,7 +33,7 @@ La cadena completa por disposición, excepciones y casos históricos del plan am
 
 ## Actualización complementaria — 05/11/2026
 
-Se incorporó **OECE Consulta Normativa**, una consulta personal de solo lectura por MCP, que no necesita expediente: `oece_consultar_normativa`. Recupera pasajes de originales manifestados y cotejados por hash, localizador y fuente; si no existe un índice local válido, devuelve pendientes y referencia a Drive. La IA del cliente redacta la respuesta, no el código local. El puente cuenta ahora con **21 herramientas**. [Contrato](CONSULTA_NORMATIVA.md).
+**Actualización de alcance:** OECE Consulta Normativa funciona mediante la **conexión Google Drive del cliente de IA (ChatGPT, Claude o Grok Bot)**. El titular pregunta directamente, sin expediente, sin descargar la biblioteca ni necesitar índice local o API extra. Se busca primero en Drive; si no hay sustento suficiente, **se avisa antes de buscar en internet** y se identifican las fuentes externas. `oece_consultar_normativa` solo devuelve el plan para el cliente; **no ejecuta la conexión Drive**. El puente mantiene **21 herramientas**. [Contrato](CONSULTA_NORMATIVA.md).
 
 **Alcance acotado:** no se añadió invocación desde especialistas CMC/consultores ni se resolvió aún el protocolo de dudas de expediente. Esta segunda fase queda registrada en T53. La biblioteca local y la vigencia jurídica no se vuelven actuales automáticamente al actualizar el repositorio.
 
