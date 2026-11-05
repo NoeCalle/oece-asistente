@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 import os
 import re
+import sqlite3
 import tempfile
 
 from pypdf import PdfReader
@@ -38,10 +39,20 @@ def estado_norma(item):
     path = ruta_original(known["local_path"])
     present = path.is_file()
     match = present and sha(path.read_bytes()) == known["sha256"]
+    index = data_dir() / "normativa" / "indices" / "biblioteca-v1.sqlite"
+    indexed = False
+    if match and index.is_file():
+        try:
+            with sqlite3.connect(index.resolve().as_uri() + "?mode=ro", uri=True) as db:
+                indexed = db.execute("SELECT 1 FROM fuentes WHERE id=?", (known["sha256"],)).fetchone() is not None
+        except sqlite3.Error:
+            indexed = False
     return {"incorporada_biblioteca": True, "original_verificado": match,
-            "indice_actualizado": False,
-            "motivo": ("Original y SHA-256 coinciden; comprobar índice y vigencia"
-                       if match else "Archivo ausente o hash distinto: no utilizar para citas")}
+            "indice_actualizado": indexed,
+            "fuente_oficial_descargada": bool(known.get("verificacion", {}).get("descarga_desde_enlace_oficial")),
+            "motivo": ("Original/index y SHA-256 coinciden; comprobar vigencia" if indexed
+                       else "Original SHA-256 coincide; reconstruir índice" if match
+                       else "Archivo ausente o hash distinto: no utilizar para citas")}
 
 
 def _comprobar_pdf(raw, item):
