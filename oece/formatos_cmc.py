@@ -31,6 +31,7 @@ WORK_FIELDS = ("objeto", "entidad", "numero_contrato", "fecha_contrato",
 MONEY_FIELDS = ("monto_contrato", "monto_liquidado",
                 "descuento_equipamiento", "otros_descuentos",
                 "monto_experiencia")
+CLASS_FIELDS = ("especialidad", "subespecialidad", "tipologia")
 FACTOR_NAMES = ("actividad", "financiero", "ejecucion")
 
 
@@ -148,9 +149,12 @@ def validar(case_dir, data):
     _list(data["obras"], "obras", 150)
     seen = set()
     for obra in data["obras"]:
-        if not isinstance(obra, dict) or set(obra) != {"id", *WORK_FIELDS, "motivo_estado",
-                                                      "participacion_aplicada", "evidencias", "observaciones"}:
+        required={"id", *WORK_FIELDS, "motivo_estado", "participacion_aplicada", "evidencias", "observaciones"}
+        if (not isinstance(obra, dict) or not required.issubset(obra)
+                or not set(obra).issubset(required | set(CLASS_FIELDS))):
             raise ValueError("Obra CMC sin los campos requeridos")
+        for field in CLASS_FIELDS:
+            _string(obra.get(field), field, 350, nullable=True)
         key = _string(obra["id"], "id", 80)
         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,79}", key) or key in seen:
             raise ValueError("ID de obra inválido o duplicado")
@@ -180,7 +184,7 @@ def validar(case_dir, data):
         for ev in evidences:
             if not isinstance(ev, dict) or set(ev) != {"campo", "documento", "pagina", "cita"}:
                 raise ValueError("Evidencia de obra incompleta")
-            if ev["campo"] not in WORK_FIELDS and ev["campo"] != "motivo_estado":
+            if ev["campo"] not in (*WORK_FIELDS, *CLASS_FIELDS, "motivo_estado"):
                 raise ValueError("Campo de evidencia de obra desconocido")
             _check_ref({k: ev[k] for k in ("documento", "pagina", "cita")}, sources, ev["campo"])
         # Un importe propuesto sin cita directa al original NO es computable.
@@ -268,7 +272,9 @@ def preparar(case_dir, data):
         "obras_y_anios": [
             {"id": o["id"], "objeto": o["objeto"], "fecha_contrato": o["fecha_contrato"],
              "fecha_recepcion": o["fecha_recepcion"], "monto_experiencia": o["monto_experiencia"],
-             "anios_marcados": o["anios_marcados"], "evidencias": o["evidencias"]}
+             "anios_marcados": o["anios_marcados"],
+             "clasificacion_dga": {field: o.get(field) for field in CLASS_FIELDS},
+             "evidencias": o["evidencias"]}
             for o in included
         ],
         "sumatoria_experiencia_provisional_soles": _fmt(total) if sum_confirmable else None,
