@@ -75,16 +75,26 @@ class Protocolo:
                 try:
                     # Las librerías no pueden mezclar impresiones con el canal JSON-RPC.
                     with redirect_stdout(sys.stderr):data=self.bridge.ejecutar(name,arguments)
-                    resources=data.get('recursos',[])
-                    if not isinstance(resources,list) or any(not isinstance(r,dict) or r.get('type')!='resource_link' for r in resources):
-                        raise ValueError('Lista de recursos de herramienta inválida')
-                    result={'content':[{'type':'text','text':json.dumps(data,ensure_ascii=False,allow_nan=False)},
-                                       *resources], 'structuredContent':data,'isError':False}
+                    if isinstance(data,dict) and '__oece_mcp_image__' in data:
+                        original=data['__oece_mcp_image__']
+                        imagen=original['data']
+                        meta={k:v for k,v in original.items() if k!='data'}
+                        result={'content':[{'type':'text','text':json.dumps(meta,ensure_ascii=False,allow_nan=False)},
+                                           {'type':'image','data':imagen,'mimeType':original['mimeType']}],
+                                'structuredContent':meta, 'isError':False}
+                    else:
+                        resources=data.get('recursos',[])
+                        if not isinstance(resources,list) or any(not isinstance(r,dict) or r.get('type')!='resource_link' for r in resources):
+                            raise ValueError('Lista de recursos de herramienta inválida')
+                        result={'content':[{'type':'text','text':json.dumps(data,ensure_ascii=False,allow_nan=False)},
+                                           *resources], 'structuredContent':data,'isError':False}
                 except (ValueError,TypeError,KeyError,OSError) as error:
                     result={'content':[{'type':'text','text':str(error)}],'isError':True}
             elif method=='resources/templates/list':
                 result={'resourceTemplates':[{'uriTemplate':'oece://casos/{caso}/salida/{revision}/{archivo}',
-                        'name':'entrega-oece','description':'Word, matriz CSV/JSON o manifiesto de una revisión conservada.'}]}
+                        'name':'entrega-oece','description':'Word, matriz CSV/JSON o manifiesto de una revisión conservada.'},
+                        {'uriTemplate':'oece://casos/{caso}/ia/{revision}/{archivo}',
+                        'name':'analisis-visual-oece','description':'Word y resultados de análisis de un cliente IA por MCP local.'}]}
             elif method=='resources/list':result={'resources':[]}
             elif method=='resources/read':
                 if not isinstance(params.get('uri'),str):raise RPCError(-32602,'URI requerida')
@@ -96,7 +106,7 @@ class Protocolo:
                     result['tools']=[{k:v for k,v in tool.items() if k!='annotations'} for tool in result['tools']]
                 elif method=='tools/call':
                     # ResourceLink y structuredContent se añadieron después de 2024.
-                    result['content']=[c for c in result['content'] if c['type']=='text']
+                    result['content']=[c for c in result['content'] if c['type'] in ('text','image')]
                     result.pop('structuredContent',None)
             if modern:
                 result.update(resultType='complete',_meta={'io.modelcontextprotocol/serverInfo':INFO})
