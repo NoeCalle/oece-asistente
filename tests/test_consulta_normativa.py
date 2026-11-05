@@ -1,182 +1,106 @@
-"""Consultas normativas personales: pruebas sin corpus privado ni red."""
-from contextlib import closing
-from io import BytesIO
-import json
-import os
-from pathlib import Path
-import sqlite3
-import tempfile
+"""Agente de consulta normativa de suscripción: Drive primero, web con aviso.
+
+Prueba la ruta declarativa del servidor MCP, no la conexión real de clientes a
+Google Drive o a buscadores externos.
+"""
 import unittest
-from unittest.mock import patch
 
-from pypdf import PdfWriter
-from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
-
-from oece.consulta_normativa import consultar
-from oece.comun import sha
-from oece.enrutador import ESPECIALISTAS
-from oece.mcp_local import Protocolo, CURRENT
+from oece.consulta_normativa import (
+    AVISO_FUENTE_EXTERNA, DRIVE_BIBLIOTECA, DRIVE_ID, consultar
+)
+from oece.enrutador import ESPECIALISTAS, INTRO, INSTRUCCION_CMC, INSTRUCCION_CONSULTORES
+from oece.mcp_local import CURRENT, Protocolo
 from oece.puente import Puente, herramientas
+import tempfile
+from pathlib import Path
 
 
-def pdf_con_texto(texto):
-    writer = PdfWriter()
-    page = writer.add_blank_page(width=600, height=800)
-    font = writer._add_object(DictionaryObject({
-        NameObject("/Type"): NameObject("/Font"),
-        NameObject("/Subtype"): NameObject("/Type1"),
-        NameObject("/BaseFont"): NameObject("/Helvetica"),
-    }))
-    page[NameObject("/Resources")] = DictionaryObject({
-        NameObject("/Font"): DictionaryObject({NameObject("/F1"): font}),
-    })
-    stream = DecodedStreamObject()
-    escaped = texto.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
-    stream.set_data(("BT /F1 12 Tf 20 700 Td (" + escaped + ") Tj ET").encode("ascii"))
-    page[NameObject("/Contents")] = writer._add_object(stream)
-    output = BytesIO()
-    writer.write(output)
-    return output.getvalue()
+class ConsultaNormativaDriveFirst(unittest.TestCase):
+    def test_consulta_no_exige_descarga_expediente_ni_indice_local(self):
+        with tempfile.TemporaryDirectory() as root:
+            bridge = Puente(Path(root) / "operacion")
+            result = bridge.ejecutar("oece_consultar_normativa", {
+                "pregunta": "¿Qué indica la RD 0016-2025 sobre tipologías?",
+                "fecha": "2026-11-05",
+            })
+            self.assertEqual("pendiente_busqueda_drive_por_cliente", result["estado"])
+            self.assertEqual(DRIVE_BIBLIOTECA, result["biblioteca_drive"])
+            self.assertEqual(DRIVE_ID, result["id_carpeta_drive"])
+            self.assertFalse(result["requiere_expediente"])
+            self.assertFalse(result["requiere_copia_local"])
+            self.assertFalse(result["requiere_indice_local"])
+            self.assertFalse(result["requiere_api_oece"])
+            self.assertEqual([], result["evidencias"])
+            self.assertFalse(result["el_servidor_mcp_leyo_drive"])
+            self.assertFalse(result["el_servidor_mcp_consulto_internet"])
+            self.assertEqual([], list((Path(root) / "operacion").glob("*/expediente.json")))
 
+    def test_drive_primero_y_web_solo_por_insuficiencia_con_aviso(self):
+        result = consultar("¿Qué regula una resolución?")
+        drive, internet = result["protocolo"]
+        self.assertEqual("drive", drive["origen"])
+        self.assertEqual("internet", internet["origen"])
+        self.assertIn("conector de Google Drive", drive["accion"])
+        self.assertIn("subcarpetas", drive["accion"])
+        self.assertIn("ÚNICAMENTE", internet["condicion"])
+        self.assertIn("ANTES", internet["accion"])
+        self.assertEqual(AVISO_FUENTE_EXTERNA, internet["aviso_previo_obligatorio"])
+        self.assertIn("Biblioteca Drive", result["formato_respuesta"])
+        self.assertIn("Internet", result["formato_respuesta"])
 
-class ConsultaNormativa(unittest.TestCase):
-    def setUp(self):
-        tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(tmp.cleanup)
-        self.root = Path(tmp.name)
-        env = patch.dict(os.environ, {"OECE_DATA_DIR": str(self.root/"privado")})
-        env.start()
-        self.addCleanup(env.stop)
-        self.path = self.root/"privado/normativa/originales/sintetica/resolucion-demo.pdf"
-        self.path.parent.mkdir(parents=True)
-        self.text = (
-            "Resolucion Directoral 0016-2025. Las subespecialidades y tipologias "
-            "de obras se clasifican conforme al listado anexo."
-        )
-        raw = pdf_con_texto(self.text)
-        self.path.write_bytes(raw)
-        self.source = {
-            "name": "resolucion-demo.pdf",
-            "local_path": "normativa/originales/sintetica/resolucion-demo.pdf",
-            "instrument_id": "rd-0016-sintetica",
-            "kind": "original",
-            "source_url": "https://www.gob.pe/institucion/demo/normas-legales/1",
-            "source_page": "https://www.gob.pe/institucion/demo",
-            "sha256": sha(raw),
-        }
-        self.db = self.root/"privado/normativa/indices/biblioteca-v1.sqlite"
-        self.db.parent.mkdir(parents=True)
-        with closing(sqlite3.connect(self.db)) as conn, conn:
-            conn.executescript(
-                "CREATE TABLE fuentes(id TEXT PRIMARY KEY,metadata TEXT);"
-                "CREATE TABLE fragmentos(id INTEGER PRIMARY KEY,fuente TEXT,"
-                " ubicacion TEXT,texto TEXT,alertas TEXT);"
-                "CREATE VIRTUAL TABLE buscar USING fts5("
-                "id UNINDEXED,texto,tokenize='unicode61 remove_diacritics 2');"
-            )
-            conn.execute("INSERT INTO fuentes VALUES(?,?)",
-                         (self.source["sha256"], json.dumps(self.source)))
-            conn.execute("INSERT INTO fragmentos(fuente,ubicacion,texto,alertas)"
-                         " VALUES(?,?,?,?)",
-                         (self.source["sha256"], "pagina:1", self.text, "[]"))
-            conn.execute("INSERT INTO buscar(id,texto) VALUES (?,?)", (1, self.text))
-        patches = [
-            patch("oece.biblioteca.fuentes", return_value=[self.source]),
-            patch("oece.consulta_normativa.fuentes", return_value=[self.source]),
-        ]
-        for item in patches:
-            item.start()
-            self.addCleanup(item.stop)
-        self.bridge = Puente(self.root/"operacion")
+    def test_no_afirma_ausencia_si_conector_inaccesible(self):
+        result = consultar("¿Qué dice la norma?")
+        self.assertIn("NO decir", result["si_drive_no_es_accesible"])
+        self.assertIn("no equivale a no encontrar", result["protocolo"][1]["condicion"])
+        self.assertTrue(result["biblioteca_drive"].startswith("https://drive.google.com/drive/folders/"))
 
-    def test_pregunta_directa_sin_expediente_entrega_cita_con_sha(self):
-        result = self.bridge.ejecutar(
-            "oece_consultar_normativa",
-            {"pregunta": "Que dice la Resolucion Directoral 0016-2025 sobre tipologias?",
-             "fecha": "2026-11-05"})
-        self.assertEqual("evidencia_local_disponible", result["estado"])
-        self.assertEqual("consulta_directa_del_titular", result["modo"])
-        self.assertFalse(result["requiere_expediente"])
-        self.assertFalse(result["invocacion_entre_agentes"])
+    def test_sin_revision_normativa_automatica_ni_otra_api(self):
+        result = consultar("¿Qué dice el artículo 2?", limite=3)
+        self.assertEqual(3, result["limite_fuentes_sugerido"])
         self.assertFalse(result["respuesta_generada_por_modelo"])
-        self.assertEqual([], list((self.root/"operacion").glob("*/expediente.json")))
-        evidence = result["evidencias"][0]
-        self.assertEqual("pagina:1", evidence["ubicacion"])
-        self.assertEqual(1, evidence["pagina_pdf"])
-        self.assertEqual(self.source["sha256"], evidence["sha256"])
-        self.assertIn("subespecialidades", evidence["cita_textual_extraida"])
-        self.assertEqual(self.source["source_url"], evidence["url_oficial"])
-        self.assertFalse(evidence["vigencia_comprobada"])
-        self.assertTrue(any("posterior al corte" in x for x in result["pendientes"]))
+        self.assertFalse(result["requiere_api_oece"])
+        self.assertIn("no llamar a agentes CMC", result["restricciones"])
+        self.assertIn("no inventar citas", result["formato_respuesta"])
 
-    def test_consulta_por_termino_especifico_usa_fallback_fts(self):
-        result = consultar("Que requisitos sobre tipologias?")
-        self.assertEqual("evidencia_local_disponible", result["estado"])
-        self.assertEqual(1, len(result["evidencias"]))
-
-    def test_sin_indice_informa_drive_y_no_inventa_articulo(self):
-        self.db.unlink()
-        result = self.bridge.ejecutar("oece_consultar_normativa",
-                                     {"pregunta": "Que dice la RD 0016?"})
-        self.assertEqual("sin_indice_local", result["estado"])
-        self.assertEqual([], result["evidencias"])
-        self.assertIn("drive.google.com", result["biblioteca_drive"])
-        self.assertFalse(result["vigencia_verificada"])
-
-    def test_archivo_alterado_no_usa_fragmentos_del_indice(self):
-        self.path.write_bytes(self.path.read_bytes() + b"tamper")
-        result = consultar("Que dice la resolucion sobre subespecialidades?")
-        self.assertEqual("sin_evidencia_cotejada", result["estado"])
-        self.assertFalse(result["evidencias"])
-        self.assertTrue(any("SHA-256" in x for x in result["pendientes"]))
-
-    def test_indice_con_fuente_no_manifestada_no_es_evidencia(self):
-        with patch("oece.consulta_normativa.fuentes", return_value=[]):
-            result = consultar("tipologias de obras")
-        self.assertEqual("sin_evidencia_cotejada", result["estado"])
-        self.assertFalse(result["evidencias"])
-
-    def test_no_entrega_instrucciones_de_documentos_como_ordenes(self):
-        result = consultar("Clasificacion de obras")
-        self.assertIn("no instrucciones", result["indicaciones_al_asistente"].lower())
-        self.assertFalse(result["respuesta_generada_por_modelo"])
-
-    def test_validaciones_de_pregunta_fecha_y_limite(self):
+    def test_valida_pregunta_fecha_y_limite(self):
         for question in ("", " ", "a"*501):
-            with self.assertRaises(ValueError):
+            with self.subTest(question=question[:6]), self.assertRaises(ValueError):
                 consultar(question)
-        for fecha in ("2026-02-30", "5/11/2026", "not-a-date"):
-            with self.assertRaises(ValueError):
-                consultar("tipologias", fecha=fecha)
-        with self.assertRaises(ValueError):
-            consultar("tipologias", limite=True)
-        with self.assertRaises(ValueError):
-            self.bridge.ejecutar(
-                "oece_consultar_normativa", {"pregunta": "tipologias", "caso": "E1"})
+        for date_str in ("2026-02-30", "5/11/2026", "not-a-date"):
+            with self.subTest(fecha=date_str), self.assertRaises(ValueError):
+                consultar("tipologías", fecha=date_str)
+        for limit in (True, 0, 11, -1):
+            with self.subTest(limit=limit), self.assertRaises(ValueError):
+                consultar("tipologías", limite=limit)
 
-    def test_herramienta_mcp_solo_lectura_y_disponible_en_protocolo(self):
-        tool = next(x for x in herramientas()
-                    if x["name"] == "oece_consultar_normativa")
+    def test_solo_lectura_mcp_sin_parametro_de_caso(self):
+        tool = next(t for t in herramientas() if t["name"] == "oece_consultar_normativa")
         self.assertTrue(tool["annotations"]["readOnlyHint"])
-        self.assertEqual(["pregunta"], tool["inputSchema"]["required"])
         self.assertNotIn("caso", tool["inputSchema"]["properties"])
-        rpc = Protocolo(self.bridge)
-        meta = {"io.modelcontextprotocol/protocolVersion": CURRENT,
-                "io.modelcontextprotocol/clientCapabilities": {}}
-        answer = rpc.manejar({
-            "jsonrpc": "2.0", "id": 10, "method": "tools/call",
-            "params": {"_meta": meta, "name": "oece_consultar_normativa",
-                       "arguments": {"pregunta": "tipologias"}}
-        })
-        self.assertFalse(answer["result"]["isError"])
-        self.assertEqual("evidencia_local_disponible",
-                         answer["result"]["structuredContent"]["estado"])
+        self.assertEqual(["pregunta"], tool["inputSchema"]["required"])
+        with tempfile.TemporaryDirectory() as root:
+            bridge = Puente(root)
+            rpc = Protocolo(bridge)
+            req = {
+                "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+                "params": {
+                    "_meta": {
+                        "io.modelcontextprotocol/protocolVersion": CURRENT,
+                        "io.modelcontextprotocol/clientCapabilities": {},
+                    },
+                    "name": "oece_consultar_normativa",
+                    "arguments": {"pregunta": "¿Qué es una subespecialidad?"},
+                },
+            }
+            data = rpc.manejar(req)["result"]
+            self.assertFalse(data["isError"])
+            self.assertEqual("pendiente_busqueda_drive_por_cliente",
+                             data["structuredContent"]["estado"])
 
-    def test_especialistas_existentes_no_invocan_al_nuevo_agente(self):
+    def test_especialistas_no_invocan_consulta_personal(self):
         for specialist in ESPECIALISTAS.values():
-            self.assertNotIn(
-                "oece_consultar_normativa", specialist["herramientas_especializadas"])
-        from oece.enrutador import INTRO, INSTRUCCION_CMC, INSTRUCCION_CONSULTORES
+            self.assertNotIn("oece_consultar_normativa",
+                             specialist["herramientas_especializadas"])
         self.assertNotIn("oece_consultar_normativa",
                          INTRO + INSTRUCCION_CMC + INSTRUCCION_CONSULTORES)
 
