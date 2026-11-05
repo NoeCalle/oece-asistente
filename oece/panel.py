@@ -1,4 +1,4 @@
-"""Panel local sin servicios externos; acciones con token y origen verificado."""
+"""Panel local; la IA externa requiere consentimiento explícito por expediente."""
 import base64
 from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -14,6 +14,7 @@ import uuid
 
 from .comun import ROOT, dentro, guardar, leer, sha
 from .coordinador import observar_una_vez
+from .agentes_ia import analizar as analizar_ia, previsualizar as previsualizar_ia, verificar_revision as verificar_ia
 from .flujo import iniciar, procesar, verificar_entrega
 
 def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
@@ -21,7 +22,7 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
     token=secrets.token_hex(32);pool=ThreadPoolExecutor(max_workers=1)
     remoto = host not in ('127.0.0.1', 'localhost', '::1')
     password = (os.environ.get('OECE_PANEL_PASSWORD') or secrets.token_urlsafe(24)) if remoto else None
-    jobs={};lock=threading.Lock()
+    jobs={};ia_jobs={};lock=threading.Lock()
     def case(case_id):
         if len(case_id)>80 or not case_id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in case_id):
             raise ValueError('Identificador de expediente inválido')
@@ -37,6 +38,25 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                 with lock: jobs[key]={'estado':'borrador','revision':path.name,'reutilizada':reused}
             except Exception as e:
                 with lock: jobs[key]={'estado':'requiere_atencion','motivo':str(e)}
+        pool.submit(run)
+    def launch_ia(folder, autorizado):
+        if autorizado is not True:
+            raise ValueError('Autoriza expresamente el envío de los PDF a la API de IA')
+        previsualizar_ia(folder)
+        if not os.environ.get('OPENAI_API_KEY','').strip():
+            raise ValueError('Configurar OPENAI_API_KEY en el servidor; no se han enviado documentos')
+        key=folder.name
+        with lock:
+            if ia_jobs.get(key,{}).get('estado')=='procesando': return
+            ia_jobs[key]={'estado':'procesando','etapa':'iniciando'}
+        def progress(stage):
+            with lock: ia_jobs[key]={'estado':'procesando','etapa':stage}
+        def run():
+            try:
+                result=analizar_ia(folder,autorizar_envio=True,progress=progress)
+                with lock: ia_jobs[key]={'estado':'borrador_ia',**result}
+            except Exception as e:
+                with lock: ia_jobs[key]={'estado':'requiere_atencion','motivo':str(e)}
         pool.submit(run)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args): pass
@@ -90,7 +110,14 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                                               if re.fullmatch('[a-f0-9]{64}',d.name) and d.is_dir()
                                               and dentro(outputs,d.name+'/entrega.json').is_file()),
                                              key=lambda p:p.stat().st_mtime,reverse=True) if outputs.is_dir() else []
-                            item={'carpeta':folder.name,'ficha':config,'revisiones':[d.name for d in revisions], 'trabajo':jobs.get(folder.name,{})}
+                            ia_root=dentro(folder,'analisis_ia')
+                            ia_versions=sorted((p.name for p in ia_root.iterdir()
+                                                if p.is_dir() and re.fullmatch('[a-f0-9]{64}',p.name)
+                                                and dentro(p,'integridad-ia.json').is_file()),
+                                               reverse=True) if ia_root.is_dir() else []
+                            item={'carpeta':folder.name,'ficha':config,'revisiones':[d.name for d in revisions],
+                                  'trabajo':jobs.get(folder.name,{}),'revisiones_ia':ia_versions,
+                                  'trabajo_ia':ia_jobs.get(folder.name,{})}
                             if revisions:
                                 r=leer(revisions[0]/'matriz.json');item.update(conteo=r['conteo'],preguntas=r['preguntas'])
                             items.append(item)
@@ -102,6 +129,16 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                 elif url.path=='/api/preparacion':
                     from .diagnostico import comprobar
                     self.send(200,comprobar(query.get('fecha',[None])[0]))
+                elif url.path=='/descargar-ia':
+                    folder=case(query['caso'][0]);revision=query['revision'][0];name=query['archivo'][0]
+                    if not re.fullmatch('[a-f0-9]{64}',revision): raise ValueError('Revisión IA inválida')
+                    if name not in ('informe-ia.docx','analisis-ia.json','calculos-ia.json','lecturas-ia.json'):
+                        raise ValueError('Archivo IA no permitido')
+                    path=dentro(folder,'analisis_ia/'+revision)
+                    verificar_ia(path)
+                    raw=dentro(path,name).read_bytes()
+                    mime='application/vnd.openxmlformats-officedocument.wordprocessingml.document' if name.endswith('.docx') else 'application/json'
+                    self.send(200,raw,mime)
                 elif url.path=='/descargar':
                     folder=case(query['caso'][0]);revision=query['revision'][0];name=query['archivo'][0]
                     if len(revision)!=64 or any(c not in '0123456789abcdef' for c in revision): raise ValueError('Revisión inválida')
@@ -158,6 +195,10 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                     # Creación exclusiva para no sobrescribir una incorporación concurrente.
                     with target.open('xb') as stream: stream.write(raw)
                     self.send(200,{'ok':True})
+                elif self.path=='/api/analizar-ia':
+                    folder=case(data['caso'])
+                    launch_ia(folder,data.get('autorizar_envio') is True)
+                    self.send(202,{'estado':'procesando','modalidad':'IA multimodal con tres subagentes'})
                 elif self.path=='/api/procesar':
                     folder=case(data['caso']);launch(folder);self.send(202,{'estado':'procesando'})
                 elif self.path=='/api/detener':
@@ -166,7 +207,7 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                 else: self.send(404,{'error':'No encontrado'})
             except (KeyError,ValueError,OSError,TypeError,json.JSONDecodeError) as e: self.send(400,{'error':str(e)})
     server=ThreadingHTTPServer((host,port),Handler)
-    server.oece_token=token;server.oece_pool=pool;server.oece_jobs=jobs
+    server.oece_token=token;server.oece_pool=pool;server.oece_jobs=jobs;server.oece_ia_jobs=ia_jobs
     server.oece_password=password;server.oece_host=host
     return server
 
