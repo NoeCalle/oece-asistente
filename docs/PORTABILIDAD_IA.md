@@ -63,9 +63,13 @@ Las herramientas se complementan con `resources/read` para recuperar una entrega
 
 Los JSON guardados son declaraciones, **no resultados ya aprobados**. La generación verifica citas, localizadores, huellas y cálculos antes de conservar una entrega. El puente no atribuye hechos ni cotejos nuevos a un revisor humano. Los originales del caso se colocan en `documentos/`; una carpeta existente no se inicializa silenciosamente.
 
-## Consultas normativas directas del titular
+## Consultas normativas directas del titular: Drive primero, sin descargas
 
-`oece_consultar_normativa(pregunta, fecha?, limite?)` es una herramienta MCP **de solo lectura**, sin parámetro de expediente. Recupera pasajes del índice, revalida la huella SHA-256 contra el manifiesto y coteja la página PDF o bloque DOCX del original antes de retornar extractos, ubicación y URL. La IA elegida responde en español, indicando vigencia/modificatorias por comprobar. Si no encuentra el índice o el original, devuelve estado pendiente y la ubicación conocida de Drive, **sin fingir acceso al conector**. Este agente se usa exclusivamente para las preguntas directas del titular: **no hay invocación entre los agentes CMC y consultores**. Ver [contrato completo](CONSULTA_NORMATIVA.md). Esta incorporación eleva a **21** las herramientas del puente enumeradas en `oece/puente.py`.
+Para **preguntas personales** desde ChatGPT, Claude o Grok Bot, el cliente IA usa **su conector autorizado de Google Drive** para buscar en la biblioteca OECE, abre los archivos relevantes y redacta la respuesta. Si encuentra sustento, no usa internet. **Solo si no encuentra suficiente sustento**, antes de buscar fuera debe avisar al titular; las fuentes externas llevan `Fuente: Internet`, separadas de `Fuente: Biblioteca Drive`. No se necesita copia local de los PDF, índice SQLite ni API adicional de IA en esta modalidad.
+
+La herramienta de solo lectura `oece_consultar_normativa(pregunta, fecha?, limite?)` es un **enrutador declarativo**: devuelve el enlace de la carpeta, el orden de búsqueda, las restricciones y el texto de aviso; **no llama al conector Google Drive del cliente ni a la web**. Por ello, un cliente con Drive pero sin MCP puede utilizar las instrucciones del [prompt portable](PROMPT_CONSULTA_NORMATIVA.md) directamente; el cliente con MCP puede usar el plan. En ambos casos la búsqueda real la realiza **ese cliente**, no Python. **No atribuir al MCP citas que no ha leído**.
+
+Si no hay acceso a Drive, informar esa limitación; no es prueba de que falte el documento. Esta ruta no modifica `oece_buscar_normativa` / `oece_norma`, las cuales continúan siendo locales para procedimientos y expedientes. **Sin invocación automática de CMC o consultores**. [Contrato](CONSULTA_NORMATIVA.md). Las 21 herramientas MCP siguen disponibles.
 
 ## Perfil y límites del conector
 
