@@ -25,3 +25,6 @@
 - Mantener trazabilidad, auditoría y revisión humana antes de entrega.
 
 **Privacidad:** conservar fotografías y expedientes fuera del repositorio público. Algunas claves de obra vistas en esta fotografía difieren de las de las otras; no fusionar sus datos como un expediente homogéneo.
+
+
+**Contrato de datos implementado:** [Ficha maestra para los tres formatos](CONTRATO_DATOS_CMC.md). La IA prepara ahora datos semánticos y trazabilidad, sin reproducir todavía la plantilla nativa pendiente.
