@@ -4,6 +4,7 @@ No usa claves ni APIs de IA. Solo descarga de la URL oficial fijada en el
 catálogo público o registra una copia local marcada pendiente de cotejo.
 Las nuevas fuentes no sustituyen las normas anteriores.
 """
+from contextlib import closing
 from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlparse
@@ -43,7 +44,7 @@ def estado_norma(item):
     indexed = False
     if match and index.is_file():
         try:
-            with sqlite3.connect(index.resolve().as_uri() + "?mode=ro", uri=True) as db:
+            with closing(sqlite3.connect(index.resolve().as_uri() + "?mode=ro", uri=True)) as db:
                 indexed = db.execute("SELECT 1 FROM fuentes WHERE id=?", (known["sha256"],)).fetchone() is not None
         except sqlite3.Error:
             indexed = False
