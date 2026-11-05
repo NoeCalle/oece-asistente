@@ -1,5 +1,5 @@
 # Tareas persistentes
-Actualización: 2026-11-02; corte normativo 2026-10-31. Se usan tareas en Git para mantener la continuidad sin depender de issues ni del chat. [Estado general](ESTADO.md).
+Actualización general 2026-11-05 (modalidad agent-first); historial técnico hasta 2026-11-02. Corte normativo histórico 2026-10-31. Se usan tareas en Git para mantener la continuidad sin depender de issues ni del chat. [Estado general](ESTADO.md).
 
 | ID | Prioridad | Estado | Trabajo y evidencia de cierre |
 |---|---|---|---|
@@ -78,3 +78,14 @@ El usuario corrigió expresamente el orden: **primero se ingresan montos en la r
 | T53 | P1 | **Pendiente para una segunda etapa** | **Gestión de dudas de especialistas:** diseñar clasificación de dudas, investigación, evidencia, registro de criterios y escalamiento de asuntos no resueltos al titular. NO implementar ahora ni invocar automáticamente al agente normativo desde CMC/consultores. |
 
 **Cadena exigida:** obra documentada → monto de experiencia validado → año/período y factores → CMC calculada → resumen. La etapa 3 no debe tratarse como evaluación autónoma. Los datos y fotos no van al repositorio público. T33 sigue abierto hasta recibir y adaptar formatos nativos y contrastar con expediente autorizado.
+
+
+## Arquitectura de agentes — decisión 05/11/2026
+
+El titular eligió **roles por instrucciones**, Drive para documentos/resultados y Github para contratos/código; el motor Python/MCP permanece **opcional**, no se elimina. El coordinador y los dos especialistas se trasladaron a Markdown sin implementar comunicación automática de dudas entre ellos ni declarar pruebas cloud completas.
+
+| ID | Prioridad | Estado | Trabajo y evidencia de cierre |
+|---|---|---|---|
+| T54 | P0 | Implementado en GitHub | Arquitectura agent-first: coordinador, especialista CMC, especialista consultores, consulta normativa, procedimientos y contratos de evidencias/entregables. [Arquitectura](ARQUITECTURA_AGENTES.md) · [Prompt](PROMPT_OECE_UNIVERSAL.md). Preserva 01→02→03 y separación CMC/AC. |
+| T55 | P0 | Pendiente de prueba real | Validar en **Codex Cloud, Claude Cloud y Grok Bot**: leer instrucciones, acceder a normativa y expediente en Drive, generar Word/JSON/CSV, comprobar referencias y subir los resultados a Drive. [Pruebas](PRUEBAS_AGENTES.md). |
+| T56 | P1 | Pendiente de originales nativos | Recibir y adaptar los tres formatos editables institucionales CMC. Los JSON actuales son datos de trabajo, **no** formularios oficiales. |
