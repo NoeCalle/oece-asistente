@@ -118,6 +118,23 @@ class TresEntregablesCMC(unittest.TestCase):
         reused = self.bridge.ejecutar("oece_publicar_cmc", {"caso": "E-CMC"})
         self.assertTrue(reused["reutilizada"])
 
+    def test_clasificacion_dga_es_opcional_y_tiene_fuente(self):
+        work=self.base()
+        work["obras"][0]["especialidad"]="Edificaciones y afines"
+        work["obras"][0]["subespecialidad"]="Edificación educativa"
+        work["obras"][0]["tipologia"]="Edificación para educación básica"
+        work["obras"][0]["evidencias"].append(self.ev(
+            "contrato.pdf", "subespecialidad", "Edificación educativa"))
+        uno,dos,tres=preparar(self.case,work)
+        self.assertEqual("Edificación educativa",
+                         dos["obras_y_anios"][0]["clasificacion_dga"]["subespecialidad"])
+        self.assertIsNone(tres["CMC_a_otorgar"])
+        without=self.base()
+        uno2,dos2,tres2=preparar(self.case,without)
+        self.assertIsNone(dos2["obras_y_anios"][0]["clasificacion_dga"]["subespecialidad"])
+        self.assertEqual(tres["CMC_calculada_provisional_soles"],
+                         tres2["CMC_calculada_provisional_soles"])
+
     def test_documento_sin_evidencia_no_se_cuenta(self):
         sample = self.base()
         sample["obras"][0]["evidencias"] = [
