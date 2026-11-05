@@ -1,5 +1,9 @@
 # OECE Consulta Normativa — Drive primero, internet solo si falta sustento
 
+
+> **Operación agent-first:** este mismo especialista existe ahora en [agentes/consulta-normativa.md](../agentes/consulta-normativa.md) como rol de la IA, sin invocar MCP. Se conserva esta especificación y la herramienta declarativa MCP como opción; el acceso real a Drive sigue siendo responsabilidad del cliente IA. El coordinador solo usa el rol normativo cuando el **titular formula una consulta directa**; los especialistas CMC/consultores leen normativa directamente y no lo invocan automáticamente.
+
+
 **Alcance vigente (05/11/2026).** Este especialista atiende **únicamente las preguntas puntuales del titular**, sin abrir expedientes ni redactar informes. Funciona mediante **la suscripción y las conexiones que tenga el cliente de IA elegido: ChatGPT, Claude o Grok Bot**. No requiere una API de modelo de pago ni una copia local de la biblioteca. Los especialistas CMC y consultores **no** invocan este agente; la gestión de sus dudas queda pendiente para la segunda etapa.
 
 ## Fuente principal obligatoria
