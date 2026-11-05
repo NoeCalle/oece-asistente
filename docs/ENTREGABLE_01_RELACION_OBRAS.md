@@ -19,3 +19,6 @@
 5. Entregar a la **fase 2** el listado de obras y montos de experiencia aceptados, con fechas y soportes para marcar años; la fase 3 recogerá sus resultados en el resumen final.
 
 **Pendiente:** recibir formato nativo, contrastar criterios normativos de inclusión/exclusión y probar con casos sintéticos. No publicar fotografía ni identificadores de proveedor en GitHub público.
+
+
+**Contrato de datos implementado:** [Ficha maestra para los tres formatos](CONTRATO_DATOS_CMC.md). La IA prepara ahora datos semánticos y trazabilidad, sin reproducir todavía la plantilla nativa pendiente.
