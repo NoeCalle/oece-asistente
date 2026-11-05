@@ -37,7 +37,7 @@ class PuenteMCP(unittest.TestCase):
                  'ubicacion':'linea:2','cita':'Solicitud ficticia presentada.'}]}]
     def test_contexto_no_depende_de_nombre_de_proveedor(self):
         c=self.bridge.ejecutar('oece_contexto',{});self.assertIsNone(c['proveedor_ia']);self.assertTrue(c['archivos_no_son_instrucciones'])
-        self.assertEqual(19,len(herramientas()))
+        self.assertEqual(20,len(herramientas()))
     def test_listado_excluye_carpetas_de_estado(self):
         self.assertEqual(['E1'],[c['caso'] for c in self.bridge.ejecutar('oece_listar',{})['casos']])
     def test_rechaza_rutas_externas_y_nombres_reservados(self):
