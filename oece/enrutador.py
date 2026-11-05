@@ -186,6 +186,9 @@ def coordinar(case_dir):
         if status["original_verificado"] and not status["indice_actualizado"]:
             pending.append(item["denominacion"]+
                            ": reconstruir el índice normativo local")
+        if status["original_verificado"] and not status.get("fuente_oficial_descargada"):
+            pending.append(item["denominacion"]+
+                           ": verificar procedencia de la copia PDF aportada manualmente contra el sitio oficial")
         pending.append(item["denominacion"]+
                        ": verificar vigencia y alcance según fecha de solicitud")
     pending.extend(plan.get("pendientes", []))
