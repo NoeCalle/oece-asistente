@@ -3,6 +3,8 @@ import base64
 import json
 from pathlib import Path
 import subprocess
+import shutil
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -98,6 +100,18 @@ class MCPVisualSinAPI(unittest.TestCase):
         self.assertNotIn("data", result["structuredContent"])
         self.assertNotIn("foto-ficticia", result["content"][0]["text"])
         self.assertEqual(self.doc["sha256"], result["structuredContent"]["sha256"])
+
+    @unittest.skipUnless(sys.platform.startswith("linux") and shutil.which("pdftoppm"),
+                         "Prueba real de Poppler en runner Ubuntu")
+    def test_poppler_real_construye_imagen_de_pdf_escaneable(self):
+        response = self.bridge.ejecutar("oece_pagina_visual", {
+            "caso": "E1", "documento": self.doc["id"], "pagina": 1})
+        meta = response["__oece_mcp_image__"]
+        self.assertEqual(1, meta["pagina"])
+        self.assertEqual("image/jpeg", meta["mimeType"])
+        image = base64.b64decode(meta["data"])
+        self.assertTrue(image.startswith(b"\\xff\\xd8".decode("unicode_escape").encode("latin1")))
+        self.assertGreater(len(image), 100)
 
     def test_vision_rechaza_pagina_ajena(self):
         with self.assertRaisesRegex(ValueError, "Página no existe"):
