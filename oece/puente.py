@@ -215,7 +215,7 @@ class Puente:
                     'advertencias':doc['advertencias']}
         if name in ('oece_entrada','oece_guardar'):
             if arguments['tipo']=='datos_cmc' and leer(dentro(folder,'expediente.json')).get('procedimiento')!='aumento_cmc':
-                raise ValueError('La ficha de tres formatos CMC no aplica a consultores')
+                raise ValueError('Los tres formatos CMC solo corresponden a aumento_cmc; no aplican a consultores')
             path=dentro(folder,ENTRADAS[arguments['tipo']])
             if name=='oece_entrada':
                 raw=path.read_bytes() if path.exists() else None
