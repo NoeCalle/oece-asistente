@@ -92,7 +92,7 @@ class TresEntregablesCMC(unittest.TestCase):
         self.assertIsNone(empty["sha256"])
         self.assertEqual("cmc-datos-v1", empty["contenido"]["version"])
         self.assertEqual("aumento_cmc", empty["contenido"]["expediente"]["tipo_tramite"])
-        self.assertEqual(19, len(herramientas()))
+        self.assertEqual(20, len(herramientas()))
 
     def test_tres_paquetes_independientes_y_calculo_condicionado(self):
         self.save(self.base())
