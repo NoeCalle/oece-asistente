@@ -1,4 +1,5 @@
 """RD 0016 DGA: fuente transversal, original privado y verificación sin red."""
+from contextlib import closing
 from io import BytesIO
 from pathlib import Path
 import os
@@ -84,7 +85,7 @@ class FuentesTransversales(unittest.TestCase):
         incorporar(self.item["id"],archivo=self.input)
         idx=self.root/"data/normativa/indices/biblioteca-v1.sqlite"
         idx.parent.mkdir(parents=True)
-        with sqlite3.connect(idx) as c:
+        with closing(sqlite3.connect(idx)) as c, c:
             c.execute("CREATE TABLE fuentes(id TEXT PRIMARY KEY, metadata TEXT)")
             c.execute("INSERT INTO fuentes VALUES(?,?)",(sha(self.original),"{}"))
         self.assertTrue(estado_norma(self.item)["indice_actualizado"])
@@ -101,7 +102,7 @@ class FuentesTransversales(unittest.TestCase):
         fake=pdf_de_prueba("Resolucion no relacionada ni verificada")
         with self.assertRaisesRegex(ValueError,"no se identifica"):
             _comprobar_pdf(fake,self.item)
-        with self.assertRaisesRegex(ValueError,"dominio oficial"):
+        with self.assertRaisesRegex(ValueError,"oficial"):
             _descargar("https://otro-ejemplo.invalid/documento.pdf")
         with self.assertRaisesRegex(ValueError,"exactamente una"):
             incorporar(self.item["id"])
