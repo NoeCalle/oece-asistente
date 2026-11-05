@@ -39,6 +39,8 @@ jobs:
         run: python -m unittest discover -s tests -p "test_data_dir.py" -v
       - name: OCR y panel Linux/Windows
         run: python -m unittest discover -s tests -p "test_linux_compat.py" -v
+      - name: Subagentes multimodales (sin API, sin originales privados)
+        run: python -m unittest discover -s tests -p "test_agentes_ia.py" -v
       - name: Rutas POSIX e índices heredados
         run: python -m unittest discover -s tests -p "test_rutas_posix.py" -v
       - name: Seguridad de rutas externas e índice normativo sintético
