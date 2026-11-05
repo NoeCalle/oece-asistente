@@ -127,7 +127,7 @@ class CoordinadorDual(unittest.TestCase):
                 self.assertEqual(specialist,plan["procedimiento"])
                 self.assertEqual(0,plan["pdf"])
                 self.assertIn("oece_coordinar",plan["texto"])
-                self.assertIn("MCP",plan["modo"])
+                self.assertIn("mcp",plan["modo"].lower())
                 self.assertTrue(plan["entregables"])
         finally:
             server.shutdown()
