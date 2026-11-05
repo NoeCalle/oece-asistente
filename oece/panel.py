@@ -1,4 +1,4 @@
-"""Panel local; la IA externa requiere consentimiento explícito por expediente."""
+"""Panel OECE local; IA agnóstica mediante cliente MCP, sin llamadas API del panel."""
 import base64
 from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -14,7 +14,7 @@ import uuid
 
 from .comun import ROOT, dentro, guardar, leer, sha
 from .coordinador import observar_una_vez
-from .agentes_ia import analizar as analizar_ia, previsualizar as previsualizar_ia, verificar_revision as verificar_ia
+from .agentes_ia import previsualizar as previsualizar_ia, verificar_revision as verificar_ia
 from .flujo import iniciar, procesar, verificar_entrega
 
 def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
@@ -38,25 +38,6 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                 with lock: jobs[key]={'estado':'borrador','revision':path.name,'reutilizada':reused}
             except Exception as e:
                 with lock: jobs[key]={'estado':'requiere_atencion','motivo':str(e)}
-        pool.submit(run)
-    def launch_ia(folder, autorizado):
-        if autorizado is not True:
-            raise ValueError('Autoriza expresamente el envío de los PDF a la API de IA')
-        previsualizar_ia(folder)
-        if not os.environ.get('OPENAI_API_KEY','').strip():
-            raise ValueError('Configurar OPENAI_API_KEY en el servidor; no se han enviado documentos')
-        key=folder.name
-        with lock:
-            if ia_jobs.get(key,{}).get('estado')=='procesando': return
-            ia_jobs[key]={'estado':'procesando','etapa':'iniciando'}
-        def progress(stage):
-            with lock: ia_jobs[key]={'estado':'procesando','etapa':stage}
-        def run():
-            try:
-                result=analizar_ia(folder,autorizar_envio=True,progress=progress)
-                with lock: ia_jobs[key]={'estado':'borrador_ia',**result}
-            except Exception as e:
-                with lock: ia_jobs[key]={'estado':'requiere_atencion','motivo':str(e)}
         pool.submit(run)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args): pass
@@ -127,6 +108,28 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                 elif url.path=='/api/pedido':
                     folder=case(query['caso'][0])
                     self.send(200,{'texto':f'Revisa el expediente en {folder}. Sigue AGENTS.md: lee los documentos, completa los hechos con citas verificables, analiza el procedimiento y genera una nueva revisión del informe Word y la matriz. No inventes datos ni registres aprobación humana.'})
+                elif url.path=='/api/pedido-ia':
+                    folder=case(query['caso'][0])
+                    preview=previsualizar_ia(folder)
+                    text=(
+                        f"Actúa como coordinador OECE para el expediente {folder.name}. "
+                        "Usa las herramientas del servidor MCP local 'oece' (no uses API ni claves nuevas). "
+                        "Primero oece_contexto y oece_archivos; usa oece_pagina_visual para INSPECCIONAR "
+                        "cada página PDF escaneada directamente con visión. "
+                        "Como agente lector, estructura cartas, contratos, resoluciones de recepción, "
+                        "resoluciones y tablas de liquidación, con página y citas breves. "
+                        "Guarda la lectura de cada PDF en oece_guardar, tipo lecturas_ia. "
+                        "Como subagente de cálculos, identifica operaciones con las filas extraídas "
+                        "y llama oece_calcular_liquidacion; no inventes importes. "
+                        "Como agente integrador, cruza las fechas, la obra, la liquidación y los "
+                        "documentos, contrasta normativa verificable y llama oece_publicar_analisis "
+                        "para obtener Word y JSON con sustento por documento/página. "
+                        "Los hechos y cálculos se mantienen como propuestas pendientes de cotejo humano. "
+                        "No publiques, envíes ni apruebes nada en nombre de OECE. "
+                        "Si este cliente no puede recibir imágenes MCP, indícalo y solicita otro compatible."
+                    )
+                    self.send(200,{"texto":text,"modo":"MCP agnostico, sin API de modelo en panel",
+                                   "pdf":len(preview["archivos"]),"paginas":preview["paginas"]})
                 elif url.path=='/api/preparacion':
                     from .diagnostico import comprobar
                     self.send(200,comprobar(query.get('fecha',[None])[0]))
@@ -197,9 +200,7 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                     with target.open('xb') as stream: stream.write(raw)
                     self.send(200,{'ok':True})
                 elif self.path=='/api/analizar-ia':
-                    folder=case(data['caso'])
-                    launch_ia(folder,data.get('autorizar_envio') is True)
-                    self.send(202,{'estado':'procesando','modalidad':'IA multimodal con tres subagentes'})
+                    self.send(400,{'error':'El panel ya no llama a APIs de IA. Usa Analizar con mi IA (MCP).'})
                 elif self.path=='/api/procesar':
                     folder=case(data['caso']);launch(folder);self.send(202,{'estado':'procesando'})
                 elif self.path=='/api/detener':
