@@ -37,7 +37,7 @@ class CoordinadorDual(unittest.TestCase):
         with patch.dict(os.environ, {}, clear=True):
             cmc=self.route("CMC1")
             consultor=self.route("CONS1")
-        self.assertEqual(20,len(herramientas()))
+        self.assertEqual(21,len(herramientas()))
         self.assertEqual("aumento_cmc",cmc["procedimiento"])
         self.assertEqual("ampliacion_consultores",consultor["procedimiento"])
         self.assertEqual(0,cmc["pdf"])
