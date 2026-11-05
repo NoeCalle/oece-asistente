@@ -45,6 +45,8 @@ jobs:
         run: python -m unittest discover -s tests -p "test_multimodal_mcp.py" -v
       - name: Coordinador único CMC y consultores (sin API)
         run: python -m unittest discover -s tests -p "test_enrutador.py" -v
+      - name: Resolución DGA 0016-2025 transversal e importación segura
+        run: python -m unittest discover -s tests -p "test_normativa_dga.py" -v
       - name: Ficha maestra y tres datasets CMC
         run: python -m unittest discover -s tests -p "test_formatos_cmc.py" -v
       - name: Rutas POSIX e índices heredados
