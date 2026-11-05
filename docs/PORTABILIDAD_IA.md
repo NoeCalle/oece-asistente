@@ -63,6 +63,10 @@ Las herramientas se complementan con `resources/read` para recuperar una entrega
 
 Los JSON guardados son declaraciones, **no resultados ya aprobados**. La generación verifica citas, localizadores, huellas y cálculos antes de conservar una entrega. El puente no atribuye hechos ni cotejos nuevos a un revisor humano. Los originales del caso se colocan en `documentos/`; una carpeta existente no se inicializa silenciosamente.
 
+## Consultas normativas directas del titular
+
+`oece_consultar_normativa(pregunta, fecha?, limite?)` es una herramienta MCP **de solo lectura**, sin parámetro de expediente. Recupera pasajes del índice, revalida la huella SHA-256 contra el manifiesto y coteja la página PDF o bloque DOCX del original antes de retornar extractos, ubicación y URL. La IA elegida responde en español, indicando vigencia/modificatorias por comprobar. Si no encuentra el índice o el original, devuelve estado pendiente y la ubicación conocida de Drive, **sin fingir acceso al conector**. Este agente se usa exclusivamente para las preguntas directas del titular: **no hay invocación entre los agentes CMC y consultores**. Ver [contrato completo](CONSULTA_NORMATIVA.md). Esta incorporación eleva a **21** las herramientas del puente enumeradas en `oece/puente.py`.
+
 ## Perfil y límites del conector
 
 Implementación stdio con la [revisión MCP 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio), descubrimiento y metadatos por solicitud. Incluye negociación `initialize` para 2025-11-25, 2025-06-18 y 2024-11-05. Es un perfil local acotado de herramientas/recursos; no ofrece sampling, prompts, tareas duraderas ni suscripciones y no es una certificación de interoperabilidad universal.
