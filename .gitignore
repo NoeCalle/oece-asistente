@@ -39,3 +39,9 @@ claude_desktop_config.json
 CLAUDE.local.md
 .claude/settings.local.json
 .mcp.local.json
+
+# Fichas y paquetes privados CMC (también al mover expedientes fuera de data/)
+datos-cmc.json
+datos_formatos_cmc/
+lecturas-ia-trabajo.json
+calculos-ia-trabajo.json
