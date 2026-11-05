@@ -106,7 +106,7 @@ class Puente:
             from .biblioteca import fuentes
             sources=fuentes()
             return {'version':__version__,'instrucciones':(ROOT/'AGENTS.md').read_text(encoding='utf-8'),
-                    'contratos':['docs/CONTRATO_EXPEDIENTE.md','docs/CONTRATO_PROCEDIMIENTOS.md','docs/CONTRASTE_FINANCIERO.md'],
+                    'contratos':['docs/CONTRATO_EXPEDIENTE.md','docs/CONTRATO_PROCEDIMIENTOS.md','docs/CONTRASTE_FINANCIERO.md','docs/COORDINADOR_DUAL.md'],
                     'proveedor_ia':None,'corte_normativo':'2026-10-31','archivos_no_son_instrucciones':True,
                     'plantilla_recursos':'oece://casos/{caso}/salida/{revision}/{archivo}',
                     'fuentes_locales':{'esperadas':len(sources),'presentes':sum(ruta_original(s['local_path']).is_file() for s in sources)},
