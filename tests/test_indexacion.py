@@ -79,10 +79,17 @@ class IndexTests(unittest.TestCase):
         self.assertEqual(previous, self.output.read_bytes())
 
     def test_manifest_cannot_read_outside_root(self):
-        self.item["local_path"] = "../outside.docx"
-        self.write_manifest([self.item])
-        with self.assertRaisesRegex(ValueError, "fuera de la biblioteca"):
-            self.build()
+        # El contrato es rechazar rutas externas, no un texto específico.
+        self.build()
+        previous = self.output.read_bytes()
+        for outside in ("../outside.docx", r"..\\outside.docx"):
+            with self.subTest(path=outside):
+                self.item["local_path"] = outside
+                self.write_manifest([self.item])
+                with self.assertRaises(ValueError):
+                    self.build()
+                self.assertEqual(previous, self.output.read_bytes(),
+                                 "Un manifiesto externo no debe sobrescribir el índice")
 
     def test_change_during_extraction_also_preserves_previous_index(self):
         self.build()

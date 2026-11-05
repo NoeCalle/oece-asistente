@@ -58,10 +58,13 @@ class CoverageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "oficiales"):
             self.assess()
         self.item["source_url"] = "https://www.gob.pe/prueba"
-        self.item["local_path"] = "../fuera.txt"
-        self.save()
-        with self.assertRaisesRegex(ValueError, "fuera"):
-            self.assess(True)
+        # La seguridad no depende de la redacción del mensaje de validación.
+        for outside in ("../fuera.txt", r"..\\fuera.txt"):
+            with self.subTest(path=outside):
+                self.item["local_path"] = outside
+                self.save()
+                with self.assertRaises(ValueError):
+                    self.assess(True)
 
     def test_duplicate_and_enabling_plan_rejected(self):
         self.plan["grupos"].append(self.plan["grupos"][0])
