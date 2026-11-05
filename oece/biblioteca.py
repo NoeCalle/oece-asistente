@@ -13,7 +13,28 @@ MANIFIESTOS=['normativa/manifiesto-descargas-2026-10-29.json','normativa/manifie
              'normativa/manifiesto-operacion-2026-10-31.json','normativa/manifiesto-procedimientos-2026-10-31.json']
 
 def fuentes():
-    return [f for m in MANIFIESTOS for f in normalizar_registro_rutas(leer(ROOT/m))['archivos']]
+    """Fuentes fijas del repositorio + originales adicionales privados verificables.
+
+    El manifiesto adicional vive en OECE_DATA_DIR; jamás se almacena en Git.
+    No se admite que un nombre adicional sustituya silenciosamente un original.
+    """
+    originals=[f for m in MANIFIESTOS
+               for f in normalizar_registro_rutas(leer(ROOT/m))['archivos']]
+    private=data_dir()/'normativa'/'manifiesto-adicionales.json'
+    if private.is_file():
+        data=normalizar_registro_rutas(leer(private))
+        if not isinstance(data,dict) or not isinstance(data.get('archivos'),list):
+            raise ValueError('Manifiesto normativo adicional inválido')
+        known={f['name'] for f in originals}
+        for entry in data['archivos']:
+            if (not isinstance(entry,dict) or
+                    not all(isinstance(entry.get(key),str) and entry[key]
+                            for key in ('name','sha256','source_url','local_path')) or
+                    entry['name'] in known):
+                raise ValueError('Fuente normativa adicional inválida o duplicada')
+            known.add(entry['name'])
+            originals.append(entry)
+    return originals
 
 def leer_fuente(archivo,pagina=None,ubicacion=None):
     from io import BytesIO
