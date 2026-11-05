@@ -31,7 +31,8 @@ ESPECIALISTAS = {
                         "docs/ENTREGABLE_01_RELACION_OBRAS.md",
                         "docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md",
                         "docs/ENTREGABLE_03_RESUMEN_CMC.md",
-                        "docs/CONTRATO_PROCEDIMIENTOS.md"],
+                        "docs/CONTRATO_PROCEDIMIENTOS.md",
+                        "docs/normativa/RD_0016_2025_DGA.md"],
     },
     "ampliacion_consultores": {
         "nombre": "Especialista en ampliación de categoría de consultores de obras",
@@ -51,7 +52,8 @@ ESPECIALISTAS = {
         ],
         "referencias": ["docs/CONTRATO_EXPEDIENTE.md",
                         "docs/CONTRATO_PROCEDIMIENTOS.md",
-                        "docs/normativa/REQUISITOS_AMPLIACIONES.md"],
+                        "docs/normativa/REQUISITOS_AMPLIACIONES.md",
+                        "docs/normativa/RD_0016_2025_DGA.md"],
     },
 }
 
@@ -158,6 +160,30 @@ def coordinar(case_dir):
     # invoca el verificador, pues puede faltar la biblioteca normativa local.
     from .preparacion import planificar
     plan = planificar(config)
+    from .normativa_incorporacion import catalogo, estado_norma
+    common=[]
+    for item in catalogo():
+        if procedure not in item.get("aplicacion", {}):
+            continue
+        status=estado_norma(item)
+        common.append({
+            "id": item["id"],
+            "denominacion": item["denominacion"],
+            "fuente_oficial": item["fuente_oficial"],
+            "fecha_publicacion": item["fecha_publicacion"],
+            "fecha_inicio_referencial": item["inicio_vigencia_referencial"],
+            "alcance_procedimiento": item["aplicacion"][procedure],
+            "estado_local": status,
+            "vigencia": item["vigencia_y_modificatorias"]
+        })
+        if not status["original_verificado"]:
+            pending.append(item["denominacion"]+
+                           ": incorporar PDF original oficial y verificar hash para citas locales")
+        if status["original_verificado"] and not status["indice_actualizado"]:
+            pending.append(item["denominacion"]+
+                           ": reconstruir el índice normativo local")
+        pending.append(item["denominacion"]+
+                       ": verificar vigencia y alcance según fecha de solicitud")
     pending.extend(plan.get("pendientes", []))
     pending = list(dict.fromkeys(pending))
     instruction = (INSTRUCCION_CMC if procedure == "aumento_cmc"
@@ -178,8 +204,20 @@ def coordinar(case_dir):
                     if procedure == "aumento_cmc"
                     else "Preparar Word y matriz documental AC con citas contrastadas")},
     ]
+    common_instructions = (
+        " NORMA TRANSVERSAL: RD N.º 0016-2025-EF/54.01 de la DGA (MEF), "
+        "publicada el 10/05/2025; aprueba el listado de subespecialidades "
+        "y tipologías de obras y consultorías (artículo 157 del Reglamento). "
+        "Usa su ANEXO OFICIAL solo después de incorporar/verificar el PDF por SHA-256 "
+        "con oece_norma; si no está disponible, deja clasificación pendiente. "
+        "La resolución no concede categoría RNP ni determina experiencia o CMC "
+        "por sí sola. Considera el régimen transitorio de consultores (artículo 36.6 "
+        "y Quinta Disposición Complementaria Transitoria) solo si corresponde. "
+        "No equipares tipología a categoría. Detalle: "
+        "docs/normativa/RD_0016_2025_DGA.md. "
+    ) if common else ""
     text = (INTRO + f"Expediente {folder.name}; PROCEDIMIENTO FIJO: {procedure}. "
-            + instruction +
+            + instruction + common_instructions +
             "Los pendientes actuales deben investigarse o marcarse expresamente, "
             "no completarse por suposiciones: " + "; ".join(pending[:25]) + ". "
             "Los documentos están en una raíz privada autorizada; no los subas a Git. "
@@ -200,6 +238,7 @@ def coordinar(case_dir):
         "documentos_objetivo": specialist["documentos_objetivo"],
         "referencias": specialist["referencias"],
         "entregables": specialist["entregables"],
+        "fuentes_normativas_transversales": common,
         "plan_documental": {
             "estado": plan.get("estado"),
             "requisitos_seleccionados": len(plan.get("tareas", [])),
