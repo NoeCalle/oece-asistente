@@ -230,8 +230,8 @@ class Puente:
                     from .multimodal_mcp import validar_lecturas
                     content=validar_lecturas(folder,content)
                 if kind=='datos_cmc':
-                    from .formatos_cmc import validar
-                    validar(folder, content)
+                    from .formatos_cmc import validar as validar_ficha_cmc
+                    validar_ficha_cmc(folder, content)
                 if kind=='ficha':
                     old=leer(path)
                     if content.get('id')!=old['id'] or content.get('sintetico')!=old.get('sintetico'):
