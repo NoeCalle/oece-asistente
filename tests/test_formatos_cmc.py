@@ -107,7 +107,9 @@ class TresEntregablesCMC(unittest.TestCase):
         self.assertIsNone(e3["CMC_a_otorgar"])
         self.assertEqual("borrador_pendiente_revision", e3["estado"])
         self.assertEqual("datos_listos_para_mapeo", verificar_publicacion(folder)["estado"])
-        self.assertEqual("S", self.bridge.recurso(result["recursos"][0]["uri"])["contents"][0]["text"][0:1] if False else "S")
+        resource=self.bridge.recurso(result["recursos"][0]["uri"])["contents"][0]
+        self.assertIn("entregable_01_datos",resource["text"])
+        self.assertEqual("application/json",resource["mimeType"])
         reused = self.bridge.ejecutar("oece_publicar_cmc", {"caso": "E-CMC"})
         self.assertTrue(reused["reutilizada"])
 
