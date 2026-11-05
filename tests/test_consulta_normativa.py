@@ -1,4 +1,5 @@
 """Consultas normativas personales: pruebas sin corpus privado ni red."""
+from contextlib import closing
 from io import BytesIO
 import json
 import os
@@ -65,7 +66,7 @@ class ConsultaNormativa(unittest.TestCase):
         }
         self.db = self.root/"privado/normativa/indices/biblioteca-v1.sqlite"
         self.db.parent.mkdir(parents=True)
-        with sqlite3.connect(self.db) as conn:
+        with closing(sqlite3.connect(self.db)) as conn, conn:
             conn.executescript(
                 "CREATE TABLE fuentes(id TEXT PRIMARY KEY,metadata TEXT);"
                 "CREATE TABLE fragmentos(id INTEGER PRIMARY KEY,fuente TEXT,"
