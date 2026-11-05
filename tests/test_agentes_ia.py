@@ -202,7 +202,7 @@ class AgentesMultimodales(unittest.TestCase):
                 self.assertIn("mcp", info["modo"].lower())
                 self.assertIn("oece_pagina_visual", info["texto"])
                 self.assertIn("oece_generar", info["texto"])
-                self.assertNotIn("oece_calcular_liquidacion", info["texto"])
+                self.assertIn("No uses oece_publicar_cmc", info["texto"])
                 self.assertEqual([], self.modelo.llamadas)
                 for authorized in (False, True):
                     with self.assertRaises(HTTPError) as ex:
