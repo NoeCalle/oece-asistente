@@ -141,3 +141,8 @@ python -m oece formatos-cmc /ruta/del/expediente
 ```
 
 Más detalles: [contrato de datos CMC](docs/CONTRATO_DATOS_CMC.md). Los números de las fotografías originales no son datos validados y no deben migrarse automáticamente.
+
+
+## Coordinador dual sin API de modelo
+
+El mismo coordinador local `oece_coordinar(caso)` enruta por el procedimiento **declarado** en la ficha del expediente: **aumento de CMC** → especialista de ejecutores, cálculos y tres conjuntos de datos; **ampliación de categoría de consultores** → especialista de consultoría, categorías, controles AC, informe Word y matriz. Ambas rutas admiten lectura visual de PDF escaneados por MCP, pero **no comparten reglas ni entregables**. El panel **Analizar con mi IA (MCP)** prepara el encargo según esa selección sin invocar ninguna API de IA. Ver [diseño del coordinador](docs/COORDINADOR_DUAL.md). El modo tradicional continúa disponible para los demás procedimientos. Las pruebas usan casos sintéticos y no acreditan resultado jurídico ni interpretación multimodal real.
