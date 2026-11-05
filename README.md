@@ -28,7 +28,7 @@ Los modelos reales de informes se incorporarán cuando estén disponibles. El [f
 | Reconsideración | Requisitos, nueva prueba/única instancia y propuesta de 15 días hábiles con calendario documentado |
 | Recuperación | Respaldo íntegro y restauración en carpeta nueva, con huellas y sin reemplazar datos existentes |
 | Operación local | Panel, carga, LISTO, estabilidad, memoria, bloqueo, reintentos y revisiones |
-| Portabilidad IA | CLI y catorce herramientas MCP locales independientes de proveedor; además hay una modalidad multimodal opcional con API OpenAI, sin prueba en vivo con expedientes reales |
+| Portabilidad IA | CLI y 17 herramientas MCP, incluidas páginas visuales y cálculos independientes del proveedor; sin API en el panel |
 | Lectura/OCR | PDF digital, DOCX, TXT/HTML, valores XLSX; OCR Windows con límites, caché y cotejos declarados |
 | Entregas | Word/CSV/JSON; cinco ejemplos y 19 páginas de 1.1, dos ejemplos financieros y diez páginas de 1.2 inspeccionados |
 | Contraste financiero | R2/R3/R8, SBS documentada, indicadores y detección de contradicciones; sin dictamen de solvencia |
@@ -115,18 +115,16 @@ python -m oece panel
 ```
 
 
-## Lectura de PDF escaneados con IA multimodal (opcional)
+## Revisión visual multi-IA (MCP, sin API ni clave en OECE)
 
-En el panel **Analizar PDF con IA** activa tres etapas: lector visual de cada PDF, subagente de cálculos de liquidación y subagente integrador. El subagente financiero propone operaciones vinculadas a tablas y Python las recalcula con `Decimal` para detectar discrepancias; **los importes extraídos y su contexto requieren cotejo humano con las páginas originales**. La IA no resuelve por sí sola la autenticidad, el cumplimiento normativo ni la decisión administrativa.
+**OECE es agnóstico:** puedes elegir Codex, Claude Code u otro cliente que admita MCP local y contenido visual de tipo `image`. No necesita `OPENAI_API_KEY`, ni paga una API adicional de OECE. El cliente seleccionado puede tener sus propios requisitos de cuenta, suscripción y tratamiento de datos; compruébalos antes de utilizar expedientes institucionales.
 
-La función necesita conexión, una **clave de API independiente de ChatGPT** (`OPENAI_API_KEY`, configurada como variable de entorno en el servidor autorizado) y **consentimiento explícito por expediente**. Modelo configurable mediante `OECE_AI_MODEL`, por defecto `gpt-4.1`. No se envía nada al abrir el panel, cargar los PDF o preparar el borrador local. Los PDFs pueden contener información reservada: confirmar las autorizaciones institucionales y las condiciones de transmisión antes de ejecutar. El coste depende de páginas y modelo.
+1. En Ubuntu o Windows instala las dependencias del proyecto y Poppler (`pdftoppm`). Ejecuta `python scripts/configurar_cliente.py` e incorpora la configuración MCP generada en tu asistente compatible (ver [portabilidad](docs/PORTABILIDAD_IA.md)).
+2. Abre `python -m oece panel`, crea el expediente y carga contratos, cartas, resoluciones de recepción y liquidaciones escaneadas.
+3. Pulsa **Analizar con mi IA (MCP)**. Se copia el encargo; pégalo en el cliente que tengas conectado a OECE. El panel **no envía PDFs ni llama a un modelo**.
+4. El cliente usa `oece_pagina_visual` para ver cada página sin OCR previo, `oece_guardar` con el tipo `lecturas_ia` para conservar las propuestas, `oece_calcular_liquidacion` para contrastar aritmética con `Decimal` y `oece_publicar_analisis` para generar un informe Word versionado.
+5. Revisa en el panel la nueva sección **Proyecto de análisis IA** y descarga `informe-ia.docx`, JSON y cálculos. Las citas visuales y cifras **siguen pendientes de cotejo humano**, y el análisis no acredita por sí solo requisitos ni vigencia normativa.
 
-```bash
-# Sin llamadas a modelos: muestra inventario y páginas antes de dar consentimiento
-python -m oece analizar-ia /ruta/expediente --previsualizar
+La arquitectura es independiente del modelo: **lector visual → calculista de liquidación → integrador** son roles que ejecuta el asistente elegido, no tres suscripciones. OECE conserva copias y SHA-256 dentro del expediente privado. Se prohíbe inventar cifras, páginas, firmas o decisiones. Si el cliente no soporta imágenes MCP, debe informarlo; OCR es un recurso de respaldo, no equivalente a visión. Para instrucciones completas ver [uso diario](docs/USO_DIARIO.md) y [AGENTS.md](AGENTS.md).
 
-# Envío a OpenAI autorizado expresamente por el operador
-python -m oece analizar-ia /ruta/expediente --autorizar-envio
-```
-
-Los informes y copias de originales se conservan exclusivamente en la ruta privada `analisis_ia/<sha256>/` del expediente. Resultados: `informe-ia.docx`, `analisis-ia.json`, `calculos-ia.json`, `lecturas-ia.json` e `integridad-ia.json`. Los hashes se verifican antes de reutilizar o descargar y las revisiones no se sobrescriben. Por ejecución admite hasta 25 PDF, 250 páginas y 30 MB por PDF. Las hojas Excel y Word no se analizan en esta modalidad inicial y se enumeran como omitidos; pueden seguir tratándose mediante las herramientas clásicas. Véase `docs/SEGURIDAD.md`.
+La ruta histórica `python -m oece analizar-ia ... --autorizar-envio` conserva una integración antigua opcional con API OpenAI; **no es necesaria ni se usa desde el panel ni desde MCP**. No hay pruebas con un cliente de IA real y documentos laborales auténticos; la regresión utiliza PDF sintéticos.

@@ -1,6 +1,6 @@
 # OECE Assistant con el asistente que elijas
 
-Decisión del usuario del 01/11/2026: Codex puede seguir siendo el cliente actual, pero las instrucciones, documentos y herramientas deben poder usarse desde otra IA, por ejemplo Claude. **Actualización 05/11/2026:** además de esta arquitectura sin API, el panel dispone de una modalidad independiente y opt-in de análisis multimodal de PDF mediante API OpenAI. Requiere clave de API y consentimiento; no sustituye al MCP ni al flujo local.
+Decisión más reciente del usuario (05/11/2026): **OECE debe ser agnóstico y su flujo principal no debe requerir ninguna API de IA**. El panel copia el encargo para el cliente elegido; Codex, Claude Code u otro cliente con MCP e imágenes lo ejecuta usando el motor documental local. La implementación anterior de API queda solo como opción CLI separada, nunca desde el panel.
 
 ## Estructura compartida
 
@@ -57,7 +57,7 @@ Para buscar/cotejar normas, conservar los originales de Drive en sus rutas manif
 6. `oece_entrada` / `oece_guardar`: leer y registrar ficha/hechos/análisis/normas/cotejos. La edición exige el hash actual y conserva la versión previa.
 7. `oece_generar`: valida y conserva la entrega; devuelve recursos Word, CSV, JSON y manifiesto.
 
-Desde 1.4 se añade `oece_tupa`: consulta fichas candidatas por expediente y recupera páginas de la ficha con sus huellas. Desde 1.5 se añade también `oece_requisitos`, con 24 requisitos de ampliación/aumento y diez alertas. Desde 1.6 se añade `oece_diagnostico` y el plan abarca cinco trámites. Son catorce herramientas actuales. El plan conserva tareas pendientes de interpretación y no acredita cumplimiento. [Guía TUPA](normativa/FICHAS_TUPA.md).
+Desde 1.4 se añade `oece_tupa`: consulta fichas candidatas por expediente y recupera páginas de la ficha con sus huellas. Desde 1.5 se añade también `oece_requisitos`, con 24 requisitos de ampliación/aumento y diez alertas. Desde 1.6 se añade `oece_diagnostico` y el plan abarca cinco trámites. Son diecisiete herramientas actuales: además de las clásicas, `oece_pagina_visual`, `oece_calcular_liquidacion` y `oece_publicar_analisis`. El plan conserva tareas pendientes de interpretación y no acredita cumplimiento. [Guía TUPA](normativa/FICHAS_TUPA.md).
 
 Las herramientas se complementan con `resources/read` para recuperar una entrega por URI `oece://casos/...`. El Word se devuelve como recurso binario; la presentación o descarga depende del cliente. Leer/generar no sube nada a Drive. El conector del cliente debe efectuar una subida solo cuando esté autorizada.
 
@@ -71,7 +71,7 @@ Máximo ocho millones de bytes por mensaje y cuatro millones por entrada JSON. L
 
 ## Estado de comprobación
 
-El puente se prueba con cliente de protocolo local, proceso stdio real, dos autores IA de prueba y los mismos contratos. **No se ha iniciado sesión ni ejecutado una evaluación con Claude real.** Sus conectores GitHub/Drive y la recuperación/visualización del Word siguen por comprobar en ese cliente. No se necesita una API de modelo para la arquitectura CLI/MCP descrita aquí; la modalidad nueva **Analizar PDF con IA** sí emplea una API externa por separado, con coste y consentimiento explícito.
+El puente se prueba con protocolo MCP local y ejemplos sintéticos, no con evaluación real de Claude/Codex sobre un expediente institucional. **No se ha validado la integración visual con todos los clientes reales.** El cliente debe admitir `image` como respuesta de herramientas MCP. El panel **Analizar con mi IA (MCP)** copia instrucciones, y las nuevas herramientas leen páginas escaneadas, comprueban cálculos y publican Word sin API propia. La cuenta/cliente seleccionado puede tener sus propios límites y reglas de privacidad.
 
 ## Preparación y recuperación
 

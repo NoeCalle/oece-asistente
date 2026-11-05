@@ -12,25 +12,19 @@ Inicia el panel con `python -m oece panel` en el equipo autorizado (en Windows t
 
 La interpretación se realiza en el asistente elegido, como pidió el usuario el 01/11/2026. Codex está probado; el puente para otros clientes se verifica a nivel de protocolo y herramientas. No es necesario añadir un modelo propio al panel. Sus instrucciones guiadas y generación local funcionan sin configurar una API nueva. No se declara una integración automática con un modelo en segundo plano.
 
-## Revisión de PDF escaneados con IA multimodal y subagente de liquidaciones (opcional)
+## PDF escaneados con IA de tu elección, sin API de OECE
 
-El panel incluye **Analizar PDF con IA**. Esta acción **no se ejecuta automáticamente al cargar archivos**: hay que marcar el consentimiento de envío a OpenAI y configurar en el equipo la variable `OPENAI_API_KEY` (pago de API independiente de ChatGPT; el modelo opcional `OECE_AI_MODEL` tiene como predeterminado `gpt-4.1`). Para evaluar las implicaciones de privacidad y coste, verificar con anterioridad las autorizaciones para transmitir expedientes reales a un proveedor externo.
+La opción **Analizar con mi IA (MCP)** no carga PDFs al servidor de un proveedor, ni necesita configurar claves. Genera las instrucciones para pegarlas en tu asistente con MCP local configurado. Puedes cambiar de Codex a Claude Code u otro compatible con imágenes MCP sin modificar los expedientes ni el motor de cálculos.
 
-1. El **subagente lector multimodal** recibe el PDF completo, incluso si son páginas escaneadas, y propone datos, fragmentos de cita y cuadros con número de página; no utiliza Tesseract como paso obligatorio.
-2. El **subagente de cálculos de liquidación** propone las operaciones relevantes, diferencia importes contractuales, valorizados, liquidaciones y saldos, y declara para cada cifra el documento y página. El sistema las ejecuta además con `Decimal` sobre los números extraídos y señala importes no localizados o diferencias.
-3. El **subagente integrador** cruza contrato, recepción, liquidación y comunicaciones y prepara observaciones con referencias a documentos, páginas y pendientes.
+**Configuración:** tras instalar `requirements-linux.txt` en Ubuntu (o las dependencias equivalentes en Windows) y Poppler, ejecuta `python scripts/configurar_cliente.py`; importa la configuración generada en el cliente MCP del mismo equipo autorizado. El cliente debe admitir tanto herramientas como imágenes MCP; si no, no debe afirmar que inspeccionó visualmente los PDF.
 
-El producto de esta modalidad es un **proyecto de análisis** guardado junto con las copias originales bajo `analisis_ia/<revision>` en la carpeta privada del caso: `informe-ia.docx`, `lecturas-ia.json`, `calculos-ia.json`, `analisis-ia.json` e `integridad-ia.json`. Cualquier cita, fecha, firma o monto leído visualmente **queda pendiente de cotejo humano** y la conclusión requiere comprobar la norma vigente aplicable. No se genera acreditación ni aprobación administrativa automática. El procesamiento local anterior permanece disponible mediante **Preparar borrador**.
+**Trabajo por subagentes:**
 
-La ejecución por terminal permite inspeccionar los límites (25 PDF y 250 páginas por corrida) **sin enviar documentos**:
+1. El **lector visual** consulta el inventario y solicita `oece_pagina_visual` por ID y número de página, interpreta directamente cartas, contratos, resoluciones, recepción y tablas de liquidación; registra cada página, cita y observación en `lecturas_ia`.
+2. El **subagente calculista** propone operaciones con cifras de las tablas realmente leídas y OECE las comprueba mediante `oece_calcular_liquidacion` y `Decimal`; importes incorrectos o no sustentados se marcan como pendientes.
+3. El **integrador** identifica diferencias entre contrato, recepción y liquidación, detalla sustento por página y llama `oece_publicar_analisis` para generar Word y JSON versionados.
 
-```bash
-python -m oece analizar-ia /ruta/caso --previsualizar
-# Solo si autorizaste transmitir los originales al proveedor:
-python -m oece analizar-ia /ruta/caso --autorizar-envio
-```
-
-Por ahora este flujo multimodal admite PDF; los archivos Word, Excel y otros se listan entre los no procesados por IA. Las herramientas clásicas de extracción siguen siendo compatibles con estos formatos. El modelo puede incurrir en errores incluso en lecturas visuales; una coincidencia aritmética no acredita por sí sola los montos ni la experiencia.
+El panel permite descargar el proyecto de Word y los resultados conservados en `analisis_ia/<revision>` tras la actuación del cliente. **No hay un modelo automático dentro del panel**. Las imágenes pueden ser procesadas remotamente por el cliente elegido conforme a sus propios permisos y políticas: verifica autorizaciones institucionales antes de compartir expedientes. El cotejo de citas, números, autenticidad y vigencia normativa sigue siendo indispensable.
 
 ## Carpeta privada configurable, equipos locales o servidores de confianza
 
