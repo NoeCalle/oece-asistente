@@ -47,6 +47,8 @@ jobs:
         run: python -m unittest discover -s tests -p "test_enrutador.py" -v
       - name: Resolución DGA 0016-2025 transversal e importación segura
         run: python -m unittest discover -s tests -p "test_normativa_dga.py" -v
+      - name: Arquitectura agent-first (contratos Markdown, sin MCP/Drive)
+        run: python -m unittest discover -s tests -p "test_arquitectura_agentes.py" -v
       - name: Agente personal de preguntas normativas (sin expediente ni API)
         run: python -m unittest discover -s tests -p "test_consulta_normativa.py" -v
       - name: Ficha maestra y tres datasets CMC
