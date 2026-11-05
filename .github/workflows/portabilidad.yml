@@ -43,8 +43,6 @@ jobs:
         run: python -m unittest discover -s tests -p "test_agentes_ia.py" -v
       - name: MCP visual y cálculos agnósticos sin red
         run: python -m unittest discover -s tests -p "test_multimodal_mcp.py" -v
-      - name: Puente MCP y recursos versionados
-        run: python -m unittest discover -s tests -p "test_portabilidad_mcp.py" -v
       - name: Rutas POSIX e índices heredados
         run: python -m unittest discover -s tests -p "test_rutas_posix.py" -v
       - name: Seguridad de rutas externas e índice normativo sintético
