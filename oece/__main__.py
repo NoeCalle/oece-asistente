@@ -25,6 +25,7 @@ def main():
     ia=sub.add_parser('analizar-ia');ia.add_argument('carpeta',type=Path)
     ia.add_argument('--autorizar-envio',action='store_true')
     ia.add_argument('--previsualizar',action='store_true')
+    cmc=sub.add_parser('formatos-cmc');cmc.add_argument('carpeta',type=Path);cmc.add_argument('--modelo',action='store_true')
     migration=sub.add_parser('migrar-rutas');migration.add_argument('--ruta',type=Path);migration.add_argument('--simular',action='store_true')
     backup=sub.add_parser('respaldar');backup.add_argument('carpeta',type=Path);backup.add_argument('archivo',type=Path)
     restore=sub.add_parser('restaurar');restore.add_argument('archivo',type=Path);restore.add_argument('destino',type=Path)
@@ -37,6 +38,13 @@ def main():
         from .agentes_ia import analizar,previsualizar
         result=(previsualizar(args.carpeta) if args.previsualizar else
                 analizar(args.carpeta,autorizar_envio=args.autorizar_envio))
+        print(json.dumps(result,ensure_ascii=False,indent=2))
+        return
+    if args.accion=='formatos-cmc':
+        from .formatos_cmc import publicar,modelo_vacio
+        from .comun import leer,dentro
+        result=(modelo_vacio(leer(dentro(args.carpeta,'expediente.json')))
+                if args.modelo else publicar(args.carpeta))
         print(json.dumps(result,ensure_ascii=False,indent=2))
         return
     memory=Memoria(args.memoria)
