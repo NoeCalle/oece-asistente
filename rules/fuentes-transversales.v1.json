@@ -1,0 +1,64 @@
+{
+  "version": "fuentes-transversales-v1",
+  "fecha_incorporacion": "2026-11-05",
+  "objetivo": "Referencias normativas identificadas y alcance por procedimiento. No reemplaza originales ni certifica vigencia.",
+  "instrumentos": [
+    {
+      "id": "rd-0016-2025-ef-54-01",
+      "denominacion": "Resolución Directoral N.º 0016-2025-EF/54.01",
+      "entidad": "Ministerio de Economía y Finanzas — Dirección General de Abastecimiento",
+      "titulo": "Aprueba el Listado de Subespecialidades y Tipologías de Obras y Consultoría de Obras",
+      "fecha_emision": "2025-05-09",
+      "fecha_publicacion": "2025-05-10",
+      "inicio_vigencia_referencial": "2025-05-11",
+      "fuente_vigencia_referencial": "https://cdn.www.gob.pe/uploads/document/file/8087918/6782940-12-tablero-normativo-oece-act-05-05-26.pdf",
+      "fuente_oficial": "https://www.gob.pe/institucion/mef/normas-legales/6755677-0016-2025-ef-54-01",
+      "pdf_oficial": "https://cdn.www.gob.pe/uploads/document/file/8047421/6755677-rd0016_2025ef5401.pdf?v=1746899771",
+      "el_peruano": "https://busquedas.elperuano.pe/dispositivo/NL/2398218-1",
+      "nombre_archivo": "rd0016_2025ef5401.pdf",
+      "ruta_original": "normativa/originales/adicionales/rd0016_2025ef5401.pdf",
+      "fecha_corte_revisada": "2026-11-05",
+      "vigencia_y_modificatorias": "pendiente_de_verificacion_exhaustiva",
+      "nota_vigencia": "Fecha de inicio tomada de tablero normativo OECE 05/05/2026; comprobar eventuales cambios normativos y régimen temporal para la solicitud.",
+      "efectos_comunes": [
+        "Artículo 1: aprobación del listado de subespecialidades y tipologías",
+        "Artículo 2: descripción de tipos correspondientes a especialidades del artículo 157",
+        "Disposición transitoria única: clasificación en documento aprobatorio mientras Pladicop/SEACE habilita funcionalidad"
+      ],
+      "especialidades_reglamento_art_157_2": [
+        "Edificaciones y afines",
+        "Viales, puertos y afines",
+        "Saneamiento y afines",
+        "Electromecánicas, energéticas, telecomunicaciones y afines",
+        "Represas, irrigaciones y afines"
+      ],
+      "aplicacion": {
+        "aumento_cmc": {
+          "tema": "Clasificación de obras como antecedente para análisis del ejecutor",
+          "requisitos": [
+            "Contrastar descripción de la obra con especialidad, subespecialidad y tipología del anexo oficial",
+            "No deducir que la clasificación acredita experiencia o modifica la fórmula de CMC",
+            "No usar la tabla para justificar importes de contratos ni liquidaciones"
+          ]
+        },
+        "ampliacion_consultores": {
+          "tema": "Clasificación de consultorías y análisis contextual de experiencia/categoría",
+          "requisitos": [
+            "Contrastar objeto real de la consultoría con las especialidades, subespecialidades y tipologías del anexo",
+            "Revisar numeral 36.6 y Quinta Disposición Complementaria Transitoria del Reglamento; no confundir clasificación con categoría registral",
+            "Distinguir el régimen temporal aplicable a la fecha de solicitud y el historial RNP",
+            "No equiparar presupuesto de obra a honorarios de consultoría"
+          ]
+        }
+      },
+      "cautelas": [
+        "El término afines requiere vinculación directa con tipologías de la subespecialidad; no admitir cualquier obra por semejanza genérica",
+        "El anexo completo, incluidos los cuadros de saneamiento y electromecánicas, debe cotejarse en PDF, no sustituirse por el extracto web",
+        "La referencia es común, pero los requisitos y los entregables de ambos procedimientos siguen separados",
+        "Hasta registrar una copia original con hash en la biblioteca local, no afirmar que oece_norma verificó páginas del PDF",
+        "No emitir conclusiones sobre cambios de categoría del RNP solo por la resolución"
+      ],
+      "estado_original_local": "pendiente_importacion_en_equipo_autorizado"
+    }
+  ]
+}
