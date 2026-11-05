@@ -50,7 +50,11 @@ El esquema se obtiene mediante `oece_modelo_cmc(caso)` o `oece_entrada(caso, tip
 
 Cuando falta evidencia de un monto, recepción, participación o criterio legal, el resultado se mantiene como parcial o pendiente. Los valores ilustrativos de las fotografías del 04/11 (**S/ 7 400 000; S/ 6 050 000; G=2,25; CMC=13 612 500**) **no son datos verificados de un único expediente** y nunca deben copiarse al nuevo caso.
 
-## Operación con IA agnóstica y MCP
+## Modalidad principal agent-first — sin MCP obligatorio
+
+El agente CMC puede preparar los **mismos cuatro JSON** usando [procedimiento](../procedimientos/aumento-cmc.md) y [contrato de salida](../contratos/entregables-cmc.md) directamente sobre los documentos de Drive mediante el cliente IA. Las claves, referencias, estados, secuencia 1→2→3, exclusiones y límites definidos arriba **siguen vigentes**. **No exigir** `oece_modelo_cmc`, `oece_guardar`, `oece_publicar_cmc` o PDF descargados como requisito para esta modalidad; esas herramientas pueden servir como verificadores opcionales. El trabajo cloud debe cotejar cifras y publicar los archivos efectivamente en Drive o informar que no pudo. Las plantillas institucionales nativas siguen pendientes.
+
+## Operación histórica con IA agnóstica y MCP (opcional)
 
 1. La IA elegida abre `oece_contexto` y `oece_archivos`, lee cada página con `oece_pagina_visual` y, cuando corresponda, prepara la lectura visual y los cálculos de liquidación.
 2. Consulta `oece_modelo_cmc` para conocer **todos** los campos. Recupera `oece_entrada(caso,tipo="datos_cmc")` para obtener contenido previo y SHA-256.
