@@ -183,7 +183,7 @@ class AgentesMultimodales(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "OPENAI_API_KEY"):
                 OpenAIBackend()
 
-    def test_panel_exige_consentimiento_y_entrega_informe_ia(self):
+    def test_panel_mcp_no_invoca_api_ni_requiere_clave(self):
         root = Path(self.temp.name)
         server = crear_servidor(root, Memoria(root / ".oece"), 0)
         worker = threading.Thread(target=server.serve_forever, daemon=True)
@@ -196,32 +196,24 @@ class AgentesMultimodales(unittest.TestCase):
             with urlopen(req, timeout=15) as response:
                 return response.read()
         try:
-            with self.assertRaises(HTTPError) as ex:
-                request("/api/analizar-ia", {"caso": "exp-1", "autorizar_envio": False})
-            self.assertEqual(400, ex.exception.code)
-            self.assertEqual([], self.modelo.llamadas)
-            with patch.dict(os.environ, {"OPENAI_API_KEY": "fake-for-test"}):
-                with patch("oece.panel.analizar_ia", side_effect=lambda folder, autorizar_envio, progress:
-                           analizar(folder, autorizar_envio=autorizar_envio,
-                                   cliente=self.modelo, progress=progress)):
-                    request("/api/analizar-ia", {"caso": "exp-1", "autorizar_envio": True})
-                    for _ in range(100):
-                        cases = json.loads(request("/api/casos"))["casos"]
-                        if cases[0]["trabajo_ia"].get("estado") != "procesando":
-                            break
-                        time.sleep(.05)
-                    self.assertEqual("borrador_ia", cases[0]["trabajo_ia"]["estado"])
-                    revision = cases[0]["trabajo_ia"]["revision"]
-                    raw = request("/descargar-ia?caso=exp-1&revision=" + revision + "&archivo=informe-ia.docx")
-                    self.assertTrue(raw.startswith(b"PK"))
-                    with self.assertRaises(HTTPError):
-                        request("/descargar-ia?caso=exp-1&revision=" + revision + "&archivo=../secreto.txt")
+            with patch.dict(os.environ, {}, clear=True):
+                info = json.loads(request("/api/pedido-ia?caso=exp-1"))
+                self.assertEqual(1, info["pdf"])
+                self.assertIn("MCP", info["modo"])
+                self.assertIn("oece_pagina_visual", info["texto"])
+                self.assertIn("oece_calcular_liquidacion", info["texto"])
+                self.assertEqual([], self.modelo.llamadas)
+                for authorized in (False, True):
+                    with self.assertRaises(HTTPError) as ex:
+                        request("/api/analizar-ia", {"caso": "exp-1",
+                                                    "autorizar_envio": authorized})
+                    self.assertEqual(400, ex.exception.code)
+                self.assertFalse((self.folder / "analisis_ia").exists())
         finally:
             server.shutdown()
             server.server_close()
             server.oece_pool.shutdown(wait=True)
             worker.join()
-
 
 
 if __name__ == "__main__":
