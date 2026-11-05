@@ -31,6 +31,12 @@ La corrección CMC con experiencia/AC positivo/PC cero de 9.2.6.d está incorpor
 
 La cadena completa por disposición, excepciones y casos históricos del plan amplio sigue abierta. El coordinador puede completar análisis específicos con citas; no se declara evaluación jurídica exhaustiva. DOC/XLS antiguos, imágenes incrustadas y algunas fuentes escaneadas mantienen sus límites. [Uso diario](USO_DIARIO.md).
 
+## Actualización complementaria — 05/11/2026
+
+Se incorporó **OECE Consulta Normativa**, una consulta personal de solo lectura por MCP, que no necesita expediente: `oece_consultar_normativa`. Recupera pasajes de originales manifestados y cotejados por hash, localizador y fuente; si no existe un índice local válido, devuelve pendientes y referencia a Drive. La IA del cliente redacta la respuesta, no el código local. El puente cuenta ahora con **21 herramientas**. [Contrato](CONSULTA_NORMATIVA.md).
+
+**Alcance acotado:** no se añadió invocación desde especialistas CMC/consultores ni se resolvió aún el protocolo de dudas de expediente. Esta segunda fase queda registrada en T53. La biblioteca local y la vigencia jurídica no se vuelven actuales automáticamente al actualizar el repositorio.
+
 ## Medición y continuidad
 
 La preparación técnica es distinta de completar el plan amplio de automatización. Se conserva su estimación orientativa **75 % (70–80 %)**; no es precisión jurídica. [Método](MEDICION_AVANCE.md).
