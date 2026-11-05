@@ -23,3 +23,6 @@
 ## Dependencias de secuencia
 
 **Entrada obligatoria:** entregable 1 — relación de obras y montos sustentados. **Salida:** cuadro de años marcados, experiencia, factores y G para alimentar el entregable 3. Cuando faltan pruebas o fecha fiable, no marcar el año como acreditado ni cerrar el cálculo automáticamente.
+
+
+**Contrato de datos implementado:** [Ficha maestra para los tres formatos](CONTRATO_DATOS_CMC.md). La IA prepara ahora datos semánticos y trazabilidad, sin reproducir todavía la plantilla nativa pendiente.
