@@ -1,5 +1,9 @@
 # OECE Assistant con el asistente que elijas
 
+
+> **Modalidad principal desde 05/11/2026:** [OECE Agent-first](ARQUITECTURA_AGENTES.md) usa **roles por instrucciones** en la IA elegida; la lectura de normativa y expedientes se realiza con sus conectores Drive, y el cliente crea/publica entregables con las herramientas que tenga. **Este documento describe el motor Python/MCP legacy, ahora opcional.** Para comenzar sin MCP, usar el [prompt universal](PROMPT_OECE_UNIVERSAL.md). No se han probado aún los tres clientes cloud con expedientes completos.
+
+
 Decisión más reciente del usuario (05/11/2026): **OECE debe ser agnóstico y su flujo principal no debe requerir ninguna API de IA**. El panel copia el encargo para el cliente elegido; Codex, Claude Code u otro cliente con MCP e imágenes lo ejecuta usando el motor documental local. La implementación anterior de API queda solo como opción CLI separada, nunca desde el panel.
 
 ## Estructura compartida
