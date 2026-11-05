@@ -398,7 +398,7 @@ def previsualizar(case_dir):
         pages += count
     if pages > MAX_PAGINAS:
         raise ValueError(f"Se superan {MAX_PAGINAS} páginas por ejecución; dividir en lotes")
-    return {"archivos": selected, "paginas": pages,
+    return {"archivos": selected, "todos": files, "paginas": pages,
             "omitidos": [f["archivo"] for f in files if f not in selected],
             "nota": "Enviar PDFs a OpenAI tiene coste de API y puede implicar datos personales o comerciales."}
 
@@ -451,8 +451,7 @@ def analizar(case_dir, autorizar_envio=False, cliente=None, progress=None):
                                  "calculos": calculos, "omitidos": manifest["omitidos"]}, SINTESIS)
     validar_referencias(synthesis, docs)
     # Evitar publicar una revisión correspondiente a originales ya modificados.
-    if config_file.read_bytes() != config_raw or inventario(case_dir) != manifest["archivos"] + [
-            f for f in inventario(case_dir) if f["archivo"] in manifest["omitidos"]]:
+    if config_file.read_bytes() != config_raw or inventario(case_dir) != manifest["todos"]:
         raise ValueError("El expediente cambió durante el análisis")
     info = {"version": VERSION, "fecha": datetime.now(timezone.utc).isoformat(),
             "expediente": config, "modelo": model, "documentos": docs,
