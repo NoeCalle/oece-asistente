@@ -14,7 +14,7 @@ import uuid
 
 from .comun import ROOT, dentro, guardar, leer, sha
 from .coordinador import observar_una_vez
-from .agentes_ia import previsualizar as previsualizar_ia, verificar_revision as verificar_ia
+from .agentes_ia import verificar_revision as verificar_ia
 from .flujo import iniciar, procesar, verificar_entrega
 
 def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
@@ -115,41 +115,20 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                     folder=case(query['caso'][0])
                     self.send(200,{'texto':f'Revisa el expediente en {folder}. Sigue AGENTS.md: lee los documentos, completa los hechos con citas verificables, analiza el procedimiento y genera una nueva revisión del informe Word y la matriz. No inventes datos ni registres aprobación humana.'})
                 elif url.path=='/api/pedido-ia':
+                    from .enrutador import coordinar
                     folder=case(query['caso'][0])
-                    preview=previsualizar_ia(folder)
-                    text=(
-                        f"Actúa como coordinador OECE para el expediente {folder.name}. "
-                        "Usa las herramientas del servidor MCP local 'oece' (no uses API ni claves nuevas). "
-                        "Primero oece_contexto y oece_archivos; usa oece_pagina_visual para INSPECCIONAR "
-                        "cada página PDF escaneada directamente con visión. "
-                        "Como agente lector, estructura cartas, contratos, resoluciones de recepción, "
-                        "resoluciones y tablas de liquidación, con página y citas breves. "
-                        "Guarda la lectura de cada PDF en oece_guardar, tipo lecturas_ia. "
-                        "Como subagente de cálculos, identifica operaciones con las filas extraídas "
-                        "y llama oece_calcular_liquidacion; no inventes importes. "
-                        "Como agente integrador, cruza las fechas, la obra, la liquidación y los "
-                        "documentos, contrasta normativa verificable y llama oece_publicar_analisis "
-                        "para obtener Word y JSON con sustento por documento/página. "
-                        "Los hechos y cálculos se mantienen como propuestas pendientes de cotejo humano. "
-                        "No publiques, envíes ni apruebes nada en nombre de OECE. "
-                        "Si este cliente no puede recibir imágenes MCP, indícalo y solicita otro compatible."
-                    )
-                    if leer(dentro(folder,'expediente.json')).get('procedimiento')=='aumento_cmc':
-                        text += (
-                            " Además, PREPARA LOS TRES ENTREGABLES CMC EN ORDEN: "
-                            "(1) relación de obras y montos, (2) matriz de años y factores a/f/e/G, "
-                            "(3) resumen final de CMC. Usa oece_modelo_cmc para conocer TODOS los campos "
-                            "de la ficha maestra. Con los contratos, resoluciones y cálculos extraídos, "
-                            "completa datos_cmc sin inventar importes, sin duplicar porcentajes de "
-                            "consorcio y dejando datos faltantes como null. Lee el hash con "
-                            "oece_entrada(tipo=datos_cmc), guarda con oece_guardar(tipo=datos_cmc) "
-                            "y finalmente llama oece_publicar_cmc. Genera tres datasets JSON "
-                            "independientes con trazabilidad; NO simules las tres plantillas nativas "
-                            "que el usuario entregará posteriormente, ni declares CMC otorgada. "
-                            "Usa docs/CONTRATO_DATOS_CMC.md como contrato de campos. "
-                        )
-                    self.send(200,{"texto":text,"modo":"MCP agnostico, sin API de modelo en panel",
-                                   "pdf":len(preview["archivos"]),"paginas":preview["paginas"]})
+                    plan=coordinar(folder)
+                    self.send(200,{'texto':plan['texto'],
+                                   'modo':plan['operacion'],
+                                   'procedimiento':plan['procedimiento'],
+                                   'especialista':plan['especialista'],
+                                   'entregables':plan['entregables'],
+                                   'pendientes':plan['pendientes'],
+                                   'pdf':plan['pdf'], 'archivos':plan['archivos']})
+                elif url.path=='/api/coordinar':
+                    from .enrutador import coordinar
+                    folder=case(query['caso'][0])
+                    self.send(200,coordinar(folder))
                 elif url.path=='/api/preparacion':
                     from .diagnostico import comprobar
                     self.send(200,comprobar(query.get('fecha',[None])[0]))
