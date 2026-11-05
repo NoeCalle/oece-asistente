@@ -13,7 +13,7 @@ from .lectura import aplicar_cotejos, leer_documento
 
 ENTRADAS = {'ficha':'expediente.json', 'hechos':'hechos.json', 'analisis':'analisis.json',
             'normas':'normas.json', 'cotejos':'cotejos.json',
-            'lecturas_ia':'lecturas-ia-trabajo.json'}
+            'lecturas_ia':'lecturas-ia-trabajo.json', 'datos_cmc':'datos-cmc.json'}
 SALIDAS = {'informe.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
            'matriz.csv':'text/csv', 'matriz.json':'application/json', 'entrega.json':'application/json'}
 
@@ -37,6 +37,8 @@ def herramientas():
       ('oece_pagina_visual','Entrega UNA página PDF como imagen real al cliente MCP con capacidad de visión, sin OCR previo ni API del panel.',esquema({'caso':CASE,'documento':{'type':'string','minLength':13,'maxLength':13},'pagina':{'type':'integer','minimum':1,'maximum':500}},['caso','documento','pagina']),True),
       ('oece_calcular_liquidacion','Verifica con Decimal operaciones propuestas por el subagente IA sobre tablas previamente guardadas en lecturas_ia; conserva resultados privados.',esquema({'caso':CASE,'operaciones':{'type':'array'},'alertas':{'type':'array'}},['caso','operaciones','alertas']),False),
       ('oece_publicar_analisis','Publica Word y matrices del análisis multimodal de un cliente MCP, con fuentes/hashes, sin llamar a un proveedor de IA.',esquema({'caso':CASE,'modelo':{'type':'string','minLength':1,'maxLength':100},'sintesis':{'type':'object'}},['caso','modelo','sintesis']),False),
+      ('oece_modelo_cmc','Devuelve la estructura de ficha maestra CMC (tres formatos secuenciales), sin inventar datos ni usar API.',esquema({'caso':CASE},['caso']),True),
+      ('oece_publicar_cmc','Convierte la ficha maestra datos_cmc ya guardada en tres paquetes JSON independientes, listos para mapear a plantillas futuras.',esquema({'caso':CASE},['caso']),False),
       ('oece_entrada','Lee ficha/hechos/análisis/normas/cotejos y su hash para edición sin pérdida.',esquema({'caso':CASE,'tipo':TYPE},['caso','tipo']),True),
       ('oece_guardar','Guarda entrada JSON en carpeta privada, conserva versión previa y exige hash actual. No aprueba sus hechos: citas y cálculos se validan al generar.',esquema({'caso':CASE,'tipo':TYPE,'contenido':{'type':['object','array']},'sha_esperado':{'type':['string','null'],'maxLength':64}},['caso','tipo','contenido','sha_esperado']),False),
       ('oece_generar','Valida hechos y produce Word/matriz versionados; no firma, no presenta ni sube a Drive/GitHub. OCR es opcional.',esquema({'caso':CASE,'usar_ocr':{'type':'boolean'}},['caso']),False),
@@ -138,6 +140,25 @@ class Puente:
                 return iniciar(folder,arguments['procedimiento'],arguments['solicitante'],arguments.get('sintetico',False))
         if name=='oece_archivos':
             return {'documentos':[{**item,'id':'D'+item['sha256'][:12]} for item in inventario(folder)]}
+        if name=='oece_modelo_cmc':
+            from .formatos_cmc import modelo_vacio
+            return {'modelo':modelo_vacio(leer(dentro(folder,'expediente.json'))),
+                    'documentacion':['docs/ENTREGABLE_01_RELACION_OBRAS.md',
+                                     'docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md',
+                                     'docs/ENTREGABLE_03_RESUMEN_CMC.md'],
+                    'contrato':'Primero obras, luego años/factores, al final CMC. Sin datos inventados ni otorgamiento.',
+                    'fuentes':'Referencias: campo, documento D<sha12>, pagina PDF 1-based y cita candidata.',
+                    'guardado':'oece_entrada tipo datos_cmc; oece_guardar tipo datos_cmc; oece_publicar_cmc'}
+        if name=='oece_publicar_cmc':
+            from .formatos_cmc import publicar
+            with bloqueo(self.memory.root/'bloqueos'/sha(str(folder).encode())):
+                result=publicar(folder)
+            filenames=('entregable-01-datos.json','entregable-02-datos.json',
+                       'entregable-03-datos.json','ficha-maestra.json')
+            return {**result,'recursos':[{'type':'resource_link','name':filename,
+                       'mimeType':'application/json',
+                       'uri':f'oece://casos/{folder.name}/cmc/{result["revision"]}/{filename}'}
+                       for filename in filenames]}
         if name=='oece_pagina_visual':
             from .multimodal_mcp import pagina_visual
             return {'__oece_mcp_image__':pagina_visual(folder,arguments['documento'],arguments['pagina'])}
@@ -185,11 +206,19 @@ class Puente:
             path=dentro(folder,ENTRADAS[arguments['tipo']])
             if name=='oece_entrada':
                 raw=path.read_bytes() if path.exists() else None
+                if raw is not None:
+                    content=json.loads(raw)
+                elif arguments['tipo']=='datos_cmc':
+                    from .formatos_cmc import modelo_vacio
+                    content=modelo_vacio(leer(dentro(folder,'expediente.json')))
+                else:
+                    content=[]
                 return {'tipo':arguments['tipo'],'sha256':sha(raw) if raw is not None else None,
-                        'contenido':json.loads(raw) if raw is not None else []}
+                        'contenido':content}
             content=arguments['contenido'];kind=arguments['tipo']
-            if (kind=='ficha' and not isinstance(content,dict)) or (kind!='ficha' and not isinstance(content,list)):
-                raise ValueError('Ficha requiere objeto; las otras entradas requieren lista')
+            if ((kind in ('ficha','datos_cmc') and not isinstance(content,dict))
+                    or (kind not in ('ficha','datos_cmc') and not isinstance(content,list))):
+                raise ValueError('Ficha/datos CMC requieren objeto; otras entradas requieren lista')
             if len(bytes_json(content))>4_000_000:raise ValueError('Entrada JSON supera el límite')
             if kind in ('hechos','cotejos') and any(not isinstance(f,dict) or f.get('tipo_autor')!='asistente_ia' for f in content):
                 raise ValueError('El puente registra hechos como asistente_ia; no puede atribuirles revisión humana')
@@ -200,6 +229,9 @@ class Puente:
                 if kind=='lecturas_ia':
                     from .multimodal_mcp import validar_lecturas
                     content=validar_lecturas(folder,content)
+                if kind=='datos_cmc':
+                    from .formatos_cmc import validar
+                    validar(folder, content)
                 if kind=='ficha':
                     old=leer(path)
                     if content.get('id')!=old['id'] or content.get('sintetico')!=old.get('sintetico'):
@@ -223,23 +255,31 @@ class Puente:
     def recurso(self, uri):
         parsed=urlsplit(uri)
         parts=parsed.path.strip('/').split('/')
-        if parsed.scheme!='oece' or parsed.netloc!='casos' or parsed.query or parsed.fragment or len(parts)!=4 or parts[1] not in ('salida','ia'):
+        if parsed.scheme!='oece' or parsed.netloc!='casos' or parsed.query or parsed.fragment or len(parts)!=4 or parts[1] not in ('salida','ia','cmc'):
             raise ValueError('URI de entrega inválida')
         cid,kind,revision,filename=parts
         if not re.fullmatch('[a-f0-9]{64}',revision):raise ValueError('Revisión inválida')
         if kind=='salida':
             types=SALIDAS
-        else:
+        elif kind=='ia':
             types={'informe-ia.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
                    'analisis-ia.json':'application/json', 'calculos-ia.json':'application/json',
                    'lecturas-ia.json':'application/json'}
+        else:
+            types={name:'application/json' for name in (
+                'entregable-01-datos.json','entregable-02-datos.json',
+                'entregable-03-datos.json','ficha-maestra.json')}
         if filename not in types:raise ValueError('Recurso no permitido')
         folder=self.caso(cid)
-        output=dentro(folder,('salida/' if kind=='salida' else 'analisis_ia/')+revision)
+        target={'salida':'salida/', 'ia':'analisis_ia/', 'cmc':'datos_formatos_cmc/'}[kind]
+        output=dentro(folder,target+revision)
         if kind=='salida': verificar_entrega(output)
-        else:
+        elif kind=='ia':
             from .agentes_ia import verificar_revision
             verificar_revision(output)
+        else:
+            from .formatos_cmc import verificar_publicacion
+            verificar_publicacion(output)
         raw=dentro(output,filename).read_bytes()
         if len(raw)>10_000_000:raise ValueError('Recurso demasiado grande para transferencia MCP')
         record={'uri':uri,'mimeType':types[filename]}
