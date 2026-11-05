@@ -130,7 +130,7 @@ class MCPVisualSinAPI(unittest.TestCase):
         self.assertTrue(self.guardar_lecturas()["guardado"])
 
     def test_cliente_codex_y_claude_comparten_herramientas_sin_api(self):
-        self.assertEqual(17, len(herramientas()))
+        self.assertEqual(19, len(herramientas()))
         self.guardar_lecturas()
         computed = self.calcular()
         self.assertEqual("150.00", computed["operaciones"][0]["resultado_decimal"])
