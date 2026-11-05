@@ -1,5 +1,9 @@
 # Coordinador único OECE — dos especialistas aislados
 
+
+> **Modalidad preferida agent-first (05/11/2026):** [coordinador por instrucciones](../agentes/coordinador.md) y especialistas [CMC](../agentes/especialista-cmc.md)/[consultores](../agentes/especialista-consultores.md) pueden trabajar desde Drive sin ejecutar `oece_coordinar` ni un MCP local. **Este documento conserva la implementación Python/MCP histórica** y sus pruebas. El enrutamiento por procedimiento declarado, la separación de controles y los entregables siguen siendo obligatorios. [Arquitectura](ARQUITECTURA_AGENTES.md).
+
+
 **Implementado:** 05/11/2026. Código: `oece/enrutador.py`. Funciona por MCP local con IA elegida por el usuario; no exige API nueva ni cambia el modo tradicional para otros procedimientos.
 
 ## Regla de selección obligatoria
