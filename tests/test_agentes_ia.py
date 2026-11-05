@@ -3,7 +3,11 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import threading
+import time
 import unittest
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
 from unittest.mock import patch
 
 from pypdf import PdfWriter
@@ -11,7 +15,8 @@ from pypdf import PdfWriter
 from oece.agentes_ia import (analizar, comprobar_calculos, decimal, previsualizar,
                              validar_referencias, verificar_revision, OpenAIBackend)
 from oece.comun import guardar, leer
-from oece.flujo import iniciar
+from oece.flujo import iniciar, Memoria
+from oece.panel import crear_servidor
 
 
 class ModeloFalso:
@@ -177,6 +182,46 @@ class AgentesMultimodales(unittest.TestCase):
         with patch.dict(os.environ, {}, clear=True):
             with self.assertRaisesRegex(ValueError, "OPENAI_API_KEY"):
                 OpenAIBackend()
+
+    def test_panel_exige_consentimiento_y_entrega_informe_ia(self):
+        root = Path(self.temp.name)
+        server = crear_servidor(root, Memoria(root / ".oece"), 0)
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        base = f"http://127.0.0.1:{server.server_port}"
+        def request(path, data=None):
+            raw = json.dumps(data).encode() if data is not None else None
+            headers = {"X-OECE-Token": server.oece_token}
+            req = Request(base + path, data=raw, headers=headers)
+            with urlopen(req, timeout=15) as response:
+                return response.read()
+        try:
+            with self.assertRaises(HTTPError) as ex:
+                request("/api/analizar-ia", {"caso": "exp-1", "autorizar_envio": False})
+            self.assertEqual(400, ex.exception.code)
+            self.assertEqual([], self.modelo.llamadas)
+            with patch.dict(os.environ, {"OPENAI_API_KEY": "fake-for-test"}):
+                with patch("oece.panel.analizar_ia", side_effect=lambda folder, autorizar_envio, progress:
+                           analizar(folder, autorizar_envio=autorizar_envio,
+                                   cliente=self.modelo, progress=progress)):
+                    request("/api/analizar-ia", {"caso": "exp-1", "autorizar_envio": True})
+                    for _ in range(100):
+                        cases = json.loads(request("/api/casos"))["casos"]
+                        if cases[0]["trabajo_ia"].get("estado") != "procesando":
+                            break
+                        time.sleep(.05)
+                    self.assertEqual("borrador_ia", cases[0]["trabajo_ia"]["estado"])
+                    revision = cases[0]["trabajo_ia"]["revision"]
+                    raw = request("/descargar-ia?caso=exp-1&revision=" + revision + "&archivo=informe-ia.docx")
+                    self.assertTrue(raw.startswith(b"PK"))
+                    with self.assertRaises(HTTPError):
+                        request("/descargar-ia?caso=exp-1&revision=" + revision + "&archivo=../secreto.txt")
+        finally:
+            server.shutdown()
+            server.server_close()
+            server.oece_pool.shutdown(wait=True)
+            worker.join()
+
 
 
 if __name__ == "__main__":
