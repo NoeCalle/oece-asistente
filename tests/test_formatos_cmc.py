@@ -3,11 +3,16 @@ from copy import deepcopy
 from pathlib import Path
 import tempfile
 import unittest
+import json
+import threading
+from urllib.request import urlopen
 from pypdf import PdfWriter
 
 from oece.comun import leer, sha
 from oece.formatos_cmc import preparar, validar, publicar, verificar_publicacion
 from oece.puente import Puente, herramientas
+from oece.flujo import Memoria
+from oece.panel import crear_servidor
 
 
 class TresEntregablesCMC(unittest.TestCase):
@@ -197,6 +202,34 @@ class TresEntregablesCMC(unittest.TestCase):
         self.assertNotIn("13612500", str((e1,e2,e3)))
         self.assertNotIn("7400000", str((e1,e2,e3)))
         self.assertFalse((self.case / "entregable-01.xlsx").exists())
+
+    def test_panel_muestra_tres_formatos_y_encargo_al_coordinador(self):
+        self.save(self.base())
+        prepared=publicar(self.case)
+        server=crear_servidor(self.case.parent, Memoria(self.case.parent / ".panel-mem"), 0)
+        worker=threading.Thread(target=server.serve_forever,daemon=True)
+        worker.start()
+        base=f"http://127.0.0.1:{server.server_port}"
+        try:
+            with urlopen(base + "/api/casos", timeout=10) as response:
+                cases=json.load(response)["casos"]
+            self.assertEqual([prepared["revision"]], cases[0]["paquetes_cmc"])
+            with urlopen(base + "/api/pedido-ia?caso=E-CMC", timeout=10) as response:
+                prompt=json.load(response)["texto"]
+            self.assertIn("oece_modelo_cmc",prompt)
+            self.assertIn("oece_publicar_cmc",prompt)
+            self.assertIn("TRES ENTREGABLES CMC",prompt)
+            with urlopen(base + "/descargar-cmc?caso=E-CMC&revision="
+                         + prepared["revision"] + "&archivo=entregable-03-datos.json",
+                         timeout=10) as response:
+                data=json.load(response)
+            self.assertIsNone(data["CMC_a_otorgar"])
+            self.assertEqual("1350000.00",data["CMC_calculada_provisional_soles"])
+        finally:
+            server.shutdown()
+            server.server_close()
+            server.oece_pool.shutdown(wait=True)
+            worker.join()
 
     def test_carga_cmc_incompatible_con_otro_tramite(self):
         self.bridge.ejecutar("oece_nuevo", {"caso": "OTRO", "procedimiento": "inscripcion",
