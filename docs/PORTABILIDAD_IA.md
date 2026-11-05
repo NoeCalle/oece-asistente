@@ -57,7 +57,7 @@ Para buscar/cotejar normas, conservar los originales de Drive en sus rutas manif
 6. `oece_entrada` / `oece_guardar`: leer y registrar ficha/hechos/análisis/normas/cotejos. La edición exige el hash actual y conserva la versión previa.
 7. `oece_generar`: valida y conserva la entrega; devuelve recursos Word, CSV, JSON y manifiesto.
 
-Desde 1.4 se añade `oece_tupa`: consulta fichas candidatas por expediente y recupera páginas de la ficha con sus huellas. Desde 1.5 se añade también `oece_requisitos`, con 24 requisitos de ampliación/aumento y diez alertas. Desde 1.6 se añade `oece_diagnostico` y el plan abarca cinco trámites. Son diecisiete herramientas actuales: además de las clásicas, `oece_pagina_visual`, `oece_calcular_liquidacion` y `oece_publicar_analisis`. El plan conserva tareas pendientes de interpretación y no acredita cumplimiento. [Guía TUPA](normativa/FICHAS_TUPA.md).
+Desde 1.4 se añade `oece_tupa`: consulta fichas candidatas por expediente y recupera páginas de la ficha con sus huellas. Desde 1.5 se añade también `oece_requisitos`, con 24 requisitos de ampliación/aumento y diez alertas. Desde 1.6 se añade `oece_diagnostico` y el plan abarca cinco trámites. El puente ofrece actualmente 21 herramientas MCP: además de las clásicas, `oece_pagina_visual`, `oece_calcular_liquidacion` y `oece_publicar_analisis`. El plan conserva tareas pendientes de interpretación y no acredita cumplimiento. [Guía TUPA](normativa/FICHAS_TUPA.md).
 
 Las herramientas se complementan con `resources/read` para recuperar una entrega por URI `oece://casos/...`. El Word se devuelve como recurso binario; la presentación o descarga depende del cliente. Leer/generar no sube nada a Drive. El conector del cliente debe efectuar una subida solo cuando esté autorizada.
 
