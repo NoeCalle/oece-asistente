@@ -1,5 +1,15 @@
 # Estado de OECE Assistant
 
+## Arquitectura principal agent-first — 05/11/2026
+
+**Implementado en GitHub:** [coordinador](../agentes/coordinador.md), [especialista CMC](../agentes/especialista-cmc.md), [especialista consultores](../agentes/especialista-consultores.md), [consulta normativa](../agentes/consulta-normativa.md), [procedimientos y contratos](ARQUITECTURA_AGENTES.md), [prompt portable](PROMPT_OECE_UNIVERSAL.md) y [pruebas de aceptación](PRUEBAS_AGENTES.md). La modalidad preferida es **la IA de suscripción ejecutando roles por instrucciones**: normas y expedientes desde Drive, resultados a Drive, código/prompts en GitHub. **No requiere iniciar MCP, panel o Python** como paso obligatorio.
+
+**Pendiente:** configuración/carga real de estas instrucciones y **validación completa en Codex, Claude y Grok Bot** con Drive, generación de archivos y escritura efectiva de resultados. Las pruebas estáticas verifican los archivos, no la experiencia real del cliente. Las tres plantillas CMC nativas siguen pendientes; **no** se simula entrega de formato oficial.
+
+**Respaldo opcional:** el sistema Python/MCP versión 1.6 se conserva sin eliminar sus rutas, cálculos, controles y pruebas. Los párrafos históricos de abajo documentan ese motor **local**, no limitan el nuevo modo agent-first. La gestión de dudas automática entre agentes sigue pendiente (T53).
+
+## Estado heredado — motor Python/MCP
+
 Actualización: **02/11/2026, America/Lima**. Versión **1.6.0**. Preparación técnica comprobada para elaborar borradores con el asistente conversacional. [Primer uso](PRIMER_USO.md), [verificación](VERIFICACION_V16.md), [plan](PLAN_INTEGRAL.md).
 
 ## Resultado disponible
