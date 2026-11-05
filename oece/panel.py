@@ -97,9 +97,15 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                                  and re.fullmatch('[a-f0-9]{64}',p.name)
                                  and dentro(p,'integridad-ia.json').is_file()),
                                 key=lambda p:p.stat().st_mtime,reverse=True)] if ia_root.is_dir() else []
+                            cmc_root=dentro(folder,'datos_formatos_cmc')
+                            cmc_versions=[p.name for p in sorted(
+                                (p for p in cmc_root.iterdir() if p.is_dir()
+                                 and re.fullmatch('[a-f0-9]{64}',p.name)
+                                 and dentro(p,'integridad-cmc.json').is_file()),
+                                key=lambda p:p.stat().st_mtime,reverse=True)] if cmc_root.is_dir() else []
                             item={'carpeta':folder.name,'ficha':config,'revisiones':[d.name for d in revisions],
                                   'trabajo':jobs.get(folder.name,{}),'revisiones_ia':ia_versions,
-                                  'trabajo_ia':ia_jobs.get(folder.name,{})}
+                                  'trabajo_ia':ia_jobs.get(folder.name,{}),'paquetes_cmc':cmc_versions}
                             if revisions:
                                 r=leer(revisions[0]/'matriz.json');item.update(conteo=r['conteo'],preguntas=r['preguntas'])
                             items.append(item)
@@ -128,11 +134,35 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                         "No publiques, envíes ni apruebes nada en nombre de OECE. "
                         "Si este cliente no puede recibir imágenes MCP, indícalo y solicita otro compatible."
                     )
+                    if leer(dentro(folder,'expediente.json')).get('procedimiento')=='aumento_cmc':
+                        text += (
+                            " Además, PREPARA LOS TRES ENTREGABLES CMC EN ORDEN: "
+                            "(1) relación de obras y montos, (2) matriz de años y factores a/f/e/G, "
+                            "(3) resumen final de CMC. Usa oece_modelo_cmc para conocer TODOS los campos "
+                            "de la ficha maestra. Con los contratos, resoluciones y cálculos extraídos, "
+                            "completa datos_cmc sin inventar importes, sin duplicar porcentajes de "
+                            "consorcio y dejando datos faltantes como null. Lee el hash con "
+                            "oece_entrada(tipo=datos_cmc), guarda con oece_guardar(tipo=datos_cmc) "
+                            "y finalmente llama oece_publicar_cmc. Genera tres datasets JSON "
+                            "independientes con trazabilidad; NO simules las tres plantillas nativas "
+                            "que el usuario entregará posteriormente, ni declares CMC otorgada. "
+                            "Usa docs/CONTRATO_DATOS_CMC.md como contrato de campos. "
+                        )
                     self.send(200,{"texto":text,"modo":"MCP agnostico, sin API de modelo en panel",
                                    "pdf":len(preview["archivos"]),"paginas":preview["paginas"]})
                 elif url.path=='/api/preparacion':
                     from .diagnostico import comprobar
                     self.send(200,comprobar(query.get('fecha',[None])[0]))
+                elif url.path=='/descargar-cmc':
+                    from .formatos_cmc import verificar_publicacion
+                    folder=case(query['caso'][0]);revision=query['revision'][0];name=query['archivo'][0]
+                    if not re.fullmatch('[a-f0-9]{64}',revision): raise ValueError('Revisión CMC inválida')
+                    if name not in ('ficha-maestra.json','entregable-01-datos.json',
+                                    'entregable-02-datos.json','entregable-03-datos.json'):
+                        raise ValueError('Archivo CMC no permitido')
+                    path=dentro(folder,'datos_formatos_cmc/'+revision)
+                    verificar_publicacion(path)
+                    self.send(200,dentro(path,name).read_bytes(),'application/json; charset=utf-8')
                 elif url.path=='/descargar-ia':
                     folder=case(query['caso'][0]);revision=query['revision'][0];name=query['archivo'][0]
                     if not re.fullmatch('[a-f0-9]{64}',revision): raise ValueError('Revisión IA inválida')
