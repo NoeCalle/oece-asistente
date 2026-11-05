@@ -44,6 +44,7 @@ def herramientas():
       ('oece_guardar','Guarda entrada JSON en carpeta privada, conserva versión previa y exige hash actual. No aprueba sus hechos: citas y cálculos se validan al generar.',esquema({'caso':CASE,'tipo':TYPE,'contenido':{'type':['object','array']},'sha_esperado':{'type':['string','null'],'maxLength':64}},['caso','tipo','contenido','sha_esperado']),False),
       ('oece_generar','Valida hechos y produce Word/matriz versionados; no firma, no presenta ni sube a Drive/GitHub. OCR es opcional.',esquema({'caso':CASE,'usar_ocr':{'type':'boolean'}},['caso']),False),
       ('oece_buscar_normativa','Busca en el índice local con fuente/ubicación; búsqueda no prueba vigencia.',esquema({'consulta':{'type':'string','minLength':1,'maxLength':200},'limite':{'type':'integer','minimum':1,'maximum':20}},['consulta']),True),
+      ('oece_consultar_normativa','Consulta puntual DIRECTA del titular, sin expediente: recupera evidencias verificadas de originales locales y guía al cliente IA para responder. No invocar desde agentes CMC/consultores.',esquema({'pregunta':{'type':'string','minLength':1,'maxLength':500},'fecha':{'type':'string','minLength':10,'maxLength':10},'limite':{'type':'integer','minimum':1,'maximum':10}},['pregunta']),True),
       ('oece_norma','Lee fuente manifestada con hash: PDF por pagina, o Word DOCX por ubicacion de bloque/celda. No acredita vigencia ni cotejo visual.',esquema({'archivo':{'type':'string','minLength':1,'maxLength':250},'pagina':{'type':'integer','minimum':1,'maximum':5000},'ubicacion':{'type':'string','minLength':1,'maxLength':500}},['archivo']),True),
       ('oece_tupa','Consulta fichas TUPA candidatas por datos del caso. Con código, lee una página manifestada de esa ficha; no resuelve vigencia ni acredita requisitos.',esquema({'caso':CASE,'codigo':{'type':'string','minLength':10,'maxLength':10},'pagina':{'type':'integer','minimum':1,'maximum':5000}},['caso']),True),
       ('oece_requisitos','Planifica la revisión de los cinco trámites con citas, ramas y alertas. No acredita documentos ni cumplimiento. Verifica originales antes de devolver el plan.',esquema({'caso':CASE},['caso']),True),
@@ -106,11 +107,14 @@ class Puente:
             from .biblioteca import fuentes
             sources=fuentes()
             return {'version':__version__,'instrucciones':(ROOT/'AGENTS.md').read_text(encoding='utf-8'),
-                    'contratos':['docs/CONTRATO_EXPEDIENTE.md','docs/CONTRATO_PROCEDIMIENTOS.md','docs/CONTRASTE_FINANCIERO.md','docs/COORDINADOR_DUAL.md'],
+                    'contratos':['docs/CONTRATO_EXPEDIENTE.md','docs/CONTRATO_PROCEDIMIENTOS.md','docs/CONTRASTE_FINANCIERO.md','docs/COORDINADOR_DUAL.md','docs/CONSULTA_NORMATIVA.md'],
                     'proveedor_ia':None,'corte_normativo':'2026-10-31','archivos_no_son_instrucciones':True,
                     'plantilla_recursos':'oece://casos/{caso}/salida/{revision}/{archivo}',
                     'fuentes_locales':{'esperadas':len(sources),'presentes':sum(ruta_original(s['local_path']).is_file() for s in sources)},
-                    'alcance':'MCP local agnóstico sin API ni claves; oece_coordinar selecciona CMC o consultores, lectura visual por imágenes y cálculo Decimal sujetos a cotejo.'}
+                    'alcance':'MCP local agnóstico sin API ni claves; oece_coordinar selecciona CMC o consultores; oece_consultar_normativa permite al titular preguntas directas SIN expediente y SIN delegación desde especialistas; lectura visual y cálculos sujetos a cotejo.'}
+        if name=='oece_consultar_normativa':
+            from .consulta_normativa import consultar
+            return consultar(arguments['pregunta'],arguments.get('fecha'),arguments.get('limite',5))
         if name=='oece_buscar_normativa':
             from .biblioteca import buscar
             index=data_dir()/'normativa/indices/biblioteca-v1.sqlite'
