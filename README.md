@@ -2,7 +2,7 @@
 
 Asistente conversacional elegido y herramientas locales para preparar evaluaciones documentales OECE/RNP con fuentes, matriz y borrador Word editable.
 
-**Versión asistida 1.6.0 — cierre 02/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación la realiza el asistente elegido siguiendo [AGENTS.md](AGENTS.md). Codex es el cliente probado actualmente; se incluye un puente MCP local y [CLAUDE.md](CLAUDE.md) para clientes alternativos. No se incorpora una API de modelo al panel. La conexión real de Claude con Drive, GitHub y este puente todavía requiere comprobación. [Portabilidad y configuración](docs/PORTABILIDAD_IA.md).
+**Versión asistida 1.6.0 — cierre 02/11/2026; corte normativo 31/10/2026.** Panel de expedientes, lectura PDF/Word/HTML/XLSX, OCR acotado, memoria y entregas versionadas. La interpretación la realiza el asistente elegido siguiendo [AGENTS.md](AGENTS.md). Codex es el cliente probado actualmente; se incluye un puente MCP local y [CLAUDE.md](CLAUDE.md) para clientes alternativos. La lectura multimodal opcional mediante API se activó en noviembre de 2026 con consentimiento explícito; la modalidad clásica de CLI/MCP continúa independiente de proveedor. La conexión real de Claude con Drive, GitHub y este puente todavía requiere comprobación. [Portabilidad y configuración](docs/PORTABILIDAD_IA.md).
 
 [Guía de primer uso](docs/PRIMER_USO.md). Preparación técnica comprobada; el formato laboral se personalizará cuando se reciba. Las fuentes y condiciones se contrastan para cada expediente.
 
@@ -28,7 +28,7 @@ Los modelos reales de informes se incorporarán cuando estén disponibles. El [f
 | Reconsideración | Requisitos, nueva prueba/única instancia y propuesta de 15 días hábiles con calendario documentado |
 | Recuperación | Respaldo íntegro y restauración en carpeta nueva, con huellas y sin reemplazar datos existentes |
 | Operación local | Panel, carga, LISTO, estabilidad, memoria, bloqueo, reintentos y revisiones |
-| Portabilidad IA | CLI independiente y catorce herramientas MCP locales; protocolo probado sin API de modelo, validación con Claude real pendiente |
+| Portabilidad IA | CLI y catorce herramientas MCP locales independientes de proveedor; además hay una modalidad multimodal opcional con API OpenAI, sin prueba en vivo con expedientes reales |
 | Lectura/OCR | PDF digital, DOCX, TXT/HTML, valores XLSX; OCR Windows con límites, caché y cotejos declarados |
 | Entregas | Word/CSV/JSON; cinco ejemplos y 19 páginas de 1.1, dos ejemplos financieros y diez páginas de 1.2 inspeccionados |
 | Contraste financiero | R2/R3/R8, SBS documentada, indicadores y detección de contradicciones; sin dictamen de solvencia |
