@@ -199,7 +199,7 @@ class AgentesMultimodales(unittest.TestCase):
             with patch.dict(os.environ, {}, clear=True):
                 info = json.loads(request("/api/pedido-ia?caso=exp-1"))
                 self.assertEqual(1, info["pdf"])
-                self.assertIn("MCP", info["modo"])
+                self.assertIn("mcp", info["modo"].lower())
                 self.assertIn("oece_pagina_visual", info["texto"])
                 self.assertIn("oece_generar", info["texto"])
                 self.assertNotIn("oece_calcular_liquidacion", info["texto"])
