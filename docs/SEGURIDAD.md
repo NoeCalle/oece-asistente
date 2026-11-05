@@ -28,3 +28,10 @@ El OCR en Windows conserva el motor nativo existente. Fuera de Windows, o sin es
 ## Migración de rutas almacenadas
 
 Las rutas relativas se persisten con `/` (POSIX) y se resuelven con `pathlib`. El lector admite por compatibilidad registros antiguos con `\\`, pero rechaza componentes `..`, rutas UNC y rutas con unidad de Windows cuando se espera una ruta relativa. El comando `python -m oece migrar-rutas` migra índices JSON/SQLite privados con respaldo; no altera hashes de documentos originales y requiere detener escritores para evitar cambios concurrentes. Los índices y respaldos siguen fuera de Git.
+
+
+## Tratamiento de PDFs mediante IA externa (opt-in)
+
+La modalidad `analizar-ia` envía los PDFs del expediente a la API de OpenAI **solo con consentimiento explícito**, tanto desde el panel (casilla y botón) como desde la CLI (`--autorizar-envio`). La clave `OPENAI_API_KEY` se carga de las variables de entorno del servidor autorizado, nunca se escribe en los expedientes ni en Git. El panel local y el modo determinista no envían información a un modelo. `--previsualizar` no hace ninguna llamada de API.
+
+La API puede tener costes y los PDFs pueden contener datos personales, firmas y contratos sometidos a deberes de reserva. Antes de su uso institucional deben verificarse la autorización para transmitirlos y las condiciones de privacidad, retención y ubicación de procesamiento del proveedor. Las solicitudes se hacen con `store:false`; para archivos PDF grandes se utiliza carga temporal en Files API con intento de eliminación al terminar. **No se garantiza eliminación inmediata de los registros que la política del proveedor pueda conservar**. Los reportes, copias de originales y transcripciones se conservan en almacenamiento privado local con huellas SHA-256; nunca en el repositorio. Los textos de los PDFs se tratan como datos no confiables, no instrucciones. Las citas visuales y las operaciones aritméticas son propuestas condicionadas a cotejo humano con el documento original y norma aplicable; no son acreditaciones automáticas.
