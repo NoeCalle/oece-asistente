@@ -17,6 +17,7 @@ El esquema se obtiene mediante `oece_modelo_cmc(caso)` o `oece_entrada(caso, tip
 | Campo | Qué significa |
 |---|---|
 | `id` | ID de obra estable (por ejemplo OB-01) |
+| `especialidad`, `subespecialidad`, `tipologia` | **Opcionales:** clasificación propuesta según anexo de RD 0016-2025-EF/54.01 (DGA), solo si se cotejó el original. Campo no documentado = `null` o ausencia del campo; debe acompañarse de evidencia por página. No equivale a experiencia acreditada ni categoría registral. |
 | `objeto`, `entidad`, `numero_contrato` | Identificación contractual |
 | `fecha_contrato`, `fecha_recepcion` | Fechas propuestas con sustento documental |
 | `monto_contrato`, `moneda_contrato` | Monto contractual original y moneda |
