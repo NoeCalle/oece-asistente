@@ -19,6 +19,11 @@ def main():
     watch=sub.add_parser('observar');watch.add_argument('raiz',type=Path,nargs='?',default=data_dir()/'operacion');watch.add_argument('--una-vez',action='store_true');watch.add_argument('--intervalo',type=int,default=10)
     server=sub.add_parser('panel');server.add_argument('--raiz',type=Path,default=data_dir()/'operacion');server.add_argument('--puerto','--port',dest='puerto',type=int,default=8765);server.add_argument('--host',default='127.0.0.1')
     library=sub.add_parser('biblioteca');library.add_argument('--reconstruir',action='store_true');library.add_argument('--buscar');library.add_argument('--indice',type=Path,default=data_dir()/'normativa/indices/biblioteca-v1.sqlite')
+    norma=sub.add_parser('incorporar-norma')
+    norma.add_argument('instrumento')
+    opcion=norma.add_mutually_exclusive_group(required=True)
+    opcion.add_argument('--archivo',type=Path)
+    opcion.add_argument('--descargar',action='store_true')
     tupa=sub.add_parser('tupa');tupa.add_argument('carpeta',type=Path);tupa.add_argument('--codigo');tupa.add_argument('--pagina',type=int)
     req=sub.add_parser('requisitos');req.add_argument('carpeta',type=Path)
     diag=sub.add_parser('diagnostico');diag.add_argument('--fecha')
@@ -30,6 +35,11 @@ def main():
     backup=sub.add_parser('respaldar');backup.add_argument('carpeta',type=Path);backup.add_argument('archivo',type=Path)
     restore=sub.add_parser('restaurar');restore.add_argument('archivo',type=Path);restore.add_argument('destino',type=Path)
     args=p.parse_args()
+    if args.accion=='incorporar-norma':
+        from .normativa_incorporacion import incorporar
+        result=incorporar(args.instrumento,args.archivo,args.descargar)
+        print(json.dumps(result,ensure_ascii=False,indent=2))
+        return
     if args.accion=='migrar-rutas':
         from .migracion_rutas import migrar
         print(json.dumps(migrar(args.ruta,preview=args.simular),ensure_ascii=False,indent=2))
