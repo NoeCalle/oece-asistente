@@ -12,6 +12,26 @@ Inicia el panel con `python -m oece panel` en el equipo autorizado (en Windows t
 
 La interpretación se realiza en el asistente elegido, como pidió el usuario el 01/11/2026. Codex está probado; el puente para otros clientes se verifica a nivel de protocolo y herramientas. No es necesario añadir un modelo propio al panel. Sus instrucciones guiadas y generación local funcionan sin configurar una API nueva. No se declara una integración automática con un modelo en segundo plano.
 
+## Revisión de PDF escaneados con IA multimodal y subagente de liquidaciones (opcional)
+
+El panel incluye **Analizar PDF con IA**. Esta acción **no se ejecuta automáticamente al cargar archivos**: hay que marcar el consentimiento de envío a OpenAI y configurar en el equipo la variable `OPENAI_API_KEY` (pago de API independiente de ChatGPT; el modelo opcional `OECE_AI_MODEL` tiene como predeterminado `gpt-4.1`). Para evaluar las implicaciones de privacidad y coste, verificar con anterioridad las autorizaciones para transmitir expedientes reales a un proveedor externo.
+
+1. El **subagente lector multimodal** recibe el PDF completo, incluso si son páginas escaneadas, y propone datos, fragmentos de cita y cuadros con número de página; no utiliza Tesseract como paso obligatorio.
+2. El **subagente de cálculos de liquidación** propone las operaciones relevantes, diferencia importes contractuales, valorizados, liquidaciones y saldos, y declara para cada cifra el documento y página. El sistema las ejecuta además con `Decimal` sobre los números extraídos y señala importes no localizados o diferencias.
+3. El **subagente integrador** cruza contrato, recepción, liquidación y comunicaciones y prepara observaciones con referencias a documentos, páginas y pendientes.
+
+El producto de esta modalidad es un **proyecto de análisis** guardado junto con las copias originales bajo `analisis_ia/<revision>` en la carpeta privada del caso: `informe-ia.docx`, `lecturas-ia.json`, `calculos-ia.json`, `analisis-ia.json` e `integridad-ia.json`. Cualquier cita, fecha, firma o monto leído visualmente **queda pendiente de cotejo humano** y la conclusión requiere comprobar la norma vigente aplicable. No se genera acreditación ni aprobación administrativa automática. El procesamiento local anterior permanece disponible mediante **Preparar borrador**.
+
+La ejecución por terminal permite inspeccionar los límites (25 PDF y 250 páginas por corrida) **sin enviar documentos**:
+
+```bash
+python -m oece analizar-ia /ruta/caso --previsualizar
+# Solo si autorizaste transmitir los originales al proveedor:
+python -m oece analizar-ia /ruta/caso --autorizar-envio
+```
+
+Por ahora este flujo multimodal admite PDF; los archivos Word, Excel y otros se listan entre los no procesados por IA. Las herramientas clásicas de extracción siguen siendo compatibles con estos formatos. El modelo puede incurrir en errores incluso en lecturas visuales; una coincidencia aritmética no acredita por sí sola los montos ni la experiencia.
+
 ## Carpeta privada configurable, equipos locales o servidores de confianza
 
 Cada expediente tiene `expediente.json` y una subcarpeta `documentos`. El coordinador puede crear esa estructura. **Los datos pueden procesarse en cualquier equipo autorizado por el titular**, sea un equipo personal, un servidor Linux de confianza o una carpeta sincronizada de Drive. Los archivos deben estar disponibles como archivos reales para el proceso; no basta un acceso directo a un documento de Google.
