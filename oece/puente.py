@@ -157,6 +157,8 @@ class Puente:
                     'fuentes':'Referencias: campo, documento D<sha12>, pagina PDF 1-based y cita candidata.',
                     'guardado':'oece_entrada tipo datos_cmc; oece_guardar tipo datos_cmc; oece_publicar_cmc'}
         if name=='oece_publicar_cmc':
+            if leer(dentro(folder,'expediente.json')).get('procedimiento')!='aumento_cmc':
+                raise ValueError('Los tres entregables CMC son exclusivos de aumento_cmc')
             from .formatos_cmc import publicar
             with bloqueo(self.memory.root/'bloqueos'/sha(str(folder).encode())):
                 result=publicar(folder)
@@ -170,6 +172,8 @@ class Puente:
             from .multimodal_mcp import pagina_visual
             return {'__oece_mcp_image__':pagina_visual(folder,arguments['documento'],arguments['pagina'])}
         if name=='oece_calcular_liquidacion':
+            if leer(dentro(folder,'expediente.json')).get('procedimiento')!='aumento_cmc':
+                raise ValueError('El cálculo de liquidación de obra solo corresponde a aumento_cmc')
             from .multimodal_mcp import calcular_local
             with bloqueo(self.memory.root/'bloqueos'/sha(str(folder).encode())):
                 return calcular_local(folder,arguments['operaciones'],arguments['alertas'])
@@ -210,6 +214,8 @@ class Puente:
                     'total_fragmentos':len(doc['fragmentos']),'siguiente':end if end<len(doc['fragmentos']) else None,
                     'advertencias':doc['advertencias']}
         if name in ('oece_entrada','oece_guardar'):
+            if arguments['tipo']=='datos_cmc' and leer(dentro(folder,'expediente.json')).get('procedimiento')!='aumento_cmc':
+                raise ValueError('La ficha de tres formatos CMC no aplica a consultores')
             path=dentro(folder,ENTRADAS[arguments['tipo']])
             if name=='oece_entrada':
                 raw=path.read_bytes() if path.exists() else None
