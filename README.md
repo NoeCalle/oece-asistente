@@ -128,3 +128,16 @@ python -m oece panel
 La arquitectura es independiente del modelo: **lector visual → calculista de liquidación → integrador** son roles que ejecuta el asistente elegido, no tres suscripciones. OECE conserva copias y SHA-256 dentro del expediente privado. Se prohíbe inventar cifras, páginas, firmas o decisiones. Si el cliente no soporta imágenes MCP, debe informarlo; OCR es un recurso de respaldo, no equivalente a visión. Para instrucciones completas ver [uso diario](docs/USO_DIARIO.md) y [AGENTS.md](AGENTS.md).
 
 La ruta histórica `python -m oece analizar-ia ... --autorizar-envio` conserva una integración antigua opcional con API OpenAI; **no es necesaria ni se usa desde el panel ni desde MCP**. No hay pruebas con un cliente de IA real y documentos laborales auténticos; la regresión utiliza PDF sintéticos.
+
+
+## Preparar los datos de los tres formatos CMC antes de recibir las plantillas
+
+Para un expediente de `aumento_cmc`, el asistente MCP obtiene la estructura con `oece_modelo_cmc` y guarda la ficha maestra completa mediante `oece_guardar` (tipo `datos_cmc`). `oece_publicar_cmc` prepara tres archivos JSON independientes y el origen `ficha-maestra.json`, con datos y evidencia enlazados a los PDF. **No son las planillas editables definitivas:** el mapeo físico de celdas y formato se realizará cuando se reciban los tres archivos nativos. En el panel aparecen como **Datos preparados para los tres formatos CMC**.
+
+```bash
+python -m oece formatos-cmc /ruta/del/expediente --modelo
+# Tras guardar datos-cmc.json mediante MCP:
+python -m oece formatos-cmc /ruta/del/expediente
+```
+
+Más detalles: [contrato de datos CMC](docs/CONTRATO_DATOS_CMC.md). Los números de las fotografías originales no son datos validados y no deben migrarse automáticamente.
