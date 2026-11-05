@@ -47,3 +47,8 @@ Cliente IA → oece_contexto()
 Desde el panel: abrir un expediente, cargar los documentos y pulsar **Analizar con mi IA (MCP)** para copiar el encargo del especialista asignado. También se puede revisar el plan en `/api/coordinar?caso=ID` desde la interfaz local autenticada.
 
 **Cobertura de pruebas:** tests/test_enrutador.py ensaya ambos procedimientos, expedientes todavía vacíos, rechazo de herramientas cruzadas, selección por ficha pese al nombre engañoso del PDF, identidad del caso y respuesta del panel. Las pruebas sintéticas de enrutamiento no demuestran que un cliente real haya interpretado adecuadamente resoluciones escaneadas; esa validación con expedientes autorizados es posterior.
+
+
+## Norma transversal introducida en capacitación (RD DGA 0016-2025)
+
+Ambos especialistas consultan como referencia común la **RD 0016-2025-EF/54.01**: listado de subespecialidades y tipologías de obras y consultorías. El coordinador retorna `fuentes_normativas_transversales` y el estado de la copia local (PDF/hash/índice) tomado de `rules/fuentes-transversales.v1.json`. **CMC** clasifica técnicamente la obra sin deducir importes o capacidad. **Consultores** revisa relación entre subespecialidad, objeto de consultoría, inscripción y régimen temporal, sin conceder categoría automáticamente. Si falta la copia íntegra del anexo o su cotejo, el clasificador queda pendiente. Ver [guía oficial](normativa/RD_0016_2025_DGA.md).
