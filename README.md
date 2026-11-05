@@ -1,5 +1,19 @@
 # OECE Assistant
 
+## Modalidad recomendada: agentes en la nube, sin MCP obligatorio
+
+**Arquitectura agent-first (05/11/2026):** el **coordinador**, el **especialista CMC**, el **especialista consultores** y el **especialista de consulta normativa** son roles profesionales definidos mediante instrucciones, procedimientos y contratos. Los ejecuta la IA elegida por el titular (Codex/ChatGPT, Claude o Grok Bot). **GitHub = instrucciones y código histórico; Google Drive = documentos y resultados.** No es necesario mantener un servidor MCP o PC encendidos para operar con instrucciones, aunque cada IA debe disponer realmente de acceso a los documentos y herramientas para generar archivos.
+
+**[COMENZAR: PROMPT UNIVERSAL](docs/PROMPT_OECE_UNIVERSAL.md)** · [Arquitectura](docs/ARQUITECTURA_AGENTES.md) · [Coordinador](agentes/coordinador.md) · [CMC](agentes/especialista-cmc.md) · [Consultores](agentes/especialista-consultores.md) · [Consulta Normativa](agentes/consulta-normativa.md) · [Contrato de evidencia](contratos/control-evidencias.md) · [Pruebas](docs/PRUEBAS_AGENTES.md)
+
+**Uso:** en la IA autorizada, cargar el prompt universal y los archivos del especialista pertinente. Pedir: «Revisa este aumento de CMC en [enlace Drive] y prepara los tres entregables» o «Revisa esta ampliación de consultores en [enlace Drive] y genera el informe Word y la matriz». La IA consulta documentos reales en Drive, aplica las reglas, genera resultados y los publica **solo si realmente tiene herramientas para escribir allí**. No subir expedientes a GitHub.
+
+**Estado:** instrucciones y contratos implementados; **las pruebas completas Drive → IA cloud → entregables → Drive no se han verificado aún** en los tres clientes. Los tres formatos editables nativos CMC todavía están pendientes; los JSON son datos para ellos, no formularios oficiales.
+
+---
+
+## Motor Python/MCP histórico (se conserva como opción)
+
 Asistente conversacional elegido y herramientas locales para preparar evaluaciones documentales OECE/RNP con fuentes, matriz y borrador Word editable.
 
 **Biblioteca normativa de referencia:** [OECE Assistant / 01 Biblioteca normativa (Google Drive)](https://drive.google.com/drive/folders/1jsswi2044osUsH7fRE03YqfPhGCHI38G). Los agentes deben leer `AGENTS.md` y saber que los originales pueden consultarse allí **si tienen acceso autorizado**. Esta referencia no configura una conexión ni sincronización automática con Drive.
@@ -10,7 +24,7 @@ Asistente conversacional elegido y herramientas locales para preparar evaluacion
 
 [Guía de primer uso](docs/PRIMER_USO.md). Preparación técnica comprobada; el formato laboral se personalizará cuando se reciba. Las fuentes y condiciones se contrastan para cada expediente.
 
-## Empezar
+## Empezar con el motor local opcional
 
 1. Iniciar el panel con `python -m oece panel` desde el directorio del proyecto (en Windows también está `INICIAR_OECE.cmd`) y pulsar **Comprobar equipo**.
 2. Crear expediente, elegir trámite, completar los datos conocidos e incorporar documentos.
