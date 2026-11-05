@@ -24,7 +24,7 @@ class MCPVisualSinAPI(unittest.TestCase):
         self.root = Path(t.name) / "operacion"
         self.bridge = Puente(self.root)
         self.bridge.ejecutar("oece_nuevo", {
-            "caso": "E1", "procedimiento": "ampliacion_consultores",
+            "caso": "E1", "procedimiento": "aumento_cmc",
             "solicitante": "Empresa sintética", "sintetico": True})
         self.case = self.root / "E1"
         self.source = self.case / "documentos" / "liquidacion.pdf"
@@ -130,7 +130,7 @@ class MCPVisualSinAPI(unittest.TestCase):
         self.assertTrue(self.guardar_lecturas()["guardado"])
 
     def test_cliente_codex_y_claude_comparten_herramientas_sin_api(self):
-        self.assertEqual(19, len(herramientas()))
+        self.assertEqual(20, len(herramientas()))
         self.guardar_lecturas()
         computed = self.calcular()
         self.assertEqual("150.00", computed["operaciones"][0]["resultado_decimal"])
