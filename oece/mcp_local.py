@@ -94,7 +94,9 @@ class Protocolo:
                 result={'resourceTemplates':[{'uriTemplate':'oece://casos/{caso}/salida/{revision}/{archivo}',
                         'name':'entrega-oece','description':'Word, matriz CSV/JSON o manifiesto de una revisión conservada.'},
                         {'uriTemplate':'oece://casos/{caso}/ia/{revision}/{archivo}',
-                        'name':'analisis-visual-oece','description':'Word y resultados de análisis de un cliente IA por MCP local.'}]}
+                        'name':'analisis-visual-oece','description':'Word y resultados de análisis de un cliente IA por MCP local.'},
+                        {'uriTemplate':'oece://casos/{caso}/cmc/{revision}/{archivo}',
+                        'name':'datos-tres-formatos-cmc','description':'Ficha maestra y tres datasets para plantillas nativas futuras.'}]}
             elif method=='resources/list':result={'resources':[]}
             elif method=='resources/read':
                 if not isinstance(params.get('uri'),str):raise RPCError(-32602,'URI requerida')
