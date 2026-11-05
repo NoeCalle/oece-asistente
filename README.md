@@ -146,3 +146,18 @@ Más detalles: [contrato de datos CMC](docs/CONTRATO_DATOS_CMC.md). Los números
 ## Coordinador dual sin API de modelo
 
 El mismo coordinador local `oece_coordinar(caso)` enruta por el procedimiento **declarado** en la ficha del expediente: **aumento de CMC** → especialista de ejecutores, cálculos y tres conjuntos de datos; **ampliación de categoría de consultores** → especialista de consultoría, categorías, controles AC, informe Word y matriz. Ambas rutas admiten lectura visual de PDF escaneados por MCP, pero **no comparten reglas ni entregables**. El panel **Analizar con mi IA (MCP)** prepara el encargo según esa selección sin invocar ninguna API de IA. Ver [diseño del coordinador](docs/COORDINADOR_DUAL.md). El modo tradicional continúa disponible para los demás procedimientos. Las pruebas usan casos sintéticos y no acreditan resultado jurídico ni interpretación multimodal real.
+
+
+## Normativa transversal añadida: RD 0016-2025 DGA
+
+Se identificó y documentó oficialmente la [RD 0016-2025-EF/54.01](docs/normativa/RD_0016_2025_DGA.md), que aprueba el listado de subespecialidades y tipologías de obras y consultorías. La referencia está en `rules/fuentes-transversales.v1.json` y la reconoce **el mismo coordinador** para las rutas de CMC y ampliación de consultores, con alcance distinto y sin adjudicar automáticamente experiencia o categorías. El PDF **aún debe incorporarse a la biblioteca privada en cada equipo autorizado**; modificar GitHub no lo descarga a tu Ubuntu.
+
+```bash
+python -m oece incorporar-norma rd-0016-2025-ef-54-01 --descargar
+# O con el PDF oficial ya descargado del MEF:
+python -m oece incorporar-norma rd-0016-2025-ef-54-01 --archivo /ruta/rd0016_2025ef5401.pdf
+# Cuando los demás originales estén completos:
+python -m oece biblioteca --reconstruir
+```
+
+La herramienta verifica el contenido, calcula SHA-256, conserva el PDF y agrega una entrada al manifiesto normativo **privado**, no a Git. Una copia manual se marca con procedencia pendiente de cotejar. La vigencia y su aplicación a cada expediente requieren revisión. Los anexos normativos no se reconstruyen a partir de resúmenes web.
