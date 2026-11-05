@@ -113,3 +113,20 @@ python scripts/verificar_biblioteca.py --verificar-originales
 python -m oece biblioteca --reconstruir
 python -m oece panel
 ```
+
+
+## Lectura de PDF escaneados con IA multimodal (opcional)
+
+En el panel **Analizar PDF con IA** activa tres etapas: lector visual de cada PDF, subagente de cálculos de liquidación y subagente integrador. El subagente financiero propone operaciones vinculadas a tablas y Python las recalcula con `Decimal` para detectar discrepancias; **los importes extraídos y su contexto requieren cotejo humano con las páginas originales**. La IA no resuelve por sí sola la autenticidad, el cumplimiento normativo ni la decisión administrativa.
+
+La función necesita conexión, una **clave de API independiente de ChatGPT** (`OPENAI_API_KEY`, configurada como variable de entorno en el servidor autorizado) y **consentimiento explícito por expediente**. Modelo configurable mediante `OECE_AI_MODEL`, por defecto `gpt-4.1`. No se envía nada al abrir el panel, cargar los PDF o preparar el borrador local. Los PDFs pueden contener información reservada: confirmar las autorizaciones institucionales y las condiciones de transmisión antes de ejecutar. El coste depende de páginas y modelo.
+
+```bash
+# Sin llamadas a modelos: muestra inventario y páginas antes de dar consentimiento
+python -m oece analizar-ia /ruta/expediente --previsualizar
+
+# Envío a OpenAI autorizado expresamente por el operador
+python -m oece analizar-ia /ruta/expediente --autorizar-envio
+```
+
+Los informes y copias de originales se conservan exclusivamente en la ruta privada `analisis_ia/<sha256>/` del expediente. Resultados: `informe-ia.docx`, `analisis-ia.json`, `calculos-ia.json`, `lecturas-ia.json` e `integridad-ia.json`. Los hashes se verifican antes de reutilizar o descargar y las revisiones no se sobrescriben. Por ejecución admite hasta 25 PDF, 250 páginas y 30 MB por PDF. Las hojas Excel y Word no se analizan en esta modalidad inicial y se enumeran como omitidos; pueden seguir tratándose mediante las herramientas clásicas. Véase `docs/SEGURIDAD.md`.
