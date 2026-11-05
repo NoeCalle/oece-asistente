@@ -110,7 +110,7 @@ class MCPVisualSinAPI(unittest.TestCase):
         self.assertEqual(1, meta["pagina"])
         self.assertEqual("image/jpeg", meta["mimeType"])
         image = base64.b64decode(meta["data"])
-        self.assertTrue(image.startswith(b"\\xff\\xd8".decode("unicode_escape").encode("latin1")))
+        self.assertTrue(image.startswith(bytes([0xFF, 0xD8])))
         self.assertGreater(len(image), 100)
 
     def test_vision_rechaza_pagina_ajena(self):
