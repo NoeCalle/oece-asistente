@@ -111,10 +111,11 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                                               and dentro(outputs,d.name+'/entrega.json').is_file()),
                                              key=lambda p:p.stat().st_mtime,reverse=True) if outputs.is_dir() else []
                             ia_root=dentro(folder,'analisis_ia')
-                            ia_versions=sorted((p.name for p in ia_root.iterdir()
-                                                if p.is_dir() and re.fullmatch('[a-f0-9]{64}',p.name)
-                                                and dentro(p,'integridad-ia.json').is_file()),
-                                               reverse=True) if ia_root.is_dir() else []
+                            ia_versions=[p.name for p in sorted(
+                                (p for p in ia_root.iterdir() if p.is_dir()
+                                 and re.fullmatch('[a-f0-9]{64}',p.name)
+                                 and dentro(p,'integridad-ia.json').is_file()),
+                                key=lambda p:p.stat().st_mtime,reverse=True)] if ia_root.is_dir() else []
                             item={'carpeta':folder.name,'ficha':config,'revisiones':[d.name for d in revisions],
                                   'trabajo':jobs.get(folder.name,{}),'revisiones_ia':ia_versions,
                                   'trabajo_ia':ia_jobs.get(folder.name,{})}
