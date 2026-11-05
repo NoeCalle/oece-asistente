@@ -59,7 +59,7 @@ class ConsultaNormativaDriveFirst(unittest.TestCase):
         self.assertEqual(3, result["limite_fuentes_sugerido"])
         self.assertFalse(result["respuesta_generada_por_modelo"])
         self.assertFalse(result["requiere_api_oece"])
-        self.assertIn("no llamar a agentes CMC", result["restricciones"])
+        self.assertIn("ni llamar a agentes CMC", result["restricciones"])
         self.assertIn("no inventar citas", result["formato_respuesta"])
 
     def test_valida_pregunta_fecha_y_limite(self):
