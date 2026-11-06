@@ -12,6 +12,12 @@
 
 **Ejemplo:** primera ronda recibe `Contrato_Obra_A.pdf` y completa datos de contrato y su página fuente; segunda recibe `Acta_Recepcion_A.pdf` y actualiza la misma OB-01; tercera recibe `Contrato_Obra_B.pdf` y agrega OB-02; cada ronda conserva las anteriores. La preferencia del contrato sobre acta para el *nombre del contratista* permanece como criterio inicial y el resto de la matriz se afinará posteriormente.
 
+### Variante de recepción: `AUM/INICIAL` con PDF individuales (06/11/2026)
+
+En un listado de Drive mostrado por el evaluador aparecieron **13 archivos `01_CONTRATO...pdf` a `13_CONTRATO...pdf`**, cada uno como PDF individual, más un archivo `2026-…-LIMA.pdf` que el titular identificó como **hoja de ruta** y otro `R#####.pdf` que identificó como **pago**. Registrado como [CARP-CMC-001 / CAS-CMC-012](../casuistica/patrones-y-lecciones-cmc.md), y como patrón JSON en [tipos documentales CMC](../casuistica/tipos-documentales-cmc.v1.json).
+
+**Secuencia de procesamiento:** primero inventario de la carpeta → clasificar preliminarmente `hoja_ruta`, `comprobante_pago` y contratos por nombre → **abrir los archivos** para confirmar su naturaleza → asociar cada contrato a `OB-##` sin deducir automáticamente elegibilidad ni equivalencia «un contrato = una obra» → actualizar progresivamente el Excel y Word. Referencias de página siguen siendo **locales al PDF exacto**. No registrar como verificados fecha, pago, número de obra ni importes solo por el nombre. El directorio `AUM/INICIAL` es una variante observada, no carpeta obligatoria en todos los expedientes.
+
 ## Pendiente de afinación: jerarquía de documentos fuente para datos repetidos (2026-11-06)
 
 **Estado: PENDIENTE DE DEFINICIÓN Y VALIDACIÓN CON EXPEDIENTES REALES.** Un mismo dato puede figurar en varias piezas (contrato, acta de entrega de terreno, acta de recepción, liquidación y resolución). No debe tratarse automáticamente como error que la columna `inicial pág` señale una página distinta de la usada por otro evaluador, si ambas fuentes respaldan el mismo dato.
@@ -24,7 +30,7 @@
 
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 1.8
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 1.9
 **Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
