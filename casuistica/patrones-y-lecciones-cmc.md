@@ -35,13 +35,13 @@
 
 **Aprendizaje para próximas muestras:** verificar si otros expedientes repiten los prefijos `R` y `20XX-...`, y registrar excepciones cuando un archivo con prefijo coincidente tenga otra naturaleza. Estas convenciones son heurísticas locales, no reglas institucionales universales.
 
-## CAS-CMC-013 — Marcadores amarillos editables sobre la evidencia extraída
+## CAS-CMC-013 — Resaltador nativo amarillo sobre PDF escaneado
 
-**Origen:** indicación del evaluador, 06/11/2026. **Estado:** criterio operativo adoptado; exactitud sobre escaneo y edición real en el equipo pendientes de prueba.
+**Origen:** solicitud/corrección del evaluador el 06/11/2026. **Estado:** criterio operativo adoptado; prueba sintética de anotación `Highlight` superada, prueba de precisión y edición en Acrobat/Edge sobre documento real pendiente.
 
-El evaluador necesita reconocer visualmente **en el PDF original de sustento** la palabra, cifra o fragmento preciso que alimentó el Excel, con marcas amarillas que pueda **mover y redimensionar** si quedan algunos píxeles corridas. Solución elegida: **copia del PDF**, sin alterar original, con **anotaciones rectangulares amarillas semitransparentes no aplanadas**, no capas de pintura fija ni exclusivamente Highlights anclados a caracteres. Debe conservarse el vínculo `obra / PDF / página física / celda / texto marcado`. Técnica y verificaciones: [POE-CMC-PDF-01](../procedimientos/resaltado-evidencias-pdf-cmc.md).
+**Cambio de enfoque:** el evaluador aclaró que **no quiere autoformas ni rectángulos** sino las marcas equivalentes al **resaltador nativo de Acrobat o Microsoft Edge**, y que **prácticamente el 100 % de los expedientes serán PDF escaneados sin texto seleccionable**. El asistente debe reconocer visualmente cada dato y ubicar anotaciones PDF **`Highlight` / `QuadPoints`** amarillas directamente sobre la imagen, en una **copia** del original. No depender de capa de texto/OCR ni convertir el resaltado a un dibujo aplanado.
 
-**Aprendizaje:** la editabilidad manual es requisito funcional distinto de la calidad de posicionamiento. Una marca cercana pero desplazada se considera **pendiente de ajuste visual**, no dato sustantivo equivocado; las observaciones del Word se reservan para incidencias documentales. Excel + Word siguen siendo los dos entregables principales; PDFs marcados son evidencia auxiliar.
+**Nota de usabilidad:** los resaltados nativos sobre escaneos pueden no permitir ser movidos libremente por arrastre en todos los visores; la corrección manual puede exigir **eliminar y volver a resaltar**, por lo que el agente debe maximizar la precisión inicial y reabrir/renderizar cada página anotada. Trazabilidad `obra→PDF→página→campo Excel→anotación`. PDF marcado = evidencia auxiliar; Excel MPR y Word siguen siendo entregables principales. Procedimiento: [POE-CMC-PDF-01 v2.0](../procedimientos/resaltado-evidencias-pdf-cmc.md).
 
 ## Ficha de captura de una nueva casuística
 
