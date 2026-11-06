@@ -1,7 +1,7 @@
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.1.
-**Uso previsto:** instrucción operativa reproducible por una IA con herramientas de navegación en una PC virtual (p. ej., GrokBot), siempre con acceso institucional autorizado y supervisión humana.
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.2.
+**Uso actual:** procedimiento asistido con ingreso manual por el evaluador y extracción/análisis documental por ChatGPT, Claude o Grok según sus herramientas y acceso autorizados. **Uso futuro opcional:** reproducción de pasos de interfaz por GrokBot desde una PC virtual. No supeditar el procedimiento a disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
 ## Alcance y criterio de verdad
@@ -15,6 +15,19 @@ Este documento recoge el **procedimiento real descrito por el evaluador**, no un
 
 **Decisión del evaluador (2026-11-06):** la primera hoja `Datos basicos` se completa con **datos e imágenes de diversas fuentes**, por ejemplo la **intranet institucional**. Habrá que documentar cada consulta y transferencia para que un agente que maneje una PC virtual pueda reproducirla.
 
+## Modalidades y reparto de tareas (confirmado por el evaluador)
+
+| Modalidad | Responsable posible | Trabajo | Condición |
+|---|---|---|---|
+| Ingreso manual actual | Evaluador | Accede a intranet y otras pantallas institucionales, obtiene datos/capturas e ingresa contenido a Excel | Se registra la fuente y se comprueba el destino; no requiere GrokBot |
+| Lectura de PDF | ChatGPT, Claude o Grok, o evaluador | Extrae cifras, fechas, información de obras y otros campos que solo constan en archivos PDF | Debe abrir realmente el PDF autorizado, citar archivo y página y marcar incertidumbres; si no tiene acceso, no inventa resultados |
+| Elaboración/revisión de Excel | Evaluador o IA habilitada | Completa campos siguiendo las instrucciones confirmadas, preserva fórmulas e imágenes y contrasta resultados | Distinguir dato copiado, extraído, calculado y verificado |
+| Automatización posterior | GrokBot con PC virtual, si se habilita | Ejecuta pasos de interfaz ya documentados, incluidos los de intranet permitidos | Autorización y acceso efectivos; pausa ante credenciales/MFA/cambios de pantalla |
+
+**Regla:** no hay obligación de usar un solo agente ni de automatizar inmediatamente la intranet. El procedimiento se afina a medida que el evaluador aporta nuevos pasos; la ausencia de automatización no bloquea su aplicación manual.
+
+**Origen de cada dato:** consignar `fuente_tipo` (intranet, PDF del expediente, otro documento, cálculo o declaración del evaluador), `fuente_localizador` (pantalla/archivo y página), `responsable` (persona o IA), `metodo` (transcripción, extracción, cálculo, captura), `verificacion`, `estado` y `destino_excel`. Las imágenes siguen el mismo control de origen. Cualquier campo puede provenir de una fuente distinta, incluso dentro de «Datos basicos».
+
 ## Flujo operativo (incremental)
 
 ### Paso 01 — Preparar la sesión y la plantilla
@@ -26,7 +39,7 @@ Este documento recoge el **procedimiento real descrito por el evaluador**, no un
 
 ### Paso 02 — Reunir datos e imágenes para «Datos basicos»
 
-1. Para cada campo o imagen, consultar la **fuente específica que enseñe el evaluador**; no asumir que todo procede de intranet.
+1. Para cada campo o imagen, consultar la **fuente específica que enseñe el evaluador**; no asumir que todo procede de intranet. Algunos datos existen únicamente en PDF del expediente: una IA con acceso real puede extraerlos, o el evaluador puede transcribirlos.
 2. Registrar el origen, ruta de navegación, identificador de búsqueda autorizado, etiqueta exacta mostrada, fecha de consulta, destino en Excel y validación.
 3. Trasladar los datos al archivo de trabajo respetando celdas, formato y contenido ya calculado; incorporar imágenes únicamente en la ubicación y tamaño indicados.
 4. Si un dato no puede obtenerse, es ilegible o discrepa de otra fuente, **no rellenar por inferencia**: registrar pendiente y solicitar revisión.
@@ -38,7 +51,7 @@ Por cada nuevo paso comunicado, añadir una fila con ID estable y, cuando sea pr
 
 | ID | Destino Excel (hoja/celda/imagen) | Dato requerido | Fuente autorizada | Ruta de navegación y búsqueda | Acción para obtener/copiar | Cotejo y evidencia | Estado |
 |---|---|---|---|---|---|---|---|
-| DB-001 | `Datos basicos` / por identificar | Por identificar | Por identificar (podría ser intranet) | PENDIENTE | PENDIENTE | PENDIENTE | Por instruir |
+| DB-001 | `Datos basicos` / por identificar | Por identificar | Intranet, PDF u otra fuente por definir | PENDIENTE | PENDIENTE | PENDIENTE | Por instruir |
 
 Al definir cada instrucción, registrar además:
 - **Precondiciones:** sesión iniciada, pantalla visible, expediente correcto, acceso autorizado.
@@ -74,6 +87,7 @@ La secuencia para `Obras nacional`, `CLC`, `Hoja Calculo`, `datos` y `CALCULO CM
 | Fecha | Versión | Instrucción confirmada | Estado |
 |---|---|---|---|
 | 2026-11-06 | 0.1 | La hoja inicial es `Datos basicos`; se llena con datos e imágenes de varias fuentes, entre ellas intranet; el registro se mantiene en GitHub para ejecución posterior mediante PC virtual | Confirmada |
+| 2026-11-06 | 0.2 | Mientras no se use GrokBot, el evaluador ingresa datos manualmente. Hay información exclusiva de PDF que puede extraer ChatGPT, Claude o Grok con acceso efectivo. Se permite flujo híbrido y refinamiento progresivo | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
