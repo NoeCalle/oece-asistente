@@ -37,17 +37,23 @@
 
 **Aprobación:** Word/matriz consistentes, sin aprobación institucional.
 
-## Prueba transversal D — integridad documental pese a datos suficientes
+## Prueba transversal D — páginas no escaneadas (no typos)
 
-**Caso sintético 1:** contrato con montos, fecha y objeto legibles, pero con cláusula/párrafo interrumpido o página ausente según continuidad visible. Ambos especialistas deben emitir `INT-DOC-###` y conservar la observación en resultados, **aunque todos los datos necesarios para otros controles estén disponibles**. Diferenciar observación por `indicio_incompletitud` y `incompleto_confirmado`.
+El control visual busca **hojas omitidas y recortes físicos**, no errores de ortografía ni de redacción. **Suficiencia de datos y continuidad del escaneo son controles independientes**. [Regla precisa](../procedimientos/control-integridad-documental.md).
 
-**Caso sintético 2:** resolución con artículos iniciales ausentes, pero artículo resolutivo con decisión y fecha legibles. Debe surgir observación por integridad y fuente/página identificada.
+| Caso sintético | Resultado esperado |
+|---|---|
+| Contrato paginado `1/5, 2/5, 4/5, 5/5`, sin `3/5` en el PDF ni anexos; contiene monto, fecha y objeto | **Observación obligatoria** `INT-DOC-###`, aunque esos datos basten para parte del trámite; registrar evidencia visual y folio `3/5` omitido; confirmar solo cuando la secuencia sea inequívoca |
+| Hoja impresa `2/5` termina párrafo abierto y `4/5` no lo continúa, sin `3/5` | **Observación obligatoria**, con ambas evidencias independientes |
+| Fin de una hoja con frase interrumpida; inicio de la siguiente no enlaza y no hay numeración visible | **Indicio justificado**, no afirmar automáticamente hoja ausente o número inventado |
+| Resolución con páginas continuas y párrafos coherentes, pero ortografía o sintaxis deficientes | **No observación de integridad** por `typo` o redacción |
+| Contrato salta de cláusula 5 a 8, pero hojas y texto son continuos | **No afirmar página omitida**: posible error de numeración de cláusulas |
+| Dos páginas contiguas cambian de asunto, con foliación correcta y párrafos completos | **No** atribuir el cambio temático a pérdida de hoja |
+| OCR omite un párrafo que sí está visible en imagen completa | **No** generar `INT-DOC`; marcar defecto de extracción si procede |
+| Texto al borde queda fuera del escaneo, aunque todas las páginas estén presentes | Observación por `recorte_material`, no por hoja completa faltante |
+| No es posible abrir todas las imágenes del PDF | `no_verificable`, sin afirmar una omisión |
 
-**Caso sintético 3:** OCR salta una línea, pero imagen visual del PDF está completa. No registrar documento incompleto solo por el OCR; indicar defecto de extracción.
-
-**Caso sintético 4:** archivo no accesible o páginas ilegibles. Registrar `no_verificable`, no asegurar ni completitud ni ausencia confirmada.
-
-**Verificación de entregables:** CMC: ficha maestra y entregable 1 mantienen la observación, 2 y 3 registran pendiente si afecta el sustento; consultores: sección de integridad del informe y observaciones de matriz lo reflejan. **El criterio procede de capacitación del titular y su consecuencia administrativa no se presume verificada por norma.** [Procedimiento](../procedimientos/control-integridad-documental.md).
+**Verificación de entregables:** CMC mantiene el hallazgo en ficha maestra/entregable 1 y, cuando afecte su sustento, en 2 y 3. Consultores lo incluye en sección específica del informe y observaciones de matriz. En todos los casos el agente identifica **página física del PDF, numeración impresa, evidencia visual y grado de certeza**, sin equiparar una discontinuidad semántica aislada a falta confirmada. Pruebas de uso real en los tres clientes cloud aún pendientes.
 
 ## Prueba de portabilidad
 
