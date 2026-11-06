@@ -1,3 +1,5 @@
+**Actualización 06/11/2026:** la salida operativa vigente para `aumento_cmc` son **dos archivos**: Excel MPR de evaluación y Word de observaciones, según [contrato vigente](../contratos/entregables-cmc.md). Las referencias previas a tres paquetes JSON son solo ruta técnica histórica.
+
 # Coordinador único OECE — dos especialistas aislados
 
 
@@ -12,7 +14,7 @@ El único coordinador lee el **campo `procedimiento` de `expediente.json`**, no 
 
 | Ruta declarada en ficha | Especialista | Entregables |
 |---|---|---|
-| `aumento_cmc` | Experiencia de ejecutores, contratos de obra, recepción, liquidación y cálculo de factores | **Datos para tres formatos CMC**, más ficha maestra `datos-cmc.json`; resultados versionados 01→02→03 |
+| `aumento_cmc` | Experiencia de ejecutores, contratos de obra, recepción, liquidación y cálculo de factores | **Excel MPR institucional + Word de observaciones** en el modo agent-first actual; datos `datos-cmc.json` y secuencia 01→02→03 como controles internos históricos |
 | `ampliacion_consultores` | Experiencia de **consultoría de obras**, categoría solicitada, origen de experiencia y régimen temporal | **Informe Word y matriz de controles AC**, vinculados a hechos, citas, normas y verificaciones pendientes |
 
 En los otros trámites (inscripción, actualización, reconsideración), no se simula pertenencia a estas dos rutas; continúan disponibles sus herramientas y procedimientos documentales anteriores.
