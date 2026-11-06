@@ -25,6 +25,12 @@
 
 **Concordancia:** las observaciones relevantes de `Obras nacional` columna L son un resumen breve y deben concordar con el Word. El Word aporta la descripción, fuente, incidencia y acción, sin duplicar información irrelevante. Registrar observaciones y **continuar con otras obras/campos que no estén bloqueados**.
 
+## Evidencia auxiliar: PDF resaltados editables
+
+Por acuerdo de revisión del 06/11/2026, el agente podrá generar **copias de PDF con los datos extraídos marcados en amarillo** para que el evaluador verifique visualmente sus fuentes. Usar **anotaciones PDF rectangulares auténticas y semitransparentes**, móviles/redimensionables en editores compatibles como Acrobat de escritorio, **sin aplanar**, sin reemplazar el PDF original y procurando centrar cada marca sobre el dato concreto. La corrección manual de pequeños desplazamientos es parte del flujo previsto; la precisión real sobre escaneos exige una prueba. Trazar cada marca a obra, archivo, página y campo Excel.
+
+**Estos PDFs son evidencia auxiliar solicitada, no un tercer entregable institucional obligatorio.** No alterar el paquete base de Excel + Word. Ver [procedimiento de resaltado](../procedimientos/resaltado-evidencias-pdf-cmc.md).
+
 ## Registros de trabajo que NO se entregan por defecto
 
 Se permite usar internamente, en almacenamiento **privado del expediente**, JSON/CSV, inventario documental, fichas por campo, registros de páginas, trazabilidad, bitácora y comprobación decimal. Sirven para reanudación, auditabilidad y aprendizaje, **no constituyen archivos adicionales que el evaluador deba recibir ni formatos institucionales independientes**. El repositorio público nunca contiene originales, transcripciones ni datos personales de expedientes.
