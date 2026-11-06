@@ -1,6 +1,6 @@
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.6.
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.7.
 **Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
@@ -72,6 +72,15 @@ Al definir cada instrucción, registrar además:
 
 La secuencia para `Obras nacional`, `CLC`, `Hoja Calculo`, `datos` y `CALCULO CMC` se documentará cuando el evaluador la describa; los nombres de hoja **no equivalen** a una secuencia de ejecución confirmada. El análisis sustantivo se mantiene sujeto al [procedimiento general](aumento-cmc.md).
 
+## Separación de etapas para evitar cortes (confirmado 2026-11-06)
+
+Para un expediente de aumento de CMC ejecutar **dos fases separadas**, sin adelantarse a la segunda:
+
+- **Fase documental:** inventario de PDFs y datos identificativos; apertura del PDF de experiencias original; conteo total de páginas; mapa de segmentos por obra, contrato y pieza; datos extraídos y cada localizador; control de lectura completa, imágenes y páginas no verificadas; almacenar índice versionado en carpeta privada del expediente. Si los documentos son escaneados, no presentar el texto parcial como revisión completa. Documentar montos contractuales o liquidaciones como **datos literales preliminares**, sin decidir su computabilidad. Prohibido emitir decisión normativa o CMC durante esta fase.
+- **Fase normativa y cálculo:** **solo tras instrucción del titular** y con las extracciones identificadas; buscar biblioteca normativa en Drive primero, determinar elegibilidad, participaciones y factores con sustento, y luego generar entregables y Excel revisado.
+
+En un caso piloto el archivo de experiencia contenía 94 páginas, de las que solo 2 tenían capa de texto. Fue necesario revisar páginas visualmente y preparar un índice de tres grupos documentales; la validación de detalle, integridad y todos los importes permanece pendiente. **No almacenar el índice real ni los nombres/datos de ese proveedor en GitHub público.**
+
 ## Primer mapeo de celdas verificado (plantilla 06/11/2026)
 
 El contraste **estructural** entre plantilla vacía y Excel ejemplo permitió localizar los siguientes destinos; el contenido de cada expediente siempre debe obtenerse de sus propias fuentes y no copiarse del caso ejemplo:
@@ -128,6 +137,7 @@ El evaluador advierte que el documento más voluminoso puede ser el que acredita
 | 2026-11-06 | 0.4 | GrokBot se reserva principalmente para navegación automatizada de la intranet con PC virtual; extracción PDF y edición Excel no son funciones exclusivas de GrokBot y pueden realizarlas ChatGPT/Claude. Hasta probar el acceso, la intranet la atiende manualmente el evaluador | Confirmada |
 | 2026-11-06 | 0.5 | Un PDF de experiencia puede reunir múltiples contratos, liquidaciones y anexos; indexar cada obra con rangos de páginas y evidencias, cubrir el documento completo y no equiparar un archivo con una obra | Confirmada |
 | 2026-11-06 | 0.6 | Primer mapeo estructural de celdas de «Datos basicos» y piloto de llenado documental de cuatro campos; los valores reales no se publican en GitHub | Parcialmente verificada |
+| 2026-11-06 | 0.7 | Separar extracción documental y evaluación normativa; PDFs escaneados pueden carecer de capa de texto; indexar por página y dejar cifras descriptivas sin computar hasta la fase normativa | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
