@@ -18,6 +18,10 @@ En un listado de Drive mostrado por el evaluador aparecieron **13 archivos `01_C
 
 **Secuencia de procesamiento:** primero inventario de la carpeta → clasificar preliminarmente `hoja_ruta`, `comprobante_pago` y contratos por nombre → **abrir los archivos** para confirmar su naturaleza → asociar cada contrato a `OB-##` sin deducir automáticamente elegibilidad ni equivalencia «un contrato = una obra» → actualizar progresivamente el Excel y Word. Referencias de página siguen siendo **locales al PDF exacto**. No registrar como verificados fecha, pago, número de obra ni importes solo por el nombre. El directorio `AUM/INICIAL` es una variante observada, no carpeta obligatoria en todos los expedientes.
 
+### Resaltado editable de los datos en PDF (06/11/2026)
+
+**Requisito complementario del evaluador:** junto con el dato de cada celda y su página de respaldo, preparar cuando se solicite una **copia de cada PDF con anotaciones amarillas semitransparentes EDITABLES**, colocadas lo más exactamente posible sobre el dato utilizado. **No aplanar ni rasterizar marcas**: el evaluador debe poder moverlas o redimensionarlas en un visor compatible, como Acrobat de escritorio, si se desalinean ligeramente. Mantener trazabilidad `celda→obra→PDF→página→anotación`, conservar original y revisar visualmente cada copia. El primer test sobre contratos escaneados queda pendiente; la capacidad técnica de crear un objeto PDF `Square` editable se comprobó en documento sintético. Procedimiento: [POE-CMC-PDF-01](resaltado-evidencias-pdf-cmc.md). Las copias resaltadas son evidencia **auxiliar**, no sustituyen los dos entregables principales Excel/Word.
+
 ## Pendiente de afinación: jerarquía de documentos fuente para datos repetidos (2026-11-06)
 
 **Estado: PENDIENTE DE DEFINICIÓN Y VALIDACIÓN CON EXPEDIENTES REALES.** Un mismo dato puede figurar en varias piezas (contrato, acta de entrega de terreno, acta de recepción, liquidación y resolución). No debe tratarse automáticamente como error que la columna `inicial pág` señale una página distinta de la usada por otro evaluador, si ambas fuentes respaldan el mismo dato.
@@ -30,7 +34,7 @@ En un listado de Drive mostrado por el evaluador aparecieron **13 archivos `01_C
 
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 1.9
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 1.10
 **Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
