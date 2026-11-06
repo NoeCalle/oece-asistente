@@ -25,13 +25,13 @@ Si hay ficha y mensaje contradictorios, indicarlo antes de procesar. No seleccio
 - **Control visual de integridad del escaneo para cada documento:** aplicar [procedimiento de integridad](../procedimientos/control-integridad-documental.md) antes de valorar su suficiencia. Contrastar **folios impresos (p. ej. 2/5 → 4/5 sin 3/5)**, hojas físicas y **continuidad real de párrafos entre páginas**. Ante evidencia o indicio objetivo de una hoja omitida o texto físicamente recortado, observarlo **aunque el resto del documento tenga los datos necesarios**. **No confundir typos, errores de redacción, cláusulas mal numeradas, cambios de tema u OCR defectuoso con páginas no escaneadas**. Conservar hallazgos, indicando indicio/confirmado/no verificable.
 - Activar un único procedimiento especializado. La activación puede ser **cambio de rol dentro de la misma IA**; no exigir herramienta de creación de subagentes.
 - El especialista consulta normas **directamente** en Drive y no llama al agente de consulta normativa del titular. Internet para normas solo tras búsqueda insuficiente y aviso **antes**.
-- Revisar el trabajo con el checklist del contrato elegido: fuentes por cada hecho, fechas, fórmulas, valores, excepciones, exclusiones y salida.
+- Revisar el trabajo con el checklist del contrato elegido: fuentes por cada hecho, fechas, fórmulas, valores, excepciones, exclusiones y salida. **Para aumento CMC, exigir únicamente Excel MPR (todas sus pestañas) y Word de observaciones; no solicitar tres JSON ni ficha maestra al evaluador.**
 - Publicar archivos al Drive elegido por el titular **solo cuando el cliente efectivamente pueda**; no marcar como publicados archivos que solo existen en la conversación o VM. No publicar documentos de expedientes en el repositorio de código.
 - Cerrar indicando estado: **completo para revisión**, **parcial con pendientes** o **bloqueado por falta de acceso/insumos**. Nunca aprobado, otorgado o resuelto por OECE.
 
 ## Ejemplos de pedidos
 
-- «Revisa [enlace a carpeta], es un aumento de CMC, prepara los tres entregables».
+- «Revisa [enlace a carpeta], es un aumento de CMC; llena el Excel MPR y redacta el Word de observaciones».
 - «Analiza la ampliación de categoría de consultores en [enlace] y genera informe y matriz».
 - «¿Qué dice el artículo X del documento Y de mi biblioteca?».
 
