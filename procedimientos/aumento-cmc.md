@@ -2,6 +2,8 @@
 
 **Especialista:** [CMC](../agentes/especialista-cmc.md). **Salida:** [tres archivos secuenciales y ficha](../contratos/entregables-cmc.md).
 
+**Catálogo de documentos y casuística:** antes del inventario, cargar [catálogo JSON](../casuistica/tipos-documentales-cmc.v1.json) y [lecciones observadas](../casuistica/patrones-y-lecciones-cmc.md). Separar piezas por naturaleza (hoja de ruta, pago, contrato, actas, liquidación y anexos) y por obra, aunque vengan en diferentes PDF. Cada nueva entrega se registra de manera acumulativa y sus variantes se documentan en el expediente privado. Promover a GitHub solo patrones anonimizados y no convertir observaciones aisladas en normas.
+
 | Fase | Acción del agente | Control antes de avanzar |
 |---|---|---|
 | 0. Identificar | Confirmar `aumento_cmc` por orden explícita o ficha, enlace Drive, solicitante, fecha de corte y documentación disponible | No inferir procedimiento por el nombre del PDF |
