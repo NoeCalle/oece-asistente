@@ -43,6 +43,10 @@ jobs:
         run: python -m unittest discover -s tests -p "test_agentes_ia.py" -v
       - name: MCP visual y cálculos agnósticos sin red
         run: python -m unittest discover -s tests -p "test_multimodal_mcp.py" -v
+      - name: Seguridad MCP y panel (aislamiento y autenticación)
+        run: python -m unittest discover -s tests -p "test_aislamiento_mcp_panel.py" -v
+      - name: Lectura XLSX sin corpus (orden de hojas y referencias)
+        run: python -m unittest discover -s tests -p "test_xlsx_guardias.py" -v
       - name: Coordinador único CMC y consultores (sin API)
         run: python -m unittest discover -s tests -p "test_enrutador.py" -v
       - name: Resolución DGA 0016-2025 transversal e importación segura

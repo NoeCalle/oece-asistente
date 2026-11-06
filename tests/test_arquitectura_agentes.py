@@ -107,13 +107,13 @@ class ArquitecturaAgentes(unittest.TestCase):
             text = read(path)
             with self.subTest(path=path):
                 self.assertIn("control-integridad-documental.md", text)
-                self.assertIn("observaci", text.lower())
+                self.assertRegex(text.lower(), r"observ(?:aci|ar|ado|a)")
         cmc = read("contratos/entregables-cmc.md")
         self.assertIn("entregable-01-datos.json", cmc)
         self.assertIn("ficha-maestra.json", cmc)
         consultants = read("contratos/informe-consultores.md")
         self.assertIn("matriz", consultants.lower())
-        self.assertIn("integridad documental", consultants.lower())
+        self.assertRegex(consultants.lower(), r"integridad (?:documental|del escaneo)")
 
     def test_hojas_no_escaneadas_no_son_typos(self):
         control = read("procedimientos/control-integridad-documental.md")

@@ -46,14 +46,14 @@ Los modelos reales de informes se incorporarán cuando estén disponibles. El [f
 | Reconsideración | Requisitos, nueva prueba/única instancia y propuesta de 15 días hábiles con calendario documentado |
 | Recuperación | Respaldo íntegro y restauración en carpeta nueva, con huellas y sin reemplazar datos existentes |
 | Operación local | Panel, carga, LISTO, estabilidad, memoria, bloqueo, reintentos y revisiones |
-| Portabilidad IA | CLI y 17 herramientas MCP, incluidas páginas visuales y cálculos independientes del proveedor; sin API en el panel |
+| Portabilidad IA | CLI y 21 herramientas MCP; modo agent-first sin MCP obligatorio y modo legacy opcional |
 | Lectura/OCR | PDF digital, DOCX, TXT/HTML, valores XLSX; OCR Windows con límites, caché y cotejos declarados |
 | Entregas | Word/CSV/JSON; cinco ejemplos y 19 páginas de 1.1, dos ejemplos financieros y diez páginas de 1.2 inspeccionados |
 | Contraste financiero | R2/R3/R8, SBS documentada, indicadores y detección de contradicciones; sin dictamen de solvencia |
 | Plan documental | 124 unidades de revisión de los cinco trámites, 153 citas; preparación por rama, sin acreditar cumplimiento |
 | Fichas TUPA | Quince fichas/cuarenta páginas por rama, con códigos y huellas; recuperación de candidatas, sin dictamen de vigencia |
 | Biblioteca | 29 registros, 48 archivos, seis manifiestos, 2.281 fragmentos y 2.046 con texto |
-| Pruebas | 220; navegador con carga, campos, procesamiento y descarga Word comprobados |
+| Pruebas | La auditoría del 05/11/2026 contabilizó 313 pruebas antes de añadir nuevas; suite completa dependiente de corpus privado, regresión independiente obligatoria en CI |
 
 Los cuatro módulos adicionales tienen una ventana automática deliberadamente acotada al **01/05–31/10/2026**. Fuera de ella, los resultados favorables/desfavorables pasan a no determinable hasta revisar fuentes. Los cálculos son propuestas documentales: no prueban autenticidad, consulta registral en vivo ni decisión administrativa. [Contrato de procedimientos](docs/CONTRATO_PROCEDIMIENTOS.md).
 
@@ -121,7 +121,7 @@ $env:OECE_DATA_DIR = 'D:\\OECE-Datos'
 python -m oece panel
 ```
 
-El panel permanece vinculado a `127.0.0.1`; ejecutar en otro servidor no lo convierte en servicio multiusuario ni lo expone automáticamente por red. El programa no publica expedientes, comparte permisos ni presenta trámites.
+El panel escucha **por defecto** en `127.0.0.1`. Con `--host 0.0.0.0` **sí escucha en todas las interfaces del equipo**: requiere contraseña, límites de intentos y acceso protegido por VPN o HTTPS inverso; **no publicar directamente el puerto HTTP**. Esto no convierte el panel en un servicio multiusuario ni otorga permisos entre usuarios. El programa no publica expedientes ni presenta trámites.
 
 Dependencias en [uso diario](docs/USO_DIARIO.md). La reconstrucción de biblioteca requiere los originales conservados fuera de Git; las pruebas usan documentos ficticios.
 
@@ -179,3 +179,17 @@ python -m oece biblioteca --reconstruir
 ```
 
 La herramienta verifica el contenido, calcula SHA-256, conserva el PDF y agrega una entrada al manifiesto normativo **privado**, no a Git. Una copia manual se marca con procedencia pendiente de cotejar. La vigencia y su aplicación a cada expediente requieren revisión. Los anexos normativos no se reconstruyen a partir de resúmenes web.
+
+
+### Seguridad del MCP histórico (opcional)
+
+Para sesiones con documentos de expedientes reales, **vincular el MCP a un único caso**:
+
+```bash
+python scripts/servidor_mcp.py --raiz ./data/operacion --caso EXP-001
+# Alternativa: variable de entorno OECE_MCP_CASO=EXP-001
+```
+
+El cliente MCP **solo puede listar, leer, escribir y recuperar recursos del caso vinculado**. La sesión sin `--caso` conserva acceso administrativo a todos los casos de la raíz para compatibilidad: **no utilizarla con clientes o documentos no confiables**. Para `oece_incorporar`, colocar primero el archivo en `<raiz>/entrada/<caso>/` y pasar `origen` relativo a esa carpeta; ya no se permite incorporarlo desde otra carpeta de expediente.
+
+**CI:** [portabilidad.yml](.github/workflows/portabilidad.yml) es la regresión obligatoria sin corpus privado en Windows y Ubuntu. [tests.yml](.github/workflows/tests.yml) ejecuta manualmente la suite completa y **falla** si no están disponibles las fuentes originales. Un check verde de portabilidad **no equivale** a aprobar todas las pruebas dependientes de corpus.

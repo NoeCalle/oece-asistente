@@ -136,9 +136,9 @@ def _constant(value):
     raise ValueError('Constante JSON no válida')
 
 
-def servir(root, input_stream=None, output_stream=None):
+def servir(root, input_stream=None, output_stream=None, caso_autorizado=None):
     incoming=input_stream or sys.stdin.buffer;outgoing=output_stream or sys.stdout.buffer
-    protocol=Protocolo(Puente(root));jobs=queue.Queue();cancelled=set();state_lock=threading.Lock();output_lock=threading.Lock()
+    protocol=Protocolo(Puente(root, caso_autorizado=caso_autorizado));jobs=queue.Queue();cancelled=set();state_lock=threading.Lock();output_lock=threading.Lock()
     def send(response):
         if response is not None:
             raw=(json.dumps(response,ensure_ascii=False,allow_nan=False)+'\n').encode('utf-8')
