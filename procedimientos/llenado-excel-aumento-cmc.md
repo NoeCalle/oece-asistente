@@ -116,6 +116,10 @@ Al continuar, revisar los tramos documentales completos por obra; documentar el 
 - En REV14 se preservaron 4.210 fórmulas, 1.706 rangos combinados en 6 hojas y las seis imágenes originales. Se incorporaron 8 datos en `Datos basicos`, 120 en `Obras nacional` y solo se corrigió el formato de tres celdas de fecha.
 
 
+### Encabezados de nombre de obra en celdas combinadas (corrección del piloto, 2026-11-06)
+
+**Obligatorio:** la hoja `Obras nacional` tiene las cabeceras combinadas `D6:J6` para OB-01, `D28:J28` para OB-02 y `D50:J50` para OB-03. Escribir el **nombre legible de la obra como texto** en la celda superior izquierda **D6, D28, D50**, respectivamente, **sin descombinar** ni pegar capturas. Estos campos son distintos de `J15/J37/J59` (objeto contractual). El primer generador binario (Excel 2013) omitió estas 3 celdas, aunque había cargado 128 entradas de las demás tablas; la corrección del generador incorpora 131 valores en total. En el piloto, usar textos derivados de los contratos en páginas PDF 9, 33 (identidad de río Chillón en el cuerpo; encabezado alternativo río Poturo se conserva como observación) y 68. Verificar visualmente la presencia de los tres títulos **antes de declarar el archivo completo**.
+
 ### Nueva plantilla recibida: .xlsm exportada por Excel (2026-11-06)
 
 El titular aportó `2026.11.06 PLANTILLA ACTUALIZADA MPR.xlsm` tras guardarla desde Excel. Contiene seis pestañas y **no incluye proyecto VBA** (no hay `vbaProject.bin` en el paquete), aunque tiene extensión habilitada para macros. Se generó una **copia de trabajo** `CMC-TEST-001_PLANTILLA_MPR_LLENADA_REV16.xlsm`, con 8 valores en `Datos basicos` y 120 en `Obras nacional`. El maestro se conserva intacto.
