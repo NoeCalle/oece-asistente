@@ -25,11 +25,13 @@
 
 **Concordancia:** las observaciones relevantes de `Obras nacional` columna L son un resumen breve y deben concordar con el Word. El Word aporta la descripción, fuente, incidencia y acción, sin duplicar información irrelevante. Registrar observaciones y **continuar con otras obras/campos que no estén bloqueados**.
 
-## Evidencia auxiliar: PDF resaltados editables
+## Evidencia auxiliar: PDF escaneados con resaltado nativo
 
-Por acuerdo de revisión del 06/11/2026, el agente podrá generar **copias de PDF con los datos extraídos marcados en amarillo** para que el evaluador verifique visualmente sus fuentes. Usar **anotaciones PDF rectangulares auténticas y semitransparentes**, móviles/redimensionables en editores compatibles como Acrobat de escritorio, **sin aplanar**, sin reemplazar el PDF original y procurando centrar cada marca sobre el dato concreto. La corrección manual de pequeños desplazamientos es parte del flujo previsto; la precisión real sobre escaneos exige una prueba. Trazar cada marca a obra, archivo, página y campo Excel.
+Para cada documento PDF del que se extraigan datos, el evaluador solicita, cuando corresponda, una **copia auxiliar con los fragmentos fuente resaltados en amarillo mediante anotaciones PDF nativas `Highlight`**. **Asumir que casi el 100 % de los originales son escaneos imagen sin texto reconocible**. El agente localiza visualmente el dato y ubica sus `Quads` en coordenadas de página; no usar rectángulos/autoformas superpuestos ni aplanar la anotación. Cada marca remite a una obra/campo/archivo/página. Conservar PDF original y cualquier corrección posterior del evaluador.
 
-**Estos PDFs son evidencia auxiliar solicitada, no un tercer entregable institucional obligatorio.** No alterar el paquete base de Excel + Word. Ver [procedimiento de resaltado](../procedimientos/resaltado-evidencias-pdf-cmc.md).
+La **edición manual de la posición** en Acrobat/Edge requiere validación: el resaltado nativo puede no permitir arrastre libre; en ese caso, borrar y reaplicar el marcado. La prueba de creación de `Highlight` sobre página solo imagen ya fue positiva; la exactitud de escaneos reales sigue por comprobar. Véase [procedimiento de resaltado](../procedimientos/resaltado-evidencias-pdf-cmc.md).
+
+**No cambian los dos entregables principales:** Excel MPR + Word de observaciones. Estos PDF resaltados son respaldo visual auxiliar.
 
 ## Registros de trabajo que NO se entregan por defecto
 
