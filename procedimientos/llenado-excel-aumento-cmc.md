@@ -89,6 +89,21 @@ En el primer piloto de experiencia se comprobó la existencia de 94 páginas, pe
 
 Al continuar, revisar los tramos documentales completos por obra; documentar el estado como `vista_general`, `lectura_detallada`, `cotejo_integridad` y `verificado` **solo tras evidencias correspondientes**. Prohibido usar porcentajes de progreso que sugieran validación integral si solo hay cobertura visual panorámica.
 
+## Lectura de PDF escaneado por lotes con recuperación (instrucción del evaluador, 2026-11-06)
+
+**Regla operativa obligatoria:** procesar **como máximo 20 páginas por lote**, recomendando **15 páginas** cuando el escaneo sea pesado, tenga tablas o se necesite OCR. No lanzar una lectura de 94 páginas en una sola operación. Si el lote tarda demasiado o falla, reducirlo a 5–10 páginas y reanudar desde el último punto confirmado, **sin volver a procesar todo el PDF**.
+
+1. **Inventariar antes de empezar:** contar páginas y generar rangos consecutivos, sin solapamientos ni huecos. Ejemplo para 94 páginas, con máximo 20: `1–20`, `21–40`, `41–60`, `61–80`, `81–94`. Con lotes de 15: `1–15`, `16–30`, `31–45`, `46–60`, `61–75`, `76–90`, `91–94`.
+2. **Persistir tras cada lote:** guardar extracción estructurada por página (obra, tipo de instrumento, texto útil, montos, fechas, participación y referencias), imágenes/recortes necesarios y una bitácora de estado, **en almacenamiento privado autorizado del expediente**, no en GitHub.
+3. **Estados separados:** `no_iniciado`, `procesando`, `extraido_pendiente_cotejo`, `verificado`, `error_reintentar`. Un lote solo cuenta como **procesado** si sus resultados se han escrito y comprobado; una miniatura revisada no es lectura detallada.
+4. **Reanudación:** al iniciar una sesión nueva, consultar la bitácora persistida y continuar desde la primera página/lote no confirmado. Si la operación se cortó en la página 23, por ejemplo, **no declarar completado el tramo 21–40**; conservar 21–23 únicamente si están guardadas y verificadas como extracción, y reiniciar en 24 o en el primer faltante.
+5. **Control de calidad por lote:** contrastar datos relevantes con imagen original y anotar páginas ilegibles, transiciones, faltantes de foliación, contradicciones y OCR dudoso. No corregir por conjetura. Registrar alcance exacto de la revisión.
+6. **Indicadores verificables:** reportar `páginas_extraídas_y_guardadas / total`, `páginas_verificadas / total`, `lotes_completados / total_lotes`, y `páginas_pendientes`. El avance visual panorámico va por separado. Mostrar ambos números, no un porcentaje arbitrario como sustituto.
+7. **Salidas intermedias:** `extraccion_lote_001_015.json` (o rango real), `control_paginas.csv`, `pendientes.json`, con versiones o identificadores estables. La consolidación final combina solo lotes confirmados, detecta duplicados/huecos y nunca elimina evidencias previas.
+8. **Separación de fases:** primero cerrar la extracción de todos los lotes y las excepciones relevantes; solo después, con autorización del titular, iniciar evaluación normativa y cálculo CMC.
+
+**Motivo de esta regla:** el primer intento de extracción masiva de `EXPERIENCIAS.pdf` (94 páginas escaneadas) se interrumpió tras aproximadamente 23 páginas. El usuario estableció limitar futuras lecturas a 15–20 páginas por lote para evitar interrupciones y pérdida de avance. **Esos 23 resultados no se consideran persistidos/validados salvo que la bitácora y sus archivos lo acrediten.**
+
 ## Método normal para sustentos de experiencia escaneados (confirmado 2026-11-06)
 
 **Supuesto operativo:** en expedientes típicos de experiencia, los contratos, actas y liquidaciones suelen presentarse como **páginas escaneadas**. La falta de capa de texto PDF no es defecto del expediente ni razón para abandonar la extracción. El agente prioriza la **interpretación visual de imágenes a tamaño legible**, usando OCR cuando resulte necesario y siempre cotejando su salida con la imagen.
@@ -163,6 +178,7 @@ El evaluador advierte que el documento más voluminoso puede ser el que acredita
 | 2026-11-06 | 0.7 | Separar extracción documental y evaluación normativa; PDFs escaneados pueden carecer de capa de texto; indexar por página y dejar cifras descriptivas sin computar hasta la fase normativa | Confirmada |
 | 2026-11-06 | 0.8 | Auditoría por cada página y distinción obligatoria entre inspección visual completa del PDF y lectura detallada/cotejo de integridad de cada página | Confirmada |
 | 2026-11-06 | 0.9 | Para documentos habituales escaneados, usar lectura visual ampliada y OCR secundario; extraer en bloques pequeños con estado independiente de integridad y sin adelantar normativa | Confirmada |
+| 2026-11-06 | 1.0 | Lectura de PDF por lotes de 15–20 páginas como máximo; guardar checkpoint por lote, reanudar tras cortes y medir progreso desde archivos confirmados, no desde intentos | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
