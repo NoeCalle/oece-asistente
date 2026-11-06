@@ -89,6 +89,20 @@ En el primer piloto de experiencia se comprobó la existencia de 94 páginas, pe
 
 Al continuar, revisar los tramos documentales completos por obra; documentar el estado como `vista_general`, `lectura_detallada`, `cotejo_integridad` y `verificado` **solo tras evidencias correspondientes**. Prohibido usar porcentajes de progreso que sugieran validación integral si solo hay cobertura visual panorámica.
 
+## Lección del primer piloto: evaluación ciega sin Excel previamente resuelto (2026-11-06)
+
+**En operación real no existe Excel de evaluación completado por un tercero.** El único libro de entrada editable es una **copia limpia de la plantilla institucional vigente**. El expediente, las consultas autorizadas y la biblioteca normativa son las fuentes de datos; la copia de una evaluación anterior solo sirve en pruebas como patrón de comparación **después de producir y congelar el resultado independiente**, nunca para extraer montos, factores, notas o fórmulas de un nuevo caso.
+
+**Prueba mínima de aceptación:**
+1. Partir de plantilla limpia, inventariar fuentes originales (PDF escaneados, intranet y financieros) y llenar hoja/celda con evidencia de procedencia.
+2. Construir obras, montos netos, participaciones y observaciones desde el expediente, sin mirar la evaluación modelo.
+3. Obtener y justificar a/f/e con normativa aplicable y valores efectivamente acreditados; si faltan datos, mantener `null` y continuar con los campos disponibles.
+4. Conservar originales, fórmulas, imágenes y todas las hojas de la plantilla; crear copia revisada, verificar celdas escritas, fórmulas y resultado final, y comprobar que no aparezcan errores de fórmula/celdas vacías críticos.
+5. **Solo después**, si hay un Excel patrón de prueba, comparar por celda y explicar diferencias; no forzar el resultado esperado.
+6. Distinguir entregables: (a) plantilla oficial efectivamente rellenada, (b) libro auxiliar de verificación, (c) simulación basada en evaluación previa. **Nunca llamar al segundo ni al tercero «plantilla institucional completada».**
+
+**Resultado del primer caso didáctico:** se rellenaron cuatro celdas identificativas en una copia parcial de `Datos basicos`; se elaboró un libro auxiliar de verificación y un libro de simulación derivado del ejemplo resuelto, pero **no se completó de forma independiente la plantilla institucional de seis hojas desde cero**. La coincidencia de CMC demuestra reproducción aritmética, **no** validación del flujo de producción. Como control adicional, el libro `SIMULACION_CMC_REV12` presenta fórmulas de validación cuya lectura arroja `#NAME?` en algunos campos; requieren comprobación/corrección antes de considerarlo entregable final.
+
 ## Lectura de PDF escaneado por lotes con recuperación (instrucción del evaluador, 2026-11-06)
 
 **Regla operativa obligatoria:** procesar **como máximo 20 páginas por lote**, recomendando **15 páginas** cuando el escaneo sea pesado, tenga tablas o se necesite OCR. No lanzar una lectura de 94 páginas en una sola operación. Si el lote tarda demasiado o falla, reducirlo a 5–10 páginas y reanudar desde el último punto confirmado, **sin volver a procesar todo el PDF**.
@@ -179,6 +193,7 @@ El evaluador advierte que el documento más voluminoso puede ser el que acredita
 | 2026-11-06 | 0.8 | Auditoría por cada página y distinción obligatoria entre inspección visual completa del PDF y lectura detallada/cotejo de integridad de cada página | Confirmada |
 | 2026-11-06 | 0.9 | Para documentos habituales escaneados, usar lectura visual ampliada y OCR secundario; extraer en bloques pequeños con estado independiente de integridad y sin adelantar normativa | Confirmada |
 | 2026-11-06 | 1.0 | Lectura de PDF por lotes de 15–20 páginas como máximo; guardar checkpoint por lote, reanudar tras cortes y medir progreso desde archivos confirmados, no desde intentos | Confirmada |
+| 2026-11-06 | 1.1 | El piloto con Excel ya resuelto no prueba llenado autónomo; iniciar desde plantilla limpia, usar evaluación anterior solo como patrón posterior y distinguir simulación de libro institucional completo | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
