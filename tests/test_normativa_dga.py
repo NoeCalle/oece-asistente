@@ -107,6 +107,15 @@ class FuentesTransversales(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"exactamente una"):
             incorporar(self.item["id"])
 
+    def test_identificacion_pdf_por_marcadores_propios_de_otra_norma(self):
+        other = {"id":"rd-9999-2027-ef", "marcadores_pdf":["9999-2027", "REGLAMENTO"]}
+        valid = pdf_de_prueba("Resolucion 9999-2027 REGLAMENTO")
+        self.assertEqual(1, _comprobar_pdf(valid,other)["paginas"])
+        with self.assertRaisesRegex(ValueError,"no se identifica"):
+            _comprobar_pdf(self.original,other)
+        with self.assertRaisesRegex(ValueError,"marcadores"):
+            _comprobar_pdf(valid,{"id":"rd-9999-2027-ef"})
+
     def test_original_modificado_no_se_sustituye(self):
         result=incorporar(self.item["id"],archivo=self.input)
         Path(result["archivo"]).write_bytes(self.original+b"modificado")
