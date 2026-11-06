@@ -1,3 +1,13 @@
+## Pendiente de afinación: jerarquía de documentos fuente para datos repetidos (2026-11-06)
+
+**Estado: PENDIENTE DE DEFINICIÓN Y VALIDACIÓN CON EXPEDIENTES REALES.** Un mismo dato puede figurar en varias piezas (contrato, acta de entrega de terreno, acta de recepción, liquidación y resolución). No debe tratarse automáticamente como error que la columna `inicial pág` señale una página distinta de la usada por otro evaluador, si ambas fuentes respaldan el mismo dato.
+
+**Criterio inicial propuesto por el evaluador:** para el **nombre del contratista**, cuando figure tanto en el **contrato de obra** como en el **acta de recepción**, **preferir siempre el contrato** como fuente y referenciar en la columna G la página del contrato que lo contiene. La existencia del mismo dato en el acta de recepción no desplaza esa preferencia.
+
+**Por afinar, sin fijar todavía reglas definitivas:** construir una **matriz campo → documento preferente → fuente secundaria → regla de desempate/contradicción**, empezando por nombre de contratista y ampliando luego a objeto, ubicación, fecha contractual, monto original, participación del consorcio, recepción, adicionales, deductivos, reajustes y monto final. Priorizar documentos por **naturaleza del hecho que prueban**, y no imponer una jerarquía global idéntica para todos los campos. Ante una discrepancia material, conservar ambas referencias y registrar observación; la preferencia documental no autoriza ocultarla ni corregir valores sin evidencia.
+
+**Prueba de aceptación futura:** seleccionar datos que aparezcan en al menos dos documentos, comprobar que el agente escoge la fuente preferente para cada campo y que la página G corresponde a esa fuente; registrar en L cualquier divergencia material y documentar excepciones justificadas. Mantener este punto como tarea pendiente hasta formalizar y probar la matriz de precedencia.
+
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
 **Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.9.
