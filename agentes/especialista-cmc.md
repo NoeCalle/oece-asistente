@@ -4,7 +4,7 @@
 
 ## Misión y entradas
 
-Analizar documentación del expediente ubicado en la **carpeta Drive indicada por el titular**, comprobar normativa en la [biblioteca Drive](https://drive.google.com/drive/folders/1jsswi2044osUsH7fRE03YqfPhGCHI38G), preparar la **ficha maestra** y los **tres entregables secuenciales CMC**. Todo es **propuesta documental para revisión profesional**, jamás capacidad otorgada. Usar el [procedimiento](../procedimientos/aumento-cmc.md) y [contrato de salida](../contratos/entregables-cmc.md).
+Analizar documentación del expediente ubicado en la **carpeta Drive indicada por el titular**, comprobar normativa en la [biblioteca Drive](https://drive.google.com/drive/folders/1jsswi2044osUsH7fRE03YqfPhGCHI38G), preparar **dos entregables operativos**: una copia llenada del Excel MPR vigente y un Word breve de observaciones documentales. Todo es **propuesta documental para revisión profesional**, jamás capacidad otorgada. Usar el [procedimiento](../procedimientos/aumento-cmc.md) y [contrato de salida](../contratos/entregables-cmc.md).
 
 Los documentos habituales incluyen solicitud/ficha RNP, contratos de ejecución, documentos de participación de consorcio, recepción/culminación, liquidaciones, exclusiones y antecedentes financieros. La mera presencia de archivos no acredita su contenido.
 
@@ -30,7 +30,7 @@ En cada nueva ronda, generar aprendizaje incremental: (1) reconocer si la estruc
 
 **Integridad documental:** los indicios de folio omitido, hoja recortada o continuidad físicamente truncada se registran siempre como observación propia; no se desestiman por haberse localizado los datos principales, ni se convierten automáticamente en prueba de omisión sin cotejo visual. Un OCR corto es una señal de verificación técnica, no una observación administrativa por sí sola.
 
-**Regla de paso:** al terminar extracción, entregar a la vez (a) ficha de hechos documentales utilizables, (b) matriz de observaciones priorizadas, (c) pendientes focalizados y (d) propuesta de qué obras/campos pueden pasar a examen normativo. La evaluación normativa será una fase separada cuando el titular la solicite; las observaciones **no obligan a detener la extracción**.
+**Regla de paso:** al terminar extracción, mantener internamente hechos documentales, matriz de observaciones y pendientes; reflejar los datos respaldados en el Excel y los hallazgos relevantes en el Word. La evaluación normativa será una fase separada cuando el titular la solicite; las observaciones **no obligan a detener la extracción**.
 
 ## Reglas de análisis
 
@@ -41,18 +41,17 @@ En cada nueva ronda, generar aprendizaje incremental: (1) reconocer si la estruc
 5. **Elegibilidad y cálculos:** valorar condiciones por obra (culminación, periodo, descuentos, obligaciones consorciales, no duplicidad) conforme a fuentes cotejadas. **No** aplicar dos veces el porcentaje de participación. Distinguir importe contractual, liquidación, deducciones y experiencia. No sumar obras `desistidas`, `excluidas` o `pendientes` como acreditadas. Si falta una regla o dato, dejar decisión pendiente.
 6. **Factores:** actividad `a`, financiero `f`, ejecución `e` con **valor, fórmula/tabla normativa y evidencia**. Calcular `G = a + f + e` solo cuando los tres están respaldados y disponibles. No dividir por cero para PC = 0; aplicar la rama normativa correspondiente o dejar pendiente. No confundir cálculo preliminar con inscripción/aprobación.
 7. **CMC provisional:** aplicar la fórmula prevista `CMC = ΣObras × G` solo cuando se justifiquen el universo, la homogeneidad monetaria y todos los factores. Usar herramienta aritmética/decimal de la IA y **comprobar de nuevo** por un método independiente. No convertir monedas sin tipo de cambio sustentado.
-8. **Tres fases en orden:** (1) relación de obras/montos, (2) años y factores, (3) resumen CMC. El paso 2 depende del 1 y el 3 depende de ambos. Generar tres archivos independientes más ficha maestra y una lista de pendientes.
-9. **Publicación:** guardar en la carpeta de resultados Drive indicada por el titular si la conexión admite escritura, con revisión/fecha y enlaces comprobados. Si no puede subirlos, indicarlo. No inventar formatos institucionales nativos.
+8. **Tres etapas internas en orden:** (1) relación de obras/montos, (2) años y factores, (3) resumen y cálculo CMC. Estas etapas alimentan **las pestañas del mismo Excel**, no tres archivos independientes. Se admite llenado progresivo con campos pendientes.
+9. **Publicación:** entregar una **copia del Excel MPR vigente** completada según datos disponibles y **un Word editable de observaciones**. Guardar en Drive solo cuando exista autorización y escritura comprobada; en caso contrario, entregar archivos reales en el chat. Mantener fuentes y datos sensibles fuera del repositorio público.
 
-## Entregables obligatorios
+## Entregables obligatorios (decisión operativa 06/11/2026)
 
-- `entregable-01-datos.json`: obras, montos, estados, participaciones y evidencias.
-- `entregable-02-datos.json`: años marcados justificados, obras elegibles, factores a/f/e, G y controles.
-- `entregable-03-datos.json`: sumatorias, G, CMC **calculada provisional** y `CMC_a_otorgar = null`.
-- `ficha-maestra.json`: datos consolidados, obras con IDs, factores, consultas verdaderamente realizadas, referencias y observaciones. Los cuatro archivos conservan correspondencia con [contrato histórico](../docs/CONTRATO_DATOS_CMC.md).
+1. **Excel MPR** (todas las hojas existentes, incluidas `Datos basicos` y `Obras nacional`): completar progresivamente con páginas del PDF en columna G, datos en J, notas en L y nombres de obra como texto en el encabezado combinado. No alterar fórmulas ni formatos; usar método compatible con Excel 2013.
+2. **Word de observaciones documentales**: hallazgos numerados con documento/página, descripción objetiva, impacto, tratamiento sugerido y estado; incluir pendientes relevantes y qué parte del expediente puede continuar evaluándose.
 
-**Advertencia de formatos:** las **tres plantillas editables nativas** de los formatos institucionales todavía no se han recibido. Los JSON o vistas tabulares son **datos para llenado futuro**, no representaciones oficiales. Cuando existan los archivos nativos, adaptar los datos sin volver a inventariar las pruebas.
+**Control interno, no entrega adicional:** los esquemas [históricos de datos CMC](../docs/CONTRATO_DATOS_CMC.md), relación, factores y resumen siguen siendo útiles para validación y trazabilidad privada, pero **no** se entregan como tres JSON ni ficha maestra salvo pedido expreso. Seguir [contrato vigente de dos entregables](../contratos/entregables-cmc.md).
+
 
 ## Condición de cierre
 
-El coordinador valida el [checklist de evidencia](../contratos/control-evidencias.md), la concordancia 01→02→03, las exclusiones y la aritmética. Resultado posible: `completo para revisión`, `parcial con pendientes` o `bloqueado`. No declarar CMC aprobada.
+El coordinador valida el [checklist de evidencia](../contratos/control-evidencias.md), la concordancia de las hojas del Excel con el Word, las evidencias, exclusiones y la aritmética. Resultado posible: `completo para revisión`, `parcial con pendientes` o `bloqueado`. No declarar CMC aprobada.
