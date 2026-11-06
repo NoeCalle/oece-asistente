@@ -35,6 +35,14 @@
 
 **Aprendizaje para próximas muestras:** verificar si otros expedientes repiten los prefijos `R` y `20XX-...`, y registrar excepciones cuando un archivo con prefijo coincidente tenga otra naturaleza. Estas convenciones son heurísticas locales, no reglas institucionales universales.
 
+## CAS-CMC-013 — Marcadores amarillos editables sobre la evidencia extraída
+
+**Origen:** indicación del evaluador, 06/11/2026. **Estado:** criterio operativo adoptado; exactitud sobre escaneo y edición real en el equipo pendientes de prueba.
+
+El evaluador necesita reconocer visualmente **en el PDF original de sustento** la palabra, cifra o fragmento preciso que alimentó el Excel, con marcas amarillas que pueda **mover y redimensionar** si quedan algunos píxeles corridas. Solución elegida: **copia del PDF**, sin alterar original, con **anotaciones rectangulares amarillas semitransparentes no aplanadas**, no capas de pintura fija ni exclusivamente Highlights anclados a caracteres. Debe conservarse el vínculo `obra / PDF / página física / celda / texto marcado`. Técnica y verificaciones: [POE-CMC-PDF-01](../procedimientos/resaltado-evidencias-pdf-cmc.md).
+
+**Aprendizaje:** la editabilidad manual es requisito funcional distinto de la calidad de posicionamiento. Una marca cercana pero desplazada se considera **pendiente de ajuste visual**, no dato sustantivo equivocado; las observaciones del Word se reservan para incidencias documentales. Excel + Word siguen siendo los dos entregables principales; PDFs marcados son evidencia auxiliar.
+
 ## Ficha de captura de una nueva casuística
 
 Cada nueva situación se registra como **observación verificable**, no como generalización automática:
