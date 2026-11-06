@@ -67,10 +67,14 @@ def _comprobar_pdf(raw, item):
     except Exception as exc:
         raise ValueError("No se pudo verificar estructura del PDF") from exc
     collapsed = re.sub(r"\s+", "", text).upper()
-    expected = item["id"].upper().replace("RD-", "")
-    if ("0016-2025" not in collapsed or "54.01" not in collapsed or
-            "SUBESPECIALIDADES" not in collapsed or "TIPOLOG" not in collapsed):
-        raise ValueError("El PDF no se identifica con RD 0016-2025 y su anexo")
+    # Cada fuente debe declarar marcadores propios: un PDF de otra resolución
+    # no puede validarse mediante el texto fijo de RD 0016-2025.
+    markers = item.get("marcadores_pdf")
+    if (not isinstance(markers, list) or not markers or
+            any(not isinstance(marker, str) or not marker.strip() for marker in markers)):
+        raise ValueError("Catálogo sin marcadores PDF identificativos para esta norma")
+    if not all(re.sub(r"\s+", "", marker).upper() in collapsed for marker in markers):
+        raise ValueError("El PDF no se identifica con la norma y sus marcadores catalogados")
     return {"paginas": len(reader.pages), "identificacion_textual": True}
 
 
