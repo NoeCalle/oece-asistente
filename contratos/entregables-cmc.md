@@ -13,6 +13,10 @@ Carpeta de revisión del expediente de Drive, con **cuatro JSON independientes**
 | 2 | `entregable-02-datos.json` | Depende del 1; obras computables candidatas, años marcados con evidencia, suma de experiencia y factores `a`, `f`, `e`; `G = a + f + e` o `null` si falta insumo |
 | 3 | `entregable-03-datos.json` | Depende del 1 y 2; suma de obras sustentadas, G, fórmula `CMC = ΣObras × G` cuando proceda, `CMC_calculada_provisional_soles` o `null`, **`CMC_a_otorgar = null`** |
 
+## Observaciones obligatorias por documentos incompletos
+
+Aplicar [control de integridad documental](../procedimientos/control-integridad-documental.md) a cada contrato, resolución, liquidación y demás originales del expediente. Si hay cláusula, hoja o párrafo incompleto, **registrar observación aunque montos, fechas, objeto y recepción sean suficientes**. La observación `INT-DOC-###` debe figurar en `ficha-maestra.json` (apartado `observaciones`), junto a la obra/documento en `entregable-01-datos.json` y, cuando incida en el sustento, en los pendientes de los entregables 2 y 3. Mantener las **seis claves** de la ficha maestra vigente y la estructura JSON original. No hacer pasar un indicio por confirmación ni cerrar el documento como íntegro sin revisión de todas las páginas.
+
 ## Claves de control que debe conservar el agente
 
 - `expediente.tipo_tramite = "aumento_cmc"`.
