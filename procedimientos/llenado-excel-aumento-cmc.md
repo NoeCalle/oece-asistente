@@ -116,6 +116,12 @@ Al continuar, revisar los tramos documentales completos por obra; documentar el 
 - En REV14 se preservaron 4.210 fórmulas, 1.706 rangos combinados en 6 hojas y las seis imágenes originales. Se incorporaron 8 datos en `Datos basicos`, 120 en `Obras nacional` y solo se corrigió el formato de tres celdas de fecha.
 
 
+### Nueva plantilla recibida: .xlsm exportada por Excel (2026-11-06)
+
+El titular aportó `2026.11.06 PLANTILLA ACTUALIZADA MPR.xlsm` tras guardarla desde Excel. Contiene seis pestañas y **no incluye proyecto VBA** (no hay `vbaProject.bin` en el paquete), aunque tiene extensión habilitada para macros. Se generó una **copia de trabajo** `CMC-TEST-001_PLANTILLA_MPR_LLENADA_REV16.xlsm`, con 8 valores en `Datos basicos` y 120 en `Obras nacional`. El maestro se conserva intacto.
+
+**Método aplicado:** usar `artifact_tool` para escribir/verificar entradas y, para retener el formato `.xlsm` no exportable por esa API, transmitir exclusivamente los nodos de valores a las dos hojas del paquete original; no reserializar el resto. La comparación posterior verifica 35 partes originales idénticas, fórmulas y combinaciones intactas y seis pestañas legibles. **No declarar compatibilidad definitiva hasta abrir en Microsoft Excel de Windows sin reparación**, porque los problemas previos eran específicos de Excel. Si la plantilla `.xlsm` del titular también resulta defectuosa al abrirse en Excel, el problema no puede resolverse asegurando únicamente equivalencia estructural.
+
 ### Fuente de plantilla validada en Microsoft Excel: formato binario .xlsb (2026-11-06)
 
 **Resultado de prueba del titular:** `2026.11.06 PLANTILLA ACTUALIZADA MPR.xlsx`, SIN modificar, produce la misma advertencia de reparación en Microsoft Excel. En cambio, `2026.11.06 PLANTILLA ACTUALIZADA MPR.xlsb` abre y funciona correctamente. Por ello la causa primaria no son los valores ingresados a REV13–REV15: el `.xlsx` proporcionado **ya presenta incompatibilidad/defecto** de apertura; no puede asumirse que sus metadatos sean válidos por ser un ZIP estructuralmente legible. El origen preciso de la incompatibilidad requiere un análisis adicional y no debe afirmarse sin pruebas.
