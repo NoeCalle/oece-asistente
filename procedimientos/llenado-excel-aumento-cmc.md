@@ -1,6 +1,6 @@
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.7.
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.8.
 **Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
@@ -81,6 +81,14 @@ Para un expediente de aumento de CMC ejecutar **dos fases separadas**, sin adela
 
 En un caso piloto el archivo de experiencia contenía 94 páginas, de las que solo 2 tenían capa de texto. Fue necesario revisar páginas visualmente y preparar un índice de tres grupos documentales; la validación de detalle, integridad y todos los importes permanece pendiente. **No almacenar el índice real ni los nombres/datos de ese proveedor en GitHub público.**
 
+## Auditoría de cobertura visual por página (aprendizaje 2026-11-06)
+
+Para escaneos extensos, generar **una fila por cada página física del PDF**, con identificador de obra, tipo de documento, disponibilidad de capa de texto y controles independientes: (a) vista general; (b) lectura detallada; (c) foliación impresa; (d) continuidad de texto; (e) exactitud de cifras. **No confundir 94/94 páginas vistas a escala de miniatura con 94/94 páginas leídas exhaustivamente**.
+
+En el primer piloto de experiencia se comprobó la existencia de 94 páginas, pero solo las primeras 2 tenían texto PDF; las otras 92 eran imágenes. Se cubrieron las 94 mediante inspección visual general y quedó pendiente verificar cláusulas, detalles, foliación impresa y continuidad a tamaño legible. La bitácora privada de cobertura se guarda en la carpeta del expediente, nunca en el GitHub público.
+
+Al continuar, revisar los tramos documentales completos por obra; documentar el estado como `vista_general`, `lectura_detallada`, `cotejo_integridad` y `verificado` **solo tras evidencias correspondientes**. Prohibido usar porcentajes de progreso que sugieran validación integral si solo hay cobertura visual panorámica.
+
 ## Primer mapeo de celdas verificado (plantilla 06/11/2026)
 
 El contraste **estructural** entre plantilla vacía y Excel ejemplo permitió localizar los siguientes destinos; el contenido de cada expediente siempre debe obtenerse de sus propias fuentes y no copiarse del caso ejemplo:
@@ -138,6 +146,7 @@ El evaluador advierte que el documento más voluminoso puede ser el que acredita
 | 2026-11-06 | 0.5 | Un PDF de experiencia puede reunir múltiples contratos, liquidaciones y anexos; indexar cada obra con rangos de páginas y evidencias, cubrir el documento completo y no equiparar un archivo con una obra | Confirmada |
 | 2026-11-06 | 0.6 | Primer mapeo estructural de celdas de «Datos basicos» y piloto de llenado documental de cuatro campos; los valores reales no se publican en GitHub | Parcialmente verificada |
 | 2026-11-06 | 0.7 | Separar extracción documental y evaluación normativa; PDFs escaneados pueden carecer de capa de texto; indexar por página y dejar cifras descriptivas sin computar hasta la fase normativa | Confirmada |
+| 2026-11-06 | 0.8 | Auditoría por cada página y distinción obligatoria entre inspección visual completa del PDF y lectura detallada/cotejo de integridad de cada página | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
