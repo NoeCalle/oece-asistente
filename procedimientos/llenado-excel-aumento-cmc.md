@@ -89,6 +89,23 @@ En el primer piloto de experiencia se comprobó la existencia de 94 páginas, pe
 
 Al continuar, revisar los tramos documentales completos por obra; documentar el estado como `vista_general`, `lectura_detallada`, `cotejo_integridad` y `verificado` **solo tras evidencias correspondientes**. Prohibido usar porcentajes de progreso que sugieran validación integral si solo hay cobertura visual panorámica.
 
+## Llenado específico de la plantilla MPR (piloto Codina, 2026-11-06)
+
+**Orden obligatorio de trabajo:** primero `Datos basicos` (hasta donde haya evidencia), después `Obras nacional` por cada obra. No esperar a tener todos los campos de datos básicos para pasar a las obras; registrar pendientes.
+
+**No insertar imágenes para reemplazar texto de documentación.** Si el evaluador anterior pegó una imagen del nombre u objeto de la obra, el agente escribe el texto fielmente, normalizado solo para legibilidad. Debe conservar números, moneda, fechas y fórmulas en los tipos de celda que espera la plantilla.
+
+**Mapa de la plantilla `2026.11.06 PLANTILLA ACTUALIZADA MPR.xlsx`:**
+- `Datos basicos`: proveedor en `B4`; hoja de trámite en `F5`; RNP `F9`, RUC `F10`, SUNARP `F11`; período financiero `F15`; activo corriente `F16`; pasivo corriente `F17`. Es importante escribir en **F**, no desplazarse a E. Dejar en blanco los datos no sustentados.
+- `Obras nacional`: las tres primeras obras ocupan `9:24`, `31:46`, `53:68` respectivamente. Filas `8`, `30` y `52` sirven para identificar la obra con **texto** y documento de respaldo, no captura.
+- Para cada **campo individual**, escribir el dato en **columna J (Datos)** y la **página del PDF donde aparece la evidencia** en **columna G («inicial pág»)**. Numeración **real del PDF, base 1**, no folio impreso ni número de página del archivo Word. El PDF se cita en su versión original. Si el valor surge de varias piezas, registrar en G la página principal y detallar las demás páginas y operación en L.
+- **Columna L**: observaciones iniciales concretas, incluyendo discrepancia, fuente alternativa, dato no encontrado y riesgo documental; no sustituye la información de la columna J.
+- **Cuidado con tipos:** por ejemplo, `J12/J34/J56` representan la participación porcentual consorcial como `0.20/0.50/0.30` con formato `0%`, **no una cadena descriptiva**; nombres y RUC deben ir en campos de contratista y notas de observación sin romper enlaces de cálculo. Fechas como fechas reales de Excel y montos como números, no texto.
+- Si una imagen escaneada es poco legible, registrar página y `pendiente_cotejo`; si no se pudo determinar, **dejar celda de dato vacía** y describirlo en L. No confundir «no acreditado» con valor cero.
+- Antes de entregar, controlar hojas preservadas, fórmulas en todas las pestañas, cruces y resultados. El motor de vista previa puede mostrar `#NAME?` por fórmulas matriciales o de búsqueda; comprobar el original y no atribuir automáticamente el error al expediente.
+
+**Alcance de esta iteración:** los datos generales y económicos iniciales se llenan solo en lo acreditado; `Obras nacional` se llena con tres obras y sus páginas, además de reservas OB-01 (diferencia liquidación), OB-02 (identidad contractual y cronología) y OB-03 (liquidación vs deductivo/fecha acta). **Es un llenado preliminar, no una CMC otorgada.**
+
 ## Lección del primer piloto: evaluación ciega sin Excel previamente resuelto (2026-11-06)
 
 **En operación real no existe Excel de evaluación completado por un tercero.** El único libro de entrada editable es una **copia limpia de la plantilla institucional vigente**. El expediente, las consultas autorizadas y la biblioteca normativa son las fuentes de datos; la copia de una evaluación anterior solo sirve en pruebas como patrón de comparación **después de producir y congelar el resultado independiente**, nunca para extraer montos, factores, notas o fórmulas de un nuevo caso.
@@ -194,6 +211,7 @@ El evaluador advierte que el documento más voluminoso puede ser el que acredita
 | 2026-11-06 | 0.9 | Para documentos habituales escaneados, usar lectura visual ampliada y OCR secundario; extraer en bloques pequeños con estado independiente de integridad y sin adelantar normativa | Confirmada |
 | 2026-11-06 | 1.0 | Lectura de PDF por lotes de 15–20 páginas como máximo; guardar checkpoint por lote, reanudar tras cortes y medir progreso desde archivos confirmados, no desde intentos | Confirmada |
 | 2026-11-06 | 1.1 | El piloto con Excel ya resuelto no prueba llenado autónomo; iniciar desde plantilla limpia, usar evaluación anterior solo como patrón posterior y distinguir simulación de libro institucional completo | Confirmada |
+| 2026-11-06 | 1.2 | Orden Datos basicos→Obras nacional; F4/F5 y fuentes, G=«inicial pág» del PDF, J=datos, L=observaciones; transcripción textual de nombres y tipos numéricos intactos | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
