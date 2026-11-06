@@ -1,61 +1,42 @@
-# Contrato de salida — aumento CMC: tres entregables secuenciales
+# Contrato de salida — aumento de CMC: DOS entregables operativos
 
-**Fuente de verdad para los campos:** [docs/CONTRATO_DATOS_CMC.md](../docs/CONTRATO_DATOS_CMC.md) y especificaciones de [entregable 1](../docs/ENTREGABLE_01_RELACION_OBRAS.md), [2](../docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md), [3](../docs/ENTREGABLE_03_RESUMEN_CMC.md). Este archivo define el **contrato del agente cloud**, no reemplaza ni altera las fórmulas normativas.
+**Decisión del titular (06/11/2026):** para la evaluación ordinaria de aumento de Capacidad Máxima de Contratación (CMC), el paquete visible del especialista consta de **un Excel de evaluación** y **un Word de observaciones**. Esta instrucción **sustituye** la antigua entrega obligatoria de ficha maestra y tres JSON independientes en el modo agent-first. Los modelos de datos [históricos](../docs/CONTRATO_DATOS_CMC.md), [relación de obras](../docs/ENTREGABLE_01_RELACION_OBRAS.md), [factores](../docs/ENTREGABLE_02_FACTORES_EXPERIENCIA.md) y [resumen de cálculo](../docs/ENTREGABLE_03_RESUMEN_CMC.md) se conservan como **etapas lógicas y referencias de validación internas**, no como entregables adicionales ni como tres formularios que haya que inventar.
 
-## Paquete mínimo (si la plataforma puede crear archivos)
+## Entregable 1 — Excel institucional MPR de evaluación
 
-Carpeta de revisión del expediente de Drive, con **cuatro JSON independientes** y un resumen opcional de lectura. Nunca copiar este paquete a GitHub.
+**Formato:** copia íntegra de la plantilla MPR vigente que facilite el titular, con **todas sus pestañas originales** (en el piloto, seis); no crear un Excel nuevo con tres hojas ni reconstruir la plantilla salvo instrucción expresa. Preservar fórmulas, combinaciones, estilos, tablas, nombre de hojas, anchos, elementos de plantilla y vínculos. Original intocable. La extensión/guardado final debe ser compatible con Microsoft Excel 2013 del titular. Para el piloto, la fuente que abre correctamente es el archivo binario `.xlsb` y la escritura segura utiliza el Excel de Windows autorizado; **no fingir compatibilidad probada si no se abrió en Excel**.
 
-| Orden | Archivo | Contenido mínimo y comprobación |
-|---|---|---|
-| Maestra | `ficha-maestra.json` | `version`, `expediente`, `obras`, `factores`, `consultas`, `observaciones`; obra con ID estable, fuente por campo y condiciones |
-| 1 | `entregable-01-datos.json` | Relación de obras, identificación, fecha contrato/recepción, moneda, montos contractuales/liquidados, descuentos, porcentaje aplicado, experiencia **propuesta**, estado/desistimiento/exclusión y evidencia |
-| 2 | `entregable-02-datos.json` | Depende del 1; obras computables candidatas, años marcados con evidencia, suma de experiencia y factores `a`, `f`, `e`; `G = a + f + e` o `null` si falta insumo |
-| 3 | `entregable-03-datos.json` | Depende del 1 y 2; suma de obras sustentadas, G, fórmula `CMC = ΣObras × G` cuando proceda, `CMC_calculada_provisional_soles` o `null`, **`CMC_a_otorgar = null`** |
+**Rellenado progresivo:** primero `Datos basicos` con los campos sustentados; luego `Obras nacional` conforme lleguen uno o varios PDF por obra. En cada campo de `Obras nacional`, la columna `G` («inicial pág») identifica la página física, **desde 1**, del PDF **concreto** que sustenta el dato; guardar además el nombre/ID del PDF en el expediente privado (no asumir que todas las obras están en un mismo PDF). La columna `J` contiene el dato y la `L` las notas necesarias. Nombres de obra en la **celda ancla de los encabezados combinados**, como texto, nunca imagen. No sobreescribir fórmulas con valores ni completar campos sin soporte como cero. Referencia: [procedimiento de llenado](../procedimientos/llenado-excel-aumento-cmc.md).
 
-## Observaciones obligatorias por documentos incompletos
+**Cálculo:** continuar dentro de las hojas previstas por la plantilla con liquidaciones, componentes netos, adicionales/deductivos, participación consorcial, años/factores y CMC cuando la evidencia sea suficiente. Mantener claramente diferenciada CMC **simulada/provisional** de una capacidad aprobada. En controles internos `CMC_a_otorgar=null` salvo decisión institucional ajena al agente.
 
-Aplicar [control de integridad del escaneo](../procedimientos/control-integridad-documental.md) a todos los originales. Cuando la **numeración de hojas** salte (p. ej., `2/5 → 4/5` sin `3/5`), exista pérdida material o un párrafo **objetivamente truncado al cambiar de hoja**, registrar `INT-DOC-###` **aunque montos, fechas y objeto se encuentren en las hojas presentes**. No emitir observación por simples typos, errores de redacción o de numeración de cláusulas sin evidencia de omisión. La observación figura en `ficha-maestra.json.observaciones`, en la obra/documento de `entregable-01-datos.json` y como pendiente de 2 y 3 cuando corresponda. Mantener las **seis claves** de la ficha maestra. Indicar si es indicio o ausencia confirmada.
+**Control de aceptación:** estructura idéntica salvo cambios autorizados, fórmulas preservadas, páginas G asociadas al PDF correcto, montos reproducibles y cotejados, títulos de obras visibles, estado de campos y limitaciones; verificar apertura real en Excel 2013 cuando se disponga del programa.
 
-## Claves de control que debe conservar el agente
+## Entregable 2 — Word de observaciones documentales
 
-- `expediente.tipo_tramite = "aumento_cmc"`.
-- Los IDs de obras, estados y montos en 1 deben corresponder exactamente a la maestra y a los IDs usados en 2/3.
-- `participacion_aplicada` distingue `true`, `false` y `null`; **no** volver a multiplicar si ya se ajustó el monto.
-- `estado`: `propuesta_incluir`, `pendiente` o `excluida`. `desistida` se anota como motivo explícito de exclusión, **no suma**.
-- Cada importe desconocido debe ser `null`, no `0`; usar cadenas decimales: `"250000.00"`, no números binarios imprecisos.
-- `factores.actividad`, `factores.financiero`, `factores.ejecucion`: cada uno con `valor`, `sustento`, `referencias` y `norma_por_verificar`. G **solo** se cierra si las tres entradas tienen fundamento.
-- `consultas` con `servicio`, `realizada`, `fecha`, `resultado`, `referencias`. Nunca afirmar consultas RNP/SUNAT/otras no realizadas.
-- Ante discrepancia en datos, moneda, fórmula o años → `parcial_con_pendientes`, no cifra final inventada.
+**Formato:** un único `.docx` editable, breve, con título `Observaciones documentales — [expediente]`, fecha/corte, estado de revisión y fuente del expediente. No duplicar el contenido de todas las pestañas del Excel.
 
-## Campos mínimos de portada/manifiesto
+**Estructura sugerida:**
+1. **Identificación y alcance:** expediente, procedimiento, documentos revisados y grado real de revisión (página leída, pendiente, escaneo dudoso).
+2. **Observaciones numeradas:** una fila o párrafo por observación con `ID`, `obra` o `expediente`, `documento/PDF y página`, `hecho comprobado`, `discrepancia o faltante`, `impacto`, `acción recomendada`, `estado`. Distinguir `inconsistencia_documental`, `integridad_escaneo`, `dato_pendiente` y `control_por_verificar`.
+3. **Conclusión operativa muy breve:** qué se puede seguir evaluando; qué campos/obras quedan reservados; documentación necesaria para cerrar observaciones.
 
-```json
-{
-  "caso": "EXP-DEMO",
-  "procedimiento": "aumento_cmc",
-  "revision": "REV-001",
-  "fecha_analisis": null,
-  "estado": "parcial_con_pendientes",
-  "origen_expediente": null,
-  "fuentes": [],
-  "observaciones": [],
-  "pendientes": [],
-  "entregables": [
-    "ficha-maestra.json",
-    "entregable-01-datos.json",
-    "entregable-02-datos.json",
-    "entregable-03-datos.json"
-  ]
-}
-```
+**No emitir observaciones solo por errores tipográficos irrelevantes ni considerar OCR escaso prueba de página faltante.** Registrar diferencias reales sin declarar automáticamente incumplimiento o rechazo. Cuando no se detecten observaciones tras la revisión posible, el Word puede decir `Sin observaciones documentales identificadas en el alcance revisado`, aclarando verificaciones aún pendientes. No inventar artículo, número de contrato, página ni hallazgo.
 
-`EXP-DEMO` **es solo un ejemplo ficticio**. En la entrega real el agente documentará enlace Drive y estado de publicación verificados.
+**Concordancia:** las observaciones relevantes de `Obras nacional` columna L son un resumen breve y deben concordar con el Word. El Word aporta la descripción, fuente, incidencia y acción, sin duplicar información irrelevante. Registrar observaciones y **continuar con otras obras/campos que no estén bloqueados**.
 
-## Formatos oficiales: límite vigente
+## Registros de trabajo que NO se entregan por defecto
 
-**Las tres plantillas editables nativas institucionales aún no han sido entregadas.** Los cuatro archivos son **datos preparados** para rellenarlas en una siguiente iteración. No generar planillas que aparenten ser oficiales, no poner fechas/sellos oficiales simulados, ni afirmar que CMC ha sido otorgada. Si el cliente puede crear XLSX de revisión como visualización, etiquetarlo claramente **auxiliar no oficial**.
+Se permite usar internamente, en almacenamiento **privado del expediente**, JSON/CSV, inventario documental, fichas por campo, registros de páginas, trazabilidad, bitácora y comprobación decimal. Sirven para reanudación, auditabilidad y aprendizaje, **no constituyen archivos adicionales que el evaluador deba recibir ni formatos institucionales independientes**. El repositorio público nunca contiene originales, transcripciones ni datos personales de expedientes.
 
-## Criterios de aceptación
+Si el evaluador solicita explícitamente un archivo de control adicional, se entrega como anexo excepcional, identificado como auxiliar. La inexistencia de un archivo JSON no excusa la falta de trazabilidad.
 
-Los tres archivos deben ser independientes, completos en su esquema, **orden 1→2→3**, con procedencia por dato, exclusiones, comprobación decimal reproducible, pendientes explícitos y resultados no fingidos. El coordinador devuelve enlaces Drive **solo de archivos realmente publicados**. Reglas transversales: [control de evidencias](control-evidencias.md).
+## Entrega incremental y cierre
+
+- Por cada nueva remesa de contratos, actas, liquidaciones o documentación financiera: **actualizar acumulativamente el mismo expediente**, con una copia revisada del Excel y versión actualizada del Word; no borrar lo previamente sustentado ni duplicar obras.
+- Cada ronda: devolver **solo los dos archivos visibles**, indicando resumen de nuevas obras/campos, observaciones y pendientes. Si una herramienta o acceso impide editar uno, informar con precisión qué queda sin hacer y ofrecer únicamente resultados realmente creados.
+- Al finalizar: verificar correspondencia Excel/Word, referencias PDF, integridad, cálculo/participaciones/factores y ausencia de errores estructurales; estados `completo_para_revision`, `parcial_con_pendientes` o `bloqueado`.
+- Ningún entregable equivale a aprobación administrativa, firma, otorgamiento de CMC ni verificación de autenticidad.
+- Publicar en Drive solo cuando exista destino autorizado y el conector confirme la escritura; de lo contrario entregar enlaces del chat a archivos efectivamente generados.
+
+Aplican [control de evidencias](control-evidencias.md), [integridad documental](../procedimientos/control-integridad-documental.md), [biblioteca de casuística](../casuistica/README.md) y [procedimiento CMC](../procedimientos/aumento-cmc.md).
