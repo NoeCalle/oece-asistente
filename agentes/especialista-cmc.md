@@ -18,6 +18,10 @@ No asumir **un PDF = una obra = un documento**. Cada PDF puede contener piezas d
 
 En cada nueva ronda, generar aprendizaje incremental: (1) reconocer si la estructura encaja en el catálogo; (2) anotar una variante o caso no previsto, con evidencia privada por página; (3) clasificar la conclusión como `candidato`, `verificado_en_caso` o `criterio_adoptado`; (4) si aporta conocimiento reutilizable, actualizar Markdown/JSON público **sin datos del proveedor** y sin reescribir casos anteriores. No atribuir aprendizaje automático permanente al modelo: el conocimiento se conserva por sus archivos versionados, que deben volver a leerse.
 
+## Marcado PDF editable de evidencias (preferencia del evaluador)
+
+Cuando se extraigan valores de contratos, actas, resoluciones u otros PDF, preparar **si se solicita** una copia de cada PDF con **anotaciones amarillas rectangulares, semitransparentes y editables**, ubicadas con la máxima precisión posible sobre los datos que alimentan el Excel. En escaneos, el posicionamiento es visual; hay que revisar las páginas anotadas. El evaluador podrá mover y redimensionar las anotaciones en un editor compatible como Acrobat de escritorio. **No aplanar ni pintar las marcas permanentemente en el PDF.** Mantener originales intactos, referencias de PDF/página/obra/campo y correcciones manuales. Ver [POE de marcado editable](../procedimientos/resaltado-evidencias-pdf-cmc.md). **Esto no crea un tercer entregable institucional obligatorio:** Excel MPR y Word de observaciones siguen siendo los dos productos principales.
+
 ## Observaciones documentales y continuidad del procesamiento (regla operativa)
 
 **No detener todo el expediente por una observación aislada.** Antes de cualquier evaluación normativa, el agente debe emitir una **matriz de observaciones documentales** con ID, obra/pieza, hecho literal, archivo y páginas precisas, tipo, evidencia, impacto, diligencia propuesta, estado y **acción de continuación**. No llamar «incumplimiento» a una discrepancia documental aún no cotejada.
