@@ -1,6 +1,6 @@
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.5.
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.6.
 **Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
@@ -72,6 +72,27 @@ Al definir cada instrucción, registrar además:
 
 La secuencia para `Obras nacional`, `CLC`, `Hoja Calculo`, `datos` y `CALCULO CMC` se documentará cuando el evaluador la describa; los nombres de hoja **no equivalen** a una secuencia de ejecución confirmada. El análisis sustantivo se mantiene sujeto al [procedimiento general](aumento-cmc.md).
 
+## Primer mapeo de celdas verificado (plantilla 06/11/2026)
+
+El contraste **estructural** entre plantilla vacía y Excel ejemplo permitió localizar los siguientes destinos; el contenido de cada expediente siempre debe obtenerse de sus propias fuentes y no copiarse del caso ejemplo:
+
+| ID | Campo | Destino | Origen documental esperado | Tratamiento |
+|---|---|---|---|---|
+| DB-001 | Denominación del proveedor | `Datos basicos!B4` | Hoja de ruta/formulario | Texto exacto, cotejar |
+| DB-002 | Número de hoja de trámite | `Datos basicos!E5` | Hoja de ruta | Texto exacto, cotejar |
+| DB-003 | Registro RNP | `Datos basicos!E9` | Hoja de ruta y, si corresponde, consulta intranet | Mantener como identificador; verificar |
+| DB-004 | RUC | `Datos basicos!E10` | Hoja de ruta/formulario | 11 dígitos, no inferir |
+| DB-005 | Partida SUNARP | `Datos basicos!E11` | Consulta registral/documento acreditativo | Pendiente de fuente válida |
+| DB-006 | Capital SUNARP | `Datos basicos!E12` | Consulta registral/documento acreditativo | Pendiente |
+| DB-007 | CMC vigente | `Datos basicos!E13` | RNP/intranet o constancia acreditativa | Pendiente, no asumir del ejemplo |
+| DB-008 | Periodo financiero | `Datos basicos!E15` | Documentación financiera | Pendiente |
+| DB-009 | Activo corriente | `Datos basicos!E16` | Documentación financiera | Pendiente |
+| DB-010 | Pasivo corriente | `Datos basicos!E17` | Documentación financiera | Pendiente |
+
+**Atención:** las fechas y demás rótulos pueden variar entre versiones de plantilla y Excel ejemplo. No trasladar celdas basadas en la fila del ejemplo sin revisar versión. Las capturas de intranet y reglas de las demás celdas siguen sin enseñarse.
+
+**Prueba piloto:** durante la primera ejecución con el expediente Codina se obtuvo un borrador local `CMC-TEST-001_Datos-basicos_REV01.xlsx` con los cuatro primeros datos identificativos (B4, E5, E9, E10) procedentes de la hoja de ruta. Esto es una **copia preliminar no validada institucionalmente**, no equivale a un Excel ya publicado en Drive; debe verificarse preservación de imágenes/fórmulas y el resto de celdas permanece pendiente.
+
 ## Tratamiento de PDF extensos con múltiples contratos de experiencia (confirmado 2026-11-06)
 
 El evaluador advierte que el documento más voluminoso puede ser el que acredita experiencia y que el proveedor puede adjuntar **varios contratos y sus documentos sustentatorios reunidos en un solo PDF**. Por tanto:
@@ -106,6 +127,7 @@ El evaluador advierte que el documento más voluminoso puede ser el que acredita
 | 2026-11-06 | 0.3 | ChatGPT, Claude o Grok pueden **extraer de los PDF y llenar directamente la plantilla Excel**, siempre que tengan acceso y herramientas de lectura/escritura; verificar persistencia y fórmulas. La intervención manual se reserva para tareas sin acceso o que necesiten revisión | Confirmada |
 | 2026-11-06 | 0.4 | GrokBot se reserva principalmente para navegación automatizada de la intranet con PC virtual; extracción PDF y edición Excel no son funciones exclusivas de GrokBot y pueden realizarlas ChatGPT/Claude. Hasta probar el acceso, la intranet la atiende manualmente el evaluador | Confirmada |
 | 2026-11-06 | 0.5 | Un PDF de experiencia puede reunir múltiples contratos, liquidaciones y anexos; indexar cada obra con rangos de páginas y evidencias, cubrir el documento completo y no equiparar un archivo con una obra | Confirmada |
+| 2026-11-06 | 0.6 | Primer mapeo estructural de celdas de «Datos basicos» y piloto de llenado documental de cuatro campos; los valores reales no se publican en GitHub | Parcialmente verificada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
