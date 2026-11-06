@@ -2,6 +2,7 @@
 from html.parser import HTMLParser
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -296,14 +297,25 @@ def leer_documento(path, cache, usar_ocr=True, timeout=45):
             strings = []
             if 'xl/sharedStrings.xml' in z.namelist():
                 strings = [''.join(n.itertext()) for n in ET.fromstring(z.read('xl/sharedStrings.xml')).findall('m:si', ns)]
-            for sheet in sorted(n for n in z.namelist() if n.startswith('xl/worksheets/sheet') and n.endswith('.xml')):
+            # Orden numérico: sheet2 debe aparecer antes que sheet10.
+            sheets=[(int(m.group(1)),name) for name in z.namelist()
+                    if (m:=re.fullmatch(
+                        r'xl/worksheets/sheet([1-9][0-9]*)\.xml',name))]
+            for _,sheet in sorted(sheets):
                 for c in ET.fromstring(z.read(sheet)).findall('.//m:c', ns):
                     v, formula = c.find('m:v', ns), c.find('m:f', ns)
                     if v is None and formula is None and c.find('m:is',ns) is None:
                         continue
                     text = v.text or '' if v is not None else ''.join(c.itertext())
                     if c.get('t') == 's':
-                        text = strings[int(text)]
+                        try:
+                            number=int(text)
+                            if number<0:raise ValueError('Índice negativo')
+                            text=strings[number]
+                        except (ValueError,IndexError,TypeError) as exc:
+                            raise ValueError(
+                                f'Referencia de texto compartido inválida en {sheet}, '
+                                f'celda {c.get("r") or "sin referencia"}') from exc
                     add(f'{sheet}/celda:{c.get("r")}', text, ['formula_no_recalculada'] if formula is not None else [])
         warnings.append('Excel: valores almacenados; fórmulas sin recalcular; fechas y formatos requieren cotejo')
     else:
