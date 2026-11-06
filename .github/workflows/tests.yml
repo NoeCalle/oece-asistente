@@ -1,26 +1,13 @@
-name: OECE Assistant — Ubuntu y Windows
+name: OECE — suite completa con corpus normativo (manual)
 
+# Este workflow no aparece como "verde" en un push sin ejecutar la suite.
+# Lanzarlo manualmente solo cuando los originales normativos sean recuperables.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "oece/**"
-      - "scripts/**"
-      - "tests/**"
-      - "INICIAR_OECE.sh"
-      - "INICIAR_OECE.cmd"
-      - "requirements*.txt"
-      - ".github/workflows/tests.yml"
-  pull_request:
   workflow_dispatch:
-
-concurrency:
-  group: full-oece-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   unittest:
-    name: unittest — ${{ matrix.os }}
+    name: Suite completa con originales — ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     strategy:
@@ -37,7 +24,7 @@ jobs:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: requirements-linux.txt
-      - name: Instalar Tesseract (spa) y Poppler en Ubuntu
+      - name: Instalar Tesseract spa y Poppler en Ubuntu
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-spa poppler-utils
       - name: Instalar dependencias Python
@@ -46,14 +33,7 @@ jobs:
         run: python -c "from pathlib import Path; [Path(p).mkdir(parents=True,exist_ok=True) for p in ('data','normativa/indices/pruebas','normativa/ocr/pruebas')]"
       - name: Validar sintaxis y codificación
         run: python -m compileall -q oece scripts tests
-      - name: Recuperar fuentes normativas y comprobar hashes
-        id: biblioteca
-        continue-on-error: true
+      - name: Recuperar fuentes normativas y verificar hashes (obligatorio)
         run: python scripts/preparar_biblioteca_ci.py
-      - name: Suite unittest completa (requiere corpus histórico íntegro)
-        if: steps.biblioteca.outcome == 'success'
-        run: python -m unittest discover -s tests -p "test_*.py"
-      - name: Aviso de cobertura documental pendiente
-        if: steps.biblioteca.outcome != 'success'
-        run: |
-          python -c "print('Suite completa no ejecutada: faltan fuentes normativas históricas con SHA-256 válido; ver logs de biblioteca. La regresión independiente Linux/Windows se ejecuta en portabilidad.yml.')"
+      - name: Suite unittest completa (obligatoria, sin skip)
+        run: python -m unittest discover -s tests -p "test_*.py" -v
