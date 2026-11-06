@@ -10,6 +10,8 @@ Los documentos habituales incluyen solicitud/ficha RNP, contratos de ejecución,
 
 ## Memoria documental y aprendizaje por casuística (obligatorio)
 
+**Clasificación por estructura de carpeta:** aplicar también `CARP-CMC-001` del catálogo (por ejemplo, `AUM/INICIAL`, contratos numerados `01_…13_`, archivo `20XX-…-LIMA.pdf` propuesto como hoja de ruta y `R#####.pdf` propuesto como pago). Son **heurísticas declaradas por el titular**, no lectura ni validación de los PDFs; clasificarlos inicialmente como candidatos y confirmar tipo/obra al abrir cada archivo. No contar archivos de contratos como obras automáticamente. Véase [CAS-CMC-012](../casuistica/patrones-y-lecciones-cmc.md).
+
 Antes de iniciar y **en cada recepción incremental de archivos**, consultar [guía de casuística](../casuistica/README.md), [catálogo JSON de 13 tipos documentales](../casuistica/tipos-documentales-cmc.v1.json) y [patrones y lecciones](../casuistica/patrones-y-lecciones-cmc.md). Identificar por contenido el tipo y la estructura de cada pieza: hoja de ruta, voucher, contrato, consorcio, acta de terreno/inicio/recepción, resolución de adicional/deductivo y resolución/cuadro de liquidación; el título no es prueba suficiente.
 
 No asumir **un PDF = una obra = un documento**. Cada PDF puede contener piezas distintas y cada obra puede tener documentos en varios archivos. Registrar `tipo_documental`, expediente/obra, nombre/ID del archivo, página PDF, campo, dato literal, estado de lectura y observación; utilizar la taxonomía como orientación, no como sustituto del original. Aplicar únicamente preferencias adoptadas: **nombre del contratista → contrato**, antes que acta de recepción; demás preferencias siguen pendientes. Registrar contradicciones y continuar con otras piezas.
