@@ -1,6 +1,6 @@
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.8.
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.9.
 **Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
@@ -89,6 +89,21 @@ En el primer piloto de experiencia se comprobó la existencia de 94 páginas, pe
 
 Al continuar, revisar los tramos documentales completos por obra; documentar el estado como `vista_general`, `lectura_detallada`, `cotejo_integridad` y `verificado` **solo tras evidencias correspondientes**. Prohibido usar porcentajes de progreso que sugieran validación integral si solo hay cobertura visual panorámica.
 
+## Método normal para sustentos de experiencia escaneados (confirmado 2026-11-06)
+
+**Supuesto operativo:** en expedientes típicos de experiencia, los contratos, actas y liquidaciones suelen presentarse como **páginas escaneadas**. La falta de capa de texto PDF no es defecto del expediente ni razón para abandonar la extracción. El agente prioriza la **interpretación visual de imágenes a tamaño legible**, usando OCR cuando resulte necesario y siempre cotejando su salida con la imagen.
+
+**Secuencia por bloques pequeños para evitar cortes**:
+1. Abrir el PDF original y enumerar todas las páginas. Mantener inalterado el original y su vínculo privado.
+2. Agrupar por obra y por pieza documental usando vistas panorámicas; marcar cada página cubierta solo como `vista_general`.
+3. Renderizar con resolución suficiente **cada página que aporte hechos** (identidad, contrato, consorcio, fecha, monto, recepción, liquidación, adicionales, deductivos). Leerla visualmente; si es ilegible, ampliar recortes; OCR es una ayuda secundaria, no evidencia autónoma.
+4. Registrar por cada dato: nombre de PDF, número de página del PDF, tipo de documento, transcripción literal breve, valor interpretado, campo, estado de lectura y dudas.
+5. Verificar continuidad de las piezas y folios de las páginas intermedias: una portada y un artículo resolutivo no acreditan por sí solos la revisión íntegra de la resolución. Inspeccionar las transiciones a tamaño legible y anotar cualquier señal objetiva de omisión.
+6. Diferenciar `lectura_visual_ampliada_campos`, `integridad_comprobada` y `cotejo_documental_completo`. No marcar página/obra como completamente verificada con una inspección por miniaturas ni por extracción OCR sola.
+7. Consolidar revisiones incrementales privadas `REVxx` preservando resultados anteriores, pendientes y enlaces originales; no promover importes o fechas a experiencia computable durante la fase documental.
+
+**Piloto:** la ampliación de las páginas 15, 16 y 32 de una obra permitió extraer CUI, sistema, modalidad, monto de contrato, plazos, fechas de terreno/inicio/término previsto y presupuesto adicional, sin calificar normativa ni sumar el adicional. El control integral de continuidad sigue pendiente. Los datos específicos del proveedor se conservan **solo en el expediente privado**, no en GitHub.
+
 ## Primer mapeo de celdas verificado (plantilla 06/11/2026)
 
 El contraste **estructural** entre plantilla vacía y Excel ejemplo permitió localizar los siguientes destinos; el contenido de cada expediente siempre debe obtenerse de sus propias fuentes y no copiarse del caso ejemplo:
@@ -147,6 +162,7 @@ El evaluador advierte que el documento más voluminoso puede ser el que acredita
 | 2026-11-06 | 0.6 | Primer mapeo estructural de celdas de «Datos basicos» y piloto de llenado documental de cuatro campos; los valores reales no se publican en GitHub | Parcialmente verificada |
 | 2026-11-06 | 0.7 | Separar extracción documental y evaluación normativa; PDFs escaneados pueden carecer de capa de texto; indexar por página y dejar cifras descriptivas sin computar hasta la fase normativa | Confirmada |
 | 2026-11-06 | 0.8 | Auditoría por cada página y distinción obligatoria entre inspección visual completa del PDF y lectura detallada/cotejo de integridad de cada página | Confirmada |
+| 2026-11-06 | 0.9 | Para documentos habituales escaneados, usar lectura visual ampliada y OCR secundario; extraer en bloques pequeños con estado independiente de integridad y sin adelantar normativa | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
