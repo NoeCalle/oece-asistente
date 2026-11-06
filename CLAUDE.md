@@ -1,4 +1,6 @@
-@AGENTS.md
+# Claude — entrada ligera OECE (agent-first)
+
+> No importar `AGENTS.md` completo en todas las sesiones: contiene extensa documentación del motor Python histórico. Consultar únicamente las instrucciones del especialista necesario, y el [prompt universal](docs/PROMPT_OECE_UNIVERSAL.md) como punto de entrada.
 
 # Claude — OECE Agent-first
 
