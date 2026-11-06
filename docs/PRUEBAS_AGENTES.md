@@ -37,6 +37,18 @@
 
 **Aprobación:** Word/matriz consistentes, sin aprobación institucional.
 
+## Prueba transversal D — integridad documental pese a datos suficientes
+
+**Caso sintético 1:** contrato con montos, fecha y objeto legibles, pero con cláusula/párrafo interrumpido o página ausente según continuidad visible. Ambos especialistas deben emitir `INT-DOC-###` y conservar la observación en resultados, **aunque todos los datos necesarios para otros controles estén disponibles**. Diferenciar observación por `indicio_incompletitud` y `incompleto_confirmado`.
+
+**Caso sintético 2:** resolución con artículos iniciales ausentes, pero artículo resolutivo con decisión y fecha legibles. Debe surgir observación por integridad y fuente/página identificada.
+
+**Caso sintético 3:** OCR salta una línea, pero imagen visual del PDF está completa. No registrar documento incompleto solo por el OCR; indicar defecto de extracción.
+
+**Caso sintético 4:** archivo no accesible o páginas ilegibles. Registrar `no_verificable`, no asegurar ni completitud ni ausencia confirmada.
+
+**Verificación de entregables:** CMC: ficha maestra y entregable 1 mantienen la observación, 2 y 3 registran pendiente si afecta el sustento; consultores: sección de integridad del informe y observaciones de matriz lo reflejan. **El criterio procede de capacitación del titular y su consecuencia administrativa no se presume verificada por norma.** [Procedimiento](../procedimientos/control-integridad-documental.md).
+
 ## Prueba de portabilidad
 
 Repetir A, B, C en **Codex Cloud, Claude Cloud y Grok Bot**, registrando por cada uno:
