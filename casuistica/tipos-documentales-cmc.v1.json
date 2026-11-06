@@ -1,0 +1,439 @@
+{
+  "schema_version": "1.0.0",
+  "nombre": "catalogo_tipos_documentales_aumento_cmc",
+  "fecha_corte": "2026-11-06",
+  "procedimiento": "aumento_cmc",
+  "objetivo": "Reconocimiento y extracción documental, no calificación normativa automática",
+  "unidades_analisis": [
+    "expediente",
+    "obra",
+    "pieza_documental",
+    "pagina_pdf"
+  ],
+  "estados_aprendizaje": [
+    "candidato",
+    "verificado_en_caso",
+    "criterio_adoptado",
+    "pendiente_afinacion"
+  ],
+  "estados_lectura": [
+    "no_iniciado",
+    "extraido_pendiente_cotejo",
+    "verificado_en_imagen",
+    "no_legible",
+    "no_aportado"
+  ],
+  "regla_pagina": {
+    "formato": "entero positivo 1-based",
+    "nombre_campo_excel": "inicial pág",
+    "columna_excel": "G",
+    "origen": "pagina_fisica_del_archivo_pdf_citado",
+    "identificar_pdf_en_registro_privado": true,
+    "no_usar_folio_impreso_como_pagina_pdf": true
+  },
+  "documentos": [
+    {
+      "id": "hoja_ruta",
+      "ambito": "expediente",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "hoja de ruta",
+        "cargo de presentación",
+        "registro de trámite",
+        "número de expediente"
+      ],
+      "estructura_posible": [
+        "cabecera con entidad o sistema",
+        "número de trámite o expediente",
+        "fecha y hora de ingreso",
+        "identificación de procedimiento y solicitante",
+        "folios declarados o anexos",
+        "estado de recepción"
+      ],
+      "extraer": [
+        "numero_expediente",
+        "procedimiento_declarado",
+        "fecha_presentacion",
+        "numero_folios_declarados",
+        "referencias_a_anexos"
+      ],
+      "no_confundir_con": [
+        "acreditacion_de_ejecucion_de_obra",
+        "constancia_de_admisibilidad"
+      ],
+      "observacion": "El número de folios declarados no equivale automáticamente a páginas de un PDF adjunto: el expediente puede tener otros archivos."
+    },
+    {
+      "id": "comprobante_pago",
+      "ambito": "expediente",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "voucher",
+        "comprobante de pago",
+        "recibo por derecho de trámite",
+        "constancia de operación"
+      ],
+      "estructura_posible": [
+        "entidad recaudadora o canal de pago",
+        "fecha de operación",
+        "número o código de operación",
+        "concepto del pago",
+        "monto y moneda",
+        "identificación del pagador cuando conste"
+      ],
+      "extraer": [
+        "concepto_pago",
+        "fecha_pago",
+        "monto_pagado",
+        "moneda",
+        "numero_operacion"
+      ],
+      "no_confundir_con": [
+        "acreditacion_de_capacidad",
+        "aprobacion_del_tramite"
+      ]
+    },
+    {
+      "id": "solicitud_o_ficha_rnp",
+      "ambito": "expediente",
+      "estado": "candidato",
+      "nombres_posibles": [
+        "solicitud de aumento de CMC",
+        "ficha RNP",
+        "declaración del proveedor"
+      ],
+      "estructura_posible": [
+        "datos del solicitante",
+        "representación legal o apoderado",
+        "tipo de trámite",
+        "declaraciones y firmas",
+        "listado de anexos o obras"
+      ],
+      "extraer": [
+        "razon_social",
+        "ruc",
+        "tipo_procedimiento",
+        "representante",
+        "fecha_solicitud"
+      ],
+      "no_confundir_con": [
+        "resolucion_otorgante"
+      ]
+    },
+    {
+      "id": "contrato_obra",
+      "ambito": "obra",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "contrato de ejecución de obra",
+        "contrato de obra",
+        "contrato suscrito"
+      ],
+      "estructura_posible": [
+        "título y número de contrato",
+        "partes: entidad/contratista o consorcio",
+        "antecedentes y adjudicación cuando consten",
+        "objeto y nombre de obra",
+        "CUI cuando corresponda",
+        "monto contractual y moneda",
+        "plazo y fecha de suscripción",
+        "obligaciones, anexos y firmas"
+      ],
+      "extraer": [
+        "numero_contrato",
+        "entidad_contratante",
+        "nombre_contratista",
+        "nombre_obra",
+        "objeto_contractual",
+        "cui",
+        "monto_contrato",
+        "moneda",
+        "plazo_contractual",
+        "fecha_suscripcion"
+      ],
+      "prioridad_campo_confirmada": [
+        "nombre_contratista"
+      ],
+      "no_inferir": [
+        "monto_liquidacion_final",
+        "fecha_recepcion",
+        "porcentaje_de_participacion_consorcial_sin_documento"
+      ]
+    },
+    {
+      "id": "documento_consorcio",
+      "ambito": "obra",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "contrato de consorcio",
+        "promesa formal de consorcio",
+        "acuerdo de participación",
+        "escritura de consorcio"
+      ],
+      "estructura_posible": [
+        "identidad de integrantes",
+        "representante común",
+        "obligaciones o distribución de participación",
+        "porcentajes",
+        "firmas y fecha"
+      ],
+      "extraer": [
+        "nombre_consorcio",
+        "integrantes",
+        "porcentaje_participacion",
+        "obligaciones_asumidas",
+        "fecha_acuerdo"
+      ],
+      "control": "No asumir que porcentaje de participación económica, obligaciones y experiencia computable son equivalentes si el soporte y la norma no lo acreditan."
+    },
+    {
+      "id": "acta_entrega_terreno",
+      "ambito": "obra",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "acta de entrega de terreno",
+        "entrega de terreno"
+      ],
+      "estructura_posible": [
+        "fecha y lugar de entrega",
+        "identificación de obra/contrato",
+        "entidad, contratista y supervisor",
+        "descripción de entrega/condiciones",
+        "firmas"
+      ],
+      "extraer": [
+        "fecha_entrega_terreno",
+        "nombre_obra",
+        "numero_contrato_referenciado",
+        "participantes",
+        "observaciones_entrega"
+      ],
+      "no_inferir": [
+        "fecha_recepcion",
+        "liquidacion_final"
+      ]
+    },
+    {
+      "id": "acta_inicio",
+      "ambito": "obra",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "acta de inicio",
+        "inicio de plazo",
+        "acta de inicio de obra"
+      ],
+      "estructura_posible": [
+        "fecha de inicio",
+        "contrato y obra",
+        "plazo o hitos",
+        "asistentes",
+        "firmas"
+      ],
+      "extraer": [
+        "fecha_inicio",
+        "numero_contrato_referenciado",
+        "plazo_referenciado",
+        "asistentes"
+      ],
+      "control": "Cotejar cronología con suscripción contractual y entrega de terreno; las fechas pueden ser contradictorias."
+    },
+    {
+      "id": "acta_recepcion",
+      "ambito": "obra",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "acta de recepción de obra",
+        "acta de recepción",
+        "conformidad de recepción"
+      ],
+      "estructura_posible": [
+        "comisión o comité de recepción",
+        "identificación de obra y contrato",
+        "fecha de recepción o reunión",
+        "constataciones y observaciones",
+        "conclusión de recepción",
+        "firmas en hojas posteriores"
+      ],
+      "extraer": [
+        "fecha_recepcion",
+        "obra_recepcionada",
+        "numero_contrato_referenciado",
+        "estado_recepcion",
+        "firmantes",
+        "observaciones_recepcion"
+      ],
+      "control": "La fecha en la apertura puede diferir de fechas de suscripción; verificar el texto y las firmas sin deducir fechas ausentes. No sustituir nombre del contratista cuando el contrato está disponible."
+    },
+    {
+      "id": "resolucion_modificatoria_obra",
+      "ambito": "obra",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "resolución de adicional",
+        "resolución de deductivo",
+        "resolución de mayores metrados",
+        "resolución de ampliación de plazo"
+      ],
+      "estructura_posible": [
+        "visto y considerandos",
+        "informes técnicos/jurídicos",
+        "identidad contractual",
+        "parte resolutiva",
+        "montos o plazo aprobado",
+        "anexos"
+      ],
+      "extraer": [
+        "tipo_modificacion",
+        "numero_resolucion",
+        "fecha_resolucion",
+        "numero_contrato_referenciado",
+        "monto_adicional",
+        "monto_deductivo",
+        "mayores_metrados",
+        "dias_aprobados"
+      ],
+      "control": "Separar cada modificación del monto contractual y de la liquidación; no sumar dos veces importes ya incluidos en la liquidación."
+    },
+    {
+      "id": "resolucion_liquidacion",
+      "ambito": "obra",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "resolución de aprobación de liquidación",
+        "liquidación de obra",
+        "resolución de liquidación"
+      ],
+      "estructura_posible": [
+        "identificación de entidad, obra y contrato",
+        "visto y antecedentes",
+        "informes técnico-financieros",
+        "considerandos",
+        "artículos resolutivos de aprobación",
+        "cuadro económico o anexos",
+        "reajustes, deductivos y saldos"
+      ],
+      "extraer": [
+        "numero_resolucion",
+        "fecha_liquidacion",
+        "numero_contrato_referenciado",
+        "monto_liquidacion_aprobado",
+        "monto_neto_obra_si_consta",
+        "deductivos",
+        "reajustes",
+        "saldo_favor"
+      ],
+      "control": "Ante importe de antecedentes diferente de parte resolutiva o cuadro, preservar ambos conceptos y observar discrepancia. No convertir automáticamente 'liquidación final' a 'monto neto computable'."
+    },
+    {
+      "id": "cuadro_liquidacion",
+      "ambito": "obra",
+      "estado": "verificado_en_caso",
+      "nombres_posibles": [
+        "resumen de liquidación",
+        "cuadro de costos",
+        "cuadro de valorizaciones",
+        "costo total de la obra"
+      ],
+      "estructura_posible": [
+        "montos contratados",
+        "valorizaciones",
+        "adicionales",
+        "deductivos",
+        "reajustes",
+        "IGV",
+        "saldos y costo final"
+      ],
+      "extraer": [
+        "monto_base",
+        "total_valorizaciones",
+        "monto_deductivos",
+        "monto_reajustes",
+        "igv",
+        "costo_total_obra"
+      ],
+      "control": "Registrar literal exacto de cada fila y unidad; cotejar fórmulas, no interpretar todos los importes como sinónimos."
+    },
+    {
+      "id": "documento_financiero",
+      "ambito": "expediente",
+      "estado": "candidato",
+      "nombres_posibles": [
+        "balance",
+        "estado de situación financiera",
+        "información financiera",
+        "ficha financiera",
+        "consulta intranet financiera"
+      ],
+      "estructura_posible": [
+        "ejercicio o fecha de corte",
+        "activo corriente",
+        "pasivo corriente",
+        "otros rubros contables",
+        "fuente y fecha de consulta"
+      ],
+      "extraer": [
+        "periodo_financiero",
+        "activo_corriente",
+        "pasivo_corriente",
+        "fuente_financiera"
+      ],
+      "control": "Solo completar f con datos financieros verificables; el Excel modelo resuelto no sustituye la evidencia del nuevo expediente."
+    },
+    {
+      "id": "consulta_institucional",
+      "ambito": "expediente",
+      "estado": "candidato",
+      "nombres_posibles": [
+        "consulta RNP",
+        "consulta CLC",
+        "récord de ejecución",
+        "constancia de inscripción",
+        "consulta intranet"
+      ],
+      "estructura_posible": [
+        "identificación consultada",
+        "fecha/hora de consulta",
+        "estado o vigencia",
+        "resultado de consulta",
+        "evidencia de procedencia"
+      ],
+      "extraer": [
+        "tipo_consulta",
+        "fecha_consulta",
+        "resultado",
+        "vigencia_rnp",
+        "capacidad_libre"
+      ],
+      "control": "No afirmar consulta realizada ni resultado institucional si la pantalla o documento no se ha recibido/consultado realmente."
+    }
+  ],
+  "fuentes_preferentes": [
+    {
+      "campo": "nombre_contratista",
+      "preferida": "contrato_obra",
+      "alternativa": "acta_recepcion",
+      "estado": "criterio_adoptado",
+      "fundamento": "instrucción explícita del titular de 2026-11-06",
+      "si_contradiccion": "registrar observacion y conservar ambas fuentes; no ocultar diferencia"
+    }
+  ],
+  "pendientes_precedencia": [
+    "nombre_obra",
+    "entidad_contratante",
+    "fecha_suscripcion",
+    "fecha_inicio",
+    "fecha_recepcion",
+    "monto_contrato",
+    "monto_liquidacion_aprobado",
+    "monto_neto_computable",
+    "porcentaje_participacion",
+    "adicionales",
+    "deductivos",
+    "reajustes"
+  ],
+  "privacidad": {
+    "repositorio_publico": "solo estructura, tipologías y patrones anonimizados",
+    "expediente": "fuentes, datos, páginas, identificadores y observaciones en almacenamiento privado autorizado"
+  },
+  "revision_humana_obligatoria": true
+}
