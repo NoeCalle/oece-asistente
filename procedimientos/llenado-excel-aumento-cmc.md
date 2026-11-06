@@ -1,3 +1,17 @@
+## Flujo incremental de expedientes con un PDF por obra (acuerdo operativo, 2026-11-06)
+
+**Objetivo:** admitir que el evaluador entregue un contrato o una obra a la vez, frecuentemente en archivos PDF separados, y que el agente **actualice acumulativamente el mismo libro de evaluación**, manteniendo el trabajo previo. No exigir un único PDF que contenga todas las obras ni esperar que el expediente completo esté disponible al inicio.
+
+1. **Primera entrega:** crear una copia de trabajo del libro MPR maestro compatible con Excel del evaluador y asignar ID persistente al expediente, revisión y a cada obra (`OB-01`, `OB-02`…). Ingresar parcialmente `Datos basicos`; para cada PDF recibido agregar su obra en `Obras nacional` solo con datos sustentados en esa entrega. Registrar los campos aún no disponibles sin completar con supuestos.
+2. **Entregas siguientes:** recibir otro PDF de nueva obra o documentos adicionales de una obra ya registrada. Identificar la obra por contrato/entidad/objeto/CUI y cotejar identificadores; **no crear una obra duplicada** solo porque llegó un segundo archivo. Incorporar los datos nuevos al libro existente sin borrar los anteriores, manteniendo una copia de revisión versionada.
+3. **Trazabilidad por PDF:** dado que cada obra puede tener su propio PDF, el número de la columna `G` («inicial pág») es la **página 1-based del PDF concreto del que se extrajo el dato**; nunca una página global ficticia. Conservar junto a la obra una referencia inequívoca `nombre_archivo/ID` del documento fuente y, si hace falta, un inventario separado `obra → documentos → página → campo`. Cuando varios PDF sustenten un campo, seleccionar el preferente según la matriz por afinar, y preservar alternativas/referencias en observaciones.
+4. **Estado por obra y campo:** `parcial`, `pendiente_sustento`, `observado`, `listo_para_revision`; no confundir contrato recibido con culminación o liquidación acreditada. Un contrato aislado permite completar datos contractuales, no inventar recepción, liquidación, adicionales ni montos finales.
+5. **Acumulación segura:** mantener encabezados de nombres en celdas combinadas, fórmulas intactas, datos y notas de obras anteriores, y la plantilla original sin cambios. Antes de cada actualización, cotejar el libro previo y generar registro de cambios (qué obra, campo, fuente y versión cambió). Si la capacidad de bloques de obra de la plantilla se agota, **detener la inserción estructural automática** y plantear una ampliación diseñada sin afectar fórmulas.
+6. **Salida de cada ronda:** entregar (a) versión actualizada acumulativa del Excel, (b) observaciones nuevas y pendientes, y (c) resumen breve de obras incorporadas/actualizadas. Si se utiliza generador de Excel 2013, los datos validados se preparan aquí y la escritura binaria se ejecuta con Excel nativo en el equipo autorizado, preservando el libro; **no prometer XLSB directamente generado en la nube**.
+7. **Validación final:** cuando el usuario indique que ya entregó todas las obras, efectuar revisión transversal (duplicados, vacíos, integridad, netos, porcentajes, factores y fórmulas) y presentar versión consolidada para revisión profesional. El libro se considera `en curso` hasta entonces.
+
+**Ejemplo:** primera ronda recibe `Contrato_Obra_A.pdf` y completa datos de contrato y su página fuente; segunda recibe `Acta_Recepcion_A.pdf` y actualiza la misma OB-01; tercera recibe `Contrato_Obra_B.pdf` y agrega OB-02; cada ronda conserva las anteriores. La preferencia del contrato sobre acta para el *nombre del contratista* permanece como criterio inicial y el resto de la matriz se afinará posteriormente.
+
 ## Pendiente de afinación: jerarquía de documentos fuente para datos repetidos (2026-11-06)
 
 **Estado: PENDIENTE DE DEFINICIÓN Y VALIDACIÓN CON EXPEDIENTES REALES.** Un mismo dato puede figurar en varias piezas (contrato, acta de entrega de terreno, acta de recepción, liquidación y resolución). No debe tratarse automáticamente como error que la columna `inicial pág` señale una página distinta de la usada por otro evaluador, si ambas fuentes respaldan el mismo dato.
@@ -10,7 +24,7 @@
 
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.9.
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 1.8
 **Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
