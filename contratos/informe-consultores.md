@@ -18,6 +18,7 @@ Si la IA no dispone de generación de Word/CSV, **no afirmar producción**: entr
 - Antecedentes RNP, categoría solicitada, régimen temporal/condiciones y datos de representación cuando correspondan.
 - **Análisis de cada experiencia:** ID, contrato de consultoría, objeto, origen, culminación/conformidad, período, honorarios, comprobantes, consorcio, vínculos documentales y observaciones.
 - **Controles AC:** evaluación individual con resultado motivado (cumple/no_cumple/pendiente/no_aplica). No inferir todo el cumplimiento a partir de una constancia.
+- **Observaciones de integridad documental:** para cada contrato, resolución o constancia con hojas, cláusulas o párrafos ausentes/truncados, documentar `INT-DOC-###`, enlace y páginas visibles, estado de comprobación y acción propuesta. **La observación subsiste aunque se encuentren todos los datos necesarios en las demás hojas.** Seguir [control de integridad](../procedimientos/control-integridad-documental.md); no convertir sospecha sin prueba en falta confirmada.
 - Contradicciones y documentos faltantes; hechos que requieran validación profesional.
 - Conclusión documental **no vinculante**, estado `completo_para_revision`, `parcial_con_pendientes` o `bloqueado`; sin otorgamiento de categoría.
 
