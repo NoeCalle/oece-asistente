@@ -1,5 +1,9 @@
 # Estado de OECE Assistant
 
+## Aprendizaje operativo — integridad documental, 05/11/2026
+
+**Regla incorporada:** revisión visual de **documentos completos**, no solo las páginas con información necesaria. Para contratos, resoluciones y demás documentos se genera una **observación por integridad** si faltan cláusulas, artículos, párrafos u hojas, o existe un indicio concreto, **aunque ya se disponga de todos los datos sustantivos necesarios**. Se distingue ausencia confirmada de sospecha, ilegibilidad y fallas OCR; la consecuencia legal queda pendiente de sustento. Aplicación transversal en coordinador, especialista CMC, especialista consultores, entregables y prompt. [Procedimiento](../procedimientos/control-integridad-documental.md). Prueba con expedientes reales aún pendiente.
+
 ## Arquitectura principal agent-first — 05/11/2026
 
 **Implementado en GitHub:** [coordinador](../agentes/coordinador.md), [especialista CMC](../agentes/especialista-cmc.md), [especialista consultores](../agentes/especialista-consultores.md), [consulta normativa](../agentes/consulta-normativa.md), [procedimientos y contratos](ARQUITECTURA_AGENTES.md), [prompt portable](PROMPT_OECE_UNIVERSAL.md) y [pruebas de aceptación](PRUEBAS_AGENTES.md). La modalidad preferida es **la IA de suscripción ejecutando roles por instrucciones**: normas y expedientes desde Drive, resultados a Drive, código/prompts en GitHub. **No requiere iniciar MCP, panel o Python** como paso obligatorio.
