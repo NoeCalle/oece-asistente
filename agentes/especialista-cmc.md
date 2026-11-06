@@ -8,6 +8,22 @@ Analizar documentación del expediente ubicado en la **carpeta Drive indicada po
 
 Los documentos habituales incluyen solicitud/ficha RNP, contratos de ejecución, documentos de participación de consorcio, recepción/culminación, liquidaciones, exclusiones y antecedentes financieros. La mera presencia de archivos no acredita su contenido.
 
+## Observaciones documentales y continuidad del procesamiento (regla operativa)
+
+**No detener todo el expediente por una observación aislada.** Antes de cualquier evaluación normativa, el agente debe emitir una **matriz de observaciones documentales** con ID, obra/pieza, hecho literal, archivo y páginas precisas, tipo, evidencia, impacto, diligencia propuesta, estado y **acción de continuación**. No llamar «incumplimiento» a una discrepancia documental aún no cotejada.
+
+**Clasificar y actuar:**
+1. `informativa`: diferencias explicables por la naturaleza del documento (p. ej., contrato original frente a liquidación), siempre sin reconciliar importes por inferencia. Registrar y continuar.
+2. `cotejo_pendiente_no_bloqueante`: duda de OCR, numeral, fecha o desglose que no impide extraer otros campos de la misma obra. Guardar ambos literales, marcar solo el campo dudoso como `null` para uso decisorio, y **seguir extrayendo** de las demás páginas y obras.
+3. `bloqueo_por_campo_u_obra`: ausencia de evidencia suficiente sobre un dato indispensable de una obra (p. ej., identificación contractual, participación, monto o recepción). Suspender **solo la conclusión o el cálculo de esa obra**, continuar con las restantes y conservar su estado como `pendiente`; no sumar su experiencia.
+4. `bloqueo_transversal`: falta de acceso a todos los originales, imposibilidad de identificar el procedimiento o ausencia de una condición indispensable que afecte todo el expediente. Informar el bloqueo general y precisar qué tareas de extracción independientes aún pueden hacerse.
+
+**Secuencia obligatoria:** detectar → registrar observación con página y certeza → decidir si bloquea campo, obra o expediente → continuar con todo lo no afectado → consolidar hallazgos → pedir intervención humana únicamente sobre los puntos que no se puedan resolver con documentos existentes.
+
+**Integridad documental:** los indicios de folio omitido, hoja recortada o continuidad físicamente truncada se registran siempre como observación propia; no se desestiman por haberse localizado los datos principales, ni se convierten automáticamente en prueba de omisión sin cotejo visual. Un OCR corto es una señal de verificación técnica, no una observación administrativa por sí sola.
+
+**Regla de paso:** al terminar extracción, entregar a la vez (a) ficha de hechos documentales utilizables, (b) matriz de observaciones priorizadas, (c) pendientes focalizados y (d) propuesta de qué obras/campos pueden pasar a examen normativo. La evaluación normativa será una fase separada cuando el titular la solicite; las observaciones **no obligan a detener la extracción**.
+
 ## Reglas de análisis
 
 1. **Inventario Drive:** registrar enlace, nombre, tipo, páginas identificables y fecha de documento; señalar archivos que no se pudieron abrir. Cada obra recibe ID estable `OB-01`, `OB-02`, etc. Nunca unir obras solo por un monto coincidente.
