@@ -1,6 +1,6 @@
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.4.
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.5.
 **Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
@@ -72,6 +72,21 @@ Al definir cada instrucción, registrar además:
 
 La secuencia para `Obras nacional`, `CLC`, `Hoja Calculo`, `datos` y `CALCULO CMC` se documentará cuando el evaluador la describa; los nombres de hoja **no equivalen** a una secuencia de ejecución confirmada. El análisis sustantivo se mantiene sujeto al [procedimiento general](aumento-cmc.md).
 
+## Tratamiento de PDF extensos con múltiples contratos de experiencia (confirmado 2026-11-06)
+
+El evaluador advierte que el documento más voluminoso puede ser el que acredita experiencia y que el proveedor puede adjuntar **varios contratos y sus documentos sustentatorios reunidos en un solo PDF**. Por tanto:
+
+1. **Un archivo PDF no equivale a una obra ni a un contrato.** Antes de extraer montos, inspeccionar la totalidad del archivo y construir un índice interno por obra/contrato.
+2. Para cada bloque identificar su **primera y última página del PDF**, folios impresos cuando existan, tipo de pieza (contrato, adenda, acta, recepción, liquidación, consorcio u otros), entidad, objeto, números, fechas y vínculos entre piezas.
+3. Asignar IDs estables `OB-01`, `OB-02`, etc.; una obra puede abarcar varios tramos no contiguos y un contrato puede aparecer junto con varios documentos. Registrar **cada tramo exacto** en el índice, sin atribuir documentos a una obra solo por cercanía de páginas.
+4. La revisión puede hacerse por lotes de páginas para manejar PDFs grandes, pero **debe cubrir todas las páginas** y dejar constancia de páginas no procesadas, ilegibles, repetidas o fuera de orden. No concluir que el expediente fue revisado integralmente solo por leer los primeros segmentos o extraer texto.
+5. Aplicar [control de integridad documental](control-integridad-documental.md): cotejar numeración visible, continuidad física y páginas faltantes. Diferenciar defectos de escaneo de errores de OCR; contrastar visualmente cuando sea necesario.
+6. Vincular cada valor extraído a `archivo PDF + página(s) del archivo + folio(s) impresos si los hay + obra/contrato + pieza documental`. Contrastar datos incompatibles o contradictorios; no sumar automáticamente todos los contratos ni asumir que todos cumplen requisitos.
+7. Solo después del índice y cotejo pasar los datos acreditables a las celdas de la plantilla; **preservar fórmulas y diseño**, registrar hoja/celda y comprobar el valor guardado.
+8. Los PDF originales y el índice por expediente se conservan en Drive o almacenamiento privado autorizado; **en GitHub solo el procedimiento genérico y pruebas sintéticas**.
+
+**Modelo mínimo del índice privado (por contrato/obra):** `obra_id`, `pdf_origen`, `tramos_paginas_pdf`, `folios_impresos`, `tipo_documento`, `numero_contrato`, `entidad`, `fecha`, `monto`, `moneda`, `participacion`, `observaciones`, `estado_revision`. Los campos no sustentados quedan pendientes, nunca inferidos.
+
 ## Reglas de ejecución para GrokBot u otro agente con PC virtual
 
 1. Leer primero `AGENTS.md`, `agentes/especialista-cmc.md`, `procedimientos/aumento-cmc.md` y este POE; operar solo con permisos y herramientas realmente disponibles.
@@ -90,6 +105,7 @@ La secuencia para `Obras nacional`, `CLC`, `Hoja Calculo`, `datos` y `CALCULO CM
 | 2026-11-06 | 0.2 | Mientras no se use GrokBot, el evaluador ingresa datos manualmente. Hay información exclusiva de PDF que puede extraer ChatGPT, Claude o Grok con acceso efectivo. Se permite flujo híbrido y refinamiento progresivo | Confirmada |
 | 2026-11-06 | 0.3 | ChatGPT, Claude o Grok pueden **extraer de los PDF y llenar directamente la plantilla Excel**, siempre que tengan acceso y herramientas de lectura/escritura; verificar persistencia y fórmulas. La intervención manual se reserva para tareas sin acceso o que necesiten revisión | Confirmada |
 | 2026-11-06 | 0.4 | GrokBot se reserva principalmente para navegación automatizada de la intranet con PC virtual; extracción PDF y edición Excel no son funciones exclusivas de GrokBot y pueden realizarlas ChatGPT/Claude. Hasta probar el acceso, la intranet la atiende manualmente el evaluador | Confirmada |
+| 2026-11-06 | 0.5 | Un PDF de experiencia puede reunir múltiples contratos, liquidaciones y anexos; indexar cada obra con rangos de páginas y evidencias, cubrir el documento completo y no equiparar un archivo con una obra | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
