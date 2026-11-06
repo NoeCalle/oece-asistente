@@ -106,6 +106,15 @@ Al continuar, revisar los tramos documentales completos por obra; documentar el 
 
 **Alcance de esta iteración:** los datos generales y económicos iniciales se llenan solo en lo acreditado; `Obras nacional` se llena con tres obras y sus páginas, además de reservas OB-01 (diferencia liquidación), OB-02 (identidad contractual y cronología) y OB-03 (liquidación vs deductivo/fecha acta). **Es un llenado preliminar, no una CMC otorgada.**
 
+### Preservación obligatoria de la plantilla Excel (incidente REV13 → REV14)
+
+- **Crear una copia del archivo original y trabajar sobre ella**; nunca recrear la plantilla desde cero ni alterar el archivo fuente.
+- Escribir solo en celdas de datos habilitadas. Verificar previamente combinaciones: **G8, G30 y G52 son celdas interiores de rangos combinados** y nunca se deben usar para números de página. Las páginas van en G9:G24, G31:G46 y G53:G68 según los datos correspondientes.
+- Conservar exactamente todas las fórmulas, combinaciones, nombres de pestañas, validaciones, dibujos y elementos adjuntos de la plantilla. No reemplazar fórmulas por sus valores calculados (incidente `datos!F4`).
+- Un motor de exportación que reserializa el libro y pierde elementos o modifica combinaciones **no es apto para entregar la copia**. En ese caso, preservar el paquete original y modificar únicamente las celdas de entrada, sin reexportar indiscriminadamente el libro.
+- **Prueba estructural obligatoria previa a entrega:** comparar por hoja el número y texto de las fórmulas, las referencias de todos los rangos combinados, los nombres de hoja, los archivos de imágenes/dibujos, las relaciones y las demás partes del Excel; verificar que cualquier cambio se limite a las entradas intencionales.
+- En REV14 se preservaron 4.210 fórmulas, 1.706 rangos combinados en 6 hojas y las seis imágenes originales. Se incorporaron 8 datos en `Datos basicos`, 120 en `Obras nacional` y solo se corrigió el formato de tres celdas de fecha.
+
 ## Lección del primer piloto: evaluación ciega sin Excel previamente resuelto (2026-11-06)
 
 **En operación real no existe Excel de evaluación completado por un tercero.** El único libro de entrada editable es una **copia limpia de la plantilla institucional vigente**. El expediente, las consultas autorizadas y la biblioteca normativa son las fuentes de datos; la copia de una evaluación anterior solo sirve en pruebas como patrón de comparación **después de producir y congelar el resultado independiente**, nunca para extraer montos, factores, notas o fórmulas de un nuevo caso.
@@ -212,6 +221,7 @@ El evaluador advierte que el documento más voluminoso puede ser el que acredita
 | 2026-11-06 | 1.0 | Lectura de PDF por lotes de 15–20 páginas como máximo; guardar checkpoint por lote, reanudar tras cortes y medir progreso desde archivos confirmados, no desde intentos | Confirmada |
 | 2026-11-06 | 1.1 | El piloto con Excel ya resuelto no prueba llenado autónomo; iniciar desde plantilla limpia, usar evaluación anterior solo como patrón posterior y distinguir simulación de libro institucional completo | Confirmada |
 | 2026-11-06 | 1.2 | Orden Datos basicos→Obras nacional; F4/F5 y fuentes, G=«inicial pág» del PDF, J=datos, L=observaciones; transcripción textual de nombres y tipos numéricos intactos | Confirmada |
+| 2026-11-06 | 1.3 | Copia fiel de plantilla y prueba estructural antes de entregar; evitar celdas combinadas interiores y pérdida de fórmulas/dibujos por exportación | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
