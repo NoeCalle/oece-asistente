@@ -141,7 +141,7 @@ class PuenteMCP(unittest.TestCase):
         rows=[json.loads(line) for line in p.stdout.splitlines()];self.assertEqual(2,len(rows))
         self.assertEqual('E1',rows[1]['result']['structuredContent']['casos'][0]['caso'])
     def test_incorporar_conserva_origen_y_no_sobrescribe(self):
-        source=self.root/'pendiente.txt';source.write_text('Original ficticio',encoding='utf-8')
+        source=self.root/'entrada'/'E1'/'pendiente.txt';source.parent.mkdir(parents=True,exist_ok=True);source.write_text('Original ficticio',encoding='utf-8')
         result=self.bridge.ejecutar('oece_incorporar',{'caso':'E1','origen':'pendiente.txt'})
         self.assertEqual(sha(source.read_bytes()),result['sha256']);self.assertTrue(source.exists())
         with self.assertRaises(OSError):self.bridge.ejecutar('oece_incorporar',{'caso':'E1','origen':'pendiente.txt'})
