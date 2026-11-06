@@ -22,6 +22,7 @@ CONTRATOS = [
 PROCEDIMIENTOS = [
     "procedimientos/aumento-cmc.md",
     "procedimientos/ampliacion-consultores.md",
+    "procedimientos/control-integridad-documental.md",
 ]
 ENTRADAS = [
     "AGENTS.md", "CLAUDE.md", "GROK.md",
@@ -86,6 +87,33 @@ class ArquitecturaAgentes(unittest.TestCase):
         self.assertIn("antes", normative)
         self.assertIn("internet", normative)
         self.assertIn("no se puede consultar", normative)
+
+
+    def test_integridad_documental_no_se_confunde_con_suficiencia(self):
+        procedimiento = read("procedimientos/control-integridad-documental.md")
+        for item in ("capacitaci", "05/11/2026", "aunque",
+                     "indicio_incompletitud", "incompleto_confirmado",
+                     "no_verificable", "cláusulas", "párrafos", "OCR",
+                     "consecuencia_administrativa"):
+            with self.subTest(item=item):
+                self.assertIn(item, procedimiento)
+        for path in ("agentes/coordinador.md",
+                     "agentes/especialista-cmc.md",
+                     "agentes/especialista-consultores.md",
+                     "contratos/control-evidencias.md",
+                     "docs/PROMPT_OECE_UNIVERSAL.md",
+                     "contratos/entregables-cmc.md",
+                     "contratos/informe-consultores.md"):
+            text = read(path)
+            with self.subTest(path=path):
+                self.assertIn("control-integridad-documental.md", text)
+                self.assertIn("observaci", text.lower())
+        cmc = read("contratos/entregables-cmc.md")
+        self.assertIn("entregable-01-datos.json", cmc)
+        self.assertIn("ficha-maestra.json", cmc)
+        consultants = read("contratos/informe-consultores.md")
+        self.assertIn("matriz", consultants.lower())
+        self.assertIn("integridad documental", consultants.lower())
 
     def test_legacy_no_es_obligatorio_y_falta_prueba_cloud(self):
         agents = read("AGENTS.md")
