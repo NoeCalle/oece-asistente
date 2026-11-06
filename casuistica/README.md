@@ -7,6 +7,10 @@
 - [Catálogo JSON de tipos de documentos](tipos-documentales-cmc.v1.json) — identificadores estables, títulos alternativos, estructura típica, campos candidatos, unidad de análisis, señales de reconocimiento y controles. Orientado al análisis automatizado.
 - [Casuística y lecciones del piloto](patrones-y-lecciones-cmc.md) — casos observados, soluciones operativas confirmadas, hipótesis, excepciones y pendientes de afinación.
 
+## Patrones de organización de carpetas
+
+Además de reconocer el contenido de cada PDF, el catálogo incluye `patrones_organizacion_carpetas`: **CARP-CMC-001** describe la variante de subcarpeta `AUM/INICIAL`, con **13 contratos PDF numerados** y archivos administrativos separados que se reconocen tentativamente por nombre: `2026-…-LIMA.pdf` (hoja de ruta) y `R#####.pdf` (pago), según la explicación del titular del 06/11/2026. Véase [CAS-CMC-012](patrones-y-lecciones-cmc.md). Los números, prefijos y nombres de carpetas **no son universales**; siempre abrir el documento antes de dar por acreditado su contenido. La lectura debe actualizar acumulativamente el Excel MPR y el Word de observaciones.
+
 ## Algoritmo del agente al recibir cada archivo
 
 1. **Inventariar el archivo:** nombre real, identificador/URL de origen, páginas PDF, huella si es posible, fecha de recepción y expediente al que pertenece; no inferir contenido por nombre únicamente.
