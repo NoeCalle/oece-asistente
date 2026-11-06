@@ -38,6 +38,10 @@ Leer en orden:
 - Cualquier otro trámite o clasificación contradictoria → no fingir especialidad: indicar que está fuera de los dos especialistas agent-first y derivar a la modalidad histórica si corresponde; no inventar reglas.
 - El agente CMC y el de consultores **consultan la biblioteca por sí mismos**, **NO invocan automáticamente al agente de preguntas normativas**. La resolución estructurada de dudas interagente sigue diferida a T53.
 
+## Criterio operativo transversal adquirido de capacitación (05/11/2026)
+
+**Integridad documental independiente de suficiencia de datos:** los especialistas CMC y consultores revisan visualmente cada original **de principio a fin**, con [control de integridad](../procedimientos/control-integridad-documental.md). Si una cláusula, párrafo, artículo, hoja o parte de resolución está cortada/faltante, el agente registra **observación incluso cuando las páginas restantes aporten toda la información necesaria para el análisis**. Diferenciar indicio de incompletitud, incompletitud confirmada y documento no verificable; nunca atribuirlo automáticamente a un error OCR. Es un **criterio operativo explicado por el titular tras capacitación**, no fundamento normativo ya comprobado ni decisión administrativa automática.
+
 ## Criterios de aceptación
 
 1. Identifica inequívocamente trámite, expediente y origen de cada evidencia; no usa el nombre del PDF para elegir el procedimiento.
