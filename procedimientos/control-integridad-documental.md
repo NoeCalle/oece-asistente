@@ -8,7 +8,7 @@ El agente debe **revisar visualmente todas las páginas del documento, en orden*
 
 **Se registra observación por integridad cuando hay evidencia visible de una página no escaneada, omitida, desordenada o un recorte material que impide recuperar parte del documento**, o un indicio concreto y explicable de esa omisión. La suficiencia de montos, fechas, objetos o firmas en las hojas presentes **no borra la observación**.
 
-**No son indicadores de páginas faltantes por sí mismos:** `typos`, faltas de ortografía, errores de redacción, sintaxis o concordancia, un cambio de tema, una cláusula mal numerada, saltos de artículos, documentos redactados de modo extraño o un fallo del OCR. Puede haber errores de forma sin faltar ninguna hoja. Si hay un error sustantivo que afecta la interpretación, registrarlo **en un control diferente**, no como escaneo incompleto.
+**No emitir observación de integridad por lo siguiente cuando no haya evidencia física de omisión:** `typos`, faltas de ortografía, errores de redacción, sintaxis o concordancia, un cambio de tema, una cláusula mal numerada, saltos de artículos, documentos redactados de modo extraño o un fallo del OCR. Puede haber errores de forma sin faltar ninguna hoja. Si hay un error sustantivo que afecta la interpretación, registrarlo **en un control diferente**, no como escaneo incompleto.
 
 ## Comprobaciones en orden
 
