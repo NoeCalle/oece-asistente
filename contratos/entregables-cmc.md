@@ -15,7 +15,7 @@ Carpeta de revisión del expediente de Drive, con **cuatro JSON independientes**
 
 ## Observaciones obligatorias por documentos incompletos
 
-Aplicar [control de integridad documental](../procedimientos/control-integridad-documental.md) a cada contrato, resolución, liquidación y demás originales del expediente. Si hay cláusula, hoja o párrafo incompleto, **registrar observación aunque montos, fechas, objeto y recepción sean suficientes**. La observación `INT-DOC-###` debe figurar en `ficha-maestra.json` (apartado `observaciones`), junto a la obra/documento en `entregable-01-datos.json` y, cuando incida en el sustento, en los pendientes de los entregables 2 y 3. Mantener las **seis claves** de la ficha maestra vigente y la estructura JSON original. No hacer pasar un indicio por confirmación ni cerrar el documento como íntegro sin revisión de todas las páginas.
+Aplicar [control de integridad del escaneo](../procedimientos/control-integridad-documental.md) a todos los originales. Cuando la **numeración de hojas** salte (p. ej., `2/5 → 4/5` sin `3/5`), exista pérdida material o un párrafo **objetivamente truncado al cambiar de hoja**, registrar `INT-DOC-###` **aunque montos, fechas y objeto se encuentren en las hojas presentes**. No emitir observación por simples typos, errores de redacción o de numeración de cláusulas sin evidencia de omisión. La observación figura en `ficha-maestra.json.observaciones`, en la obra/documento de `entregable-01-datos.json` y como pendiente de 2 y 3 cuando corresponda. Mantener las **seis claves** de la ficha maestra. Indicar si es indicio o ausencia confirmada.
 
 ## Claves de control que debe conservar el agente
 
