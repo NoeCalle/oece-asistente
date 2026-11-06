@@ -18,6 +18,23 @@
 | CAS-CMC-010 | El campo **«inicial pág»** del Excel puede citar páginas distintas si el dato está repetido en varias piezas | Registrar página física del PDF elegido y también ID/nombre del PDF; aplicar preferencias por campo conforme se vayan confirmando | **Pendiente de afinación** |
 | CAS-CMC-011 | La plantilla puede contener **encabezados combinados** para nombre de obra y formularios con fórmulas | Escribir texto en celda ancla sin descombinar; comprobar fórmulas/compatibilidad con Excel del usuario antes de dar archivo por válido | Criterio de trabajo adoptado |
 
+## CAS-CMC-012 — Carpeta INICIAL con contratos numerados, hoja de ruta y pago separados
+
+**Registro: 06/11/2026 · Origen: captura de la lista de archivos de Drive y explicación directa del evaluador. Estado: patrón visual observado + interpretación de nombres confirmada por el titular, pendiente cotejo del contenido de cada PDF.** Se registra únicamente la estructura anonimizada; no se suben PDFs, capturas originales ni identificadores reales del trámite al repositorio.
+
+**Estructura observada:** carpeta de expediente de aumento CMC con subcarpeta `AUM/INICIAL`. Dentro, **13 archivos PDF separados**, numerados `01_` a `13_`, cuyos nombres incluyen `CONTRATO` y una referencia descriptiva de obra; también aparece **un PDF administrativo cuyo nombre comienza por el año y código del trámite** (patrón `2026-…-LIMA.pdf` en esta muestra), y **un PDF con nombre `R` seguido de números** (patrón `R#####.pdf`).
+
+**Significado informado por el evaluador:**
+- `01_CONTRATO...pdf`, `02_CONTRATO...pdf`, etc. → **candidatos a documentos contractuales de obras diferentes**. No asumir que son 13 obras admisibles ni que un contrato incluye recepción o liquidación.
+- `2026-…-LIMA.pdf` → **hoja de ruta** del trámite; identificar expediente y datos de presentación al abrir.
+- `R#####.pdf` → **comprobante o constancia de pago del derecho de trámite**; verificar concepto, operación, fecha e importe en el documento.
+
+**Reglas para inventario automatizado:** (1) reconocer la agrupación `AUM/INICIAL` cuando exista, sin volverla ruta obligatoria universal; (2) registrar **cada PDF por separado**, con su nombre/ID y clasificación `candidato_por_nombre`; (3) ordenar contratos por prefijo numérico pero **confirmar la relación obra↔contrato leyendo el PDF** antes de asignar `OB-##`; (4) clasificar hoja de ruta y pago como piezas del **expediente general**, no experiencias de obra; (5) permitir varias piezas dentro de un mismo PDF o varias piezas de una obra repartidas en PDFs; (6) no deducir ausencia de actas/resoluciones solo porque no se ven con ese nombre: podrían figurar como anexos internos. Registrar `documentos_pendientes_de_verificar` cuando corresponda.
+
+**Impacto en los dos entregables:** los datos contractuales que se acrediten alimentan progresivamente el **Excel MPR**; diferencias, faltantes y asuntos verificables se resumen en el **Word de observaciones**. Los nombres de archivo sirven para orientar la lectura, **nunca como evidencia suficiente del contenido**. No extraer montos, fechas ni afirmaciones de suficiencia del simple listado.
+
+**Aprendizaje para próximas muestras:** verificar si otros expedientes repiten los prefijos `R` y `20XX-...`, y registrar excepciones cuando un archivo con prefijo coincidente tenga otra naturaleza. Estas convenciones son heurísticas locales, no reglas institucionales universales.
+
 ## Ficha de captura de una nueva casuística
 
 Cada nueva situación se registra como **observación verificable**, no como generalización automática:
