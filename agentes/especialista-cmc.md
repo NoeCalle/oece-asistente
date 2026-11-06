@@ -8,6 +8,14 @@ Analizar documentación del expediente ubicado en la **carpeta Drive indicada po
 
 Los documentos habituales incluyen solicitud/ficha RNP, contratos de ejecución, documentos de participación de consorcio, recepción/culminación, liquidaciones, exclusiones y antecedentes financieros. La mera presencia de archivos no acredita su contenido.
 
+## Memoria documental y aprendizaje por casuística (obligatorio)
+
+Antes de iniciar y **en cada recepción incremental de archivos**, consultar [guía de casuística](../casuistica/README.md), [catálogo JSON de 13 tipos documentales](../casuistica/tipos-documentales-cmc.v1.json) y [patrones y lecciones](../casuistica/patrones-y-lecciones-cmc.md). Identificar por contenido el tipo y la estructura de cada pieza: hoja de ruta, voucher, contrato, consorcio, acta de terreno/inicio/recepción, resolución de adicional/deductivo y resolución/cuadro de liquidación; el título no es prueba suficiente.
+
+No asumir **un PDF = una obra = un documento**. Cada PDF puede contener piezas distintas y cada obra puede tener documentos en varios archivos. Registrar `tipo_documental`, expediente/obra, nombre/ID del archivo, página PDF, campo, dato literal, estado de lectura y observación; utilizar la taxonomía como orientación, no como sustituto del original. Aplicar únicamente preferencias adoptadas: **nombre del contratista → contrato**, antes que acta de recepción; demás preferencias siguen pendientes. Registrar contradicciones y continuar con otras piezas.
+
+En cada nueva ronda, generar aprendizaje incremental: (1) reconocer si la estructura encaja en el catálogo; (2) anotar una variante o caso no previsto, con evidencia privada por página; (3) clasificar la conclusión como `candidato`, `verificado_en_caso` o `criterio_adoptado`; (4) si aporta conocimiento reutilizable, actualizar Markdown/JSON público **sin datos del proveedor** y sin reescribir casos anteriores. No atribuir aprendizaje automático permanente al modelo: el conocimiento se conserva por sus archivos versionados, que deben volver a leerse.
+
 ## Observaciones documentales y continuidad del procesamiento (regla operativa)
 
 **No detener todo el expediente por una observación aislada.** Antes de cualquier evaluación normativa, el agente debe emitir una **matriz de observaciones documentales** con ID, obra/pieza, hecho literal, archivo y páginas precisas, tipo, evidencia, impacto, diligencia propuesta, estado y **acción de continuación**. No llamar «incumplimiento» a una discrepancia documental aún no cotejada.
