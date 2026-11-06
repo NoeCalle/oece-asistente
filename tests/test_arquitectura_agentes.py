@@ -115,6 +115,37 @@ class ArquitecturaAgentes(unittest.TestCase):
         self.assertIn("matriz", consultants.lower())
         self.assertIn("integridad documental", consultants.lower())
 
+    def test_hojas_no_escaneadas_no_son_typos(self):
+        control = read("procedimientos/control-integridad-documental.md")
+        for phrase in (
+            "2/5", "4/5", "3/5", "numeracion_impresa_visible",
+            "continuidad de lectura", "typos", "redacción",
+            "no son indicadores", "cláusulas", "OCR",
+            "indicio_incompletitud", "incompleto_confirmado",
+            "no_verificable", "recorte_material",
+            "No emitir", "cambio de tema",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase.lower(), control.lower())
+        examples = read("docs/PRUEBAS_AGENTES.md")
+        for phrase in ("1/5", "2/5", "4/5", "typo",
+                       "cambio temático", "OCR", "No afirmar",
+                       "no escaneadas"):
+            with self.subTest(example=phrase):
+                self.assertIn(phrase.lower(), examples.lower())
+        for path in ("AGENTS.md", "agentes/coordinador.md",
+                     "agentes/especialista-cmc.md",
+                     "agentes/especialista-consultores.md",
+                     "contratos/control-evidencias.md",
+                     "contratos/entregables-cmc.md",
+                     "contratos/informe-consultores.md",
+                     "docs/PROMPT_OECE_UNIVERSAL.md"):
+            content = read(path).lower()
+            with self.subTest(file=path):
+                self.assertIn("2/5", content)
+                self.assertIn("typo", content)
+                self.assertIn("control-integridad-documental.md", content)
+
     def test_legacy_no_es_obligatorio_y_falta_prueba_cloud(self):
         agents = read("AGENTS.md")
         self.assertIn("NO exigir", agents)
