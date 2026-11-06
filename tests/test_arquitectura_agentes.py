@@ -120,7 +120,7 @@ class ArquitecturaAgentes(unittest.TestCase):
         for phrase in (
             "2/5", "4/5", "3/5", "numeracion_impresa_visible",
             "continuidad de lectura", "typos", "redacción",
-            "no son indicadores", "cláusulas", "OCR",
+            "no emitir observación", "cláusulas", "OCR",
             "indicio_incompletitud", "incompleto_confirmado",
             "no_verificable", "recorte_material",
             "No emitir", "cambio de tema",
