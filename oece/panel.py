@@ -1,5 +1,6 @@
 """Panel OECE local; IA agnóstica mediante cliente MCP, sin llamadas API del panel."""
 import base64
+from collections import deque
 from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -9,6 +10,7 @@ from pathlib import Path
 import re
 import secrets
 import threading
+import time
 from urllib.parse import parse_qs, urlsplit
 import uuid
 
@@ -21,7 +23,13 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
     root=Path(root).resolve();root.mkdir(parents=True,exist_ok=True)
     token=secrets.token_hex(32);pool=ThreadPoolExecutor(max_workers=1)
     remoto = host not in ('127.0.0.1', 'localhost', '::1')
-    password = (os.environ.get('OECE_PANEL_PASSWORD') or secrets.token_urlsafe(24)) if remoto else None
+    supplied_password = os.environ.get('OECE_PANEL_PASSWORD') if remoto else None
+    password = (supplied_password or secrets.token_urlsafe(24)) if remoto else None
+    generated_password = bool(remoto and not supplied_password)
+    # Por IP de conexión (no confiar en X-Forwarded-For). Barrera básica
+    # contra fuerza bruta; el proxy HTTPS debe aplicar límites adicionales.
+    failures={};auth_lock=threading.Lock()
+    auth_window_seconds=60;max_failures=5
     jobs={};ia_jobs={};lock=threading.Lock()
     def case(case_id):
         if len(case_id)>80 or not case_id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in case_id):
@@ -60,6 +68,27 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
             except (ValueError,UnicodeError):
                 return False
             return hmac.compare_digest(raw, 'oece:' + password)
+        def auth_status(self):
+            if not remoto:
+                return 200
+            peer=self.client_address[0]
+            now=time.monotonic()
+            with auth_lock:
+                recent=deque(t for t in failures.get(peer,()) if now-t<auth_window_seconds)
+                if len(recent)>=max_failures:
+                    failures[peer]=recent
+                    return 429
+                if not recent:
+                    failures.pop(peer,None)
+            if self.auth_ok():
+                with auth_lock:
+                    failures.pop(peer,None)
+                return 200
+            with auth_lock:
+                recent=deque(t for t in failures.get(peer,()) if now-t<auth_window_seconds)
+                recent.append(now)
+                failures[peer]=recent
+                return 429 if len(recent)>=max_failures else 401
         def send(self,status,payload,mime='application/json; charset=utf-8',extra_headers=None):
             raw=payload if isinstance(payload,bytes) else json.dumps(payload,ensure_ascii=True).encode()
             self.send_response(status);self.send_header('Content-Type',mime);self.send_header('Content-Length',str(len(raw)))
@@ -70,8 +99,12 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
             self.end_headers();self.wfile.write(raw)
         def do_GET(self):
             if not self.valid_host(): self.send(403,{'error':'Host no permitido'});return
-            if not self.auth_ok():
-                self.send(401,{'error':'Acceso restringido'},extra_headers={'WWW-Authenticate':'Basic realm="OECE Assistant", charset="UTF-8"'})
+            auth_status=self.auth_status()
+            if auth_status!=200:
+                headers=({'WWW-Authenticate':'Basic realm="OECE Assistant", charset="UTF-8"'}
+                         if auth_status==401 else {'Retry-After':str(auth_window_seconds)})
+                self.send(auth_status,{'error':'Demasiados intentos' if auth_status==429
+                                       else 'Acceso restringido'},extra_headers=headers)
                 return
             url=urlsplit(self.path);query=parse_qs(url.query)
             try:
@@ -168,7 +201,9 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
             if remoto:
                 hostname = self.headers.get('Host','')
                 allowed.update({f'http://{hostname}', f'https://{hostname}'})
-            if (not self.valid_host() or not self.auth_ok()
+            valid_host=self.valid_host()
+            auth_status=self.auth_status() if valid_host else 403
+            if (not valid_host or auth_status!=200
                     or self.headers.get('X-OECE-Token')!=token or (origin and origin not in allowed)):
                 # Una respuesta temprana con bytes de POST sin consumir puede cerrar
                 # la conexión con RST en Windows antes de que el cliente lea el 403.
@@ -178,7 +213,9 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
                         self.connection.settimeout(2);self.rfile.read(rejected_length)
                 except (ValueError,OSError):pass
                 self.close_connection=True
-                self.send(403,{'error':'Solicitud no autorizada'});return
+                denied_status=429 if auth_status==429 else (401 if auth_status==401 else 403)
+                extra={'Retry-After':str(auth_window_seconds)} if denied_status==429 else None
+                self.send(denied_status,{'error':'Solicitud no autorizada'},extra_headers=extra);return
             try:
                 length=int(self.headers.get('Content-Length','0'))
                 if not 0<length<=45_000_000: raise ValueError('Límite de carga 45 MB por envío')
@@ -219,8 +256,21 @@ def crear_servidor(root,memory,port=8765,host="127.0.0.1"):
             except (KeyError,ValueError,OSError,TypeError,json.JSONDecodeError) as e: self.send(400,{'error':str(e)})
     server=ThreadingHTTPServer((host,port),Handler)
     server.oece_token=token;server.oece_pool=pool;server.oece_jobs=jobs;server.oece_ia_jobs=ia_jobs
-    server.oece_password=password;server.oece_host=host
+    server.oece_password=password;server.oece_password_generated=generated_password;server.oece_host=host
     return server
+
+
+
+def anunciar_autenticacion(server):
+    """No incluir credenciales de entorno en journald ni en logs del servicio."""
+    if not server.oece_password:
+        return
+    if server.oece_password_generated:
+        print('Usuario: oece | Contraseña temporal generada: '+server.oece_password,flush=True)
+    else:
+        print('Usuario: oece | Contraseña configurada mediante OECE_PANEL_PASSWORD (oculta).',
+              flush=True)
+    print('Acceso remoto: usar VPN/túnel HTTPS, no exponer HTTP a Internet.',flush=True)
 
 def servir(root,memory,port=8765,host='127.0.0.1'):
     server=crear_servidor(root,memory,port,host=host)
@@ -232,9 +282,7 @@ def servir(root,memory,port=8765,host='127.0.0.1'):
             except Exception as e: memory.evento('vigilancia','error_recuperable',type(e).__name__)
     worker=threading.Thread(target=watch,daemon=True);worker.start()
     print(f'OECE Assistant http://{host}:{server.server_port}',flush=True)
-    if server.oece_password:
-        print('Usuario: oece | Contraseña del panel: '+server.oece_password,flush=True)
-        print('Acceso remoto: usar VPN/túnel HTTPS, no exponer HTTP a Internet.',flush=True)
+    anunciar_autenticacion(server)
     try: server.serve_forever()
     finally:
         stop.set();server.server_close();server.oece_pool.shutdown(wait=True)
