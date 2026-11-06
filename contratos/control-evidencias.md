@@ -33,6 +33,12 @@ Ejemplo **ficticio** (no copiar datos a un caso real):
 
 **La URL de ejemplo es intencionalmente ficticia** y no debe introducirse en ningún expediente real.
 
+## 1A. Requisito independiente: integridad material/visual de documentos
+
+Aplicar obligatoriamente el [control de integridad documental](../procedimientos/control-integridad-documental.md) a **cada documento del expediente**, antes de declarar un requisito suficientemente sustentado. La existencia de datos necesarios en algunas páginas **no elimina la observación** si otras cláusulas, páginas, artículos o párrafos están ausentes, truncados o exhiben indicios concretos de ello. Registrar documento, enlace, página/sección visible, naturaleza del corte, estado de integridad `completo_aparente` / `indicio_incompletitud` / `incompleto_confirmado` / `no_verificable` y acción de cotejo/copia íntegra propuesta.
+
+**La integridad es distinta de la suficiencia de información, de la calidad del OCR y de la autenticidad.** No inventar hojas faltantes sin prueba; no convertir un problema de extracción de texto en ausencia física del folio. El origen del criterio es la capacitación comunicada por el titular el 05/11/2026; su fundamento normativo/consecuencia administrativa **no se presume**.
+
 ## 2. Regla de fuentes normativa
 
 1. Buscar en **OECE Assistant / 01 Biblioteca normativa** de Drive usando el conector autorizado del cliente; abrir el original, no solo un resultado de búsqueda.
