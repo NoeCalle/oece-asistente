@@ -2,7 +2,7 @@
 
 ## Aprendizaje operativo — integridad documental, 05/11/2026
 
-**Regla incorporada:** revisión visual de **documentos completos**, no solo las páginas con información necesaria. Para contratos, resoluciones y demás documentos se genera una **observación por integridad** si faltan cláusulas, artículos, párrafos u hojas, o existe un indicio concreto, **aunque ya se disponga de todos los datos sustantivos necesarios**. Se distingue ausencia confirmada de sospecha, ilegibilidad y fallas OCR; la consecuencia legal queda pendiente de sustento. Aplicación transversal en coordinador, especialista CMC, especialista consultores, entregables y prompt. [Procedimiento](../procedimientos/control-integridad-documental.md). Prueba con expedientes reales aún pendiente.
+**Regla afinada:** revisión de **páginas realmente escaneadas**, no corrección de errores de redacción. Se contrasta **foliación visible** (ej. `2/5 → 4/5`, ausencia de `3/5`), orden físico, continuidad material de párrafos entre hojas y recortes del escaneo. Registrar observación si hay omisión confirmada o indicio objetivo **aunque estén todos los datos sustantivos en las hojas restantes**. **Typos, faltas de ortografía, cláusulas mal numeradas y cambios de tema no son por sí solos hojas faltantes**; el OCR defectuoso tampoco. Diferenciar confirmado, indicio y no verificable, sin presumir consecuencia legal. Se actualizó coordinador, especialistas, entregables, prompt y [procedimiento](../procedimientos/control-integridad-documental.md). Prueba real con expedientes pendiente.
 
 ## Arquitectura principal agent-first — 05/11/2026
 
