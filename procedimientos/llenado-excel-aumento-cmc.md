@@ -116,6 +116,14 @@ Al continuar, revisar los tramos documentales completos por obra; documentar el 
 - En REV14 se preservaron 4.210 fórmulas, 1.706 rangos combinados en 6 hojas y las seis imágenes originales. Se incorporaron 8 datos en `Datos basicos`, 120 en `Obras nacional` y solo se corrigió el formato de tres celdas de fecha.
 
 
+### Fuente de plantilla validada en Microsoft Excel: formato binario .xlsb (2026-11-06)
+
+**Resultado de prueba del titular:** `2026.11.06 PLANTILLA ACTUALIZADA MPR.xlsx`, SIN modificar, produce la misma advertencia de reparación en Microsoft Excel. En cambio, `2026.11.06 PLANTILLA ACTUALIZADA MPR.xlsb` abre y funciona correctamente. Por ello la causa primaria no son los valores ingresados a REV13–REV15: el `.xlsx` proporcionado **ya presenta incompatibilidad/defecto** de apertura; no puede asumirse que sus metadatos sean válidos por ser un ZIP estructuralmente legible. El origen preciso de la incompatibilidad requiere un análisis adicional y no debe afirmarse sin pruebas.
+
+**Decisión de implementación:** usar **exclusivamente el `.xlsb` funcional como archivo maestro**, generar primero una **copia `.xlsb`**, y editarla con el motor nativo de Microsoft Excel (por ejemplo, automatización COM en Windows), escribiendo SOLO valores en `Datos basicos` y `Obras nacional`. No convertir el `.xlsb` a `.xlsx` mediante lectores/escritores generales, porque la conversión puede cambiar relaciones, extensiones, fórmulas, formatos combinados o componentes binarios. Comprobar apertura en Microsoft Excel SIN diálogo de reparación, además de fórmulas/celdas combinadas, ANTES de declarar el entregable válido.
+
+**Limitación de ejecución:** herramientas que solo leen XLSB o exportan XLSX no prueban que puedan editar XLSB preservando el libro. Si no está disponible el motor Excel/COM en el entorno de ejecución, proporcionar una automatización local verificable o declarar el impedimento, en vez de entregar otro XLSX incompatible.
+
 ### Incidente de archivo que Microsoft Excel intenta reparar — REV14 (06/11/2026)
 
 El evaluador abrió REV14 y Excel informó reparación de `xl/metadata.xml`, propiedades del libro y celdas de otra hoja; la vista perdió combinaciones y el nombre de proveedor quedó partido en varias líneas. **La comprobación de que hay 4.210 fórmulas y 1.706 rangos combinados NO prueba por sí sola que Excel pueda abrir el archivo sin repararlo.** No volver a declarar «corregido» un libro basándose solo en recuentos XML.
