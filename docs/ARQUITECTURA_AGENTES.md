@@ -33,7 +33,7 @@ Leer en orden:
 ## Enrutamiento y aislamiento
 
 - Pregunta normativa aislada → solo agente normativo, **sin expediente**.
-- `aumento_cmc` declarado → agente CMC, **tres entregables secuenciales**.
+- `aumento_cmc` declarado → agente CMC, **Excel MPR y Word de observaciones** (con tres etapas analíticas internas).
 - `ampliacion_consultores` declarado → agente consultores, **informe Word + matriz AC**.
 - Cualquier otro trámite o clasificación contradictoria → no fingir especialidad: indicar que está fuera de los dos especialistas agent-first y derivar a la modalidad histórica si corresponde; no inventar reglas.
 - El agente CMC y el de consultores **consultan la biblioteca por sí mismos**, **NO invocan automáticamente al agente de preguntas normativas**. La resolución estructurada de dudas interagente sigue diferida a T53.
@@ -48,7 +48,7 @@ Leer en orden:
 2. Puede operar sin ejecutar `scripts/servidor_mcp.py` ni llamar `oece_coordinar`; no requiere índice normativo local.
 3. Para expedientes, revisa documentos reales de Drive y conserva su ubicación, número de página, citas y, si puede, huella SHA-256; jamás inventa evidencia.
 4. Cada cálculo tiene entradas, fórmula, resultado y segunda comprobación. Datos sin sustento = `null` / pendiente.
-5. El CMC produce 01 → 02 → 03 más ficha maestra; consultores produce Word y matriz; resultados están **separados** y tienen revisión/fecha/estado.
+5. El CMC prepara internamente relación de obras → factores → resumen y **entrega solo Excel MPR + Word de observaciones**; consultores produce Word y matriz; todos los resultados tienen revisión/fecha/estado.
 6. Publica el resultado en Drive solo si realmente tiene permiso/herramientas; si no puede, entrega archivos o borradores disponibles y **declara expresamente que no los guardó en Drive**.
 7. Pruebas unitarias de archivos comprueban instrucciones, **no sustituyen una prueba real** en ChatGPT, Claude o Grok.
 
