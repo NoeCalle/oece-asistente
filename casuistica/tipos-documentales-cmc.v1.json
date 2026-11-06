@@ -435,5 +435,57 @@
     "repositorio_publico": "solo estructura, tipologías y patrones anonimizados",
     "expediente": "fuentes, datos, páginas, identificadores y observaciones en almacenamiento privado autorizado"
   },
-  "revision_humana_obligatoria": true
+  "revision_humana_obligatoria": true,
+  "version_catalogo_patrones": "1.1",
+  "patrones_organizacion_carpetas": [
+    {
+      "id": "CARP-CMC-001",
+      "nombre": "Expediente AUM/INICIAL con varios contratos PDF separados y dos documentos administrativos",
+      "estado": "verificado_en_captura_y_explicado_por_titular",
+      "fecha_registro": "2026-11-06",
+      "evidencia": "captura de listado de Google Drive, sin lectura de contenido de PDFs; solo estructura/nombres",
+      "ubicacion_referencial": ".../AUM/INICIAL",
+      "ubicacion_obligatoria": false,
+      "estructura_observada": {
+        "contratos_pdf_numerados": 13,
+        "hoja_ruta_pdf": 1,
+        "comprobante_pago_pdf": 1
+      },
+      "clasificadores_por_nombre": [
+        {
+          "tipo_documental": "contrato_obra",
+          "patron_regex": "^\\d{2}[_-].*CONTRATO.*\\.pdf$",
+          "regex_flags": "i",
+          "ejemplo_anonimizado": "01_CONTRATO N 000-20XX OBRA A.pdf",
+          "alcance": "candidato_por_nombre",
+          "detalle": "Ordenar por prefijo numérico, pero no asumir que 13 archivos = 13 obras computables ni identificar obra sin lectura"
+        },
+        {
+          "tipo_documental": "hoja_ruta",
+          "patron_regex": "^20\\d{2}-\\d+(?:-[A-Za-z]+)?\\.pdf$",
+          "regex_flags": "i",
+          "ejemplo_anonimizado": "2026-XXXXXXXX-LIMA.pdf",
+          "alcance": "candidato_por_nombre",
+          "detalle": "Según el titular, suele corresponder a hoja de ruta. Confirmar al abrir PDF."
+        },
+        {
+          "tipo_documental": "comprobante_pago",
+          "patron_regex": "^R\\d+\\.pdf$",
+          "regex_flags": "i",
+          "ejemplo_anonimizado": "R#####.pdf",
+          "alcance": "candidato_por_nombre",
+          "detalle": "Según el titular, suele corresponder al pago. Confirmar concepto/operación en PDF."
+        }
+      ],
+      "procedimiento": [
+        "Inventariar todos los PDF con nombre e ID, sin suponer el contenido por el nombre.",
+        "Separar piezas generales del expediente (hoja de ruta y pago) de potenciales contratos por obra.",
+        "Leer cada PDF y asociar a obra por identificadores contractuales y objeto; evitar duplicar obras.",
+        "Almacenar nombre/ID PDF y página física exacta para columnas de evidencia del Excel.",
+        "Registrar documentos faltantes o hechos contradictorios solo después del cotejo de contenido.",
+        "Actualizar acumulativamente Excel MPR y Word de observaciones."
+      ],
+      "advertencia": "No contiene PDF originales ni prueba lectura/validación; la expresión regular es solo clasificación tentativa. La carpeta AUM/INICIAL es ejemplo, no ubicación única."
+    }
+  ]
 }
