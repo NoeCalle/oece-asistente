@@ -92,12 +92,14 @@ class PanelAuthentication(unittest.TestCase):
         with patch.dict(os.environ,vars,clear=True):
             server=crear_servidor(self.root,Memoria(self.root/".oece"),0,
                                   host="0.0.0.0")
-        self.addCleanup(server.oece_pool.shutdown, wait=True)
-        self.addCleanup(server.server_close)
-        self.addCleanup(server.shutdown)
         worker=threading.Thread(target=server.serve_forever,daemon=True)
         worker.start()
-        self.addCleanup(worker.join, 3)
+        def cleanup():
+            server.shutdown()
+            server.server_close()
+            server.oece_pool.shutdown(wait=True)
+            worker.join(timeout=3)
+        self.addCleanup(cleanup)
         return server
 
     def test_clave_de_entorno_no_aparece_en_anuncio(self):
