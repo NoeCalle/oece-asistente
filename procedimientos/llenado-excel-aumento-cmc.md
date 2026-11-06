@@ -115,6 +115,13 @@ Al continuar, revisar los tramos documentales completos por obra; documentar el 
 - **Prueba estructural obligatoria previa a entrega:** comparar por hoja el número y texto de las fórmulas, las referencias de todos los rangos combinados, los nombres de hoja, los archivos de imágenes/dibujos, las relaciones y las demás partes del Excel; verificar que cualquier cambio se limite a las entradas intencionales.
 - En REV14 se preservaron 4.210 fórmulas, 1.706 rangos combinados en 6 hojas y las seis imágenes originales. Se incorporaron 8 datos en `Datos basicos`, 120 en `Obras nacional` y solo se corrigió el formato de tres celdas de fecha.
 
+
+### Incidente de archivo que Microsoft Excel intenta reparar — REV14 (06/11/2026)
+
+El evaluador abrió REV14 y Excel informó reparación de `xl/metadata.xml`, propiedades del libro y celdas de otra hoja; la vista perdió combinaciones y el nombre de proveedor quedó partido en varias líneas. **La comprobación de que hay 4.210 fórmulas y 1.706 rangos combinados NO prueba por sí sola que Excel pueda abrir el archivo sin repararlo.** No volver a declarar «corregido» un libro basándose solo en recuentos XML.
+
+**Procedimiento de recuperación adoptado:** partir de los **bytes del archivo original**, cambiar solo los nodos de valor de las celdas de entrada originalmente vacías, sin reserializar hojas completas, estilos, metadatos, fórmulas, relaciones, dibujos o anchos. En el piloto los únicos miembros del paquete que deben variar son `xl/worksheets/sheet1.xml` (`Datos basicos`) y `xl/worksheets/sheet2.xml` (`Obras nacional`); no modificar `xl/metadata.xml`, `xl/styles.xml` ni `xl/worksheets/sheet3.xml` a `sheet6.xml`. Para fechas que estaban sin formato de fecha, escribir texto legible conservando estilo, no crear estilos. Verificar identidad byte a byte de todas las demás partes, legibilidad XML, combinaciones y fórmulas, y obtener prueba de apertura en **Microsoft Excel** antes de declarar aptitud definitiva. Si no se puede abrir Excel en el entorno, decirlo explícitamente.
+
 ## Lección del primer piloto: evaluación ciega sin Excel previamente resuelto (2026-11-06)
 
 **En operación real no existe Excel de evaluación completado por un tercero.** El único libro de entrada editable es una **copia limpia de la plantilla institucional vigente**. El expediente, las consultas autorizadas y la biblioteca normativa son las fuentes de datos; la copia de una evaluación anterior solo sirve en pruebas como patrón de comparación **después de producir y congelar el resultado independiente**, nunca para extraer montos, factores, notas o fórmulas de un nuevo caso.
