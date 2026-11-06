@@ -1,7 +1,7 @@
 # POE-CMC-EXCEL-01 — Llenado de la plantilla Excel de aumento de CMC
 
-**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.3.
-**Uso actual:** procedimiento asistido con ingreso manual por el evaluador y extracción/análisis documental por ChatGPT, Claude o Grok según sus herramientas y acceso autorizados. **Uso futuro opcional:** reproducción de pasos de interfaz por GrokBot desde una PC virtual. No supeditar el procedimiento a disponer de GrokBot.
+**Estado:** en levantamiento guiado con el evaluador. **Inicio:** 2026-11-06. **Versión:** 0.4.
+**Uso actual:** ChatGPT o Claude (y Grok si conviene) extraen de PDF y completan Excel cuando tengan archivos y herramientas; el evaluador cubre accesos manuales. **Rol diferencial previsto de GrokBot:** navegar la intranet institucional mediante su PC virtual autorizada para obtener datos y capturas inaccesibles a las otras IA en el flujo actual. No asignar por defecto a GrokBot la extracción de PDF o el llenado ordinario de Excel, que son tareas compartidas. El procedimiento no depende de disponer de GrokBot.
 **Relacionado:** [Procedimiento general CMC](aumento-cmc.md) · [Especialista CMC](../agentes/especialista-cmc.md) · [Seguridad](../docs/SEGURIDAD.md).
 
 ## Alcance y criterio de verdad
@@ -22,7 +22,7 @@ Este documento recoge el **procedimiento real descrito por el evaluador**, no un
 | Ingreso manual actual | Evaluador | Accede a intranet y otras pantallas institucionales, obtiene datos/capturas e ingresa contenido a Excel | Se registra la fuente y se comprueba el destino; no requiere GrokBot |
 | Extracción de PDF y llenado de Excel | ChatGPT, Claude o Grok, o evaluador | Lee contratos, liquidaciones y demás PDF, extrae datos sustentados **y los incorpora directamente en las celdas correspondientes del Excel** cuando tenga herramientas de edición | Debe abrir realmente el PDF y el Excel autorizados, citar archivo/página, mapear celda destino, preservar formato y fórmulas y verificar que el valor se guardó; si no puede editar, entregar datos estructurados y declarar el pendiente |
 | Elaboración/revisión de Excel | Evaluador o IA habilitada | Completa campos desde intranet, PDF u otras fuentes según acceso disponible; verifica cifras, fórmulas e imágenes | Distinguir dato copiado, extraído, calculado y verificado |
-| Automatización posterior | GrokBot con PC virtual, si se habilita | Ejecuta pasos de interfaz ya documentados, incluidos los de intranet permitidos | Autorización y acceso efectivos; pausa ante credenciales/MFA/cambios de pantalla |
+| Navegación de intranet (función diferenciadora) | GrokBot con PC virtual cuando esté disponible; mientras tanto evaluador | Accede a pantallas institucionales, consulta información y obtiene capturas; entrega datos/evidencias al flujo Excel | Acceso institucional autorizado y real; pausa ante credenciales/MFA/cambios de pantalla |
 
 **Regla:** no hay obligación de usar un solo agente ni de automatizar inmediatamente la intranet. El procedimiento se afina a medida que el evaluador aporta nuevos pasos; la ausencia de automatización no bloquea su aplicación manual.
 
@@ -89,6 +89,7 @@ La secuencia para `Obras nacional`, `CLC`, `Hoja Calculo`, `datos` y `CALCULO CM
 | 2026-11-06 | 0.1 | La hoja inicial es `Datos basicos`; se llena con datos e imágenes de varias fuentes, entre ellas intranet; el registro se mantiene en GitHub para ejecución posterior mediante PC virtual | Confirmada |
 | 2026-11-06 | 0.2 | Mientras no se use GrokBot, el evaluador ingresa datos manualmente. Hay información exclusiva de PDF que puede extraer ChatGPT, Claude o Grok con acceso efectivo. Se permite flujo híbrido y refinamiento progresivo | Confirmada |
 | 2026-11-06 | 0.3 | ChatGPT, Claude o Grok pueden **extraer de los PDF y llenar directamente la plantilla Excel**, siempre que tengan acceso y herramientas de lectura/escritura; verificar persistencia y fórmulas. La intervención manual se reserva para tareas sin acceso o que necesiten revisión | Confirmada |
+| 2026-11-06 | 0.4 | GrokBot se reserva principalmente para navegación automatizada de la intranet con PC virtual; extracción PDF y edición Excel no son funciones exclusivas de GrokBot y pueden realizarlas ChatGPT/Claude. Hasta probar el acceso, la intranet la atiende manualmente el evaluador | Confirmada |
 | Pendiente | — | Primera ruta real, campo y captura aportados por el evaluador | Por levantar |
 
 > **Mantenimiento:** cada explicación nueva del evaluador actualiza este archivo, incrementa versión y distingue hechos confirmados de instrucciones pendientes. No publicar ejemplos reales o credenciales en commits.
