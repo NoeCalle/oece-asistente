@@ -6,15 +6,11 @@
 
 **Catálogo de documentos y casuística:** antes del inventario, cargar [catálogo JSON](../casuistica/tipos-documentales-cmc.v1.json) y [lecciones observadas](../casuistica/patrones-y-lecciones-cmc.md). Separar piezas por naturaleza (hoja de ruta, pago, contrato, actas, liquidación y anexos) y por obra, aunque vengan en diferentes PDF. Cada nueva entrega se registra de manera acumulativa y sus variantes se documentan en el expediente privado. Promover a GitHub solo patrones anonimizados y no convertir observaciones aisladas en normas.
 
-| Fase | Acción del agente | Control antes de avanzar |
-|---|---|---|
-| 0. Identificar | Confirmar `aumento_cmc` por orden explícita o ficha, enlace Drive, solicitante, fecha de corte y documentación disponible | No inferir procedimiento por el nombre del PDF |
-| 1. Inventariar | Revisar documentos Drive: solicitud, obras, recepción, liquidación, consorcio, financieros | Enlaces reales, ID estable por obra y lista de ausentes |
-| 2. Normativa | Buscar biblioteca Drive, leer artículos/anexos aplicables; web solo después de avisar si falta sustento | Fuente etiquetada, fecha y pasaje concreto |
-| 3. Relación de obras | Registrar fecha, moneda, contrato, liquidación, descuentos, participación, experiencia candidata, desistimientos/exclusiones y evidencias | Campos de obras en Excel sustentados; exclusiones no suman |
-| 4. Años y factores | Con datos de fase 3, marcar años admisibles, identificar universo y determinar `a`, `f`, `e` sustentados | Factores dentro del Excel; `G=a+f+e` solo si son determinables |
-| 5. Cálculo | Verificar `ΣObras` y `CMC_provisional = ΣObras × G`; recalcular con herramienta independiente y registrar fórmula | CMC provisional en Excel cuando haya sustento; `CMC_a_otorgar=null` en control interno |
-| 6. Entrega | **Excel MPR + Word de observaciones**, control cruzado, pendientes; guardar archivos en Drive si posible | Dos archivos visibles y verificables; estado y limitaciones |
+## Secuencia vigente — referencia canónica única
+
+**Leer y ejecutar sin reordenar** [MET-CMC-01](metodologia-unica-cmc.md). Las etapas obligatorias del modo agent-first son: activación/reanudación → inventario → control visual de integridad **de todas las páginas** → extracción por PDF/obra → conciliación → cotejo normativo → cálculo y libro MPR → **N copias individuales de PDF resaltados** → **un único Word consolidado** → auditoría y publicación.
+
+**Puerta de avance:** cada etapa conserva prueba de cobertura y pendientes en el control interno del expediente; no llamar «completo» a una etapa si quedan páginas sin ver, documentos sin mapear, montos sin sustento o archivos sin verificar. Una observación no bloqueante se registra y se continúa lo independiente. La secuencia interna histórica «relación de obras → años/factores → cálculo» sigue existiendo **dentro** de la etapa de Excel MPR, no constituye tres entregables distintos.
 
 ### Verificaciones específicas
 
