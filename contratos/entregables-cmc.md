@@ -33,6 +33,8 @@ La **edición manual de la posición** en Acrobat/Edge requiere validación: el 
 
 **No cambian los dos entregables principales:** Excel MPR + Word de observaciones. Estos PDF resaltados son respaldo visual auxiliar.
 
+**Organización de copias auxiliares (06/11/2026):** en un expediente con 13 archivos PDF contractuales, debe haber **13 copias resaltadas separadas, una por archivo original** (no tres sueltas + ZIP con diez), junto a **un solo Word con todas las observaciones consolidadas**. En el general, si hay `N` PDF de experiencias, entregar `N` copias individuales visibles en la misma carpeta de revisión; conservar las versiones históricas aparte. ZIP adicional opcional no reemplaza copias individuales. El Excel MPR continúa siendo entregable principal de la evaluación, cuando esté generado y verificado. Véase [regla de cobertura PDF](../procedimientos/resaltado-evidencias-pdf-cmc.md).
+
 ## Registros de trabajo que NO se entregan por defecto
 
 Se permite usar internamente, en almacenamiento **privado del expediente**, JSON/CSV, inventario documental, fichas por campo, registros de páginas, trazabilidad, bitácora y comprobación decimal. Sirven para reanudación, auditabilidad y aprendizaje, **no constituyen archivos adicionales que el evaluador deba recibir ni formatos institucionales independientes**. El repositorio público nunca contiene originales, transcripciones ni datos personales de expedientes.
