@@ -85,6 +85,18 @@
 
 **Acción:** registrar los dos importes tal como aparecen, **la página y el considerando específico de cada uno**, separar ambos de la liquidación aprobada y conservar pendiente el campo «reajuste reconocido/computable». Buscar el cálculo de fórmula polinómica y la carta de renuncia. Mantener el resto del expediente procesable. El nombre del archivo PDF tampoco prevalece sobre la denominación literal del objeto en el contrato.
 
+## CAS-CMC-022 — Folios no consecutivos en extractos de cuaderno de obra
+
+**Estado: verificado en revisión documental; no causal legal automática.** Cuando un PDF de experiencia incluye **hojas seleccionadas del cuaderno de obra**, los folios impresos pueden saltar (por ejemplo, 02–03 y luego 17–18 o 24–25) y los asientos también ser discontinuos. Un salto **sí es un dato objetivo para cotejo**, pero no prueba por sí mismo que el escáner haya omitido accidentalmente hojas: podría tratarse de anexos escogidos deliberadamente.
+
+**Acción operativa:** separar numeración física PDF, número impreso del folio y asientos; registrar las páginas exactas de la transición; clasificar como `indicio_incompletitud` de la **pieza de cuaderno** mientras se verifica si era un extracto legítimo, y no de todo el contrato. Comprobar que no exista otra pieza con los folios intermedios. No elevar a `incompleto_confirmado` sin evidencia de que debía contener la secuencia completa.
+
+## CAS-CMC-023 — Consorcio distinto en artículos de una misma liquidación
+
+**Estado: verificado en caso, consecuencia pendiente.** Una resolución de liquidación puede identificar al consorcio de la obra en sus artículos iniciales, pero consignar **otro consorcio** en un artículo posterior sobre garantías. Puede ser un error material de copia/plantilla, una referencia que requiere explicación o una discrepancia administrativa; la mera coexistencia de nombres no prueba sustitución del contratista ni nulidad.
+
+**Acción operativa:** conservar los nombres literales con **artículo, PDF y página**, cotejar contrato y acuerdo consorcial, verificar si existe aclaración/fe de erratas o respaldo del acto de devolución. Registrar observación de identificación **separada del control de integridad del escaneo** y continuar campos independientes de la obra.
+
 ## Ficha de captura de una nueva casuística
 
 Cada nueva situación se registra como **observación verificable**, no como generalización automática:
