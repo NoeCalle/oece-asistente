@@ -35,6 +35,14 @@ Con **PyMuPDF `Page.add_highlight_annot(quads)`** pueden crearse **anotaciones d
 7. **Compatibilidad de corrección manual:** abrir la copia en **Adobe Acrobat de escritorio y/o Edge** con el evaluador. Comprobar selección, eliminación y posibilidad real de reajuste de las anotaciones. No prometer arrastre/redimensionamiento de resaltado nativo en PDF imagen; si el visor no lo soporta, la corrección consiste en borrar y volver a resaltar.
 8. **Trazabilidad:** mantener en registro privado `expediente → OB-## → archivo PDF concreto → página física 1-based → campo/celda Excel → valor → coordenadas y/o ID de anotación`. Cuando la revisión humana ajuste el PDF, conservar esa versión para siguientes iteraciones.
 
+## Entrega de copias resaltadas: cobertura uno a uno por PDF fuente
+
+**Criterio del evaluador confirmado 06/11/2026:** si un expediente presenta `N` PDF de experiencias/contratos, entregar **`N` copias PDF con resaltados nativos**, una por archivo original, con los mismos prefijos/orden y el sufijo uniforme `_RESALTADO.pdf`. Si un PDF contiene varios contratos o anexos, conservarlos en su misma copia completa. **No entregar solamente tres PDFs y un ZIP con el resto**: los `N` archivos deben estar **individualmente visibles** en una carpeta consolidada.
+
+En esa **misma carpeta de entrega** debe haber **un único Word de observaciones consolidadas** que integre todos los hallazgos registrados hasta el corte, sin informes Word divididos por obra ni versiones anteriores mezcladas. Las versiones antiguas/paquetes parciales se conservan en `HISTORICO_VERSIONES_ANTERIORES` o equivalente; no borrarlas ni confundirlas con la salida vigente. Un ZIP único que contenga `N` PDF + 1 Word puede ofrecerse **solo como descarga opcional**.
+
+**Comprobación de aceptación:** lista de originales PDF de experiencias = lista de copias resaltadas (mismo prefijo y basename); cada copia conserva **el mismo número de páginas** y al menos un objeto PDF `Highlight` con autor `Noe Calle` y comentario breve; el Word es único y contiene la relación de las obras, todas las observaciones documentales hasta el corte y estado de revisión. **Una copia con una marca no demuestra que todos los datos de todas sus páginas hayan sido revisados o resaltados**: declarar el alcance real y seguir marcando en sucesivas rondas. Hoja de ruta y comprobante de pago no cuentan entre los `N` PDF de experiencias.
+
 ## Relación con entregables
 
 1. **Excel MPR de evaluación** y 2. **Word de observaciones** siguen siendo **únicos entregables principales**. Los PDF resaltados son **copias auxiliares de sustento**, no un tercer formato administrativo obligatorio. Una observación por desfase gráfico no es una discrepancia contractual.
