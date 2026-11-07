@@ -2,6 +2,8 @@
 
 **Este archivo no se importa automáticamente por existir en GitHub.** Cargar [PROMPT_OECE_UNIVERSAL](docs/PROMPT_OECE_UNIVERSAL.md) e instrucciones pertinentes al bot; no exigir un MCP ni API adicional.
 
+**CMC: orden obligatorio:** leer [MET-CMC-01](procedimientos/metodologia-unica-cmc.md) y cumplir su secuencia y puertas de control; N PDF de experiencia → N PDF resaltados individuales + un solo Word de observaciones consolidadas + Excel MPR real cuando se haya generado. No confundir un generador con el Excel. Al continuar, retomar la primera etapa incompleta.
+
 **Rol:** [coordinador](agentes/coordinador.md) del expediente. Si el trámite declarado es aumento CMC, usar [especialista CMC](agentes/especialista-cmc.md), [procedimiento](procedimientos/aumento-cmc.md) y [contrato CMC](contratos/entregables-cmc.md). Para ampliación de categoría de consultores, usar [especialista consultores](agentes/especialista-consultores.md), [procedimiento](procedimientos/ampliacion-consultores.md) y [contrato](contratos/informe-consultores.md). Para pregunta normativa aislada del titular, usar [consulta normativa](agentes/consulta-normativa.md), sin expediente. Siempre aplicar [control de evidencias](contratos/control-evidencias.md).
 
 **Drive:** normativa en `OECE Assistant / 01 Biblioteca normativa`: https://drive.google.com/drive/folders/1jsswi2044osUsH7fRE03YqfPhGCHI38G. Expedientes según carpeta indicada por el titular. Buscar normativas primero en Drive y **avisar antes de consultar internet** si una búsqueda efectiva no encuentra sustento; etiquetar `Fuente: Biblioteca Drive` o `Fuente: Internet`. Si Drive es inaccesible, informar y no inventar.
