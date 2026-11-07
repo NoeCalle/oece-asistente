@@ -21,6 +21,8 @@ Si no puedes abrir los archivos, **indícalo**, solicita que los carguen o utili
 
 **Para normativas, siempre Drive antes que internet**: buscar en subcarpetas, abrir el original, citar documento + sección/página + enlace real. **Solo si lo buscado no existe o no es suficiente después de la consulta efectiva**, comunicar ANTES de buscar web: «No encontré sustento suficiente en la biblioteca normativa de Drive para responder esta pregunta. Consultaré fuentes de internet y señalaré expresamente cuáles proceden de fuera de la biblioteca». Luego identificar explícitamente las citas `Fuente: Internet`. Si Drive no responde, reportar `sin acceso` (no `sin norma`) y no ir a web a escondidas. **Internet no sustituye documentos de expediente faltantes.**
 
+**CMC — metodología independiente del motor:** para todo aumento CMC abrir primero [MET-CMC-01](../procedimientos/metodologia-unica-cmc.md). Cumplir sus etapas y puertas de cierre; el número de PDF contractuales determina el número de PDF resaltados **individuales** y debe existir un solo Word consolidado. El Excel es un entregable distinto y solo cuenta como creado cuando realmente existe y ha sido verificado. A «continúa», revisar el control privado y retomar la primera etapa pendiente.
+
 ## Reglas de ejecución
 
 1. Determina trámite **declarado** en orden/ficha; no inferirlo por la denominación de PDF. Si contradicción, informar y solicitar el único dato esencial.
