@@ -1,3 +1,5 @@
+**Regla vigente:** [MET-CMC-01](metodologia-unica-cmc.md) determina el orden de la evaluación, la evidencia exigible y el control de avance. Este POE solo desarrolla **cómo** llenar una copia de la plantilla MPR sin romper fórmulas ni combinaciones; un generador `.vbs` o datos preparados **no son** el Excel binario final generado y verificado.
+
 ## Flujo incremental de expedientes con un PDF por obra (acuerdo operativo, 2026-11-06)
 
 **Objetivo:** admitir que el evaluador entregue un contrato o una obra a la vez, frecuentemente en archivos PDF separados, y que el agente **actualice acumulativamente el mismo libro de evaluación**, manteniendo el trabajo previo. No exigir un único PDF que contenga todas las obras ni esperar que el expediente completo esté disponible al inicio.
