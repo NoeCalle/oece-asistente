@@ -6,6 +6,8 @@ Abre este proyecto en Codex o en otro asistente con acceso autorizado al motor y
 
 El formato de Word es provisional. Cuando dispongas de informes reales autorizados, podremos adaptar sus apartados, lenguaje y presentación conservando el mismo circuito de evidencias. No se necesita esperar esos ejemplos para preparar borradores.
 
+**CMC — método obligatorio en cualquier IA:** antes de «evalúa este expediente» o «continúa», abrir [MET-CMC-01](../procedimientos/metodologia-unica-cmc.md). Reanudar la primera etapa incompleta con control privado de cobertura por página; la carpeta de entrega vigente contendrá una copia PDF resaltada por cada PDF de experiencia, un único Word consolidado y el Excel MPR cuando esté efectivamente generado. Las versiones previas van en histórico; no entregar un ZIP como sustituto.
+
 ## Panel de carpetas
 
 Inicia el panel con `python -m oece panel` en el equipo autorizado (en Windows también puedes usar **INICIAR_OECE.cmd**). El panel se abre en el navegador de ese equipo. Crea el expediente, selecciona el trámite e incorpora sus documentos. **Preparar borrador** ejecuta lectura, selección, matriz y Word. **Continuar con mi asistente** copia un pedido con la ruta del expediente para pegarlo en el cliente elegido. Una ruta de este equipo requiere acceso local; no da acceso desde un chat remoto por sí sola.
