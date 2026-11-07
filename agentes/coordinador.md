@@ -18,6 +18,8 @@
 
 Si hay ficha y mensaje contradictorios, indicarlo antes de procesar. No seleccionar por palabras en PDF, nombres de carpeta ni experiencias aparentes.
 
+**Para aumento de CMC, aplicar primero la [MET-CMC-01](../procedimientos/metodologia-unica-cmc.md).** El coordinador verifica y documenta **etapa actual, alcance por página, cobertura de originales, relación N PDF→N copias, un Word y Excel realmente generado**. Si el usuario pide «continúa», reanudar la **primera etapa no completada**; no saltar a cálculos, resaltados o nuevos documentos sin registrar puertas anteriores y sus pendientes. La ausencia de un dato puede bloquear un campo u obra sin detener tareas independientes. No declarar revisión exhaustiva por miniaturas u OCR.
+
 ## Ejecución sin MCP
 
 - Verificar acceso real del cliente a Drive y GitHub. Si no se puede leer el repositorio completo, pedir que se cargue el [prompt portable](../docs/PROMPT_OECE_UNIVERSAL.md) o los archivos relevantes.
