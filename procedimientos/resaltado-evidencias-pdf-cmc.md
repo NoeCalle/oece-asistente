@@ -2,6 +2,8 @@
 
 **Fecha:** 2026-11-06. **Versión:** 2.0. **Estado:** viabilidad técnica del resaltado nativo confirmada con una prueba de PDF **100 % imagen, sin texto PDF ni OCR**; posicionamiento sobre contratos reales y comportamiento de corrección manual en Adobe Acrobat/Microsoft Edge del evaluador **pendientes de prueba**.
 
+**Precedencia:** el **cuándo** generar, revisar y publicar las N copias PDF queda establecido en [MET-CMC-01](metodologia-unica-cmc.md). Este POE define **cómo** construir anotaciones PDF nativas; por sí solo no permite afirmar que un documento fue revisado página por página.
+
 ## Condiciones confirmadas por el evaluador
 
 - **Asumir por defecto que prácticamente el 100 % de documentos del expediente son escaneos** (PDF compuesto por imágenes). No construir el procedimiento alrededor de texto seleccionable, búsqueda de cadenas, OCR ya incorporado ni selección de palabras en Acrobat. Si excepcionalmente existiera texto, no cambia la metodología base.
