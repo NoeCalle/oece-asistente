@@ -79,6 +79,12 @@
 
 **Aprendizaje:** extraer **por separado** importe original, reajuste, impuestos, monto de liquidación, texto de renuncia y su página/documento, identificar si la renuncia afecta el cobro o el monto técnico, y no sumar ni excluir automáticamente los reajustes en CMC sin fundamento. Cuando el método no esté definido, mantener como `pendiente_cotejo_normativo`, sin paralizar otras obras.
 
+## CAS-CMC-021 — Dos importes de reajuste en los considerandos de una misma resolución
+
+**Estado: verificado en un expediente, causa pendiente de cotejo.** Un mismo acto aprobatorio de liquidación puede citar **dos importes diferentes** como resultado de cálculos de reajuste, con referencias a informes distintos, a la vez que aprueba un importe final por obra y menciona **renuncia** del contratista a los reajustes. No concluir que el mayor o el menor es el vigente sin leer las liquidaciones técnicas y sus antecedentes.
+
+**Acción:** registrar los dos importes tal como aparecen, **la página y el considerando específico de cada uno**, separar ambos de la liquidación aprobada y conservar pendiente el campo «reajuste reconocido/computable». Buscar el cálculo de fórmula polinómica y la carta de renuncia. Mantener el resto del expediente procesable. El nombre del archivo PDF tampoco prevalece sobre la denominación literal del objeto en el contrato.
+
 ## Ficha de captura de una nueva casuística
 
 Cada nueva situación se registra como **observación verificable**, no como generalización automática:
