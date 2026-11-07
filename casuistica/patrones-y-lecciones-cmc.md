@@ -49,6 +49,18 @@
 
 **Prueba:** se modificaron 20 anotaciones en la copia del PDF de 10 páginas; se verificó que las marcas seguían siendo tipo `Highlight` y sus geometrías y apariencias no cambiaron.
 
+## CAS-CMC-015 — Un archivo de pago puede contener formulario y anexos de obras
+
+**Fuente del aprendizaje:** revisión documental de una carpeta de aumento CMC en noviembre de 2026. **Estado:** estructura comprobada en caso; no regla universal. Un archivo cuyo nombre comienza por `R` y parece ser un comprobante de pago puede contener **también la solicitud de trámite, anexos con relación de obras y montos declarados** en las páginas posteriores. **Acción del agente:** abrir y clasificar **todas** sus páginas, no etiquetar el PDF entero como comprobante de pago por el nombre o la primera hoja. Conservar rangos de páginas por pieza y confrontar los importes declarados con contratos y liquidaciones auténticos. La relación de obras del solicitante es una **declaración**, no prueba definitiva de ejecución, recepción, participación o monto computable.
+
+## CAS-CMC-016 — PDF llamado contrato con recepción, liquidación y constancia adentro
+
+**Estado:** estructura comprobada en caso, pendiente de ampliar a nuevas muestras. Un archivo con nombre `CONTRATO` puede contener **contrato, acuerdo consorcial, acta de recepción, resolución de liquidación y constancia de prestación**, entre otros soportes, además de páginas de anexos. **Acción del agente:** elaborar mapa de tramos dentro de cada PDF; leer hojas relevantes y verificar integridad visual; asignar fuente/campo/página según la **pieza específica**, sin afirmar que faltan recepción o liquidación por no ver archivos independientes con esos nombres. Para denominación del contratista, mantener preferencia por contrato según regla ya adoptada.
+
+## CAS-CMC-017 — Distinguir declaraciones de monto, componente obra y objeto de contrato
+
+**Estado:** patrón comprobado en caso, criterios de computabilidad pendientes de cotejo normativo. Pueden coexistir un **monto contractual bruto**, un **monto de «solo componente de obra»** indicado en una constancia y un **monto declarado como final** en un formulario; no son automáticamente equivalentes. Una liquidación puede incorporar **reajustes** que no consten en el cuadro declarativo del solicitante. Y la **descripción de obra en la solicitud** puede no coincidir con el contrato adjunto bajo el mismo orden de relación. **Acción del agente:** preservar los literales y cifras por concepto, comparar páginas exactas, registrar cada inconsistencia o conciliación respaldada en el Word y reservar la obra/campo afectado sin detener las demás. No atribuir diferencias automáticamente a equipamiento, mobiliario ni irregularidad; no otorgar CMC por inferencia.
+
 ## Ficha de captura de una nueva casuística
 
 Cada nueva situación se registra como **observación verificable**, no como generalización automática:
