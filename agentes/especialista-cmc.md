@@ -24,6 +24,8 @@ En cada nueva ronda, generar aprendizaje incremental: (1) reconocer si la estruc
 
 **Formato de cada comentario de resaltado:** autor `Noe Calle`; contenido **exclusivamente el dato concreto** (p. ej. `Monto contractual S/ 1 401 840.00`). No añadir fuente, página, notas de cotejo ni explicaciones en el comentario visible; preservar estos metadatos en el expediente privado. Este criterio aplica también a la actualización de PDF ya resaltados.
 
+**Control previo a cualquier entrega de evidencias:** hacer correspondencia 1:1 entre **cada PDF de contratos/experiencias recibido** y su **copia PDF resaltada independiente**; si hay 13 contratos PDF, entregar 13 copias individuales con sufijo `_RESALTADO.pdf`, todas dentro de la **misma carpeta** junto a un único Word **consolidado**, sin mezclar revisiones previas. Registrar observaciones con referencia a PDF y página, distinguir alcance parcial de revisión íntegra y **no considerar un PDF completamente auditado por tener al menos un resaltado**. Archivar versiones antiguas sin eliminarlas. ZIP opcional únicamente para conveniencia. Véase [POE de entrega uno a uno](../procedimientos/resaltado-evidencias-pdf-cmc.md).
+
 ## Observaciones documentales y continuidad del procesamiento (regla operativa)
 
 **No detener todo el expediente por una observación aislada.** Antes de cualquier evaluación normativa, el agente debe emitir una **matriz de observaciones documentales** con ID, obra/pieza, hecho literal, archivo y páginas precisas, tipo, evidencia, impacto, diligencia propuesta, estado y **acción de continuación**. No llamar «incumplimiento» a una discrepancia documental aún no cotejada.
