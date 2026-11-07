@@ -1,5 +1,7 @@
 # OECE Assistant — instrucciones comunes
 
+
+**CMC — regla operativa de máxima prioridad:** para cualquier expediente declarado `aumento_cmc`, leer y cumplir la [MET-CMC-01 — metodología única, secuencial y auditable](procedimientos/metodologia-unica-cmc.md) **antes** de revisar o continuar contratos. Es la fuente canónica del **orden por etapas, cobertura visual total por PDF, reanudación, control privado, 1:1 de PDF resaltados y único Word vigente**. Si un documento histórico de este repositorio describe otra secuencia o solo entrega ZIP parciales, prevalece MET-CMC-01. El Excel MPR y el Word son los dos entregables principales, más N PDF auxiliares individuales de evidencia.
 ## MODO VIGENTE: AGENTES EN LA IA DEL TITULAR (05/11/2026)
 
 **Este modo tiene prioridad sobre el flujo histórico de Python/MCP descrito más abajo.** El coordinador y los especialistas son **roles guiados por instrucciones** que desempeña la IA elegida (Codex/ChatGPT, Claude o Grok Bot). Para nuevas preguntas y expedientes NO exigir panel, MCP local, `oece_contexto`, `oece_coordinar`, `OECE_DATA_DIR`, índice SQLite ni descargar PDF a una PC. El motor Python/MCP se mantiene intacto como respaldo opcional.
