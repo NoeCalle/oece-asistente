@@ -43,6 +43,12 @@
 
 **Nota de usabilidad:** los resaltados nativos sobre escaneos pueden no permitir ser movidos libremente por arrastre en todos los visores; la corrección manual puede exigir **eliminar y volver a resaltar**, por lo que el agente debe maximizar la precisión inicial y reabrir/renderizar cada página anotada. Trazabilidad `obra→PDF→página→campo Excel→anotación`. PDF marcado = evidencia auxiliar; Excel MPR y Word siguen siendo entregables principales. Procedimiento: [POE-CMC-PDF-01 v2.0](../procedimientos/resaltado-evidencias-pdf-cmc.md).
 
+## CAS-CMC-014 — Comentarios de resaltado breves con autor Noe Calle
+
+**Criterio adoptado por el titular (06/11/2026):** todas las anotaciones `Highlight` llevan autor `Noe Calle` y su comentario visible contiene **únicamente el dato** como etiqueta y valor (por ejemplo `Monto contractual S/ 1 401 840.00`). No incluir `OECE Assistant`, `Dato extraído`, `Fuente`, número de página, avisos de cotejo ni prosa explicativa. La procedencia completa continúa disponible en el registro **privado** de trazabilidad, sin ocupar el comentario.
+
+**Prueba:** se modificaron 20 anotaciones en la copia del PDF de 10 páginas; se verificó que las marcas seguían siendo tipo `Highlight` y sus geometrías y apariencias no cambiaron.
+
 ## Ficha de captura de una nueva casuística
 
 Cada nueva situación se registra como **observación verificable**, no como generalización automática:
