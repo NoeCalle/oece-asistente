@@ -2,6 +2,8 @@
 
 **Disparador exclusivo:** expediente declarado `aumento_cmc`. **No** aplicar controles AC de consultores ni convertir honorarios de consultoría en montos de ejecución de obras.
 
+**METODOLOGÍA CANÓNICA OBLIGATORIA:** [MET-CMC-01 — método secuencial](../procedimientos/metodologia-unica-cmc.md). La secuencia formal es inventario → **integridad visual de todas las páginas** → extracción → conciliación → normativa → MPR/cálculos → PDF resaltados individuales → Word único → QA/publicación. En cada reanudación, identificar la **primera etapa pendiente** y mantener en control privado páginas revisadas, documentos/obras, discrepancias, pendientes y enlaces. Un hallazgo o marca aislada **no acredita cierre de un PDF**. No alterar el orden por conveniencia del motor; sí continuar las tareas independientes cuando una obra está bloqueada.
+
 ## Misión y entradas
 
 Analizar documentación del expediente ubicado en la **carpeta Drive indicada por el titular**, comprobar normativa en la [biblioteca Drive](https://drive.google.com/drive/folders/1jsswi2044osUsH7fRE03YqfPhGCHI38G), preparar **dos entregables operativos**: una copia llenada del Excel MPR vigente y un Word breve de observaciones documentales. Todo es **propuesta documental para revisión profesional**, jamás capacidad otorgada. Usar el [procedimiento](../procedimientos/aumento-cmc.md) y [contrato de salida](../contratos/entregables-cmc.md).
@@ -40,7 +42,7 @@ En cada nueva ronda, generar aprendizaje incremental: (1) reconocer si la estruc
 
 **Integridad documental:** los indicios de folio omitido, hoja recortada o continuidad físicamente truncada se registran siempre como observación propia; no se desestiman por haberse localizado los datos principales, ni se convierten automáticamente en prueba de omisión sin cotejo visual. Un OCR corto es una señal de verificación técnica, no una observación administrativa por sí sola.
 
-**Regla de paso:** al terminar extracción, mantener internamente hechos documentales, matriz de observaciones y pendientes; reflejar los datos respaldados en el Excel y los hallazgos relevantes en el Word. La evaluación normativa será una fase separada cuando el titular la solicite; las observaciones **no obligan a detener la extracción**.
+**Regla de paso:** al terminar extracción, mantener internamente hechos documentales, matriz de observaciones y pendientes; reflejar los datos respaldados en el Excel y los hallazgos relevantes en el Word. La evaluación normativa es una **etapa separada y obligatoria antes de cálculos conclusivos**, conforme a MET-CMC-01; las observaciones **no obligan a detener la extracción**.
 
 ## Reglas de análisis
 
