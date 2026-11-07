@@ -15,6 +15,15 @@ Con **PyMuPDF `Page.add_highlight_annot(quads)`** pueden crearse **anotaciones d
 
 **Ensayo sintético ejecutado:** documento de una sola página generada con una **imagen raster como único contenido**; `page.get_text("text") == ""`, una imagen, **tres anotaciones PDF reales de tipo `(8, "Highlight")`** sobre contratista, monto y objeto. Al guardar y reabrir se confirmó la presencia de las tres marcas. Se comprobó su visualización en un render posterior; este resultado no garantiza interacción específica en Acrobat/Edge ni exactitud en documentos reales.
 
+## Convención de autor y comentario (preferencia confirmada 06/11/2026)
+
+- En **todas** las anotaciones nativas `Highlight`, establecer el campo **autor/título** exactamente como `Noe Calle` (no `OECE Assistant`).
+- El campo de **comentario/contenido** contiene **solo el dato concreto**, presentado como etiqueta breve y valor, sin información adicional: `Monto contractual S/ 1 401 840.00`, `Contratista Consorcio Huaros`, `Participación 20%`. Usar únicamente valores encontrados y verificados; no inventar importes ni RUC no legibles.
+- **Omitir expresamente** fórmulas de comentario como `Dato extraído:`, `Fuente:`, `Página PDF:`, `Marcación inicial para cotejo visual`, advertencias genéricas o cualquier texto de explicación. El PDF/página/obra/celda se conserva en la **trazabilidad privada**, no dentro del comentario visible.
+- No afectar posición, color, extensión ni tipo de los resaltados al editar solo el autor/comentario. Si faltan elementos de valor, consignar únicamente lo que realmente esté sustentado.
+
+**Validación ejecutada:** en el piloto de las primeras 10 páginas del PDF de experiencias se cambiaron **20** anotaciones `Highlight` a autor `Noe Calle` y comentarios cortos. Se comprobó que se conservaban número, tipo y geometría de anotaciones y que el render resultante era idéntico al anterior.
+
 ## Flujo de marcado en PDF escaneado — método único base
 
 1. **Examinar la imagen de la página del PDF** donde se encuentra el dato (contratista, obra, monto, fecha, participación, etc.). La extracción documental del valor y la ubicación visual son tareas separadas; no asumir que el PDF se puede buscar por texto.
