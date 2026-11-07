@@ -61,6 +61,24 @@
 
 **Estado:** patrón comprobado en caso, criterios de computabilidad pendientes de cotejo normativo. Pueden coexistir un **monto contractual bruto**, un **monto de «solo componente de obra»** indicado en una constancia y un **monto declarado como final** en un formulario; no son automáticamente equivalentes. Una liquidación puede incorporar **reajustes** que no consten en el cuadro declarativo del solicitante. Y la **descripción de obra en la solicitud** puede no coincidir con el contrato adjunto bajo el mismo orden de relación. **Acción del agente:** preservar los literales y cifras por concepto, comparar páginas exactas, registrar cada inconsistencia o conciliación respaldada en el Word y reservar la obra/campo afectado sin detener las demás. No atribuir diferencias automáticamente a equipamiento, mobiliario ni irregularidad; no otorgar CMC por inferencia.
 
+## CAS-CMC-018 — Mobiliario/equipamiento segregado en presupuesto de infraestructura
+
+**Estado: verificado en expediente real, interpretación normativa pendiente.** En el presupuesto integrante de un contrato de obra educativa puede existir un **capítulo independiente de implementación de mobiliario escolar y equipos**, junto a capítulos de infraestructura. El importe desagregado es un componente de **costo directo** y no coincide necesariamente con su participación en el precio **bruto** de contrato (que contiene gastos generales, utilidad e IGV).
+
+**Aprendizaje:** al identificar capítulos de mobiliario/equipamiento, extraer la descripción literal y su monto del documento anexo, separar el componente de infraestructura, cotejar la base del precio contractual y de liquidación, y verificar con norma aplicable la procedencia y método de exclusión **antes de descontar**. No restar directamente el costo directo del monto total con impuestos ni excluir cualquier elemento llamado «equipamiento» por su nombre sin clasificar su función. Mantener soporte de páginas y cálculo en expediente privado; en GitHub conservar solo este patrón abstracto.
+
+## CAS-CMC-019 — Participaciones consorciales ocultas en anexos internos de cada PDF
+
+**Estado: verificado en caso.** En algunos expedientes el porcentaje atribuible al solicitante figura dentro del **contrato de consorcio** agregado como anexo al PDF denominado «CONTRATO»; puede no aparecer en la portada o primera página del contrato de ejecución, y puede haber varios consorciados con porcentajes distintos.
+
+**Aprendizaje:** buscar la sección/pieza consorcial a lo largo del PDF, atribuir el porcentaje **solo al integrante correcto** y documentar su página física en ese archivo. No inferir participación del título de archivo ni atribuir automáticamente a un mismo consorcio varias obras con nombres geográficos similares. Si el acuerdo separa obligaciones, revisar además la naturaleza de dichas obligaciones sin equiparar por defecto porcentaje económico y experiencia computable.
+
+## CAS-CMC-020 — Reajustes incluidos en liquidación pero renunciados en otra pieza
+
+**Estado: verificado en caso, tratamiento normativo pendiente.** El cuadro de liquidación puede mostrar un importe total que incorpora reajustes mientras que un documento del expediente menciona **renuncia a su cobro**. No son sinónimos `reajuste reconocido`, `reajuste pagado`, `reajuste renunciado` ni `monto de obra computable`.
+
+**Aprendizaje:** extraer **por separado** importe original, reajuste, impuestos, monto de liquidación, texto de renuncia y su página/documento, identificar si la renuncia afecta el cobro o el monto técnico, y no sumar ni excluir automáticamente los reajustes en CMC sin fundamento. Cuando el método no esté definido, mantener como `pendiente_cotejo_normativo`, sin paralizar otras obras.
+
 ## Ficha de captura de una nueva casuística
 
 Cada nueva situación se registra como **observación verificable**, no como generalización automática:
